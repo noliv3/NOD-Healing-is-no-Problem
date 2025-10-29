@@ -4,7 +4,8 @@ NOD-Heal ist ein leistungsorientiertes Healing-Framework für den WoW-Client der
 
 ## Aktueller Stand
 - Basisordnerstruktur gemäß Projektplan erstellt (`NOD_Heal/`).
-- Backend-Platzhaltermodule gemäß Funktionsreferenz erstellt (HealthSnapshot, CastLandingTime, IncomingHeals, DamagePrediction, AuraTickPredictor, EffectiveHP, HealValueEstimator, PredictiveSolver, DesyncGuard, LatencyTools, CoreDispatcher).
+- Erste Backend-Kernmodule implementiert: HealthSnapshot, CastLandingTime, IncomingHeals, HealValueEstimator, PredictiveSolver und LatencyTools bilden den Datenpfad für Heal-Prognosen.
+- Weitere Backend-Platzhalter (DamagePrediction, AuraTickPredictor, EffectiveHP, DesyncGuard, CoreDispatcher) folgen gemäß Funktionsreferenz.
 - TOC-Datei mit Load-Reihenfolge eingerichtet.
 
 Weitere Implementierungen folgen in iterativen Schritten (DamageForecast, AuraTickScheduler, UI-Overlays usw.). Details zu den geplanten Backend-Funktionen befinden sich im Ordner [`DOCU/`](DOCU/).
@@ -44,9 +45,9 @@ Die folgende Übersicht dokumentiert, welche Funktionen bereits den WoW-Addon-Ri
 | `Core/AuraTickPredictor.lua` | `M.Initialize` | ❌ nicht geeignet | Keine Event-Registrierung. |
 | `Core/AuraTickPredictor.lua` | `M.RefreshUnit` | ❌ nicht geeignet | Tick-Scan nicht umgesetzt. |
 | `Core/AuraTickPredictor.lua` | `M.GetTicksUntil` | ❌ nicht geeignet | Liefert keine Daten. |
-| `Core/CastLandingTime.lua` | `M.Initialize` | ❌ nicht geeignet | Ereignis-Hooks fehlen. |
-| `Core/CastLandingTime.lua` | `M.ComputeLandingTime` | ❌ nicht geeignet | Landungsberechnung nicht vorhanden. |
-| `Core/CastLandingTime.lua` | `M.TrackUnitCast` | ❌ nicht geeignet | Kein Cast-Tracking. |
+| `Core/CastLandingTime.lua` | `M.Initialize` | ⚠️ teilweise geeignet | Dispatcher-Hooks vorhanden, warten auf CoreDispatcher. |
+| `Core/CastLandingTime.lua` | `M.ComputeLandingTime` | ✅ geeignet | Berechnet `T_land` inkl. Latenz und Queue-Window. |
+| `Core/CastLandingTime.lua` | `M.TrackUnitCast` | ⚠️ teilweise geeignet | Ermittelt Cast-Zeitpunkte, benötigt Live-Events zum Feinschliff. |
 | `Core/CoreDispatcher.lua` | `M.Initialize` | ❌ nicht geeignet | Dispatcher-Struktur fehlt. |
 | `Core/CoreDispatcher.lua` | `M.RegisterHandler` | ❌ nicht geeignet | Keine Handler-Verwaltung. |
 | `Core/CoreDispatcher.lua` | `M.Dispatch` | ❌ nicht geeignet | Dispatch-Logik nicht vorhanden. |
@@ -60,20 +61,20 @@ Die folgende Übersicht dokumentiert, welche Funktionen bereits den WoW-Addon-Ri
 | `Core/EffectiveHP.lua` | `M.Initialize` | ❌ nicht geeignet | Absorb-Cache nicht angelegt. |
 | `Core/EffectiveHP.lua` | `M.Calculate` | ❌ nicht geeignet | Formel nicht hinterlegt. |
 | `Core/EffectiveHP.lua` | `M.UpdateFromUnit` | ❌ nicht geeignet | Kein Zugriff auf `UnitGetTotalAbsorbs`. |
-| `Core/HealthSnapshot.lua` | `M.Initialize` | ❌ nicht geeignet | Event-Bindings fehlen. |
-| `Core/HealthSnapshot.lua` | `M.Capture` | ❌ nicht geeignet | Snapshot bleibt leer. |
-| `Core/HealthSnapshot.lua` | `M.FlagOfflineState` | ❌ nicht geeignet | Offline/Death-Status nicht gepflegt. |
-| `Core/HealValueEstimator.lua` | `M.Initialize` | ❌ nicht geeignet | Lernspeicher nicht vorbereitet. |
-| `Core/HealValueEstimator.lua` | `M.Learn` | ❌ nicht geeignet | Keine Rolling-Averages. |
-| `Core/HealValueEstimator.lua` | `M.Estimate` | ❌ nicht geeignet | Stat-basierte Prognose fehlt. |
-| `Core/HealValueEstimator.lua` | `M.FetchFallback` | ❌ nicht geeignet | Fallback-Datenbank ungenutzt. |
-| `Core/IncomingHeals.lua` | `M.Initialize` | ❌ nicht geeignet | LibHealComm nicht angebunden. |
-| `Core/IncomingHeals.lua` | `M.CollectUntil` | ❌ nicht geeignet | Sammellogik offen. |
-| `Core/IncomingHeals.lua` | `M.FetchFallback` | ❌ nicht geeignet | `UnitGetIncomingHeals` nicht verwendet. |
-| `Core/LatencyTools.lua` | `M.Initialize` | ❌ nicht geeignet | Latenz-Cache fehlt. |
-| `Core/LatencyTools.lua` | `M.Refresh` | ❌ nicht geeignet | Keine Aktualisierung via `GetNetStats`. |
-| `Core/LatencyTools.lua` | `M.GetLatency` | ❌ nicht geeignet | Gibt keine Werte zurück. |
-| `Core/LatencyTools.lua` | `M.GetSpellQueueWindow` | ❌ nicht geeignet | CVar-Lesen nicht umgesetzt. |
-| `Core/PredictiveSolver.lua` | `M.Initialize` | ❌ nicht geeignet | Abhängigkeiten unverdrahtet. |
-| `Core/PredictiveSolver.lua` | `M.CalculateProjectedHealth` | ❌ nicht geeignet | Kernformel fehlt. |
-| `Core/PredictiveSolver.lua` | `M.ComposeResult` | ❌ nicht geeignet | Ergebnisstruktur fehlt. |
+| `Core/HealthSnapshot.lua` | `M.Initialize` | ⚠️ teilweise geeignet | Integriert Invalidate-Handler, wartet auf Dispatcher. |
+| `Core/HealthSnapshot.lua` | `M.Capture` | ✅ geeignet | Liest HP/Absorb/Status via WoW-API. |
+| `Core/HealthSnapshot.lua` | `M.FlagOfflineState` | ✅ geeignet | Aktualisiert Dead/Offline-Status im Cache. |
+| `Core/HealValueEstimator.lua` | `M.Initialize` | ✅ geeignet | Initialisiert Rolling-Cache und Fallback-DB. |
+| `Core/HealValueEstimator.lua` | `M.Learn` | ✅ geeignet | Aktualisiert Rolling Average & Varianz. |
+| `Core/HealValueEstimator.lua` | `M.Estimate` | ⚠️ teilweise geeignet | Stat-basierte Prognose aktiv, Feintuning offen. |
+| `Core/HealValueEstimator.lua` | `M.FetchFallback` | ✅ geeignet | Liefert statische Werte aus Fallback-DB. |
+| `Core/IncomingHeals.lua` | `M.Initialize` | ⚠️ teilweise geeignet | Bindet LibHealComm-Callbacks, benötigt Praxistest. |
+| `Core/IncomingHeals.lua` | `M.CollectUntil` | ✅ geeignet | Aggregiert Heals bis `tLand` inkl. Fallback. |
+| `Core/IncomingHeals.lua` | `M.FetchFallback` | ✅ geeignet | Nutzt `UnitGetIncomingHeals` als Sicherheitsnetz. |
+| `Core/LatencyTools.lua` | `M.Initialize` | ✅ geeignet | Initialisiert Latenz- und Queue-Cache. |
+| `Core/LatencyTools.lua` | `M.Refresh` | ✅ geeignet | Liest `GetNetStats` & SpellQueueWindow defensiv. |
+| `Core/LatencyTools.lua` | `M.GetLatency` | ✅ geeignet | Gibt gecachten Wert zurück. |
+| `Core/LatencyTools.lua` | `M.GetSpellQueueWindow` | ✅ geeignet | Exponiert CVar-gestützte Queue-Länge. |
+| `Core/PredictiveSolver.lua` | `M.Initialize` | ⚠️ teilweise geeignet | Registriert Abhängigkeiten inkl. Alias-Unterstützung. |
+| `Core/PredictiveSolver.lua` | `M.CalculateProjectedHealth` | ✅ geeignet | Kombiniert Snapshot, Schaden, Inc-Heals & Heal-Wert. |
+| `Core/PredictiveSolver.lua` | `M.ComposeResult` | ✅ geeignet | Liefert Overlay-Werte samt Overheal & Confidence. |
