@@ -19,3 +19,7 @@ Diese Richtlinien gelten für das gesamte Repository, sofern in Unterordnern kei
 - Aktuell existieren keine automatisierten Tests; bei manuellen Tests das Ergebnis im PR-/Commit-Text dokumentieren.
 
 Viel Erfolg beim Ausbau des Addons!
+
+## Auditvermerk (aktueller Stand)
+- Konform zur WoW-Addon-Konvention: `Core/Init.lua` (`RegisterModule`, `GetModule`), `Core/CastTiming.lua` (`CastTiming:Compute` mit statischem GCD, noch zu verfeinern) sowie `Core/IncomingHealAggregator.lua` (`AddHeal`, `GetIncoming`).
+- Noch ohne funktionsfähige Umsetzung bzw. WoW-API-Anbindung: Sämtliche übrigen Platzhalter-Funktionen in `Core/` (HealthSnapshot, CastLandingTime, IncomingHeals, DamagePrediction, AuraTickPredictor, EffectiveHP, HealValueEstimator, PredictiveSolver, DesyncGuard, LatencyTools, CoreDispatcher) sowie `UI/Init.lua`.
