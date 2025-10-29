@@ -1,19 +1,100 @@
 -- Module: DesyncGuard
--- Purpose: Prevent flickering overlay updates by buffering solver refreshes during cast start latency windows.
--- API: UNIT_SPELLCAST_START, UNIT_SPELLCAST_STOP, SPELL_HEAL events
+-- Purpose: Gate overlay updates around cast transitions to avoid flicker from latency or delayed combat events.
+-- API: UNIT_SPELLCAST_START/STOP/INTERRUPTED/FAILED/SUCCEEDED, GetTime
+
+local GetTime = GetTime
+local pairs = pairs
+local wipe = wipe
+
+local FREEZE_DURATION = 0.15
+
+local freezeState = {}
+
+if not wipe then
+  wipe = function(tbl)
+    if not tbl then
+      return
+    end
+    for k in pairs(tbl) do
+      tbl[k] = nil
+    end
+  end
+end
+
+local function activateFreeze(unit)
+  if not unit then
+    return
+  end
+
+  local state = freezeState[unit]
+  if not state then
+    state = {}
+    freezeState[unit] = state
+  end
+
+  state.releaseAt = GetTime() + FREEZE_DURATION
+  state.active = true
+end
+
+local function clearFreeze(unit)
+  if not unit then
+    return
+  end
+
+  freezeState[unit] = nil
+end
 
 local M = {}
 
 function M.Initialize(dispatcher)
-  -- TODO: Register cast lifecycle and heal landing events to control the short freeze window.
+  if dispatcher and dispatcher.RegisterHandler then
+    dispatcher:RegisterHandler("UNIT_SPELLCAST_START", function(_, unit)
+      activateFreeze(unit)
+    end)
+    dispatcher:RegisterHandler("UNIT_SPELLCAST_CHANNEL_START", function(_, unit)
+      activateFreeze(unit)
+    end)
+    dispatcher:RegisterHandler("UNIT_SPELLCAST_CHANNEL_STOP", function(_, unit)
+      clearFreeze(unit)
+    end)
+    dispatcher:RegisterHandler("UNIT_SPELLCAST_STOP", function(_, unit)
+      clearFreeze(unit)
+    end)
+    dispatcher:RegisterHandler("UNIT_SPELLCAST_INTERRUPTED", function(_, unit)
+      clearFreeze(unit)
+    end)
+    dispatcher:RegisterHandler("UNIT_SPELLCAST_FAILED", function(_, unit)
+      clearFreeze(unit)
+    end)
+    dispatcher:RegisterHandler("UNIT_SPELLCAST_SUCCEEDED", function(_, unit)
+      clearFreeze(unit)
+    end)
+    dispatcher:RegisterHandler("GROUP_ROSTER_UPDATE", function()
+      wipe(freezeState)
+    end)
+  end
 end
 
-function M.OnCastStart(unit, spellID, castGUID)
-  -- TODO: Suspend overlay updates for roughly 100–150 ms after the cast begins to mask latency jitter.
+function M.ApplyFreeze(unit)
+  activateFreeze(unit)
 end
 
-function M.OnCastResolved(unit, spellID, castGUID)
-  -- TODO: Resume updates immediately when CAST_STOP, SPELL_HEAL, or interruption events fire for the tracked cast.
+function M.ReleaseFreeze(unit)
+  clearFreeze(unit)
+end
+
+function M.IsFrozen(unit)
+  local state = unit and freezeState[unit]
+  if not state then
+    return false
+  end
+
+  if state.releaseAt and GetTime() >= state.releaseAt then
+    freezeState[unit] = nil
+    return false
+  end
+
+  return state.active == true
 end
 
 return M

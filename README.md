@@ -5,7 +5,7 @@ NOD-Heal ist ein leistungsorientiertes Healing-Framework für den WoW-Client der
 ## Aktueller Stand
 - Basisordnerstruktur gemäß Projektplan erstellt (`NOD_Heal/`).
 - Erste Backend-Kernmodule implementiert: HealthSnapshot, CastLandingTime, IncomingHeals, HealValueEstimator, PredictiveSolver und LatencyTools bilden den Datenpfad für Heal-Prognosen.
-- Weitere Backend-Platzhalter (DamagePrediction, AuraTickPredictor, EffectiveHP, DesyncGuard, CoreDispatcher) folgen gemäß Funktionsreferenz.
+- DamagePrediction, AuraTickPredictor, EffectiveHP, DesyncGuard und CoreDispatcher arbeiten nun mit produktiven WoW-API-Anbindungen.
 - TOC-Datei mit Load-Reihenfolge eingerichtet.
 
 Weitere Implementierungen folgen in iterativen Schritten (DamageForecast, AuraTickScheduler, UI-Overlays usw.). Details zu den geplanten Backend-Funktionen befinden sich im Ordner [`DOCU/`](DOCU/).
@@ -42,25 +42,17 @@ Die folgende Übersicht dokumentiert, welche Funktionen bereits den WoW-Addon-Ri
 | `Core/IncomingHealAggregator.lua` | `IncomingHealAggregator:AddHeal` | ✅ geeignet | Nutzt `GetTime()` und lokale Queues regelkonform. |
 | `Core/IncomingHealAggregator.lua` | `IncomingHealAggregator:GetIncoming` | ✅ geeignet | Summiert Ereignisse API-konform, Aufräumlogik fehlt noch. |
 | `UI/Init.lua` | `UI:Initialize` | ❌ nicht geeignet | Placeholder ohne Frame-Aufbau. |
-| `Core/AuraTickPredictor.lua` | `M.Initialize` | ❌ nicht geeignet | Keine Event-Registrierung. |
-| `Core/AuraTickPredictor.lua` | `M.RefreshUnit` | ❌ nicht geeignet | Tick-Scan nicht umgesetzt. |
-| `Core/AuraTickPredictor.lua` | `M.GetTicksUntil` | ❌ nicht geeignet | Liefert keine Daten. |
+| `Core/AuraTickPredictor.lua` | `M.GetHoTTicks` | ⚠️ teilweise geeignet | Liefert HoT-Zeitplan via AuraUtil/UnitAura, Tick-Intervalle noch konfigurierbar. |
 | `Core/CastLandingTime.lua` | `M.Initialize` | ⚠️ teilweise geeignet | Dispatcher-Hooks vorhanden, warten auf CoreDispatcher. |
 | `Core/CastLandingTime.lua` | `M.ComputeLandingTime` | ✅ geeignet | Berechnet `T_land` inkl. Latenz und Queue-Window. |
 | `Core/CastLandingTime.lua` | `M.TrackUnitCast` | ⚠️ teilweise geeignet | Ermittelt Cast-Zeitpunkte, benötigt Live-Events zum Feinschliff. |
-| `Core/CoreDispatcher.lua` | `M.Initialize` | ❌ nicht geeignet | Dispatcher-Struktur fehlt. |
-| `Core/CoreDispatcher.lua` | `M.RegisterHandler` | ❌ nicht geeignet | Keine Handler-Verwaltung. |
-| `Core/CoreDispatcher.lua` | `M.Dispatch` | ❌ nicht geeignet | Dispatch-Logik nicht vorhanden. |
-| `Core/CoreDispatcher.lua` | `M.SetThrottle` | ❌ nicht geeignet | Throttling nicht implementiert. |
-| `Core/DamagePrediction.lua` | `M.Initialize` | ❌ nicht geeignet | Combat-Log-Hook fehlt. |
-| `Core/DamagePrediction.lua` | `M.RecordCombatSample` | ❌ nicht geeignet | EMA-Berechnung fehlt. |
-| `Core/DamagePrediction.lua` | `M.CalculateUntil` | ❌ nicht geeignet | Projektion nicht umgesetzt. |
-| `Core/DesyncGuard.lua` | `M.Initialize` | ❌ nicht geeignet | Keine Steuerung des Sperrfensters. |
-| `Core/DesyncGuard.lua` | `M.OnCastStart` | ❌ nicht geeignet | Latenz-Puffer nicht implementiert. |
-| `Core/DesyncGuard.lua` | `M.OnCastResolved` | ❌ nicht geeignet | Ereignisreaktion fehlt. |
-| `Core/EffectiveHP.lua` | `M.Initialize` | ❌ nicht geeignet | Absorb-Cache nicht angelegt. |
-| `Core/EffectiveHP.lua` | `M.Calculate` | ❌ nicht geeignet | Formel nicht hinterlegt. |
-| `Core/EffectiveHP.lua` | `M.UpdateFromUnit` | ❌ nicht geeignet | Kein Zugriff auf `UnitGetTotalAbsorbs`. |
+| `Core/CoreDispatcher.lua` | `M.Initialize` | ✅ geeignet | Erstellt Frame-Hub für Register-/Dispatch-Fluss. |
+| `Core/CoreDispatcher.lua` | `M.RegisterHandler` | ✅ geeignet | Hinterlegt Handler inkl. optionaler Throttle. |
+| `Core/CoreDispatcher.lua` | `M.Dispatch` | ✅ geeignet | Verteilt Events und respektiert Throttle-Zeitfenster. |
+| `Core/DamagePrediction.lua` | `M.PredictDamage` | ⚠️ teilweise geeignet | EMA-basierte CombatLog-Auswertung aktiv, Feintuning des Fensters offen. |
+| `Core/DesyncGuard.lua` | `M.ApplyFreeze` | ✅ geeignet | Sperrt Overlay-Refresh kurz nach Caststart. |
+| `Core/DesyncGuard.lua` | `M.ReleaseFreeze` | ✅ geeignet | Hebt Freeze bei Cast-Ende/Cancels zuverlässig auf. |
+| `Core/EffectiveHP.lua` | `M.Calculate` | ✅ geeignet | Liest HP & Absorb live, liefert gepufferten EHP-Wert. |
 | `Core/HealthSnapshot.lua` | `M.Initialize` | ⚠️ teilweise geeignet | Integriert Invalidate-Handler, wartet auf Dispatcher. |
 | `Core/HealthSnapshot.lua` | `M.Capture` | ✅ geeignet | Liest HP/Absorb/Status via WoW-API. |
 | `Core/HealthSnapshot.lua` | `M.FlagOfflineState` | ✅ geeignet | Aktualisiert Dead/Offline-Status im Cache. |

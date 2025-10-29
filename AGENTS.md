@@ -13,7 +13,7 @@ Diese Richtlinien gelten für das gesamte Repository, sofern in Unterordnern kei
 - Jede funktionale Änderung sollte in der `README.md` nachvollziehbar sein.
 - Backend-Entscheidungen orientieren sich an `DOCU/NOD_Backend_Funktionsreferenz.md`.
 - Planungs- und Vergleichsdokumente im Ordner `DOCU/` liegen bevorzugt als Markdown (`.md`) vor und folgen sprechenden Dateinamen wie `NOD_Systemaufbau_Modulstruktur.md` oder `HealingAddons_Funktionsvergleich_NOD_Integration.md`. Bei neuen Inhalten bitte dieses Format und die Benennung fortführen.
-- Bereits produktiv umgesetzte Core-Module: `HealthSnapshot`, `CastLandingTime`, `IncomingHeals`, `HealValueEstimator`, `PredictiveSolver`, `LatencyTools`. Die verbleibenden Platzhalter (`DamagePrediction`, `AuraTickPredictor`, `EffectiveHP`, `DesyncGuard`, `CoreDispatcher`) werden weiterhin gemäß Funktionsreferenz ergänzt.
+- Bereits produktiv umgesetzte Core-Module: `HealthSnapshot`, `CastLandingTime`, `IncomingHeals`, `HealValueEstimator`, `PredictiveSolver`, `LatencyTools` sowie die nun angebundenen Welle-1-Komponenten (`DamagePrediction`, `AuraTickPredictor`, `EffectiveHP`, `DesyncGuard`, `CoreDispatcher`).
 
 ## Testing & Tooling
 - Aktuell existieren keine automatisierten Tests; bei manuellen Tests das Ergebnis im PR-/Commit-Text dokumentieren.
@@ -23,4 +23,5 @@ Viel Erfolg beim Ausbau des Addons!
 ## Auditvermerk (aktueller Stand)
 - Konform zur WoW-Addon-Konvention: `Core/Init.lua` (`RegisterModule`, `GetModule`), `Core/CastTiming.lua` (`CastTiming:Compute` mit statischem GCD, noch zu verfeinern) sowie `Core/IncomingHealAggregator.lua` (`AddHeal`, `GetIncoming`).
 - Backend-Grundpfad aktiv: `Core/HealthSnapshot.lua`, `Core/CastLandingTime.lua`, `Core/IncomingHeals.lua`, `Core/HealValueEstimator.lua`, `Core/PredictiveSolver.lua`, `Core/LatencyTools.lua` verfügen nun über lauffähige Kernfunktionen.
-- Noch ohne funktionsfähige Umsetzung bzw. WoW-API-Anbindung: Platzhalter in `Core/` (`DamagePrediction`, `AuraTickPredictor`, `EffectiveHP`, `DesyncGuard`, `CoreDispatcher`) sowie `UI/Init.lua`.
+- Welle 1 der Backend-Module ist nun lauffähig: `Core/DamagePrediction.lua`, `Core/AuraTickPredictor.lua`, `Core/EffectiveHP.lua`, `Core/DesyncGuard.lua`, `Core/CoreDispatcher.lua` liefern produktive Daten für den Solver.
+- Noch ohne funktionsfähige Umsetzung bzw. WoW-API-Anbindung: Frontend-Platzhalter `UI/Init.lua` sowie Erweiterungen außerhalb Welle 1.
