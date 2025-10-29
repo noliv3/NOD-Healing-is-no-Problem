@@ -4,7 +4,7 @@ NOD-Heal ist ein leistungsorientiertes Healing-Framework für den WoW-Client der
 
 ## Aktueller Stand
 - Basisordnerstruktur gemäß Projektplan erstellt (`NOD_Heal/`).
-- Platzhalter für Kernmodule des Backends angelegt (HealthSnapshot, CastTiming, IncomingHealAggregator, PredictiveSolver).
+- Backend-Platzhaltermodule gemäß Funktionsreferenz erstellt (HealthSnapshot, CastLandingTime, IncomingHeals, DamagePrediction, AuraTickPredictor, EffectiveHP, HealValueEstimator, PredictiveSolver, DesyncGuard, LatencyTools, CoreDispatcher).
 - TOC-Datei mit Load-Reihenfolge eingerichtet.
 
 Weitere Implementierungen folgen in iterativen Schritten (DamageForecast, AuraTickScheduler, UI-Overlays usw.). Details zu den geplanten Backend-Funktionen befinden sich im Ordner [`DOCU/`](DOCU/).

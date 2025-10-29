@@ -13,6 +13,7 @@ Diese Richtlinien gelten für das gesamte Repository, sofern in Unterordnern kei
 - Jede funktionale Änderung sollte in der `README.md` nachvollziehbar sein.
 - Backend-Entscheidungen orientieren sich an `DOCU/NOD_Backend_Funktionsreferenz.md`.
 - Planungs- und Vergleichsdokumente im Ordner `DOCU/` liegen bevorzugt als Markdown (`.md`) vor und folgen sprechenden Dateinamen wie `NOD_Systemaufbau_Modulstruktur.md` oder `HealingAddons_Funktionsvergleich_NOD_Integration.md`. Bei neuen Inhalten bitte dieses Format und die Benennung fortführen.
+- Platzhalter-Module des Backends liegen unter `NOD_Heal/Core/` (HealthSnapshot, CastLandingTime, IncomingHeals, DamagePrediction, AuraTickPredictor, EffectiveHP, HealValueEstimator, PredictiveSolver, DesyncGuard, LatencyTools, CoreDispatcher) und enthalten nur kommentierte Funktionsgerüste.
 
 ## Testing & Tooling
 - Aktuell existieren keine automatisierten Tests; bei manuellen Tests das Ergebnis im PR-/Commit-Text dokumentieren.
