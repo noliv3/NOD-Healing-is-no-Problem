@@ -1,44 +1,19 @@
-local addonName = ...
-local NODHeal = _G.NODHeal
+-- Module: PredictiveSolver
+-- Purpose: Project unit HP at landing time by combining snapshots, incoming heals, damage forecasts, and estimated heal output.
+-- API: Depends on upstream modules (HealthSnapshot, IncomingHeals, DamagePrediction, HealValueEstimator)
 
-local PredictiveSolver = {}
-PredictiveSolver.__index = PredictiveSolver
+local M = {}
 
-function PredictiveSolver:New(snapshotModule, aggregatorModule)
-    local instance = setmetatable({
-        snapshotModule = snapshotModule or NODHeal:GetModule("HealthSnapshot"),
-        aggregatorModule = aggregatorModule or NODHeal:GetModule("IncomingHealAggregator"),
-    }, self)
-
-    return instance
+function M.Initialize(dependencies)
+  -- TODO: Wire dependencies for snapshots, incoming heals, damage predictions, and heal value estimations.
 end
 
-local function clamp(value, minVal, maxVal)
-    if value < minVal then
-        return minVal
-    end
-    if value > maxVal then
-        return maxVal
-    end
-    return value
+function M.CalculateProjectedHealth(state)
+  -- TODO: Apply HP_proj = clamp(HP_now - D_pred + IncHeals + HealValue, 0, MaxHP) using the aggregated state payload.
 end
 
-function PredictiveSolver:Project(unit, horizon, expectedHeal)
-    local snapshot = self.snapshotModule and self.snapshotModule:Capture(unit)
-    if not snapshot then
-        return nil
-    end
-
-    local incoming = 0
-    if self.aggregatorModule then
-        incoming = self.aggregatorModule:GetIncoming(unit, horizon)
-    end
-
-    local base = snapshot.hp_now + snapshot.absorbs
-    local predicted = base + (expectedHeal or 0) + incoming
-    local maxHP = snapshot.hp_max
-
-    return clamp(predicted, 0, maxHP)
+function M.ComposeResult(snapshot, projected, metadata)
+  -- TODO: Return overlay values, overheal percentage, and confidence flags for UI consumption.
 end
 
-return NODHeal:RegisterModule("PredictiveSolver", PredictiveSolver)
+return M

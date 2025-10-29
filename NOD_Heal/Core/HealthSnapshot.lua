@@ -1,23 +1,19 @@
-local addonName = ...
-local NODHeal = _G.NODHeal
+-- Module: HealthSnapshot
+-- Purpose: Collect current HP state, death/offline flags, and absorbs per unit as baseline for solver calculations.
+-- API: UnitHealth, UnitHealthMax, UnitIsDeadOrGhost, UnitGetTotalAbsorbs
 
-local HealthSnapshot = {}
-HealthSnapshot.__index = HealthSnapshot
+local M = {}
 
-function HealthSnapshot:Capture(unit)
-    if not unit then
-        return nil
-    end
-
-    local snapshot = {
-        hp_now = UnitHealth(unit) or 0,
-        hp_max = UnitHealthMax(unit) or 1,
-        absorbs = UnitGetTotalAbsorbs(unit) or 0,
-        isDead = UnitIsDeadOrGhost(unit) or false,
-        isOffline = not UnitIsConnected(unit) or false,
-    }
-
-    return snapshot
+function M.Initialize(dispatcher)
+  -- TODO: Subscribe to UNIT_HEALTH, UNIT_MAXHEALTH, UNIT_ABSORB_AMOUNT_CHANGED, and GROUP_ROSTER_UPDATE to refresh snapshots.
 end
 
-return NODHeal:RegisterModule("HealthSnapshot", HealthSnapshot)
+function M.Capture(unit)
+  -- TODO: Return a table with hp_now, hp_max, absorbs, isDead, and isOffline values derived from the WoW API calls.
+end
+
+function M.FlagOfflineState(unit)
+  -- TODO: Evaluate UnitIsDeadOrGhost and UnitIsConnected to set dead/offline indicators in cached snapshots.
+end
+
+return M
