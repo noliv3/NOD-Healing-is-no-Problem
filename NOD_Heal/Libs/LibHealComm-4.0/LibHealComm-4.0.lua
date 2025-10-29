@@ -1,0 +1,1 @@
+-- Placeholder for LibHealComm-4.0. The actual library should be bundled separately.
