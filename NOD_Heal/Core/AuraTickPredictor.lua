@@ -6,10 +6,12 @@ local AuraUtil = AuraUtil
 local UnitAura = UnitAura
 local GetTime = GetTime
 local pairs = pairs
+local ipairs = ipairs
 local wipe = wipe
 local floor = math.floor
 local max = math.max
 local min = math.min
+local sort = table.sort
 local tinsert = table.insert
 
 local auraCache = {}
@@ -101,14 +103,44 @@ local function resolveTickInterval(aura)
   return nil
 end
 
+local function resolveTickAmount(aura)
+  if not aura then
+    return 0
+  end
+
+  if aura.tickValue and aura.tickValue > 0 then
+    return aura.tickValue
+  end
+
+  if aura.value1 and aura.value1 > 0 then
+    return aura.value1
+  end
+
+  if aura.points and aura.points[1] and aura.points[1] > 0 then
+    return aura.points[1]
+  end
+
+  if aura.expectedTickValue and aura.expectedTickValue > 0 then
+    return aura.expectedTickValue
+  end
+
+  if aura.totalAbsorb and aura.expectedTicks and aura.expectedTicks > 0 then
+    return aura.totalAbsorb / aura.expectedTicks
+  end
+
+  return 0
+end
+
 local function buildTickSchedule(aura, now, horizon)
   local expires = aura and aura.expirationTime
   if not expires or expires <= now then
     return {
       count = 0,
-      times = {},
+      ticks = {},
       expires = expires or 0,
       tickInterval = 0,
+      tickAmount = 0,
+      total = 0,
     }
   end
 
@@ -116,9 +148,11 @@ local function buildTickSchedule(aura, now, horizon)
   if not tickInterval or tickInterval <= 0 then
     return {
       count = 0,
-      times = {},
+      ticks = {},
       expires = expires,
       tickInterval = 0,
+      tickAmount = 0,
+      total = 0,
     }
   end
 
@@ -132,9 +166,11 @@ local function buildTickSchedule(aura, now, horizon)
   if effectiveEnd <= now then
     return {
       count = 0,
-      times = {},
+      ticks = {},
       expires = expires,
       tickInterval = tickInterval,
+      tickAmount = resolveTickAmount(aura),
+      total = 0,
     }
   end
 
@@ -142,19 +178,22 @@ local function buildTickSchedule(aura, now, horizon)
   local ticksPassed = floor(elapsed / tickInterval)
   local nextTick = auraStart + (ticksPassed + 1) * tickInterval
 
-  local times = {}
+  local tickAmount = resolveTickAmount(aura)
+  local ticks = {}
   while nextTick <= effectiveEnd + 0.01 do
     if nextTick >= now then
-      tinsert(times, nextTick)
+      tinsert(ticks, { time = nextTick, amount = tickAmount })
     end
     nextTick = nextTick + tickInterval
   end
 
   return {
-    count = #times,
-    times = times,
+    count = #ticks,
+    ticks = ticks,
     expires = expires,
     tickInterval = tickInterval,
+    tickAmount = tickAmount,
+    total = tickAmount * #ticks,
   }
 end
 
@@ -175,7 +214,7 @@ end
 
 function M.GetHoTTicks(unit, spellID, T_land)
   if not unit or not spellID then
-    return { count = 0, times = {}, expires = 0, tickInterval = 0 }
+    return { count = 0, ticks = {}, expires = 0, tickInterval = 0, tickAmount = 0, total = 0 }
   end
 
   local now = GetTime()
@@ -198,14 +237,86 @@ function M.GetHoTTicks(unit, spellID, T_land)
 
   local aura = fetchAura(unit, spellID)
   if not aura then
-    unitCache[key] = { count = 0, times = {}, expires = 0, tickInterval = 0 }
+    unitCache[key] = { count = 0, ticks = {}, expires = 0, tickInterval = 0, tickAmount = 0, total = 0 }
     return unitCache[key]
   end
 
   local schedule = buildTickSchedule(aura, now, horizon)
   schedule.horizon = horizon
+  schedule.spellID = spellID
   unitCache[key] = schedule
   return schedule
+end
+
+local function normalizeFilter(filter)
+  if type(filter) ~= "table" then
+    return nil
+  end
+
+  local normalized = {}
+  local count = 0
+  for key, value in pairs(filter) do
+    if type(key) == "number" and value then
+      normalized[key] = true
+      count = count + 1
+    elseif type(value) == "number" then
+      normalized[value] = true
+      count = count + 1
+    end
+  end
+
+  if count == 0 then
+    return nil
+  end
+
+  return normalized
+end
+
+function M.CollectHoTs(unit, spellFilter, T_land)
+  if not unit then
+    return { total = 0, ticks = {}, spells = {} }
+  end
+
+  local filterSet = normalizeFilter(spellFilter)
+  if not filterSet then
+    return { total = 0, ticks = {}, spells = {} }
+  end
+
+  local ticks = {}
+  local spells = {}
+  local total = 0
+  for spellID in pairs(filterSet) do
+    local schedule = M.GetHoTTicks(unit, spellID, T_land)
+    spells[spellID] = schedule
+    if schedule and schedule.count > 0 then
+      total = total + (schedule.total or 0)
+      for index, tick in ipairs(schedule.ticks or {}) do
+        ticks[#ticks + 1] = {
+          spellID = spellID,
+          time = tick.time,
+          amount = tick.amount,
+          index = index,
+        }
+      end
+    end
+  end
+
+  sort(ticks, function(left, right)
+    if left.time == right.time then
+      return (left.spellID or 0) < (right.spellID or 0)
+    end
+    return left.time < right.time
+  end)
+
+  for i = 1, #ticks do
+    ticks[i].index = nil
+  end
+
+  return {
+    total = total,
+    ticks = ticks,
+    spells = spells,
+  }
 end
 
 return M
