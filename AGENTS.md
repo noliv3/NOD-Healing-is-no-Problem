@@ -12,6 +12,7 @@ Diese Richtlinien gelten für das gesamte Repository, sofern in Unterordnern kei
 ## Dokumentation
 - Jede funktionale Änderung sollte in der `README.md` nachvollziehbar sein.
 - Backend-Entscheidungen orientieren sich an `DOCU/NOD_Backend_Funktionsreferenz.md`.
+- Planungs- und Vergleichsdokumente im Ordner `DOCU/` sind nach dem Schema `NOD_*` bzw. thematisch sprechend benannt (z.B. `NOD_Systemaufbau_Modulstruktur.docx`, `NOD_Konzept_Funktionsliste.txt`). Bitte bei neuen Dateien dieselbe klare Benennung beibehalten.
 
 ## Testing & Tooling
 - Aktuell existieren keine automatisierten Tests; bei manuellen Tests das Ergebnis im PR-/Commit-Text dokumentieren.

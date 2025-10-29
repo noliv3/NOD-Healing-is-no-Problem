@@ -22,3 +22,10 @@ Weitere Implementierungen folgen in iterativen Schritten (DamageForecast, AuraTi
 ## Dokumentation
 - Projektweite Richtlinien siehe [`AGENTS.md`](AGENTS.md).
 - Ausführliche Backend-Referenz unter [`DOCU/NOD_Backend_Funktionsreferenz.md`](DOCU/NOD_Backend_Funktionsreferenz.md).
+- Strukturierte Planungs- und Vergleichsdokumente (umbenannt für Klarheit):
+  - [`DOCU/NOD_Systemaufbau_Modulstruktur.docx`](DOCU/NOD_Systemaufbau_Modulstruktur.docx) – Architektur- und Modulübersicht.
+  - [`DOCU/NOD_Konzept_Funktionsliste.txt`](DOCU/NOD_Konzept_Funktionsliste.txt) – Priorisierte Funktionsliste inkl. Klassifikationen.
+  - [`DOCU/NOD_Machbarkeitsanalyse_Technik_MoP.docx`](DOCU/NOD_Machbarkeitsanalyse_Technik_MoP.docx) – Technische Analyse zu LibHealComm, API-Fallbacks und Raid-Performance.
+  - [`DOCU/Vergleich_NOD_vs_HealBot_FeatureAnalyse.docx`](DOCU/Vergleich_NOD_vs_HealBot_FeatureAnalyse.docx) – Gegenüberstellung HealBot vs. NOD.
+  - [`DOCU/HealingAddons_Funktionsvergleich_NOD_Integration.docx`](DOCU/HealingAddons_Funktionsvergleich_NOD_Integration.docx) – Feature-Matrix aktueller Healing-Addons.
+  - [`DOCU/Datei_und_Modulstruktur_NOD-Projektbaum.txt`](DOCU/Datei_und_Modulstruktur_NOD-Projektbaum.txt) – geplanter Projektbaum und Build-Checkliste.
