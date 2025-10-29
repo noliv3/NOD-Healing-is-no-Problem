@@ -5,7 +5,7 @@ NOD-Heal ist ein leistungsorientiertes Healing-Framework für den WoW-Client der
 ## Aktueller Stand
 - Basisordnerstruktur gemäß Projektplan erstellt (`NOD_Heal/`).
 - Erste Backend-Kernmodule implementiert: HealthSnapshot, CastLandingTime, IncomingHeals, HealValueEstimator, PredictiveSolver und LatencyTools bilden den Datenpfad für Heal-Prognosen.
-- DamagePrediction, AuraTickPredictor, EffectiveHP, DesyncGuard und CoreDispatcher arbeiten nun mit produktiven WoW-API-Anbindungen.
+- DamagePrediction, AuraTickPredictor, IncomingHealAggregator, EffectiveHP, DesyncGuard und CoreDispatcher arbeiten nun mit produktiven WoW-API-Anbindungen und sind an den Solver angebunden.
 - TOC-Datei mit Load-Reihenfolge eingerichtet.
 
 Weitere Implementierungen folgen in iterativen Schritten (DamageForecast, AuraTickScheduler, UI-Overlays usw.). Details zu den geplanten Backend-Funktionen befinden sich im Ordner [`DOCU/`](DOCU/).
@@ -39,17 +39,17 @@ Die folgende Übersicht dokumentiert, welche Funktionen bereits den WoW-Addon-Ri
 | `Core/Init.lua` | `NODHeal:RegisterModule` | ✅ geeignet | Sauberes Namespacing und Eingabevalidierung. |
 | `Core/Init.lua` | `NODHeal:GetModule` | ✅ geeignet | Standardisiertes Lookup ohne Seiteneffekte. |
 | `Core/CastTiming.lua` | `CastTiming:Compute` | ⚠️ teilweise geeignet | WoW-APIs korrekt genutzt, GCD noch statisch. |
-| `Core/IncomingHealAggregator.lua` | `IncomingHealAggregator:AddHeal` | ✅ geeignet | Nutzt `GetTime()` und lokale Queues regelkonform. |
-| `Core/IncomingHealAggregator.lua` | `IncomingHealAggregator:GetIncoming` | ✅ geeignet | Summiert Ereignisse API-konform, Aufräumlogik fehlt noch. |
+| `Core/IncomingHealAggregator.lua` | `IncomingHealAggregator:AddHeal` | ✅ geeignet | Nimmt GUID-basierte Payloads auf und dispatcht Ereignisse. |
+| `Core/IncomingHealAggregator.lua` | `IncomingHealAggregator:GetIncoming` | ✅ geeignet | Summiert Ereignisse API-konform inkl. automatischer Bereinigung. |
 | `UI/Init.lua` | `UI:Initialize` | ❌ nicht geeignet | Placeholder ohne Frame-Aufbau. |
-| `Core/AuraTickPredictor.lua` | `M.GetHoTTicks` | ⚠️ teilweise geeignet | Liefert HoT-Zeitplan via AuraUtil/UnitAura, Tick-Intervalle noch konfigurierbar. |
+| `Core/AuraTickPredictor.lua` | `M.GetHoTTicks` | ✅ geeignet | Liefert HoT-Zeitplan inkl. Tick-Beträgen und Cache je Einheit. |
 | `Core/CastLandingTime.lua` | `M.Initialize` | ⚠️ teilweise geeignet | Dispatcher-Hooks vorhanden, warten auf CoreDispatcher. |
 | `Core/CastLandingTime.lua` | `M.ComputeLandingTime` | ✅ geeignet | Berechnet `T_land` inkl. Latenz und Queue-Window. |
 | `Core/CastLandingTime.lua` | `M.TrackUnitCast` | ⚠️ teilweise geeignet | Ermittelt Cast-Zeitpunkte, benötigt Live-Events zum Feinschliff. |
 | `Core/CoreDispatcher.lua` | `M.Initialize` | ✅ geeignet | Erstellt Frame-Hub für Register-/Dispatch-Fluss. |
 | `Core/CoreDispatcher.lua` | `M.RegisterHandler` | ✅ geeignet | Hinterlegt Handler inkl. optionaler Throttle. |
 | `Core/CoreDispatcher.lua` | `M.Dispatch` | ✅ geeignet | Verteilt Events und respektiert Throttle-Zeitfenster. |
-| `Core/DamagePrediction.lua` | `M.PredictDamage` | ⚠️ teilweise geeignet | EMA-basierte CombatLog-Auswertung aktiv, Feintuning des Fensters offen. |
+| `Core/DamagePrediction.lua` | `M.Estimate` | ✅ geeignet | EMA-basierte CombatLog-Auswertung liefert Rate & Betrag bis Landezeit. |
 | `Core/DesyncGuard.lua` | `M.ApplyFreeze` | ✅ geeignet | Sperrt Overlay-Refresh kurz nach Caststart. |
 | `Core/DesyncGuard.lua` | `M.ReleaseFreeze` | ✅ geeignet | Hebt Freeze bei Cast-Ende/Cancels zuverlässig auf. |
 | `Core/EffectiveHP.lua` | `M.Calculate` | ✅ geeignet | Liest HP & Absorb live, liefert gepufferten EHP-Wert. |
@@ -68,5 +68,5 @@ Die folgende Übersicht dokumentiert, welche Funktionen bereits den WoW-Addon-Ri
 | `Core/LatencyTools.lua` | `M.GetLatency` | ✅ geeignet | Gibt gecachten Wert zurück. |
 | `Core/LatencyTools.lua` | `M.GetSpellQueueWindow` | ✅ geeignet | Exponiert CVar-gestützte Queue-Länge. |
 | `Core/PredictiveSolver.lua` | `M.Initialize` | ⚠️ teilweise geeignet | Registriert Abhängigkeiten inkl. Alias-Unterstützung. |
-| `Core/PredictiveSolver.lua` | `M.CalculateProjectedHealth` | ✅ geeignet | Kombiniert Snapshot, Schaden, Inc-Heals & Heal-Wert. |
+| `Core/PredictiveSolver.lua` | `M.CalculateProjectedHealth` | ✅ geeignet | Kombiniert Snapshot, Schaden, Inc-Heals, HoT-Daten & Heal-Wert. |
 | `Core/PredictiveSolver.lua` | `M.ComposeResult` | ✅ geeignet | Liefert Overlay-Werte samt Overheal & Confidence. |

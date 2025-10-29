@@ -22,6 +22,7 @@ end
 local EMA_WINDOW = 3 -- seconds used to smooth DPS samples
 local STALE_WINDOW = 5 -- seconds before clearing stale EMA data
 local MIN_DELTA = 0.2
+local math_huge = math.huge
 
 local damageBuckets = {}
 
@@ -96,34 +97,54 @@ function M.Initialize(dispatcher)
   end
 end
 
-function M.PredictDamage(unit, T_land)
+local function evaluateBucket(guid, tLand)
+  local bucket = damageBuckets[guid]
+  if not bucket then
+    return nil
+  end
+
+  local now = GetTime()
+  local age = now - (bucket.lastTimestamp or 0)
+  if age > STALE_WINDOW then
+    damageBuckets[guid] = nil
+    return nil
+  end
+
+  local horizon = (tLand or now) - now
+  if horizon <= 0 then
+    horizon = 0
+  end
+
+  local predicted = clampPositive(bucket.ema * horizon)
+  return {
+    amount = predicted,
+    rate = bucket.ema or 0,
+    horizon = horizon,
+    lastEventAge = age,
+  }
+end
+
+function M.Estimate(unit, T_land)
   if not unit then
-    return 0
+    return { amount = 0, rate = 0, horizon = 0, lastEventAge = math_huge }
   end
 
   local guid = UnitGUID(unit)
   if not guid then
-    return 0
+    return { amount = 0, rate = 0, horizon = 0, lastEventAge = math_huge }
   end
 
-  local bucket = damageBuckets[guid]
-  if not bucket then
-    return 0
+  local result = evaluateBucket(guid, T_land)
+  if not result then
+    return { amount = 0, rate = 0, horizon = (T_land and math.max(T_land - GetTime(), 0)) or 0, lastEventAge = math_huge }
   end
 
-  local now = GetTime()
-  if (now - (bucket.lastTimestamp or 0)) > STALE_WINDOW then
-    damageBuckets[guid] = nil
-    return 0
-  end
+  return result
+end
 
-  local horizon = (T_land or now) - now
-  if horizon <= 0 then
-    return 0
-  end
-
-  local predicted = bucket.ema * horizon
-  return clampPositive(predicted)
+function M.PredictDamage(unit, T_land)
+  local estimate = M.Estimate(unit, T_land)
+  return estimate.amount or 0
 end
 
 function M.DebugDump()
