@@ -14,6 +14,7 @@ NOD-Heal ist ein leistungsorientiertes Healing-Framework für den WoW-Client der
 - `Core/CastLandingTime` normalisiert Castzeiten (Millisekunden/Sekunden) und klemmt Warteschlange sowie Latenz auf sinnvolle Grenzwerte.
 - `Core/LatencyTools` aktualisiert Latenz- und Spell-Queue-Werte bei jeder Abfrage und clamped CVars gegen Ausreißer.
 - `Core/PredictiveSolver` verhindert negative Beiträge aus Schaden-, Heal- oder HoT-Bausteinen, bevor das projizierte Ergebnis berechnet wird.
+- `[D1-LHCAPI]`-Placeholder in IncomingHeals, IncomingHealAggregator und CoreDispatcher geben HealComm-Toggle- und Fallback-Logs über `print` aus (DEBUG-abhängig).
 
 Weitere Implementierungen folgen in iterativen Schritten (DamageForecast, AuraTickScheduler, UI-Overlays usw.). Details zu den geplanten Backend-Funktionen befinden sich im Ordner [`DOCU/`](DOCU/).
 
@@ -45,10 +46,11 @@ Hinweis: Dieser Abschnitt beschreibt den Arbeitsplan; Implementierung folgt in v
   - [`DOCU/NOD_Systemaufbau_Modulstruktur.md`](DOCU/NOD_Systemaufbau_Modulstruktur.md) – Architektur- und Modulübersicht mit Eingabe/Output-Tabellen.
   - [`DOCU/NOD_Konzept_Funktionsliste.txt`](DOCU/NOD_Konzept_Funktionsliste.txt) – Priorisierte Funktionsliste inkl. Klassifikationen.
   - UI-Frames und Funktionsreferenzen sind zusätzlich als YAML-Segmente unter [`docu/ui_frames/`](docu/ui_frames/) abgelegt und können bei Bedarf über [`scripts/generate_ui_frame_yaml.py`](scripts/generate_ui_frame_yaml.py) erneut aus dem Dump erzeugt werden (`unsorted.yaml` fasst derzeit 421 Rest-Einträge zusammen).
-  - [`DOCU/NOD_Machbarkeitsanalyse_Technik_MoP.md`](DOCU/NOD_Machbarkeitsanalyse_Technik_MoP.md) – Technische Analyse zu LibHealComm, API-Fallbacks und Raid-Performance.
-  - [`DOCU/Vergleich_NOD_vs_HealBot_FeatureAnalyse.md`](DOCU/Vergleich_NOD_vs_HealBot_FeatureAnalyse.md) – Gegenüberstellung HealBot vs. NOD.
-  - [`DOCU/HealingAddons_Funktionsvergleich_NOD_Integration.md`](DOCU/HealingAddons_Funktionsvergleich_NOD_Integration.md) – Feature-Matrix aktueller Healing-Addons.
-  - [`DOCU/Datei_und_Modulstruktur_NOD-Projektbaum.txt`](DOCU/Datei_und_Modulstruktur_NOD-Projektbaum.txt) – geplanter Projektbaum und Build-Checkliste.
+- [`DOCU/NOD_Machbarkeitsanalyse_Technik_MoP.md`](DOCU/NOD_Machbarkeitsanalyse_Technik_MoP.md) – Technische Analyse zu LibHealComm, API-Fallbacks und Raid-Performance.
+- [`DOCU/Vergleich_NOD_vs_HealBot_FeatureAnalyse.md`](DOCU/Vergleich_NOD_vs_HealBot_FeatureAnalyse.md) – Gegenüberstellung HealBot vs. NOD.
+- [`DOCU/HealingAddons_Funktionsvergleich_NOD_Integration.md`](DOCU/HealingAddons_Funktionsvergleich_NOD_Integration.md) – Feature-Matrix aktueller Healing-Addons.
+- [`DOCU/Datei_und_Modulstruktur_NOD-Projektbaum.txt`](DOCU/Datei_und_Modulstruktur_NOD-Projektbaum.txt) – geplanter Projektbaum und Build-Checkliste.
+- [`DOCU/NOD_Datenpfad_LHC_API.md`](DOCU/NOD_Datenpfad_LHC_API.md) – Dokumentation des LibHealComm-Datenpfads inklusive API-Fallback.
 
 ## WoW-API- und Richtlinien-Review (aktueller Stand)
 Die folgende Übersicht dokumentiert, welche Funktionen bereits den WoW-Addon-Richtlinien entsprechen und welche noch offene Implementierungsarbeiten oder API-Anbindungen benötigen.
@@ -60,6 +62,7 @@ Die folgende Übersicht dokumentiert, welche Funktionen bereits den WoW-Addon-Ri
 | `Core/CastTiming.lua` | `CastTiming:Compute` | ⚠️ teilweise geeignet | WoW-APIs korrekt genutzt, GCD noch statisch. |
 | `Core/IncomingHealAggregator.lua` | `IncomingHealAggregator:AddHeal` | ✅ geeignet | Nimmt GUID-basierte Payloads auf und dispatcht Ereignisse. |
 | `Core/IncomingHealAggregator.lua` | `IncomingHealAggregator:GetIncoming` | ✅ geeignet | Summiert Ereignisse API-konform inkl. automatischer Bereinigung. |
+| `Core/IncomingHealAggregator.lua` | `IncomingHealAggregator:scheduleFromTargets` | ⚠️ teilweise geeignet | `[D1-LHCAPI]`-Stub erzeugt Debug-Log, Queue-Aufbau folgt in Tag 2. |
 | `UI/Init.lua` | `UI:Initialize` | ❌ nicht geeignet | Placeholder ohne Frame-Aufbau. |
 | `Core/AuraTickPredictor.lua` | `M.GetHoTTicks` | ✅ geeignet | Liefert HoT-Zeitplan inkl. Tick-Beträgen und Cache je Einheit. |
 | `Core/CastLandingTime.lua` | `M.Initialize` | ⚠️ teilweise geeignet | Dispatcher-Hooks vorhanden, warten auf CoreDispatcher. |
@@ -68,6 +71,7 @@ Die folgende Übersicht dokumentiert, welche Funktionen bereits den WoW-Addon-Ri
 | `Core/CoreDispatcher.lua` | `M.Initialize` | ✅ geeignet | Erstellt Frame-Hub für Register-/Dispatch-Fluss. |
 | `Core/CoreDispatcher.lua` | `M.RegisterHandler` | ✅ geeignet | Hinterlegt Handler inkl. optionaler Throttle. |
 | `Core/CoreDispatcher.lua` | `M.Dispatch` | ✅ geeignet | Verteilt Events und respektiert Throttle-Zeitfenster. |
+| `Core/CoreDispatcher.lua` | `M.ToggleHealComm` | ⚠️ teilweise geeignet | `[D1-LHCAPI]`-Placeholder zur Steuerung des HealComm-Toggles (Log-Ausgabe, keine Persistenz). |
 | `Core/DamagePrediction.lua` | `M.Estimate` | ✅ geeignet | EMA-basierte CombatLog-Auswertung liefert Rate & Betrag bis Landezeit. |
 | `Core/DesyncGuard.lua` | `M.ApplyFreeze` | ✅ geeignet | Sperrt Overlay-Refresh kurz nach Caststart. |
 | `Core/DesyncGuard.lua` | `M.ReleaseFreeze` | ✅ geeignet | Hebt Freeze bei Cast-Ende/Cancels zuverlässig auf. |
@@ -81,7 +85,7 @@ Die folgende Übersicht dokumentiert, welche Funktionen bereits den WoW-Addon-Ri
 | `Core/HealValueEstimator.lua` | `M.FetchFallback` | ✅ geeignet | Liefert statische Werte aus Fallback-DB. |
 | `Core/IncomingHeals.lua` | `M.Initialize` | ⚠️ teilweise geeignet | Bindet LibHealComm-Callbacks, benötigt Praxistest. |
 | `Core/IncomingHeals.lua` | `M.CollectUntil` | ✅ geeignet | Aggregiert Heals bis `tLand` inkl. Fallback. |
-| `Core/IncomingHeals.lua` | `M.FetchFallback` | ✅ geeignet | Nutzt `UnitGetIncomingHeals` als Sicherheitsnetz. |
+| `Core/IncomingHeals.lua` | `M.FetchFallback` | ⚠️ teilweise geeignet | `[D1-LHCAPI]`-Stub mit Log-Rückmeldung (`UnitGetIncomingHeals` bleibt Fallback-Quelle). |
 | `Core/LatencyTools.lua` | `M.Initialize` | ✅ geeignet | Initialisiert Latenz- und Queue-Cache. |
 | `Core/LatencyTools.lua` | `M.Refresh` | ✅ geeignet | Liest `GetNetStats` & SpellQueueWindow defensiv. |
 | `Core/LatencyTools.lua` | `M.GetLatency` | ✅ geeignet | Gibt gecachten Wert zurück. |

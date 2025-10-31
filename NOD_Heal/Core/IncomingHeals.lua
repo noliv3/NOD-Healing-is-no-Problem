@@ -65,7 +65,7 @@ local function purgeExpired(targetGUID, now)
   end
 end
 
-local function scheduleFromTargets(casterGUID, spellID, endTime, targets)
+local function scheduleFromTargetsInternal(casterGUID, spellID, endTime, targets)
   if type(targets) ~= "table" then
     return
   end
@@ -115,6 +115,32 @@ end
 
 local M = {}
 
+-- REGION: LHC Callbacks
+-- [D1-LHCAPI] Registrierung von HealComm-Events
+function M.RegisterHealComm()
+  print("[NOD] RegisterHealComm() – Placeholder aktiviert")
+end
+
+-- [D1-LHCAPI] Deregistrierung von HealComm-Events
+function M.UnregisterHealComm()
+  print("[NOD] UnregisterHealComm() – Placeholder deaktiviert")
+end
+
+-- [D1-LHCAPI] Queue-Aufbau aus HealComm-Payload
+function M.scheduleFromTargets(casterGUID, spellID, targets, amount, t_land)
+  print("[NOD] scheduleFromTargets()", casterGUID, spellID, amount, t_land)
+  if scheduleFromTargetsInternal then
+    local effectiveEndTime = t_land
+    local effectiveTargets = targets
+    if type(targets) ~= "table" and type(amount) == "table" then
+      effectiveEndTime = targets
+      effectiveTargets = amount
+    end
+    scheduleFromTargetsInternal(casterGUID, spellID, effectiveEndTime, effectiveTargets)
+  end
+end
+-- ENDREGION
+
 function M.Initialize(libHealComm, dispatcher)
   libHandle = libHealComm
   dispatcherRef = dispatcher or dispatcherRef
@@ -127,15 +153,15 @@ function M.Initialize(libHealComm, dispatcher)
 
   if libHealComm and libHealComm.RegisterCallback then
     libHealComm:RegisterCallback(M, "HealComm_HealStarted", function(_, casterGUID, spellID, _, endTime, targets)
-      scheduleFromTargets(casterGUID, spellID, endTime, targets)
+      scheduleFromTargetsInternal(casterGUID, spellID, endTime, targets)
     end)
 
     libHealComm:RegisterCallback(M, "HealComm_HealUpdated", function(_, casterGUID, spellID, _, endTime, targets)
-      scheduleFromTargets(casterGUID, spellID, endTime, targets)
+      scheduleFromTargetsInternal(casterGUID, spellID, endTime, targets)
     end)
 
     libHealComm:RegisterCallback(M, "HealComm_HealDelayed", function(_, casterGUID, spellID, _, endTime, targets)
-      scheduleFromTargets(casterGUID, spellID, endTime, targets)
+      scheduleFromTargetsInternal(casterGUID, spellID, endTime, targets)
     end)
 
     libHealComm:RegisterCallback(M, "HealComm_HealStopped", function(_, casterGUID, spellID, _, targets)
@@ -195,9 +221,12 @@ function M.CollectUntil(unit, tLand)
   }
 end
 
+-- REGION: API Fallback
+-- [D1-LHCAPI] Blizzard-API-Fallback (UnitGetIncomingHeals)
 function M.FetchFallback(unit, tLand)
+  print("[NOD] FetchFallback()", unit, tLand)
   if not UnitGetIncomingHeals or not unit then
-    return 0
+    return 0, "fallback"
   end
 
   local amount = UnitGetIncomingHeals(unit) or 0
@@ -205,10 +234,14 @@ function M.FetchFallback(unit, tLand)
     amount = 0
   end
 
-  return amount
+  return amount, "fallback"
 end
+-- ENDREGION
 
+-- REGION: Cleanup
+-- [D1-LHCAPI] Queue-Bereinigung
 function M.CleanExpired(now, unit)
+  print("[NOD] CleanExpired() – Queue gereinigt (Stub)")
   local timestamp = now
   local unitRef = unit
 
@@ -229,6 +262,13 @@ function M.CleanExpired(now, unit)
   for guid in pairs(healQueue) do
     purgeExpired(guid, current)
   end
+end
+
+-- ENDREGION
+
+-- [D1-LHCAPI] Placeholder verification
+if DEBUG then
+  print("[NOD] LHC/API stub loaded")
 end
 
 return _G.NODHeal:RegisterModule("IncomingHeals", M)
