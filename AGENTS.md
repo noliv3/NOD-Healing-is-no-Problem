@@ -27,8 +27,7 @@ Diese Richtlinien gelten für das gesamte Repository, sofern in Unterordnern kei
 - SavedVariables und Debug-Toggles auf Persistenz- und Speicherbedarf prüfen.
 - Dokumentation (`README.md`, `DOCU/`) nachziehen und Version angeben.
 - Neuer Vermerk: `DOCU/NOD_Datenpfad_LHC_API.md` dokumentiert den LibHealComm-Datenpfad (Tag 1, Fallback-Spezifikation).
-- `[D1-LHCAPI]`-Stubs in `Core/IncomingHeals.lua`, `Core/IncomingHealAggregator.lua` und `Core/CoreDispatcher.lua` erzeugen DEBUG-Logs für HealComm-Toggle & Fallback.
-- Update 2025-03: Tag-1 `[D1-LHCAPI]`-Stubs decken jetzt Register-, Unregister-, `scheduleFromTargets`-, `FetchFallback`-, `CleanExpired`- und Toggle-Funktionen mit einheitlichem Logformat ab.
+- Tag‑1-LHC-Brücke produktiv: SavedVariables `NODHealDB.useLHC`, Slash `/nod healcomm`, LibHealComm-Callbacks, Aggregator-Cleanups sowie Mini-Status-UI liefern echte Laufzeit-Logs.
 - Build-Artefakte ohne Entwicklungsdateien paketieren.
 - Release-Notizen mit bekannten Risiken und Checks verlinken.
 - Smoke-Test im Client ohne LUA-Fehler bestätigen.
@@ -39,7 +38,7 @@ Viel Erfolg beim Ausbau des Addons!
 - Konform zur WoW-Addon-Konvention: `Core/Init.lua` (`RegisterModule`, `GetModule`), `Core/CastTiming.lua` (`CastTiming:Compute` mit statischem GCD, noch zu verfeinern) sowie `Core/IncomingHealAggregator.lua` (`AddHeal`, `GetIncoming`).
 - Backend-Grundpfad aktiv: `Core/HealthSnapshot.lua`, `Core/CastLandingTime.lua`, `Core/IncomingHeals.lua`, `Core/HealValueEstimator.lua`, `Core/PredictiveSolver.lua`, `Core/LatencyTools.lua` verfügen nun über lauffähige Kernfunktionen.
 - Welle 1 der Backend-Module ist nun lauffähig: `Core/DamagePrediction.lua` (liefert `Estimate` mit Rate & Betrag), `Core/AuraTickPredictor.lua` (Tick-Mengen + Sammelfunktion), `Core/IncomingHealAggregator.lua` (Dispatcher-gestützter Heal-Feed), `Core/EffectiveHP.lua`, `Core/DesyncGuard.lua`, `Core/CoreDispatcher.lua` liefern produktive Daten für den Solver.
-- Noch ohne funktionsfähige Umsetzung bzw. WoW-API-Anbindung: Frontend-Platzhalter `UI/Init.lua` sowie Erweiterungen außerhalb Welle 1.
+- Mini-Status-UI (`UI/Init.lua`) zeigt Quelle + Laufzeit (Ticker 0,5 s) und folgt dem HealComm-Toggle.
 - Stabilisierung 2025-03: `IncomingHealAggregator` und `IncomingHeals` besitzen jetzt `CleanExpired`-Hilfen mit Zeitpuffer; `CastLandingTime` normalisiert Castzeiten & Grenzwerte; `LatencyTools` refresht bei jeder Abfrage und klemmt CVars; `PredictiveSolver` klemmt negative Beiträge.
 
 ## Vor Merge prüfen
