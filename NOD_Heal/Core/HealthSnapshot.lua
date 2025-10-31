@@ -3,6 +3,7 @@
 -- API: UnitHealth, UnitHealthMax, UnitIsDeadOrGhost, UnitGetTotalAbsorbs
 
 local snapshotCache = {}
+local dispatcherRef
 
 local UnitHealth = UnitHealth
 local UnitHealthMax = UnitHealthMax
@@ -10,25 +11,54 @@ local UnitIsDeadOrGhost = UnitIsDeadOrGhost
 local UnitIsConnected = UnitIsConnected
 local UnitGetTotalAbsorbs = UnitGetTotalAbsorbs
 
+local pairs = pairs
+
+local function resetUnit(unit)
+  if unit then
+    snapshotCache[unit] = nil
+  end
+end
+
+local function wipeCache()
+  for key in pairs(snapshotCache) do
+    snapshotCache[key] = nil
+  end
+end
+
+local function obtainDispatcher()
+  if dispatcherRef then
+    return dispatcherRef
+  end
+
+  local namespace = _G.NODHeal
+  if namespace and namespace.GetModule then
+    dispatcherRef = namespace:GetModule("CoreDispatcher")
+  end
+
+  return dispatcherRef
+end
+
 local M = {}
 
 function M.Initialize(dispatcher)
-  local function invalidate(_, unit)
-    if unit then
-      snapshotCache[unit] = nil
-    end
+  dispatcherRef = dispatcher or obtainDispatcher()
+  local hub = dispatcherRef
+  if not hub or type(hub.RegisterHandler) ~= "function" then
+    return
   end
 
-  if dispatcher and dispatcher.RegisterHandler then
-    dispatcher:RegisterHandler("UNIT_HEALTH", invalidate)
-    dispatcher:RegisterHandler("UNIT_MAXHEALTH", invalidate)
-    dispatcher:RegisterHandler("UNIT_ABSORB_AMOUNT_CHANGED", invalidate)
-    dispatcher:RegisterHandler("GROUP_ROSTER_UPDATE", function()
-      for k in pairs(snapshotCache) do
-        snapshotCache[k] = nil
-      end
-    end)
-  end
+  hub:RegisterHandler("UNIT_HEALTH", function(_, unit)
+    resetUnit(unit)
+  end)
+  hub:RegisterHandler("UNIT_MAXHEALTH", function(_, unit)
+    resetUnit(unit)
+  end)
+  hub:RegisterHandler("UNIT_ABSORB_AMOUNT_CHANGED", function(_, unit)
+    resetUnit(unit)
+  end)
+  hub:RegisterHandler("GROUP_ROSTER_UPDATE", function()
+    wipeCache()
+  end)
 end
 
 function M.Capture(unit)
@@ -41,10 +71,26 @@ function M.Capture(unit)
     return cached
   end
 
-  local hpNow = UnitHealth(unit) or 0
-  local hpMax = UnitHealthMax(unit) or 1
-  local absorbs = UnitGetTotalAbsorbs and (UnitGetTotalAbsorbs(unit) or 0) or 0
-  local isDead = UnitIsDeadOrGhost(unit) or false
+  local hpNow = UnitHealth and (UnitHealth(unit) or 0) or 0
+  local hpMax = UnitHealthMax and (UnitHealthMax(unit) or 0) or 0
+  if hpMax <= 0 then
+    hpMax = 1
+  end
+  if hpNow < 0 then
+    hpNow = 0
+  elseif hpNow > hpMax then
+    hpNow = hpMax
+  end
+
+  local absorbs = 0
+  if UnitGetTotalAbsorbs then
+    absorbs = UnitGetTotalAbsorbs(unit) or 0
+    if absorbs < 0 then
+      absorbs = 0
+    end
+  end
+
+  local isDead = UnitIsDeadOrGhost and UnitIsDeadOrGhost(unit) or false
   local isConnected = UnitIsConnected and UnitIsConnected(unit)
   local isOffline = isConnected == false
 
@@ -70,9 +116,13 @@ function M.FlagOfflineState(unit)
     snapshot = M.Capture(unit)
   end
 
-  snapshot.isDead = UnitIsDeadOrGhost(unit) or false
+  if not snapshot then
+    return
+  end
+
+  snapshot.isDead = UnitIsDeadOrGhost and UnitIsDeadOrGhost(unit) or false
   local isConnected = UnitIsConnected and UnitIsConnected(unit)
   snapshot.isOffline = isConnected == false
 end
 
-return M
+return _G.NODHeal:RegisterModule("HealthSnapshot", M)

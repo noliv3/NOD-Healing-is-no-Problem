@@ -7,6 +7,7 @@ local pairs = pairs
 local wipe = wipe
 
 local FREEZE_DURATION = 0.15
+local dispatcherRef
 
 local freezeState = {}
 
@@ -44,35 +45,53 @@ local function clearFreeze(unit)
   freezeState[unit] = nil
 end
 
+local function obtainDispatcher()
+  if dispatcherRef then
+    return dispatcherRef
+  end
+
+  local namespace = _G.NODHeal
+  if namespace and namespace.GetModule then
+    dispatcherRef = namespace:GetModule("CoreDispatcher")
+  end
+
+  return dispatcherRef
+end
+
 local M = {}
 
 function M.Initialize(dispatcher)
-  if dispatcher and dispatcher.RegisterHandler then
-    dispatcher:RegisterHandler("UNIT_SPELLCAST_START", function(_, unit)
-      activateFreeze(unit)
-    end)
-    dispatcher:RegisterHandler("UNIT_SPELLCAST_CHANNEL_START", function(_, unit)
-      activateFreeze(unit)
-    end)
-    dispatcher:RegisterHandler("UNIT_SPELLCAST_CHANNEL_STOP", function(_, unit)
-      clearFreeze(unit)
-    end)
-    dispatcher:RegisterHandler("UNIT_SPELLCAST_STOP", function(_, unit)
-      clearFreeze(unit)
-    end)
-    dispatcher:RegisterHandler("UNIT_SPELLCAST_INTERRUPTED", function(_, unit)
-      clearFreeze(unit)
-    end)
-    dispatcher:RegisterHandler("UNIT_SPELLCAST_FAILED", function(_, unit)
-      clearFreeze(unit)
-    end)
-    dispatcher:RegisterHandler("UNIT_SPELLCAST_SUCCEEDED", function(_, unit)
-      clearFreeze(unit)
-    end)
-    dispatcher:RegisterHandler("GROUP_ROSTER_UPDATE", function()
-      wipe(freezeState)
-    end)
+  dispatcherRef = dispatcher or obtainDispatcher()
+
+  local hub = dispatcherRef
+  if not hub or type(hub.RegisterHandler) ~= "function" then
+    return
   end
+
+  hub:RegisterHandler("UNIT_SPELLCAST_START", function(_, unit)
+    activateFreeze(unit)
+  end)
+  hub:RegisterHandler("UNIT_SPELLCAST_CHANNEL_START", function(_, unit)
+    activateFreeze(unit)
+  end)
+  hub:RegisterHandler("UNIT_SPELLCAST_CHANNEL_STOP", function(_, unit)
+    clearFreeze(unit)
+  end)
+  hub:RegisterHandler("UNIT_SPELLCAST_STOP", function(_, unit)
+    clearFreeze(unit)
+  end)
+  hub:RegisterHandler("UNIT_SPELLCAST_INTERRUPTED", function(_, unit)
+    clearFreeze(unit)
+  end)
+  hub:RegisterHandler("UNIT_SPELLCAST_FAILED", function(_, unit)
+    clearFreeze(unit)
+  end)
+  hub:RegisterHandler("UNIT_SPELLCAST_SUCCEEDED", function(_, unit)
+    clearFreeze(unit)
+  end)
+  hub:RegisterHandler("GROUP_ROSTER_UPDATE", function()
+    wipe(freezeState)
+  end)
 end
 
 function M.ApplyFreeze(unit)
@@ -97,4 +116,4 @@ function M.IsFrozen(unit)
   return state.active == true
 end
 
-return M
+return _G.NODHeal:RegisterModule("DesyncGuard", M)

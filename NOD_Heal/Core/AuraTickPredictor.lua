@@ -212,9 +212,17 @@ function M.Initialize(dispatcher)
   end
 end
 
+function M.RefreshUnit(unit)
+  if not unit then
+    return
+  end
+
+  auraCache[unit] = nil
+end
+
 function M.GetHoTTicks(unit, spellID, T_land)
   if not unit or not spellID then
-    return { count = 0, ticks = {}, expires = 0, tickInterval = 0, tickAmount = 0, total = 0 }
+    return { ticks = {}, total = 0, count = 0, expires = 0, tickInterval = 0, tickAmount = 0 }
   end
 
   local now = GetTime()
@@ -237,7 +245,7 @@ function M.GetHoTTicks(unit, spellID, T_land)
 
   local aura = fetchAura(unit, spellID)
   if not aura then
-    unitCache[key] = { count = 0, ticks = {}, expires = 0, tickInterval = 0, tickAmount = 0, total = 0 }
+    unitCache[key] = { ticks = {}, total = 0, count = 0, expires = 0, tickInterval = 0, tickAmount = 0 }
     return unitCache[key]
   end
 
@@ -319,4 +327,4 @@ function M.CollectHoTs(unit, spellFilter, T_land)
   }
 end
 
-return M
+return _G.NODHeal:RegisterModule("AuraTickPredictor", M)

@@ -27,6 +27,27 @@ local function ensureFrame()
   return dispatcherFrame
 end
 
+local function normalizeThrottle(options)
+  if type(options) == "number" then
+    return options
+  end
+
+  if type(options) == "table" then
+    if type(options.throttleMs) == "number" then
+      return options.throttleMs
+    end
+    if type(options.throttle) == "number" then
+      -- Compatibility with older callers passing seconds
+      if options.throttle > 10 then
+        return options.throttle
+      end
+      return options.throttle * 1000
+    end
+  end
+
+  return nil
+end
+
 local function addHandler(event, func, options)
   local handlers = eventHandlers[event]
   if not handlers then
@@ -34,10 +55,15 @@ local function addHandler(event, func, options)
     eventHandlers[event] = handlers
   end
 
+  local throttleMs = normalizeThrottle(options)
+  if throttleMs and throttleMs < 0 then
+    throttleMs = 0
+  end
+
   local entry = {
     callback = func,
-    throttle = options and options.throttle or nil,
-    lastCall = 0,
+    throttleMs = throttleMs,
+    nextAllowed = 0,
   }
 
   tinsert(handlers, entry)
@@ -46,6 +72,12 @@ end
 
 function M.Initialize()
   ensureFrame()
+  for event in pairs(registeredEvents) do
+    registeredEvents[event] = nil
+  end
+  for key in pairs(eventHandlers) do
+    eventHandlers[key] = nil
+  end
 end
 
 function M.RegisterHandler(event, func, options)
@@ -76,13 +108,48 @@ function M.Dispatch(event, ...)
   for index = 1, #handlers do
     local handler = handlers[index]
     if handler then
-      local throttle = handler.throttle
-      if not throttle or (now - handler.lastCall) >= throttle then
-        handler.lastCall = now
+      local throttleMs = handler.throttleMs
+      if throttleMs and throttleMs > 0 then
+        local throttleSeconds = throttleMs / 1000
+        if not handler.nextAllowed or handler.nextAllowed <= now then
+          handler.nextAllowed = now + throttleSeconds
+          handler.callback(event, ...)
+        end
+      else
         handler.callback(event, ...)
       end
     end
   end
+end
+
+function M.SetThrottle(event, throttleMs)
+  if not event then
+    return
+  end
+
+  local handlers = eventHandlers[event]
+  if not handlers then
+    return
+  end
+
+  local clamped = throttleMs
+  if clamped and clamped < 0 then
+    clamped = 0
+  end
+
+  local now = GetTime()
+  for index = 1, #handlers do
+    local handler = handlers[index]
+    if handler then
+      handler.throttleMs = clamped
+      if not clamped or clamped == 0 then
+        handler.nextAllowed = now
+      elseif not handler.nextAllowed or handler.nextAllowed < now then
+        handler.nextAllowed = now
+      end
+    end
+  end
+end
 end
 
 function M.Reset()
@@ -98,6 +165,11 @@ function M.Reset()
   for k in pairs(eventHandlers) do
     eventHandlers[k] = nil
   end
+end
+
+local namespace = _G.NODHeal
+if namespace and namespace.RegisterModule then
+  return namespace:RegisterModule("CoreDispatcher", M)
 end
 
 return M
