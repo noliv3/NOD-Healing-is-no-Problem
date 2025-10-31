@@ -8,6 +8,13 @@ NOD-Heal ist ein leistungsorientiertes Healing-Framework für den WoW-Client der
 - DamagePrediction, AuraTickPredictor, IncomingHealAggregator, EffectiveHP, DesyncGuard und CoreDispatcher arbeiten nun mit produktiven WoW-API-Anbindungen und sind an den Solver angebunden.
 - TOC-Datei mit Load-Reihenfolge eingerichtet.
 
+### Backend-Stabilisierung
+- `Core/IncomingHealAggregator` stellt jetzt eine explizite `CleanExpired`-Routine bereit und bereinigt Queues mit Toleranzpuffer, um veraltete Einträge zuverlässig zu entfernen.
+- `Core/IncomingHeals` nutzt dieselbe Ablauf-Logik und bietet ebenfalls `CleanExpired`, inklusive sanfter Fallbacks für fehlende Timestamps.
+- `Core/CastLandingTime` normalisiert Castzeiten (Millisekunden/Sekunden) und klemmt Warteschlange sowie Latenz auf sinnvolle Grenzwerte.
+- `Core/LatencyTools` aktualisiert Latenz- und Spell-Queue-Werte bei jeder Abfrage und clamped CVars gegen Ausreißer.
+- `Core/PredictiveSolver` verhindert negative Beiträge aus Schaden-, Heal- oder HoT-Bausteinen, bevor das projizierte Ergebnis berechnet wird.
+
 Weitere Implementierungen folgen in iterativen Schritten (DamageForecast, AuraTickScheduler, UI-Overlays usw.). Details zu den geplanten Backend-Funktionen befinden sich im Ordner [`DOCU/`](DOCU/).
 
 ## Entwicklung

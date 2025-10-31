@@ -10,6 +10,7 @@ local GetNetStats = GetNetStats
 local UnitCastingInfo = UnitCastingInfo
 local UnitChannelInfo = UnitChannelInfo
 local math_max = math.max
+local math_min = math.min
 
 local latencyModule
 
@@ -55,16 +56,20 @@ local function computeQueueWindow()
 end
 
 local function resolveCastTime(castInfo)
-  if castInfo.castTime then
+  if castInfo.castTime and castInfo.castTime > 0 then
     return castInfo.castTime
   end
 
-  if castInfo.startTime and castInfo.endTime then
-    local duration = (castInfo.endTime - castInfo.startTime)
+  local startTime = castInfo.startTime
+  local endTime = castInfo.endTime
+  if startTime and endTime and endTime > startTime then
+    if endTime > 1000000 or startTime > 1000000 then
+      startTime = startTime / 1000
+      endTime = endTime / 1000
+    end
+
+    local duration = endTime - startTime
     if duration > 0 then
-      if duration > 1000 then
-        return duration / 1000
-      end
       return duration
     end
   end
@@ -120,10 +125,15 @@ function M.ComputeLandingTime(castInfo)
     return nil
   end
 
-  local castTime = resolveCastTime(castInfo)
-  local gcd = resolveGCD(castInfo)
+  local castTime = math_max(resolveCastTime(castInfo), 0)
+  local gcd = math_max(resolveGCD(castInfo), 0)
   local queue = castInfo.spellQueueWindow or computeQueueWindow()
   local latency = castInfo.latency or computeLatency()
+
+  queue = math_max(queue or 0, 0)
+  queue = math_min(queue, 1.5)
+  latency = math_max(latency or 0, 0)
+  latency = math_min(latency, 1.5)
 
   local total = castTime + gcd + queue + latency
 

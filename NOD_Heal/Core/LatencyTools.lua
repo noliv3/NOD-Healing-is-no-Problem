@@ -9,6 +9,7 @@ local GetNetStats = GetNetStats
 local GetTime = GetTime
 local C_CVar = C_CVar
 local math_max = math.max
+local math_min = math.min
 
 local lastUpdate = 0
 
@@ -32,24 +33,35 @@ function M.Refresh()
   if GetNetStats then
     local _, _, home, world = GetNetStats()
     local highest = math_max(home or 0, world or 0)
-    if highest > 0 then
-      latencySeconds = highest / 1000
+    if highest < 0 then
+      highest = 0
     end
+    latencySeconds = highest / 1000
   end
 
   if C_CVar and C_CVar.GetCVar then
     local queueWindow = tonumber(C_CVar.GetCVar("SpellQueueWindow"))
     if queueWindow then
+      queueWindow = math_max(queueWindow, 0)
+      queueWindow = math_min(queueWindow, 1500)
       spellQueueSeconds = queueWindow / 1000
     end
+  end
+
+  if spellQueueSeconds < 0 then
+    spellQueueSeconds = 0
+  elseif spellQueueSeconds > 1.5 then
+    spellQueueSeconds = 1.5
   end
 end
 
 function M.GetLatency()
+  M.Refresh()
   return latencySeconds
 end
 
 function M.GetSpellQueueWindow()
+  M.Refresh()
   return spellQueueSeconds
 end
 
