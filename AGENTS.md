@@ -28,6 +28,7 @@ Diese Richtlinien gelten für das gesamte Repository, sofern in Unterordnern kei
 - Dokumentation (`README.md`, `DOCU/`) nachziehen und Version angeben.
 - Neuer Vermerk: `DOCU/NOD_Datenpfad_LHC_API.md` dokumentiert den LibHealComm-Datenpfad (Tag 1, Fallback-Spezifikation).
 - `[D1-LHCAPI]`-Stubs in `Core/IncomingHeals.lua`, `Core/IncomingHealAggregator.lua` und `Core/CoreDispatcher.lua` erzeugen DEBUG-Logs für HealComm-Toggle & Fallback.
+- Update 2025-03: Tag-1 `[D1-LHCAPI]`-Stubs decken jetzt Register-, Unregister-, `scheduleFromTargets`-, `FetchFallback`-, `CleanExpired`- und Toggle-Funktionen mit einheitlichem Logformat ab.
 - Build-Artefakte ohne Entwicklungsdateien paketieren.
 - Release-Notizen mit bekannten Risiken und Checks verlinken.
 - Smoke-Test im Client ohne LUA-Fehler bestätigen.

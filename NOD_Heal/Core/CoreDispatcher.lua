@@ -1,6 +1,7 @@
 -- Module: CoreDispatcher
 -- Purpose: Provide a central frame-backed event hub with lightweight throttling for backend coordination.
 -- API: CreateFrame, RegisterEvent, GetTime
+-- Referenz: /DOCU/NOD_Datenpfad_LHC_API.md §Ereignisfluss
 
 local CreateFrame = CreateFrame
 local GetTime = GetTime
@@ -14,10 +15,36 @@ local registeredEvents = {}
 
 local M = {}
 
--- REGION: Toggle Handling
+-- REGION: LHC/API Stubs
+-- [D1-LHCAPI] Registrierung von HealComm-Events (Dispatcher-Sicht)
+function M.RegisterHealComm()
+  print("[NOD] RegisterHealComm() – Placeholder aktiviert")
+end
+
+-- [D1-LHCAPI] Deregistrierung von HealComm-Events (Dispatcher-Sicht)
+function M.UnregisterHealComm()
+  print("[NOD] UnregisterHealComm() – Placeholder deaktiviert")
+end
+
+-- [D1-LHCAPI] Queue-Delegation an Dispatcher (Stub)
+function M.scheduleFromTargets(casterGUID, spellID, targets, amount, t_land)
+  print(string.format("[NOD] scheduleFromTargets() %s %s %s %s", tostring(casterGUID), tostring(spellID), tostring(amount), tostring(t_land)))
+end
+
+-- [D1-LHCAPI] Dispatcher-Fallback (Stub)
+function M.FetchFallback(unit)
+  print(string.format("[NOD] FetchFallback() %s", tostring(unit)))
+  return 0, "fallback"
+end
+
+-- [D1-LHCAPI] Dispatcher-Cleanup für HealComm-Stub
+function M.CleanExpired()
+  print("[NOD] CleanExpired() – Queue gereinigt (Stub)")
+end
+
 -- [D1-LHCAPI] Toggle-Kommandos für /nod healcomm
 function M.ToggleHealComm(state)
-  print("[NOD] ToggleHealComm()", state)
+  print(string.format("[NOD] ToggleHealComm() %s", tostring(state)))
 end
 -- ENDREGION
 

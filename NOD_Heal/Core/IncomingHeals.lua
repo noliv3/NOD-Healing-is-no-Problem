@@ -2,6 +2,7 @@
 -- Purpose: Read-only interface to collect incoming heals until tLand using LHC/API fallback.
 -- Role: Provides aggregated view for solver consumption; no dispatch or persistent queues here.
 -- See also: IncomingHealAggregator (write-side feed & dispatcher)
+-- Referenz: /DOCU/NOD_Datenpfad_LHC_API.md §Ereignisfluss
 
 local healQueue = {}
 local libHandle
@@ -128,7 +129,7 @@ end
 
 -- [D1-LHCAPI] Queue-Aufbau aus HealComm-Payload
 function M.scheduleFromTargets(casterGUID, spellID, targets, amount, t_land)
-  print("[NOD] scheduleFromTargets()", casterGUID, spellID, amount, t_land)
+  print(string.format("[NOD] scheduleFromTargets() %s %s %s %s", tostring(casterGUID), tostring(spellID), tostring(amount), tostring(t_land)))
   if scheduleFromTargetsInternal then
     local effectiveEndTime = t_land
     local effectiveTargets = targets
@@ -138,6 +139,13 @@ function M.scheduleFromTargets(casterGUID, spellID, targets, amount, t_land)
     end
     scheduleFromTargetsInternal(casterGUID, spellID, effectiveEndTime, effectiveTargets)
   end
+end
+-- ENDREGION
+
+-- REGION: HealComm Toggle
+-- [D1-LHCAPI] Toggle-Kommandos für HealComm-Platzhalter
+function M.ToggleHealComm(state)
+  print(string.format("[NOD] ToggleHealComm() %s", tostring(state)))
 end
 -- ENDREGION
 
@@ -224,7 +232,7 @@ end
 -- REGION: API Fallback
 -- [D1-LHCAPI] Blizzard-API-Fallback (UnitGetIncomingHeals)
 function M.FetchFallback(unit, tLand)
-  print("[NOD] FetchFallback()", unit, tLand)
+  print(string.format("[NOD] FetchFallback() %s", tostring(unit)))
   if not UnitGetIncomingHeals or not unit then
     return 0, "fallback"
   end
