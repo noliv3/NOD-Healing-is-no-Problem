@@ -26,6 +26,7 @@ Diese Richtlinien gelten für das gesamte Repository, sofern in Unterordnern kei
 - Latenz- und Queue-Werte mit Live-API oder Mock-Werten plausibilisieren.
 - SavedVariables und Debug-Toggles auf Persistenz- und Speicherbedarf prüfen.
 - Dokumentation (`README.md`, `DOCU/`) nachziehen und Version angeben.
+- Neuer Vermerk: `DOCU/NOD_Datenpfad_LHC_API.md` dokumentiert den LibHealComm-Datenpfad (Tag 1, Fallback-Spezifikation).
 - Build-Artefakte ohne Entwicklungsdateien paketieren.
 - Release-Notizen mit bekannten Risiken und Checks verlinken.
 - Smoke-Test im Client ohne LUA-Fehler bestätigen.
