@@ -1,0 +1,40 @@
+# Auto-generated from DOCU/NOD_Konzept_Funktionsliste.txt
+# Category: core
+# Description: Core dispatcher frames, secure handlers, and shared UI infrastructure.
+
+'ExtraActionBarFrame':
+  type: Frame
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'MainMenuExpBar':
+  type: StatusBar
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'MainMenuMicroButton':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'PossessBarFrame':
+  type: Frame
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'SecureHandlersUpdateFrame':
+  type: Frame
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'StanceBarFrame':
+  type: Frame
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'UIParent':
+  type: Frame
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'UIParentBottomManagedFrameContainer':
+  type: Frame
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'WorldFrame':
+  type: Frame
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt

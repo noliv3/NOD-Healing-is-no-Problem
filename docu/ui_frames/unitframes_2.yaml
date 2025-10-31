@@ -1,0 +1,1032 @@
+# Auto-generated from DOCU/NOD_Konzept_Funktionsliste.txt
+# Category: unitframes
+# Description: Unit frames for players, parties, raids, bosses, and their resources.
+
+'PartyMemberFrame4PowerBarAltCounterBarDigit7':
+  type: Frame
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'PartyMemberFrame4PowerBarAltStatusFrame':
+  type: StatusBar
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'PartyMemberFrame4PowerBarAltStatusFrameText':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'PartyMemberFrame4ReadyCheck':
+  type: Frame
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'PetActionBarFrame':
+  type: Frame
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'PetActionButton10Count':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'PetActionButton10HotKey':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'PetActionButton10Name':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'PetActionButton10Shine':
+  type: Frame
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'PetActionButton1Count':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'PetActionButton1HotKey':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'PetActionButton1Name':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'PetActionButton1Shine':
+  type: Frame
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'PetActionButton2Count':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'PetActionButton2HotKey':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'PetActionButton2Name':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'PetActionButton2Shine':
+  type: Frame
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'PetActionButton3Count':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'PetActionButton3HotKey':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'PetActionButton3Name':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'PetActionButton3Shine':
+  type: Frame
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'PetActionButton4Count':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'PetActionButton4HotKey':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'PetActionButton4Name':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'PetActionButton4Shine':
+  type: Frame
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'PetActionButton5Count':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'PetActionButton5HotKey':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'PetActionButton5Name':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'PetActionButton5Shine':
+  type: Frame
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'PetActionButton6Count':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'PetActionButton6HotKey':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'PetActionButton6Name':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'PetActionButton6Shine':
+  type: Frame
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'PetActionButton7Count':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'PetActionButton7HotKey':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'PetActionButton7Name':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'PetActionButton7Shine':
+  type: Frame
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'PetActionButton8Count':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'PetActionButton8HotKey':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'PetActionButton8Name':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'PetActionButton8Shine':
+  type: Frame
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'PetActionButton9Count':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'PetActionButton9HotKey':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'PetActionButton9Name':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'PetActionButton9Shine':
+  type: Frame
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'PetFrame':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'PetFrameDebuff1':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'PetFrameDebuff2':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'PetFrameDebuff3':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'PetFrameDebuff4':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'PetFrameHealAbsorbBar':
+  type: Frame
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'PetFrameHealthBar':
+  type: StatusBar
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'PetFrameHealthBarText':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'PetFrameHealthBarTextLeft':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'PetFrameHealthBarTextRight':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'PetFrameManaBar':
+  type: StatusBar
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'PetFrameManaBarText':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'PetFrameManaBarTextLeft':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'PetFrameManaBarTextRight':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'PetFrameMyHealPredictionBar':
+  type: Frame
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'PetFrameOtherHealPredictionBar':
+  type: Frame
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'PetFrameTotalAbsorbBar':
+  type: Frame
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'PlayerFrame':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'PlayerFrameAlternateManaBar':
+  type: StatusBar
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'PlayerFrameAlternateManaBarText':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'PlayerFrameGroupIndicator':
+  type: Frame
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'PlayerFrameGroupIndicatorText':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'PlayerFrameHealthBar':
+  type: StatusBar
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'PlayerFrameHealthBarText':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'PlayerFrameHealthBarTextLeft':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'PlayerFrameHealthBarTextRight':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'PlayerFrameManaBar':
+  type: StatusBar
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'PlayerFrameManaBarText':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'PlayerFrameManaBarTextLeft':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'PlayerFrameManaBarTextRight':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'PlayerFrameReadyCheck':
+  type: Frame
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'PlayerPowerBarAlt':
+  type: Frame
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'PlayerPowerBarAltCounterBar':
+  type: Frame
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'PlayerPowerBarAltCounterBarDigit1':
+  type: Frame
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'PlayerPowerBarAltCounterBarDigit2':
+  type: Frame
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'PlayerPowerBarAltCounterBarDigit3':
+  type: Frame
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'PlayerPowerBarAltCounterBarDigit4':
+  type: Frame
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'PlayerPowerBarAltCounterBarDigit5':
+  type: Frame
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'PlayerPowerBarAltCounterBarDigit6':
+  type: Frame
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'PlayerPowerBarAltCounterBarDigit7':
+  type: Frame
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'PlayerPowerBarAltStatusFrame':
+  type: StatusBar
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'PlayerPowerBarAltStatusFrameText':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'PriestBarFrame':
+  type: Frame
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'PriestBarFrameOrb1':
+  type: Frame
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'PriestBarFrameOrb2':
+  type: Frame
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'PriestBarFrameOrb3':
+  type: Frame
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'RaidBossEmoteFrame':
+  type: Frame
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'RaidBossEmoteFrameSlot1':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'RaidBossEmoteFrameSlot2':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'RaidFinderFrame':
+  type: Frame
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'RaidFinderFrameBottomInset':
+  type: Frame
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'RaidFinderFrameFindRaidButton':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'RaidFinderFrameFindRaidButtonText':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'RaidFinderFrameRoleInset':
+  type: Frame
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'RaidFinderQueueFrame':
+  type: Frame
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'RaidFinderQueueFrameCooldownFrame':
+  type: Frame
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'RaidFinderQueueFrameCooldownFrameDescription':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'RaidFinderQueueFrameCooldownFrameName1':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'RaidFinderQueueFrameCooldownFrameName2':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'RaidFinderQueueFrameCooldownFrameName3':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'RaidFinderQueueFrameCooldownFrameName4':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'RaidFinderQueueFrameCooldownFrameName5':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'RaidFinderQueueFrameCooldownFrameName6':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'RaidFinderQueueFrameCooldownFrameName7':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'RaidFinderQueueFrameCooldownFrameName8':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'RaidFinderQueueFrameCooldownFrameStatus1':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'RaidFinderQueueFrameCooldownFrameStatus2':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'RaidFinderQueueFrameCooldownFrameStatus3':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'RaidFinderQueueFrameCooldownFrameStatus4':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'RaidFinderQueueFrameCooldownFrameStatus5':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'RaidFinderQueueFrameCooldownFrameStatus6':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'RaidFinderQueueFrameCooldownFrameStatus7':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'RaidFinderQueueFrameCooldownFrameStatus8':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'RaidFinderQueueFrameCooldownFrameTime':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'RaidFinderQueueFrameIneligibleFrame':
+  type: Frame
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'RaidFinderQueueFrameIneligibleFrameDescription':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'RaidFinderQueueFrameIneligibleFrameLeaveQueueButton':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'RaidFinderQueueFrameIneligibleFrameLeaveQueueButtonText':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'RaidFinderQueueFramePartyBackfill':
+  type: Frame
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'RaidFinderQueueFramePartyBackfillBackfillButton':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'RaidFinderQueueFramePartyBackfillBackfillButtonText':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'RaidFinderQueueFramePartyBackfillDescription':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'RaidFinderQueueFramePartyBackfillNoBackfillButton':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'RaidFinderQueueFramePartyBackfillNoBackfillButtonText':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'RaidFinderQueueFrameRoleButtonDPS':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'RaidFinderQueueFrameRoleButtonDPSIncentiveIcon':
+  type: Frame
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'RaidFinderQueueFrameRoleButtonHealer':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'RaidFinderQueueFrameRoleButtonHealerIncentiveIcon':
+  type: Frame
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'RaidFinderQueueFrameRoleButtonLeader':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'RaidFinderQueueFrameRoleButtonTank':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'RaidFinderQueueFrameRoleButtonTankIncentiveIcon':
+  type: Frame
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'RaidFinderQueueFrameScrollFrameChildFrame':
+  type: Frame
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'RaidFinderQueueFrameScrollFrameChildFrameDescription':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'RaidFinderQueueFrameScrollFrameChildFrameEncounterList':
+  type: Frame
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'RaidFinderQueueFrameScrollFrameChildFrameItem1':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'RaidFinderQueueFrameScrollFrameChildFrameItem1Count':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'RaidFinderQueueFrameScrollFrameChildFrameItem1Name':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'RaidFinderQueueFrameScrollFrameChildFrameItem1RoleIcon1':
+  type: Frame
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'RaidFinderQueueFrameScrollFrameChildFrameItem1RoleIcon2':
+  type: Frame
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'RaidFinderQueueFrameScrollFrameChildFrameMoneyReward':
+  type: Frame
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'RaidFinderQueueFrameScrollFrameChildFrameMoneyRewardCount':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'RaidFinderQueueFrameScrollFrameChildFrameMoneyRewardName':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'RaidFinderQueueFrameScrollFrameChildFrameRandomList':
+  type: Frame
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'RaidFinderQueueFrameScrollFrameChildFrameRewardsDescription':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'RaidFinderQueueFrameScrollFrameChildFrameRewardsLabel':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'RaidFinderQueueFrameScrollFrameChildFrameSpacer':
+  type: Frame
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'RaidFinderQueueFrameScrollFrameChildFrameTitle':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'RaidFinderQueueFrameScrollFrameChildFrameXPAmount':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'RaidFinderQueueFrameScrollFrameChildFrameXPLabel':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'RaidFinderQueueFrameSelectionDropdown':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'RaidFinderQueueFrameSelectionDropdownName':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'RaidFrame':
+  type: Frame
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'RaidFrameAllAssistCheckButtonText':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'RaidFrameConvertToRaidButton':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'RaidFrameConvertToRaidButtonText':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'RaidFrameNotInRaid':
+  type: Frame
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'RaidFrameRaidDescription':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'RaidFrameRaidInfoButton':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'RaidFrameRaidInfoButtonText':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'RaidInfoCancelButton':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'RaidInfoCancelButtonText':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'RaidInfoCloseButton':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'RaidInfoExtendButton':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'RaidInfoExtendButtonText':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'RaidInfoFrame':
+  type: Frame
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'RaidInfoHeader':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'RaidInfoIDLabel':
+  type: Frame
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'RaidInfoInstanceLabel':
+  type: Frame
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'RaidParentFrame':
+  type: Frame
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'RaidParentFrameCloseButton':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'RaidParentFrameInset':
+  type: Frame
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'RaidParentFrameTab1':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'RaidParentFrameTab1Text':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'RaidParentFrameTab2':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'RaidParentFrameTab2Text':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'RaidParentFrameTitleText':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'RaidWarningFrame':
+  type: Frame
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'RaidWarningFrameSlot1':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'RaidWarningFrameSlot2':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'Rune1':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'Rune1Border':
+  type: Frame
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'Rune1Shine':
+  type: Frame
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'Rune2':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'Rune2Border':
+  type: Frame
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'Rune2Shine':
+  type: Frame
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'Rune3':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'Rune3Border':
+  type: Frame
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'Rune3Shine':
+  type: Frame
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'Rune4':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'Rune4Border':
+  type: Frame
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'Rune4Shine':
+  type: Frame
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'Rune5':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'Rune5Border':
+  type: Frame
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'Rune5Shine':
+  type: Frame
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'Rune6':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'Rune6Border':
+  type: Frame
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'Rune6Shine':
+  type: Frame
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'RuneFrame':
+  type: Frame
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'ShardBarFrame':
+  type: Frame
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'ShardBarFrameShard1':
+  type: Frame
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'ShardBarFrameShard2':
+  type: Frame
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'ShardBarFrameShard3':
+  type: Frame
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'ShardBarFrameShard4':
+  type: Frame
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'TargetFrame':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'TargetFrameBuffs':
+  type: Frame
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'TargetFrameDebuffs':
+  type: Frame
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'TargetFrameHealthBar':
+  type: StatusBar
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'TargetFrameManaBar':
+  type: StatusBar
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'TargetFrameNumericalThreat':
+  type: Frame
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'TargetFrameNumericalThreatValue':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'TargetFramePowerBarAlt':
+  type: Frame
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'TargetFramePowerBarAltCounterBar':
+  type: Frame
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'TargetFramePowerBarAltCounterBarDigit1':
+  type: Frame
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'TargetFramePowerBarAltCounterBarDigit2':
+  type: Frame
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'TargetFramePowerBarAltCounterBarDigit3':
+  type: Frame
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'TargetFramePowerBarAltCounterBarDigit4':
+  type: Frame
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'TargetFramePowerBarAltCounterBarDigit5':
+  type: Frame
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'TargetFramePowerBarAltCounterBarDigit6':
+  type: Frame
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'TargetFramePowerBarAltCounterBarDigit7':
+  type: Frame
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'TargetFramePowerBarAltStatusFrame':
+  type: StatusBar
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'TargetFramePowerBarAltStatusFrameText':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'TargetFrameSpellBar':
+  type: StatusBar
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'TargetFrameTextureFrame':
+  type: Frame
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'TargetFrameTextureFrameDeadText':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'TargetFrameTextureFrameLevelText':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'TargetFrameTextureFrameName':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'TargetFrameTextureFrameUnconsciousText':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'TargetFrameToT':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'TargetFrameToTDebuff1':
+  type: Frame
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'TargetFrameToTDebuff2':
+  type: Frame
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'TargetFrameToTDebuff3':
+  type: Frame
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'TargetFrameToTDebuff4':
+  type: Frame
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'TargetFrameToTHealthBar':
+  type: StatusBar
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'TargetFrameToTManaBar':
+  type: StatusBar
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'TargetFrameToTTextureFrame':
+  type: Frame
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'TargetFrameToTTextureFrameDeadText':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'TargetFrameToTTextureFrameName':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'TargetFrameToTTextureFrameUnconsciousText':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'TotemFrame':
+  type: Frame
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'TotemFrameTotem1':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'TotemFrameTotem1Duration':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'TotemFrameTotem1Icon':
+  type: Frame
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'TotemFrameTotem2':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'TotemFrameTotem2Duration':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'TotemFrameTotem2Icon':
+  type: Frame
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'TotemFrameTotem3':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'TotemFrameTotem3Duration':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'TotemFrameTotem3Icon':
+  type: Frame
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'TotemFrameTotem4':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'TotemFrameTotem4Duration':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'TotemFrameTotem4Icon':
+  type: Frame
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'VehicleSeatIndicator':
+  type: Frame
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt

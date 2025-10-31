@@ -1,0 +1,640 @@
+# Auto-generated from DOCU/NOD_Konzept_Funktionsliste.txt
+# Category: lfg
+# Description: Looking-for-group tools, dungeon/raid finder panels, and queue dialogs.
+
+'GroupFinderFrame':
+  type: Frame
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'GroupFinderFrameGroupButton1':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'GroupFinderFrameGroupButton1Name':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'GroupFinderFrameGroupButton2':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'GroupFinderFrameGroupButton2Name':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'GroupFinderFrameGroupButton3':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'GroupFinderFrameGroupButton3Name':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'GroupFinderFrameGroupButton4':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'GroupFinderFrameGroupButton4Name':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'LFDParentFrame':
+  type: Frame
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'LFDParentFrameInset':
+  type: Frame
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'LFDQueueFrame':
+  type: Frame
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'LFDQueueFrameCooldownFrame':
+  type: Frame
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'LFDQueueFrameCooldownFrameDescription':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'LFDQueueFrameCooldownFrameName1':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'LFDQueueFrameCooldownFrameName2':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'LFDQueueFrameCooldownFrameName3':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'LFDQueueFrameCooldownFrameName4':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'LFDQueueFrameCooldownFrameName5':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'LFDQueueFrameCooldownFrameName6':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'LFDQueueFrameCooldownFrameName7':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'LFDQueueFrameCooldownFrameName8':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'LFDQueueFrameCooldownFrameStatus1':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'LFDQueueFrameCooldownFrameStatus2':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'LFDQueueFrameCooldownFrameStatus3':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'LFDQueueFrameCooldownFrameStatus4':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'LFDQueueFrameCooldownFrameStatus5':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'LFDQueueFrameCooldownFrameStatus6':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'LFDQueueFrameCooldownFrameStatus7':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'LFDQueueFrameCooldownFrameStatus8':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'LFDQueueFrameCooldownFrameTime':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'LFDQueueFrameFindGroupButton':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'LFDQueueFrameFindGroupButtonText':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'LFDQueueFrameNoLFDWhileLFR':
+  type: Frame
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'LFDQueueFrameNoLFDWhileLFRDescription':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'LFDQueueFrameNoLFDWhileLFRLeaveQueueButton':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'LFDQueueFrameNoLFDWhileLFRLeaveQueueButtonText':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'LFDQueueFramePartyBackfill':
+  type: Frame
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'LFDQueueFramePartyBackfillBackfillButton':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'LFDQueueFramePartyBackfillBackfillButtonText':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'LFDQueueFramePartyBackfillDescription':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'LFDQueueFramePartyBackfillNoBackfillButton':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'LFDQueueFramePartyBackfillNoBackfillButtonText':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'LFDQueueFrameRandom':
+  type: Frame
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'LFDQueueFrameRandomScrollFrameChildFrame':
+  type: Frame
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'LFDQueueFrameRandomScrollFrameChildFrameDescription':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'LFDQueueFrameRandomScrollFrameChildFrameEncounterList':
+  type: Frame
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'LFDQueueFrameRandomScrollFrameChildFrameItem1':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'LFDQueueFrameRandomScrollFrameChildFrameItem1Count':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'LFDQueueFrameRandomScrollFrameChildFrameItem1Name':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'LFDQueueFrameRandomScrollFrameChildFrameItem1RoleIcon1':
+  type: Frame
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'LFDQueueFrameRandomScrollFrameChildFrameItem1RoleIcon2':
+  type: Frame
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'LFDQueueFrameRandomScrollFrameChildFrameMoneyReward':
+  type: Frame
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'LFDQueueFrameRandomScrollFrameChildFrameMoneyRewardCount':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'LFDQueueFrameRandomScrollFrameChildFrameMoneyRewardName':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'LFDQueueFrameRandomScrollFrameChildFrameRandomList':
+  type: Frame
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'LFDQueueFrameRandomScrollFrameChildFrameRewardsDescription':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'LFDQueueFrameRandomScrollFrameChildFrameRewardsLabel':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'LFDQueueFrameRandomScrollFrameChildFrameSpacer':
+  type: Frame
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'LFDQueueFrameRandomScrollFrameChildFrameTitle':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'LFDQueueFrameRandomScrollFrameChildFrameXPAmount':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'LFDQueueFrameRandomScrollFrameChildFrameXPLabel':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'LFDQueueFrameRoleButtonDPS':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'LFDQueueFrameRoleButtonDPSIncentiveIcon':
+  type: Frame
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'LFDQueueFrameRoleButtonHealer':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'LFDQueueFrameRoleButtonHealerIncentiveIcon':
+  type: Frame
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'LFDQueueFrameRoleButtonLeader':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'LFDQueueFrameRoleButtonTank':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'LFDQueueFrameRoleButtonTankIncentiveIcon':
+  type: Frame
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'LFDQueueFrameSpecific':
+  type: Frame
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'LFDQueueFrameSpecificExpandOrCollapseButton':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'LFDQueueFrameSpecificInstanceName':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'LFDQueueFrameTypeDropdown':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'LFDQueueFrameTypeDropdownName':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'LFDReadyCheckPopup':
+  type: Frame
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'LFDReadyCheckPopupText':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'LFDRoleCheckPopup':
+  type: Frame
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'LFDRoleCheckPopupAcceptButton':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'LFDRoleCheckPopupAcceptButtonText':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'LFDRoleCheckPopupDeclineButton':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'LFDRoleCheckPopupDeclineButtonText':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'LFDRoleCheckPopupDescription':
+  type: Frame
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'LFDRoleCheckPopupDescriptionText':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'LFDRoleCheckPopupRoleButtonDPS':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'LFDRoleCheckPopupRoleButtonHealer':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'LFDRoleCheckPopupRoleButtonTank':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'LFGApplicationViewerRatingColumnHeader':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'LFGDungeonReadyDialog':
+  type: Frame
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'LFGDungeonReadyDialogCloseButton':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'LFGDungeonReadyDialogEnterDungeonButton':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'LFGDungeonReadyDialogEnterDungeonButtonText':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'LFGDungeonReadyDialogInstanceInfoFrame':
+  type: Frame
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'LFGDungeonReadyDialogInstanceInfoFrameName':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'LFGDungeonReadyDialogInstanceInfoFrameStatusText':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'LFGDungeonReadyDialogLabel':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'LFGDungeonReadyDialogLeaveQueueButton':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'LFGDungeonReadyDialogLeaveQueueButtonText':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'LFGDungeonReadyDialogRandomInProgressFrame':
+  type: Frame
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'LFGDungeonReadyDialogRandomInProgressFrameStatusText':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'LFGDungeonReadyDialogRewardsFrame':
+  type: Frame
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'LFGDungeonReadyDialogRewardsFrameLabel':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'LFGDungeonReadyDialogRewardsFrameReward1':
+  type: Frame
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'LFGDungeonReadyDialogRewardsFrameReward2':
+  type: Frame
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'LFGDungeonReadyDialogRoleIcon':
+  type: Frame
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'LFGDungeonReadyDialogRoleLabel':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'LFGDungeonReadyDialogYourRoleDescription':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'LFGDungeonReadyPopup':
+  type: Frame
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'LFGDungeonReadyStatus':
+  type: Frame
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'LFGDungeonReadyStatusCloseButton':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'LFGDungeonReadyStatusGrouped':
+  type: Frame
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'LFGDungeonReadyStatusGroupedDamager':
+  type: Frame
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'LFGDungeonReadyStatusGroupedDamagerCount':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'LFGDungeonReadyStatusGroupedHealer':
+  type: Frame
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'LFGDungeonReadyStatusGroupedHealerCount':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'LFGDungeonReadyStatusGroupedTank':
+  type: Frame
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'LFGDungeonReadyStatusGroupedTankCount':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'LFGDungeonReadyStatusIndividual':
+  type: Frame
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'LFGDungeonReadyStatusIndividualPlayer1':
+  type: Frame
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'LFGDungeonReadyStatusIndividualPlayer2':
+  type: Frame
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'LFGDungeonReadyStatusIndividualPlayer3':
+  type: Frame
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'LFGDungeonReadyStatusIndividualPlayer4':
+  type: Frame
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'LFGDungeonReadyStatusIndividualPlayer5':
+  type: Frame
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'LFGDungeonReadyStatusLabel':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'LFGDungeonReadyStatusRoleless':
+  type: Frame
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'LFGDungeonReadyStatusRolelessReady':
+  type: Frame
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'LFGDungeonReadyStatusRolelessReadyCount':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'LFGEventFrame':
+  type: Frame
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'LFGInvitePopup':
+  type: Frame
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'LFGInvitePopupAcceptButton':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'LFGInvitePopupAcceptButtonText':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'LFGInvitePopupDeclineButton':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'LFGInvitePopupDeclineButtonText':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'LFGInvitePopupRoleButtonDPS':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'LFGInvitePopupRoleButtonHealer':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'LFGInvitePopupRoleButtonTank':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'LFGInvitePopupText':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'LFGListApplicationDialog':
+  type: Frame
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'LFGListApplicationDialogText':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'LFGListEntryCreationActivityDropdown':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'LFGListEntryCreationGroupDropdown':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'LFGListEntryCreationPlayStyleDropdown':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'LFGListFrame':
+  type: Frame
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'LFGListFrameClearButton':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'LFGListFrameText':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'LFGListInviteDialog':
+  type: Frame
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'LFGListInviteDialogText':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'LFGListPVEStub':
+  type: Frame
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'LFGMicroButton':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'PVEFrame':
+  type: Frame
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'PVEFrameCloseButton':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'PVEFrameLeftInset':
+  type: Frame
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'PVEFrameTab1':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'PVEFrameTab1Text':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'PVEFrameTab2':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'PVEFrameTab2Text':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'PVEFrameTab3':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'PVEFrameTab3Text':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'PVEFrameTitleText':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'QueueStatusFrame':
+  type: Frame
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt

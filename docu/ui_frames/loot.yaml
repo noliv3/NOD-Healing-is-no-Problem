@@ -1,0 +1,96 @@
+# Auto-generated from DOCU/NOD_Konzept_Funktionsliste.txt
+# Category: loot
+# Description: Loot roll frames, bonus roll dialogs, and loot history panels.
+
+'BonusRollFrame':
+  type: Frame
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'BonusRollLootWonFrame':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'BonusRollMoneyWonFrame':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'GroupLootContainer':
+  type: Frame
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'GroupLootFrame1':
+  type: Frame
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'GroupLootFrame1Name':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'GroupLootFrame2':
+  type: Frame
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'GroupLootFrame2Name':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'GroupLootFrame3':
+  type: Frame
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'GroupLootFrame3Name':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'GroupLootFrame4':
+  type: Frame
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'GroupLootFrame4Name':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'LootFrame':
+  type: Frame
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'LootFrameCloseButton':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'LootFrameDownButton':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'LootFrameInset':
+  type: Frame
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'LootFrameNext':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'LootFramePrev':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'LootFrameTitleText':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'LootFrameUpButton':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'LootHistoryFrame':
+  type: Frame
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'LootHistoryFrameScrollFrameScrollBarScrollDownButton':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'LootHistoryFrameScrollFrameScrollBarScrollUpButton':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt

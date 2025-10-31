@@ -1,0 +1,68 @@
+# Auto-generated from DOCU/NOD_Konzept_Funktionsliste.txt
+# Category: loot_buttons
+# Description: Auto-generated group for prefix "lootbutton".
+
+'LootButton1':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'LootButton1Count':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'LootButton1Stock':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'LootButton1Text':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'LootButton2':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'LootButton2Count':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'LootButton2Stock':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'LootButton2Text':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'LootButton3':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'LootButton3Count':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'LootButton3Stock':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'LootButton3Text':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'LootButton4':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'LootButton4Count':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'LootButton4Stock':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'LootButton4Text':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt

@@ -1,0 +1,1676 @@
+# Auto-generated from DOCU/NOD_Konzept_Funktionsliste.txt
+# Category: actionbars
+# Description: Action bar layouts, stance bars, and vehicle/override controls.
+
+'ActionBarActionEventsFrame':
+  type: Frame
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'ActionBarButtonEventsFrame':
+  type: Frame
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'ActionBarController':
+  type: Frame
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'ActionBarDownButton':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'ActionBarUpButton':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'ActionButton10Count':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'ActionButton10HotKey':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'ActionButton10Name':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'ActionButton10Shine':
+  type: Frame
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'ActionButton11Count':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'ActionButton11HotKey':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'ActionButton11Name':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'ActionButton11Shine':
+  type: Frame
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'ActionButton12Count':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'ActionButton12HotKey':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'ActionButton12Name':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'ActionButton12Shine':
+  type: Frame
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'ActionButton1Count':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'ActionButton1HotKey':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'ActionButton1Name':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'ActionButton1Shine':
+  type: Frame
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'ActionButton2Count':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'ActionButton2HotKey':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'ActionButton2Name':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'ActionButton2Shine':
+  type: Frame
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'ActionButton3Count':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'ActionButton3HotKey':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'ActionButton3Name':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'ActionButton3Shine':
+  type: Frame
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'ActionButton4Count':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'ActionButton4HotKey':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'ActionButton4Name':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'ActionButton4Shine':
+  type: Frame
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'ActionButton5Count':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'ActionButton5HotKey':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'ActionButton5Name':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'ActionButton5Shine':
+  type: Frame
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'ActionButton6Count':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'ActionButton6HotKey':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'ActionButton6Name':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'ActionButton6Shine':
+  type: Frame
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'ActionButton7Count':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'ActionButton7HotKey':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'ActionButton7Name':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'ActionButton7Shine':
+  type: Frame
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'ActionButton8Count':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'ActionButton8HotKey':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'ActionButton8Name':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'ActionButton8Shine':
+  type: Frame
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'ActionButton9Count':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'ActionButton9HotKey':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'ActionButton9Name':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'ActionButton9Shine':
+  type: Frame
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'MainMenuBar':
+  type: Frame
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'MainMenuBarArtFrame':
+  type: Frame
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'MainMenuBarBackpackButtonCount':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'MainMenuBarBackpackButtonStock':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'MainMenuBarExpText':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'MainMenuBarMaxLevelBar':
+  type: Frame
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'MainMenuBarOverlayFrame':
+  type: Frame
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'MainMenuBarPageNumber':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'MainMenuBarPerformanceBarFrame':
+  type: Frame
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'MainMenuBarPerformanceBarFrameButton':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'MainMenuBarVehicleLeaveButton':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'MultiBarBottomLeft':
+  type: Frame
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'MultiBarBottomLeftButton10Count':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'MultiBarBottomLeftButton10HotKey':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'MultiBarBottomLeftButton10Name':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'MultiBarBottomLeftButton10Shine':
+  type: Frame
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'MultiBarBottomLeftButton11Count':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'MultiBarBottomLeftButton11HotKey':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'MultiBarBottomLeftButton11Name':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'MultiBarBottomLeftButton11Shine':
+  type: Frame
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'MultiBarBottomLeftButton12Count':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'MultiBarBottomLeftButton12HotKey':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'MultiBarBottomLeftButton12Name':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'MultiBarBottomLeftButton12Shine':
+  type: Frame
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'MultiBarBottomLeftButton1Count':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'MultiBarBottomLeftButton1HotKey':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'MultiBarBottomLeftButton1Name':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'MultiBarBottomLeftButton1Shine':
+  type: Frame
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'MultiBarBottomLeftButton2Count':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'MultiBarBottomLeftButton2HotKey':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'MultiBarBottomLeftButton2Name':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'MultiBarBottomLeftButton2Shine':
+  type: Frame
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'MultiBarBottomLeftButton3Count':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'MultiBarBottomLeftButton3HotKey':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'MultiBarBottomLeftButton3Name':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'MultiBarBottomLeftButton3Shine':
+  type: Frame
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'MultiBarBottomLeftButton4Count':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'MultiBarBottomLeftButton4HotKey':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'MultiBarBottomLeftButton4Name':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'MultiBarBottomLeftButton4Shine':
+  type: Frame
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'MultiBarBottomLeftButton5Count':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'MultiBarBottomLeftButton5HotKey':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'MultiBarBottomLeftButton5Name':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'MultiBarBottomLeftButton5Shine':
+  type: Frame
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'MultiBarBottomLeftButton6Count':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'MultiBarBottomLeftButton6HotKey':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'MultiBarBottomLeftButton6Name':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'MultiBarBottomLeftButton6Shine':
+  type: Frame
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'MultiBarBottomLeftButton7Count':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'MultiBarBottomLeftButton7HotKey':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'MultiBarBottomLeftButton7Name':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'MultiBarBottomLeftButton7Shine':
+  type: Frame
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'MultiBarBottomLeftButton8Count':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'MultiBarBottomLeftButton8HotKey':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'MultiBarBottomLeftButton8Name':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'MultiBarBottomLeftButton8Shine':
+  type: Frame
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'MultiBarBottomLeftButton9Count':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'MultiBarBottomLeftButton9HotKey':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'MultiBarBottomLeftButton9Name':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'MultiBarBottomLeftButton9Shine':
+  type: Frame
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'MultiBarBottomRight':
+  type: Frame
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'MultiBarBottomRightButton10Count':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'MultiBarBottomRightButton10HotKey':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'MultiBarBottomRightButton10Name':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'MultiBarBottomRightButton10Shine':
+  type: Frame
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'MultiBarBottomRightButton11Count':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'MultiBarBottomRightButton11HotKey':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'MultiBarBottomRightButton11Name':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'MultiBarBottomRightButton11Shine':
+  type: Frame
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'MultiBarBottomRightButton12Count':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'MultiBarBottomRightButton12HotKey':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'MultiBarBottomRightButton12Name':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'MultiBarBottomRightButton12Shine':
+  type: Frame
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'MultiBarBottomRightButton1Count':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'MultiBarBottomRightButton1HotKey':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'MultiBarBottomRightButton1Name':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'MultiBarBottomRightButton1Shine':
+  type: Frame
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'MultiBarBottomRightButton2Count':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'MultiBarBottomRightButton2HotKey':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'MultiBarBottomRightButton2Name':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'MultiBarBottomRightButton2Shine':
+  type: Frame
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'MultiBarBottomRightButton3Count':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'MultiBarBottomRightButton3HotKey':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'MultiBarBottomRightButton3Name':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'MultiBarBottomRightButton3Shine':
+  type: Frame
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'MultiBarBottomRightButton4Count':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'MultiBarBottomRightButton4HotKey':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'MultiBarBottomRightButton4Name':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'MultiBarBottomRightButton4Shine':
+  type: Frame
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'MultiBarBottomRightButton5Count':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'MultiBarBottomRightButton5HotKey':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'MultiBarBottomRightButton5Name':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'MultiBarBottomRightButton5Shine':
+  type: Frame
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'MultiBarBottomRightButton6Count':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'MultiBarBottomRightButton6HotKey':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'MultiBarBottomRightButton6Name':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'MultiBarBottomRightButton6Shine':
+  type: Frame
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'MultiBarBottomRightButton7Count':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'MultiBarBottomRightButton7HotKey':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'MultiBarBottomRightButton7Name':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'MultiBarBottomRightButton7Shine':
+  type: Frame
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'MultiBarBottomRightButton8Count':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'MultiBarBottomRightButton8HotKey':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'MultiBarBottomRightButton8Name':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'MultiBarBottomRightButton8Shine':
+  type: Frame
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'MultiBarBottomRightButton9Count':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'MultiBarBottomRightButton9HotKey':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'MultiBarBottomRightButton9Name':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'MultiBarBottomRightButton9Shine':
+  type: Frame
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'MultiBarLeft':
+  type: Frame
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'MultiBarLeftButton10Count':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'MultiBarLeftButton10HotKey':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'MultiBarLeftButton10Name':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'MultiBarLeftButton10Shine':
+  type: Frame
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'MultiBarLeftButton11Count':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'MultiBarLeftButton11HotKey':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'MultiBarLeftButton11Name':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'MultiBarLeftButton11Shine':
+  type: Frame
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'MultiBarLeftButton12Count':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'MultiBarLeftButton12HotKey':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'MultiBarLeftButton12Name':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'MultiBarLeftButton12Shine':
+  type: Frame
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'MultiBarLeftButton1Count':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'MultiBarLeftButton1HotKey':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'MultiBarLeftButton1Name':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'MultiBarLeftButton1Shine':
+  type: Frame
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'MultiBarLeftButton2Count':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'MultiBarLeftButton2HotKey':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'MultiBarLeftButton2Name':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'MultiBarLeftButton2Shine':
+  type: Frame
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'MultiBarLeftButton3Count':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'MultiBarLeftButton3HotKey':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'MultiBarLeftButton3Name':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'MultiBarLeftButton3Shine':
+  type: Frame
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'MultiBarLeftButton4Count':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'MultiBarLeftButton4HotKey':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'MultiBarLeftButton4Name':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'MultiBarLeftButton4Shine':
+  type: Frame
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'MultiBarLeftButton5Count':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'MultiBarLeftButton5HotKey':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'MultiBarLeftButton5Name':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'MultiBarLeftButton5Shine':
+  type: Frame
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'MultiBarLeftButton6Count':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'MultiBarLeftButton6HotKey':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'MultiBarLeftButton6Name':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'MultiBarLeftButton6Shine':
+  type: Frame
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'MultiBarLeftButton7Count':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'MultiBarLeftButton7HotKey':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'MultiBarLeftButton7Name':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'MultiBarLeftButton7Shine':
+  type: Frame
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'MultiBarLeftButton8Count':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'MultiBarLeftButton8HotKey':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'MultiBarLeftButton8Name':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'MultiBarLeftButton8Shine':
+  type: Frame
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'MultiBarLeftButton9Count':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'MultiBarLeftButton9HotKey':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'MultiBarLeftButton9Name':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'MultiBarLeftButton9Shine':
+  type: Frame
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'MultiBarRight':
+  type: Frame
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'MultiBarRightButton10Count':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'MultiBarRightButton10HotKey':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'MultiBarRightButton10Name':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'MultiBarRightButton10Shine':
+  type: Frame
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'MultiBarRightButton11Count':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'MultiBarRightButton11HotKey':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'MultiBarRightButton11Name':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'MultiBarRightButton11Shine':
+  type: Frame
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'MultiBarRightButton12Count':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'MultiBarRightButton12HotKey':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'MultiBarRightButton12Name':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'MultiBarRightButton12Shine':
+  type: Frame
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'MultiBarRightButton1Count':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'MultiBarRightButton1HotKey':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'MultiBarRightButton1Name':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'MultiBarRightButton1Shine':
+  type: Frame
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'MultiBarRightButton2Count':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'MultiBarRightButton2HotKey':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'MultiBarRightButton2Name':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'MultiBarRightButton2Shine':
+  type: Frame
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'MultiBarRightButton3Count':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'MultiBarRightButton3HotKey':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'MultiBarRightButton3Name':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'MultiBarRightButton3Shine':
+  type: Frame
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'MultiBarRightButton4Count':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'MultiBarRightButton4HotKey':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'MultiBarRightButton4Name':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'MultiBarRightButton4Shine':
+  type: Frame
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'MultiBarRightButton5Count':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'MultiBarRightButton5HotKey':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'MultiBarRightButton5Name':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'MultiBarRightButton5Shine':
+  type: Frame
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'MultiBarRightButton6Count':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'MultiBarRightButton6HotKey':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'MultiBarRightButton6Name':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'MultiBarRightButton6Shine':
+  type: Frame
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'MultiBarRightButton7Count':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'MultiBarRightButton7HotKey':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'MultiBarRightButton7Name':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'MultiBarRightButton7Shine':
+  type: Frame
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'MultiBarRightButton8Count':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'MultiBarRightButton8HotKey':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'MultiBarRightButton8Name':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'MultiBarRightButton8Shine':
+  type: Frame
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'MultiBarRightButton9Count':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'MultiBarRightButton9HotKey':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'MultiBarRightButton9Name':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'MultiBarRightButton9Shine':
+  type: Frame
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'MultiCastActionBarFrame':
+  type: Frame
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'MultiCastActionButton10Count':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'MultiCastActionButton10HotKey':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'MultiCastActionButton10Name':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'MultiCastActionButton10Shine':
+  type: Frame
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'MultiCastActionButton11Count':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'MultiCastActionButton11HotKey':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'MultiCastActionButton11Name':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'MultiCastActionButton11Shine':
+  type: Frame
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'MultiCastActionButton12Count':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'MultiCastActionButton12HotKey':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'MultiCastActionButton12Name':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'MultiCastActionButton12Shine':
+  type: Frame
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'MultiCastActionButton1Count':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'MultiCastActionButton1HotKey':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'MultiCastActionButton1Name':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'MultiCastActionButton1Shine':
+  type: Frame
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'MultiCastActionButton2Count':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'MultiCastActionButton2HotKey':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'MultiCastActionButton2Name':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'MultiCastActionButton2Shine':
+  type: Frame
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'MultiCastActionButton3Count':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'MultiCastActionButton3HotKey':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'MultiCastActionButton3Name':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'MultiCastActionButton3Shine':
+  type: Frame
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'MultiCastActionButton4Count':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'MultiCastActionButton4HotKey':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'MultiCastActionButton4Name':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'MultiCastActionButton4Shine':
+  type: Frame
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'MultiCastActionButton5Count':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'MultiCastActionButton5HotKey':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'MultiCastActionButton5Name':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'MultiCastActionButton5Shine':
+  type: Frame
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'MultiCastActionButton6Count':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'MultiCastActionButton6HotKey':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'MultiCastActionButton6Name':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'MultiCastActionButton6Shine':
+  type: Frame
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'MultiCastActionButton7Count':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'MultiCastActionButton7HotKey':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'MultiCastActionButton7Name':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'MultiCastActionButton7Shine':
+  type: Frame
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'MultiCastActionButton8Count':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'MultiCastActionButton8HotKey':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'MultiCastActionButton8Name':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'MultiCastActionButton8Shine':
+  type: Frame
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'MultiCastActionButton9Count':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'MultiCastActionButton9HotKey':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'MultiCastActionButton9Name':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'MultiCastActionButton9Shine':
+  type: Frame
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'MultiCastActionPage1':
+  type: Frame
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'MultiCastActionPage2':
+  type: Frame
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'MultiCastActionPage3':
+  type: Frame
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'MultiCastFlyoutFrame':
+  type: Frame
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'MultiCastFlyoutFrameCloseButton':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'MultiCastFlyoutFrameOpenButton':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'MultiCastRecallSpellButtonCount':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'MultiCastRecallSpellButtonHotKey':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'MultiCastRecallSpellButtonName':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'MultiCastRecallSpellButtonShine':
+  type: Frame
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'MultiCastSummonSpellButtonCount':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'MultiCastSummonSpellButtonFlyoutButton':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'MultiCastSummonSpellButtonHotKey':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'MultiCastSummonSpellButtonName':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'MultiCastSummonSpellButtonShine':
+  type: Frame
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'OverrideActionBar':
+  type: Frame
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'OverrideActionBarButton1Count':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'OverrideActionBarButton1HotKey':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'OverrideActionBarButton1Name':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'OverrideActionBarButton1Shine':
+  type: Frame
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'OverrideActionBarButton2Count':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'OverrideActionBarButton2HotKey':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'OverrideActionBarButton2Name':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'OverrideActionBarButton2Shine':
+  type: Frame
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'OverrideActionBarButton3Count':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'OverrideActionBarButton3HotKey':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'OverrideActionBarButton3Name':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'OverrideActionBarButton3Shine':
+  type: Frame
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'OverrideActionBarButton4Count':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'OverrideActionBarButton4HotKey':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'OverrideActionBarButton4Name':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'OverrideActionBarButton4Shine':
+  type: Frame
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'OverrideActionBarButton5Count':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'OverrideActionBarButton5HotKey':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'OverrideActionBarButton5Name':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'OverrideActionBarButton5Shine':
+  type: Frame
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'OverrideActionBarButton6Count':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'OverrideActionBarButton6HotKey':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'OverrideActionBarButton6Name':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'OverrideActionBarButton6Shine':
+  type: Frame
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'OverrideActionBarExpBar':
+  type: StatusBar
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'OverrideActionBarExpBarOverlayFrame':
+  type: Frame
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'OverrideActionBarExpBarOverlayFrameText':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'OverrideActionBarHealthBar':
+  type: StatusBar
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'OverrideActionBarHealthBarText':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'OverrideActionBarLeaveFrame':
+  type: Frame
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'OverrideActionBarLeaveFrameLeaveButton':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'OverrideActionBarPitchFrame':
+  type: Frame
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'OverrideActionBarPitchFramePitchDownButton':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'OverrideActionBarPitchFramePitchUpButton':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'OverrideActionBarPowerBar':
+  type: StatusBar
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'OverrideActionBarPowerBarText':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'PossessButton1Count':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'PossessButton1HotKey':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'PossessButton1Name':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'PossessButton1Shine':
+  type: Frame
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'PossessButton2Count':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'PossessButton2HotKey':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'PossessButton2Name':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'PossessButton2Shine':
+  type: Frame
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'StanceButton10Count':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'StanceButton10HotKey':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'StanceButton10Name':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'StanceButton10Shine':
+  type: Frame
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'StanceButton1Count':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'StanceButton1HotKey':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'StanceButton1Name':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'StanceButton1Shine':
+  type: Frame
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'StanceButton2Count':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'StanceButton2HotKey':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'StanceButton2Name':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'StanceButton2Shine':
+  type: Frame
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'StanceButton3Count':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'StanceButton3HotKey':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'StanceButton3Name':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'StanceButton3Shine':
+  type: Frame
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'StanceButton4Count':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'StanceButton4HotKey':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'StanceButton4Name':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'StanceButton4Shine':
+  type: Frame
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'StanceButton5Count':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'StanceButton5HotKey':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'StanceButton5Name':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'StanceButton5Shine':
+  type: Frame
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'StanceButton6Count':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'StanceButton6HotKey':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'StanceButton6Name':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'StanceButton6Shine':
+  type: Frame
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'StanceButton7Count':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'StanceButton7HotKey':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'StanceButton7Name':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'StanceButton7Shine':
+  type: Frame
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'StanceButton8Count':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'StanceButton8HotKey':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'StanceButton8Name':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'StanceButton8Shine':
+  type: Frame
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'StanceButton9Count':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'StanceButton9HotKey':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'StanceButton9Name':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'StanceButton9Shine':
+  type: Frame
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'TempEnchant1':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'TempEnchant1Count':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'TempEnchant1Duration':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'TempEnchant2':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'TempEnchant2Count':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'TempEnchant2Duration':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'TempEnchant3':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'TempEnchant3Count':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'TempEnchant3Duration':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt

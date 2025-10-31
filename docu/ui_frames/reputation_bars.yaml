@@ -1,0 +1,304 @@
+# Auto-generated from DOCU/NOD_Konzept_Funktionsliste.txt
+# Category: reputation_bars
+# Description: Auto-generated group for prefix "reputationbar".
+
+'ReputationBar1':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'ReputationBar10':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'ReputationBar10ExpandOrCollapseButton':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'ReputationBar10FactionName':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'ReputationBar10ReputationBar':
+  type: StatusBar
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'ReputationBar10ReputationBarFactionStanding':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'ReputationBar11':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'ReputationBar11ExpandOrCollapseButton':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'ReputationBar11FactionName':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'ReputationBar11ReputationBar':
+  type: StatusBar
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'ReputationBar11ReputationBarFactionStanding':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'ReputationBar12':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'ReputationBar12ExpandOrCollapseButton':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'ReputationBar12FactionName':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'ReputationBar12ReputationBar':
+  type: StatusBar
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'ReputationBar12ReputationBarFactionStanding':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'ReputationBar13':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'ReputationBar13ExpandOrCollapseButton':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'ReputationBar13FactionName':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'ReputationBar13ReputationBar':
+  type: StatusBar
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'ReputationBar13ReputationBarFactionStanding':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'ReputationBar14':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'ReputationBar14ExpandOrCollapseButton':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'ReputationBar14FactionName':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'ReputationBar14ReputationBar':
+  type: StatusBar
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'ReputationBar14ReputationBarFactionStanding':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'ReputationBar15':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'ReputationBar15ExpandOrCollapseButton':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'ReputationBar15FactionName':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'ReputationBar15ReputationBar':
+  type: StatusBar
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'ReputationBar15ReputationBarFactionStanding':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'ReputationBar1ExpandOrCollapseButton':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'ReputationBar1FactionName':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'ReputationBar1ReputationBar':
+  type: StatusBar
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'ReputationBar1ReputationBarFactionStanding':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'ReputationBar2':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'ReputationBar2ExpandOrCollapseButton':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'ReputationBar2FactionName':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'ReputationBar2ReputationBar':
+  type: StatusBar
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'ReputationBar2ReputationBarFactionStanding':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'ReputationBar3':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'ReputationBar3ExpandOrCollapseButton':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'ReputationBar3FactionName':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'ReputationBar3ReputationBar':
+  type: StatusBar
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'ReputationBar3ReputationBarFactionStanding':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'ReputationBar4':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'ReputationBar4ExpandOrCollapseButton':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'ReputationBar4FactionName':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'ReputationBar4ReputationBar':
+  type: StatusBar
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'ReputationBar4ReputationBarFactionStanding':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'ReputationBar5':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'ReputationBar5ExpandOrCollapseButton':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'ReputationBar5FactionName':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'ReputationBar5ReputationBar':
+  type: StatusBar
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'ReputationBar5ReputationBarFactionStanding':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'ReputationBar6':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'ReputationBar6ExpandOrCollapseButton':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'ReputationBar6FactionName':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'ReputationBar6ReputationBar':
+  type: StatusBar
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'ReputationBar6ReputationBarFactionStanding':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'ReputationBar7':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'ReputationBar7ExpandOrCollapseButton':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'ReputationBar7FactionName':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'ReputationBar7ReputationBar':
+  type: StatusBar
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'ReputationBar7ReputationBarFactionStanding':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'ReputationBar8':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'ReputationBar8ExpandOrCollapseButton':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'ReputationBar8FactionName':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'ReputationBar8ReputationBar':
+  type: StatusBar
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'ReputationBar8ReputationBarFactionStanding':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'ReputationBar9':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'ReputationBar9ExpandOrCollapseButton':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'ReputationBar9FactionName':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'ReputationBar9ReputationBar':
+  type: StatusBar
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'ReputationBar9ReputationBarFactionStanding':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt

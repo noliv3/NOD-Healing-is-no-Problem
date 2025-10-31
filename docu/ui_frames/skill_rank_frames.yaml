@@ -1,0 +1,196 @@
+# Auto-generated from DOCU/NOD_Konzept_Funktionsliste.txt
+# Category: skill_rank_frames
+# Description: Auto-generated group for prefix "skillrankframe".
+
+'SkillRankFrame1':
+  type: StatusBar
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'SkillRankFrame10':
+  type: StatusBar
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'SkillRankFrame10Border':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'SkillRankFrame10SkillName':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'SkillRankFrame10SkillRank':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'SkillRankFrame11':
+  type: StatusBar
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'SkillRankFrame11Border':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'SkillRankFrame11SkillName':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'SkillRankFrame11SkillRank':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'SkillRankFrame12':
+  type: StatusBar
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'SkillRankFrame12Border':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'SkillRankFrame12SkillName':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'SkillRankFrame12SkillRank':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'SkillRankFrame1Border':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'SkillRankFrame1SkillName':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'SkillRankFrame1SkillRank':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'SkillRankFrame2':
+  type: StatusBar
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'SkillRankFrame2Border':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'SkillRankFrame2SkillName':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'SkillRankFrame2SkillRank':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'SkillRankFrame3':
+  type: StatusBar
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'SkillRankFrame3Border':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'SkillRankFrame3SkillName':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'SkillRankFrame3SkillRank':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'SkillRankFrame4':
+  type: StatusBar
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'SkillRankFrame4Border':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'SkillRankFrame4SkillName':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'SkillRankFrame4SkillRank':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'SkillRankFrame5':
+  type: StatusBar
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'SkillRankFrame5Border':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'SkillRankFrame5SkillName':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'SkillRankFrame5SkillRank':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'SkillRankFrame6':
+  type: StatusBar
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'SkillRankFrame6Border':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'SkillRankFrame6SkillName':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'SkillRankFrame6SkillRank':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'SkillRankFrame7':
+  type: StatusBar
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'SkillRankFrame7Border':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'SkillRankFrame7SkillName':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'SkillRankFrame7SkillRank':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'SkillRankFrame8':
+  type: StatusBar
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'SkillRankFrame8Border':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'SkillRankFrame8SkillName':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'SkillRankFrame8SkillRank':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'SkillRankFrame9':
+  type: StatusBar
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'SkillRankFrame9Border':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'SkillRankFrame9SkillName':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'SkillRankFrame9SkillRank':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt

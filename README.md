@@ -33,6 +33,7 @@ Weitere Implementierungen folgen in iterativen Schritten (DamageForecast, AuraTi
 - Strukturierte Planungs- und Vergleichsdokumente (jetzt im Markdown-Format):
   - [`DOCU/NOD_Systemaufbau_Modulstruktur.md`](DOCU/NOD_Systemaufbau_Modulstruktur.md) – Architektur- und Modulübersicht mit Eingabe/Output-Tabellen.
   - [`DOCU/NOD_Konzept_Funktionsliste.txt`](DOCU/NOD_Konzept_Funktionsliste.txt) – Priorisierte Funktionsliste inkl. Klassifikationen.
+  - UI-Frames und Funktionsreferenzen sind zusätzlich als YAML-Segmente unter [`docu/ui_frames/`](docu/ui_frames/) abgelegt und können bei Bedarf über [`scripts/generate_ui_frame_yaml.py`](scripts/generate_ui_frame_yaml.py) erneut aus dem Dump erzeugt werden (`unsorted.yaml` fasst derzeit 421 Rest-Einträge zusammen).
   - [`DOCU/NOD_Machbarkeitsanalyse_Technik_MoP.md`](DOCU/NOD_Machbarkeitsanalyse_Technik_MoP.md) – Technische Analyse zu LibHealComm, API-Fallbacks und Raid-Performance.
   - [`DOCU/Vergleich_NOD_vs_HealBot_FeatureAnalyse.md`](DOCU/Vergleich_NOD_vs_HealBot_FeatureAnalyse.md) – Gegenüberstellung HealBot vs. NOD.
   - [`DOCU/HealingAddons_Funktionsvergleich_NOD_Integration.md`](DOCU/HealingAddons_Funktionsvergleich_NOD_Integration.md) – Feature-Matrix aktueller Healing-Addons.

@@ -1,0 +1,124 @@
+# Auto-generated from DOCU/NOD_Konzept_Funktionsliste.txt
+# Category: spellbook
+# Description: Spellbook tabs, flyouts, and skill line frames.
+
+'SpellBookCoreAbilitiesFrame':
+  type: Frame
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'SpellBookFrame':
+  type: Frame
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'SpellBookFrameCloseButton':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'SpellBookFrameInset':
+  type: Frame
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'SpellBookFrameTabButton1':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'SpellBookFrameTabButton1Text':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'SpellBookFrameTabButton2':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'SpellBookFrameTabButton2Text':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'SpellBookFrameTabButton3':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'SpellBookFrameTabButton3Text':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'SpellBookFrameTabButton4':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'SpellBookFrameTabButton4Text':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'SpellBookFrameTabButton5':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'SpellBookFrameTabButton5Text':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'SpellBookFrameTitleText':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'SpellBookNextPageButton':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'SpellBookPageNavigationFrame':
+  type: Frame
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'SpellBookPageText':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'SpellBookPrevPageButton':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'SpellBookProfessionFrame':
+  type: Frame
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'SpellBookSideTabsFrame':
+  type: Frame
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'SpellBookSpellIconsFrame':
+  type: Frame
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'SpellBookTabFlashFrame':
+  type: Frame
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'SpellBookWhatHasChanged':
+  type: Frame
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'SpellFlyout':
+  type: Frame
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'SpellFlyoutButton1Count':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'SpellFlyoutButton1HotKey':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'SpellFlyoutButton1Name':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'SpellFlyoutButton1Shine':
+  type: Frame
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'SpellbookMicroButton':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt

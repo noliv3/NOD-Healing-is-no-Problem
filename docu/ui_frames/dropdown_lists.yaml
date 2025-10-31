@@ -1,0 +1,520 @@
+# Auto-generated from DOCU/NOD_Konzept_Funktionsliste.txt
+# Category: dropdown_lists
+# Description: Auto-generated group for prefix "dropdownlist".
+
+'DropDownList1':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'DropDownList1Backdrop':
+  type: Frame
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'DropDownList1Button1':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'DropDownList1Button1ColorSwatch':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'DropDownList1Button1ExpandArrow':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'DropDownList1Button1InvisibleButton':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'DropDownList1Button1NormalText':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'DropDownList1Button2':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'DropDownList1Button2ColorSwatch':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'DropDownList1Button2ExpandArrow':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'DropDownList1Button2InvisibleButton':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'DropDownList1Button2NormalText':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'DropDownList1Button3':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'DropDownList1Button3ColorSwatch':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'DropDownList1Button3ExpandArrow':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'DropDownList1Button3InvisibleButton':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'DropDownList1Button3NormalText':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'DropDownList1Button4':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'DropDownList1Button4ColorSwatch':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'DropDownList1Button4ExpandArrow':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'DropDownList1Button4InvisibleButton':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'DropDownList1Button4NormalText':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'DropDownList1Button5':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'DropDownList1Button5ColorSwatch':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'DropDownList1Button5ExpandArrow':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'DropDownList1Button5InvisibleButton':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'DropDownList1Button5NormalText':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'DropDownList1Button6':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'DropDownList1Button6ColorSwatch':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'DropDownList1Button6ExpandArrow':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'DropDownList1Button6InvisibleButton':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'DropDownList1Button6NormalText':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'DropDownList1Button7':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'DropDownList1Button7ColorSwatch':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'DropDownList1Button7ExpandArrow':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'DropDownList1Button7InvisibleButton':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'DropDownList1Button7NormalText':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'DropDownList1Button8':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'DropDownList1Button8ColorSwatch':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'DropDownList1Button8ExpandArrow':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'DropDownList1Button8InvisibleButton':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'DropDownList1Button8NormalText':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'DropDownList1MenuBackdrop':
+  type: Frame
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'DropDownList2':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'DropDownList2Backdrop':
+  type: Frame
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'DropDownList2Button1':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'DropDownList2Button1ColorSwatch':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'DropDownList2Button1ExpandArrow':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'DropDownList2Button1InvisibleButton':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'DropDownList2Button1NormalText':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'DropDownList2Button2':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'DropDownList2Button2ColorSwatch':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'DropDownList2Button2ExpandArrow':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'DropDownList2Button2InvisibleButton':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'DropDownList2Button2NormalText':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'DropDownList2Button3':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'DropDownList2Button3ColorSwatch':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'DropDownList2Button3ExpandArrow':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'DropDownList2Button3InvisibleButton':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'DropDownList2Button3NormalText':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'DropDownList2Button4':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'DropDownList2Button4ColorSwatch':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'DropDownList2Button4ExpandArrow':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'DropDownList2Button4InvisibleButton':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'DropDownList2Button4NormalText':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'DropDownList2Button5':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'DropDownList2Button5ColorSwatch':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'DropDownList2Button5ExpandArrow':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'DropDownList2Button5InvisibleButton':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'DropDownList2Button5NormalText':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'DropDownList2Button6':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'DropDownList2Button6ColorSwatch':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'DropDownList2Button6ExpandArrow':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'DropDownList2Button6InvisibleButton':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'DropDownList2Button6NormalText':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'DropDownList2Button7':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'DropDownList2Button7ColorSwatch':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'DropDownList2Button7ExpandArrow':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'DropDownList2Button7InvisibleButton':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'DropDownList2Button7NormalText':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'DropDownList2Button8':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'DropDownList2Button8ColorSwatch':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'DropDownList2Button8ExpandArrow':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'DropDownList2Button8InvisibleButton':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'DropDownList2Button8NormalText':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'DropDownList2MenuBackdrop':
+  type: Frame
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'DropDownList3':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'DropDownList3Backdrop':
+  type: Frame
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'DropDownList3Button1':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'DropDownList3Button1ColorSwatch':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'DropDownList3Button1ExpandArrow':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'DropDownList3Button1InvisibleButton':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'DropDownList3Button1NormalText':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'DropDownList3Button2':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'DropDownList3Button2ColorSwatch':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'DropDownList3Button2ExpandArrow':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'DropDownList3Button2InvisibleButton':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'DropDownList3Button2NormalText':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'DropDownList3Button3':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'DropDownList3Button3ColorSwatch':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'DropDownList3Button3ExpandArrow':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'DropDownList3Button3InvisibleButton':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'DropDownList3Button3NormalText':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'DropDownList3Button4':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'DropDownList3Button4ColorSwatch':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'DropDownList3Button4ExpandArrow':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'DropDownList3Button4InvisibleButton':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'DropDownList3Button4NormalText':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'DropDownList3Button5':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'DropDownList3Button5ColorSwatch':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'DropDownList3Button5ExpandArrow':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'DropDownList3Button5InvisibleButton':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'DropDownList3Button5NormalText':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'DropDownList3Button6':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'DropDownList3Button6ColorSwatch':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'DropDownList3Button6ExpandArrow':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'DropDownList3Button6InvisibleButton':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'DropDownList3Button6NormalText':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'DropDownList3Button7':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'DropDownList3Button7ColorSwatch':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'DropDownList3Button7ExpandArrow':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'DropDownList3Button7InvisibleButton':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'DropDownList3Button7NormalText':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'DropDownList3Button8':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'DropDownList3Button8ColorSwatch':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'DropDownList3Button8ExpandArrow':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'DropDownList3Button8InvisibleButton':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'DropDownList3Button8NormalText':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'DropDownList3MenuBackdrop':
+  type: Frame
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt

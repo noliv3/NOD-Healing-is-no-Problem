@@ -1,0 +1,1072 @@
+# Auto-generated from DOCU/NOD_Konzept_Funktionsliste.txt
+# Category: chat
+# Description: Chat panels, communication controls, and related voice or text UI.
+
+'BNToastFrame':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'BNToastFrameBottomLine':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'BNToastFrameDoubleLine':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'BNToastFrameMiddleLine':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'BNToastFrameTopLine':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'ChannelFrame':
+  type: Frame
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'ChannelFrameCloseButton':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'ChannelFrameInset':
+  type: Frame
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'ChannelFrameScrollChild':
+  type: Frame
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'ChannelFrameScrollDownButton':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'ChannelFrameScrollUpButton':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'ChannelFrameText':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'ChannelFrameTitleText':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'ChatAlertFrame':
+  type: Frame
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'ChatConfigBackgroundFrame':
+  type: Frame
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'ChatConfigCategoryFrame':
+  type: Frame
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'ChatConfigCategoryFrameButton1':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'ChatConfigCategoryFrameButton1NormalText':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'ChatConfigCategoryFrameButton2':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'ChatConfigCategoryFrameButton2NormalText':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'ChatConfigCategoryFrameButton3':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'ChatConfigCategoryFrameButton3NormalText':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'ChatConfigCategoryFrameButton4':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'ChatConfigCategoryFrameButton4NormalText':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'ChatConfigCategoryFrameButton5':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'ChatConfigCategoryFrameButton5NormalText':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'ChatConfigCategoryFrameButton6':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'ChatConfigCategoryFrameButton6NormalText':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'ChatConfigCategoryFrameButton7':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'ChatConfigCategoryFrameButton7NormalText':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'ChatConfigChannelSettings':
+  type: Frame
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'ChatConfigChannelSettingsAvailable':
+  type: Frame
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'ChatConfigChannelSettingsAvailableTitle':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'ChatConfigChannelSettingsClassColorLegend':
+  type: Frame
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'ChatConfigChannelSettingsClassColorLegendTitle':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'ChatConfigChannelSettingsLeft':
+  type: Frame
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'ChatConfigChannelSettingsLeftClassColorHeader':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'ChatConfigChannelSettingsLeftColorHeader':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'ChatConfigChannelSettingsLeftTitle':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'ChatConfigChatSettings':
+  type: Frame
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'ChatConfigChatSettingsClassColorLegend':
+  type: Frame
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'ChatConfigChatSettingsClassColorLegendTitle':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'ChatConfigChatSettingsLeft':
+  type: Frame
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'ChatConfigChatSettingsLeftClassColorHeader':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'ChatConfigChatSettingsLeftColorHeader':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'ChatConfigChatSettingsLeftTitle':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'ChatConfigCombatSettings':
+  type: Frame
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'ChatConfigCombatSettingsFilters':
+  type: Frame
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'ChatConfigCombatSettingsFiltersAddFilterButton':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'ChatConfigCombatSettingsFiltersAddFilterButtonText':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'ChatConfigCombatSettingsFiltersButton1':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'ChatConfigCombatSettingsFiltersButton1NormalText':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'ChatConfigCombatSettingsFiltersButton2':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'ChatConfigCombatSettingsFiltersButton2NormalText':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'ChatConfigCombatSettingsFiltersButton3':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'ChatConfigCombatSettingsFiltersButton3NormalText':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'ChatConfigCombatSettingsFiltersButton4':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'ChatConfigCombatSettingsFiltersButton4NormalText':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'ChatConfigCombatSettingsFiltersCopyFilterButton':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'ChatConfigCombatSettingsFiltersCopyFilterButtonText':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'ChatConfigCombatSettingsFiltersDeleteButton':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'ChatConfigCombatSettingsFiltersDeleteButtonText':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'ChatConfigCombatSettingsFiltersScrollFrameScrollBarBorder':
+  type: Frame
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'ChatConfigCombatSettingsFiltersScrollFrameScrollBarScrollDownButton':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'ChatConfigCombatSettingsFiltersScrollFrameScrollBarScrollUpButton':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'ChatConfigCombatSettingsFiltersScrollFrameScrollChildFrame':
+  type: Frame
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'ChatConfigFrame':
+  type: Frame
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'ChatConfigFrameCancelButton':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'ChatConfigFrameCancelButtonText':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'ChatConfigFrameChatTabManager':
+  type: Frame
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'ChatConfigFrameDefaultButton':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'ChatConfigFrameDefaultButtonText':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'ChatConfigFrameHeaderText':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'ChatConfigFrameOkayButton':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'ChatConfigFrameOkayButtonText':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'ChatConfigFrameRedockButton':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'ChatConfigFrameRedockButtonText':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'ChatConfigFrameText':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'ChatConfigMoveFilterDownButton':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'ChatConfigMoveFilterUpButton':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'ChatConfigOtherSettings':
+  type: Frame
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'ChatConfigOtherSettingsCombat':
+  type: Frame
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'ChatConfigOtherSettingsCombatTitle':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'ChatConfigOtherSettingsCreature':
+  type: Frame
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'ChatConfigOtherSettingsCreatureTitle':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'ChatConfigOtherSettingsPVP':
+  type: Frame
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'ChatConfigOtherSettingsPVPTitle':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'ChatConfigOtherSettingsSystem':
+  type: Frame
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'ChatConfigOtherSettingsSystemTitle':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'ChatConfigTextToSpeechChannelSettings':
+  type: Frame
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'ChatConfigTextToSpeechChannelSettingsLeft':
+  type: Frame
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'ChatConfigTextToSpeechChannelSettingsLeftTitle':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'ChatConfigTextToSpeechMessageSettings':
+  type: Frame
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'ChatFrame1':
+  type: Frame
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'ChatFrame10':
+  type: Frame
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'ChatFrame10ButtonFrame':
+  type: Frame
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'ChatFrame10ButtonFrameBottomButton':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'ChatFrame10ButtonFrameDownButton':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'ChatFrame10ButtonFrameUpButton':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'ChatFrame10ClickAnywhereButton':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'ChatFrame10EditBox':
+  type: EditBox
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'ChatFrame10EditBoxHeader':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'ChatFrame10EditBoxHeaderSuffix':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'ChatFrame10EditBoxLanguage':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'ChatFrame10EditBoxPrompt':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'ChatFrame10MinimizeButton':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'ChatFrame10ResizeButton':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'ChatFrame10Tab':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'ChatFrame10TabFlash':
+  type: Frame
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'ChatFrame10TabText':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'ChatFrame1ButtonFrame':
+  type: Frame
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'ChatFrame1ButtonFrameBottomButton':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'ChatFrame1ButtonFrameDownButton':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'ChatFrame1ButtonFrameUpButton':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'ChatFrame1ClickAnywhereButton':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'ChatFrame1EditBox':
+  type: EditBox
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'ChatFrame1EditBoxHeader':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'ChatFrame1EditBoxHeaderSuffix':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'ChatFrame1EditBoxLanguage':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'ChatFrame1EditBoxPrompt':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'ChatFrame1MinimizeButton':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'ChatFrame1ResizeButton':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'ChatFrame1Tab':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'ChatFrame1TabFlash':
+  type: Frame
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'ChatFrame1TabText':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'ChatFrame2':
+  type: Frame
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'ChatFrame2ButtonFrame':
+  type: Frame
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'ChatFrame2ButtonFrameBottomButton':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'ChatFrame2ButtonFrameDownButton':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'ChatFrame2ButtonFrameUpButton':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'ChatFrame2ClickAnywhereButton':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'ChatFrame2EditBox':
+  type: EditBox
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'ChatFrame2EditBoxHeader':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'ChatFrame2EditBoxHeaderSuffix':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'ChatFrame2EditBoxLanguage':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'ChatFrame2EditBoxPrompt':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'ChatFrame2MinimizeButton':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'ChatFrame2ResizeButton':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'ChatFrame2Tab':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'ChatFrame2TabFlash':
+  type: Frame
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'ChatFrame2TabText':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'ChatFrame3':
+  type: Frame
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'ChatFrame3ButtonFrame':
+  type: Frame
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'ChatFrame3ButtonFrameBottomButton':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'ChatFrame3ButtonFrameDownButton':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'ChatFrame3ButtonFrameUpButton':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'ChatFrame3ClickAnywhereButton':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'ChatFrame3EditBox':
+  type: EditBox
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'ChatFrame3EditBoxHeader':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'ChatFrame3EditBoxHeaderSuffix':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'ChatFrame3EditBoxLanguage':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'ChatFrame3EditBoxPrompt':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'ChatFrame3MinimizeButton':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'ChatFrame3ResizeButton':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'ChatFrame3Tab':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'ChatFrame3TabFlash':
+  type: Frame
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'ChatFrame3TabText':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'ChatFrame4':
+  type: Frame
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'ChatFrame4ButtonFrame':
+  type: Frame
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'ChatFrame4ButtonFrameBottomButton':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'ChatFrame4ButtonFrameDownButton':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'ChatFrame4ButtonFrameUpButton':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'ChatFrame4ClickAnywhereButton':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'ChatFrame4EditBox':
+  type: EditBox
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'ChatFrame4EditBoxHeader':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'ChatFrame4EditBoxHeaderSuffix':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'ChatFrame4EditBoxLanguage':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'ChatFrame4EditBoxPrompt':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'ChatFrame4MinimizeButton':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'ChatFrame4ResizeButton':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'ChatFrame4Tab':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'ChatFrame4TabFlash':
+  type: Frame
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'ChatFrame4TabText':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'ChatFrame5':
+  type: Frame
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'ChatFrame5ButtonFrame':
+  type: Frame
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'ChatFrame5ButtonFrameBottomButton':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'ChatFrame5ButtonFrameDownButton':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'ChatFrame5ButtonFrameUpButton':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'ChatFrame5ClickAnywhereButton':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'ChatFrame5EditBox':
+  type: EditBox
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'ChatFrame5EditBoxHeader':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'ChatFrame5EditBoxHeaderSuffix':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'ChatFrame5EditBoxLanguage':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'ChatFrame5EditBoxPrompt':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'ChatFrame5MinimizeButton':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'ChatFrame5ResizeButton':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'ChatFrame5Tab':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'ChatFrame5TabFlash':
+  type: Frame
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'ChatFrame5TabText':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'ChatFrame6':
+  type: Frame
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'ChatFrame6ButtonFrame':
+  type: Frame
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'ChatFrame6ButtonFrameBottomButton':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'ChatFrame6ButtonFrameDownButton':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'ChatFrame6ButtonFrameUpButton':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'ChatFrame6ClickAnywhereButton':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'ChatFrame6EditBox':
+  type: EditBox
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'ChatFrame6EditBoxHeader':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'ChatFrame6EditBoxHeaderSuffix':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'ChatFrame6EditBoxLanguage':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'ChatFrame6EditBoxPrompt':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'ChatFrame6MinimizeButton':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'ChatFrame6ResizeButton':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'ChatFrame6Tab':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'ChatFrame6TabFlash':
+  type: Frame
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'ChatFrame6TabText':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'ChatFrame7':
+  type: Frame
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'ChatFrame7ButtonFrame':
+  type: Frame
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'ChatFrame7ButtonFrameBottomButton':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'ChatFrame7ButtonFrameDownButton':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'ChatFrame7ButtonFrameUpButton':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'ChatFrame7ClickAnywhereButton':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'ChatFrame7EditBox':
+  type: EditBox
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'ChatFrame7EditBoxHeader':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'ChatFrame7EditBoxHeaderSuffix':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'ChatFrame7EditBoxLanguage':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'ChatFrame7EditBoxPrompt':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'ChatFrame7MinimizeButton':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'ChatFrame7ResizeButton':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'ChatFrame7Tab':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'ChatFrame7TabFlash':
+  type: Frame
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'ChatFrame7TabText':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'ChatFrame8':
+  type: Frame
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'ChatFrame8ButtonFrame':
+  type: Frame
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'ChatFrame8ButtonFrameBottomButton':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'ChatFrame8ButtonFrameDownButton':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'ChatFrame8ButtonFrameUpButton':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'ChatFrame8ClickAnywhereButton':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'ChatFrame8EditBox':
+  type: EditBox
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'ChatFrame8EditBoxHeader':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'ChatFrame8EditBoxHeaderSuffix':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'ChatFrame8EditBoxLanguage':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'ChatFrame8EditBoxPrompt':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'ChatFrame8MinimizeButton':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'ChatFrame8ResizeButton':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'ChatFrame8Tab':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'ChatFrame8TabFlash':
+  type: Frame
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'ChatFrame8TabText':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'ChatFrame9':
+  type: Frame
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'ChatFrame9ButtonFrame':
+  type: Frame
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'ChatFrame9ButtonFrameBottomButton':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'ChatFrame9ButtonFrameDownButton':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'ChatFrame9ButtonFrameUpButton':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'ChatFrame9ClickAnywhereButton':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'ChatFrame9EditBox':
+  type: EditBox
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'ChatFrame9EditBoxHeader':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'ChatFrame9EditBoxHeaderSuffix':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'ChatFrame9EditBoxLanguage':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'ChatFrame9EditBoxPrompt':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'ChatFrame9MinimizeButton':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'ChatFrame9ResizeButton':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'ChatFrame9Tab':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'ChatFrame9TabFlash':
+  type: Frame
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'ChatFrame9TabText':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'ChatFrameChannelButton':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'ChatFrameMenuButton':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'TextToSpeechButton':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'TextToSpeechButtonFrame':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'TextToSpeechCharacterSpecificButtonText':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'TextToSpeechDefaultButton':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'TextToSpeechDefaultButtonText':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'TextToSpeechFrame':
+  type: Frame
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'TextToSpeechFramePanelContainer':
+  type: Frame
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'TextToSpeechFramePanelContainerText':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'VoiceActivityManager':
+  type: Frame
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'VoiceChatChannelActivatedNotification':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'VoiceChatPromptActivateChannel':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'VoiceChatPromptActivateChannelText':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt

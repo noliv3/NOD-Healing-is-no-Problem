@@ -1,0 +1,664 @@
+# Auto-generated from DOCU/NOD_Konzept_Funktionsliste.txt
+# Category: config
+# Description: Configuration panels, settings sliders, and persistent profile helpers.
+
+'AddonDialogBackground':
+  type: Frame
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'AddonDialogButton1':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'AddonDialogButton1Text':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'AddonDialogButton2':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'AddonDialogButton2Text':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'AddonDialogText':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'AddonList':
+  type: Frame
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'AddonListCancelButton':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'AddonListCancelButtonText':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'AddonListCloseButton':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'AddonListDisableAllButton':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'AddonListDisableAllButtonText':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'AddonListEnableAllButton':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'AddonListEnableAllButtonText':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'AddonListEntry1':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'AddonListEntry10':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'AddonListEntry10Load':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'AddonListEntry10LoadText':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'AddonListEntry10Reload':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'AddonListEntry10Security':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'AddonListEntry10Status':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'AddonListEntry10Title':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'AddonListEntry11':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'AddonListEntry11Load':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'AddonListEntry11LoadText':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'AddonListEntry11Reload':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'AddonListEntry11Security':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'AddonListEntry11Status':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'AddonListEntry11Title':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'AddonListEntry12':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'AddonListEntry12Load':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'AddonListEntry12LoadText':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'AddonListEntry12Reload':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'AddonListEntry12Security':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'AddonListEntry12Status':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'AddonListEntry12Title':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'AddonListEntry13':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'AddonListEntry13Load':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'AddonListEntry13LoadText':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'AddonListEntry13Reload':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'AddonListEntry13Security':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'AddonListEntry13Status':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'AddonListEntry13Title':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'AddonListEntry14':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'AddonListEntry14Load':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'AddonListEntry14LoadText':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'AddonListEntry14Reload':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'AddonListEntry14Security':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'AddonListEntry14Status':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'AddonListEntry14Title':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'AddonListEntry15':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'AddonListEntry15Load':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'AddonListEntry15LoadText':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'AddonListEntry15Reload':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'AddonListEntry15Security':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'AddonListEntry15Status':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'AddonListEntry15Title':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'AddonListEntry16':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'AddonListEntry16Load':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'AddonListEntry16LoadText':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'AddonListEntry16Reload':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'AddonListEntry16Security':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'AddonListEntry16Status':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'AddonListEntry16Title':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'AddonListEntry17':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'AddonListEntry17Load':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'AddonListEntry17LoadText':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'AddonListEntry17Reload':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'AddonListEntry17Security':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'AddonListEntry17Status':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'AddonListEntry17Title':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'AddonListEntry18':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'AddonListEntry18Load':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'AddonListEntry18LoadText':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'AddonListEntry18Reload':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'AddonListEntry18Security':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'AddonListEntry18Status':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'AddonListEntry18Title':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'AddonListEntry19':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'AddonListEntry19Load':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'AddonListEntry19LoadText':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'AddonListEntry19Reload':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'AddonListEntry19Security':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'AddonListEntry19Status':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'AddonListEntry19Title':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'AddonListEntry1Load':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'AddonListEntry1LoadText':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'AddonListEntry1Reload':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'AddonListEntry1Security':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'AddonListEntry1Status':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'AddonListEntry1Title':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'AddonListEntry2':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'AddonListEntry2Load':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'AddonListEntry2LoadText':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'AddonListEntry2Reload':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'AddonListEntry2Security':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'AddonListEntry2Status':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'AddonListEntry2Title':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'AddonListEntry3':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'AddonListEntry3Load':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'AddonListEntry3LoadText':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'AddonListEntry3Reload':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'AddonListEntry3Security':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'AddonListEntry3Status':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'AddonListEntry3Title':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'AddonListEntry4':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'AddonListEntry4Load':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'AddonListEntry4LoadText':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'AddonListEntry4Reload':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'AddonListEntry4Security':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'AddonListEntry4Status':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'AddonListEntry4Title':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'AddonListEntry5':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'AddonListEntry5Load':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'AddonListEntry5LoadText':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'AddonListEntry5Reload':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'AddonListEntry5Security':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'AddonListEntry5Status':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'AddonListEntry5Title':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'AddonListEntry6':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'AddonListEntry6Load':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'AddonListEntry6LoadText':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'AddonListEntry6Reload':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'AddonListEntry6Security':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'AddonListEntry6Status':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'AddonListEntry6Title':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'AddonListEntry7':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'AddonListEntry7Load':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'AddonListEntry7LoadText':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'AddonListEntry7Reload':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'AddonListEntry7Security':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'AddonListEntry7Status':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'AddonListEntry7Title':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'AddonListEntry8':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'AddonListEntry8Load':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'AddonListEntry8LoadText':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'AddonListEntry8Reload':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'AddonListEntry8Security':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'AddonListEntry8Status':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'AddonListEntry8Title':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'AddonListEntry9':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'AddonListEntry9Load':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'AddonListEntry9LoadText':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'AddonListEntry9Reload':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'AddonListEntry9Security':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'AddonListEntry9Status':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'AddonListEntry9Title':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'AddonListInset':
+  type: Frame
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'AddonListOkayButton':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'AddonListOkayButtonText':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'AddonListScrollFrameScrollBarScrollDownButton':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'AddonListScrollFrameScrollBarScrollUpButton':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'AddonListScrollFrameScrollChildFrame':
+  type: Frame
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'AddonListTitleText':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'ColorPickerCancelButton':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'ColorPickerCancelButtonText':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'ColorPickerOkayButton':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'ColorPickerOkayButtonText':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'SettingsPanel':
+  type: Frame
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'SettingsPanelClearButton':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'SettingsPanelText':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'SettingsTooltipTextLeft1':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'SettingsTooltipTextLeft2':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'SettingsTooltipTextRight1':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'SettingsTooltipTextRight2':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt

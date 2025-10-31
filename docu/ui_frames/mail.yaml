@@ -1,0 +1,984 @@
+# Auto-generated from DOCU/NOD_Konzept_Funktionsliste.txt
+# Category: mail
+# Description: Mailbox interaction, send mail UI, and attachment handling.
+
+'InboxCurrentPage':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'InboxFrame':
+  type: Frame
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'InboxNextPageButton':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'InboxPrevPageButton':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'InboxTitleText':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'InboxTooMuchMail':
+  type: Frame
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'InboxTooMuchMailText':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'MailEditBox':
+  type: Frame
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'MailEditBoxScrollBar':
+  type: Frame
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'MailFrame':
+  type: Frame
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'MailFrameCloseButton':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'MailFrameInset':
+  type: Frame
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'MailFrameTab1':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'MailFrameTab1Text':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'MailFrameTab2':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'MailFrameTab2Text':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'MailFrameTitleText':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'MailFrameTrialError':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'MailItem1':
+  type: Frame
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'MailItem1ButtonCOD':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'MailItem1ButtonCount':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'MailItem1ExpireTime':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'MailItem1Sender':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'MailItem1Subject':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'MailItem2':
+  type: Frame
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'MailItem2ButtonCOD':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'MailItem2ButtonCount':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'MailItem2ExpireTime':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'MailItem2Sender':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'MailItem2Subject':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'MailItem3':
+  type: Frame
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'MailItem3ButtonCOD':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'MailItem3ButtonCount':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'MailItem3ExpireTime':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'MailItem3Sender':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'MailItem3Subject':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'MailItem4':
+  type: Frame
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'MailItem4ButtonCOD':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'MailItem4ButtonCount':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'MailItem4ExpireTime':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'MailItem4Sender':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'MailItem4Subject':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'MailItem5':
+  type: Frame
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'MailItem5ButtonCOD':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'MailItem5ButtonCount':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'MailItem5ExpireTime':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'MailItem5Sender':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'MailItem5Subject':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'MailItem6':
+  type: Frame
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'MailItem6ButtonCOD':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'MailItem6ButtonCount':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'MailItem6ExpireTime':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'MailItem6Sender':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'MailItem6Subject':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'MailItem7':
+  type: Frame
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'MailItem7ButtonCOD':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'MailItem7ButtonCount':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'MailItem7ExpireTime':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'MailItem7Sender':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'MailItem7Subject':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'OpenMailAttachmentButton1':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'OpenMailAttachmentButton10':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'OpenMailAttachmentButton10Count':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'OpenMailAttachmentButton10Stock':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'OpenMailAttachmentButton11':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'OpenMailAttachmentButton11Count':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'OpenMailAttachmentButton11Stock':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'OpenMailAttachmentButton12':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'OpenMailAttachmentButton12Count':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'OpenMailAttachmentButton12Stock':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'OpenMailAttachmentButton13':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'OpenMailAttachmentButton13Count':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'OpenMailAttachmentButton13Stock':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'OpenMailAttachmentButton14':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'OpenMailAttachmentButton14Count':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'OpenMailAttachmentButton14Stock':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'OpenMailAttachmentButton15':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'OpenMailAttachmentButton15Count':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'OpenMailAttachmentButton15Stock':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'OpenMailAttachmentButton16':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'OpenMailAttachmentButton16Count':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'OpenMailAttachmentButton16Stock':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'OpenMailAttachmentButton1Count':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'OpenMailAttachmentButton1Stock':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'OpenMailAttachmentButton2':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'OpenMailAttachmentButton2Count':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'OpenMailAttachmentButton2Stock':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'OpenMailAttachmentButton3':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'OpenMailAttachmentButton3Count':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'OpenMailAttachmentButton3Stock':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'OpenMailAttachmentButton4':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'OpenMailAttachmentButton4Count':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'OpenMailAttachmentButton4Stock':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'OpenMailAttachmentButton5':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'OpenMailAttachmentButton5Count':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'OpenMailAttachmentButton5Stock':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'OpenMailAttachmentButton6':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'OpenMailAttachmentButton6Count':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'OpenMailAttachmentButton6Stock':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'OpenMailAttachmentButton7':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'OpenMailAttachmentButton7Count':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'OpenMailAttachmentButton7Stock':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'OpenMailAttachmentButton8':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'OpenMailAttachmentButton8Count':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'OpenMailAttachmentButton8Stock':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'OpenMailAttachmentButton9':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'OpenMailAttachmentButton9Count':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'OpenMailAttachmentButton9Stock':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'OpenMailAttachmentText':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'OpenMailCancelButton':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'OpenMailCancelButtonText':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'OpenMailDeleteButton':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'OpenMailDeleteButtonText':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'OpenMailDepositMoneyFrame':
+  type: Frame
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'OpenMailDepositMoneyFrameCopperButton':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'OpenMailDepositMoneyFrameCopperButtonText':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'OpenMailDepositMoneyFrameGoldButton':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'OpenMailDepositMoneyFrameGoldButtonText':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'OpenMailDepositMoneyFrameSilverButton':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'OpenMailDepositMoneyFrameSilverButtonText':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'OpenMailDepositMoneyFrameTrialErrorButton':
+  type: Frame
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'OpenMailFrame':
+  type: Frame
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'OpenMailFrameCloseButton':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'OpenMailFrameInset':
+  type: Frame
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'OpenMailFrameTitleText':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'OpenMailHouseCutMoneyFrame':
+  type: Frame
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'OpenMailHouseCutMoneyFrameCopperButton':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'OpenMailHouseCutMoneyFrameCopperButtonText':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'OpenMailHouseCutMoneyFrameGoldButton':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'OpenMailHouseCutMoneyFrameGoldButtonText':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'OpenMailHouseCutMoneyFrameSilverButton':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'OpenMailHouseCutMoneyFrameSilverButtonText':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'OpenMailHouseCutMoneyFrameTrialErrorButton':
+  type: Frame
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'OpenMailInvoiceAmountReceived':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'OpenMailInvoiceBuyMode':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'OpenMailInvoiceDeposit':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'OpenMailInvoiceFrame':
+  type: Frame
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'OpenMailInvoiceHouseCut':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'OpenMailInvoiceItemLabel':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'OpenMailInvoiceMoneyDelay':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'OpenMailInvoiceNotYetSent':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'OpenMailInvoicePurchaser':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'OpenMailInvoiceSalePrice':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'OpenMailLetterButton':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'OpenMailLetterButtonCount':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'OpenMailLetterButtonStock':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'OpenMailMoneyButton':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'OpenMailMoneyButtonCount':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'OpenMailMoneyButtonStock':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'OpenMailReplyButton':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'OpenMailReplyButtonText':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'OpenMailReportSpamButton':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'OpenMailReportSpamButtonText':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'OpenMailSalePriceMoneyFrame':
+  type: Frame
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'OpenMailSalePriceMoneyFrameCopperButton':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'OpenMailSalePriceMoneyFrameCopperButtonText':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'OpenMailSalePriceMoneyFrameGoldButton':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'OpenMailSalePriceMoneyFrameGoldButtonText':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'OpenMailSalePriceMoneyFrameSilverButton':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'OpenMailSalePriceMoneyFrameSilverButtonText':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'OpenMailSalePriceMoneyFrameTrialErrorButton':
+  type: Frame
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'OpenMailScrollChildFrame':
+  type: Frame
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'OpenMailScrollFrameScrollBarScrollDownButton':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'OpenMailScrollFrameScrollBarScrollUpButton':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'OpenMailSender':
+  type: Frame
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'OpenMailSenderLabel':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'OpenMailSubject':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'OpenMailSubjectLabel':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'OpenMailTitleText':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'OpenMailTransactionAmountMoneyFrame':
+  type: Frame
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'OpenMailTransactionAmountMoneyFrameCopperButton':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'OpenMailTransactionAmountMoneyFrameCopperButtonText':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'OpenMailTransactionAmountMoneyFrameGoldButton':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'OpenMailTransactionAmountMoneyFrameGoldButtonText':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'OpenMailTransactionAmountMoneyFrameSilverButton':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'OpenMailTransactionAmountMoneyFrameSilverButtonText':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'OpenMailTransactionAmountMoneyFrameTrialErrorButton':
+  type: Frame
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'SendMailAttachment1':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'SendMailAttachment10':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'SendMailAttachment10Count':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'SendMailAttachment11':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'SendMailAttachment11Count':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'SendMailAttachment12':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'SendMailAttachment12Count':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'SendMailAttachment13':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'SendMailAttachment13Count':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'SendMailAttachment14':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'SendMailAttachment14Count':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'SendMailAttachment15':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'SendMailAttachment15Count':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'SendMailAttachment16':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'SendMailAttachment16Count':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'SendMailAttachment1Count':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'SendMailAttachment2':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'SendMailAttachment2Count':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'SendMailAttachment3':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'SendMailAttachment3Count':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'SendMailAttachment4':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'SendMailAttachment4Count':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'SendMailAttachment5':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'SendMailAttachment5Count':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'SendMailAttachment6':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'SendMailAttachment6Count':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'SendMailAttachment7':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'SendMailAttachment7Count':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'SendMailAttachment8':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'SendMailAttachment8Count':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'SendMailAttachment9':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'SendMailAttachment9Count':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'SendMailCODButtonText':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'SendMailCancelButton':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'SendMailCancelButtonText':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'SendMailCostMoneyFrame':
+  type: Frame
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'SendMailCostMoneyFrameCopperButton':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'SendMailCostMoneyFrameCopperButtonText':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'SendMailCostMoneyFrameGoldButton':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'SendMailCostMoneyFrameGoldButtonText':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'SendMailCostMoneyFrameSilverButton':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'SendMailCostMoneyFrameSilverButtonText':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'SendMailCostMoneyFrameTrialErrorButton':
+  type: Frame
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'SendMailErrorText':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'SendMailFrame':
+  type: Frame
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'SendMailFrameLockSendMail':
+  type: Frame
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'SendMailMailButton':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'SendMailMailButtonText':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'SendMailMoney':
+  type: Frame
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'SendMailMoneyBg':
+  type: Frame
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'SendMailMoneyButton':
+  type: Frame
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'SendMailMoneyCopper':
+  type: EditBox
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'SendMailMoneyFrame':
+  type: Frame
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'SendMailMoneyFrameCopperButton':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'SendMailMoneyFrameCopperButtonText':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'SendMailMoneyFrameGoldButton':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'SendMailMoneyFrameGoldButtonText':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'SendMailMoneyFrameSilverButton':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'SendMailMoneyFrameSilverButtonText':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'SendMailMoneyFrameTrialErrorButton':
+  type: Frame
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'SendMailMoneyGold':
+  type: EditBox
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'SendMailMoneyInset':
+  type: Frame
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'SendMailMoneySilver':
+  type: EditBox
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'SendMailMoneyText':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'SendMailNameEditBox':
+  type: EditBox
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'SendMailSendMoneyButtonText':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'SendMailSubjectEditBox':
+  type: EditBox
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'SendMailTitleText':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt

@@ -1,0 +1,304 @@
+# Auto-generated from DOCU/NOD_Konzept_Funktionsliste.txt
+# Category: combatlog
+# Description: Combat log panels, parsing helpers, and scrolling combat text widgets.
+
+'CombatConfigColors':
+  type: Frame
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'CombatConfigColorsColorize':
+  type: Frame
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'CombatConfigColorsColorizeDamageNumber':
+  type: Frame
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'CombatConfigColorsColorizeDamageNumberCheckText':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'CombatConfigColorsColorizeDamageNumberColorSwatch':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'CombatConfigColorsColorizeDamageNumberSchoolColoringText':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'CombatConfigColorsColorizeDamageSchool':
+  type: Frame
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'CombatConfigColorsColorizeDamageSchoolCheckText':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'CombatConfigColorsColorizeEntireLine':
+  type: Frame
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'CombatConfigColorsColorizeEntireLineBySourceText':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'CombatConfigColorsColorizeEntireLineByTargetText':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'CombatConfigColorsColorizeEntireLineCheckText':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'CombatConfigColorsColorizeSpellNames':
+  type: Frame
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'CombatConfigColorsColorizeSpellNamesCheckText':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'CombatConfigColorsColorizeSpellNamesColorSwatch':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'CombatConfigColorsColorizeSpellNamesSchoolColoringText':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'CombatConfigColorsColorizeUnitName':
+  type: Frame
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'CombatConfigColorsColorizeUnitNameCheckText':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'CombatConfigColorsExampleString1':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'CombatConfigColorsExampleString2':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'CombatConfigColorsExampleTitle':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'CombatConfigColorsHighlighting':
+  type: Frame
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'CombatConfigColorsHighlightingAbilityText':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'CombatConfigColorsHighlightingDamageText':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'CombatConfigColorsHighlightingLineText':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'CombatConfigColorsHighlightingSchoolText':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'CombatConfigColorsHighlightingTitle':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'CombatConfigColorsUnitColors':
+  type: Frame
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'CombatConfigColorsUnitColorsTitle':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'CombatConfigFormatting':
+  type: Frame
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'CombatConfigFormattingExampleString1':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'CombatConfigFormattingExampleString2':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'CombatConfigFormattingExampleTitle':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'CombatConfigFormattingFullTextText':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'CombatConfigFormattingItemNamesText':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'CombatConfigFormattingShowBracesText':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'CombatConfigFormattingShowTimeStampText':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'CombatConfigFormattingSpellNamesText':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'CombatConfigFormattingUnitNamesText':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'CombatConfigMessageSources':
+  type: Frame
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'CombatConfigMessageSourcesDoneBy':
+  type: Frame
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'CombatConfigMessageSourcesDoneByTitle':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'CombatConfigMessageSourcesDoneTo':
+  type: Frame
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'CombatConfigMessageSourcesDoneToTitle':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'CombatConfigMessageTypes':
+  type: Frame
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'CombatConfigMessageTypesLeft':
+  type: Frame
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'CombatConfigMessageTypesMisc':
+  type: Frame
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'CombatConfigMessageTypesRight':
+  type: Frame
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'CombatConfigSettings':
+  type: Frame
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'CombatConfigSettingsNameEditBox':
+  type: EditBox
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'CombatConfigSettingsPartyText':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'CombatConfigSettingsRaidText':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'CombatConfigSettingsSaveButton':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'CombatConfigSettingsSaveButtonText':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'CombatConfigSettingsShowQuickButtonText':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'CombatConfigSettingsSoloText':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'CombatConfigTab1':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'CombatConfigTab1Text':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'CombatConfigTab2':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'CombatConfigTab2Text':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'CombatConfigTab3':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'CombatConfigTab3Text':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'CombatConfigTab4':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'CombatConfigTab4Text':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'CombatConfigTab5':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'CombatConfigTab5Text':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'CombatLogDefaultButton':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'CombatLogDefaultButtonText':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'CombatLogQuickButtonFrame':
+  type: Frame
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'CombatLogQuickButtonFrameButton1':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'CombatLogQuickButtonFrameButton2':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'CombatLogQuickButtonFrame_Custom':
+  type: Frame
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'CombatLogQuickButtonFrame_CustomAdditionalFilterButton':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'CombatLogQuickButtonFrame_CustomProgressBar':
+  type: StatusBar
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'CombatLogUpdateFrame':
+  type: Frame
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt

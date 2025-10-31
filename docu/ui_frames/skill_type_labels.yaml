@@ -1,0 +1,100 @@
+# Auto-generated from DOCU/NOD_Konzept_Funktionsliste.txt
+# Category: skill_type_labels
+# Description: Auto-generated group for prefix "skilltypelabel".
+
+'SkillTypeLabel1':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'SkillTypeLabel10':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'SkillTypeLabel10Text':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'SkillTypeLabel11':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'SkillTypeLabel11Text':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'SkillTypeLabel12':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'SkillTypeLabel12Text':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'SkillTypeLabel1Text':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'SkillTypeLabel2':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'SkillTypeLabel2Text':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'SkillTypeLabel3':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'SkillTypeLabel3Text':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'SkillTypeLabel4':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'SkillTypeLabel4Text':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'SkillTypeLabel5':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'SkillTypeLabel5Text':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'SkillTypeLabel6':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'SkillTypeLabel6Text':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'SkillTypeLabel7':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'SkillTypeLabel7Text':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'SkillTypeLabel8':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'SkillTypeLabel8Text':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'SkillTypeLabel9':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'SkillTypeLabel9Text':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
