@@ -7,6 +7,10 @@ NODHealDB.profile = NODHealDB.profile or {
     enableLibHealComm = true,
 }
 
+if type(NODHealDB.useLHC) ~= "boolean" then
+    NODHealDB.useLHC = true
+end
+
 local defaults = NODHealDB.profile
 
 local NODHeal = _G.NODHeal or {}

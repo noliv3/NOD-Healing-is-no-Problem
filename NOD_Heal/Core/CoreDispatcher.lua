@@ -5,48 +5,40 @@
 
 local CreateFrame = CreateFrame
 local GetTime = GetTime
+local C_Timer = C_Timer
 local type = type
 local pairs = pairs
+local format = string.format
 local tinsert = table.insert
 
 local dispatcherFrame
 local eventHandlers = {}
 local registeredEvents = {}
+local tickerHandle
 
 local M = {}
 
--- REGION: LHC/API Stubs
--- [D1-LHCAPI] Registrierung von HealComm-Events (Dispatcher-Sicht)
-function M.RegisterHealComm()
-  print("[NOD] RegisterHealComm() – Placeholder aktiviert")
+local function log(message)
+  if message then
+    print("[NOD] " .. message)
+  end
 end
 
--- [D1-LHCAPI] Deregistrierung von HealComm-Events (Dispatcher-Sicht)
-function M.UnregisterHealComm()
-  print("[NOD] UnregisterHealComm() – Placeholder deaktiviert")
+local function namespace()
+  return _G.NODHeal
 end
 
--- [D1-LHCAPI] Queue-Delegation an Dispatcher (Stub)
-function M.scheduleFromTargets(casterGUID, spellID, targets, amount, t_land)
-  print(string.format("[NOD] scheduleFromTargets() %s %s %s %s", tostring(casterGUID), tostring(spellID), tostring(amount), tostring(t_land)))
+local function getModule(name)
+  local ns = namespace()
+  if ns and ns.GetModule then
+    return ns:GetModule(name)
+  end
 end
 
--- [D1-LHCAPI] Dispatcher-Fallback (Stub)
-function M.FetchFallback(unit)
-  print(string.format("[NOD] FetchFallback() %s", tostring(unit)))
-  return 0, "fallback"
+local function getState()
+  local ns = namespace()
+  return ns and ns.State
 end
-
--- [D1-LHCAPI] Dispatcher-Cleanup für HealComm-Stub
-function M.CleanExpired()
-  print("[NOD] CleanExpired() – Queue gereinigt (Stub)")
-end
-
--- [D1-LHCAPI] Toggle-Kommandos für /nod healcomm
-function M.ToggleHealComm(state)
-  print(string.format("[NOD] ToggleHealComm() %s", tostring(state)))
-end
--- ENDREGION
 
 local function ensureFrame()
   if dispatcherFrame then
@@ -71,7 +63,6 @@ local function normalizeThrottle(options)
       return options.throttleMs
     end
     if type(options.throttle) == "number" then
-      -- Compatibility with older callers passing seconds
       if options.throttle > 10 then
         return options.throttle
       end
@@ -104,13 +95,63 @@ local function addHandler(event, func, options)
   return entry
 end
 
+local function cancelTicker()
+  if tickerHandle then
+    tickerHandle:Cancel()
+    tickerHandle = nil
+  end
+end
+
+local function scheduleTicker()
+  cancelTicker()
+
+  tickerHandle = C_Timer.NewTicker(0.2, function()
+    local aggregator = getModule("IncomingHealAggregator")
+    if aggregator and aggregator.CleanExpired then
+      aggregator.CleanExpired()
+    end
+
+    local solver = getModule("PredictiveSolver")
+    if solver and solver.CalculateProjectedHealth then
+      solver:CalculateProjectedHealth("player")
+    end
+  end)
+end
+
+local function bootstrapHandlers()
+  M.RegisterHandler("COMBAT_LOG_EVENT_UNFILTERED", function(event)
+    log("Dispatcher: event " .. event)
+  end)
+
+  M.RegisterHandler("UNIT_SPELLCAST_STOP", function(event, unit)
+    log(format("Dispatcher: %s unit=%s", event, tostring(unit)))
+  end)
+
+  M.RegisterHandler("UNIT_SPELLCAST_INTERRUPTED", function(event, unit)
+    log(format("Dispatcher: %s unit=%s", event, tostring(unit)))
+  end)
+
+  M.RegisterHandler("PLAYER_REGEN_DISABLED", function(event)
+    log("Dispatcher: event " .. event)
+  end)
+end
+
 function M.Initialize()
   ensureFrame()
-  for event in pairs(registeredEvents) do
-    registeredEvents[event] = nil
-  end
-  for key in pairs(eventHandlers) do
-    eventHandlers[key] = nil
+  M.Reset()
+
+  log("Dispatcher: Initialize")
+  bootstrapHandlers()
+  scheduleTicker()
+
+  local state = getState()
+  local incoming = getModule("IncomingHeals")
+  if state and incoming then
+    if state.useLHC and incoming.RegisterHealComm then
+      incoming.RegisterHealComm()
+    elseif not state.useLHC and incoming.UnregisterHealComm then
+      incoming.UnregisterHealComm()
+    end
   end
 end
 
@@ -184,9 +225,10 @@ function M.SetThrottle(event, throttleMs)
     end
   end
 end
-end
 
 function M.Reset()
+  cancelTicker()
+
   if dispatcherFrame then
     for event in pairs(registeredEvents) do
       if dispatcherFrame:IsEventRegistered(event) then
@@ -201,15 +243,61 @@ function M.Reset()
   end
 end
 
-local namespace = _G.NODHeal
-local module = M
-if namespace and namespace.RegisterModule then
-  module = namespace:RegisterModule("CoreDispatcher", M)
+function M.RegisterHealComm()
+  local incoming = getModule("IncomingHeals")
+  if incoming and incoming.RegisterHealComm then
+    return incoming.RegisterHealComm()
+  end
+  return false
 end
 
--- [D1-LHCAPI] Placeholder verification
-if DEBUG then
-  print("[NOD] LHC/API stub loaded")
+function M.UnregisterHealComm()
+  local incoming = getModule("IncomingHeals")
+  if incoming and incoming.UnregisterHealComm then
+    incoming.UnregisterHealComm()
+  end
+end
+
+function M.scheduleFromTargets(casterGUID, spellID, targets, amount, t_land)
+  local incoming = getModule("IncomingHeals")
+  if incoming and incoming.scheduleFromTargets then
+    incoming.scheduleFromTargets(casterGUID, spellID, targets, amount, t_land)
+  end
+end
+
+function M.FetchFallback(unit)
+  local incoming = getModule("IncomingHeals")
+  if incoming and incoming.FetchFallback then
+    return incoming.FetchFallback(unit)
+  end
+  return { amount = 0, confidence = "low" }
+end
+
+function M.CleanExpired()
+  local aggregator = getModule("IncomingHealAggregator")
+  if aggregator and aggregator.CleanExpired then
+    aggregator.CleanExpired()
+  end
+end
+
+function M.ToggleHealComm(stateFlag)
+  local state = getState()
+  if state then
+    state.useLHC = stateFlag and true or false
+    state.lastSwitch = GetTime()
+  end
+
+  if stateFlag then
+    M.RegisterHealComm()
+  else
+    M.UnregisterHealComm()
+  end
+end
+
+local namespaceRef = namespace()
+local module = M
+if namespaceRef and namespaceRef.RegisterModule then
+  module = namespaceRef:RegisterModule("CoreDispatcher", M)
 end
 
 return module
