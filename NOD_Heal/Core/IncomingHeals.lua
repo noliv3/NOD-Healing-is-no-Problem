@@ -5,12 +5,14 @@
 
 local healQueue = {}
 local libHandle
+local dispatcherRef
 
 local GetTime = GetTime
 local UnitGUID = UnitGUID
 local UnitGetIncomingHeals = UnitGetIncomingHeals
 local pairs = pairs
 local ipairs = ipairs
+local type = type
 
 local LANDING_EPSILON = 0.05
 
@@ -115,6 +117,13 @@ local M = {}
 
 function M.Initialize(libHealComm, dispatcher)
   libHandle = libHealComm
+  dispatcherRef = dispatcher or dispatcherRef
+  if not dispatcherRef then
+    local namespace = _G.NODHeal
+    if namespace and namespace.GetModule then
+      dispatcherRef = namespace:GetModule("CoreDispatcher")
+    end
+  end
 
   if libHealComm and libHealComm.RegisterCallback then
     libHealComm:RegisterCallback(M, "HealComm_HealStarted", function(_, casterGUID, spellID, _, endTime, targets)
@@ -134,13 +143,9 @@ function M.Initialize(libHealComm, dispatcher)
     end)
   end
 
-  if dispatcher and dispatcher.RegisterHandler then
-    dispatcher:RegisterHandler("UNIT_SPELLCAST_STOP", function()
-      -- Clear completed heals on every stop to avoid stale entries.
-      local now = GetTime()
-      for guid in pairs(healQueue) do
-        purgeExpired(guid, now)
-      end
+  if dispatcherRef and dispatcherRef.RegisterHandler then
+    dispatcherRef:RegisterHandler("UNIT_SPELLCAST_STOP", function()
+      M.CleanExpired()
     end)
   end
 end
@@ -148,16 +153,16 @@ end
 function M.CollectUntil(unit, tLand)
   local guid = getGuid(unit)
   if not guid then
-    return { total = 0, contributions = {}, confidence = "low" }
+    return { amount = 0, confidence = "low", sources = {} }
   end
 
   local queue = healQueue[guid]
   if not queue or not tLand then
-    local fallback = M.FetchFallback(unit)
+    local fallbackAmount = M.FetchFallback(unit, tLand)
     return {
-      total = fallback.amount,
-      contributions = fallback.contributions,
-      confidence = fallback.confidence,
+      amount = fallbackAmount,
+      confidence = fallbackAmount > 0 and (libHandle and "medium" or "low") or "low",
+      sources = {},
     }
   end
 
@@ -175,53 +180,55 @@ function M.CollectUntil(unit, tLand)
   end
 
   if total <= 0 then
-    local fallback = M.FetchFallback(unit)
+    local fallbackAmount = M.FetchFallback(unit, tLand)
     return {
-      total = fallback.amount,
-      contributions = fallback.contributions,
-      confidence = fallback.confidence,
+      amount = fallbackAmount,
+      confidence = fallbackAmount > 0 and (libHandle and "medium" or "low") or "low",
+      sources = contributions,
     }
   end
 
   return {
-    total = total,
-    contributions = contributions,
+    amount = total,
     confidence = "high",
+    sources = contributions,
   }
 end
 
-function M.FetchFallback(unit, healer)
-  local amount = 0
-  if UnitGetIncomingHeals then
-    amount = UnitGetIncomingHeals(unit, healer) or UnitGetIncomingHeals(unit) or 0
+function M.FetchFallback(unit, tLand)
+  if not UnitGetIncomingHeals or not unit then
+    return 0
   end
 
-  local contributions = {}
-  if healer and amount > 0 then
-    contributions[healer] = amount
+  local amount = UnitGetIncomingHeals(unit) or 0
+  if amount < 0 then
+    amount = 0
   end
 
-  local confidence = libHandle and "medium" or "low"
-
-  return {
-    amount = amount,
-    contributions = contributions,
-    confidence = confidence,
-  }
+  return amount
 end
 
-function M.CleanExpired(unit)
-  local now = GetTime()
-  if unit then
-    local guid = getGuid(unit)
+function M.CleanExpired(now, unit)
+  local timestamp = now
+  local unitRef = unit
+
+  if type(now) == "string" or type(now) == "table" then
+    unitRef = now
+    timestamp = nil
+  end
+
+  local current = timestamp or GetTime()
+  if unitRef then
+    local guid = getGuid(unitRef)
     if guid then
-      purgeExpired(guid, now)
+      purgeExpired(guid, current)
     end
-  else
-    for guid in pairs(healQueue) do
-      purgeExpired(guid, now)
-    end
+    return
+  end
+
+  for guid in pairs(healQueue) do
+    purgeExpired(guid, current)
   end
 end
 
-return M
+return _G.NODHeal:RegisterModule("IncomingHeals", M)

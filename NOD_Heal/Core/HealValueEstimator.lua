@@ -6,6 +6,8 @@ local rolling = {}
 local fallbackDB
 
 local math_max = math.max
+local math_sqrt = math.sqrt
+local pairs = pairs
 
 local function getState(spellID)
   if not spellID then
@@ -23,7 +25,7 @@ end
 local M = {}
 
 function M.Initialize(fallbackDatabase)
-  fallbackDB = fallbackDatabase or fallbackDB
+  fallbackDB = fallbackDatabase or fallbackDB or {}
   for spellID, data in pairs(rolling) do
     rolling[spellID] = {
       mean = data.mean or 0,
@@ -34,17 +36,21 @@ function M.Initialize(fallbackDatabase)
   end
 end
 
-function M.Learn(spellID, newHealValue)
-  if not spellID or not newHealValue then
+function M.Learn(spellID, amount)
+  if not spellID or type(amount) ~= "number" then
     return
+  end
+
+  if amount < 0 then
+    amount = 0
   end
 
   local state = getState(spellID)
   state.count = state.count + 1
 
-  local delta = newHealValue - state.mean
+  local delta = amount - state.mean
   state.mean = state.mean + (delta / state.count)
-  state.m2 = state.m2 + delta * (newHealValue - state.mean)
+  state.m2 = state.m2 + delta * (amount - state.mean)
   if state.count > 1 then
     state.variance = state.m2 / (state.count - 1)
   else
@@ -52,29 +58,25 @@ function M.Learn(spellID, newHealValue)
   end
 end
 
-function M.Estimate(spellID, statsSnapshot)
-  if not spellID then
-    return { amount = 0, variance = 0, confidence = "low" }
-  end
-
-  local state = rolling[spellID]
+local function evaluateStats(spellID, statsSnapshot)
   local base = statsSnapshot and statsSnapshot.baseHeal or nil
-  if not base and state then
-    base = state.mean
-  end
-  if not base then
-    base = M.FetchFallback(spellID)
+  local state = rolling[spellID]
+
+  if base == nil then
+    if state and state.count > 0 then
+      base = state.mean
+    else
+      base = M.FetchFallback(spellID)
+    end
   end
 
-  if type(base) == "table" then
-    base = base.amount
+  if type(base) ~= "number" then
+    base = tonumber(base) or 0
   end
-
-  base = base or 0
 
   local throughput = 0
   if statsSnapshot then
-    throughput = (statsSnapshot.spellPowerCoeff or 0) * (statsSnapshot.spellPower or 0)
+    throughput = throughput + (statsSnapshot.spellPowerCoeff or 0) * (statsSnapshot.spellPower or 0)
     throughput = throughput + (statsSnapshot.throughputBonus or 0)
   end
 
@@ -84,46 +86,68 @@ function M.Estimate(spellID, statsSnapshot)
 
   local expected = base + throughput
   expected = expected * (1 + mastery)
-  expected = expected * (1 + critChance * math_max(critMultiplier - 1, 0))
-
-  local variance = state and state.variance or 0
-  local confidence
-  if state and state.count >= 5 then
-    confidence = "high"
-  elseif state and state.count > 0 then
-    confidence = "medium"
-  elseif fallbackDB then
-    confidence = "medium"
-  else
-    confidence = "low"
+  if critChance > 0 then
+    local bonus = math_max(critMultiplier - 1, 0)
+    expected = expected * (1 + critChance * bonus)
   end
 
+  return expected, state
+end
+
+function M.Estimate(spellID, statsSnapshot)
+  if not spellID then
+    return { mean = 0, low = 0, high = 0 }
+  end
+
+  local mean, state = evaluateStats(spellID, statsSnapshot)
+  if mean < 0 then
+    mean = 0
+  end
+
+  local variance = state and state.variance or 0
+  if variance < 0 then
+    variance = 0
+  end
+
+  local deviation = variance > 0 and math_sqrt(variance) or 0
+  local low = mean - deviation
+  if low < 0 then
+    low = 0
+  end
+  local high = mean + deviation
+
   return {
-    amount = expected,
-    variance = variance,
-    confidence = confidence,
+    mean = mean,
+    low = low,
+    high = high,
   }
 end
 
 function M.FetchFallback(spellID)
-  if not fallbackDB then
-    return { amount = 0, variance = 0, confidence = "low" }
+  if not fallbackDB or not spellID then
+    return 0
   end
 
   local data = fallbackDB[spellID]
-  if not data then
-    return { amount = 0, variance = 0, confidence = "low" }
+  if data == nil then
+    return 0
   end
 
   if type(data) == "number" then
-    return { amount = data, variance = 0, confidence = "medium" }
+    if data < 0 then
+      return 0
+    end
+    return data
   end
 
-  return {
-    amount = data.amount or 0,
-    variance = data.variance or 0,
-    confidence = data.confidence or "medium",
-  }
+  if type(data) == "table" then
+    local value = data.amount or data.mean or data.value
+    if type(value) == "number" and value > 0 then
+      return value
+    end
+  end
+
+  return 0
 end
 
-return M
+return _G.NODHeal:RegisterModule("HealValueEstimator", M)

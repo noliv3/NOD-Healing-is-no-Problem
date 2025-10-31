@@ -155,37 +155,80 @@ local function toGUID(unitOrGUID)
   return unitOrGUID
 end
 
-function aggregator.Initialize(dispatcher)
-  dispatcherRef = dispatcher
+local function obtainDispatcher()
+  if dispatcherRef then
+    return dispatcherRef
+  end
 
-  if dispatcher and dispatcher.RegisterHandler then
-    dispatcher:RegisterHandler("COMBAT_LOG_EVENT_UNFILTERED", handleCombatLog)
-    dispatcher:RegisterHandler("GROUP_ROSTER_UPDATE", function()
+  local namespace = _G.NODHeal
+  if namespace and namespace.GetModule then
+    dispatcherRef = namespace:GetModule("CoreDispatcher")
+  end
+
+  return dispatcherRef
+end
+
+function aggregator.Initialize(dispatcher)
+  dispatcherRef = dispatcher or obtainDispatcher()
+
+  local hub = dispatcherRef
+  if hub and hub.RegisterHandler then
+    hub:RegisterHandler("COMBAT_LOG_EVENT_UNFILTERED", handleCombatLog)
+    hub:RegisterHandler("GROUP_ROSTER_UPDATE", function()
       resetStorage()
     end)
-    dispatcher:RegisterHandler("PLAYER_REGEN_ENABLED", function()
+    hub:RegisterHandler("PLAYER_REGEN_ENABLED", function()
       resetStorage()
     end)
   end
 end
 
-function aggregator.AddHeal(sourceGUID, targetGUID, landTime, amount, spellID, metadata)
-  local guid = toGUID(targetGUID)
+local function normalizeLandingTime(value)
+  if value == nil then
+    return GetTime()
+  end
+
+  if type(value) ~= "number" then
+    value = tonumber(value)
+  end
+
+  if not value then
+    return GetTime()
+  end
+
+  if value > 1000000 then
+    return value / 1000
+  end
+
+  return value
+end
+
+function aggregator.AddHeal(payload)
+  if type(payload) ~= "table" then
+    return
+  end
+
+  local guid = toGUID(payload.targetGUID)
   if not guid then
     return
   end
 
-  local payload = {
-    sourceGUID = sourceGUID,
+  local amount = payload.amount or 0
+  if amount < 0 then
+    amount = 0
+  end
+
+  local entry = {
+    sourceGUID = payload.sourceGUID,
     targetGUID = guid,
-    spellID = spellID,
-    amount = amount or 0,
-    landTime = landTime or GetTime(),
-    metadata = metadata,
+    spellID = payload.spellID,
+    amount = amount,
+    landTime = normalizeLandingTime(payload.landTime),
+    metadata = payload.metadata,
   }
 
-  pushHeal(payload)
-  purgeExpired(landTime or GetTime(), guid)
+  pushHeal(entry)
+  purgeExpired(entry.landTime or GetTime(), guid)
 end
 
 function aggregator.GetIncoming(unit, horizon)
@@ -224,16 +267,25 @@ function aggregator.GetIncoming(unit, horizon)
   return total
 end
 
-function aggregator.CleanExpired(unit)
-  local now = GetTime()
-  if unit then
-    local guid = toGUID(unit)
-    if guid then
-      purgeExpired(now, guid)
-    end
-  else
-    purgeExpired(now)
+function aggregator.CleanExpired(now, unit)
+  local timestamp = now
+  local unitRef = unit
+
+  if type(now) == "string" or type(now) == "table" then
+    unitRef = now
+    timestamp = nil
   end
+
+  local current = timestamp or GetTime()
+  if unitRef then
+    local guid = toGUID(unitRef)
+    if guid then
+      purgeExpired(current, guid)
+    end
+    return
+  end
+
+  purgeExpired(current)
 end
 
 function aggregator.Iterate(unit, horizon, collector)

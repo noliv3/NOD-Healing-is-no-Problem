@@ -12,7 +12,13 @@ local aliasMap = {
   damage = "DamagePrediction",
   estimator = "HealValueEstimator",
   ticks = "AuraTickPredictor",
-  hotPredictor = "AuraTickPredictor",
+  latency = "LatencyTools",
+}
+
+local confidenceWeights = {
+  low = 1,
+  medium = 2,
+  high = 3,
 }
 
 local function resolveModule(name)
@@ -20,21 +26,16 @@ local function resolveModule(name)
     return moduleRefs[name]
   end
 
-  local alias = aliasMap[name]
-  if alias and moduleRefs[alias] ~= nil then
-    moduleRefs[name] = moduleRefs[alias]
-    return moduleRefs[name]
-  end
-
   local namespace = _G.NODHeal
   local module
   if namespace and namespace.GetModule then
     module = namespace:GetModule(name)
-    if not module and alias then
+  end
+
+  if not module then
+    local alias = aliasMap[name]
+    if alias and namespace and namespace.GetModule then
       module = namespace:GetModule(alias)
-      if module then
-        moduleRefs[alias] = module
-      end
     end
   end
 
@@ -52,195 +53,241 @@ local function clamp(value, lower, upper)
   return value
 end
 
-local M = {}
+local function accumulateConfidence(...)
+  local total = 0
+  local count = 0
 
-function M.Initialize(deps)
-  if type(deps) ~= "table" then
-    return
-  end
-
-  for key, module in pairs(deps) do
-    moduleRefs[key] = module
-    local alias = aliasMap[key]
-    if alias then
-      moduleRefs[alias] = module
+  for i = 1, select("#", ...) do
+    local level = select(i, ...)
+    if level then
+      local weight = confidenceWeights[level]
+      if weight then
+        total = total + weight
+        count = count + 1
+      end
     end
   end
 
-  for alias, canonical in pairs(aliasMap) do
-    if moduleRefs[canonical] and not moduleRefs[alias] then
-      moduleRefs[alias] = moduleRefs[canonical]
-    elseif moduleRefs[alias] and not moduleRefs[canonical] then
-      moduleRefs[canonical] = moduleRefs[alias]
+  if count == 0 then
+    return "low"
+  end
+
+  local average = total / count
+  if average >= 2.5 then
+    return "high"
+  elseif average >= 1.75 then
+    return "medium"
+  end
+
+  return "low"
+end
+
+local M = {}
+
+function M.Initialize(deps)
+  moduleRefs = {}
+
+  if type(deps) == "table" then
+    for key, value in pairs(deps) do
+      moduleRefs[key] = value
+      local alias = aliasMap[key]
+      if alias then
+        moduleRefs[alias] = value
+      end
     end
   end
 end
 
-function M.CalculateProjectedHealth(state)
-  if not state then
+local function fetchSnapshot(unit)
+  local module = resolveModule("HealthSnapshot")
+  if module and module.Capture then
+    return module.Capture(unit)
+  end
+  return nil
+end
+
+local function evaluateDamage(unit, tLand)
+  local module = resolveModule("DamagePrediction")
+  if module and module.Estimate then
+    local estimate = module.Estimate(unit, tLand)
+    if type(estimate) == "table" then
+      estimate.amount = math_max(estimate.amount or 0, 0)
+      return estimate.amount, estimate
+    elseif type(estimate) == "number" then
+      return math_max(estimate, 0), { amount = math_max(estimate, 0) }
+    end
+  end
+  return 0, { amount = 0, confidence = "low", samples = 0 }
+end
+
+local function evaluateIncoming(unit, tLand)
+  local module = resolveModule("IncomingHeals")
+  if module and module.CollectUntil then
+    local data = module.CollectUntil(unit, tLand)
+    if type(data) == "table" then
+      local amount = math_max(data.amount or 0, 0)
+      return amount, data.confidence or "low", data
+    end
+    if type(data) == "number" then
+      local amount = math_max(data, 0)
+      return amount, amount > 0 and "medium" or "low", nil
+    end
+  end
+
+  if module and module.FetchFallback then
+    local amount = module.FetchFallback(unit, tLand)
+    if type(amount) == "number" and amount > 0 then
+      return amount, "medium", nil
+    end
+  end
+  return 0, "low", nil
+end
+
+local function evaluateHoTs(unit, spellID, tLand)
+  local module = resolveModule("AuraTickPredictor")
+  if not module then
+    return 0, nil
+  end
+
+  if module.CollectHoTs and spellID and type(spellID) == "table" then
+    local data = module.CollectHoTs(unit, spellID, tLand)
+    local total = 0
+    if type(data) == "table" then
+      total = math_max(data.total or 0, 0)
+    end
+    return total, data
+  elseif module.GetHoTTicks and spellID then
+    local schedule = module.GetHoTTicks(unit, spellID, tLand)
+    local total = 0
+    if type(schedule) == "table" then
+      total = math_max(schedule.total or 0, 0)
+    end
+    return total, schedule
+  end
+
+  return 0, nil
+end
+
+local function evaluateHealValue(spellID, stats)
+  local module = resolveModule("HealValueEstimator")
+  if module and module.Estimate then
+    local estimate = module.Estimate(spellID, stats)
+    if type(estimate) == "table" then
+      local mean = math_max(estimate.mean or 0, 0)
+      return mean, estimate
+    elseif type(estimate) == "number" then
+      return math_max(estimate, 0), { mean = math_max(estimate, 0) }
+    end
+  end
+  return 0, { mean = 0 }
+end
+
+local function fetchLatencyMeta()
+  local module = resolveModule("LatencyTools")
+  if not module then
+    return { latency = 0, queue = 0 }
+  end
+
+  local latency = module.GetLatency and module.GetLatency() or 0
+  local queue = module.GetSpellQueueWindow and module.GetSpellQueueWindow() or 0
+
+  if latency < 0 then latency = 0 end
+  if queue < 0 then queue = 0 end
+
+  return { latency = latency, queue = queue }
+end
+
+function M.CalculateProjectedHealth(unit, spellID, tLand)
+  if not unit then
     return nil
   end
 
-  local snapshot = state.snapshot
-  local snapshotModule = resolveModule("HealthSnapshot") or resolveModule("snapshot")
-  if not snapshot and snapshotModule and snapshotModule.Capture then
-    snapshot = snapshotModule.Capture(state.unit)
-  end
+  local snapshot = fetchSnapshot(unit)
   if not snapshot then
     return nil
   end
 
   local hpNow = snapshot.hp_now or 0
-  local maxHP = snapshot.hp_max or 1
-
-  local damageAmount = 0
-  local damageDetails
-  if type(state.predictedDamage) == "table" then
-    damageDetails = state.predictedDamage
-    damageAmount = damageDetails.amount or 0
-  elseif type(state.predictedDamage) == "number" then
-    damageAmount = state.predictedDamage
+  local hpMax = snapshot.hp_max or 1
+  if hpMax <= 0 then
+    hpMax = 1
   end
 
-  if damageAmount < 0 then
-    damageAmount = 0
-    if damageDetails and damageDetails.amount and damageDetails.amount < 0 then
-      damageDetails.amount = 0
-    end
+  local damageAmount, damageData = evaluateDamage(unit, tLand)
+  local incomingAmount, incomingConfidence = evaluateIncoming(unit, tLand)
+  local hotAmount = evaluateHoTs(unit, spellID, tLand)
+  local healAmount, healData = evaluateHealValue(spellID, nil)
+
+  local rawProjected = hpNow - damageAmount + incomingAmount + hotAmount + healAmount
+  local projected = clamp(rawProjected, 0, hpMax)
+
+  local absorbs = snapshot.absorbs or 0
+  if absorbs < 0 then
+    absorbs = 0
   end
 
-  local damageModule = resolveModule("DamagePrediction") or resolveModule("damage")
-  if not damageDetails and damageModule then
-    if damageModule.Estimate then
-      local estimate = damageModule.Estimate(state.unit, state.tLand)
-      if type(estimate) == "table" then
-        damageDetails = estimate
-        damageAmount = estimate.amount or 0
-      else
-        damageAmount = estimate or 0
-      end
-    elseif damageModule.PredictDamage then
-      damageAmount = damageModule.PredictDamage(state.unit, state.tLand) or 0
-    end
+  local overheal = math_max(rawProjected - hpMax, 0)
+
+  local damageConfidence = (damageData and damageData.confidence) or "low"
+  local healConfidence
+  if healData and healData.mean and healData.mean > 0 then
+    healConfidence = "medium"
+  else
+    healConfidence = "low"
   end
 
-  local incoming = state.incoming
-  local incomingModule = resolveModule("IncomingHeals") or resolveModule("incoming")
-  if not incoming and incomingModule and incomingModule.CollectUntil then
-    incoming = incomingModule.CollectUntil(state.unit, state.tLand)
-  end
+  local combinedConfidence = accumulateConfidence(incomingConfidence, damageConfidence, healConfidence)
 
-  local incomingAmount = 0
-  local incomingConfidence = "low"
-  if type(incoming) == "table" then
-    incomingAmount = incoming.total or incoming.amount or 0
-    incomingConfidence = incoming.confidence or incomingConfidence
-  elseif type(incoming) == "number" then
-    incomingAmount = incoming
-  end
-
-  if incomingAmount < 0 then
-    incomingAmount = 0
-  end
-
-  local hotData = state.hots or state.hotData
-  local tickModule = resolveModule("AuraTickPredictor") or resolveModule("ticks") or resolveModule("hotPredictor")
-  if not hotData and tickModule then
-    if tickModule.CollectHoTs then
-      hotData = tickModule.CollectHoTs(state.unit, state.hotSpells or state.hoTSpells or state.tickSpells, state.tLand)
-    elseif tickModule.GetHoTTicks and state.hotSpells then
-      local collected = { total = 0, ticks = {}, spells = {} }
-      for _, spellID in pairs(state.hotSpells) do
-        local schedule = tickModule.GetHoTTicks(state.unit, spellID, state.tLand)
-        if schedule then
-          collected.spells[spellID] = schedule
-          collected.total = collected.total + (schedule.total or 0)
-          if schedule.ticks then
-            for index = 1, #schedule.ticks do
-              collected.ticks[#collected.ticks + 1] = schedule.ticks[index]
-            end
-          end
-        end
-      end
-      hotData = collected
-    end
-  end
-
-  local hotAmount = 0
-  if type(hotData) == "table" then
-    hotAmount = hotData.total or 0
-  elseif type(hotData) == "number" then
-    hotAmount = hotData
-  end
-
-  if hotAmount < 0 then
-    hotAmount = 0
-  end
-
-  local healValue = state.healValue
-  local estimator = resolveModule("HealValueEstimator") or resolveModule("estimator")
-  if not healValue and estimator and estimator.Estimate then
-    local estimate = estimator.Estimate(state.spellID, state.stats)
-    if type(estimate) == "table" then
-      healValue = estimate.amount
-      state.healVariance = estimate.variance
-      state.healConfidence = estimate.confidence
-    else
-      healValue = estimate
-    end
-  end
-  healValue = healValue or 0
-  if healValue < 0 then
-    healValue = 0
-  end
-
-  local total = hpNow - damageAmount + incomingAmount + hotAmount + healValue
-  local projected = clamp(total, 0, maxHP)
-
-  return {
-    snapshot = snapshot,
-    projected = projected,
-    incoming = incomingAmount,
-    incomingConfidence = incomingConfidence,
-    healValue = healValue,
-    damage = damageAmount,
-    damageDetails = damageDetails,
-    hots = hotData,
-    hotAmount = hotAmount,
+  local components = {
+    dmg = damageAmount,
+    incHeals = incomingAmount,
+    hots = hotAmount,
+    healValue = healAmount,
+    absorbs = absorbs,
   }
+
+  local meta = fetchLatencyMeta()
+  meta.tLand = tLand
+
+  return M.ComposeResult(snapshot, projected, components, meta, combinedConfidence, overheal)
 end
 
-function M.ComposeResult(snapshot, projected, metadata)
+function M.ComposeResult(snapshot, projectedHP, components, meta, confidence, overhealValue)
   if not snapshot then
     return nil
   end
 
-  local projectedHP = type(projected) == "table" and projected.projected or projected
-  projectedHP = projectedHP or snapshot.hp_now or 0
-
-  local healValue = metadata and metadata.healValue or (type(projected) == "table" and projected.healValue) or 0
-  local maxHP = snapshot.hp_max or 1
-
-  local overheal = 0
-  if healValue > 0 then
-    local effective = math_max(projectedHP - maxHP, 0)
-    overheal = effective / healValue
+  local hpNow = snapshot.hp_now or 0
+  local hpMax = snapshot.hp_max or 1
+  if hpMax <= 0 then
+    hpMax = 1
   end
 
-  local confidence = metadata and metadata.confidence or (type(projected) == "table" and projected.incomingConfidence) or "low"
+  local projected = projectedHP or hpNow
+  projected = clamp(projected, 0, hpMax)
 
-  local hotAmount = metadata and metadata.hotAmount or (type(projected) == "table" and projected.hotAmount) or 0
-  local damageAmount = metadata and metadata.damage or (type(projected) == "table" and projected.damage) or 0
+  local absorbs = snapshot.absorbs or 0
+  if absorbs < 0 then
+    absorbs = 0
+  end
+
+  local overheal = math_max(overhealValue or 0, 0)
 
   return {
-    projectedHP = clamp(projectedHP, 0, maxHP),
+    hp_now = hpNow,
+    hp_max = hpMax,
+    hp_proj = projected,
     overheal = overheal,
-    absorbs = snapshot.absorbs or 0,
-    effectiveHP = (snapshot.hp_now or 0) + (snapshot.absorbs or 0),
-    confidence = confidence,
-    hotContribution = hotAmount,
-    damageForecast = damageAmount,
+    confidence = confidence or "low",
+    components = components or {
+      dmg = 0,
+      incHeals = 0,
+      hots = 0,
+      healValue = 0,
+      absorbs = absorbs,
+    },
+    meta = meta or {},
   }
 end
 
-return M
+return _G.NODHeal:RegisterModule("PredictiveSolver", M)

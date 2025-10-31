@@ -44,6 +44,7 @@ local function pushSample(destGUID, amount, timestamp)
     entry = {
       ema = clampPositive(amount),
       lastTimestamp = now,
+      samples = 1,
     }
     damageBuckets[destGUID] = entry
     return
@@ -64,6 +65,7 @@ local function pushSample(destGUID, amount, timestamp)
 
   entry.ema = entry.ema + (sampleDPS - entry.ema) * weight
   entry.lastTimestamp = now
+  entry.samples = (entry.samples or 0) + 1
 end
 
 local function handleCombatLog()
@@ -97,6 +99,10 @@ function M.Initialize(dispatcher)
   end
 end
 
+function M.RecordCombatSample(targetGUID, amount, timestamp)
+  pushSample(targetGUID, amount, timestamp)
+end
+
 local function evaluateBucket(guid, tLand)
   local bucket = damageBuckets[guid]
   if not bucket then
@@ -116,27 +122,39 @@ local function evaluateBucket(guid, tLand)
   end
 
   local predicted = clampPositive(bucket.ema * horizon)
+  local samples = bucket.samples or 0
+  local confidence
+  if samples >= 10 and age <= 1.5 then
+    confidence = "high"
+  elseif samples >= 3 and age <= 3 then
+    confidence = "medium"
+  else
+    confidence = "low"
+  end
+
   return {
     amount = predicted,
     rate = bucket.ema or 0,
     horizon = horizon,
+    samples = samples,
+    confidence = confidence,
     lastEventAge = age,
   }
 end
 
 function M.Estimate(unit, T_land)
   if not unit then
-    return { amount = 0, rate = 0, horizon = 0, lastEventAge = math_huge }
+    return { amount = 0, rate = 0, horizon = 0, samples = 0, confidence = "low", lastEventAge = math_huge }
   end
 
   local guid = UnitGUID(unit)
   if not guid then
-    return { amount = 0, rate = 0, horizon = 0, lastEventAge = math_huge }
+    return { amount = 0, rate = 0, horizon = 0, samples = 0, confidence = "low", lastEventAge = math_huge }
   end
 
   local result = evaluateBucket(guid, T_land)
   if not result then
-    return { amount = 0, rate = 0, horizon = (T_land and math.max(T_land - GetTime(), 0)) or 0, lastEventAge = math_huge }
+    return { amount = 0, rate = 0, horizon = (T_land and math.max(T_land - GetTime(), 0)) or 0, samples = 0, confidence = "low", lastEventAge = math_huge }
   end
 
   return result
@@ -151,4 +169,4 @@ function M.DebugDump()
   return damageBuckets
 end
 
-return M
+return _G.NODHeal:RegisterModule("DamagePrediction", M)
