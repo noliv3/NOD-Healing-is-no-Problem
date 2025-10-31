@@ -27,6 +27,17 @@ Weitere Implementierungen folgen in iterativen Schritten (DamageForecast, AuraTi
 2. Overlay- und GUI-Schichten ergänzen.
 3. Click-Casting-Integration ausarbeiten.
 
+## v1.1 – End-to-End-MVP (Plan)
+- [`DOCU/Tasks/Tag 1.md`](DOCU/Tasks/Tag%201.md): Datenpfad schließen (LibHealComm + Blizzard-Fallback, Toggle `/nod healcomm`).
+- [`DOCU/Tasks/Tag 2.md`](DOCU/Tasks/Tag%202.md): Timing finalisieren (LatencyTools, CastLandingTime, Freeze-Guard 100–150 ms).
+- [`DOCU/Tasks/Tag 3.md`](DOCU/Tasks/Tag%203.md): Minimal-Solver spezifizieren (`ComposeResult`, Clamp-Regeln, Effektiv-HP).
+- [`DOCU/Tasks/Tag 4.md`](DOCU/Tasks/Tag%204.md): UI-Overlay (MVP) auf CompactUnitFrame beschreiben.
+- [`DOCU/Tasks/Tag 5.md`](DOCU/Tasks/Tag%205.md): Debug-Slash-Kommandos und manuelles Test-Playbook dokumentieren.
+- [`DOCU/Tasks/Tag 6.md`](DOCU/Tasks/Tag%206.md): Docs & TOC konsolidieren (README, AGENTS, Lade-Reihenfolge).
+- [`DOCU/Tasks/Tag 7.md`](DOCU/Tasks/Tag%207.md): Smoke-Test-Plan und Versionierungsschritte für `v1.1` vorbereiten.
+
+Hinweis: Dieser Abschnitt beschreibt den Arbeitsplan; Implementierung folgt in v1.1.
+
 ## Dokumentation
 - Projektweite Richtlinien siehe [`AGENTS.md`](AGENTS.md).
 - Ausführliche Backend-Referenz unter [`DOCU/NOD_Backend_Funktionsreferenz.md`](DOCU/NOD_Backend_Funktionsreferenz.md).
