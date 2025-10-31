@@ -19,6 +19,17 @@ Diese Richtlinien gelten für das gesamte Repository, sofern in Unterordnern kei
 ## Testing & Tooling
 - Aktuell existieren keine automatisierten Tests; bei manuellen Tests das Ergebnis im PR-/Commit-Text dokumentieren.
 
+## Review-/Build-Checkliste
+- TOC-Datei (`NOD_Heal/NOD_Heal.toc`) auf Vollständigkeit prüfen.
+- Modul-Initialisierung gegen `NOD_Backend_Funktionsreferenz.md` abgleichen.
+- Event-Routen und Dispatcher-Hooks verifizieren (`Core/CoreDispatcher.lua`).
+- Latenz- und Queue-Werte mit Live-API oder Mock-Werten plausibilisieren.
+- SavedVariables und Debug-Toggles auf Persistenz- und Speicherbedarf prüfen.
+- Dokumentation (`README.md`, `DOCU/`) nachziehen und Version angeben.
+- Build-Artefakte ohne Entwicklungsdateien paketieren.
+- Release-Notizen mit bekannten Risiken und Checks verlinken.
+- Smoke-Test im Client ohne LUA-Fehler bestätigen.
+
 Viel Erfolg beim Ausbau des Addons!
 
 ## Auditvermerk (aktueller Stand)
@@ -27,3 +38,14 @@ Viel Erfolg beim Ausbau des Addons!
 - Welle 1 der Backend-Module ist nun lauffähig: `Core/DamagePrediction.lua` (liefert `Estimate` mit Rate & Betrag), `Core/AuraTickPredictor.lua` (Tick-Mengen + Sammelfunktion), `Core/IncomingHealAggregator.lua` (Dispatcher-gestützter Heal-Feed), `Core/EffectiveHP.lua`, `Core/DesyncGuard.lua`, `Core/CoreDispatcher.lua` liefern produktive Daten für den Solver.
 - Noch ohne funktionsfähige Umsetzung bzw. WoW-API-Anbindung: Frontend-Platzhalter `UI/Init.lua` sowie Erweiterungen außerhalb Welle 1.
 - Stabilisierung 2025-03: `IncomingHealAggregator` und `IncomingHeals` besitzen jetzt `CleanExpired`-Hilfen mit Zeitpuffer; `CastLandingTime` normalisiert Castzeiten & Grenzwerte; `LatencyTools` refresht bei jeder Abfrage und klemmt CVars; `PredictiveSolver` klemmt negative Beiträge.
+
+## Vor Merge prüfen
+- [ ] Pfade/Module konsistent zu `/NOD_Heal/NOD_Heal.toc`
+- [ ] Einheiten dokumentiert (ms, %, HP)
+- [ ] Keine spekulativen Aussagen
+- [ ] Logs: Level & Orte definiert
+- [ ] UI-Hooks genannt, keine Stilvorgaben
+- [ ] Testszenarien verlinkt (`DOCU/Tests.md`)
+- [ ] README/AGENTS Abschnittslängen eingehalten
+- [ ] Keine externen Abhängigkeiten unerwähnt
+- [ ] Changelog-Hinweis auf v1.1-Plan enthalten
