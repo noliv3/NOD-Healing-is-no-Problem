@@ -14,6 +14,7 @@ NOD-Heal ist ein leistungsorientiertes Healing-Framework für den WoW-Client der
 - `Core/CastLandingTime` normalisiert Castzeiten (Millisekunden/Sekunden) und klemmt Warteschlange sowie Latenz auf sinnvolle Grenzwerte.
 - `Core/LatencyTools` aktualisiert Latenz- und Spell-Queue-Werte bei jeder Abfrage und clamped CVars gegen Ausreißer.
 - `Core/PredictiveSolver` verhindert negative Beiträge aus Schaden-, Heal- oder HoT-Bausteinen, bevor das projizierte Ergebnis berechnet wird.
+- `[D1-LHCAPI]`-Placeholder in IncomingHeals, IncomingHealAggregator und CoreDispatcher geben HealComm-Toggle- und Fallback-Logs über `print` aus (DEBUG-abhängig).
 
 Weitere Implementierungen folgen in iterativen Schritten (DamageForecast, AuraTickScheduler, UI-Overlays usw.). Details zu den geplanten Backend-Funktionen befinden sich im Ordner [`DOCU/`](DOCU/).
 
@@ -61,6 +62,7 @@ Die folgende Übersicht dokumentiert, welche Funktionen bereits den WoW-Addon-Ri
 | `Core/CastTiming.lua` | `CastTiming:Compute` | ⚠️ teilweise geeignet | WoW-APIs korrekt genutzt, GCD noch statisch. |
 | `Core/IncomingHealAggregator.lua` | `IncomingHealAggregator:AddHeal` | ✅ geeignet | Nimmt GUID-basierte Payloads auf und dispatcht Ereignisse. |
 | `Core/IncomingHealAggregator.lua` | `IncomingHealAggregator:GetIncoming` | ✅ geeignet | Summiert Ereignisse API-konform inkl. automatischer Bereinigung. |
+| `Core/IncomingHealAggregator.lua` | `IncomingHealAggregator:scheduleFromTargets` | ⚠️ teilweise geeignet | `[D1-LHCAPI]`-Stub erzeugt Debug-Log, Queue-Aufbau folgt in Tag 2. |
 | `UI/Init.lua` | `UI:Initialize` | ❌ nicht geeignet | Placeholder ohne Frame-Aufbau. |
 | `Core/AuraTickPredictor.lua` | `M.GetHoTTicks` | ✅ geeignet | Liefert HoT-Zeitplan inkl. Tick-Beträgen und Cache je Einheit. |
 | `Core/CastLandingTime.lua` | `M.Initialize` | ⚠️ teilweise geeignet | Dispatcher-Hooks vorhanden, warten auf CoreDispatcher. |
@@ -69,6 +71,7 @@ Die folgende Übersicht dokumentiert, welche Funktionen bereits den WoW-Addon-Ri
 | `Core/CoreDispatcher.lua` | `M.Initialize` | ✅ geeignet | Erstellt Frame-Hub für Register-/Dispatch-Fluss. |
 | `Core/CoreDispatcher.lua` | `M.RegisterHandler` | ✅ geeignet | Hinterlegt Handler inkl. optionaler Throttle. |
 | `Core/CoreDispatcher.lua` | `M.Dispatch` | ✅ geeignet | Verteilt Events und respektiert Throttle-Zeitfenster. |
+| `Core/CoreDispatcher.lua` | `M.ToggleHealComm` | ⚠️ teilweise geeignet | `[D1-LHCAPI]`-Placeholder zur Steuerung des HealComm-Toggles (Log-Ausgabe, keine Persistenz). |
 | `Core/DamagePrediction.lua` | `M.Estimate` | ✅ geeignet | EMA-basierte CombatLog-Auswertung liefert Rate & Betrag bis Landezeit. |
 | `Core/DesyncGuard.lua` | `M.ApplyFreeze` | ✅ geeignet | Sperrt Overlay-Refresh kurz nach Caststart. |
 | `Core/DesyncGuard.lua` | `M.ReleaseFreeze` | ✅ geeignet | Hebt Freeze bei Cast-Ende/Cancels zuverlässig auf. |
@@ -82,7 +85,7 @@ Die folgende Übersicht dokumentiert, welche Funktionen bereits den WoW-Addon-Ri
 | `Core/HealValueEstimator.lua` | `M.FetchFallback` | ✅ geeignet | Liefert statische Werte aus Fallback-DB. |
 | `Core/IncomingHeals.lua` | `M.Initialize` | ⚠️ teilweise geeignet | Bindet LibHealComm-Callbacks, benötigt Praxistest. |
 | `Core/IncomingHeals.lua` | `M.CollectUntil` | ✅ geeignet | Aggregiert Heals bis `tLand` inkl. Fallback. |
-| `Core/IncomingHeals.lua` | `M.FetchFallback` | ✅ geeignet | Nutzt `UnitGetIncomingHeals` als Sicherheitsnetz. |
+| `Core/IncomingHeals.lua` | `M.FetchFallback` | ⚠️ teilweise geeignet | `[D1-LHCAPI]`-Stub mit Log-Rückmeldung (`UnitGetIncomingHeals` bleibt Fallback-Quelle). |
 | `Core/LatencyTools.lua` | `M.Initialize` | ✅ geeignet | Initialisiert Latenz- und Queue-Cache. |
 | `Core/LatencyTools.lua` | `M.Refresh` | ✅ geeignet | Liest `GetNetStats` & SpellQueueWindow defensiv. |
 | `Core/LatencyTools.lua` | `M.GetLatency` | ✅ geeignet | Gibt gecachten Wert zurück. |

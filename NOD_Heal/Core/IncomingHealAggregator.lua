@@ -15,6 +15,24 @@ local type = type
 
 local dispatcherRef
 local aggregator = {}
+
+-- REGION: LHC Callbacks
+-- [D1-LHCAPI] Registrierung von HealComm-Events
+function aggregator.RegisterHealComm()
+  print("[NOD] RegisterHealComm() – Placeholder aktiviert")
+end
+
+-- [D1-LHCAPI] Deregistrierung von HealComm-Events
+function aggregator.UnregisterHealComm()
+  print("[NOD] UnregisterHealComm() – Placeholder deaktiviert")
+end
+
+-- [D1-LHCAPI] Queue-Aufbau aus HealComm-Payload
+function aggregator.scheduleFromTargets(casterGUID, spellID, targets, amount, t_land)
+  print("[NOD] scheduleFromTargets()", casterGUID, spellID, amount, t_land)
+end
+-- ENDREGION
+
 local lastPrune = 0
 
 local HEAL_STORAGE = {} -- [targetGUID] = { { sourceGUID, amount, landTime, spellID, overheal } }
@@ -267,7 +285,10 @@ function aggregator.GetIncoming(unit, horizon)
   return total
 end
 
+-- REGION: Cleanup
+-- [D1-LHCAPI] Queue-Bereinigung
 function aggregator.CleanExpired(now, unit)
+  print("[NOD] CleanExpired() – Queue gereinigt (Stub)")
   local timestamp = now
   local unitRef = unit
 
@@ -287,6 +308,7 @@ function aggregator.CleanExpired(now, unit)
 
   purgeExpired(current)
 end
+-- ENDREGION
 
 function aggregator.Iterate(unit, horizon, collector)
   local guid = toGUID(unit)
@@ -322,6 +344,11 @@ end
 
 function aggregator.DebugDump()
   return HEAL_STORAGE
+end
+
+-- [D1-LHCAPI] Placeholder verification
+if DEBUG then
+  print("[NOD] LHC/API stub loaded")
 end
 
 return _G.NODHeal:RegisterModule("IncomingHealAggregator", aggregator)

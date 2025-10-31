@@ -14,6 +14,13 @@ local registeredEvents = {}
 
 local M = {}
 
+-- REGION: Toggle Handling
+-- [D1-LHCAPI] Toggle-Kommandos für /nod healcomm
+function M.ToggleHealComm(state)
+  print("[NOD] ToggleHealComm()", state)
+end
+-- ENDREGION
+
 local function ensureFrame()
   if dispatcherFrame then
     return dispatcherFrame
@@ -168,8 +175,14 @@ function M.Reset()
 end
 
 local namespace = _G.NODHeal
+local module = M
 if namespace and namespace.RegisterModule then
-  return namespace:RegisterModule("CoreDispatcher", M)
+  module = namespace:RegisterModule("CoreDispatcher", M)
 end
 
-return M
+-- [D1-LHCAPI] Placeholder verification
+if DEBUG then
+  print("[NOD] LHC/API stub loaded")
+end
+
+return module
