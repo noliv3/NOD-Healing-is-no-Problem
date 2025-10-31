@@ -18,6 +18,7 @@ local lastPrune = 0
 local HEAL_STORAGE = {} -- [targetGUID] = { { sourceGUID, amount, landTime, spellID, overheal } }
 local PRUNE_INTERVAL = 1.0
 local STALE_PADDING = 0.25
+local EXPIRY_GRACE = 0.05
 
 if not wipe then
   wipe = function(tbl)
@@ -36,24 +37,47 @@ local function dispatch(eventName, ...)
   end
 end
 
-local function purgeExpired(now)
-  now = now or GetTime()
-  for targetGUID, queue in pairs(HEAL_STORAGE) do
-    local write = 1
-    for i = 1, #queue do
-      local entry = queue[i]
-      if entry and entry.landTime and entry.landTime + STALE_PADDING >= now then
-        queue[write] = entry
-        write = write + 1
-      end
-    end
-    for i = write, #queue do
-      queue[i] = nil
-    end
-    if #queue == 0 then
-      HEAL_STORAGE[targetGUID] = nil
+local function pruneQueue(queue, now)
+  if not queue then
+    return 0
+  end
+
+  local write = 1
+  local size = #queue
+  for index = 1, size do
+    local entry = queue[index]
+    local landTime = entry and entry.landTime
+    if landTime and (landTime + STALE_PADDING + EXPIRY_GRACE) >= now then
+      queue[write] = entry
+      write = write + 1
     end
   end
+
+  for index = write, size do
+    queue[index] = nil
+  end
+
+  return write - 1
+end
+
+local function purgeExpired(now, targetGUID)
+  now = now or GetTime()
+
+  if targetGUID then
+    local queue = HEAL_STORAGE[targetGUID]
+    if pruneQueue(queue, now) == 0 then
+      HEAL_STORAGE[targetGUID] = nil
+    end
+    lastPrune = now
+    return
+  end
+
+  for guid, queue in pairs(HEAL_STORAGE) do
+    if pruneQueue(queue, now) == 0 then
+      HEAL_STORAGE[guid] = nil
+    end
+  end
+
   lastPrune = now
 end
 
@@ -159,7 +183,7 @@ function aggregator.AddHeal(sourceGUID, targetGUID, landTime, amount, spellID, m
   }
 
   pushHeal(payload)
-  purgeExpired()
+  purgeExpired(landTime or GetTime(), guid)
 end
 
 function aggregator.GetIncoming(unit, horizon)
@@ -196,6 +220,18 @@ function aggregator.GetIncoming(unit, horizon)
   end
 
   return total
+end
+
+function aggregator.CleanExpired(unit)
+  local now = GetTime()
+  if unit then
+    local guid = toGUID(unit)
+    if guid then
+      purgeExpired(now, guid)
+    end
+  else
+    purgeExpired(now)
+  end
 end
 
 function aggregator.Iterate(unit, horizon, collector)

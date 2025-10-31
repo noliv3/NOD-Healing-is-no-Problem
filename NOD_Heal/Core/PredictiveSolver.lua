@@ -102,6 +102,13 @@ function M.CalculateProjectedHealth(state)
     damageAmount = state.predictedDamage
   end
 
+  if damageAmount < 0 then
+    damageAmount = 0
+    if damageDetails and damageDetails.amount and damageDetails.amount < 0 then
+      damageDetails.amount = 0
+    end
+  end
+
   local damageModule = resolveModule("DamagePrediction") or resolveModule("damage")
   if not damageDetails and damageModule then
     if damageModule.Estimate then
@@ -130,6 +137,10 @@ function M.CalculateProjectedHealth(state)
     incomingConfidence = incoming.confidence or incomingConfidence
   elseif type(incoming) == "number" then
     incomingAmount = incoming
+  end
+
+  if incomingAmount < 0 then
+    incomingAmount = 0
   end
 
   local hotData = state.hots or state.hotData
@@ -162,6 +173,10 @@ function M.CalculateProjectedHealth(state)
     hotAmount = hotData
   end
 
+  if hotAmount < 0 then
+    hotAmount = 0
+  end
+
   local healValue = state.healValue
   local estimator = resolveModule("HealValueEstimator") or resolveModule("estimator")
   if not healValue and estimator and estimator.Estimate then
@@ -175,6 +190,9 @@ function M.CalculateProjectedHealth(state)
     end
   end
   healValue = healValue or 0
+  if healValue < 0 then
+    healValue = 0
+  end
 
   local total = hpNow - damageAmount + incomingAmount + hotAmount + healValue
   local projected = clamp(total, 0, maxHP)

@@ -8,6 +8,10 @@ local libHandle
 local GetTime = GetTime
 local UnitGUID = UnitGUID
 local UnitGetIncomingHeals = UnitGetIncomingHeals
+local pairs = pairs
+local ipairs = ipairs
+
+local LANDING_EPSILON = 0.05
 
 local function getGuid(unit)
   if not unit then
@@ -36,16 +40,25 @@ local function purgeExpired(targetGUID, now)
     return
   end
 
+  now = now or GetTime()
+
   local write = 1
-  for i = 1, #queue do
-    local entry = queue[i]
-    if entry and entry.t_land and entry.t_land >= now then
+  local size = #queue
+  for index = 1, size do
+    local entry = queue[index]
+    local landTime = entry and entry.t_land
+    if landTime and landTime + LANDING_EPSILON >= now then
       queue[write] = entry
       write = write + 1
     end
   end
-  for i = write, #queue do
-    queue[i] = nil
+
+  for index = write, size do
+    queue[index] = nil
+  end
+
+  if write == 1 then
+    healQueue[targetGUID] = nil
   end
 end
 
@@ -153,7 +166,7 @@ function M.CollectUntil(unit, tLand)
   local total = 0
   local contributions = {}
   for _, entry in ipairs(queue) do
-    if entry.t_land <= tLand then
+    if not entry.t_land or entry.t_land <= (tLand + LANDING_EPSILON) then
       total = total + (entry.amount or 0)
       local source = entry.source or "unknown"
       contributions[source] = (contributions[source] or 0) + (entry.amount or 0)
@@ -194,6 +207,20 @@ function M.FetchFallback(unit, healer)
     contributions = contributions,
     confidence = confidence,
   }
+end
+
+function M.CleanExpired(unit)
+  local now = GetTime()
+  if unit then
+    local guid = getGuid(unit)
+    if guid then
+      purgeExpired(guid, now)
+    end
+  else
+    for guid in pairs(healQueue) do
+      purgeExpired(guid, now)
+    end
+  end
 end
 
 return M
