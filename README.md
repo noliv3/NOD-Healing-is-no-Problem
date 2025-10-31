@@ -14,7 +14,7 @@ NOD-Heal ist ein leistungsorientiertes Healing-Framework für den WoW-Client der
 - `Core/CastLandingTime` normalisiert Castzeiten (Millisekunden/Sekunden) und klemmt Warteschlange sowie Latenz auf sinnvolle Grenzwerte.
 - `Core/LatencyTools` aktualisiert Latenz- und Spell-Queue-Werte bei jeder Abfrage und clamped CVars gegen Ausreißer.
 - `Core/PredictiveSolver` verhindert negative Beiträge aus Schaden-, Heal- oder HoT-Bausteinen, bevor das projizierte Ergebnis berechnet wird.
-- `[D1-LHCAPI]`-Placeholder in IncomingHeals, IncomingHealAggregator und CoreDispatcher geben HealComm-Toggle- und Fallback-Logs über `print` aus (DEBUG-abhängig).
+- `[D1-LHCAPI]`-Placeholder in IncomingHeals, IncomingHealAggregator und CoreDispatcher decken Register-, Unregister-, `scheduleFromTargets`-, `FetchFallback`-, `CleanExpired`- und Toggle-Stubs ab und loggen nun im einheitlichen Simulationsformat (DEBUG-abhängig).
 
 Weitere Implementierungen folgen in iterativen Schritten (DamageForecast, AuraTickScheduler, UI-Overlays usw.). Details zu den geplanten Backend-Funktionen befinden sich im Ordner [`DOCU/`](DOCU/).
 

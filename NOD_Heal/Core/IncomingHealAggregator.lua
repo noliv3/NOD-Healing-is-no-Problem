@@ -3,6 +3,7 @@
 -- Role: Producer/bridge from combat/log callbacks to consumers; not responsible for read-time aggregation.
 -- Provides: CleanExpired, AddHeal, Dispatch hooks
 -- See also: IncomingHeals (read-side aggregator for solver)
+-- Referenz: /DOCU/NOD_Datenpfad_LHC_API.md §Ereignisfluss
 
 local CombatLogGetCurrentEventInfo = CombatLogGetCurrentEventInfo
 local UnitGUID = UnitGUID
@@ -29,7 +30,22 @@ end
 
 -- [D1-LHCAPI] Queue-Aufbau aus HealComm-Payload
 function aggregator.scheduleFromTargets(casterGUID, spellID, targets, amount, t_land)
-  print("[NOD] scheduleFromTargets()", casterGUID, spellID, amount, t_land)
+  print(string.format("[NOD] scheduleFromTargets() %s %s %s %s", tostring(casterGUID), tostring(spellID), tostring(amount), tostring(t_land)))
+end
+-- ENDREGION
+
+-- REGION: HealComm Toggle
+-- [D1-LHCAPI] Toggle-Kommandos für HealComm-Platzhalter
+function aggregator.ToggleHealComm(state)
+  print(string.format("[NOD] ToggleHealComm() %s", tostring(state)))
+end
+-- ENDREGION
+
+-- REGION: API Fallback
+-- [D1-LHCAPI] Fallback-Router (Aggregator-Sicht)
+function aggregator.FetchFallback(unit)
+  print(string.format("[NOD] FetchFallback() %s", tostring(unit)))
+  return 0, "fallback"
 end
 -- ENDREGION
 
