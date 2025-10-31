@@ -1,3 +1,8 @@
+-- Module: CastTiming (legacy)
+-- Purpose: Legacy/rough landing-time estimate; kept for compatibility.
+-- Status: DEPRECATED – prefer `CastLandingTime.Compute` for authoritative timing (latency, queue window).
+-- Note: Do NOT add new logic here. Future code should call CastLandingTime.
+
 local addonName = ...
 local NODHeal = _G.NODHeal
 

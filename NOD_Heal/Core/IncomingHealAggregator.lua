@@ -1,6 +1,8 @@
--- Module: IncomingHealAggregator
--- Purpose: Collect raw heals observed in the combat log and expose a cleaned queue per target for downstream consumers.
--- API: COMBAT_LOG_EVENT_UNFILTERED, CombatLogGetCurrentEventInfo, UnitGUID, GetTime
+-- Module: IncomingHealAggregator (write-side)
+-- Purpose: Central feed of incoming heal events; maintains queues, cleans expired items, dispatches notifications.
+-- Role: Producer/bridge from combat/log callbacks to consumers; not responsible for read-time aggregation.
+-- Provides: CleanExpired, AddHeal, Dispatch hooks
+-- See also: IncomingHeals (read-side aggregator for solver)
 
 local CombatLogGetCurrentEventInfo = CombatLogGetCurrentEventInfo
 local UnitGUID = UnitGUID

@@ -1,6 +1,7 @@
--- Module: IncomingHeals
--- Purpose: Aggregate all incoming heals from LibHealComm and Blizzard API sources until the computed landing time.
--- API: LibHealComm callbacks, UnitGetIncomingHeals
+-- Module: IncomingHeals (read-side)
+-- Purpose: Read-only interface to collect incoming heals until tLand using LHC/API fallback.
+-- Role: Provides aggregated view for solver consumption; no dispatch or persistent queues here.
+-- See also: IncomingHealAggregator (write-side feed & dispatcher)
 
 local healQueue = {}
 local libHandle
