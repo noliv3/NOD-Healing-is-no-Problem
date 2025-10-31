@@ -1,0 +1,8 @@
+# Auto-generated from DOCU/NOD_Konzept_Funktionsliste.txt
+# Category: castbars
+# Description: Cast bar overlays, spell progress indicators, and latency readouts.
+
+'CastingBarFrame':
+  type: StatusBar
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt

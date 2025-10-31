@@ -1,0 +1,276 @@
+# Auto-generated from DOCU/NOD_Konzept_Funktionsliste.txt
+# Category: professions
+# Description: Profession craft windows, archaeology, and related trade skills.
+
+'PrimaryProfession1':
+  type: Frame
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'PrimaryProfession1Missing':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'PrimaryProfession1ProfessionName':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'PrimaryProfession1Rank':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'PrimaryProfession1Specialization':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'PrimaryProfession1SpellButtonBottomSpellName':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'PrimaryProfession1SpellButtonBottomSubSpellName':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'PrimaryProfession1SpellButtonTopSpellName':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'PrimaryProfession1SpellButtonTopSubSpellName':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'PrimaryProfession1StatusBar':
+  type: StatusBar
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'PrimaryProfession1StatusBarCapped':
+  type: Frame
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'PrimaryProfession1StatusBarRank':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'PrimaryProfession2':
+  type: Frame
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'PrimaryProfession2Missing':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'PrimaryProfession2ProfessionName':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'PrimaryProfession2Rank':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'PrimaryProfession2Specialization':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'PrimaryProfession2SpellButtonBottomSpellName':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'PrimaryProfession2SpellButtonBottomSubSpellName':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'PrimaryProfession2SpellButtonTopSpellName':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'PrimaryProfession2SpellButtonTopSubSpellName':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'PrimaryProfession2StatusBar':
+  type: StatusBar
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'PrimaryProfession2StatusBarCapped':
+  type: Frame
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'PrimaryProfession2StatusBarRank':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'SecondaryProfession1':
+  type: Frame
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'SecondaryProfession1Missing':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'SecondaryProfession1ProfessionName':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'SecondaryProfession1Rank':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'SecondaryProfession1SpellButtonLeftSpellName':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'SecondaryProfession1SpellButtonLeftSubSpellName':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'SecondaryProfession1SpellButtonRightSpellName':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'SecondaryProfession1SpellButtonRightSubSpellName':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'SecondaryProfession1StatusBar':
+  type: StatusBar
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'SecondaryProfession1StatusBarCapped':
+  type: Frame
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'SecondaryProfession1StatusBarRank':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'SecondaryProfession2':
+  type: Frame
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'SecondaryProfession2Missing':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'SecondaryProfession2ProfessionName':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'SecondaryProfession2Rank':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'SecondaryProfession2SpellButtonLeftSpellName':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'SecondaryProfession2SpellButtonLeftSubSpellName':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'SecondaryProfession2SpellButtonRightSpellName':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'SecondaryProfession2SpellButtonRightSubSpellName':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'SecondaryProfession2StatusBar':
+  type: StatusBar
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'SecondaryProfession2StatusBarCapped':
+  type: Frame
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'SecondaryProfession2StatusBarRank':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'SecondaryProfession3':
+  type: Frame
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'SecondaryProfession3Missing':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'SecondaryProfession3ProfessionName':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'SecondaryProfession3Rank':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'SecondaryProfession3SpellButtonLeftSpellName':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'SecondaryProfession3SpellButtonLeftSubSpellName':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'SecondaryProfession3SpellButtonRightSpellName':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'SecondaryProfession3SpellButtonRightSubSpellName':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'SecondaryProfession3StatusBar':
+  type: StatusBar
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'SecondaryProfession3StatusBarCapped':
+  type: Frame
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'SecondaryProfession3StatusBarRank':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'SecondaryProfession4':
+  type: Frame
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'SecondaryProfession4Missing':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'SecondaryProfession4ProfessionName':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'SecondaryProfession4Rank':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'SecondaryProfession4SpellButtonLeftSpellName':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'SecondaryProfession4SpellButtonLeftSubSpellName':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'SecondaryProfession4SpellButtonRightSpellName':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'SecondaryProfession4SpellButtonRightSubSpellName':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'SecondaryProfession4StatusBar':
+  type: StatusBar
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'SecondaryProfession4StatusBarCapped':
+  type: Frame
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'SecondaryProfession4StatusBarRank':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt

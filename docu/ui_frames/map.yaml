@@ -1,0 +1,564 @@
+# Auto-generated from DOCU/NOD_Konzept_Funktionsliste.txt
+# Category: map
+# Description: World map, minimap, and navigation related frames and helpers.
+
+'MapQuestInfoRewardsFrame':
+  type: Frame
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'MapQuestInfoRewardsFrameArenaPoints':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'MapQuestInfoRewardsFrameHonorPoints':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'MapQuestInfoRewardsFrameHonorReceiveText':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'MapQuestInfoRewardsFramePoints':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'MapQuestInfoRewardsFrameQuestInfoItem1':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'MapQuestInfoRewardsFrameReceiveText':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'MapQuestInfoRewardsFrameTitle':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'MapQuestInfoRewardsFrameTitleLabel':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'MinimapBackdrop':
+  type: Frame
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'MinimapCluster':
+  type: Frame
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'MinimapZoneText':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'MinimapZoneTextButton':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'MinimapZoomIn':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'MinimapZoomOut':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'QuestMapDetailsScrollFrameScrollBarScrollDownButton':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'QuestMapDetailsScrollFrameScrollBarScrollUpButton':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'QuestMapFrame':
+  type: Frame
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'QuestMapHighlightFrame':
+  type: Frame
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'QuestMapSelectFrame':
+  type: Frame
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'ScenarioQueueFrame':
+  type: Frame
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'ScenarioQueueFrameCooldownFrame':
+  type: Frame
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'ScenarioQueueFrameCooldownFrameDescription':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'ScenarioQueueFrameCooldownFrameName1':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'ScenarioQueueFrameCooldownFrameName2':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'ScenarioQueueFrameCooldownFrameName3':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'ScenarioQueueFrameCooldownFrameName4':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'ScenarioQueueFrameCooldownFrameName5':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'ScenarioQueueFrameCooldownFrameName6':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'ScenarioQueueFrameCooldownFrameName7':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'ScenarioQueueFrameCooldownFrameName8':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'ScenarioQueueFrameCooldownFrameStatus1':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'ScenarioQueueFrameCooldownFrameStatus2':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'ScenarioQueueFrameCooldownFrameStatus3':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'ScenarioQueueFrameCooldownFrameStatus4':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'ScenarioQueueFrameCooldownFrameStatus5':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'ScenarioQueueFrameCooldownFrameStatus6':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'ScenarioQueueFrameCooldownFrameStatus7':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'ScenarioQueueFrameCooldownFrameStatus8':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'ScenarioQueueFrameCooldownFrameTime':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'ScenarioQueueFrameFindGroupButton':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'ScenarioQueueFrameFindGroupButtonText':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'ScenarioQueueFramePartyBackfill':
+  type: Frame
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'ScenarioQueueFramePartyBackfillBackfillButton':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'ScenarioQueueFramePartyBackfillBackfillButtonText':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'ScenarioQueueFramePartyBackfillDescription':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'ScenarioQueueFramePartyBackfillNoBackfillButton':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'ScenarioQueueFramePartyBackfillNoBackfillButtonText':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'ScenarioQueueFrameRandom':
+  type: Frame
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'ScenarioQueueFrameRandomScrollFrameChildFrame':
+  type: Frame
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'ScenarioQueueFrameRandomScrollFrameChildFrameDescription':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'ScenarioQueueFrameRandomScrollFrameChildFrameEncounterList':
+  type: Frame
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'ScenarioQueueFrameRandomScrollFrameChildFrameItem1':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'ScenarioQueueFrameRandomScrollFrameChildFrameItem1Count':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'ScenarioQueueFrameRandomScrollFrameChildFrameItem1Name':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'ScenarioQueueFrameRandomScrollFrameChildFrameItem1RoleIcon1':
+  type: Frame
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'ScenarioQueueFrameRandomScrollFrameChildFrameItem1RoleIcon2':
+  type: Frame
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'ScenarioQueueFrameRandomScrollFrameChildFrameMoneyReward':
+  type: Frame
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'ScenarioQueueFrameRandomScrollFrameChildFrameMoneyRewardCount':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'ScenarioQueueFrameRandomScrollFrameChildFrameMoneyRewardName':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'ScenarioQueueFrameRandomScrollFrameChildFrameRandomList':
+  type: Frame
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'ScenarioQueueFrameRandomScrollFrameChildFrameRewardsDescription':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'ScenarioQueueFrameRandomScrollFrameChildFrameRewardsLabel':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'ScenarioQueueFrameRandomScrollFrameChildFrameSpacer':
+  type: Frame
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'ScenarioQueueFrameRandomScrollFrameChildFrameTitle':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'ScenarioQueueFrameRandomScrollFrameChildFrameXPAmount':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'ScenarioQueueFrameRandomScrollFrameChildFrameXPLabel':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'ScenarioQueueFrameSpecific':
+  type: Frame
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'ScenarioQueueFrameSpecificScrollFrame':
+  type: Frame
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'ScenarioQueueFrameSpecificScrollFrameExpandOrCollapseButton':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'ScenarioQueueFrameSpecificScrollFrameInstanceLevel':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'ScenarioQueueFrameSpecificScrollFrameInstanceName':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'ScenarioQueueFrameTypeDropdown':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'ScenarioQueueFrameTypeDropdownName':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'WorldMapCompareTooltip1TextLeft1':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'WorldMapCompareTooltip1TextLeft2':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'WorldMapCompareTooltip1TextLeft3':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'WorldMapCompareTooltip1TextLeft4':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'WorldMapCompareTooltip1TextRight1':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'WorldMapCompareTooltip1TextRight2':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'WorldMapCompareTooltip1TextRight3':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'WorldMapCompareTooltip1TextRight4':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'WorldMapCompareTooltip2TextLeft1':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'WorldMapCompareTooltip2TextLeft2':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'WorldMapCompareTooltip2TextLeft3':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'WorldMapCompareTooltip2TextLeft4':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'WorldMapCompareTooltip2TextRight1':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'WorldMapCompareTooltip2TextRight2':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'WorldMapCompareTooltip2TextRight3':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'WorldMapCompareTooltip2TextRight4':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'WorldMapContinentDropdown':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'WorldMapFrame':
+  type: Frame
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'WorldMapFrameCloseButton':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'WorldMapLevelDownButton':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'WorldMapLevelUpButton':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'WorldMapMagnifyingGlassButton':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'WorldMapScreenAnchor':
+  type: Frame
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'WorldMapTitle':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'WorldMapTitleButton':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'WorldMapTooltipStatusBar':
+  type: StatusBar
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'WorldMapTooltipTextLeft1':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'WorldMapTooltipTextLeft2':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'WorldMapTooltipTextLeft3':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'WorldMapTooltipTextLeft4':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'WorldMapTooltipTextLeft5':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'WorldMapTooltipTextLeft6':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'WorldMapTooltipTextLeft7':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'WorldMapTooltipTextLeft8':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'WorldMapTooltipTextRight1':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'WorldMapTooltipTextRight2':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'WorldMapTooltipTextRight3':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'WorldMapTooltipTextRight4':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'WorldMapTooltipTextRight5':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'WorldMapTooltipTextRight6':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'WorldMapTooltipTextRight7':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'WorldMapTooltipTextRight8':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'WorldMapTooltipTooltipStatusBar':
+  type: StatusBar
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'WorldMapTooltipTooltipTextLeft1':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'WorldMapTooltipTooltipTextLeft2':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'WorldMapTooltipTooltipTextLeft3':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'WorldMapTooltipTooltipTextLeft4':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'WorldMapTooltipTooltipTextLeft5':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'WorldMapTooltipTooltipTextLeft6':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'WorldMapTooltipTooltipTextLeft7':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'WorldMapTooltipTooltipTextLeft8':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'WorldMapTooltipTooltipTextRight1':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'WorldMapTooltipTooltipTextRight2':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'WorldMapTooltipTooltipTextRight3':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'WorldMapTooltipTooltipTextRight4':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'WorldMapTooltipTooltipTextRight5':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'WorldMapTooltipTooltipTextRight6':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'WorldMapTooltipTooltipTextRight7':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'WorldMapTooltipTooltipTextRight8':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'WorldMapTrackQuestText':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'WorldMapZoneDropdown':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'WorldMapZoneMinimapDropdown':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'WorldMapZoomOutButton':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'WorldMapZoomOutButtonText':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'ZoneTextFrame':
+  type: Frame
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'ZoneTextString':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt

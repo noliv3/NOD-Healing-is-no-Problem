@@ -1,0 +1,84 @@
+# Auto-generated from DOCU/NOD_Konzept_Funktionsliste.txt
+# Category: tabard_customization_options
+# Description: Auto-generated group for prefix "tabardframecustomization".
+
+'TabardFrameCustomization1':
+  type: Frame
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'TabardFrameCustomization1LeftButton':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'TabardFrameCustomization1RightButton':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'TabardFrameCustomization1Text':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'TabardFrameCustomization2':
+  type: Frame
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'TabardFrameCustomization2LeftButton':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'TabardFrameCustomization2RightButton':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'TabardFrameCustomization2Text':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'TabardFrameCustomization3':
+  type: Frame
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'TabardFrameCustomization3LeftButton':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'TabardFrameCustomization3RightButton':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'TabardFrameCustomization3Text':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'TabardFrameCustomization4':
+  type: Frame
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'TabardFrameCustomization4LeftButton':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'TabardFrameCustomization4RightButton':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'TabardFrameCustomization4Text':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'TabardFrameCustomization5':
+  type: Frame
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'TabardFrameCustomization5LeftButton':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'TabardFrameCustomization5RightButton':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'TabardFrameCustomization5Text':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt

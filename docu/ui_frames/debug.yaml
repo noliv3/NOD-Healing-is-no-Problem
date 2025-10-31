@@ -1,0 +1,16 @@
+# Auto-generated from DOCU/NOD_Konzept_Funktionsliste.txt
+# Category: debug
+# Description: Developer tooling, debug overlays, error handlers, and trace logs.
+
+'ScriptErrorsFrame':
+  type: Frame
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'ScriptErrorsFrameClose':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'ScriptErrorsFrameText':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt

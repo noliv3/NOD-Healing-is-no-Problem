@@ -1,0 +1,392 @@
+# Auto-generated from DOCU/NOD_Konzept_Funktionsliste.txt
+# Category: trade
+# Description: Trade window slots and trade partner inventory displays.
+
+'TradeFrame':
+  type: Frame
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'TradeFrameCancelButton':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'TradeFrameCancelButtonText':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'TradeFrameCloseButton':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'TradeFrameInset':
+  type: Frame
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'TradeFramePlayerEnchantText':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'TradeFramePlayerNameText':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'TradeFrameRecipientEnchantText':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'TradeFrameRecipientNameText':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'TradeFrameTitleText':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'TradeFrameTradeButton':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'TradeFrameTradeButtonText':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'TradePlayerEnchantInset':
+  type: Frame
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'TradePlayerInputMoneyInset':
+  type: Frame
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'TradePlayerItem1':
+  type: Frame
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'TradePlayerItem1ItemButton':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'TradePlayerItem1ItemButtonCount':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'TradePlayerItem1ItemButtonStock':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'TradePlayerItem1Name':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'TradePlayerItem2':
+  type: Frame
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'TradePlayerItem2ItemButton':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'TradePlayerItem2ItemButtonCount':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'TradePlayerItem2ItemButtonStock':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'TradePlayerItem2Name':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'TradePlayerItem3':
+  type: Frame
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'TradePlayerItem3ItemButton':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'TradePlayerItem3ItemButtonCount':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'TradePlayerItem3ItemButtonStock':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'TradePlayerItem3Name':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'TradePlayerItem4':
+  type: Frame
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'TradePlayerItem4ItemButton':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'TradePlayerItem4ItemButtonCount':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'TradePlayerItem4ItemButtonStock':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'TradePlayerItem4Name':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'TradePlayerItem5':
+  type: Frame
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'TradePlayerItem5ItemButton':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'TradePlayerItem5ItemButtonCount':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'TradePlayerItem5ItemButtonStock':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'TradePlayerItem5Name':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'TradePlayerItem6':
+  type: Frame
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'TradePlayerItem6ItemButton':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'TradePlayerItem6ItemButtonCount':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'TradePlayerItem6ItemButtonStock':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'TradePlayerItem6Name':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'TradePlayerItem7':
+  type: Frame
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'TradePlayerItem7ItemButton':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'TradePlayerItem7ItemButtonCount':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'TradePlayerItem7ItemButtonStock':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'TradePlayerItem7Name':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'TradePlayerItemsInset':
+  type: Frame
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'TradeRecipientEnchantInset':
+  type: Frame
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'TradeRecipientItem1':
+  type: Frame
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'TradeRecipientItem1ItemButton':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'TradeRecipientItem1ItemButtonCount':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'TradeRecipientItem1ItemButtonStock':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'TradeRecipientItem1Name':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'TradeRecipientItem2':
+  type: Frame
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'TradeRecipientItem2ItemButton':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'TradeRecipientItem2ItemButtonCount':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'TradeRecipientItem2ItemButtonStock':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'TradeRecipientItem2Name':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'TradeRecipientItem3':
+  type: Frame
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'TradeRecipientItem3ItemButton':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'TradeRecipientItem3ItemButtonCount':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'TradeRecipientItem3ItemButtonStock':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'TradeRecipientItem3Name':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'TradeRecipientItem4':
+  type: Frame
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'TradeRecipientItem4ItemButton':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'TradeRecipientItem4ItemButtonCount':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'TradeRecipientItem4ItemButtonStock':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'TradeRecipientItem4Name':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'TradeRecipientItem5':
+  type: Frame
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'TradeRecipientItem5ItemButton':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'TradeRecipientItem5ItemButtonCount':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'TradeRecipientItem5ItemButtonStock':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'TradeRecipientItem5Name':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'TradeRecipientItem6':
+  type: Frame
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'TradeRecipientItem6ItemButton':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'TradeRecipientItem6ItemButtonCount':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'TradeRecipientItem6ItemButtonStock':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'TradeRecipientItem6Name':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'TradeRecipientItem7':
+  type: Frame
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'TradeRecipientItem7ItemButton':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'TradeRecipientItem7ItemButtonCount':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'TradeRecipientItem7ItemButtonStock':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'TradeRecipientItem7Name':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'TradeRecipientItemsInset':
+  type: Frame
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'TradeRecipientMoneyBg':
+  type: Frame
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'TradeRecipientMoneyFrame':
+  type: Frame
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'TradeRecipientMoneyFrameCopperButton':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'TradeRecipientMoneyFrameCopperButtonText':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'TradeRecipientMoneyFrameGoldButton':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'TradeRecipientMoneyFrameGoldButtonText':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'TradeRecipientMoneyFrameSilverButton':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'TradeRecipientMoneyFrameSilverButtonText':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'TradeRecipientMoneyFrameTrialErrorButton':
+  type: Frame
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'TradeRecipientMoneyInset':
+  type: Frame
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt

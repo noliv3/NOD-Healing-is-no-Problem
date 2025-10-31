@@ -1,0 +1,104 @@
+# Auto-generated from DOCU/NOD_Konzept_Funktionsliste.txt
+# Category: levelup
+# Description: Level-up display banners and player choice reward frames.
+
+'LevelUpDisplay':
+  type: Frame
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'LevelUpDisplayChallengeModeFrame':
+  type: Frame
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'LevelUpDisplayLevelFrame':
+  type: Frame
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'LevelUpDisplayLevelFrameBlockText':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'LevelUpDisplayLevelFrameLevel':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'LevelUpDisplayLevelFrameTextLine':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'LevelUpDisplayScenarioFrame':
+  type: Frame
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'LevelUpDisplaySide':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'LevelUpDisplaySideLevel':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'LevelUpDisplaySideUnlockFrame1':
+  type: Frame
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'LevelUpDisplaySideUnlockFrame1BottomGiant':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'LevelUpDisplaySideUnlockFrame1Name':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'LevelUpDisplaySideUnlockFrame1RarityBottomHuge':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'LevelUpDisplaySideUnlockFrame1RarityUpperWhite':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'LevelUpDisplaySideUnlockFrame1RarityValue':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'LevelUpDisplaySideUnlockFrame1SubText':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'LevelUpDisplaySideUnlockFrame1UpperWhite':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'LevelUpDisplaySpellFrame':
+  type: Frame
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'LevelUpDisplaySpellFrameBottomGiant':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'LevelUpDisplaySpellFrameName':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'LevelUpDisplaySpellFrameRarityBottomHuge':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'LevelUpDisplaySpellFrameRarityUpperWhite':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'LevelUpDisplaySpellFrameRarityValue':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'LevelUpDisplaySpellFrameSubText':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'LevelUpDisplaySpellFrameUpperWhite':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt

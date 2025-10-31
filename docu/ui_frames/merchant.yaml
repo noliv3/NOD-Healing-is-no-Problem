@@ -1,0 +1,1120 @@
+# Auto-generated from DOCU/NOD_Konzept_Funktionsliste.txt
+# Category: merchant
+# Description: Merchant interaction panes and vendor buy/sell controls.
+
+'MerchantBuyBackItem':
+  type: Frame
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'MerchantBuyBackItemItemButton':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'MerchantBuyBackItemItemButtonCount':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'MerchantBuyBackItemItemButtonStock':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'MerchantBuyBackItemMoneyFrame':
+  type: Frame
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'MerchantBuyBackItemMoneyFrameCopperButton':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'MerchantBuyBackItemMoneyFrameCopperButtonText':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'MerchantBuyBackItemMoneyFrameGoldButton':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'MerchantBuyBackItemMoneyFrameGoldButtonText':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'MerchantBuyBackItemMoneyFrameSilverButton':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'MerchantBuyBackItemMoneyFrameSilverButtonText':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'MerchantBuyBackItemMoneyFrameTrialErrorButton':
+  type: Frame
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'MerchantBuyBackItemName':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'MerchantFrame':
+  type: Frame
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'MerchantFrameCloseButton':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'MerchantFrameInset':
+  type: Frame
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'MerchantFrameTab1':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'MerchantFrameTab1Text':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'MerchantFrameTab2':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'MerchantFrameTab2Text':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'MerchantFrameTitleText':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'MerchantGuildBankRepairButton':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'MerchantItem1':
+  type: Frame
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'MerchantItem10':
+  type: Frame
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'MerchantItem10AltCurrencyFrame':
+  type: Frame
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'MerchantItem10AltCurrencyFrameItem1':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'MerchantItem10AltCurrencyFrameItem1Text':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'MerchantItem10AltCurrencyFrameItem2':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'MerchantItem10AltCurrencyFrameItem2Text':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'MerchantItem10AltCurrencyFrameItem3':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'MerchantItem10AltCurrencyFrameItem3Text':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'MerchantItem10ItemButton':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'MerchantItem10ItemButtonCount':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'MerchantItem10ItemButtonStock':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'MerchantItem10MoneyFrame':
+  type: Frame
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'MerchantItem10MoneyFrameCopperButton':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'MerchantItem10MoneyFrameCopperButtonText':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'MerchantItem10MoneyFrameGoldButton':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'MerchantItem10MoneyFrameGoldButtonText':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'MerchantItem10MoneyFrameSilverButton':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'MerchantItem10MoneyFrameSilverButtonText':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'MerchantItem10MoneyFrameTrialErrorButton':
+  type: Frame
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'MerchantItem10Name':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'MerchantItem11':
+  type: Frame
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'MerchantItem11AltCurrencyFrame':
+  type: Frame
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'MerchantItem11AltCurrencyFrameItem1':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'MerchantItem11AltCurrencyFrameItem1Text':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'MerchantItem11AltCurrencyFrameItem2':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'MerchantItem11AltCurrencyFrameItem2Text':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'MerchantItem11AltCurrencyFrameItem3':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'MerchantItem11AltCurrencyFrameItem3Text':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'MerchantItem11ItemButton':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'MerchantItem11ItemButtonCount':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'MerchantItem11ItemButtonStock':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'MerchantItem11MoneyFrame':
+  type: Frame
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'MerchantItem11MoneyFrameCopperButton':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'MerchantItem11MoneyFrameCopperButtonText':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'MerchantItem11MoneyFrameGoldButton':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'MerchantItem11MoneyFrameGoldButtonText':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'MerchantItem11MoneyFrameSilverButton':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'MerchantItem11MoneyFrameSilverButtonText':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'MerchantItem11MoneyFrameTrialErrorButton':
+  type: Frame
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'MerchantItem11Name':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'MerchantItem12':
+  type: Frame
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'MerchantItem12AltCurrencyFrame':
+  type: Frame
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'MerchantItem12AltCurrencyFrameItem1':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'MerchantItem12AltCurrencyFrameItem1Text':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'MerchantItem12AltCurrencyFrameItem2':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'MerchantItem12AltCurrencyFrameItem2Text':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'MerchantItem12AltCurrencyFrameItem3':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'MerchantItem12AltCurrencyFrameItem3Text':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'MerchantItem12ItemButton':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'MerchantItem12ItemButtonCount':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'MerchantItem12ItemButtonStock':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'MerchantItem12MoneyFrame':
+  type: Frame
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'MerchantItem12MoneyFrameCopperButton':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'MerchantItem12MoneyFrameCopperButtonText':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'MerchantItem12MoneyFrameGoldButton':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'MerchantItem12MoneyFrameGoldButtonText':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'MerchantItem12MoneyFrameSilverButton':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'MerchantItem12MoneyFrameSilverButtonText':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'MerchantItem12MoneyFrameTrialErrorButton':
+  type: Frame
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'MerchantItem12Name':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'MerchantItem1AltCurrencyFrame':
+  type: Frame
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'MerchantItem1AltCurrencyFrameItem1':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'MerchantItem1AltCurrencyFrameItem1Text':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'MerchantItem1AltCurrencyFrameItem2':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'MerchantItem1AltCurrencyFrameItem2Text':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'MerchantItem1AltCurrencyFrameItem3':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'MerchantItem1AltCurrencyFrameItem3Text':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'MerchantItem1ItemButton':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'MerchantItem1ItemButtonCount':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'MerchantItem1ItemButtonStock':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'MerchantItem1MoneyFrame':
+  type: Frame
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'MerchantItem1MoneyFrameCopperButton':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'MerchantItem1MoneyFrameCopperButtonText':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'MerchantItem1MoneyFrameGoldButton':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'MerchantItem1MoneyFrameGoldButtonText':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'MerchantItem1MoneyFrameSilverButton':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'MerchantItem1MoneyFrameSilverButtonText':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'MerchantItem1MoneyFrameTrialErrorButton':
+  type: Frame
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'MerchantItem1Name':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'MerchantItem2':
+  type: Frame
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'MerchantItem2AltCurrencyFrame':
+  type: Frame
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'MerchantItem2AltCurrencyFrameItem1':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'MerchantItem2AltCurrencyFrameItem1Text':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'MerchantItem2AltCurrencyFrameItem2':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'MerchantItem2AltCurrencyFrameItem2Text':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'MerchantItem2AltCurrencyFrameItem3':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'MerchantItem2AltCurrencyFrameItem3Text':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'MerchantItem2ItemButton':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'MerchantItem2ItemButtonCount':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'MerchantItem2ItemButtonStock':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'MerchantItem2MoneyFrame':
+  type: Frame
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'MerchantItem2MoneyFrameCopperButton':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'MerchantItem2MoneyFrameCopperButtonText':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'MerchantItem2MoneyFrameGoldButton':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'MerchantItem2MoneyFrameGoldButtonText':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'MerchantItem2MoneyFrameSilverButton':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'MerchantItem2MoneyFrameSilverButtonText':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'MerchantItem2MoneyFrameTrialErrorButton':
+  type: Frame
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'MerchantItem2Name':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'MerchantItem3':
+  type: Frame
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'MerchantItem3AltCurrencyFrame':
+  type: Frame
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'MerchantItem3AltCurrencyFrameItem1':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'MerchantItem3AltCurrencyFrameItem1Text':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'MerchantItem3AltCurrencyFrameItem2':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'MerchantItem3AltCurrencyFrameItem2Text':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'MerchantItem3AltCurrencyFrameItem3':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'MerchantItem3AltCurrencyFrameItem3Text':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'MerchantItem3ItemButton':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'MerchantItem3ItemButtonCount':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'MerchantItem3ItemButtonStock':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'MerchantItem3MoneyFrame':
+  type: Frame
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'MerchantItem3MoneyFrameCopperButton':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'MerchantItem3MoneyFrameCopperButtonText':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'MerchantItem3MoneyFrameGoldButton':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'MerchantItem3MoneyFrameGoldButtonText':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'MerchantItem3MoneyFrameSilverButton':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'MerchantItem3MoneyFrameSilverButtonText':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'MerchantItem3MoneyFrameTrialErrorButton':
+  type: Frame
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'MerchantItem3Name':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'MerchantItem4':
+  type: Frame
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'MerchantItem4AltCurrencyFrame':
+  type: Frame
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'MerchantItem4AltCurrencyFrameItem1':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'MerchantItem4AltCurrencyFrameItem1Text':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'MerchantItem4AltCurrencyFrameItem2':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'MerchantItem4AltCurrencyFrameItem2Text':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'MerchantItem4AltCurrencyFrameItem3':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'MerchantItem4AltCurrencyFrameItem3Text':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'MerchantItem4ItemButton':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'MerchantItem4ItemButtonCount':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'MerchantItem4ItemButtonStock':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'MerchantItem4MoneyFrame':
+  type: Frame
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'MerchantItem4MoneyFrameCopperButton':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'MerchantItem4MoneyFrameCopperButtonText':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'MerchantItem4MoneyFrameGoldButton':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'MerchantItem4MoneyFrameGoldButtonText':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'MerchantItem4MoneyFrameSilverButton':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'MerchantItem4MoneyFrameSilverButtonText':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'MerchantItem4MoneyFrameTrialErrorButton':
+  type: Frame
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'MerchantItem4Name':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'MerchantItem5':
+  type: Frame
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'MerchantItem5AltCurrencyFrame':
+  type: Frame
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'MerchantItem5AltCurrencyFrameItem1':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'MerchantItem5AltCurrencyFrameItem1Text':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'MerchantItem5AltCurrencyFrameItem2':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'MerchantItem5AltCurrencyFrameItem2Text':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'MerchantItem5AltCurrencyFrameItem3':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'MerchantItem5AltCurrencyFrameItem3Text':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'MerchantItem5ItemButton':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'MerchantItem5ItemButtonCount':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'MerchantItem5ItemButtonStock':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'MerchantItem5MoneyFrame':
+  type: Frame
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'MerchantItem5MoneyFrameCopperButton':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'MerchantItem5MoneyFrameCopperButtonText':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'MerchantItem5MoneyFrameGoldButton':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'MerchantItem5MoneyFrameGoldButtonText':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'MerchantItem5MoneyFrameSilverButton':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'MerchantItem5MoneyFrameSilverButtonText':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'MerchantItem5MoneyFrameTrialErrorButton':
+  type: Frame
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'MerchantItem5Name':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'MerchantItem6':
+  type: Frame
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'MerchantItem6AltCurrencyFrame':
+  type: Frame
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'MerchantItem6AltCurrencyFrameItem1':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'MerchantItem6AltCurrencyFrameItem1Text':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'MerchantItem6AltCurrencyFrameItem2':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'MerchantItem6AltCurrencyFrameItem2Text':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'MerchantItem6AltCurrencyFrameItem3':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'MerchantItem6AltCurrencyFrameItem3Text':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'MerchantItem6ItemButton':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'MerchantItem6ItemButtonCount':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'MerchantItem6ItemButtonStock':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'MerchantItem6MoneyFrame':
+  type: Frame
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'MerchantItem6MoneyFrameCopperButton':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'MerchantItem6MoneyFrameCopperButtonText':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'MerchantItem6MoneyFrameGoldButton':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'MerchantItem6MoneyFrameGoldButtonText':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'MerchantItem6MoneyFrameSilverButton':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'MerchantItem6MoneyFrameSilverButtonText':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'MerchantItem6MoneyFrameTrialErrorButton':
+  type: Frame
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'MerchantItem6Name':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'MerchantItem7':
+  type: Frame
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'MerchantItem7AltCurrencyFrame':
+  type: Frame
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'MerchantItem7AltCurrencyFrameItem1':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'MerchantItem7AltCurrencyFrameItem1Text':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'MerchantItem7AltCurrencyFrameItem2':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'MerchantItem7AltCurrencyFrameItem2Text':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'MerchantItem7AltCurrencyFrameItem3':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'MerchantItem7AltCurrencyFrameItem3Text':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'MerchantItem7ItemButton':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'MerchantItem7ItemButtonCount':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'MerchantItem7ItemButtonStock':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'MerchantItem7MoneyFrame':
+  type: Frame
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'MerchantItem7MoneyFrameCopperButton':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'MerchantItem7MoneyFrameCopperButtonText':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'MerchantItem7MoneyFrameGoldButton':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'MerchantItem7MoneyFrameGoldButtonText':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'MerchantItem7MoneyFrameSilverButton':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'MerchantItem7MoneyFrameSilverButtonText':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'MerchantItem7MoneyFrameTrialErrorButton':
+  type: Frame
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'MerchantItem7Name':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'MerchantItem8':
+  type: Frame
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'MerchantItem8AltCurrencyFrame':
+  type: Frame
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'MerchantItem8AltCurrencyFrameItem1':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'MerchantItem8AltCurrencyFrameItem1Text':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'MerchantItem8AltCurrencyFrameItem2':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'MerchantItem8AltCurrencyFrameItem2Text':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'MerchantItem8AltCurrencyFrameItem3':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'MerchantItem8AltCurrencyFrameItem3Text':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'MerchantItem8ItemButton':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'MerchantItem8ItemButtonCount':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'MerchantItem8ItemButtonStock':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'MerchantItem8MoneyFrame':
+  type: Frame
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'MerchantItem8MoneyFrameCopperButton':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'MerchantItem8MoneyFrameCopperButtonText':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'MerchantItem8MoneyFrameGoldButton':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'MerchantItem8MoneyFrameGoldButtonText':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'MerchantItem8MoneyFrameSilverButton':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'MerchantItem8MoneyFrameSilverButtonText':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'MerchantItem8MoneyFrameTrialErrorButton':
+  type: Frame
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'MerchantItem8Name':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'MerchantItem9':
+  type: Frame
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'MerchantItem9AltCurrencyFrame':
+  type: Frame
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'MerchantItem9AltCurrencyFrameItem1':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'MerchantItem9AltCurrencyFrameItem1Text':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'MerchantItem9AltCurrencyFrameItem2':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'MerchantItem9AltCurrencyFrameItem2Text':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'MerchantItem9AltCurrencyFrameItem3':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'MerchantItem9AltCurrencyFrameItem3Text':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'MerchantItem9ItemButton':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'MerchantItem9ItemButtonCount':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'MerchantItem9ItemButtonStock':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'MerchantItem9MoneyFrame':
+  type: Frame
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'MerchantItem9MoneyFrameCopperButton':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'MerchantItem9MoneyFrameCopperButtonText':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'MerchantItem9MoneyFrameGoldButton':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'MerchantItem9MoneyFrameGoldButtonText':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'MerchantItem9MoneyFrameSilverButton':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'MerchantItem9MoneyFrameSilverButtonText':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'MerchantItem9MoneyFrameTrialErrorButton':
+  type: Frame
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'MerchantItem9Name':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'MerchantMoneyBg':
+  type: Frame
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'MerchantMoneyFrame':
+  type: Frame
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'MerchantMoneyFrameCopperButton':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'MerchantMoneyFrameCopperButtonText':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'MerchantMoneyFrameGoldButton':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'MerchantMoneyFrameGoldButtonText':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'MerchantMoneyFrameSilverButton':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'MerchantMoneyFrameSilverButtonText':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'MerchantMoneyFrameTrialErrorButton':
+  type: Frame
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'MerchantMoneyInset':
+  type: Frame
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'MerchantNameText':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'MerchantNextPageButton':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'MerchantPageText':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'MerchantPrevPageButton':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'MerchantRepairAllButton':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'MerchantRepairItemButton':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'MerchantRepairText':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt

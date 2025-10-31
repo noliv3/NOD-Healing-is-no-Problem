@@ -1,0 +1,8 @@
+# Auto-generated from DOCU/NOD_Konzept_Funktionsliste.txt
+# Category: achievements
+# Description: Achievement summary, progress, and comparison frames.
+
+'AchievementMicroButton':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt

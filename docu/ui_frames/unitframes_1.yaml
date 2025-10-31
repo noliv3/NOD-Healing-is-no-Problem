@@ -1,0 +1,2004 @@
+# Auto-generated from DOCU/NOD_Konzept_Funktionsliste.txt
+# Category: unitframes
+# Description: Unit frames for players, parties, raids, bosses, and their resources.
+
+'ArenaAvailableServicesText':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'ArenaRegistrarButton1':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'ArenaRegistrarButton2':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'ArenaRegistrarButton3':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'ArenaRegistrarButton4':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'ArenaRegistrarButton5':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'ArenaRegistrarButton6':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'ArenaRegistrarCostLabel':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'ArenaRegistrarFrame':
+  type: Frame
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'ArenaRegistrarFrameCancelButton':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'ArenaRegistrarFrameCancelButtonText':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'ArenaRegistrarFrameCloseButton':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'ArenaRegistrarFrameEditBox':
+  type: EditBox
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'ArenaRegistrarFrameGoodbyeButton':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'ArenaRegistrarFrameGoodbyeButtonText':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'ArenaRegistrarFrameNpcNameText':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'ArenaRegistrarFramePurchaseButton':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'ArenaRegistrarFramePurchaseButtonText':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'ArenaRegistrarGreetingFrame':
+  type: Frame
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'ArenaRegistrarMoneyFrame':
+  type: Frame
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'ArenaRegistrarMoneyFrameCopperButton':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'ArenaRegistrarMoneyFrameCopperButtonText':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'ArenaRegistrarMoneyFrameGoldButton':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'ArenaRegistrarMoneyFrameGoldButtonText':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'ArenaRegistrarMoneyFrameSilverButton':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'ArenaRegistrarMoneyFrameSilverButtonText':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'ArenaRegistrarNpcNameFrame':
+  type: Frame
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'ArenaRegistrarPurchaseFrame':
+  type: Frame
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'ArenaRegistrarPurchaseText':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'ArenaRegistrarText':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'Boss1TargetFrame':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'Boss1TargetFrameBuffs':
+  type: Frame
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'Boss1TargetFrameDebuffs':
+  type: Frame
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'Boss1TargetFrameHealthBar':
+  type: StatusBar
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'Boss1TargetFrameManaBar':
+  type: StatusBar
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'Boss1TargetFrameNumericalThreat':
+  type: Frame
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'Boss1TargetFrameNumericalThreatValue':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'Boss1TargetFramePowerBarAlt':
+  type: Frame
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'Boss1TargetFramePowerBarAltCounterBar':
+  type: Frame
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'Boss1TargetFramePowerBarAltCounterBarDigit1':
+  type: Frame
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'Boss1TargetFramePowerBarAltCounterBarDigit2':
+  type: Frame
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'Boss1TargetFramePowerBarAltCounterBarDigit3':
+  type: Frame
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'Boss1TargetFramePowerBarAltCounterBarDigit4':
+  type: Frame
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'Boss1TargetFramePowerBarAltCounterBarDigit5':
+  type: Frame
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'Boss1TargetFramePowerBarAltCounterBarDigit6':
+  type: Frame
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'Boss1TargetFramePowerBarAltCounterBarDigit7':
+  type: Frame
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'Boss1TargetFramePowerBarAltStatusFrame':
+  type: StatusBar
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'Boss1TargetFramePowerBarAltStatusFrameText':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'Boss1TargetFrameSpellBar':
+  type: StatusBar
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'Boss1TargetFrameTextureFrame':
+  type: Frame
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'Boss1TargetFrameTextureFrameDeadText':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'Boss1TargetFrameTextureFrameLevelText':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'Boss1TargetFrameTextureFrameName':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'Boss1TargetFrameTextureFrameUnconsciousText':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'Boss2TargetFrame':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'Boss2TargetFrameBuffs':
+  type: Frame
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'Boss2TargetFrameDebuffs':
+  type: Frame
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'Boss2TargetFrameHealthBar':
+  type: StatusBar
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'Boss2TargetFrameManaBar':
+  type: StatusBar
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'Boss2TargetFrameNumericalThreat':
+  type: Frame
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'Boss2TargetFrameNumericalThreatValue':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'Boss2TargetFramePowerBarAlt':
+  type: Frame
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'Boss2TargetFramePowerBarAltCounterBar':
+  type: Frame
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'Boss2TargetFramePowerBarAltCounterBarDigit1':
+  type: Frame
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'Boss2TargetFramePowerBarAltCounterBarDigit2':
+  type: Frame
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'Boss2TargetFramePowerBarAltCounterBarDigit3':
+  type: Frame
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'Boss2TargetFramePowerBarAltCounterBarDigit4':
+  type: Frame
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'Boss2TargetFramePowerBarAltCounterBarDigit5':
+  type: Frame
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'Boss2TargetFramePowerBarAltCounterBarDigit6':
+  type: Frame
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'Boss2TargetFramePowerBarAltCounterBarDigit7':
+  type: Frame
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'Boss2TargetFramePowerBarAltStatusFrame':
+  type: StatusBar
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'Boss2TargetFramePowerBarAltStatusFrameText':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'Boss2TargetFrameSpellBar':
+  type: StatusBar
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'Boss2TargetFrameTextureFrame':
+  type: Frame
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'Boss2TargetFrameTextureFrameDeadText':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'Boss2TargetFrameTextureFrameLevelText':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'Boss2TargetFrameTextureFrameName':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'Boss2TargetFrameTextureFrameUnconsciousText':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'Boss3TargetFrame':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'Boss3TargetFrameBuffs':
+  type: Frame
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'Boss3TargetFrameDebuffs':
+  type: Frame
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'Boss3TargetFrameHealthBar':
+  type: StatusBar
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'Boss3TargetFrameManaBar':
+  type: StatusBar
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'Boss3TargetFrameNumericalThreat':
+  type: Frame
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'Boss3TargetFrameNumericalThreatValue':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'Boss3TargetFramePowerBarAlt':
+  type: Frame
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'Boss3TargetFramePowerBarAltCounterBar':
+  type: Frame
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'Boss3TargetFramePowerBarAltCounterBarDigit1':
+  type: Frame
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'Boss3TargetFramePowerBarAltCounterBarDigit2':
+  type: Frame
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'Boss3TargetFramePowerBarAltCounterBarDigit3':
+  type: Frame
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'Boss3TargetFramePowerBarAltCounterBarDigit4':
+  type: Frame
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'Boss3TargetFramePowerBarAltCounterBarDigit5':
+  type: Frame
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'Boss3TargetFramePowerBarAltCounterBarDigit6':
+  type: Frame
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'Boss3TargetFramePowerBarAltCounterBarDigit7':
+  type: Frame
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'Boss3TargetFramePowerBarAltStatusFrame':
+  type: StatusBar
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'Boss3TargetFramePowerBarAltStatusFrameText':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'Boss3TargetFrameSpellBar':
+  type: StatusBar
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'Boss3TargetFrameTextureFrame':
+  type: Frame
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'Boss3TargetFrameTextureFrameDeadText':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'Boss3TargetFrameTextureFrameLevelText':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'Boss3TargetFrameTextureFrameName':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'Boss3TargetFrameTextureFrameUnconsciousText':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'Boss4TargetFrame':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'Boss4TargetFrameBuffs':
+  type: Frame
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'Boss4TargetFrameDebuffs':
+  type: Frame
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'Boss4TargetFrameHealthBar':
+  type: StatusBar
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'Boss4TargetFrameManaBar':
+  type: StatusBar
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'Boss4TargetFrameNumericalThreat':
+  type: Frame
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'Boss4TargetFrameNumericalThreatValue':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'Boss4TargetFramePowerBarAlt':
+  type: Frame
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'Boss4TargetFramePowerBarAltCounterBar':
+  type: Frame
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'Boss4TargetFramePowerBarAltCounterBarDigit1':
+  type: Frame
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'Boss4TargetFramePowerBarAltCounterBarDigit2':
+  type: Frame
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'Boss4TargetFramePowerBarAltCounterBarDigit3':
+  type: Frame
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'Boss4TargetFramePowerBarAltCounterBarDigit4':
+  type: Frame
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'Boss4TargetFramePowerBarAltCounterBarDigit5':
+  type: Frame
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'Boss4TargetFramePowerBarAltCounterBarDigit6':
+  type: Frame
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'Boss4TargetFramePowerBarAltCounterBarDigit7':
+  type: Frame
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'Boss4TargetFramePowerBarAltStatusFrame':
+  type: StatusBar
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'Boss4TargetFramePowerBarAltStatusFrameText':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'Boss4TargetFrameSpellBar':
+  type: StatusBar
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'Boss4TargetFrameTextureFrame':
+  type: Frame
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'Boss4TargetFrameTextureFrameDeadText':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'Boss4TargetFrameTextureFrameLevelText':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'Boss4TargetFrameTextureFrameName':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'Boss4TargetFrameTextureFrameUnconsciousText':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'Boss5TargetFrame':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'Boss5TargetFrameBuffs':
+  type: Frame
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'Boss5TargetFrameDebuffs':
+  type: Frame
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'Boss5TargetFrameHealthBar':
+  type: StatusBar
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'Boss5TargetFrameManaBar':
+  type: StatusBar
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'Boss5TargetFrameNumericalThreat':
+  type: Frame
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'Boss5TargetFrameNumericalThreatValue':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'Boss5TargetFramePowerBarAlt':
+  type: Frame
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'Boss5TargetFramePowerBarAltCounterBar':
+  type: Frame
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'Boss5TargetFramePowerBarAltCounterBarDigit1':
+  type: Frame
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'Boss5TargetFramePowerBarAltCounterBarDigit2':
+  type: Frame
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'Boss5TargetFramePowerBarAltCounterBarDigit3':
+  type: Frame
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'Boss5TargetFramePowerBarAltCounterBarDigit4':
+  type: Frame
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'Boss5TargetFramePowerBarAltCounterBarDigit5':
+  type: Frame
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'Boss5TargetFramePowerBarAltCounterBarDigit6':
+  type: Frame
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'Boss5TargetFramePowerBarAltCounterBarDigit7':
+  type: Frame
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'Boss5TargetFramePowerBarAltStatusFrame':
+  type: StatusBar
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'Boss5TargetFramePowerBarAltStatusFrameText':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'Boss5TargetFrameSpellBar':
+  type: StatusBar
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'Boss5TargetFrameTextureFrame':
+  type: Frame
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'Boss5TargetFrameTextureFrameDeadText':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'Boss5TargetFrameTextureFrameLevelText':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'Boss5TargetFrameTextureFrameName':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'Boss5TargetFrameTextureFrameUnconsciousText':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'BurningEmbersBarFrame':
+  type: Frame
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'BurningEmbersBarFrameEmber1':
+  type: Frame
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'BurningEmbersBarFrameEmber2':
+  type: Frame
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'BurningEmbersBarFrameEmber3':
+  type: Frame
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'BurningEmbersBarFrameEmber4':
+  type: Frame
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'ComboFrame':
+  type: Frame
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'ComboPoint1':
+  type: Frame
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'ComboPoint2':
+  type: Frame
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'ComboPoint3':
+  type: Frame
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'ComboPoint4':
+  type: Frame
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'ComboPoint5':
+  type: Frame
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'CompactRaidFrame1':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'CompactRaidFrame1Buff1':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'CompactRaidFrame1Buff1Count':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'CompactRaidFrame1Buff2':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'CompactRaidFrame1Buff2Count':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'CompactRaidFrame1Buff3':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'CompactRaidFrame1Buff3Count':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'CompactRaidFrame1CenterStatusIcon':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'CompactRaidFrame1Debuff1':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'CompactRaidFrame1Debuff1Count':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'CompactRaidFrame1Debuff2':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'CompactRaidFrame1Debuff2Count':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'CompactRaidFrame1Debuff3':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'CompactRaidFrame1Debuff3Count':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'CompactRaidFrame1DispelDebuff1':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'CompactRaidFrame1DispelDebuff2':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'CompactRaidFrame1DispelDebuff3':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'CompactRaidFrame1HealthBar':
+  type: StatusBar
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'CompactRaidFrame1Name':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'CompactRaidFrame1PowerBar':
+  type: StatusBar
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'CompactRaidFrame1StatusText':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'CompactRaidFrameContainer':
+  type: Frame
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'CompactRaidFrameContainerBorderFrame':
+  type: Frame
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'CompactRaidFrameManager':
+  type: Frame
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'CompactRaidFrameManagerContainerResizeFrame':
+  type: Frame
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'CompactRaidFrameManagerContainerResizeFrameMover':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'CompactRaidFrameManagerContainerResizeFrameResizer':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'CompactRaidFrameManagerDisplayFrame':
+  type: Frame
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'CompactRaidFrameManagerDisplayFrameConvertToRaid':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'CompactRaidFrameManagerDisplayFrameConvertToRaidText':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'CompactRaidFrameManagerDisplayFrameEveryoneIsAssistButtonText':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'CompactRaidFrameManagerDisplayFrameFilterOptions':
+  type: Frame
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'CompactRaidFrameManagerDisplayFrameFilterOptionsFilterGroup1':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'CompactRaidFrameManagerDisplayFrameFilterOptionsFilterGroup1Text':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'CompactRaidFrameManagerDisplayFrameFilterOptionsFilterGroup2':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'CompactRaidFrameManagerDisplayFrameFilterOptionsFilterGroup2Text':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'CompactRaidFrameManagerDisplayFrameFilterOptionsFilterGroup3':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'CompactRaidFrameManagerDisplayFrameFilterOptionsFilterGroup3Text':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'CompactRaidFrameManagerDisplayFrameFilterOptionsFilterGroup4':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'CompactRaidFrameManagerDisplayFrameFilterOptionsFilterGroup4Text':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'CompactRaidFrameManagerDisplayFrameFilterOptionsFilterGroup5':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'CompactRaidFrameManagerDisplayFrameFilterOptionsFilterGroup5Text':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'CompactRaidFrameManagerDisplayFrameFilterOptionsFilterGroup6':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'CompactRaidFrameManagerDisplayFrameFilterOptionsFilterGroup6Text':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'CompactRaidFrameManagerDisplayFrameFilterOptionsFilterGroup7':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'CompactRaidFrameManagerDisplayFrameFilterOptionsFilterGroup7Text':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'CompactRaidFrameManagerDisplayFrameFilterOptionsFilterGroup8':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'CompactRaidFrameManagerDisplayFrameFilterOptionsFilterGroup8Text':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'CompactRaidFrameManagerDisplayFrameFilterOptionsFilterRoleDamager':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'CompactRaidFrameManagerDisplayFrameFilterOptionsFilterRoleDamagerText':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'CompactRaidFrameManagerDisplayFrameFilterOptionsFilterRoleHealer':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'CompactRaidFrameManagerDisplayFrameFilterOptionsFilterRoleHealerText':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'CompactRaidFrameManagerDisplayFrameFilterOptionsFilterRoleTank':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'CompactRaidFrameManagerDisplayFrameFilterOptionsFilterRoleTankText':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'CompactRaidFrameManagerDisplayFrameHiddenModeToggle':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'CompactRaidFrameManagerDisplayFrameHiddenModeToggleText':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'CompactRaidFrameManagerDisplayFrameLeaderOptions':
+  type: Frame
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'CompactRaidFrameManagerDisplayFrameLeaderOptionsInitiateReadyCheck':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'CompactRaidFrameManagerDisplayFrameLeaderOptionsInitiateReadyCheckText':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'CompactRaidFrameManagerDisplayFrameLeaderOptionsInitiateRolePoll':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'CompactRaidFrameManagerDisplayFrameLeaderOptionsInitiateRolePollText':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'CompactRaidFrameManagerDisplayFrameLeaderOptionsRaidWorldMarkerButton':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'CompactRaidFrameManagerDisplayFrameLeaderOptionsRaidWorldMarkerButtonText':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'CompactRaidFrameManagerDisplayFrameLockedModeToggle':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'CompactRaidFrameManagerDisplayFrameLockedModeToggleText':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'CompactRaidFrameManagerDisplayFrameOptionFlowContainer':
+  type: Frame
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'CompactRaidFrameManagerDisplayFrameOptionsButton':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'CompactRaidFrameManagerDisplayFrameProfileSelector':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'CompactRaidFrameManagerDisplayFrameRaidMarkers':
+  type: Frame
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'CompactRaidFrameManagerDisplayFrameRaidMarkersRaidMarker1':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'CompactRaidFrameManagerDisplayFrameRaidMarkersRaidMarker2':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'CompactRaidFrameManagerDisplayFrameRaidMarkersRaidMarker3':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'CompactRaidFrameManagerDisplayFrameRaidMarkersRaidMarker4':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'CompactRaidFrameManagerDisplayFrameRaidMarkersRaidMarker5':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'CompactRaidFrameManagerDisplayFrameRaidMarkersRaidMarker6':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'CompactRaidFrameManagerDisplayFrameRaidMarkersRaidMarker7':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'CompactRaidFrameManagerDisplayFrameRaidMarkersRaidMarker8':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'CompactRaidFrameManagerDisplayFrameRaidMarkersRaidMarkerRemove':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'CompactRaidFrameManagerDisplayFrameRaidMemberCountLabel':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'CompactRaidFrameManagerDisplayFrameRaidMembersLabel':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'CompactRaidFrameManagerToggleButton':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'CompactUnitFrameProfiles':
+  type: Frame
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'CompactUnitFrameProfilesConfirmUnsavedProfileDialog':
+  type: Frame
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'CompactUnitFrameProfilesConfirmUnsavedProfileDialogCancelButton':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'CompactUnitFrameProfilesConfirmUnsavedProfileDialogCancelButtonText':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'CompactUnitFrameProfilesConfirmUnsavedProfileDialogCover':
+  type: Frame
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'CompactUnitFrameProfilesConfirmUnsavedProfileDialogDontSaveButton':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'CompactUnitFrameProfilesConfirmUnsavedProfileDialogDontSaveButtonText':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'CompactUnitFrameProfilesConfirmUnsavedProfileDialogLabel':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'CompactUnitFrameProfilesConfirmUnsavedProfileDialogSaveButton':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'CompactUnitFrameProfilesConfirmUnsavedProfileDialogSaveButtonText':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'CompactUnitFrameProfilesDeleteButton':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'CompactUnitFrameProfilesDeleteButtonText':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'CompactUnitFrameProfilesDeleteProfileDialog':
+  type: Frame
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'CompactUnitFrameProfilesDeleteProfileDialogCancelButton':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'CompactUnitFrameProfilesDeleteProfileDialogCancelButtonText':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'CompactUnitFrameProfilesDeleteProfileDialogCover':
+  type: Frame
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'CompactUnitFrameProfilesDeleteProfileDialogDeleteButton':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'CompactUnitFrameProfilesDeleteProfileDialogDeleteButtonText':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'CompactUnitFrameProfilesDeleteProfileDialogLabel':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'CompactUnitFrameProfilesGeneralOptionsFrame':
+  type: Frame
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'CompactUnitFrameProfilesGeneralOptionsFrameAutoActivate10PlayersLabel':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'CompactUnitFrameProfilesGeneralOptionsFrameAutoActivate15PlayersLabel':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'CompactUnitFrameProfilesGeneralOptionsFrameAutoActivate20PlayersLabel':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'CompactUnitFrameProfilesGeneralOptionsFrameAutoActivate2PlayersLabel':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'CompactUnitFrameProfilesGeneralOptionsFrameAutoActivate3PlayersLabel':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'CompactUnitFrameProfilesGeneralOptionsFrameAutoActivate40PlayersLabel':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'CompactUnitFrameProfilesGeneralOptionsFrameAutoActivate5PlayersLabel':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'CompactUnitFrameProfilesGeneralOptionsFrameAutoActivateDisabledLabel':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'CompactUnitFrameProfilesGeneralOptionsFrameAutoActivateLabel':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'CompactUnitFrameProfilesGeneralOptionsFrameAutoActivatePvELabel':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'CompactUnitFrameProfilesGeneralOptionsFrameAutoActivatePvPLabel':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'CompactUnitFrameProfilesGeneralOptionsFrameDisplayBorderLabel':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'CompactUnitFrameProfilesGeneralOptionsFrameDisplayMainTankAndAssistLabel':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'CompactUnitFrameProfilesGeneralOptionsFrameDisplayOnlyDispellableDebuffsLabel':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'CompactUnitFrameProfilesGeneralOptionsFrameDisplayPetsLabel':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'CompactUnitFrameProfilesGeneralOptionsFrameDisplayPowerBarLabel':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'CompactUnitFrameProfilesGeneralOptionsFrameHealthTextDropdown':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'CompactUnitFrameProfilesGeneralOptionsFrameHealthTextDropdownLabel':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'CompactUnitFrameProfilesGeneralOptionsFrameHeightSliderHigh':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'CompactUnitFrameProfilesGeneralOptionsFrameHeightSliderLabel':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'CompactUnitFrameProfilesGeneralOptionsFrameHeightSliderLow':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'CompactUnitFrameProfilesGeneralOptionsFrameHorizontalGroupsLabel':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'CompactUnitFrameProfilesGeneralOptionsFrameKeepGroupsTogetherLabel':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'CompactUnitFrameProfilesGeneralOptionsFrameResetPositionButton':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'CompactUnitFrameProfilesGeneralOptionsFrameResetPositionButtonText':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'CompactUnitFrameProfilesGeneralOptionsFrameShowDebuffsLabel':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'CompactUnitFrameProfilesGeneralOptionsFrameSortByDropdown':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'CompactUnitFrameProfilesGeneralOptionsFrameSortByDropdownLabel':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'CompactUnitFrameProfilesGeneralOptionsFrameUseClassColorsLabel':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'CompactUnitFrameProfilesGeneralOptionsFrameWidthSliderHigh':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'CompactUnitFrameProfilesGeneralOptionsFrameWidthSliderLabel':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'CompactUnitFrameProfilesGeneralOptionsFrameWidthSliderLow':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'CompactUnitFrameProfilesNewProfileDialog':
+  type: Frame
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'CompactUnitFrameProfilesNewProfileDialogBaseProfileSelector':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'CompactUnitFrameProfilesNewProfileDialogCancelButton':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'CompactUnitFrameProfilesNewProfileDialogCancelButtonText':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'CompactUnitFrameProfilesNewProfileDialogCover':
+  type: Frame
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'CompactUnitFrameProfilesNewProfileDialogCreateButton':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'CompactUnitFrameProfilesNewProfileDialogCreateButtonText':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'CompactUnitFrameProfilesNewProfileDialogEditBox':
+  type: EditBox
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'CompactUnitFrameProfilesNewProfileDialogLabel':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'CompactUnitFrameProfilesProfileSelector':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'CompactUnitFrameProfilesRaidStylePartyFramesText':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'CompactUnitFrameProfilesSaveButton':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'CompactUnitFrameProfilesSaveButtonText':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'CompactUnitFrameProfilesTitle':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'FocusFrame':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'FocusFrameBuffs':
+  type: Frame
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'FocusFrameDebuffs':
+  type: Frame
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'FocusFrameHealthBar':
+  type: StatusBar
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'FocusFrameManaBar':
+  type: StatusBar
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'FocusFrameNumericalThreat':
+  type: Frame
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'FocusFrameNumericalThreatValue':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'FocusFramePowerBarAlt':
+  type: Frame
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'FocusFramePowerBarAltCounterBar':
+  type: Frame
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'FocusFramePowerBarAltCounterBarDigit1':
+  type: Frame
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'FocusFramePowerBarAltCounterBarDigit2':
+  type: Frame
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'FocusFramePowerBarAltCounterBarDigit3':
+  type: Frame
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'FocusFramePowerBarAltCounterBarDigit4':
+  type: Frame
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'FocusFramePowerBarAltCounterBarDigit5':
+  type: Frame
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'FocusFramePowerBarAltCounterBarDigit6':
+  type: Frame
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'FocusFramePowerBarAltCounterBarDigit7':
+  type: Frame
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'FocusFramePowerBarAltStatusFrame':
+  type: StatusBar
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'FocusFramePowerBarAltStatusFrameText':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'FocusFrameSpellBar':
+  type: StatusBar
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'FocusFrameTextureFrame':
+  type: Frame
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'FocusFrameTextureFrameDeadText':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'FocusFrameTextureFrameLevelText':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'FocusFrameTextureFrameName':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'FocusFrameTextureFrameUnconsciousText':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'FocusFrameToT':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'FocusFrameToTDebuff1':
+  type: Frame
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'FocusFrameToTDebuff2':
+  type: Frame
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'FocusFrameToTDebuff3':
+  type: Frame
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'FocusFrameToTDebuff4':
+  type: Frame
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'FocusFrameToTHealthBar':
+  type: StatusBar
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'FocusFrameToTManaBar':
+  type: StatusBar
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'FocusFrameToTTextureFrame':
+  type: Frame
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'FocusFrameToTTextureFrameDeadText':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'FocusFrameToTTextureFrameName':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'FocusFrameToTTextureFrameUnconsciousText':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'MirrorTimer1':
+  type: Frame
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'MirrorTimer1StatusBar':
+  type: StatusBar
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'MirrorTimer1Text':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'MirrorTimer2':
+  type: Frame
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'MirrorTimer2StatusBar':
+  type: StatusBar
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'MirrorTimer2Text':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'MirrorTimer3':
+  type: Frame
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'MirrorTimer3StatusBar':
+  type: StatusBar
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'MirrorTimer3Text':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'MonkHarmonyBar':
+  type: Frame
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'MonkHarmonyBarLightEnergy1':
+  type: Frame
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'MonkHarmonyBarLightEnergy2':
+  type: Frame
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'MonkHarmonyBarLightEnergy3':
+  type: Frame
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'MonkHarmonyBarLightEnergy4':
+  type: Frame
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'MonkHarmonyBarLightEnergy5':
+  type: Frame
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'NamePlateDriverFrame':
+  type: Frame
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'PaladinPowerBar':
+  type: Frame
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'PaladinPowerBarGlowBG':
+  type: Frame
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'PaladinPowerBarRune1':
+  type: Frame
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'PaladinPowerBarRune2':
+  type: Frame
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'PaladinPowerBarRune3':
+  type: Frame
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'PaladinPowerBarRune4':
+  type: Frame
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'PaladinPowerBarRune5':
+  type: Frame
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'PartyMemberBackground':
+  type: Frame
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'PartyMemberBuffTooltip':
+  type: Frame
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'PartyMemberBuffTooltipBuff1':
+  type: Frame
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'PartyMemberBuffTooltipBuff10':
+  type: Frame
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'PartyMemberBuffTooltipBuff11':
+  type: Frame
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'PartyMemberBuffTooltipBuff12':
+  type: Frame
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'PartyMemberBuffTooltipBuff13':
+  type: Frame
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'PartyMemberBuffTooltipBuff14':
+  type: Frame
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'PartyMemberBuffTooltipBuff15':
+  type: Frame
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'PartyMemberBuffTooltipBuff16':
+  type: Frame
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'PartyMemberBuffTooltipBuff2':
+  type: Frame
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'PartyMemberBuffTooltipBuff3':
+  type: Frame
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'PartyMemberBuffTooltipBuff4':
+  type: Frame
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'PartyMemberBuffTooltipBuff5':
+  type: Frame
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'PartyMemberBuffTooltipBuff6':
+  type: Frame
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'PartyMemberBuffTooltipBuff7':
+  type: Frame
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'PartyMemberBuffTooltipBuff8':
+  type: Frame
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'PartyMemberBuffTooltipBuff9':
+  type: Frame
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'PartyMemberBuffTooltipDebuff1':
+  type: Frame
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'PartyMemberBuffTooltipDebuff2':
+  type: Frame
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'PartyMemberBuffTooltipDebuff3':
+  type: Frame
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'PartyMemberBuffTooltipDebuff4':
+  type: Frame
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'PartyMemberBuffTooltipDebuff5':
+  type: Frame
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'PartyMemberBuffTooltipDebuff6':
+  type: Frame
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'PartyMemberBuffTooltipDebuff7':
+  type: Frame
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'PartyMemberBuffTooltipDebuff8':
+  type: Frame
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'PartyMemberFrame1':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'PartyMemberFrame1Debuff1':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'PartyMemberFrame1Debuff2':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'PartyMemberFrame1Debuff3':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'PartyMemberFrame1Debuff4':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'PartyMemberFrame1HealthBar':
+  type: StatusBar
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'PartyMemberFrame1ManaBar':
+  type: StatusBar
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'PartyMemberFrame1Name':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'PartyMemberFrame1NotPresentIcon':
+  type: Frame
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'PartyMemberFrame1PetFrame':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'PartyMemberFrame1PetFrameDebuff1':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'PartyMemberFrame1PetFrameDebuff2':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'PartyMemberFrame1PetFrameDebuff3':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'PartyMemberFrame1PetFrameDebuff4':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'PartyMemberFrame1PetFrameHealthBar':
+  type: StatusBar
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'PartyMemberFrame1PetFrameName':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'PartyMemberFrame1PowerBarAlt':
+  type: Frame
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'PartyMemberFrame1PowerBarAltCounterBar':
+  type: Frame
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'PartyMemberFrame1PowerBarAltCounterBarDigit1':
+  type: Frame
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'PartyMemberFrame1PowerBarAltCounterBarDigit2':
+  type: Frame
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'PartyMemberFrame1PowerBarAltCounterBarDigit3':
+  type: Frame
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'PartyMemberFrame1PowerBarAltCounterBarDigit4':
+  type: Frame
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'PartyMemberFrame1PowerBarAltCounterBarDigit5':
+  type: Frame
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'PartyMemberFrame1PowerBarAltCounterBarDigit6':
+  type: Frame
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'PartyMemberFrame1PowerBarAltCounterBarDigit7':
+  type: Frame
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'PartyMemberFrame1PowerBarAltStatusFrame':
+  type: StatusBar
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'PartyMemberFrame1PowerBarAltStatusFrameText':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'PartyMemberFrame1ReadyCheck':
+  type: Frame
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'PartyMemberFrame2':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'PartyMemberFrame2Debuff1':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'PartyMemberFrame2Debuff2':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'PartyMemberFrame2Debuff3':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'PartyMemberFrame2Debuff4':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'PartyMemberFrame2HealthBar':
+  type: StatusBar
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'PartyMemberFrame2ManaBar':
+  type: StatusBar
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'PartyMemberFrame2Name':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'PartyMemberFrame2NotPresentIcon':
+  type: Frame
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'PartyMemberFrame2PetFrame':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'PartyMemberFrame2PetFrameDebuff1':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'PartyMemberFrame2PetFrameDebuff2':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'PartyMemberFrame2PetFrameDebuff3':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'PartyMemberFrame2PetFrameDebuff4':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'PartyMemberFrame2PetFrameHealthBar':
+  type: StatusBar
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'PartyMemberFrame2PetFrameName':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'PartyMemberFrame2PowerBarAlt':
+  type: Frame
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'PartyMemberFrame2PowerBarAltCounterBar':
+  type: Frame
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'PartyMemberFrame2PowerBarAltCounterBarDigit1':
+  type: Frame
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'PartyMemberFrame2PowerBarAltCounterBarDigit2':
+  type: Frame
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'PartyMemberFrame2PowerBarAltCounterBarDigit3':
+  type: Frame
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'PartyMemberFrame2PowerBarAltCounterBarDigit4':
+  type: Frame
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'PartyMemberFrame2PowerBarAltCounterBarDigit5':
+  type: Frame
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'PartyMemberFrame2PowerBarAltCounterBarDigit6':
+  type: Frame
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'PartyMemberFrame2PowerBarAltCounterBarDigit7':
+  type: Frame
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'PartyMemberFrame2PowerBarAltStatusFrame':
+  type: StatusBar
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'PartyMemberFrame2PowerBarAltStatusFrameText':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'PartyMemberFrame2ReadyCheck':
+  type: Frame
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'PartyMemberFrame3':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'PartyMemberFrame3Debuff1':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'PartyMemberFrame3Debuff2':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'PartyMemberFrame3Debuff3':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'PartyMemberFrame3Debuff4':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'PartyMemberFrame3HealthBar':
+  type: StatusBar
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'PartyMemberFrame3ManaBar':
+  type: StatusBar
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'PartyMemberFrame3Name':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'PartyMemberFrame3NotPresentIcon':
+  type: Frame
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'PartyMemberFrame3PetFrame':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'PartyMemberFrame3PetFrameDebuff1':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'PartyMemberFrame3PetFrameDebuff2':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'PartyMemberFrame3PetFrameDebuff3':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'PartyMemberFrame3PetFrameDebuff4':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'PartyMemberFrame3PetFrameHealthBar':
+  type: StatusBar
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'PartyMemberFrame3PetFrameName':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'PartyMemberFrame3PowerBarAlt':
+  type: Frame
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'PartyMemberFrame3PowerBarAltCounterBar':
+  type: Frame
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'PartyMemberFrame3PowerBarAltCounterBarDigit1':
+  type: Frame
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'PartyMemberFrame3PowerBarAltCounterBarDigit2':
+  type: Frame
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'PartyMemberFrame3PowerBarAltCounterBarDigit3':
+  type: Frame
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'PartyMemberFrame3PowerBarAltCounterBarDigit4':
+  type: Frame
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'PartyMemberFrame3PowerBarAltCounterBarDigit5':
+  type: Frame
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'PartyMemberFrame3PowerBarAltCounterBarDigit6':
+  type: Frame
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'PartyMemberFrame3PowerBarAltCounterBarDigit7':
+  type: Frame
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'PartyMemberFrame3PowerBarAltStatusFrame':
+  type: StatusBar
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'PartyMemberFrame3PowerBarAltStatusFrameText':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'PartyMemberFrame3ReadyCheck':
+  type: Frame
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'PartyMemberFrame4':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'PartyMemberFrame4Debuff1':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'PartyMemberFrame4Debuff2':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'PartyMemberFrame4Debuff3':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'PartyMemberFrame4Debuff4':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'PartyMemberFrame4HealthBar':
+  type: StatusBar
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'PartyMemberFrame4ManaBar':
+  type: StatusBar
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'PartyMemberFrame4Name':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'PartyMemberFrame4NotPresentIcon':
+  type: Frame
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'PartyMemberFrame4PetFrame':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'PartyMemberFrame4PetFrameDebuff1':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'PartyMemberFrame4PetFrameDebuff2':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'PartyMemberFrame4PetFrameDebuff3':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'PartyMemberFrame4PetFrameDebuff4':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'PartyMemberFrame4PetFrameHealthBar':
+  type: StatusBar
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'PartyMemberFrame4PetFrameName':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'PartyMemberFrame4PowerBarAlt':
+  type: Frame
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'PartyMemberFrame4PowerBarAltCounterBar':
+  type: Frame
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'PartyMemberFrame4PowerBarAltCounterBarDigit1':
+  type: Frame
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'PartyMemberFrame4PowerBarAltCounterBarDigit2':
+  type: Frame
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'PartyMemberFrame4PowerBarAltCounterBarDigit3':
+  type: Frame
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'PartyMemberFrame4PowerBarAltCounterBarDigit4':
+  type: Frame
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'PartyMemberFrame4PowerBarAltCounterBarDigit5':
+  type: Frame
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'PartyMemberFrame4PowerBarAltCounterBarDigit6':
+  type: Frame
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt

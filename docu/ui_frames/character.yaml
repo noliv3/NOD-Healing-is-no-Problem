@@ -1,0 +1,652 @@
+# Auto-generated from DOCU/NOD_Konzept_Funktionsliste.txt
+# Category: character
+# Description: Character sheet, inspection, reputation, and covenant panels.
+
+'CharacterBackSlot':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'CharacterBackSlotCount':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'CharacterBackSlotPopoutButton':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'CharacterBackSlotStock':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'CharacterChestSlot':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'CharacterChestSlotCount':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'CharacterChestSlotPopoutButton':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'CharacterChestSlotStock':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'CharacterFeetSlot':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'CharacterFeetSlotCount':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'CharacterFeetSlotPopoutButton':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'CharacterFeetSlotStock':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'CharacterFinger0Slot':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'CharacterFinger0SlotCount':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'CharacterFinger0SlotPopoutButton':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'CharacterFinger0SlotStock':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'CharacterFinger1Slot':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'CharacterFinger1SlotCount':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'CharacterFinger1SlotPopoutButton':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'CharacterFinger1SlotStock':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'CharacterFrame':
+  type: Frame
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'CharacterFrameCloseButton':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'CharacterFrameExpandButton':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'CharacterFrameInset':
+  type: Frame
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'CharacterFrameInsetRight':
+  type: Frame
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'CharacterFrameTab1':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'CharacterFrameTab1Text':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'CharacterFrameTab2':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'CharacterFrameTab2Text':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'CharacterFrameTab3':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'CharacterFrameTab3Text':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'CharacterFrameTab4':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'CharacterFrameTab4Text':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'CharacterFrameTitleText':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'CharacterHandsSlot':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'CharacterHandsSlotCount':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'CharacterHandsSlotPopoutButton':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'CharacterHandsSlotStock':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'CharacterHeadSlot':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'CharacterHeadSlotCount':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'CharacterHeadSlotPopoutButton':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'CharacterHeadSlotStock':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'CharacterLegsSlot':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'CharacterLegsSlotCount':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'CharacterLegsSlotPopoutButton':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'CharacterLegsSlotStock':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'CharacterLevelText':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'CharacterMainHandSlot':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'CharacterMainHandSlotCount':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'CharacterMainHandSlotPopoutButton':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'CharacterMainHandSlotStock':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'CharacterMicroButton':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'CharacterNeckSlot':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'CharacterNeckSlotCount':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'CharacterNeckSlotPopoutButton':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'CharacterNeckSlotStock':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'CharacterRangedSlot':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'CharacterRangedSlotCount':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'CharacterRangedSlotPopoutButton':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'CharacterRangedSlotStock':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'CharacterSecondaryHandSlot':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'CharacterSecondaryHandSlotCount':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'CharacterSecondaryHandSlotPopoutButton':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'CharacterSecondaryHandSlotStock':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'CharacterShirtSlot':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'CharacterShirtSlotCount':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'CharacterShirtSlotPopoutButton':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'CharacterShirtSlotStock':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'CharacterShoulderSlot':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'CharacterShoulderSlotCount':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'CharacterShoulderSlotPopoutButton':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'CharacterShoulderSlotStock':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'CharacterStatsPane':
+  type: Frame
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'CharacterStatsPaneCategory1':
+  type: Frame
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'CharacterStatsPaneCategory1NameText':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'CharacterStatsPaneCategory1Stat1':
+  type: Frame
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'CharacterStatsPaneCategory1Stat1Label':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'CharacterStatsPaneCategory1Stat1StatText':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'CharacterStatsPaneCategory1Toolbar':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'CharacterStatsPaneCategory1ToolbarSortDownArrow':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'CharacterStatsPaneCategory1ToolbarSortUpArrow':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'CharacterStatsPaneCategory2':
+  type: Frame
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'CharacterStatsPaneCategory2NameText':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'CharacterStatsPaneCategory2Stat1':
+  type: Frame
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'CharacterStatsPaneCategory2Stat1Label':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'CharacterStatsPaneCategory2Stat1StatText':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'CharacterStatsPaneCategory2Toolbar':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'CharacterStatsPaneCategory2ToolbarSortDownArrow':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'CharacterStatsPaneCategory2ToolbarSortUpArrow':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'CharacterStatsPaneCategory3':
+  type: Frame
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'CharacterStatsPaneCategory3NameText':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'CharacterStatsPaneCategory3Stat1':
+  type: Frame
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'CharacterStatsPaneCategory3Stat1Label':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'CharacterStatsPaneCategory3Stat1StatText':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'CharacterStatsPaneCategory3Toolbar':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'CharacterStatsPaneCategory3ToolbarSortDownArrow':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'CharacterStatsPaneCategory3ToolbarSortUpArrow':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'CharacterStatsPaneCategory4':
+  type: Frame
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'CharacterStatsPaneCategory4NameText':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'CharacterStatsPaneCategory4Stat1':
+  type: Frame
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'CharacterStatsPaneCategory4Stat1Label':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'CharacterStatsPaneCategory4Stat1StatText':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'CharacterStatsPaneCategory4Toolbar':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'CharacterStatsPaneCategory4ToolbarSortDownArrow':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'CharacterStatsPaneCategory4ToolbarSortUpArrow':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'CharacterStatsPaneCategory5':
+  type: Frame
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'CharacterStatsPaneCategory5NameText':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'CharacterStatsPaneCategory5Stat1':
+  type: Frame
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'CharacterStatsPaneCategory5Stat1Label':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'CharacterStatsPaneCategory5Stat1StatText':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'CharacterStatsPaneCategory5Toolbar':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'CharacterStatsPaneCategory5ToolbarSortDownArrow':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'CharacterStatsPaneCategory5ToolbarSortUpArrow':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'CharacterStatsPaneCategory6':
+  type: Frame
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'CharacterStatsPaneCategory6NameText':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'CharacterStatsPaneCategory6Stat1':
+  type: Frame
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'CharacterStatsPaneCategory6Stat1Label':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'CharacterStatsPaneCategory6Stat1StatText':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'CharacterStatsPaneCategory6Toolbar':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'CharacterStatsPaneCategory6ToolbarSortDownArrow':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'CharacterStatsPaneCategory6ToolbarSortUpArrow':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'CharacterStatsPaneCategory7':
+  type: Frame
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'CharacterStatsPaneCategory7NameText':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'CharacterStatsPaneCategory7Stat1':
+  type: Frame
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'CharacterStatsPaneCategory7Stat1Label':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'CharacterStatsPaneCategory7Stat1StatText':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'CharacterStatsPaneCategory7Toolbar':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'CharacterStatsPaneCategory7ToolbarSortDownArrow':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'CharacterStatsPaneCategory7ToolbarSortUpArrow':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'CharacterTabardSlot':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'CharacterTabardSlotCount':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'CharacterTabardSlotPopoutButton':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'CharacterTabardSlotStock':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'CharacterTrialLevelErrorText':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'CharacterTrinket0Slot':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'CharacterTrinket0SlotCount':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'CharacterTrinket0SlotPopoutButton':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'CharacterTrinket0SlotStock':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'CharacterTrinket1Slot':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'CharacterTrinket1SlotCount':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'CharacterTrinket1SlotPopoutButton':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'CharacterTrinket1SlotStock':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'CharacterWaistSlot':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'CharacterWaistSlotCount':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'CharacterWaistSlotPopoutButton':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'CharacterWaistSlotStock':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'CharacterWristSlot':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'CharacterWristSlotCount':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'CharacterWristSlotPopoutButton':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'CharacterWristSlotStock':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'ReputationFrame':
+  type: Frame
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'ReputationFrameFactionLabel':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'ReputationFrameStandingLabel':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'TokenFrame':
+  type: Frame
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'TokenFrameContainerScrollBarScrollDownButton':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'TokenFrameContainerScrollBarScrollUpButton':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'TokenFrameContainerScrollChild':
+  type: Frame
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'TokenFramePopup':
+  type: Frame
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'TokenFramePopupBackpackCheckboxText':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'TokenFramePopupCloseButton':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'TokenFramePopupInactiveCheckboxText':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'TokenFramePopupTitle':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
