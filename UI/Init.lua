@@ -154,4 +154,11 @@ SlashCmdList["NODHEAL"] = function(msg)
     end
 end
 
+SLASH_NODHEALBIND1 = "/nodgui"
+SlashCmdList["NODHEALBIND"] = function()
+    if NODHeal and NODHeal.BindUI and NODHeal.BindUI.Toggle then
+        NODHeal.BindUI:Toggle()
+    end
+end
+
 return NODHeal:RegisterModule("UI", UI)

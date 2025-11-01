@@ -27,6 +27,7 @@ Diese Richtlinien gelten für das gesamte Repository, sofern in Unterordnern kei
 - Latenz- und Queue-Werte mit Live-API oder Mock-Werten plausibilisieren.
 - SavedVariables und Debug-Toggles auf Persistenz- und Speicherbedarf prüfen.
 - Dokumentation (`README.md`, `DOCU/`) nachziehen und Version angeben.
+- Spell-Binding-GUI (`UI/BindingFrame.lua`) über `/nodgui` erreichbar halten; Änderungen an den Bindings im README vermerken.
 - Neuer Vermerk: `DOCU/NOD_Datenpfad_LHC_API.md` dokumentiert den LibHealComm-Datenpfad (Tag 1, Fallback-Spezifikation).
 - Tag‑1-LHC-Brücke produktiv: SavedVariables `NODHealDB.useLHC`, Slash `/nod healcomm`, LibHealComm-Callbacks, Aggregator-Cleanups sowie Mini-Status-UI liefern echte Laufzeit-Logs.
 - Build-Artefakte ohne Entwicklungsdateien paketieren.
