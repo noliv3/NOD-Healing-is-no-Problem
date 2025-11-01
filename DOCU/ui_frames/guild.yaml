@@ -1,0 +1,1620 @@
+# Auto-generated from DOCU/NOD_Konzept_Funktionsliste.txt
+# Category: guild
+# Description: Guild roster, bank, and rank management frames.
+
+'CommunitiesFrame':
+  type: Frame
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'CommunitiesFrameCloseButton':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'CommunitiesFrameCommunitiesList':
+  type: Frame
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'CommunitiesFrameGuildDetailsFrame':
+  type: Frame
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'CommunitiesFrameGuildDetailsFrameInfo':
+  type: Frame
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'CommunitiesFrameGuildDetailsFrameInfoChallenge1':
+  type: Frame
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'CommunitiesFrameGuildDetailsFrameInfoChallenge2':
+  type: Frame
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'CommunitiesFrameGuildDetailsFrameInfoChallenge3':
+  type: Frame
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'CommunitiesFrameGuildDetailsFrameInfoChallenge4':
+  type: Frame
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'CommunitiesFrameGuildDetailsFrameInfoHeader1Label':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'CommunitiesFrameGuildDetailsFrameNews':
+  type: Frame
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'CommunitiesFrameInset':
+  type: Frame
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'CommunitiesFrameText':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'CommunitiesFrameTitleText':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'CommunitiesGuildLogFrame':
+  type: Frame
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'CommunitiesGuildLogFrameCloseButton':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'CommunitiesGuildLogFrameCloseButtonText':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'CommunitiesGuildLogFrameTitle':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'CommunitiesGuildNewsFiltersFrame':
+  type: Frame
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'CommunitiesGuildTextEditFrame':
+  type: Frame
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'CommunitiesGuildTextEditFrameAcceptButton':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'CommunitiesGuildTextEditFrameAcceptButtonText':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'CommunitiesGuildTextEditFrameCloseButton':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'CommunitiesGuildTextEditFrameCloseButtonText':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'GuildAvailableServicesText':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'GuildBankTabLabel':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'GuildBankTabPermissionsTab1':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'GuildBankTabPermissionsTab1Text':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'GuildBankTabPermissionsTab2':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'GuildBankTabPermissionsTab2Text':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'GuildBankTabPermissionsTab3':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'GuildBankTabPermissionsTab3Text':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'GuildBankTabPermissionsTab4':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'GuildBankTabPermissionsTab4Text':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'GuildBankTabPermissionsTab5':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'GuildBankTabPermissionsTab5Text':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'GuildBankTabPermissionsTab6':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'GuildBankTabPermissionsTab6Text':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'GuildControlPopupAcceptButton':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'GuildControlPopupAcceptButtonText':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'GuildControlPopupFrame':
+  type: Frame
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'GuildControlPopupFrameAddRankButton':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'GuildControlPopupFrameCancelButton':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'GuildControlPopupFrameCancelButtonText':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'GuildControlPopupFrameCheckbox10Text':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'GuildControlPopupFrameCheckbox11Text':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'GuildControlPopupFrameCheckbox12Text':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'GuildControlPopupFrameCheckbox13Text':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'GuildControlPopupFrameCheckbox15Text':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'GuildControlPopupFrameCheckbox16Text':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'GuildControlPopupFrameCheckbox1Text':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'GuildControlPopupFrameCheckbox2Text':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'GuildControlPopupFrameCheckbox3Text':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'GuildControlPopupFrameCheckbox4Text':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'GuildControlPopupFrameCheckbox5Text':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'GuildControlPopupFrameCheckbox6Text':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'GuildControlPopupFrameCheckbox7Text':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'GuildControlPopupFrameCheckbox8Text':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'GuildControlPopupFrameCheckbox9Text':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'GuildControlPopupFrameCheckboxes':
+  type: Frame
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'GuildControlPopupFrameDropdown':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'GuildControlPopupFrameEditBox':
+  type: EditBox
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'GuildControlPopupFrameRemoveRankButton':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'GuildControlPopupFrameTabPermissions':
+  type: Frame
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'GuildControlTabPermissionsDepositItemsText':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'GuildControlTabPermissionsUpdateTextText':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'GuildControlTabPermissionsViewTabText':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'GuildControlTabPermissionsWithdrawItems':
+  type: Frame
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'GuildControlTabPermissionsWithdrawItemsText':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'GuildControlUI':
+  type: Frame
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'GuildControlUICloseButton':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'GuildControlUIHbar':
+  type: Frame
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'GuildControlUINavigationDropdown':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'GuildControlUIRankBankFrame':
+  type: Frame
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'GuildControlUIRankBankFrameInset':
+  type: Frame
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'GuildControlUIRankBankFrameRankDropdown':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'GuildControlUIRankOrderFrame':
+  type: Frame
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'GuildControlUIRankOrderFrameDupButton':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'GuildControlUIRankOrderFrameDupButtonText':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'GuildControlUIRankOrderFrameNewButton':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'GuildControlUIRankOrderFrameNewButtonText':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'GuildControlUIRankOrderFrameRank1':
+  type: Frame
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'GuildControlUIRankOrderFrameRank1DeleteButton':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'GuildControlUIRankOrderFrameRank1NameEditBox':
+  type: EditBox
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'GuildControlUIRankOrderFrameRank1ShiftDownButton':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'GuildControlUIRankOrderFrameRank1ShiftUpButton':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'GuildControlUIRankSettingsFrame':
+  type: Frame
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'GuildControlUIRankSettingsFrameBankLabel':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'GuildControlUIRankSettingsFrameCheckbox15Text':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'GuildControlUIRankSettingsFrameCheckbox16Text':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'GuildControlUIRankSettingsFrameCheckbox18Text':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'GuildControlUIRankSettingsFrameCheckbox18Tooltip':
+  type: Frame
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'GuildControlUIRankSettingsFrameCheckbox19Text':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'GuildControlUIRankSettingsFrameCheckbox2Text':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'GuildControlUIRankSettingsFrameCheckbox5Text':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'GuildControlUIRankSettingsFrameCheckbox6Text':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'GuildControlUIRankSettingsFrameCheckbox7Text':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'GuildControlUIRankSettingsFrameCheckbox8Text':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'GuildControlUIRankSettingsFrameGoldBox':
+  type: EditBox
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'GuildControlUIRankSettingsFrameGoldBoxMask':
+  type: Frame
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'GuildControlUIRankSettingsFrameOfficerCheckboxText':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'GuildControlUIRankSettingsFrameRankDropdown':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'GuildControlUITitle':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'GuildControlWithdrawGold':
+  type: Frame
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'GuildControlWithdrawGoldAmountText':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'GuildControlWithdrawGoldEditBox':
+  type: EditBox
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'GuildControlWithdrawGoldEditBoxMask':
+  type: Frame
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'GuildControlWithdrawGoldText':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'GuildControlWithdrawItemsEditBox':
+  type: EditBox
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'GuildControlWithdrawItemsEditBoxMask':
+  type: Frame
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'GuildEventFrame':
+  type: Frame
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'GuildEventLogCancelButton':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'GuildEventLogCancelButtonText':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'GuildEventLogCloseButton':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'GuildEventLogFrame':
+  type: Frame
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'GuildEventLogScrollChildFrame':
+  type: Frame
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'GuildEventLogScrollFrameScrollBarScrollDownButton':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'GuildEventLogScrollFrameScrollBarScrollUpButton':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'GuildEventLogTitle':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'GuildEventMessage':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'GuildFrame':
+  type: Frame
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'GuildFrameAddMemberButton':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'GuildFrameAddMemberButtonText':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'GuildFrameButton1':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'GuildFrameButton10':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'GuildFrameButton10Class':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'GuildFrameButton10Group':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'GuildFrameButton10Level':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'GuildFrameButton10Name':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'GuildFrameButton10Zone':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'GuildFrameButton11':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'GuildFrameButton11Class':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'GuildFrameButton11Group':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'GuildFrameButton11Level':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'GuildFrameButton11Name':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'GuildFrameButton11Zone':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'GuildFrameButton12':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'GuildFrameButton12Class':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'GuildFrameButton12Group':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'GuildFrameButton12Level':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'GuildFrameButton12Name':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'GuildFrameButton12Zone':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'GuildFrameButton13':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'GuildFrameButton13Class':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'GuildFrameButton13Group':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'GuildFrameButton13Level':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'GuildFrameButton13Name':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'GuildFrameButton13Zone':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'GuildFrameButton1Class':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'GuildFrameButton1Group':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'GuildFrameButton1Level':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'GuildFrameButton1Name':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'GuildFrameButton1Zone':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'GuildFrameButton2':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'GuildFrameButton2Class':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'GuildFrameButton2Group':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'GuildFrameButton2Level':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'GuildFrameButton2Name':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'GuildFrameButton2Zone':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'GuildFrameButton3':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'GuildFrameButton3Class':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'GuildFrameButton3Group':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'GuildFrameButton3Level':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'GuildFrameButton3Name':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'GuildFrameButton3Zone':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'GuildFrameButton4':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'GuildFrameButton4Class':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'GuildFrameButton4Group':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'GuildFrameButton4Level':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'GuildFrameButton4Name':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'GuildFrameButton4Zone':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'GuildFrameButton5':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'GuildFrameButton5Class':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'GuildFrameButton5Group':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'GuildFrameButton5Level':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'GuildFrameButton5Name':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'GuildFrameButton5Zone':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'GuildFrameButton6':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'GuildFrameButton6Class':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'GuildFrameButton6Group':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'GuildFrameButton6Level':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'GuildFrameButton6Name':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'GuildFrameButton6Zone':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'GuildFrameButton7':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'GuildFrameButton7Class':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'GuildFrameButton7Group':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'GuildFrameButton7Level':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'GuildFrameButton7Name':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'GuildFrameButton7Zone':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'GuildFrameButton8':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'GuildFrameButton8Class':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'GuildFrameButton8Group':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'GuildFrameButton8Level':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'GuildFrameButton8Name':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'GuildFrameButton8Zone':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'GuildFrameButton9':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'GuildFrameButton9Class':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'GuildFrameButton9Group':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'GuildFrameButton9Level':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'GuildFrameButton9Name':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'GuildFrameButton9Zone':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'GuildFrameColumnHeader1':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'GuildFrameColumnHeader2':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'GuildFrameColumnHeader3':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'GuildFrameColumnHeader4':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'GuildFrameControlButton':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'GuildFrameControlButtonText':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'GuildFrameDemoteButton':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'GuildFrameGuildInformationButton':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'GuildFrameGuildInformationButtonText':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'GuildFrameGuildListToggleButton':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'GuildFrameGuildStatusButton1':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'GuildFrameGuildStatusButton10':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'GuildFrameGuildStatusButton10Name':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'GuildFrameGuildStatusButton10Note':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'GuildFrameGuildStatusButton10Online':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'GuildFrameGuildStatusButton10Rank':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'GuildFrameGuildStatusButton11':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'GuildFrameGuildStatusButton11Name':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'GuildFrameGuildStatusButton11Note':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'GuildFrameGuildStatusButton11Online':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'GuildFrameGuildStatusButton11Rank':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'GuildFrameGuildStatusButton12':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'GuildFrameGuildStatusButton12Name':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'GuildFrameGuildStatusButton12Note':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'GuildFrameGuildStatusButton12Online':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'GuildFrameGuildStatusButton12Rank':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'GuildFrameGuildStatusButton13':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'GuildFrameGuildStatusButton13Name':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'GuildFrameGuildStatusButton13Note':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'GuildFrameGuildStatusButton13Online':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'GuildFrameGuildStatusButton13Rank':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'GuildFrameGuildStatusButton1Name':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'GuildFrameGuildStatusButton1Note':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'GuildFrameGuildStatusButton1Online':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'GuildFrameGuildStatusButton1Rank':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'GuildFrameGuildStatusButton2':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'GuildFrameGuildStatusButton2Name':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'GuildFrameGuildStatusButton2Note':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'GuildFrameGuildStatusButton2Online':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'GuildFrameGuildStatusButton2Rank':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'GuildFrameGuildStatusButton3':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'GuildFrameGuildStatusButton3Name':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'GuildFrameGuildStatusButton3Note':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'GuildFrameGuildStatusButton3Online':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'GuildFrameGuildStatusButton3Rank':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'GuildFrameGuildStatusButton4':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'GuildFrameGuildStatusButton4Name':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'GuildFrameGuildStatusButton4Note':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'GuildFrameGuildStatusButton4Online':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'GuildFrameGuildStatusButton4Rank':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'GuildFrameGuildStatusButton5':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'GuildFrameGuildStatusButton5Name':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'GuildFrameGuildStatusButton5Note':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'GuildFrameGuildStatusButton5Online':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'GuildFrameGuildStatusButton5Rank':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'GuildFrameGuildStatusButton6':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'GuildFrameGuildStatusButton6Name':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'GuildFrameGuildStatusButton6Note':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'GuildFrameGuildStatusButton6Online':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'GuildFrameGuildStatusButton6Rank':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'GuildFrameGuildStatusButton7':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'GuildFrameGuildStatusButton7Name':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'GuildFrameGuildStatusButton7Note':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'GuildFrameGuildStatusButton7Online':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'GuildFrameGuildStatusButton7Rank':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'GuildFrameGuildStatusButton8':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'GuildFrameGuildStatusButton8Name':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'GuildFrameGuildStatusButton8Note':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'GuildFrameGuildStatusButton8Online':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'GuildFrameGuildStatusButton8Rank':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'GuildFrameGuildStatusButton9':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'GuildFrameGuildStatusButton9Name':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'GuildFrameGuildStatusButton9Note':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'GuildFrameGuildStatusButton9Online':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'GuildFrameGuildStatusButton9Rank':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'GuildFrameGuildStatusColumnHeader1':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'GuildFrameGuildStatusColumnHeader2':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'GuildFrameGuildStatusColumnHeader3':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'GuildFrameGuildStatusColumnHeader4':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'GuildFrameImpeachButton':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'GuildFrameImpeachButtonText':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'GuildFrameLFGButtonText':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'GuildFrameLFGFrame':
+  type: Frame
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'GuildFrameNotesLabel':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'GuildFrameNotesText':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'GuildFrameOnlineTotals':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'GuildFramePromoteButton':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'GuildFrameTotals':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'GuildInfoCancelButton':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'GuildInfoCancelButtonText':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'GuildInfoCloseButton':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'GuildInfoEditBox':
+  type: EditBox
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'GuildInfoFrame':
+  type: Frame
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'GuildInfoFrameScrollFrameScrollBarScrollDownButton':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'GuildInfoFrameScrollFrameScrollBarScrollUpButton':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'GuildInfoGuildEventButton':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'GuildInfoGuildEventButtonText':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'GuildInfoSaveButton':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'GuildInfoSaveButtonText':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'GuildInfoTextBackground':
+  type: Frame
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'GuildInfoTitle':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'GuildInstanceDifficulty':
+  type: Frame
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'GuildInstanceDifficultyText':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'GuildInviteFrame':
+  type: Frame
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'GuildInviteFrameDeclineButton':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'GuildInviteFrameDeclineButtonText':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'GuildInviteFrameGuildName':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'GuildInviteFrameInviteText':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'GuildInviteFrameInviterName':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'GuildInviteFrameJoinButton':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'GuildInviteFrameJoinButtonText':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'GuildInviteFrameWarningText':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'GuildListScrollFrameScrollBarScrollDownButton':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'GuildListScrollFrameScrollBarScrollUpButton':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'GuildListScrollFrameScrollChildFrame':
+  type: Frame
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'GuildMOTDEditButton':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'GuildMemberDetailCloseButton':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'GuildMemberDetailFrame':
+  type: Frame
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'GuildMemberDetailLevel':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'GuildMemberDetailName':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'GuildMemberDetailNoteLabel':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'GuildMemberDetailOfficerNoteLabel':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'GuildMemberDetailOnlineLabel':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'GuildMemberDetailOnlineText':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'GuildMemberDetailRankLabel':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'GuildMemberDetailRankText':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'GuildMemberDetailZoneLabel':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'GuildMemberDetailZoneText':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'GuildMemberGroupInviteButton':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'GuildMemberGroupInviteButtonText':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'GuildMemberNoteBackground':
+  type: Frame
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'GuildMemberOfficerNoteBackground':
+  type: Frame
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'GuildMemberRemoveButton':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'GuildMemberRemoveButtonText':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'GuildMicroButton':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'GuildNameChangeAlertFrame':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'GuildNameChangeAlertFrameText':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'GuildNameChangeFrame':
+  type: Frame
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'GuildNameChangeFrameButton':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'GuildNameChangeFrameButtonText':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'GuildNameChangeFrameEditBox':
+  type: EditBox
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'GuildNameChangeFrameError':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'GuildNameChangeFrameGMText':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'GuildNameChangeFrameMemberText':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'GuildNameChangeFrameRename':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'GuildPlayerStatusFrame':
+  type: Frame
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'GuildRegistrarButton1':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'GuildRegistrarButton2':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'GuildRegistrarCostLabel':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'GuildRegistrarFrame':
+  type: Frame
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'GuildRegistrarFrameCancelButton':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'GuildRegistrarFrameCancelButtonText':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'GuildRegistrarFrameCloseButton':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'GuildRegistrarFrameEditBox':
+  type: EditBox
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'GuildRegistrarFrameGoodbyeButton':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'GuildRegistrarFrameGoodbyeButtonText':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'GuildRegistrarFrameInset':
+  type: Frame
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'GuildRegistrarFrameNpcNameText':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'GuildRegistrarFramePurchaseButton':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'GuildRegistrarFramePurchaseButtonText':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'GuildRegistrarFrameTitleText':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'GuildRegistrarGreetingFrame':
+  type: Frame
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'GuildRegistrarMoneyFrame':
+  type: Frame
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'GuildRegistrarMoneyFrameCopperButton':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'GuildRegistrarMoneyFrameCopperButtonText':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'GuildRegistrarMoneyFrameGoldButton':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'GuildRegistrarMoneyFrameGoldButtonText':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'GuildRegistrarMoneyFrameSilverButton':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'GuildRegistrarMoneyFrameSilverButtonText':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'GuildRegistrarNpcNameFrame':
+  type: Frame
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'GuildRegistrarPurchaseFrame':
+  type: Frame
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'GuildRegistrarPurchaseText':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'GuildRegistrarText':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'GuildStatusFrame':
+  type: Frame
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'PetitionFrame':
+  type: Frame
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'PetitionFrameCancelButton':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'PetitionFrameCancelButtonText':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'PetitionFrameCharterName':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'PetitionFrameCharterTitle':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'PetitionFrameCloseButton':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'PetitionFrameInset':
+  type: Frame
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'PetitionFrameInstructions':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'PetitionFrameMasterName':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'PetitionFrameMasterTitle':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'PetitionFrameMemberName1':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'PetitionFrameMemberName2':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'PetitionFrameMemberName3':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'PetitionFrameMemberName4':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'PetitionFrameMemberName5':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'PetitionFrameMemberName6':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'PetitionFrameMemberName7':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'PetitionFrameMemberName8':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'PetitionFrameMemberName9':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'PetitionFrameMemberTitle':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'PetitionFrameNpcNameText':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'PetitionFrameRenameButton':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'PetitionFrameRenameButtonText':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'PetitionFrameRequestButton':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'PetitionFrameRequestButtonText':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'PetitionFrameSignButton':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'PetitionFrameSignButtonText':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'PetitionFrameTitleText':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'PetitionNpcNameFrame':
+  type: Frame
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt

@@ -1,0 +1,1288 @@
+# Auto-generated from DOCU/NOD_Konzept_Funktionsliste.txt
+# Category: pvp
+# Description: PvP scoreboards, honor/conquest panels, and battleground status.
+
+'WorldStateScoreButton15ClassButton':
+  type: Frame
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'WorldStateScoreButton15Column1Text':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'WorldStateScoreButton15Column2Text':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'WorldStateScoreButton15Column3Text':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'WorldStateScoreButton15Column4Text':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'WorldStateScoreButton15Column5Text':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'WorldStateScoreButton15Column6Text':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'WorldStateScoreButton15Column7Text':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'WorldStateScoreButton15DamageDone':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'WorldStateScoreButton15Deaths':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'WorldStateScoreButton15HealingDone':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'WorldStateScoreButton15HonorGained':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'WorldStateScoreButton15HonorableKills':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'WorldStateScoreButton15KillingBlows':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'WorldStateScoreButton15Name':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'WorldStateScoreButton15NameText':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'WorldStateScoreButton15Team':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'WorldStateScoreButton16':
+  type: Frame
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'WorldStateScoreButton16ClassButton':
+  type: Frame
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'WorldStateScoreButton16Column1Text':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'WorldStateScoreButton16Column2Text':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'WorldStateScoreButton16Column3Text':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'WorldStateScoreButton16Column4Text':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'WorldStateScoreButton16Column5Text':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'WorldStateScoreButton16Column6Text':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'WorldStateScoreButton16Column7Text':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'WorldStateScoreButton16DamageDone':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'WorldStateScoreButton16Deaths':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'WorldStateScoreButton16HealingDone':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'WorldStateScoreButton16HonorGained':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'WorldStateScoreButton16HonorableKills':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'WorldStateScoreButton16KillingBlows':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'WorldStateScoreButton16Name':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'WorldStateScoreButton16NameText':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'WorldStateScoreButton16Team':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'WorldStateScoreButton17':
+  type: Frame
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'WorldStateScoreButton17ClassButton':
+  type: Frame
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'WorldStateScoreButton17Column1Text':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'WorldStateScoreButton17Column2Text':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'WorldStateScoreButton17Column3Text':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'WorldStateScoreButton17Column4Text':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'WorldStateScoreButton17Column5Text':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'WorldStateScoreButton17Column6Text':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'WorldStateScoreButton17Column7Text':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'WorldStateScoreButton17DamageDone':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'WorldStateScoreButton17Deaths':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'WorldStateScoreButton17HealingDone':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'WorldStateScoreButton17HonorGained':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'WorldStateScoreButton17HonorableKills':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'WorldStateScoreButton17KillingBlows':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'WorldStateScoreButton17Name':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'WorldStateScoreButton17NameText':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'WorldStateScoreButton17Team':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'WorldStateScoreButton18':
+  type: Frame
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'WorldStateScoreButton18ClassButton':
+  type: Frame
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'WorldStateScoreButton18Column1Text':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'WorldStateScoreButton18Column2Text':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'WorldStateScoreButton18Column3Text':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'WorldStateScoreButton18Column4Text':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'WorldStateScoreButton18Column5Text':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'WorldStateScoreButton18Column6Text':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'WorldStateScoreButton18Column7Text':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'WorldStateScoreButton18DamageDone':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'WorldStateScoreButton18Deaths':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'WorldStateScoreButton18HealingDone':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'WorldStateScoreButton18HonorGained':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'WorldStateScoreButton18HonorableKills':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'WorldStateScoreButton18KillingBlows':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'WorldStateScoreButton18Name':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'WorldStateScoreButton18NameText':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'WorldStateScoreButton18Team':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'WorldStateScoreButton19':
+  type: Frame
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'WorldStateScoreButton19ClassButton':
+  type: Frame
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'WorldStateScoreButton19Column1Text':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'WorldStateScoreButton19Column2Text':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'WorldStateScoreButton19Column3Text':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'WorldStateScoreButton19Column4Text':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'WorldStateScoreButton19Column5Text':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'WorldStateScoreButton19Column6Text':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'WorldStateScoreButton19Column7Text':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'WorldStateScoreButton19DamageDone':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'WorldStateScoreButton19Deaths':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'WorldStateScoreButton19HealingDone':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'WorldStateScoreButton19HonorGained':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'WorldStateScoreButton19HonorableKills':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'WorldStateScoreButton19KillingBlows':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'WorldStateScoreButton19Name':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'WorldStateScoreButton19NameText':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'WorldStateScoreButton19Team':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'WorldStateScoreButton1ClassButton':
+  type: Frame
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'WorldStateScoreButton1Column1Text':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'WorldStateScoreButton1Column2Text':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'WorldStateScoreButton1Column3Text':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'WorldStateScoreButton1Column4Text':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'WorldStateScoreButton1Column5Text':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'WorldStateScoreButton1Column6Text':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'WorldStateScoreButton1Column7Text':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'WorldStateScoreButton1DamageDone':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'WorldStateScoreButton1Deaths':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'WorldStateScoreButton1HealingDone':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'WorldStateScoreButton1HonorGained':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'WorldStateScoreButton1HonorableKills':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'WorldStateScoreButton1KillingBlows':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'WorldStateScoreButton1Name':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'WorldStateScoreButton1NameText':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'WorldStateScoreButton1Team':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'WorldStateScoreButton2':
+  type: Frame
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'WorldStateScoreButton20':
+  type: Frame
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'WorldStateScoreButton20ClassButton':
+  type: Frame
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'WorldStateScoreButton20Column1Text':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'WorldStateScoreButton20Column2Text':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'WorldStateScoreButton20Column3Text':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'WorldStateScoreButton20Column4Text':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'WorldStateScoreButton20Column5Text':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'WorldStateScoreButton20Column6Text':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'WorldStateScoreButton20Column7Text':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'WorldStateScoreButton20DamageDone':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'WorldStateScoreButton20Deaths':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'WorldStateScoreButton20HealingDone':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'WorldStateScoreButton20HonorGained':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'WorldStateScoreButton20HonorableKills':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'WorldStateScoreButton20KillingBlows':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'WorldStateScoreButton20Name':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'WorldStateScoreButton20NameText':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'WorldStateScoreButton20Team':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'WorldStateScoreButton2ClassButton':
+  type: Frame
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'WorldStateScoreButton2Column1Text':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'WorldStateScoreButton2Column2Text':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'WorldStateScoreButton2Column3Text':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'WorldStateScoreButton2Column4Text':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'WorldStateScoreButton2Column5Text':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'WorldStateScoreButton2Column6Text':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'WorldStateScoreButton2Column7Text':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'WorldStateScoreButton2DamageDone':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'WorldStateScoreButton2Deaths':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'WorldStateScoreButton2HealingDone':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'WorldStateScoreButton2HonorGained':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'WorldStateScoreButton2HonorableKills':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'WorldStateScoreButton2KillingBlows':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'WorldStateScoreButton2Name':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'WorldStateScoreButton2NameText':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'WorldStateScoreButton2Team':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'WorldStateScoreButton3':
+  type: Frame
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'WorldStateScoreButton3ClassButton':
+  type: Frame
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'WorldStateScoreButton3Column1Text':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'WorldStateScoreButton3Column2Text':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'WorldStateScoreButton3Column3Text':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'WorldStateScoreButton3Column4Text':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'WorldStateScoreButton3Column5Text':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'WorldStateScoreButton3Column6Text':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'WorldStateScoreButton3Column7Text':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'WorldStateScoreButton3DamageDone':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'WorldStateScoreButton3Deaths':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'WorldStateScoreButton3HealingDone':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'WorldStateScoreButton3HonorGained':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'WorldStateScoreButton3HonorableKills':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'WorldStateScoreButton3KillingBlows':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'WorldStateScoreButton3Name':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'WorldStateScoreButton3NameText':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'WorldStateScoreButton3Team':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'WorldStateScoreButton4':
+  type: Frame
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'WorldStateScoreButton4ClassButton':
+  type: Frame
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'WorldStateScoreButton4Column1Text':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'WorldStateScoreButton4Column2Text':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'WorldStateScoreButton4Column3Text':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'WorldStateScoreButton4Column4Text':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'WorldStateScoreButton4Column5Text':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'WorldStateScoreButton4Column6Text':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'WorldStateScoreButton4Column7Text':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'WorldStateScoreButton4DamageDone':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'WorldStateScoreButton4Deaths':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'WorldStateScoreButton4HealingDone':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'WorldStateScoreButton4HonorGained':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'WorldStateScoreButton4HonorableKills':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'WorldStateScoreButton4KillingBlows':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'WorldStateScoreButton4Name':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'WorldStateScoreButton4NameText':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'WorldStateScoreButton4Team':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'WorldStateScoreButton5':
+  type: Frame
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'WorldStateScoreButton5ClassButton':
+  type: Frame
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'WorldStateScoreButton5Column1Text':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'WorldStateScoreButton5Column2Text':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'WorldStateScoreButton5Column3Text':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'WorldStateScoreButton5Column4Text':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'WorldStateScoreButton5Column5Text':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'WorldStateScoreButton5Column6Text':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'WorldStateScoreButton5Column7Text':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'WorldStateScoreButton5DamageDone':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'WorldStateScoreButton5Deaths':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'WorldStateScoreButton5HealingDone':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'WorldStateScoreButton5HonorGained':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'WorldStateScoreButton5HonorableKills':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'WorldStateScoreButton5KillingBlows':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'WorldStateScoreButton5Name':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'WorldStateScoreButton5NameText':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'WorldStateScoreButton5Team':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'WorldStateScoreButton6':
+  type: Frame
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'WorldStateScoreButton6ClassButton':
+  type: Frame
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'WorldStateScoreButton6Column1Text':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'WorldStateScoreButton6Column2Text':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'WorldStateScoreButton6Column3Text':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'WorldStateScoreButton6Column4Text':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'WorldStateScoreButton6Column5Text':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'WorldStateScoreButton6Column6Text':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'WorldStateScoreButton6Column7Text':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'WorldStateScoreButton6DamageDone':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'WorldStateScoreButton6Deaths':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'WorldStateScoreButton6HealingDone':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'WorldStateScoreButton6HonorGained':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'WorldStateScoreButton6HonorableKills':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'WorldStateScoreButton6KillingBlows':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'WorldStateScoreButton6Name':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'WorldStateScoreButton6NameText':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'WorldStateScoreButton6Team':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'WorldStateScoreButton7':
+  type: Frame
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'WorldStateScoreButton7ClassButton':
+  type: Frame
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'WorldStateScoreButton7Column1Text':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'WorldStateScoreButton7Column2Text':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'WorldStateScoreButton7Column3Text':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'WorldStateScoreButton7Column4Text':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'WorldStateScoreButton7Column5Text':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'WorldStateScoreButton7Column6Text':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'WorldStateScoreButton7Column7Text':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'WorldStateScoreButton7DamageDone':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'WorldStateScoreButton7Deaths':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'WorldStateScoreButton7HealingDone':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'WorldStateScoreButton7HonorGained':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'WorldStateScoreButton7HonorableKills':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'WorldStateScoreButton7KillingBlows':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'WorldStateScoreButton7Name':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'WorldStateScoreButton7NameText':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'WorldStateScoreButton7Team':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'WorldStateScoreButton8':
+  type: Frame
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'WorldStateScoreButton8ClassButton':
+  type: Frame
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'WorldStateScoreButton8Column1Text':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'WorldStateScoreButton8Column2Text':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'WorldStateScoreButton8Column3Text':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'WorldStateScoreButton8Column4Text':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'WorldStateScoreButton8Column5Text':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'WorldStateScoreButton8Column6Text':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'WorldStateScoreButton8Column7Text':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'WorldStateScoreButton8DamageDone':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'WorldStateScoreButton8Deaths':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'WorldStateScoreButton8HealingDone':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'WorldStateScoreButton8HonorGained':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'WorldStateScoreButton8HonorableKills':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'WorldStateScoreButton8KillingBlows':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'WorldStateScoreButton8Name':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'WorldStateScoreButton8NameText':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'WorldStateScoreButton8Team':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'WorldStateScoreButton9':
+  type: Frame
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'WorldStateScoreButton9ClassButton':
+  type: Frame
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'WorldStateScoreButton9Column1Text':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'WorldStateScoreButton9Column2Text':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'WorldStateScoreButton9Column3Text':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'WorldStateScoreButton9Column4Text':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'WorldStateScoreButton9Column5Text':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'WorldStateScoreButton9Column6Text':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'WorldStateScoreButton9Column7Text':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'WorldStateScoreButton9DamageDone':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'WorldStateScoreButton9Deaths':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'WorldStateScoreButton9HealingDone':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'WorldStateScoreButton9HonorGained':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'WorldStateScoreButton9HonorableKills':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'WorldStateScoreButton9KillingBlows':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'WorldStateScoreButton9Name':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'WorldStateScoreButton9NameText':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'WorldStateScoreButton9Team':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'WorldStateScoreColumn1':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'WorldStateScoreColumn1Text':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'WorldStateScoreColumn2':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'WorldStateScoreColumn2Text':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'WorldStateScoreColumn3':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'WorldStateScoreColumn3Text':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'WorldStateScoreColumn4':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'WorldStateScoreColumn4Text':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'WorldStateScoreColumn5':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'WorldStateScoreColumn5Text':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'WorldStateScoreColumn6':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'WorldStateScoreColumn6Text':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'WorldStateScoreColumn7':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'WorldStateScoreColumn7Text':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'WorldStateScoreFrame':
+  type: Frame
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'WorldStateScoreFrameClass':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'WorldStateScoreFrameClassText':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'WorldStateScoreFrameCloseButton':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'WorldStateScoreFrameDamageDone':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'WorldStateScoreFrameDamageDoneText':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'WorldStateScoreFrameDeaths':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'WorldStateScoreFrameDeathsText':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'WorldStateScoreFrameEnemyTeamAverageBGRating':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'WorldStateScoreFrameHK':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'WorldStateScoreFrameHKText':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'WorldStateScoreFrameHealingDone':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'WorldStateScoreFrameHealingDoneText':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'WorldStateScoreFrameHonorGained':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'WorldStateScoreFrameHonorGainedText':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'WorldStateScoreFrameKB':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'WorldStateScoreFrameKBText':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'WorldStateScoreFrameLabel':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'WorldStateScoreFrameLeaveButton':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'WorldStateScoreFrameLeaveButtonText':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'WorldStateScoreFrameName':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'WorldStateScoreFrameNameText':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'WorldStateScoreFrameTab1':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'WorldStateScoreFrameTab1Text':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'WorldStateScoreFrameTab2':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'WorldStateScoreFrameTab2Text':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'WorldStateScoreFrameTab3':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'WorldStateScoreFrameTab3Text':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'WorldStateScoreFrameTeam':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'WorldStateScoreFrameTeamAverageBGRating':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'WorldStateScoreFrameTeamText':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'WorldStateScoreFrameTimer':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'WorldStateScoreFrameTimerLabel':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'WorldStateScorePlayerCount':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'WorldStateScoreScrollFrameScrollBarScrollDownButton':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'WorldStateScoreScrollFrameScrollBarScrollUpButton':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'WorldStateScoreScrollFrameScrollChildFrame':
+  type: Frame
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'WorldStateScoreWinnerFrame':
+  type: Frame
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'WorldStateScoreWinnerFrameText':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt

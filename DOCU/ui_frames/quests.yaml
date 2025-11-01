@@ -1,0 +1,1436 @@
+# Auto-generated from DOCU/NOD_Konzept_Funktionsliste.txt
+# Category: quests
+# Description: Quest log panels, campaign trackers, and quest reward dialogs.
+
+'QuestDetailScrollChildFrame':
+  type: Frame
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'QuestDetailScrollFrameScrollBarScrollDownButton':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'QuestDetailScrollFrameScrollBarScrollUpButton':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'QuestFrame':
+  type: Frame
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'QuestFrameAcceptButton':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'QuestFrameAcceptButtonText':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'QuestFrameCancelButton':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'QuestFrameCancelButtonText':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'QuestFrameCloseButton':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'QuestFrameCompleteButton':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'QuestFrameCompleteButtonText':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'QuestFrameCompleteQuestButton':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'QuestFrameCompleteQuestButtonText':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'QuestFrameDeclineButton':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'QuestFrameDeclineButtonText':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'QuestFrameDetailPanel':
+  type: Frame
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'QuestFrameGoodbyeButton':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'QuestFrameGoodbyeButtonText':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'QuestFrameGreetingGoodbyeButton':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'QuestFrameGreetingGoodbyeButtonText':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'QuestFrameGreetingPanel':
+  type: Frame
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'QuestFrameInset':
+  type: Frame
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'QuestFrameNpcNameText':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'QuestFrameProgressPanel':
+  type: Frame
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'QuestFramePushQuestButton':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'QuestFramePushQuestButtonText':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'QuestFrameRewardPanel':
+  type: Frame
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'QuestFrameTitleText':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'QuestGreetingScrollChildFrame':
+  type: Frame
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'QuestGreetingScrollFrameScrollBarScrollDownButton':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'QuestGreetingScrollFrameScrollBarScrollUpButton':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'QuestInfoAnchor':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'QuestInfoDescriptionHeader':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'QuestInfoDescriptionText':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'QuestInfoFrame':
+  type: Frame
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'QuestInfoGroupSize':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'QuestInfoItemHighlight':
+  type: Frame
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'QuestInfoMoneyFrame':
+  type: Frame
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'QuestInfoMoneyFrameCopperButton':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'QuestInfoMoneyFrameCopperButtonText':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'QuestInfoMoneyFrameGoldButton':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'QuestInfoMoneyFrameGoldButtonText':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'QuestInfoMoneyFrameSilverButton':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'QuestInfoMoneyFrameSilverButtonText':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'QuestInfoObjective1':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'QuestInfoObjectivesFrame':
+  type: Frame
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'QuestInfoObjectivesHeader':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'QuestInfoObjectivesText':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'QuestInfoPlayerTitleFrame':
+  type: Frame
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'QuestInfoPlayerTitleFrameTitle':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'QuestInfoPlayerTitleFrameTitleLabel':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'QuestInfoQuestType':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'QuestInfoRequiredMoneyDisplay':
+  type: Frame
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'QuestInfoRequiredMoneyDisplayCopperButton':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'QuestInfoRequiredMoneyDisplayCopperButtonText':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'QuestInfoRequiredMoneyDisplayGoldButton':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'QuestInfoRequiredMoneyDisplayGoldButtonText':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'QuestInfoRequiredMoneyDisplaySilverButton':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'QuestInfoRequiredMoneyDisplaySilverButtonText':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'QuestInfoRequiredMoneyFrame':
+  type: Frame
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'QuestInfoRequiredMoneyText':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'QuestInfoRewardText':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'QuestInfoRewardsFrame':
+  type: Frame
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'QuestInfoRewardsFrameArenaPoints':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'QuestInfoRewardsFrameCount':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'QuestInfoRewardsFrameHonorPoints':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'QuestInfoRewardsFrameHonorReceiveText':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'QuestInfoRewardsFrameName':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'QuestInfoRewardsFrameQuestInfoItem1':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'QuestInfoRewardsFrameQuestInfoItem1Count':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'QuestInfoRewardsFrameQuestInfoItem1Name':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'QuestInfoRewardsFrameReceiveText':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'QuestInfoSealFrame':
+  type: Frame
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'QuestInfoSkillPointFrame':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'QuestInfoSkillPointFrameCount':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'QuestInfoSkillPointFrameName':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'QuestInfoSpacerFrame':
+  type: Frame
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'QuestInfoSpecialObjectivesFrame':
+  type: Frame
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'QuestInfoSpellObjectiveFrame':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'QuestInfoSpellObjectiveFrameName':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'QuestInfoSpellObjectiveLearnLabel':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'QuestInfoTalentFrame':
+  type: Frame
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'QuestInfoTimerFrame':
+  type: Frame
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'QuestInfoTimerText':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'QuestInfoTitleHeader':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'QuestInfoXPFrame':
+  type: Frame
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'QuestLogControlPanel':
+  type: Frame
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'QuestLogCount':
+  type: Frame
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'QuestLogDetailFrame':
+  type: Frame
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'QuestLogDetailFrameCloseButton':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'QuestLogDetailFrameInset':
+  type: Frame
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'QuestLogDetailFrameTitleText':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'QuestLogDetailScrollChildFrame':
+  type: Frame
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'QuestLogDetailScrollFrameScrollBarScrollDownButton':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'QuestLogDetailScrollFrameScrollBarScrollUpButton':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'QuestLogDetailTitle':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'QuestLogFrame':
+  type: Frame
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'QuestLogFrameAbandonButton':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'QuestLogFrameAbandonButtonText':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'QuestLogFrameCancelButton':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'QuestLogFrameCancelButtonText':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'QuestLogFrameCloseButton':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'QuestLogFrameInset':
+  type: Frame
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'QuestLogFrameShowMapButton':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'QuestLogFrameShowMapButtonText':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'QuestLogFrameTitleText':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'QuestLogFrameTrackButton':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'QuestLogFrameTrackButtonText':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'QuestLogHighlightFrame':
+  type: Frame
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'QuestLogListScrollFrameButton1':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'QuestLogListScrollFrameButton10':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'QuestLogListScrollFrameButton10GroupMates':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'QuestLogListScrollFrameButton10NormalText':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'QuestLogListScrollFrameButton10Tag':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'QuestLogListScrollFrameButton11':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'QuestLogListScrollFrameButton11GroupMates':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'QuestLogListScrollFrameButton11NormalText':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'QuestLogListScrollFrameButton11Tag':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'QuestLogListScrollFrameButton12':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'QuestLogListScrollFrameButton12GroupMates':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'QuestLogListScrollFrameButton12NormalText':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'QuestLogListScrollFrameButton12Tag':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'QuestLogListScrollFrameButton13':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'QuestLogListScrollFrameButton13GroupMates':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'QuestLogListScrollFrameButton13NormalText':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'QuestLogListScrollFrameButton13Tag':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'QuestLogListScrollFrameButton14':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'QuestLogListScrollFrameButton14GroupMates':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'QuestLogListScrollFrameButton14NormalText':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'QuestLogListScrollFrameButton14Tag':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'QuestLogListScrollFrameButton15':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'QuestLogListScrollFrameButton15GroupMates':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'QuestLogListScrollFrameButton15NormalText':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'QuestLogListScrollFrameButton15Tag':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'QuestLogListScrollFrameButton16':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'QuestLogListScrollFrameButton16GroupMates':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'QuestLogListScrollFrameButton16NormalText':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'QuestLogListScrollFrameButton16Tag':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'QuestLogListScrollFrameButton17':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'QuestLogListScrollFrameButton17GroupMates':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'QuestLogListScrollFrameButton17NormalText':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'QuestLogListScrollFrameButton17Tag':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'QuestLogListScrollFrameButton18':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'QuestLogListScrollFrameButton18GroupMates':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'QuestLogListScrollFrameButton18NormalText':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'QuestLogListScrollFrameButton18Tag':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'QuestLogListScrollFrameButton19':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'QuestLogListScrollFrameButton19GroupMates':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'QuestLogListScrollFrameButton19NormalText':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'QuestLogListScrollFrameButton19Tag':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'QuestLogListScrollFrameButton1GroupMates':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'QuestLogListScrollFrameButton1NormalText':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'QuestLogListScrollFrameButton1Tag':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'QuestLogListScrollFrameButton2':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'QuestLogListScrollFrameButton20':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'QuestLogListScrollFrameButton20GroupMates':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'QuestLogListScrollFrameButton20NormalText':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'QuestLogListScrollFrameButton20Tag':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'QuestLogListScrollFrameButton21':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'QuestLogListScrollFrameButton21GroupMates':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'QuestLogListScrollFrameButton21NormalText':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'QuestLogListScrollFrameButton21Tag':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'QuestLogListScrollFrameButton22':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'QuestLogListScrollFrameButton22GroupMates':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'QuestLogListScrollFrameButton22NormalText':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'QuestLogListScrollFrameButton22Tag':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'QuestLogListScrollFrameButton23':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'QuestLogListScrollFrameButton23GroupMates':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'QuestLogListScrollFrameButton23NormalText':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'QuestLogListScrollFrameButton23Tag':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'QuestLogListScrollFrameButton24':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'QuestLogListScrollFrameButton24GroupMates':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'QuestLogListScrollFrameButton24NormalText':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'QuestLogListScrollFrameButton24Tag':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'QuestLogListScrollFrameButton25':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'QuestLogListScrollFrameButton25GroupMates':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'QuestLogListScrollFrameButton25NormalText':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'QuestLogListScrollFrameButton25Tag':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'QuestLogListScrollFrameButton26':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'QuestLogListScrollFrameButton26GroupMates':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'QuestLogListScrollFrameButton26NormalText':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'QuestLogListScrollFrameButton26Tag':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'QuestLogListScrollFrameButton27':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'QuestLogListScrollFrameButton27GroupMates':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'QuestLogListScrollFrameButton27NormalText':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'QuestLogListScrollFrameButton27Tag':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'QuestLogListScrollFrameButton2GroupMates':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'QuestLogListScrollFrameButton2NormalText':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'QuestLogListScrollFrameButton2Tag':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'QuestLogListScrollFrameButton3':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'QuestLogListScrollFrameButton3GroupMates':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'QuestLogListScrollFrameButton3NormalText':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'QuestLogListScrollFrameButton3Tag':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'QuestLogListScrollFrameButton4':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'QuestLogListScrollFrameButton4GroupMates':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'QuestLogListScrollFrameButton4NormalText':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'QuestLogListScrollFrameButton4Tag':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'QuestLogListScrollFrameButton5':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'QuestLogListScrollFrameButton5GroupMates':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'QuestLogListScrollFrameButton5NormalText':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'QuestLogListScrollFrameButton5Tag':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'QuestLogListScrollFrameButton6':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'QuestLogListScrollFrameButton6GroupMates':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'QuestLogListScrollFrameButton6NormalText':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'QuestLogListScrollFrameButton6Tag':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'QuestLogListScrollFrameButton7':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'QuestLogListScrollFrameButton7GroupMates':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'QuestLogListScrollFrameButton7NormalText':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'QuestLogListScrollFrameButton7Tag':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'QuestLogListScrollFrameButton8':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'QuestLogListScrollFrameButton8GroupMates':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'QuestLogListScrollFrameButton8NormalText':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'QuestLogListScrollFrameButton8Tag':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'QuestLogListScrollFrameButton9':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'QuestLogListScrollFrameButton9GroupMates':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'QuestLogListScrollFrameButton9NormalText':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'QuestLogListScrollFrameButton9Tag':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'QuestLogListScrollFrameScrollBarScrollDownButton':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'QuestLogListScrollFrameScrollBarScrollUpButton':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'QuestLogListScrollFrameScrollChild':
+  type: Frame
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'QuestLogMicroButton':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'QuestLogNoQuestsText':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'QuestLogQuestCount':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'QuestLogTitleText':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'QuestNPCModelNameText':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'QuestNPCModelNameTooltipFrame':
+  type: Frame
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'QuestNPCModelText':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'QuestNPCModelTextFrame':
+  type: Frame
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'QuestNPCModelTextScrollChildFrame':
+  type: Frame
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'QuestNPCModelTextScrollFrameScrollBarScrollDownButton':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'QuestNPCModelTextScrollFrameScrollBarScrollUpButton':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'QuestNpcNameFrame':
+  type: Frame
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'QuestProgressItem1':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'QuestProgressItem1Count':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'QuestProgressItem1Name':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'QuestProgressItem2':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'QuestProgressItem2Count':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'QuestProgressItem2Name':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'QuestProgressItem3':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'QuestProgressItem3Count':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'QuestProgressItem3Name':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'QuestProgressItem4':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'QuestProgressItem4Count':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'QuestProgressItem4Name':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'QuestProgressItem5':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'QuestProgressItem5Count':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'QuestProgressItem5Name':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'QuestProgressItem6':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'QuestProgressItem6Count':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'QuestProgressItem6Name':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'QuestProgressRequiredItemsText':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'QuestProgressRequiredMoneyFrame':
+  type: Frame
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'QuestProgressRequiredMoneyFrameCopperButton':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'QuestProgressRequiredMoneyFrameCopperButtonText':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'QuestProgressRequiredMoneyFrameGoldButton':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'QuestProgressRequiredMoneyFrameGoldButtonText':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'QuestProgressRequiredMoneyFrameSilverButton':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'QuestProgressRequiredMoneyFrameSilverButtonText':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'QuestProgressRequiredMoneyText':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'QuestProgressScrollChildFrame':
+  type: Frame
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'QuestProgressScrollFrameScrollBarScrollDownButton':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'QuestProgressScrollFrameScrollBarScrollUpButton':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'QuestProgressText':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'QuestProgressTitleText':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'QuestRewardScrollChildFrame':
+  type: Frame
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'QuestRewardScrollFrameScrollBarScrollDownButton':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'QuestRewardScrollFrameScrollBarScrollUpButton':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'QuestTimer1':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'QuestTimer10':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'QuestTimer10Text':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'QuestTimer11':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'QuestTimer11Text':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'QuestTimer12':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'QuestTimer12Text':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'QuestTimer13':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'QuestTimer13Text':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'QuestTimer14':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'QuestTimer14Text':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'QuestTimer15':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'QuestTimer15Text':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'QuestTimer16':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'QuestTimer16Text':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'QuestTimer17':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'QuestTimer17Text':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'QuestTimer18':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'QuestTimer18Text':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'QuestTimer19':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'QuestTimer19Text':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'QuestTimer1Text':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'QuestTimer2':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'QuestTimer20':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'QuestTimer20Text':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'QuestTimer21':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'QuestTimer21Text':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'QuestTimer22':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'QuestTimer22Text':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'QuestTimer23':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'QuestTimer23Text':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'QuestTimer24':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'QuestTimer24Text':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'QuestTimer25':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'QuestTimer25Text':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'QuestTimer2Text':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'QuestTimer3':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'QuestTimer3Text':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'QuestTimer4':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'QuestTimer4Text':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'QuestTimer5':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'QuestTimer5Text':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'QuestTimer6':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'QuestTimer6Text':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'QuestTimer7':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'QuestTimer7Text':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'QuestTimer8':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'QuestTimer8Text':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'QuestTimer9':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'QuestTimer9Text':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'QuestTimerFrame':
+  type: Frame
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'QuestTitleButton1':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'QuestTitleButton10':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'QuestTitleButton11':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'QuestTitleButton12':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'QuestTitleButton13':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'QuestTitleButton14':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'QuestTitleButton15':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'QuestTitleButton16':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'QuestTitleButton17':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'QuestTitleButton18':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'QuestTitleButton19':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'QuestTitleButton2':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'QuestTitleButton20':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'QuestTitleButton21':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'QuestTitleButton22':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'QuestTitleButton23':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'QuestTitleButton24':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'QuestTitleButton25':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'QuestTitleButton3':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'QuestTitleButton4':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'QuestTitleButton5':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'QuestTitleButton6':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'QuestTitleButton7':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'QuestTitleButton8':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'QuestTitleButton9':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'WatchFrame':
+  type: Frame
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'WatchFrameBoxHeaderFrame':
+  type: Frame
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'WatchFrameCollapseExpandButton':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'WatchFrameHeader':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'WatchFrameItem1':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'WatchFrameItem1Count':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'WatchFrameItem1HotKey':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'WatchFrameItem1Stock':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'WatchFrameLines':
+  type: Frame
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'WatchFrameLinesDash':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'WatchFrameLinesText':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'WatchFrameScenarioBonusHeader':
+  type: Frame
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'WatchFrameScenarioFrameDash':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'WatchFrameScenarioFrameText':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'WatchFrameTitle':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt

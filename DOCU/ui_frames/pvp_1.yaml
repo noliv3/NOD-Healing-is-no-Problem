@@ -1,0 +1,2004 @@
+# Auto-generated from DOCU/NOD_Konzept_Funktionsliste.txt
+# Category: pvp
+# Description: PvP scoreboards, honor/conquest panels, and battleground status.
+
+'BattlegroundChatFilters':
+  type: Frame
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'HonorFrame':
+  type: Frame
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'HonorFrameCurrentDK':
+  type: Frame
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'HonorFrameCurrentDKText':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'HonorFrameCurrentDKValue':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'HonorFrameCurrentHK':
+  type: Frame
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'HonorFrameCurrentHKText':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'HonorFrameCurrentHKValue':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'HonorFrameCurrentPVPRank':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'HonorFrameCurrentPVPTitle':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'HonorFrameCurrentSessionTitle':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'HonorFrameLastWeekContribution':
+  type: Frame
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'HonorFrameLastWeekContributionText':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'HonorFrameLastWeekContributionValue':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'HonorFrameLastWeekHK':
+  type: Frame
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'HonorFrameLastWeekHKText':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'HonorFrameLastWeekHKValue':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'HonorFrameLastWeekStanding':
+  type: Frame
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'HonorFrameLastWeekStandingText':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'HonorFrameLastWeekStandingValue':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'HonorFrameLastWeekTitle':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'HonorFrameLifeTimeDK':
+  type: Frame
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'HonorFrameLifeTimeDKText':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'HonorFrameLifeTimeDKValue':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'HonorFrameLifeTimeHK':
+  type: Frame
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'HonorFrameLifeTimeHKText':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'HonorFrameLifeTimeHKValue':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'HonorFrameLifeTimeRank':
+  type: Frame
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'HonorFrameLifeTimeRankText':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'HonorFrameLifeTimeRankValue':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'HonorFrameLifeTimeTitle':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'HonorFrameProgressBar':
+  type: StatusBar
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'HonorFrameProgressButton':
+  type: Frame
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'HonorFrameRankButton':
+  type: Frame
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'HonorFrameThisWeekContribution':
+  type: Frame
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'HonorFrameThisWeekContributionText':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'HonorFrameThisWeekContributionValue':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'HonorFrameThisWeekHK':
+  type: Frame
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'HonorFrameThisWeekHKText':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'HonorFrameThisWeekHKValue':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'HonorFrameThisWeekTitle':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'HonorFrameYesterdayContribution':
+  type: Frame
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'HonorFrameYesterdayContributionText':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'HonorFrameYesterdayContributionValue':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'HonorFrameYesterdayHK':
+  type: Frame
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'HonorFrameYesterdayHKText':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'HonorFrameYesterdayHKValue':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'HonorFrameYesterdayTitle':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'HonorGuildText':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'HonorLevelText':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'PVPArenaTextString':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'PVPBannerFrame':
+  type: Frame
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'PVPBannerFrameAcceptButton':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'PVPBannerFrameAcceptButtonText':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'PVPBannerFrameCancelButton':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'PVPBannerFrameCancelButtonText':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'PVPBannerFrameCloseButton':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'PVPBannerFrameCustomization1':
+  type: Frame
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'PVPBannerFrameCustomization1LeftButton':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'PVPBannerFrameCustomization1RightButton':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'PVPBannerFrameCustomization1Text':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'PVPBannerFrameCustomization2':
+  type: Frame
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'PVPBannerFrameCustomization2LeftButton':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'PVPBannerFrameCustomization2RightButton':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'PVPBannerFrameCustomization2Text':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'PVPBannerFrameCustomizationFrame':
+  type: Frame
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'PVPBannerFrameGreetingText':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'PVPBannerFrameNameText':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'PVPBannerFrameSaveButton':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'PVPBannerFrameSaveButtonText':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'PVPBannerFrameStandard':
+  type: Frame
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'PVPColorPickerButton1':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'PVPColorPickerButton1Text':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'PVPColorPickerButton2':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'PVPColorPickerButton2Text':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'PVPColorPickerButton3':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'PVPColorPickerButton3Text':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'PVPConquestFrame':
+  type: Frame
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'PVPConquestFrameConquestButtonArena':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'PVPConquestFrameConquestButtonArenaText':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'PVPConquestFrameConquestButtonRated':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'PVPConquestFrameConquestButtonRatedText':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'PVPConquestFrameDescription':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'PVPConquestFrameInfoButton':
+  type: Frame
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'PVPConquestFrameInfoButtonArenaError':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'PVPConquestFrameInfoButtonBottomLeftText':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'PVPConquestFrameInfoButtonLosses':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'PVPConquestFrameInfoButtonLossesValue':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'PVPConquestFrameInfoButtonTitle':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'PVPConquestFrameInfoButtonTopLeftText':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'PVPConquestFrameInfoButtonWins':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'PVPConquestFrameInfoButtonWinsValue':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'PVPConquestFrameInfoRollOver':
+  type: Frame
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'PVPConquestFrameNoWeekly':
+  type: Frame
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'PVPConquestFrameNoWeeklyError':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'PVPConquestFramePartyNum':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'PVPConquestFrameRewardDescription':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'PVPConquestFrameRewardLabel':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'PVPConquestFrameTitle':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'PVPConquestFrameTopRatingText':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'PVPConquestFrameWinReward':
+  type: Frame
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'PVPConquestFrameWinRewardArenaAmount':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'PVPConquestFrameWinRewardLabel':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'PVPDropDown':
+  type: Frame
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'PVPDropDownButton':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'PVPDropDownText':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'PVPFrame':
+  type: Frame
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'PVPFrameArena':
+  type: Frame
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'PVPFrameArenaLabel':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'PVPFrameArenaPoints':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'PVPFrameCloseButton':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'PVPFrameConquestBar':
+  type: Frame
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'PVPFrameConquestBarCap1Marker':
+  type: Frame
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'PVPFrameConquestBarCap2Marker':
+  type: Frame
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'PVPFrameConquestBarLabel':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'PVPFrameConquestBarText':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'PVPFrameCurrency':
+  type: Frame
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'PVPFrameCurrencyLabel':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'PVPFrameCurrencyValue':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'PVPFrameHonor':
+  type: Frame
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'PVPFrameHonorLabel':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'PVPFrameHonorPoints':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'PVPFrameInset':
+  type: Frame
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'PVPFrameLeftButton':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'PVPFrameLeftButtonText':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'PVPFrameLowLevelFrame':
+  type: Frame
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'PVPFrameLowLevelFrameError':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'PVPFrameLowLevelFrameInfo':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'PVPFrameLowLevelFrameTitle':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'PVPFramePopup':
+  type: Frame
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'PVPFramePopupAcceptButton':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'PVPFramePopupAcceptButtonText':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'PVPFramePopupCloseButton':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'PVPFramePopupDeclineButton':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'PVPFramePopupDeclineButtonText':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'PVPFramePopupTimer':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'PVPFramePopupTitle':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'PVPFrameRightButton':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'PVPFrameRightButtonText':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'PVPFrameTab1':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'PVPFrameTab1Text':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'PVPFrameTab2':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'PVPFrameTab2Text':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'PVPFrameTab3':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'PVPFrameTab3Text':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'PVPFrameTab4':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'PVPFrameTab4Text':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'PVPFrameTitleText':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'PVPFrameToggleButton':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'PVPFrameTopInset':
+  type: Frame
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'PVPHelperFrame':
+  type: Frame
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'PVPHonor':
+  type: Frame
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'PVPHonorFrame':
+  type: Frame
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'PVPHonorFrameInfoScrollFrameChildFrame':
+  type: Frame
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'PVPHonorFrameInfoScrollFrameChildFrameDescription':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'PVPHonorFrameInfoScrollFrameChildFrameRewardsInfo':
+  type: Frame
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'PVPHonorFrameInfoScrollFrameChildFrameRewardsInfoDescription':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'PVPHonorFrameInfoScrollFrameChildFrameRewardsInfoLossReward':
+  type: Frame
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'PVPHonorFrameInfoScrollFrameChildFrameRewardsInfoLossRewardArenaAmount':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'PVPHonorFrameInfoScrollFrameChildFrameRewardsInfoLossRewardHonorAmount':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'PVPHonorFrameInfoScrollFrameChildFrameRewardsInfoLossRewardLabel':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'PVPHonorFrameInfoScrollFrameChildFrameRewardsInfoRewardsLabel':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'PVPHonorFrameInfoScrollFrameChildFrameRewardsInfoTitle':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'PVPHonorFrameInfoScrollFrameChildFrameRewardsInfoWinReward':
+  type: Frame
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'PVPHonorFrameInfoScrollFrameChildFrameRewardsInfoWinRewardArenaAmount':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'PVPHonorFrameInfoScrollFrameChildFrameRewardsInfoWinRewardHonorAmount':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'PVPHonorFrameInfoScrollFrameChildFrameRewardsInfoWinRewardLabel':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'PVPHonorFrameInfoScrollFrameScrollBarScrollDownButton':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'PVPHonorFrameInfoScrollFrameScrollBarScrollUpButton':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'PVPHonorKillsLabel':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'PVPHonorLifetimeKills':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'PVPHonorLifetimeLabel':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'PVPHonorTodayKills':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'PVPHonorTodayLabel':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'PVPHonorYesterdayKills':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'PVPHonorYesterdayLabel':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'PVPInfoTextString':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'PVPMicroButton':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'PVPReadyDialog':
+  type: Frame
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'PVPReadyDialogEnterBattleButton':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'PVPReadyDialogEnterBattleButtonText':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'PVPReadyDialogExtraFrame':
+  type: Frame
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'PVPReadyDialogHideButton':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'PVPReadyDialogHideButtonText':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'PVPReadyDialogText':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'PVPTeam1':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'PVPTeam1Data':
+  type: Frame
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'PVPTeam1Data-':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'PVPTeam1DataGames':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'PVPTeam1DataGamesLabel':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'PVPTeam1DataLoss':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'PVPTeam1DataName':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'PVPTeam1DataPlayed':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'PVPTeam1DataPlayedLabel':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'PVPTeam1DataRating':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'PVPTeam1DataRatingLabel':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'PVPTeam1DataTypeLabel':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'PVPTeam1DataWinLossLabel':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'PVPTeam1DataWins':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'PVPTeam1Highlight':
+  type: Frame
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'PVPTeam1Standard':
+  type: Frame
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'PVPTeam1StandardRank':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'PVPTeam1TeamType':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'PVPTeam2':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'PVPTeam2Data':
+  type: Frame
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'PVPTeam2Data-':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'PVPTeam2DataGames':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'PVPTeam2DataGamesLabel':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'PVPTeam2DataLoss':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'PVPTeam2DataName':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'PVPTeam2DataPlayed':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'PVPTeam2DataPlayedLabel':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'PVPTeam2DataRating':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'PVPTeam2DataRatingLabel':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'PVPTeam2DataTypeLabel':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'PVPTeam2DataWinLossLabel':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'PVPTeam2DataWins':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'PVPTeam2Highlight':
+  type: Frame
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'PVPTeam2Standard':
+  type: Frame
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'PVPTeam2StandardRank':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'PVPTeam2TeamType':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'PVPTeam3':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'PVPTeam3Data':
+  type: Frame
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'PVPTeam3Data-':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'PVPTeam3DataGames':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'PVPTeam3DataGamesLabel':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'PVPTeam3DataLoss':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'PVPTeam3DataName':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'PVPTeam3DataPlayed':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'PVPTeam3DataPlayedLabel':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'PVPTeam3DataRating':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'PVPTeam3DataRatingLabel':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'PVPTeam3DataTypeLabel':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'PVPTeam3DataWinLossLabel':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'PVPTeam3DataWins':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'PVPTeam3Highlight':
+  type: Frame
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'PVPTeam3Standard':
+  type: Frame
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'PVPTeam3StandardRank':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'PVPTeam3TeamType':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'PVPTeamDetails':
+  type: Frame
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'PVPTeamDetails-':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'PVPTeamDetailsAddTeamMember':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'PVPTeamDetailsAddTeamMemberText':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'PVPTeamDetailsButton1':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'PVPTeamDetailsButton10':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'PVPTeamDetailsButton10Class':
+  type: Frame
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'PVPTeamDetailsButton10ClassText':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'PVPTeamDetailsButton10Name':
+  type: Frame
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'PVPTeamDetailsButton10NameText':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'PVPTeamDetailsButton10Played':
+  type: Frame
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'PVPTeamDetailsButton10PlayedText':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'PVPTeamDetailsButton10Rating':
+  type: Frame
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'PVPTeamDetailsButton10RatingText':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'PVPTeamDetailsButton10WinLoss':
+  type: Frame
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'PVPTeamDetailsButton10WinLoss-':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'PVPTeamDetailsButton10WinLossLoss':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'PVPTeamDetailsButton10WinLossWin':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'PVPTeamDetailsButton1Class':
+  type: Frame
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'PVPTeamDetailsButton1ClassText':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'PVPTeamDetailsButton1Name':
+  type: Frame
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'PVPTeamDetailsButton1NameText':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'PVPTeamDetailsButton1Played':
+  type: Frame
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'PVPTeamDetailsButton1PlayedText':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'PVPTeamDetailsButton1Rating':
+  type: Frame
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'PVPTeamDetailsButton1RatingText':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'PVPTeamDetailsButton1WinLoss':
+  type: Frame
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'PVPTeamDetailsButton1WinLoss-':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'PVPTeamDetailsButton1WinLossLoss':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'PVPTeamDetailsButton1WinLossWin':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'PVPTeamDetailsButton2':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'PVPTeamDetailsButton2Class':
+  type: Frame
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'PVPTeamDetailsButton2ClassText':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'PVPTeamDetailsButton2Name':
+  type: Frame
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'PVPTeamDetailsButton2NameText':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'PVPTeamDetailsButton2Played':
+  type: Frame
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'PVPTeamDetailsButton2PlayedText':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'PVPTeamDetailsButton2Rating':
+  type: Frame
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'PVPTeamDetailsButton2RatingText':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'PVPTeamDetailsButton2WinLoss':
+  type: Frame
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'PVPTeamDetailsButton2WinLoss-':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'PVPTeamDetailsButton2WinLossLoss':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'PVPTeamDetailsButton2WinLossWin':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'PVPTeamDetailsButton3':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'PVPTeamDetailsButton3Class':
+  type: Frame
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'PVPTeamDetailsButton3ClassText':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'PVPTeamDetailsButton3Name':
+  type: Frame
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'PVPTeamDetailsButton3NameText':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'PVPTeamDetailsButton3Played':
+  type: Frame
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'PVPTeamDetailsButton3PlayedText':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'PVPTeamDetailsButton3Rating':
+  type: Frame
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'PVPTeamDetailsButton3RatingText':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'PVPTeamDetailsButton3WinLoss':
+  type: Frame
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'PVPTeamDetailsButton3WinLoss-':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'PVPTeamDetailsButton3WinLossLoss':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'PVPTeamDetailsButton3WinLossWin':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'PVPTeamDetailsButton4':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'PVPTeamDetailsButton4Class':
+  type: Frame
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'PVPTeamDetailsButton4ClassText':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'PVPTeamDetailsButton4Name':
+  type: Frame
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'PVPTeamDetailsButton4NameText':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'PVPTeamDetailsButton4Played':
+  type: Frame
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'PVPTeamDetailsButton4PlayedText':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'PVPTeamDetailsButton4Rating':
+  type: Frame
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'PVPTeamDetailsButton4RatingText':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'PVPTeamDetailsButton4WinLoss':
+  type: Frame
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'PVPTeamDetailsButton4WinLoss-':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'PVPTeamDetailsButton4WinLossLoss':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'PVPTeamDetailsButton4WinLossWin':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'PVPTeamDetailsButton5':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'PVPTeamDetailsButton5Class':
+  type: Frame
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'PVPTeamDetailsButton5ClassText':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'PVPTeamDetailsButton5Name':
+  type: Frame
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'PVPTeamDetailsButton5NameText':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'PVPTeamDetailsButton5Played':
+  type: Frame
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'PVPTeamDetailsButton5PlayedText':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'PVPTeamDetailsButton5Rating':
+  type: Frame
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'PVPTeamDetailsButton5RatingText':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'PVPTeamDetailsButton5WinLoss':
+  type: Frame
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'PVPTeamDetailsButton5WinLoss-':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'PVPTeamDetailsButton5WinLossLoss':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'PVPTeamDetailsButton5WinLossWin':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'PVPTeamDetailsButton6':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'PVPTeamDetailsButton6Class':
+  type: Frame
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'PVPTeamDetailsButton6ClassText':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'PVPTeamDetailsButton6Name':
+  type: Frame
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'PVPTeamDetailsButton6NameText':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'PVPTeamDetailsButton6Played':
+  type: Frame
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'PVPTeamDetailsButton6PlayedText':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'PVPTeamDetailsButton6Rating':
+  type: Frame
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'PVPTeamDetailsButton6RatingText':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'PVPTeamDetailsButton6WinLoss':
+  type: Frame
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'PVPTeamDetailsButton6WinLoss-':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'PVPTeamDetailsButton6WinLossLoss':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'PVPTeamDetailsButton6WinLossWin':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'PVPTeamDetailsButton7':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'PVPTeamDetailsButton7Class':
+  type: Frame
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'PVPTeamDetailsButton7ClassText':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'PVPTeamDetailsButton7Name':
+  type: Frame
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'PVPTeamDetailsButton7NameText':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'PVPTeamDetailsButton7Played':
+  type: Frame
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'PVPTeamDetailsButton7PlayedText':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'PVPTeamDetailsButton7Rating':
+  type: Frame
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'PVPTeamDetailsButton7RatingText':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'PVPTeamDetailsButton7WinLoss':
+  type: Frame
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'PVPTeamDetailsButton7WinLoss-':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'PVPTeamDetailsButton7WinLossLoss':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'PVPTeamDetailsButton7WinLossWin':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'PVPTeamDetailsButton8':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'PVPTeamDetailsButton8Class':
+  type: Frame
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'PVPTeamDetailsButton8ClassText':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'PVPTeamDetailsButton8Name':
+  type: Frame
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'PVPTeamDetailsButton8NameText':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'PVPTeamDetailsButton8Played':
+  type: Frame
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'PVPTeamDetailsButton8PlayedText':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'PVPTeamDetailsButton8Rating':
+  type: Frame
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'PVPTeamDetailsButton8RatingText':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'PVPTeamDetailsButton8WinLoss':
+  type: Frame
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'PVPTeamDetailsButton8WinLoss-':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'PVPTeamDetailsButton8WinLossLoss':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'PVPTeamDetailsButton8WinLossWin':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'PVPTeamDetailsButton9':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'PVPTeamDetailsButton9Class':
+  type: Frame
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'PVPTeamDetailsButton9ClassText':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'PVPTeamDetailsButton9Name':
+  type: Frame
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'PVPTeamDetailsButton9NameText':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'PVPTeamDetailsButton9Played':
+  type: Frame
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'PVPTeamDetailsButton9PlayedText':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'PVPTeamDetailsButton9Rating':
+  type: Frame
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'PVPTeamDetailsButton9RatingText':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'PVPTeamDetailsButton9WinLoss':
+  type: Frame
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'PVPTeamDetailsButton9WinLoss-':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'PVPTeamDetailsButton9WinLossLoss':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'PVPTeamDetailsButton9WinLossWin':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'PVPTeamDetailsCloseButton':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'PVPTeamDetailsFrameColumnHeader1':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'PVPTeamDetailsFrameColumnHeader2':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'PVPTeamDetailsFrameColumnHeader3':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'PVPTeamDetailsFrameColumnHeader4':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'PVPTeamDetailsFrameColumnHeader5':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'PVPTeamDetailsGames':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'PVPTeamDetailsGamesLabel':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'PVPTeamDetailsLoss':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'PVPTeamDetailsName':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'PVPTeamDetailsRank':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'PVPTeamDetailsRankLabel':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'PVPTeamDetailsRating':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'PVPTeamDetailsRatingLabel':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'PVPTeamDetailsSize':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'PVPTeamDetailsStatsType':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'PVPTeamDetailsToggleButton':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'PVPTeamDetailsWinLossLabel':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'PVPTeamDetailsWins':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'PVPTeamManagementFrame':
+  type: Frame
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'PVPTeamManagementFrameWeeklyDisplay':
+  type: Frame
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'PVPTimerFrame':
+  type: Frame
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'PvP_WeeklyText':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'WarGameStartButton':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'WarGameStartButtonText':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'WarGamesFrame':
+  type: Frame
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'WarGamesFrameDescription':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'WarGamesFrameInfoScrollFrameChildFrame':
+  type: Frame
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'WarGamesFrameInfoScrollFrameScrollBarScrollDownButton':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'WarGamesFrameInfoScrollFrameScrollBarScrollUpButton':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'WorldStateChallengeModeFrame':
+  type: Frame
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'WorldStateChallengeModeTimer':
+  type: Frame
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'WorldStateProvingGroundsFrame':
+  type: Frame
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'WorldStateProvingGroundsTimer':
+  type: Frame
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'WorldStateScoreBattlegroundRunTime':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'WorldStateScoreButton1':
+  type: Frame
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'WorldStateScoreButton10':
+  type: Frame
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'WorldStateScoreButton10ClassButton':
+  type: Frame
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'WorldStateScoreButton10Column1Text':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'WorldStateScoreButton10Column2Text':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'WorldStateScoreButton10Column3Text':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'WorldStateScoreButton10Column4Text':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'WorldStateScoreButton10Column5Text':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'WorldStateScoreButton10Column6Text':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'WorldStateScoreButton10Column7Text':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'WorldStateScoreButton10DamageDone':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'WorldStateScoreButton10Deaths':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'WorldStateScoreButton10HealingDone':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'WorldStateScoreButton10HonorGained':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'WorldStateScoreButton10HonorableKills':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'WorldStateScoreButton10KillingBlows':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'WorldStateScoreButton10Name':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'WorldStateScoreButton10NameText':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'WorldStateScoreButton10Team':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'WorldStateScoreButton11':
+  type: Frame
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'WorldStateScoreButton11ClassButton':
+  type: Frame
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'WorldStateScoreButton11Column1Text':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'WorldStateScoreButton11Column2Text':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'WorldStateScoreButton11Column3Text':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'WorldStateScoreButton11Column4Text':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'WorldStateScoreButton11Column5Text':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'WorldStateScoreButton11Column6Text':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'WorldStateScoreButton11Column7Text':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'WorldStateScoreButton11DamageDone':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'WorldStateScoreButton11Deaths':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'WorldStateScoreButton11HealingDone':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'WorldStateScoreButton11HonorGained':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'WorldStateScoreButton11HonorableKills':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'WorldStateScoreButton11KillingBlows':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'WorldStateScoreButton11Name':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'WorldStateScoreButton11NameText':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'WorldStateScoreButton11Team':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'WorldStateScoreButton12':
+  type: Frame
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'WorldStateScoreButton12ClassButton':
+  type: Frame
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'WorldStateScoreButton12Column1Text':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'WorldStateScoreButton12Column2Text':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'WorldStateScoreButton12Column3Text':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'WorldStateScoreButton12Column4Text':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'WorldStateScoreButton12Column5Text':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'WorldStateScoreButton12Column6Text':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'WorldStateScoreButton12Column7Text':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'WorldStateScoreButton12DamageDone':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'WorldStateScoreButton12Deaths':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'WorldStateScoreButton12HealingDone':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'WorldStateScoreButton12HonorGained':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'WorldStateScoreButton12HonorableKills':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'WorldStateScoreButton12KillingBlows':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'WorldStateScoreButton12Name':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'WorldStateScoreButton12NameText':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'WorldStateScoreButton12Team':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'WorldStateScoreButton13':
+  type: Frame
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'WorldStateScoreButton13ClassButton':
+  type: Frame
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'WorldStateScoreButton13Column1Text':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'WorldStateScoreButton13Column2Text':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'WorldStateScoreButton13Column3Text':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'WorldStateScoreButton13Column4Text':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'WorldStateScoreButton13Column5Text':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'WorldStateScoreButton13Column6Text':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'WorldStateScoreButton13Column7Text':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'WorldStateScoreButton13DamageDone':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'WorldStateScoreButton13Deaths':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'WorldStateScoreButton13HealingDone':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'WorldStateScoreButton13HonorGained':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'WorldStateScoreButton13HonorableKills':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'WorldStateScoreButton13KillingBlows':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'WorldStateScoreButton13Name':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'WorldStateScoreButton13NameText':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'WorldStateScoreButton13Team':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'WorldStateScoreButton14':
+  type: Frame
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'WorldStateScoreButton14ClassButton':
+  type: Frame
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'WorldStateScoreButton14Column1Text':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'WorldStateScoreButton14Column2Text':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'WorldStateScoreButton14Column3Text':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'WorldStateScoreButton14Column4Text':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'WorldStateScoreButton14Column5Text':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'WorldStateScoreButton14Column6Text':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'WorldStateScoreButton14Column7Text':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'WorldStateScoreButton14DamageDone':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'WorldStateScoreButton14Deaths':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'WorldStateScoreButton14HealingDone':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'WorldStateScoreButton14HonorGained':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'WorldStateScoreButton14HonorableKills':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'WorldStateScoreButton14KillingBlows':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'WorldStateScoreButton14Name':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'WorldStateScoreButton14NameText':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'WorldStateScoreButton14Team':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'WorldStateScoreButton15':
+  type: Frame
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt

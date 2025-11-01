@@ -1,0 +1,196 @@
+# Auto-generated from DOCU/NOD_Konzept_Funktionsliste.txt
+# Category: spellbook_buttons
+# Description: Auto-generated group for prefix "spellbutton".
+
+'SpellButton10RequiredLevelString':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'SpellButton10SeeTrainerString':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'SpellButton10SpellName':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'SpellButton10SubSpellName':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'SpellButton11RequiredLevelString':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'SpellButton11SeeTrainerString':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'SpellButton11SpellName':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'SpellButton11SubSpellName':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'SpellButton12RequiredLevelString':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'SpellButton12SeeTrainerString':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'SpellButton12SpellName':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'SpellButton12SubSpellName':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'SpellButton1RequiredLevelString':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'SpellButton1SeeTrainerString':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'SpellButton1SpellName':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'SpellButton1SubSpellName':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'SpellButton2RequiredLevelString':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'SpellButton2SeeTrainerString':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'SpellButton2SpellName':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'SpellButton2SubSpellName':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'SpellButton3RequiredLevelString':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'SpellButton3SeeTrainerString':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'SpellButton3SpellName':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'SpellButton3SubSpellName':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'SpellButton4RequiredLevelString':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'SpellButton4SeeTrainerString':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'SpellButton4SpellName':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'SpellButton4SubSpellName':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'SpellButton5RequiredLevelString':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'SpellButton5SeeTrainerString':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'SpellButton5SpellName':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'SpellButton5SubSpellName':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'SpellButton6RequiredLevelString':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'SpellButton6SeeTrainerString':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'SpellButton6SpellName':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'SpellButton6SubSpellName':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'SpellButton7RequiredLevelString':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'SpellButton7SeeTrainerString':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'SpellButton7SpellName':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'SpellButton7SubSpellName':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'SpellButton8RequiredLevelString':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'SpellButton8SeeTrainerString':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'SpellButton8SpellName':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'SpellButton8SubSpellName':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'SpellButton9RequiredLevelString':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'SpellButton9SeeTrainerString':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'SpellButton9SpellName':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'SpellButton9SubSpellName':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt

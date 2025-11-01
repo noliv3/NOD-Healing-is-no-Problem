@@ -1,0 +1,44 @@
+# Auto-generated from DOCU/NOD_Konzept_Funktionsliste.txt
+# Category: tutorial_alert_buttons
+# Description: Auto-generated group for prefix "tutorialframealertbutton".
+
+'TutorialFrameAlertButton1':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'TutorialFrameAlertButton10':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'TutorialFrameAlertButton2':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'TutorialFrameAlertButton3':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'TutorialFrameAlertButton4':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'TutorialFrameAlertButton5':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'TutorialFrameAlertButton6':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'TutorialFrameAlertButton7':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'TutorialFrameAlertButton8':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'TutorialFrameAlertButton9':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt

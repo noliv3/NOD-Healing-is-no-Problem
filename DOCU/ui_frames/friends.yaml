@@ -1,0 +1,1480 @@
+# Auto-generated from DOCU/NOD_Konzept_Funktionsliste.txt
+# Category: friends
+# Description: Friends list, quick-join, and recruit-a-friend panels.
+
+'AddFriendEntryFrame':
+  type: Frame
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'AddFriendEntryFrameAcceptButton':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'AddFriendEntryFrameAcceptButtonText':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'AddFriendEntryFrameCancelButton':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'AddFriendEntryFrameCancelButtonText':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'AddFriendEntryFrameInfoButton':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'AddFriendEntryFrameLeftDescription':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'AddFriendEntryFrameLeftTitle':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'AddFriendEntryFrameOrLabel':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'AddFriendEntryFrameRightDescription':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'AddFriendEntryFrameRightTitle':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'AddFriendEntryFrameTopTitle':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'AddFriendFrame':
+  type: Frame
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'AddFriendInfoFrame':
+  type: Frame
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'AddFriendInfoFrameContinueButton':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'AddFriendInfoFrameContinueButtonText':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'AddFriendInfoFrameLeftTitle':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'AddFriendInfoFrameRightTitle':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'AddFriendNameEditBox':
+  type: EditBox
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'AddFriendNameEditBoxFill':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'AddFriendNoteEditBox':
+  type: EditBox
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'AddFriendNoteEditBoxFill':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'AddFriendNoteFrame':
+  type: Frame
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'AddFriendNoteFrameScrollFrameScrollBarScrollDownButton':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'AddFriendNoteFrameScrollFrameScrollBarScrollUpButton':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'BattleTagInviteFrame':
+  type: Frame
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'BattleTagInviteFrameText':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'FriendsFrame':
+  type: Frame
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'FriendsFrameAddFriendButton':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'FriendsFrameAddFriendButtonText':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'FriendsFrameBattlenetFrame':
+  type: Frame
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'FriendsFrameBattlenetFrameScrollFrameScrollBarScrollDownButton':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'FriendsFrameBattlenetFrameScrollFrameScrollBarScrollUpButton':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'FriendsFrameBattlenetFrameScrollFrameText':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'FriendsFrameBlockedInviteHeader':
+  type: Frame
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'FriendsFrameBlockedInviteHeaderTitle':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'FriendsFrameBroadcastInput':
+  type: EditBox
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'FriendsFrameBroadcastInputClearButton':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'FriendsFrameBroadcastInputFill':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'FriendsFrameBroadcastInputTooltipButton':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'FriendsFrameCloseButton':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'FriendsFrameFriendsScrollFrameButton1':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'FriendsFrameFriendsScrollFrameButton10':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'FriendsFrameFriendsScrollFrameButton10Info':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'FriendsFrameFriendsScrollFrameButton10Name':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'FriendsFrameFriendsScrollFrameButton10SummonButton':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'FriendsFrameFriendsScrollFrameButton10SummonButtonCount':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'FriendsFrameFriendsScrollFrameButton10SummonButtonHotKey':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'FriendsFrameFriendsScrollFrameButton10SummonButtonName':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'FriendsFrameFriendsScrollFrameButton10SummonButtonShine':
+  type: Frame
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'FriendsFrameFriendsScrollFrameButton10TravelPassButton':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'FriendsFrameFriendsScrollFrameButton11':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'FriendsFrameFriendsScrollFrameButton11Info':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'FriendsFrameFriendsScrollFrameButton11Name':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'FriendsFrameFriendsScrollFrameButton11SummonButton':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'FriendsFrameFriendsScrollFrameButton11SummonButtonCount':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'FriendsFrameFriendsScrollFrameButton11SummonButtonHotKey':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'FriendsFrameFriendsScrollFrameButton11SummonButtonName':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'FriendsFrameFriendsScrollFrameButton11SummonButtonShine':
+  type: Frame
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'FriendsFrameFriendsScrollFrameButton11TravelPassButton':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'FriendsFrameFriendsScrollFrameButton1Info':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'FriendsFrameFriendsScrollFrameButton1Name':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'FriendsFrameFriendsScrollFrameButton1SummonButton':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'FriendsFrameFriendsScrollFrameButton1SummonButtonCount':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'FriendsFrameFriendsScrollFrameButton1SummonButtonHotKey':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'FriendsFrameFriendsScrollFrameButton1SummonButtonName':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'FriendsFrameFriendsScrollFrameButton1SummonButtonShine':
+  type: Frame
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'FriendsFrameFriendsScrollFrameButton1TravelPassButton':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'FriendsFrameFriendsScrollFrameButton2':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'FriendsFrameFriendsScrollFrameButton2Info':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'FriendsFrameFriendsScrollFrameButton2Name':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'FriendsFrameFriendsScrollFrameButton2SummonButton':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'FriendsFrameFriendsScrollFrameButton2SummonButtonCount':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'FriendsFrameFriendsScrollFrameButton2SummonButtonHotKey':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'FriendsFrameFriendsScrollFrameButton2SummonButtonName':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'FriendsFrameFriendsScrollFrameButton2SummonButtonShine':
+  type: Frame
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'FriendsFrameFriendsScrollFrameButton2TravelPassButton':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'FriendsFrameFriendsScrollFrameButton3':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'FriendsFrameFriendsScrollFrameButton3Info':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'FriendsFrameFriendsScrollFrameButton3Name':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'FriendsFrameFriendsScrollFrameButton3SummonButton':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'FriendsFrameFriendsScrollFrameButton3SummonButtonCount':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'FriendsFrameFriendsScrollFrameButton3SummonButtonHotKey':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'FriendsFrameFriendsScrollFrameButton3SummonButtonName':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'FriendsFrameFriendsScrollFrameButton3SummonButtonShine':
+  type: Frame
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'FriendsFrameFriendsScrollFrameButton3TravelPassButton':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'FriendsFrameFriendsScrollFrameButton4':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'FriendsFrameFriendsScrollFrameButton4Info':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'FriendsFrameFriendsScrollFrameButton4Name':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'FriendsFrameFriendsScrollFrameButton4SummonButton':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'FriendsFrameFriendsScrollFrameButton4SummonButtonCount':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'FriendsFrameFriendsScrollFrameButton4SummonButtonHotKey':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'FriendsFrameFriendsScrollFrameButton4SummonButtonName':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'FriendsFrameFriendsScrollFrameButton4SummonButtonShine':
+  type: Frame
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'FriendsFrameFriendsScrollFrameButton4TravelPassButton':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'FriendsFrameFriendsScrollFrameButton5':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'FriendsFrameFriendsScrollFrameButton5Info':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'FriendsFrameFriendsScrollFrameButton5Name':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'FriendsFrameFriendsScrollFrameButton5SummonButton':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'FriendsFrameFriendsScrollFrameButton5SummonButtonCount':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'FriendsFrameFriendsScrollFrameButton5SummonButtonHotKey':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'FriendsFrameFriendsScrollFrameButton5SummonButtonName':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'FriendsFrameFriendsScrollFrameButton5SummonButtonShine':
+  type: Frame
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'FriendsFrameFriendsScrollFrameButton5TravelPassButton':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'FriendsFrameFriendsScrollFrameButton6':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'FriendsFrameFriendsScrollFrameButton6Info':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'FriendsFrameFriendsScrollFrameButton6Name':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'FriendsFrameFriendsScrollFrameButton6SummonButton':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'FriendsFrameFriendsScrollFrameButton6SummonButtonCount':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'FriendsFrameFriendsScrollFrameButton6SummonButtonHotKey':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'FriendsFrameFriendsScrollFrameButton6SummonButtonName':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'FriendsFrameFriendsScrollFrameButton6SummonButtonShine':
+  type: Frame
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'FriendsFrameFriendsScrollFrameButton6TravelPassButton':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'FriendsFrameFriendsScrollFrameButton7':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'FriendsFrameFriendsScrollFrameButton7Info':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'FriendsFrameFriendsScrollFrameButton7Name':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'FriendsFrameFriendsScrollFrameButton7SummonButton':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'FriendsFrameFriendsScrollFrameButton7SummonButtonCount':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'FriendsFrameFriendsScrollFrameButton7SummonButtonHotKey':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'FriendsFrameFriendsScrollFrameButton7SummonButtonName':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'FriendsFrameFriendsScrollFrameButton7SummonButtonShine':
+  type: Frame
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'FriendsFrameFriendsScrollFrameButton7TravelPassButton':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'FriendsFrameFriendsScrollFrameButton8':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'FriendsFrameFriendsScrollFrameButton8Info':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'FriendsFrameFriendsScrollFrameButton8Name':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'FriendsFrameFriendsScrollFrameButton8SummonButton':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'FriendsFrameFriendsScrollFrameButton8SummonButtonCount':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'FriendsFrameFriendsScrollFrameButton8SummonButtonHotKey':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'FriendsFrameFriendsScrollFrameButton8SummonButtonName':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'FriendsFrameFriendsScrollFrameButton8SummonButtonShine':
+  type: Frame
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'FriendsFrameFriendsScrollFrameButton8TravelPassButton':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'FriendsFrameFriendsScrollFrameButton9':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'FriendsFrameFriendsScrollFrameButton9Info':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'FriendsFrameFriendsScrollFrameButton9Name':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'FriendsFrameFriendsScrollFrameButton9SummonButton':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'FriendsFrameFriendsScrollFrameButton9SummonButtonCount':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'FriendsFrameFriendsScrollFrameButton9SummonButtonHotKey':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'FriendsFrameFriendsScrollFrameButton9SummonButtonName':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'FriendsFrameFriendsScrollFrameButton9SummonButtonShine':
+  type: Frame
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'FriendsFrameFriendsScrollFrameButton9TravelPassButton':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'FriendsFrameFriendsScrollFrameScrollBarScrollDownButton':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'FriendsFrameFriendsScrollFrameScrollBarScrollUpButton':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'FriendsFrameFriendsScrollFrameScrollChild':
+  type: Frame
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'FriendsFrameFriendsScrollFrameText':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'FriendsFrameIgnoreButton1':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'FriendsFrameIgnoreButton10':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'FriendsFrameIgnoreButton10Name':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'FriendsFrameIgnoreButton11':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'FriendsFrameIgnoreButton11Name':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'FriendsFrameIgnoreButton12':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'FriendsFrameIgnoreButton12Name':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'FriendsFrameIgnoreButton13':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'FriendsFrameIgnoreButton13Name':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'FriendsFrameIgnoreButton14':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'FriendsFrameIgnoreButton14Name':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'FriendsFrameIgnoreButton15':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'FriendsFrameIgnoreButton15Name':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'FriendsFrameIgnoreButton16':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'FriendsFrameIgnoreButton16Name':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'FriendsFrameIgnoreButton17':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'FriendsFrameIgnoreButton17Name':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'FriendsFrameIgnoreButton18':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'FriendsFrameIgnoreButton18Name':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'FriendsFrameIgnoreButton19':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'FriendsFrameIgnoreButton19Name':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'FriendsFrameIgnoreButton1Name':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'FriendsFrameIgnoreButton2':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'FriendsFrameIgnoreButton2Name':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'FriendsFrameIgnoreButton3':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'FriendsFrameIgnoreButton3Name':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'FriendsFrameIgnoreButton4':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'FriendsFrameIgnoreButton4Name':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'FriendsFrameIgnoreButton5':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'FriendsFrameIgnoreButton5Name':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'FriendsFrameIgnoreButton6':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'FriendsFrameIgnoreButton6Name':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'FriendsFrameIgnoreButton7':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'FriendsFrameIgnoreButton7Name':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'FriendsFrameIgnoreButton8':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'FriendsFrameIgnoreButton8Name':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'FriendsFrameIgnoreButton9':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'FriendsFrameIgnoreButton9Name':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'FriendsFrameIgnorePlayerButton':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'FriendsFrameIgnorePlayerButtonText':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'FriendsFrameIgnoreScrollFrameScrollBarScrollDownButton':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'FriendsFrameIgnoreScrollFrameScrollBarScrollUpButton':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'FriendsFrameIgnoreScrollFrameScrollChildFrame':
+  type: Frame
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'FriendsFrameIgnoredHeader':
+  type: Frame
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'FriendsFrameIgnoredHeaderTitle':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'FriendsFrameInset':
+  type: Frame
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'FriendsFrameMutedHeader':
+  type: Frame
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'FriendsFrameMutedHeaderTitle':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'FriendsFrameSendMessageButton':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'FriendsFrameSendMessageButtonText':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'FriendsFrameStatusDropdown':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'FriendsFrameTab1':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'FriendsFrameTab1Text':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'FriendsFrameTab2':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'FriendsFrameTab2Text':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'FriendsFrameTab3':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'FriendsFrameTab3Text':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'FriendsFrameTab4':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'FriendsFrameTab4Text':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'FriendsFrameTitleText':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'FriendsFrameUnsquelchButton':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'FriendsFrameUnsquelchButtonText':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'FriendsFriendsButton1':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'FriendsFriendsButton10':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'FriendsFriendsButton10Name':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'FriendsFriendsButton11':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'FriendsFriendsButton11Name':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'FriendsFriendsButton1Name':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'FriendsFriendsButton2':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'FriendsFriendsButton2Name':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'FriendsFriendsButton3':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'FriendsFriendsButton3Name':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'FriendsFriendsButton4':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'FriendsFriendsButton4Name':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'FriendsFriendsButton5':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'FriendsFriendsButton5Name':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'FriendsFriendsButton6':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'FriendsFriendsButton6Name':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'FriendsFriendsButton7':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'FriendsFriendsButton7Name':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'FriendsFriendsButton8':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'FriendsFriendsButton8Name':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'FriendsFriendsButton9':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'FriendsFriendsButton9Name':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'FriendsFriendsCloseButton':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'FriendsFriendsCloseButtonText':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'FriendsFriendsFrame':
+  type: Frame
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'FriendsFriendsFrameDropdown':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'FriendsFriendsFrameTitle':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'FriendsFriendsList':
+  type: Frame
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'FriendsFriendsScrollFrameScrollBarScrollDownButton':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'FriendsFriendsScrollFrameScrollBarScrollUpButton':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'FriendsFriendsScrollFrameScrollChildFrame':
+  type: Frame
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'FriendsFriendsSendRequestButton':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'FriendsFriendsSendRequestButtonText':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'FriendsFriendsWaitFrame':
+  type: Frame
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'FriendsListFrame':
+  type: Frame
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'FriendsListFrameContinueButton':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'FriendsListFrameContinueButtonText':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'FriendsListFrameTitle':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'FriendsMicroButton':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'FriendsMicroButtonCount':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'FriendsTabHeader':
+  type: Frame
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'FriendsTabHeaderTab1':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'FriendsTabHeaderTab1Text':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'FriendsTabHeaderTab2':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'FriendsTabHeaderTab2Text':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'FriendsTooltip':
+  type: Frame
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'FriendsTooltipBroadcastText':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'FriendsTooltipGameAccount1Info':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'FriendsTooltipGameAccount1Name':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'FriendsTooltipGameAccount2Info':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'FriendsTooltipGameAccount2Name':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'FriendsTooltipGameAccount3Info':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'FriendsTooltipGameAccount3Name':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'FriendsTooltipGameAccount4Info':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'FriendsTooltipGameAccount4Name':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'FriendsTooltipGameAccount5Info':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'FriendsTooltipGameAccount5Name':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'FriendsTooltipGameAccountMany':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'FriendsTooltipHeader':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'FriendsTooltipLastOnline':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'FriendsTooltipNoteText':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'FriendsTooltipOtherGameAccounts':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'WhoFrame':
+  type: Frame
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'WhoFrameAddFriendButton':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'WhoFrameAddFriendButtonText':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'WhoFrameButton1':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'WhoFrameButton10':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'WhoFrameButton10Class':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'WhoFrameButton10Level':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'WhoFrameButton10Name':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'WhoFrameButton10Variable':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'WhoFrameButton11':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'WhoFrameButton11Class':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'WhoFrameButton11Level':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'WhoFrameButton11Name':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'WhoFrameButton11Variable':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'WhoFrameButton12':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'WhoFrameButton12Class':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'WhoFrameButton12Level':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'WhoFrameButton12Name':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'WhoFrameButton12Variable':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'WhoFrameButton13':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'WhoFrameButton13Class':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'WhoFrameButton13Level':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'WhoFrameButton13Name':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'WhoFrameButton13Variable':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'WhoFrameButton14':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'WhoFrameButton14Class':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'WhoFrameButton14Level':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'WhoFrameButton14Name':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'WhoFrameButton14Variable':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'WhoFrameButton15':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'WhoFrameButton15Class':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'WhoFrameButton15Level':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'WhoFrameButton15Name':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'WhoFrameButton15Variable':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'WhoFrameButton16':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'WhoFrameButton16Class':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'WhoFrameButton16Level':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'WhoFrameButton16Name':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'WhoFrameButton16Variable':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'WhoFrameButton17':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'WhoFrameButton17Class':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'WhoFrameButton17Level':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'WhoFrameButton17Name':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'WhoFrameButton17Variable':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'WhoFrameButton1Class':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'WhoFrameButton1Level':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'WhoFrameButton1Name':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'WhoFrameButton1Variable':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'WhoFrameButton2':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'WhoFrameButton2Class':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'WhoFrameButton2Level':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'WhoFrameButton2Name':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'WhoFrameButton2Variable':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'WhoFrameButton3':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'WhoFrameButton3Class':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'WhoFrameButton3Level':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'WhoFrameButton3Name':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'WhoFrameButton3Variable':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'WhoFrameButton4':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'WhoFrameButton4Class':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'WhoFrameButton4Level':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'WhoFrameButton4Name':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'WhoFrameButton4Variable':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'WhoFrameButton5':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'WhoFrameButton5Class':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'WhoFrameButton5Level':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'WhoFrameButton5Name':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'WhoFrameButton5Variable':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'WhoFrameButton6':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'WhoFrameButton6Class':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'WhoFrameButton6Level':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'WhoFrameButton6Name':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'WhoFrameButton6Variable':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'WhoFrameButton7':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'WhoFrameButton7Class':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'WhoFrameButton7Level':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'WhoFrameButton7Name':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'WhoFrameButton7Variable':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'WhoFrameButton8':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'WhoFrameButton8Class':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'WhoFrameButton8Level':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'WhoFrameButton8Name':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'WhoFrameButton8Variable':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'WhoFrameButton9':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'WhoFrameButton9Class':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'WhoFrameButton9Level':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'WhoFrameButton9Name':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'WhoFrameButton9Variable':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'WhoFrameColumnHeader1':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'WhoFrameColumnHeader2':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'WhoFrameColumnHeader3':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'WhoFrameColumnHeader4':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'WhoFrameDropdown':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'WhoFrameEditBox':
+  type: EditBox
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'WhoFrameEditBoxClearButton':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'WhoFrameGroupInviteButton':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'WhoFrameGroupInviteButtonText':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'WhoFrameListInset':
+  type: Frame
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'WhoFrameTotals':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'WhoFrameWhoButton':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'WhoFrameWhoButtonText':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt

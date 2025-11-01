@@ -1,0 +1,2004 @@
+# Auto-generated from DOCU/NOD_Konzept_Funktionsliste.txt
+# Category: inventory
+# Description: Inventory, bag, bank, and equipment management frames.
+
+'ContainerFrame4Item17Count':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'ContainerFrame4Item17Stock':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'ContainerFrame4Item18':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'ContainerFrame4Item18Count':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'ContainerFrame4Item18Stock':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'ContainerFrame4Item19':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'ContainerFrame4Item19Count':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'ContainerFrame4Item19Stock':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'ContainerFrame4Item1Count':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'ContainerFrame4Item1Stock':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'ContainerFrame4Item2':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'ContainerFrame4Item20':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'ContainerFrame4Item20Count':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'ContainerFrame4Item20Stock':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'ContainerFrame4Item21':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'ContainerFrame4Item21Count':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'ContainerFrame4Item21Stock':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'ContainerFrame4Item22':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'ContainerFrame4Item22Count':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'ContainerFrame4Item22Stock':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'ContainerFrame4Item23':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'ContainerFrame4Item23Count':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'ContainerFrame4Item23Stock':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'ContainerFrame4Item24':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'ContainerFrame4Item24Count':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'ContainerFrame4Item24Stock':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'ContainerFrame4Item25':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'ContainerFrame4Item25Count':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'ContainerFrame4Item25Stock':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'ContainerFrame4Item26':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'ContainerFrame4Item26Count':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'ContainerFrame4Item26Stock':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'ContainerFrame4Item27':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'ContainerFrame4Item27Count':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'ContainerFrame4Item27Stock':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'ContainerFrame4Item28':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'ContainerFrame4Item28Count':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'ContainerFrame4Item28Stock':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'ContainerFrame4Item29':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'ContainerFrame4Item29Count':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'ContainerFrame4Item29Stock':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'ContainerFrame4Item2Count':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'ContainerFrame4Item2Stock':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'ContainerFrame4Item3':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'ContainerFrame4Item30':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'ContainerFrame4Item30Count':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'ContainerFrame4Item30Stock':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'ContainerFrame4Item31':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'ContainerFrame4Item31Count':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'ContainerFrame4Item31Stock':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'ContainerFrame4Item32':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'ContainerFrame4Item32Count':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'ContainerFrame4Item32Stock':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'ContainerFrame4Item33':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'ContainerFrame4Item33Count':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'ContainerFrame4Item33Stock':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'ContainerFrame4Item34':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'ContainerFrame4Item34Count':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'ContainerFrame4Item34Stock':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'ContainerFrame4Item35':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'ContainerFrame4Item35Count':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'ContainerFrame4Item35Stock':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'ContainerFrame4Item36':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'ContainerFrame4Item36Count':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'ContainerFrame4Item36Stock':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'ContainerFrame4Item3Count':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'ContainerFrame4Item3Stock':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'ContainerFrame4Item4':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'ContainerFrame4Item4Count':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'ContainerFrame4Item4Stock':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'ContainerFrame4Item5':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'ContainerFrame4Item5Count':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'ContainerFrame4Item5Stock':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'ContainerFrame4Item6':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'ContainerFrame4Item6Count':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'ContainerFrame4Item6Stock':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'ContainerFrame4Item7':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'ContainerFrame4Item7Count':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'ContainerFrame4Item7Stock':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'ContainerFrame4Item8':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'ContainerFrame4Item8Count':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'ContainerFrame4Item8Stock':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'ContainerFrame4Item9':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'ContainerFrame4Item9Count':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'ContainerFrame4Item9Stock':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'ContainerFrame4MoneyFrame':
+  type: Frame
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'ContainerFrame4MoneyFrameCopperButton':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'ContainerFrame4MoneyFrameCopperButtonText':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'ContainerFrame4MoneyFrameGoldButton':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'ContainerFrame4MoneyFrameGoldButtonText':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'ContainerFrame4MoneyFrameSilverButton':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'ContainerFrame4MoneyFrameSilverButtonText':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'ContainerFrame4MoneyFrameTrialErrorButton':
+  type: Frame
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'ContainerFrame4Name':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'ContainerFrame4PortraitButton':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'ContainerFrame5':
+  type: Frame
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'ContainerFrame5AddSlotsButton':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'ContainerFrame5CloseButton':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'ContainerFrame5Item1':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'ContainerFrame5Item10':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'ContainerFrame5Item10Count':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'ContainerFrame5Item10Stock':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'ContainerFrame5Item11':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'ContainerFrame5Item11Count':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'ContainerFrame5Item11Stock':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'ContainerFrame5Item12':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'ContainerFrame5Item12Count':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'ContainerFrame5Item12Stock':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'ContainerFrame5Item13':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'ContainerFrame5Item13Count':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'ContainerFrame5Item13Stock':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'ContainerFrame5Item14':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'ContainerFrame5Item14Count':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'ContainerFrame5Item14Stock':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'ContainerFrame5Item15':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'ContainerFrame5Item15Count':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'ContainerFrame5Item15Stock':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'ContainerFrame5Item16':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'ContainerFrame5Item16Count':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'ContainerFrame5Item16Stock':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'ContainerFrame5Item17':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'ContainerFrame5Item17Count':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'ContainerFrame5Item17Stock':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'ContainerFrame5Item18':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'ContainerFrame5Item18Count':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'ContainerFrame5Item18Stock':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'ContainerFrame5Item19':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'ContainerFrame5Item19Count':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'ContainerFrame5Item19Stock':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'ContainerFrame5Item1Count':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'ContainerFrame5Item1Stock':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'ContainerFrame5Item2':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'ContainerFrame5Item20':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'ContainerFrame5Item20Count':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'ContainerFrame5Item20Stock':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'ContainerFrame5Item21':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'ContainerFrame5Item21Count':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'ContainerFrame5Item21Stock':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'ContainerFrame5Item22':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'ContainerFrame5Item22Count':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'ContainerFrame5Item22Stock':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'ContainerFrame5Item23':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'ContainerFrame5Item23Count':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'ContainerFrame5Item23Stock':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'ContainerFrame5Item24':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'ContainerFrame5Item24Count':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'ContainerFrame5Item24Stock':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'ContainerFrame5Item25':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'ContainerFrame5Item25Count':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'ContainerFrame5Item25Stock':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'ContainerFrame5Item26':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'ContainerFrame5Item26Count':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'ContainerFrame5Item26Stock':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'ContainerFrame5Item27':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'ContainerFrame5Item27Count':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'ContainerFrame5Item27Stock':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'ContainerFrame5Item28':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'ContainerFrame5Item28Count':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'ContainerFrame5Item28Stock':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'ContainerFrame5Item29':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'ContainerFrame5Item29Count':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'ContainerFrame5Item29Stock':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'ContainerFrame5Item2Count':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'ContainerFrame5Item2Stock':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'ContainerFrame5Item3':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'ContainerFrame5Item30':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'ContainerFrame5Item30Count':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'ContainerFrame5Item30Stock':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'ContainerFrame5Item31':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'ContainerFrame5Item31Count':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'ContainerFrame5Item31Stock':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'ContainerFrame5Item32':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'ContainerFrame5Item32Count':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'ContainerFrame5Item32Stock':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'ContainerFrame5Item33':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'ContainerFrame5Item33Count':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'ContainerFrame5Item33Stock':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'ContainerFrame5Item34':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'ContainerFrame5Item34Count':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'ContainerFrame5Item34Stock':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'ContainerFrame5Item35':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'ContainerFrame5Item35Count':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'ContainerFrame5Item35Stock':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'ContainerFrame5Item36':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'ContainerFrame5Item36Count':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'ContainerFrame5Item36Stock':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'ContainerFrame5Item3Count':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'ContainerFrame5Item3Stock':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'ContainerFrame5Item4':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'ContainerFrame5Item4Count':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'ContainerFrame5Item4Stock':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'ContainerFrame5Item5':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'ContainerFrame5Item5Count':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'ContainerFrame5Item5Stock':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'ContainerFrame5Item6':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'ContainerFrame5Item6Count':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'ContainerFrame5Item6Stock':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'ContainerFrame5Item7':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'ContainerFrame5Item7Count':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'ContainerFrame5Item7Stock':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'ContainerFrame5Item8':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'ContainerFrame5Item8Count':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'ContainerFrame5Item8Stock':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'ContainerFrame5Item9':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'ContainerFrame5Item9Count':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'ContainerFrame5Item9Stock':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'ContainerFrame5MoneyFrame':
+  type: Frame
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'ContainerFrame5MoneyFrameCopperButton':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'ContainerFrame5MoneyFrameCopperButtonText':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'ContainerFrame5MoneyFrameGoldButton':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'ContainerFrame5MoneyFrameGoldButtonText':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'ContainerFrame5MoneyFrameSilverButton':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'ContainerFrame5MoneyFrameSilverButtonText':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'ContainerFrame5MoneyFrameTrialErrorButton':
+  type: Frame
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'ContainerFrame5Name':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'ContainerFrame5PortraitButton':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'ContainerFrame6':
+  type: Frame
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'ContainerFrame6AddSlotsButton':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'ContainerFrame6CloseButton':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'ContainerFrame6Item1':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'ContainerFrame6Item10':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'ContainerFrame6Item10Count':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'ContainerFrame6Item10Stock':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'ContainerFrame6Item11':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'ContainerFrame6Item11Count':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'ContainerFrame6Item11Stock':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'ContainerFrame6Item12':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'ContainerFrame6Item12Count':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'ContainerFrame6Item12Stock':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'ContainerFrame6Item13':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'ContainerFrame6Item13Count':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'ContainerFrame6Item13Stock':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'ContainerFrame6Item14':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'ContainerFrame6Item14Count':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'ContainerFrame6Item14Stock':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'ContainerFrame6Item15':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'ContainerFrame6Item15Count':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'ContainerFrame6Item15Stock':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'ContainerFrame6Item16':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'ContainerFrame6Item16Count':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'ContainerFrame6Item16Stock':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'ContainerFrame6Item17':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'ContainerFrame6Item17Count':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'ContainerFrame6Item17Stock':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'ContainerFrame6Item18':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'ContainerFrame6Item18Count':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'ContainerFrame6Item18Stock':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'ContainerFrame6Item19':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'ContainerFrame6Item19Count':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'ContainerFrame6Item19Stock':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'ContainerFrame6Item1Count':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'ContainerFrame6Item1Stock':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'ContainerFrame6Item2':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'ContainerFrame6Item20':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'ContainerFrame6Item20Count':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'ContainerFrame6Item20Stock':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'ContainerFrame6Item21':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'ContainerFrame6Item21Count':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'ContainerFrame6Item21Stock':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'ContainerFrame6Item22':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'ContainerFrame6Item22Count':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'ContainerFrame6Item22Stock':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'ContainerFrame6Item23':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'ContainerFrame6Item23Count':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'ContainerFrame6Item23Stock':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'ContainerFrame6Item24':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'ContainerFrame6Item24Count':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'ContainerFrame6Item24Stock':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'ContainerFrame6Item25':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'ContainerFrame6Item25Count':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'ContainerFrame6Item25Stock':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'ContainerFrame6Item26':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'ContainerFrame6Item26Count':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'ContainerFrame6Item26Stock':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'ContainerFrame6Item27':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'ContainerFrame6Item27Count':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'ContainerFrame6Item27Stock':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'ContainerFrame6Item28':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'ContainerFrame6Item28Count':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'ContainerFrame6Item28Stock':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'ContainerFrame6Item29':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'ContainerFrame6Item29Count':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'ContainerFrame6Item29Stock':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'ContainerFrame6Item2Count':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'ContainerFrame6Item2Stock':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'ContainerFrame6Item3':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'ContainerFrame6Item30':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'ContainerFrame6Item30Count':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'ContainerFrame6Item30Stock':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'ContainerFrame6Item31':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'ContainerFrame6Item31Count':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'ContainerFrame6Item31Stock':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'ContainerFrame6Item32':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'ContainerFrame6Item32Count':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'ContainerFrame6Item32Stock':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'ContainerFrame6Item33':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'ContainerFrame6Item33Count':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'ContainerFrame6Item33Stock':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'ContainerFrame6Item34':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'ContainerFrame6Item34Count':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'ContainerFrame6Item34Stock':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'ContainerFrame6Item35':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'ContainerFrame6Item35Count':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'ContainerFrame6Item35Stock':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'ContainerFrame6Item36':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'ContainerFrame6Item36Count':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'ContainerFrame6Item36Stock':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'ContainerFrame6Item3Count':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'ContainerFrame6Item3Stock':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'ContainerFrame6Item4':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'ContainerFrame6Item4Count':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'ContainerFrame6Item4Stock':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'ContainerFrame6Item5':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'ContainerFrame6Item5Count':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'ContainerFrame6Item5Stock':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'ContainerFrame6Item6':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'ContainerFrame6Item6Count':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'ContainerFrame6Item6Stock':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'ContainerFrame6Item7':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'ContainerFrame6Item7Count':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'ContainerFrame6Item7Stock':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'ContainerFrame6Item8':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'ContainerFrame6Item8Count':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'ContainerFrame6Item8Stock':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'ContainerFrame6Item9':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'ContainerFrame6Item9Count':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'ContainerFrame6Item9Stock':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'ContainerFrame6MoneyFrame':
+  type: Frame
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'ContainerFrame6MoneyFrameCopperButton':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'ContainerFrame6MoneyFrameCopperButtonText':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'ContainerFrame6MoneyFrameGoldButton':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'ContainerFrame6MoneyFrameGoldButtonText':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'ContainerFrame6MoneyFrameSilverButton':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'ContainerFrame6MoneyFrameSilverButtonText':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'ContainerFrame6MoneyFrameTrialErrorButton':
+  type: Frame
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'ContainerFrame6Name':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'ContainerFrame6PortraitButton':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'ContainerFrame7':
+  type: Frame
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'ContainerFrame7AddSlotsButton':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'ContainerFrame7CloseButton':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'ContainerFrame7Item1':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'ContainerFrame7Item10':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'ContainerFrame7Item10Count':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'ContainerFrame7Item10Stock':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'ContainerFrame7Item11':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'ContainerFrame7Item11Count':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'ContainerFrame7Item11Stock':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'ContainerFrame7Item12':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'ContainerFrame7Item12Count':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'ContainerFrame7Item12Stock':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'ContainerFrame7Item13':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'ContainerFrame7Item13Count':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'ContainerFrame7Item13Stock':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'ContainerFrame7Item14':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'ContainerFrame7Item14Count':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'ContainerFrame7Item14Stock':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'ContainerFrame7Item15':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'ContainerFrame7Item15Count':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'ContainerFrame7Item15Stock':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'ContainerFrame7Item16':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'ContainerFrame7Item16Count':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'ContainerFrame7Item16Stock':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'ContainerFrame7Item17':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'ContainerFrame7Item17Count':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'ContainerFrame7Item17Stock':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'ContainerFrame7Item18':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'ContainerFrame7Item18Count':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'ContainerFrame7Item18Stock':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'ContainerFrame7Item19':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'ContainerFrame7Item19Count':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'ContainerFrame7Item19Stock':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'ContainerFrame7Item1Count':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'ContainerFrame7Item1Stock':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'ContainerFrame7Item2':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'ContainerFrame7Item20':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'ContainerFrame7Item20Count':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'ContainerFrame7Item20Stock':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'ContainerFrame7Item21':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'ContainerFrame7Item21Count':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'ContainerFrame7Item21Stock':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'ContainerFrame7Item22':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'ContainerFrame7Item22Count':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'ContainerFrame7Item22Stock':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'ContainerFrame7Item23':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'ContainerFrame7Item23Count':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'ContainerFrame7Item23Stock':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'ContainerFrame7Item24':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'ContainerFrame7Item24Count':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'ContainerFrame7Item24Stock':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'ContainerFrame7Item25':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'ContainerFrame7Item25Count':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'ContainerFrame7Item25Stock':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'ContainerFrame7Item26':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'ContainerFrame7Item26Count':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'ContainerFrame7Item26Stock':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'ContainerFrame7Item27':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'ContainerFrame7Item27Count':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'ContainerFrame7Item27Stock':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'ContainerFrame7Item28':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'ContainerFrame7Item28Count':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'ContainerFrame7Item28Stock':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'ContainerFrame7Item29':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'ContainerFrame7Item29Count':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'ContainerFrame7Item29Stock':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'ContainerFrame7Item2Count':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'ContainerFrame7Item2Stock':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'ContainerFrame7Item3':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'ContainerFrame7Item30':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'ContainerFrame7Item30Count':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'ContainerFrame7Item30Stock':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'ContainerFrame7Item31':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'ContainerFrame7Item31Count':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'ContainerFrame7Item31Stock':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'ContainerFrame7Item32':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'ContainerFrame7Item32Count':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'ContainerFrame7Item32Stock':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'ContainerFrame7Item33':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'ContainerFrame7Item33Count':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'ContainerFrame7Item33Stock':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'ContainerFrame7Item34':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'ContainerFrame7Item34Count':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'ContainerFrame7Item34Stock':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'ContainerFrame7Item35':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'ContainerFrame7Item35Count':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'ContainerFrame7Item35Stock':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'ContainerFrame7Item36':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'ContainerFrame7Item36Count':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'ContainerFrame7Item36Stock':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'ContainerFrame7Item3Count':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'ContainerFrame7Item3Stock':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'ContainerFrame7Item4':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'ContainerFrame7Item4Count':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'ContainerFrame7Item4Stock':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'ContainerFrame7Item5':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'ContainerFrame7Item5Count':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'ContainerFrame7Item5Stock':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'ContainerFrame7Item6':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'ContainerFrame7Item6Count':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'ContainerFrame7Item6Stock':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'ContainerFrame7Item7':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'ContainerFrame7Item7Count':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'ContainerFrame7Item7Stock':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'ContainerFrame7Item8':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'ContainerFrame7Item8Count':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'ContainerFrame7Item8Stock':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'ContainerFrame7Item9':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'ContainerFrame7Item9Count':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'ContainerFrame7Item9Stock':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'ContainerFrame7MoneyFrame':
+  type: Frame
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'ContainerFrame7MoneyFrameCopperButton':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'ContainerFrame7MoneyFrameCopperButtonText':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'ContainerFrame7MoneyFrameGoldButton':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'ContainerFrame7MoneyFrameGoldButtonText':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'ContainerFrame7MoneyFrameSilverButton':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'ContainerFrame7MoneyFrameSilverButtonText':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'ContainerFrame7MoneyFrameTrialErrorButton':
+  type: Frame
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'ContainerFrame7Name':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'ContainerFrame7PortraitButton':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'ContainerFrame8':
+  type: Frame
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'ContainerFrame8AddSlotsButton':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'ContainerFrame8CloseButton':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'ContainerFrame8Item1':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'ContainerFrame8Item10':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'ContainerFrame8Item10Count':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'ContainerFrame8Item10Stock':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'ContainerFrame8Item11':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'ContainerFrame8Item11Count':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'ContainerFrame8Item11Stock':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'ContainerFrame8Item12':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'ContainerFrame8Item12Count':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'ContainerFrame8Item12Stock':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'ContainerFrame8Item13':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'ContainerFrame8Item13Count':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'ContainerFrame8Item13Stock':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'ContainerFrame8Item14':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'ContainerFrame8Item14Count':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'ContainerFrame8Item14Stock':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'ContainerFrame8Item15':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'ContainerFrame8Item15Count':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'ContainerFrame8Item15Stock':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'ContainerFrame8Item16':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'ContainerFrame8Item16Count':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'ContainerFrame8Item16Stock':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'ContainerFrame8Item17':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'ContainerFrame8Item17Count':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'ContainerFrame8Item17Stock':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'ContainerFrame8Item18':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'ContainerFrame8Item18Count':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'ContainerFrame8Item18Stock':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'ContainerFrame8Item19':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'ContainerFrame8Item19Count':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'ContainerFrame8Item19Stock':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'ContainerFrame8Item1Count':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'ContainerFrame8Item1Stock':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'ContainerFrame8Item2':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'ContainerFrame8Item20':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'ContainerFrame8Item20Count':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'ContainerFrame8Item20Stock':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'ContainerFrame8Item21':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'ContainerFrame8Item21Count':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt

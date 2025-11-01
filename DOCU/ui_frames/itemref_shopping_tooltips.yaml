@@ -1,0 +1,68 @@
+# Auto-generated from DOCU/NOD_Konzept_Funktionsliste.txt
+# Category: itemref_shopping_tooltips
+# Description: Auto-generated group for prefix "itemrefshoppingtooltip".
+
+'ItemRefShoppingTooltip1TextLeft1':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'ItemRefShoppingTooltip1TextLeft2':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'ItemRefShoppingTooltip1TextLeft3':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'ItemRefShoppingTooltip1TextLeft4':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'ItemRefShoppingTooltip1TextRight1':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'ItemRefShoppingTooltip1TextRight2':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'ItemRefShoppingTooltip1TextRight3':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'ItemRefShoppingTooltip1TextRight4':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'ItemRefShoppingTooltip2TextLeft1':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'ItemRefShoppingTooltip2TextLeft2':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'ItemRefShoppingTooltip2TextLeft3':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'ItemRefShoppingTooltip2TextLeft4':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'ItemRefShoppingTooltip2TextRight1':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'ItemRefShoppingTooltip2TextRight2':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'ItemRefShoppingTooltip2TextRight3':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'ItemRefShoppingTooltip2TextRight4':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt

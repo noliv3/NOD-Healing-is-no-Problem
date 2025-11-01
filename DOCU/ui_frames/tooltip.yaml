@@ -1,0 +1,416 @@
+# Auto-generated from DOCU/NOD_Konzept_Funktionsliste.txt
+# Category: tooltip
+# Description: Tooltip overlays and comparison tooltip helpers.
+
+'BattlePetTooltip':
+  type: Frame
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'EmbeddedItemTooltipStatusBar':
+  type: StatusBar
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'EmbeddedItemTooltipTextLeft1':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'EmbeddedItemTooltipTextLeft2':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'EmbeddedItemTooltipTextLeft3':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'EmbeddedItemTooltipTextLeft4':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'EmbeddedItemTooltipTextLeft5':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'EmbeddedItemTooltipTextLeft6':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'EmbeddedItemTooltipTextLeft7':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'EmbeddedItemTooltipTextLeft8':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'EmbeddedItemTooltipTextRight1':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'EmbeddedItemTooltipTextRight2':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'EmbeddedItemTooltipTextRight3':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'EmbeddedItemTooltipTextRight4':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'EmbeddedItemTooltipTextRight5':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'EmbeddedItemTooltipTextRight6':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'EmbeddedItemTooltipTextRight7':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'EmbeddedItemTooltipTextRight8':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'EmbeddedItemTooltipTooltipStatusBar':
+  type: StatusBar
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'EmbeddedItemTooltipTooltipTextLeft1':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'EmbeddedItemTooltipTooltipTextLeft2':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'EmbeddedItemTooltipTooltipTextLeft3':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'EmbeddedItemTooltipTooltipTextLeft4':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'EmbeddedItemTooltipTooltipTextLeft5':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'EmbeddedItemTooltipTooltipTextLeft6':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'EmbeddedItemTooltipTooltipTextLeft7':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'EmbeddedItemTooltipTooltipTextLeft8':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'EmbeddedItemTooltipTooltipTextRight1':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'EmbeddedItemTooltipTooltipTextRight2':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'EmbeddedItemTooltipTooltipTextRight3':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'EmbeddedItemTooltipTooltipTextRight4':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'EmbeddedItemTooltipTooltipTextRight5':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'EmbeddedItemTooltipTooltipTextRight6':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'EmbeddedItemTooltipTooltipTextRight7':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'EmbeddedItemTooltipTooltipTextRight8':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'FloatingBattlePetTooltip':
+  type: Frame
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'GameTooltipStatusBar':
+  type: StatusBar
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'GameTooltipTextLeft1':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'GameTooltipTextLeft2':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'GameTooltipTextLeft3':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'GameTooltipTextLeft4':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'GameTooltipTextLeft5':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'GameTooltipTextLeft6':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'GameTooltipTextLeft7':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'GameTooltipTextLeft8':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'GameTooltipTextRight1':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'GameTooltipTextRight2':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'GameTooltipTextRight3':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'GameTooltipTextRight4':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'GameTooltipTextRight5':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'GameTooltipTextRight6':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'GameTooltipTextRight7':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'GameTooltipTextRight8':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'ItemRefTooltipStatusBar':
+  type: StatusBar
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'ItemRefTooltipTextLeft1':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'ItemRefTooltipTextLeft2':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'ItemRefTooltipTextLeft3':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'ItemRefTooltipTextLeft4':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'ItemRefTooltipTextLeft5':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'ItemRefTooltipTextLeft6':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'ItemRefTooltipTextLeft7':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'ItemRefTooltipTextLeft8':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'ItemRefTooltipTextRight1':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'ItemRefTooltipTextRight2':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'ItemRefTooltipTextRight3':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'ItemRefTooltipTextRight4':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'ItemRefTooltipTextRight5':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'ItemRefTooltipTextRight6':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'ItemRefTooltipTextRight7':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'ItemRefTooltipTextRight8':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'NamePlateTooltipStatusBar':
+  type: StatusBar
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'NamePlateTooltipTextLeft1':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'NamePlateTooltipTextLeft2':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'NamePlateTooltipTextLeft3':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'NamePlateTooltipTextLeft4':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'NamePlateTooltipTextLeft5':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'NamePlateTooltipTextLeft6':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'NamePlateTooltipTextLeft7':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'NamePlateTooltipTextLeft8':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'NamePlateTooltipTextRight1':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'NamePlateTooltipTextRight2':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'NamePlateTooltipTextRight3':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'NamePlateTooltipTextRight4':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'NamePlateTooltipTextRight5':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'NamePlateTooltipTextRight6':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'NamePlateTooltipTextRight7':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'NamePlateTooltipTextRight8':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'ShoppingTooltip1TextLeft1':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'ShoppingTooltip1TextLeft2':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'ShoppingTooltip1TextLeft3':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'ShoppingTooltip1TextLeft4':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'ShoppingTooltip1TextRight1':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'ShoppingTooltip1TextRight2':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'ShoppingTooltip1TextRight3':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'ShoppingTooltip1TextRight4':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'ShoppingTooltip2TextLeft1':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'ShoppingTooltip2TextLeft2':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'ShoppingTooltip2TextLeft3':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'ShoppingTooltip2TextLeft4':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'ShoppingTooltip2TextRight1':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'ShoppingTooltip2TextRight2':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'ShoppingTooltip2TextRight3':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'ShoppingTooltip2TextRight4':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt

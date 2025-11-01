@@ -1,0 +1,32 @@
+## Interface: 100200
+## Title: NOD-Heal
+## Notes: Predictive healing framework for Mists of Pandaria Classic.
+## Author: NOD Team
+## Version: 0.1.0
+## SavedVariables: NODHealDB
+
+# Config
+Config/Defaults.lua
+
+# Libraries
+Libs/LibHealComm-4.0/LibHealComm-4.0.lua
+
+# Core
+Core/Init.lua
+Core/CoreDispatcher.lua
+Core/LatencyTools.lua
+Core/HealthSnapshot.lua
+Core/EffectiveHP.lua
+Core/HealValueEstimator.lua
+Core/IncomingHeals.lua
+Core/IncomingHealAggregator.lua
+Core/CastLandingTime.lua
+Core/CastTiming.lua
+Core/DamagePrediction.lua
+Core/AuraTickPredictor.lua
+Core/DesyncGuard.lua
+Core/PredictiveSolver.lua
+
+# UI
+UI/Init.lua
+UI/Overlay.lua

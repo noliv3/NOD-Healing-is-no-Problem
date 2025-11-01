@@ -1,0 +1,1688 @@
+# Auto-generated from DOCU/NOD_Konzept_Funktionsliste.txt
+# Category: unsorted
+# Description: Entries without a dominant prefix grouping (<=500).
+
+'$textureTrainBook':
+  type: Frame
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'ActionStatus':
+  type: Frame
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'ActionStatusText':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'AlertFrame':
+  type: Frame
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'AlertFrameSystemsRegistrar':
+  type: Frame
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'ArtifactRelicHelpBox':
+  type: Frame
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'AutoCastShineManager':
+  type: Frame
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'AutoCompleteBox':
+  type: Frame
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'AutoCompleteInstructions':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'AutoFollowStatus':
+  type: Frame
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'AutoFollowStatusText':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'AvailableQuestsText':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'AzeriteItemInBagHelpBox':
+  type: Frame
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'Background':
+  type: Frame
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'BankItemSearchBox':
+  type: EditBox
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'BankItemSearchBoxClearButton':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'BankSlotsFrame':
+  type: Frame
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'BankSlotsFrameCount':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'BankSlotsFrameHighlightFrame':
+  type: Frame
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'BankSlotsFrameStock':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'BasicMessageDialog':
+  type: Frame
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'BasicMessageDialogButton':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'BrowserSettingsTooltip':
+  type: Frame
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'BrowserSettingsTooltipText':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'BuffFrame':
+  type: Frame
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'COMBATLOG':
+  type: Frame
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'CVarCallbackRegistry':
+  type: Frame
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'CinematicFrame':
+  type: Frame
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'CinematicFrameCloseDialog':
+  type: Frame
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'CinematicFrameCloseDialogConfirmButton':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'CinematicFrameCloseDialogResumeButton':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'CinematicFrameCloseDialogText':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'CinematicFrameRaidBossEmoteFrame':
+  type: Frame
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'CinematicFrameRaidBossEmoteFrameSlot1':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'CinematicFrameRaidBossEmoteFrameSlot2':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'ClubFinderCommunityAndGuildFinderFrame':
+  type: Frame
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'ClubFinderCommunityAndGuildFinderFrameClearButton':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'ClubFinderCommunityAndGuildFinderFrameText':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'ClubFinderGuildFinderFrame':
+  type: Frame
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'ClubFinderGuildFinderFrameClearButton':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'ClubFinderGuildFinderFrameText':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'CoinPickupCancelButton':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'CoinPickupCancelButtonText':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'CoinPickupFrame':
+  type: Frame
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'CoinPickupLabel':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'CoinPickupLeftButton':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'CoinPickupOkayButton':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'CoinPickupOkayButtonText':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'CoinPickupRightButton':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'CoinPickupText':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'CollectionsMicroButton':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'CommunitiesAvatarPickerDialog':
+  type: Frame
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'CommunitiesAvatarPickerDialogText':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'CommunitiesSettingsDialog':
+  type: Frame
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'CommunitiesSettingsDialogText':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'CommunitiesTicketManagerDialog':
+  type: Frame
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'CommunitiesTicketManagerDialogText':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'ConsolidatedBuffs':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'ConsolidatedBuffsContainer':
+  type: Frame
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'ConsolidatedBuffsCount':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'ConsolidatedBuffsDuration':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'ConsolidatedBuffsTooltip':
+  type: Frame
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'CreateChannelPopup':
+  type: Frame
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'CreateChannelPopupText':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'CurrentQuestsText':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'DEFAULT_CHAT_FRAME':
+  type: Frame
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'DemonicFuryBarFrame':
+  type: Frame
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'DemonicFuryBarFramePowertext':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'DestinyAllianceButton':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'DestinyFrame':
+  type: Frame
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'DestinyFrameAllianceFinalText':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'DestinyFrameAllianceLabel':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'DestinyFrameAllianceText':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'DestinyFrameHordeFinalText':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'DestinyFrameHordeLabel':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'DestinyFrameHordeText':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'DestinyHordeButton':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'DeveloperConsole':
+  type: Frame
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'DressUpFrame':
+  type: Frame
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'DressUpFrameCancelButton':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'DressUpFrameCancelButtonText':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'DressUpFrameCloseButton':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'DressUpFrameDescriptionText':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'DressUpFrameInset':
+  type: Frame
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'DressUpFrameResetButton':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'DressUpFrameResetButtonText':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'DressUpFrameTitleText':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'DressUpModelFrameRotateLeftButton':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'DressUpModelFrameRotateRightButton':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'DurabilityFrame':
+  type: Frame
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'EJMicroButton':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'EclipseBarFrame':
+  type: Frame
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'EclipseBarFramePowertext':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'EmptyQuestLogFrame':
+  type: Frame
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'ExhaustionTick':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'FactionMouseOver':
+  type: Frame
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'FloatingChatFrameManager':
+  type: Frame
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'FloatingPetBattleAbilityTooltip':
+  type: Frame
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'FramerateLabel':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'FramerateText':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'GENERAL_CHAT_DOCK':
+  type: Frame
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'GameMenuButtonAddons':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'GameMenuButtonAddonsText':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'GameMenuButtonContinue':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'GameMenuButtonContinueText':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'GameMenuButtonHelp':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'GameMenuButtonHelpText':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'GameMenuButtonLogout':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'GameMenuButtonLogoutText':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'GameMenuButtonMacros':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'GameMenuButtonMacrosText':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'GameMenuButtonOptions':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'GameMenuButtonOptionsText':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'GameMenuButtonQuit':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'GameMenuButtonQuitText':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'GameMenuButtonRatings':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'GameMenuButtonRatingsText':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'GameMenuButtonStore':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'GameMenuButtonStoreText':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'GameMenuFrame':
+  type: Frame
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'GameTimeFrame':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'GearManagerPopupFrame':
+  type: Frame
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'GearManagerPopupFrameText':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'GeneralDockManager':
+  type: Frame
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'GeneralDockManagerOverflowButton':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'GeneralDockManagerOverflowButtonList':
+  type: Frame
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'GeneralDockManagerOverflowButtonListNumTabs':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'GeneralDockManagerScrollFrameChild':
+  type: Frame
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'GhostFrame':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'GhostFrameContentsFrame':
+  type: Frame
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'GhostFrameContentsFrameText':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'GossipFrame':
+  type: Frame
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'GossipFrameCloseButton':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'GossipFrameInset':
+  type: Frame
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'GossipFrameText':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'GossipFrameTitleText':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'GreetingText':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'HelpFrame':
+  type: Frame
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'HelpFrameTitleText':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'HelpMicroButton':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'HelpOpenWebTicketButton':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'HelpPlateCanvas':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'HelpPlateTooltip':
+  type: Frame
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'IMECandidatesFrame':
+  type: Frame
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'IconIntroTracker':
+  type: Frame
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'IgnoreListFrame':
+  type: Frame
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'ItemRefCloseButton':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'ItemTextCurrentPage':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'ItemTextFrame':
+  type: Frame
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'ItemTextFrameCloseButton':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'ItemTextFrameInset':
+  type: Frame
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'ItemTextFrameTitleText':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'ItemTextNextPageButton':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'ItemTextPageScrollChild':
+  type: Frame
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'ItemTextPrevPageButton':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'ItemTextScrollFrameScrollBarScrollDownButton':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'ItemTextScrollFrameScrollBarScrollUpButton':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'ItemTextStatusBar':
+  type: StatusBar
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'ItemTextTitleText':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'JumpToUnreadButton':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'JumpToUnreadButtonText':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'KeybindListener':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'LAST_ACTIVE_CHAT_EDIT_BOX':
+  type: EditBox
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'LossOfControlFrame':
+  type: Frame
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'LowHealthFrame':
+  type: Frame
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'MasterLooterFrame':
+  type: Frame
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'MiniMapBattlefieldFrame':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'MiniMapBattlefieldFrameGroupSize':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'MiniMapBattlefieldFrameIcon':
+  type: Frame
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'MiniMapChallengeMode':
+  type: Frame
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'MiniMapInstanceDifficulty':
+  type: Frame
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'MiniMapInstanceDifficultyText':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'MiniMapLFGFrame':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'MiniMapLFGFrameIcon':
+  type: Frame
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'MiniMapMailFrame':
+  type: Frame
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'MiniMapTracking':
+  type: Frame
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'MiniMapTrackingButton':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'MiniMapWorldMapButton':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'MiniWorldMapTitle':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'ModelPanningFrame':
+  type: Frame
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'ModelPreviewFrame':
+  type: Frame
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'ModelPreviewFrameCloseButton':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'ModelPreviewFrameCloseButtonText':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'ModelPreviewFrameInset':
+  type: Frame
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'ModelPreviewFrameTitleText':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'MonkStaggerBar':
+  type: StatusBar
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'MonkStaggerBarText':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'NOD_ControlPanel':
+  type: Frame
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'NOD_ControlPanelText':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'OfficerNoteText':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'OpacityFrame':
+  type: Frame
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'OpacityFrameCloseButton':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'OpacityFrameSliderText':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'OpacitySliderFrameText':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'OpenAllMail':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'OpenAllMailText':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'PersonalNoteText':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'PetCastingBarFrame':
+  type: StatusBar
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'PetHitIndicator':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'PetLevelText':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'PetModelFrameRotateLeftButton':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'PetModelFrameRotateRightButton':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'PetModelFrameShadowOverlay':
+  type: Frame
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'PetName':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'PetPaperDollFrame':
+  type: Frame
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'PetPaperDollFrameExpBar':
+  type: StatusBar
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'PetPaperDollFrameExpBarText':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'PetPaperDollPetInfo':
+  type: Frame
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'PlayerBuffTimerManager':
+  type: Frame
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'PlayerHitIndicator':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'PlayerInteractionFrameManager':
+  type: Frame
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'PlayerLevelText':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'PlayerName':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'PlayerPVPIconHitArea':
+  type: Frame
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'PlayerPVPTimerText':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'PlayerPlayTime':
+  type: Frame
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'PlayerReportFrame':
+  type: Frame
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'PlayerReportFrameScrollBarScrollDownButton':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'PlayerReportFrameScrollBarScrollUpButton':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'PlayerReportFrameText':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'PlayerStatusGlow':
+  type: Frame
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'ProductChoiceFrame':
+  type: Frame
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'ProductChoiceFrameCloseButton':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'ProductChoiceFrameText':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'ProductChoiceFrameTitleText':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'QueueUpdater':
+  type: Frame
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'RatingMenuButtonOkay':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'RatingMenuButtonOkayText':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'RatingMenuFrame':
+  type: Frame
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'RatingMenuFrameText':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'ReadyCheckFrame':
+  type: Frame
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'ReadyCheckFrameNoButton':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'ReadyCheckFrameNoButtonText':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'ReadyCheckFrameText':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'ReadyCheckFrameYesButton':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'ReadyCheckFrameYesButtonText':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'ReadyCheckListenerFrame':
+  type: Frame
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'RegistrationText':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'ReportCheatingDialog':
+  type: Frame
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'ReportCheatingDialogCancelButton':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'ReportCheatingDialogCancelButtonText':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'ReportCheatingDialogCommentFrame':
+  type: Frame
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'ReportCheatingDialogCommentFrameEditBox':
+  type: EditBox
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'ReportCheatingDialogReportButton':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'ReportCheatingDialogReportButtonText':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'ReportCheatingDialogText1':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'ReportCheatingDialogTitle':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'ReportFrame':
+  type: Frame
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'ReportFrameText':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'ReputationDetailAtWarCheckboxText':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'ReputationDetailCloseButton':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'ReputationDetailFactionDescription':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'ReputationDetailFactionName':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'ReputationDetailFrame':
+  type: Frame
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'ReputationDetailInactiveCheckboxText':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'ReputationDetailMainScreenCheckboxText':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'ReputationListScrollFrameScrollBarScrollDownButton':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'ReputationListScrollFrameScrollBarScrollUpButton':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'ReputationListScrollFrameScrollChildFrame':
+  type: Frame
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'ReputationWatchBar':
+  type: Frame
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'RoleChangedFrame':
+  type: Frame
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'RolePollPopup':
+  type: Frame
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'RolePollPopupAcceptButton':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'RolePollPopupAcceptButtonText':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'RolePollPopupCloseButton':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'RolePollPopupRoleButtonDPS':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'RolePollPopupRoleButtonHealer':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'RolePollPopupRoleButtonTank':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'SELECTED_CHAT_FRAME':
+  type: Frame
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'SELECTED_DOCK_FRAME':
+  type: Frame
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'ScenarioFinderFrame':
+  type: Frame
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'ScenarioFinderFrameInset':
+  type: Frame
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'SecureHoverDriverManager':
+  type: Frame
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'SecureStateDriverManager':
+  type: Frame
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'SideDressUpFrame':
+  type: Frame
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'SideDressUpModelCloseButton':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'SideDressUpModelControlFrame':
+  type: Frame
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'SideDressUpModelControlFramePanButton':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'SideDressUpModelControlFrameRotateLeftButton':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'SideDressUpModelControlFrameRotateResetButton':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'SideDressUpModelControlFrameRotateRightButton':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'SideDressUpModelControlFrameZoomInButton':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'SideDressUpModelControlFrameZoomOutButton':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'SideDressUpModelResetButton':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'SideDressUpModelResetButtonText':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'SkillDetailCostText':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'SkillDetailDescriptionText':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'SkillDetailScrollChildFrame':
+  type: Frame
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'SkillDetailScrollFrameScrollBarScrollDownButton':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'SkillDetailScrollFrameScrollBarScrollUpButton':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'SkillDetailStatusBar':
+  type: StatusBar
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'SkillDetailStatusBarSkillName':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'SkillDetailStatusBarSkillRank':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'SkillDetailStatusBarUnlearnButton':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'SkillFrame':
+  type: Frame
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'SkillFrameCancelButton':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'SkillFrameCancelButtonText':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'SkillFrameCollapseAllButton':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'SkillFrameCollapseAllButtonText':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'SkillFrameExpandButtonFrame':
+  type: Frame
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'SkillListScrollFrameScrollBarScrollDownButton':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'SkillListScrollFrameScrollBarScrollUpButton':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'SkillListScrollFrameScrollChildFrame':
+  type: Frame
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'SmallTextTooltip':
+  type: Frame
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'SmallTextTooltipText':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'SocialsMicroButton':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'SparkleFrame':
+  type: Frame
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'SpellActivationOverlayFrame':
+  type: Frame
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'StackSplitCancelButton':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'StackSplitCancelButtonText':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'StackSplitFrame':
+  type: Frame
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'StackSplitLeftButton':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'StackSplitOkayButton':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'StackSplitOkayButtonText':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'StackSplitRightButton':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'StackSplitText':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'StandingMouseOver':
+  type: Frame
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'StartSplash':
+  type: Frame
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'StartSplashBattleText':
+  type: Frame
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'StartSplashBattleTextBattlePetReachedText':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'StartSplashTexture':
+  type: Frame
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'StopwatchCloseButton':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'StopwatchFrame':
+  type: Frame
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'StopwatchPlayPauseButton':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'StopwatchResetButton':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'StopwatchTabFrame':
+  type: Frame
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'StopwatchTicker':
+  type: Frame
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'StopwatchTickerHour':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'StopwatchTickerMinute':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'StopwatchTickerSecond':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'StopwatchTitle':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'StoreMicroButton':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'StorePreviewFrame':
+  type: Frame
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'StreamingIcon':
+  type: Frame
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'StreamingIconFrame':
+  type: Frame
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'StreamingIconSpin':
+  type: Frame
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'SubZoneTextFrame':
+  type: Frame
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'SubZoneTextString':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'SubtitlesFrame':
+  type: Frame
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'TabardCharacterModelRotateLeftButton':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'TabardCharacterModelRotateRightButton':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'TabardFrame':
+  type: Frame
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'TabardFrameAcceptButton':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'TabardFrameAcceptButtonText':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'TabardFrameCancelButton':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'TabardFrameCancelButtonText':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'TabardFrameCloseButton':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'TabardFrameCostFrame':
+  type: Frame
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'TabardFrameCostLabel':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'TabardFrameCostMoneyFrame':
+  type: Frame
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'TabardFrameCostMoneyFrameCopperButton':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'TabardFrameCostMoneyFrameCopperButtonText':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'TabardFrameCostMoneyFrameGoldButton':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'TabardFrameCostMoneyFrameGoldButtonText':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'TabardFrameCostMoneyFrameSilverButton':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'TabardFrameCostMoneyFrameSilverButtonText':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'TabardFrameCostMoneyFrameTrialErrorButton':
+  type: Frame
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'TabardFrameCustomizationFrame':
+  type: Frame
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'TabardFrameGreetingText':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'TabardFrameInset':
+  type: Frame
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'TabardFrameMoneyBg':
+  type: Frame
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'TabardFrameMoneyFrame':
+  type: Frame
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'TabardFrameMoneyFrameCopperButton':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'TabardFrameMoneyFrameCopperButtonText':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'TabardFrameMoneyFrameGoldButton':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'TabardFrameMoneyFrameGoldButtonText':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'TabardFrameMoneyFrameSilverButton':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'TabardFrameMoneyFrameSilverButtonText':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'TabardFrameMoneyFrameTrialErrorButton':
+  type: Frame
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'TabardFrameMoneyInset':
+  type: Frame
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'TabardFrameNameText':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'TabardFrameTitleText':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'TaxiFrame':
+  type: Frame
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'TaxiRouteMap':
+  type: Frame
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'TemporaryEnchantFrame':
+  type: Frame
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'TicketStatusFrame':
+  type: Frame
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'TicketStatusFrameButton':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'TicketStatusTime':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'TicketStatusTitleText':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'TimeAlertFrame':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'TimeAlertFrameText':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'TimeManagerAlarmEnabledButtonText':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'TimeManagerAlarmMessageEditBox':
+  type: EditBox
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'TimeManagerAlarmMessageFrame':
+  type: Frame
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'TimeManagerAlarmMessageLabel':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'TimeManagerAlarmTimeFrame':
+  type: Frame
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'TimeManagerAlarmTimeLabel':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'TimeManagerClockButton':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'TimeManagerClockTicker':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'TimeManagerFrame':
+  type: Frame
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'TimeManagerFrameCloseButton':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'TimeManagerFrameInset':
+  type: Frame
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'TimeManagerFrameTicker':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'TimeManagerFrameTitleText':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'TimeManagerLocalTimeCheckText':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'TimeManagerMilitaryTimeCheckText':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'TimeManagerStopwatchFrame':
+  type: Frame
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'TimeManagerStopwatchFrameText':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'TimerTracker':
+  type: Frame
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'TradeHighlightPlayer':
+  type: Frame
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'TradeHighlightPlayerEnchant':
+  type: Frame
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'TradeHighlightRecipient':
+  type: Frame
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'TradeHighlightRecipientEnchant':
+  type: Frame
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'TutorialFrame':
+  type: Frame
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'TutorialFrameCheckButtonText':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'TutorialFrameCheckboxText':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'TutorialFrameOkayButton':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'TutorialFrameParent':
+  type: Frame
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'TutorialFrameText':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'TutorialFrameTitle':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'UIWidgetBelowMinimapContainerFrame':
+  type: Frame
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'UIWidgetCenterDisplayFrame':
+  type: Frame
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'UIWidgetCenterDisplayFrameText':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'UIWidgetManager':
+  type: Frame
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'UIWidgetTopCenterContainerFrame':
+  type: Frame
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'VerticalMultiBarsContainer':
+  type: Frame
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'WarlockPowerFrame':
+  type: Frame
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'WhoListScrollFrameScrollBarScrollDownButton':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'WhoListScrollFrameScrollBarScrollUpButton':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'WhoListScrollFrameScrollChildFrame':
+  type: Frame
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'parentLabel':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt

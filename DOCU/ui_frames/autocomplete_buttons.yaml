@@ -1,0 +1,44 @@
+# Auto-generated from DOCU/NOD_Konzept_Funktionsliste.txt
+# Category: autocomplete_buttons
+# Description: Auto-generated group for prefix "autocompletebutton".
+
+'AutoCompleteButton1':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'AutoCompleteButton1Text':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'AutoCompleteButton2':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'AutoCompleteButton2Text':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'AutoCompleteButton3':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'AutoCompleteButton3Text':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'AutoCompleteButton4':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'AutoCompleteButton4Text':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'AutoCompleteButton5':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'AutoCompleteButton5Text':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt

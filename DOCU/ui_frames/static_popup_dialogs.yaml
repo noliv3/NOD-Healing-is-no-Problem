@@ -1,0 +1,452 @@
+# Auto-generated from DOCU/NOD_Konzept_Funktionsliste.txt
+# Category: static_popup_dialogs
+# Description: Auto-generated group for prefix "staticpopup".
+
+'StaticPopup1':
+  type: Frame
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'StaticPopup1Button1':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'StaticPopup1Button1Text':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'StaticPopup1Button2':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'StaticPopup1Button2Text':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'StaticPopup1Button3':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'StaticPopup1Button3Text':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'StaticPopup1Button4':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'StaticPopup1Button4Text':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'StaticPopup1CloseButton':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'StaticPopup1Count':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'StaticPopup1EditBox':
+  type: EditBox
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'StaticPopup1ExtraButton':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'StaticPopup1ExtraButtonText':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'StaticPopup1MoneyFrame':
+  type: Frame
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'StaticPopup1MoneyFrameCopperButton':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'StaticPopup1MoneyFrameCopperButtonText':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'StaticPopup1MoneyFrameGoldButton':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'StaticPopup1MoneyFrameGoldButtonText':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'StaticPopup1MoneyFrameSilverButton':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'StaticPopup1MoneyFrameSilverButtonText':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'StaticPopup1MoneyFrameTrialErrorButton':
+  type: Frame
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'StaticPopup1MoneyInputFrame':
+  type: Frame
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'StaticPopup1MoneyInputFrameCopper':
+  type: EditBox
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'StaticPopup1MoneyInputFrameGold':
+  type: EditBox
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'StaticPopup1MoneyInputFrameSilver':
+  type: EditBox
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'StaticPopup1Stock':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'StaticPopup1Text':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'StaticPopup2':
+  type: Frame
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'StaticPopup2Button1':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'StaticPopup2Button1Text':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'StaticPopup2Button2':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'StaticPopup2Button2Text':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'StaticPopup2Button3':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'StaticPopup2Button3Text':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'StaticPopup2Button4':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'StaticPopup2Button4Text':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'StaticPopup2CloseButton':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'StaticPopup2Count':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'StaticPopup2EditBox':
+  type: EditBox
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'StaticPopup2ExtraButton':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'StaticPopup2ExtraButtonText':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'StaticPopup2MoneyFrame':
+  type: Frame
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'StaticPopup2MoneyFrameCopperButton':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'StaticPopup2MoneyFrameCopperButtonText':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'StaticPopup2MoneyFrameGoldButton':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'StaticPopup2MoneyFrameGoldButtonText':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'StaticPopup2MoneyFrameSilverButton':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'StaticPopup2MoneyFrameSilverButtonText':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'StaticPopup2MoneyFrameTrialErrorButton':
+  type: Frame
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'StaticPopup2MoneyInputFrame':
+  type: Frame
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'StaticPopup2MoneyInputFrameCopper':
+  type: EditBox
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'StaticPopup2MoneyInputFrameGold':
+  type: EditBox
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'StaticPopup2MoneyInputFrameSilver':
+  type: EditBox
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'StaticPopup2Stock':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'StaticPopup2Text':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'StaticPopup3':
+  type: Frame
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'StaticPopup3Button1':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'StaticPopup3Button1Text':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'StaticPopup3Button2':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'StaticPopup3Button2Text':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'StaticPopup3Button3':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'StaticPopup3Button3Text':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'StaticPopup3Button4':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'StaticPopup3Button4Text':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'StaticPopup3CloseButton':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'StaticPopup3Count':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'StaticPopup3EditBox':
+  type: EditBox
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'StaticPopup3ExtraButton':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'StaticPopup3ExtraButtonText':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'StaticPopup3MoneyFrame':
+  type: Frame
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'StaticPopup3MoneyFrameCopperButton':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'StaticPopup3MoneyFrameCopperButtonText':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'StaticPopup3MoneyFrameGoldButton':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'StaticPopup3MoneyFrameGoldButtonText':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'StaticPopup3MoneyFrameSilverButton':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'StaticPopup3MoneyFrameSilverButtonText':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'StaticPopup3MoneyFrameTrialErrorButton':
+  type: Frame
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'StaticPopup3MoneyInputFrame':
+  type: Frame
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'StaticPopup3MoneyInputFrameCopper':
+  type: EditBox
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'StaticPopup3MoneyInputFrameGold':
+  type: EditBox
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'StaticPopup3MoneyInputFrameSilver':
+  type: EditBox
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'StaticPopup3Stock':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'StaticPopup3Text':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'StaticPopup4':
+  type: Frame
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'StaticPopup4Button1':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'StaticPopup4Button1Text':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'StaticPopup4Button2':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'StaticPopup4Button2Text':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'StaticPopup4Button3':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'StaticPopup4Button3Text':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'StaticPopup4Button4':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'StaticPopup4Button4Text':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'StaticPopup4CloseButton':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'StaticPopup4Count':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'StaticPopup4EditBox':
+  type: EditBox
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'StaticPopup4ExtraButton':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'StaticPopup4ExtraButtonText':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'StaticPopup4MoneyFrame':
+  type: Frame
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'StaticPopup4MoneyFrameCopperButton':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'StaticPopup4MoneyFrameCopperButtonText':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'StaticPopup4MoneyFrameGoldButton':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'StaticPopup4MoneyFrameGoldButtonText':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'StaticPopup4MoneyFrameSilverButton':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'StaticPopup4MoneyFrameSilverButtonText':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'StaticPopup4MoneyFrameTrialErrorButton':
+  type: Frame
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'StaticPopup4MoneyInputFrame':
+  type: Frame
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'StaticPopup4MoneyInputFrameCopper':
+  type: EditBox
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'StaticPopup4MoneyInputFrameGold':
+  type: EditBox
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'StaticPopup4MoneyInputFrameSilver':
+  type: EditBox
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'StaticPopup4Stock':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'StaticPopup4Text':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt

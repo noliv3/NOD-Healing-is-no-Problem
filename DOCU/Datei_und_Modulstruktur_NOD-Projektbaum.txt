@@ -1,0 +1,38 @@
+1. 🔑 Technisches Modul-Template (Startgerüst)
+
+Ziel: Ein sauberes Addon-Grundgerüst mit strukturierter Verzeichnis- und Dateilogik für:
+
+NOD_Backend/ (Core-Module als Lua-Dateien)
+
+NOD_GUI/ (Frames, ClickCast, Overlays)
+
+NOD_Config/ (Einstellungen, SavedVariables)
+
+NOD.toc mit richtiger Lade-Reihenfolge
+
+Zusatz: Setup für LibHealComm-Einbindung + Event-Handler-Dispatcher als zentrale Schnittstelle
+
+✅ Ergebnis: Projekt ist lauffähig und klar modularisiert.
+
+2. 🧪 Entwicklungs-Testprofil
+
+Test-Mockups (Dummy-UnitFrames)
+
+Simulierter T_land + Fake-Cast + Overlay-Test
+
+Eingeschränkter Modus, ohne Gruppe nutzbar
+
+✅ Damit lässt sich das Backend in isolierter Umgebung überprüfen – ideal für schrittweisen Aufbau.
+
+3. 🧭 Projektsteuerung & Buildplan (optional)
+
+Milestones & Priorität:
+
+Welle 1 (Health, Cast, IncHeals, Solver)
+
+Welle 2 (Overlay, ClickCast, Absorb/HoT)
+
+Welle 3 (Cluster, Damage-EMA, SimMode)
+
+ToDo-Tabelle / Git-Struktur / Issues
+(z. B. „PredictiveSolver.lua fertig – Tests fehlen noch“)

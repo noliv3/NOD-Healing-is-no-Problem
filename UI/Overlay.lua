@@ -1,0 +1,183 @@
+local NODHeal = _G.NODHeal or {}
+local UnitExists = UnitExists
+local UnitGUID = UnitGUID
+local UnitHealth = UnitHealth
+local UnitHealthMax = UnitHealthMax
+local UnitGetIncomingHeals = UnitGetIncomingHeals
+local GetTime = GetTime
+local CompactUnitFrame_UpdateHealth = CompactUnitFrame_UpdateHealth
+local hooksecurefunc = hooksecurefunc
+
+local UI = (NODHeal.GetModule and NODHeal:GetModule("UI")) or NODHeal.UI or {}
+NODHeal.UI = UI
+
+local function getConfig()
+    return (NODHeal and NODHeal.Config) or {}
+end
+
+UI.barByFrame = UI.barByFrame or {}
+
+local function ensureBar(frame)
+    local existing = UI.barByFrame[frame]
+    if existing then
+        return existing
+    end
+
+    local hb = frame.healthBar or frame.healthbar or frame.health
+    if not hb then
+        return nil
+    end
+
+    local tex = hb:CreateTexture(nil, "OVERLAY")
+    tex:SetPoint("LEFT", hb, "LEFT", 0, 0)
+    tex:SetHeight(hb:GetHeight() or 0)
+    tex:SetColorTexture(0, 1, 0, 0.35)
+    tex:SetWidth(0)
+    tex:Hide()
+
+    UI.barByFrame[frame] = tex
+    return tex
+end
+
+local function hideBar(frame)
+    local tex = UI.barByFrame[frame]
+    if tex then
+        tex:SetWidth(0)
+        tex:Hide()
+    end
+end
+
+local function isOverlayEnabled()
+    local cfg = getConfig()
+    return cfg.overlay ~= false
+end
+
+local function fetchIncoming(unit, guid, horizon)
+    local incoming = 0
+    local core = NODHeal.Core
+    local provider = core and core.Incoming
+    if provider and provider.GetIncomingForGUID then
+        local ok, value = pcall(provider.GetIncomingForGUID, provider, guid, horizon)
+        if ok and type(value) == "number" then
+            incoming = value
+        end
+    end
+
+    if incoming <= 0 then
+        incoming = UnitGetIncomingHeals and UnitGetIncomingHeals(unit) or 0
+    end
+
+    return incoming or 0
+end
+
+local function showProjection(frame, hb, pct)
+    local tex = ensureBar(frame)
+    if not tex then
+        return
+    end
+
+    local baseWidth = hb:GetWidth() or 0
+    if baseWidth <= 0 then
+        hideBar(frame)
+        return
+    end
+
+    tex:SetHeight(hb:GetHeight() or 0)
+    tex:SetWidth(baseWidth * pct)
+    tex:Show()
+end
+
+local function refreshAll()
+    for frame in pairs(UI.barByFrame) do
+        if frame and frame.unit then
+            if isOverlayEnabled() and frame:IsShown() then
+                if CompactUnitFrame_UpdateHealth then
+                    CompactUnitFrame_UpdateHealth(frame)
+                end
+            else
+                hideBar(frame)
+            end
+        end
+    end
+end
+
+hooksecurefunc("CompactUnitFrame_UpdateHealth", function(frame)
+    if not frame then
+        return
+    end
+
+    if not isOverlayEnabled() then
+        hideBar(frame)
+        return
+    end
+
+    if not frame.unit or not UnitExists(frame.unit) then
+        hideBar(frame)
+        return
+    end
+
+    local hb = frame.healthBar or frame.healthbar or frame.health
+    if not hb then
+        hideBar(frame)
+        return
+    end
+
+    local cur = UnitHealth and UnitHealth(frame.unit) or 0
+    local max = UnitHealthMax and UnitHealthMax(frame.unit) or 1
+    if not max or max <= 0 then
+        hideBar(frame)
+        return
+    end
+
+    local guid = UnitGUID and UnitGUID(frame.unit)
+    if not guid then
+        hideBar(frame)
+        return
+    end
+
+    local horizon = (GetTime and GetTime() or 0) + 1.5
+    local incoming = fetchIncoming(frame.unit, guid, horizon)
+    if incoming <= 0 then
+        hideBar(frame)
+        return
+    end
+
+    local projected = cur + incoming
+    if projected <= cur then
+        hideBar(frame)
+        return
+    end
+
+    if projected > max then
+        projected = max
+    end
+
+    local pct = (projected - cur) / max
+    if not pct or pct <= 0.001 then
+        hideBar(frame)
+        return
+    end
+
+    showProjection(frame, hb, pct)
+end)
+
+hooksecurefunc("CompactUnitFrame_UpdateVisible", function(frame)
+    if not frame or not frame:IsShown() or not isOverlayEnabled() then
+        hideBar(frame)
+    end
+end)
+
+function UI.EnableOverlay(on)
+    local cfg = getConfig()
+    cfg.overlay = not not on
+
+    if cfg.overlay then
+        refreshAll()
+    else
+        for frame in pairs(UI.barByFrame) do
+            hideBar(frame)
+        end
+    end
+end
+
+UI.RefreshOverlay = refreshAll

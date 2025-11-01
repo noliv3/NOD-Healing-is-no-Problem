@@ -1,0 +1,192 @@
+# Auto-generated from DOCU/NOD_Konzept_Funktionsliste.txt
+# Category: pets
+# Description: Collections journal entries for pets, mounts, toys, and pet battles.
+
+'PetBattleFrame':
+  type: Frame
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'PetBattleFrameText':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'PetBattleFrameXPBar':
+  type: StatusBar
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'PetBattlePrimaryAbilityTooltip':
+  type: Frame
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'PetBattlePrimaryUnitTooltip':
+  type: Frame
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'PetBattleQueueReadyFrame':
+  type: Frame
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'PetBattleQueueReadyFrameText':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'PetStableActivePet1':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'PetStableActivePet1LockIcon':
+  type: Frame
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'PetStableActivePet1PetName':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'PetStableActivePet2':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'PetStableActivePet2LockIcon':
+  type: Frame
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'PetStableActivePet2PetName':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'PetStableActivePet3':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'PetStableActivePet3LockIcon':
+  type: Frame
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'PetStableActivePet3PetName':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'PetStableActivePet4':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'PetStableActivePet4LockIcon':
+  type: Frame
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'PetStableActivePet4PetName':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'PetStableActivePet5':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'PetStableActivePet5LockIcon':
+  type: Frame
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'PetStableActivePet5PetName':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'PetStableActivePetsLabel':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'PetStableBottomInset':
+  type: Frame
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'PetStableCurrentPage':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'PetStableDiet':
+  type: Frame
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'PetStableFrame':
+  type: Frame
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'PetStableFrameCloseButton':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'PetStableFrameInset':
+  type: Frame
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'PetStableFrameTitleText':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'PetStableLeftInset':
+  type: Frame
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'PetStableLevelText':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'PetStableNameText':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'PetStableNextPageButton':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'PetStablePetInfo':
+  type: Frame
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'PetStablePrevPageButton':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'PetStableStabledPet1':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'PetStableStabledPet10':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'PetStableStabledPet2':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'PetStableStabledPet3':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'PetStableStabledPet4':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'PetStableStabledPet5':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'PetStableStabledPet6':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'PetStableStabledPet7':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'PetStableStabledPet8':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'PetStableStabledPet9':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'PetStableTypeText':
+  type: FontString
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt

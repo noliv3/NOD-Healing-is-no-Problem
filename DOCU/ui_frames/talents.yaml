@@ -1,0 +1,12 @@
+# Auto-generated from DOCU/NOD_Konzept_Funktionsliste.txt
+# Category: talents
+# Description: Talent trees, specialization pickers, and glyph panels.
+
+'TalentMicroButton':
+  type: Button
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
+'TalentMicroButtonAlert':
+  type: Frame
+  description: ''
+  source: NOD_Konzept_Funktionsliste.txt
