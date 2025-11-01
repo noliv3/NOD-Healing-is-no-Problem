@@ -43,7 +43,7 @@ Viel Erfolg beim Ausbau des Addons!
 - CoreDispatcher besitzt jetzt einen globalen Safe-Invoker (`safeCall`), einen Fehler-Ringpuffer (`/nod errors`) sowie Logout-/Leaving-World-Abbruch des 0,2‑s-Tickers; `/nod debug on|off|status` steuert den Log-Level bei aktivierter Throttle (`logThrottle`).
 - Mini-Status-Frame (`UI/Init.lua`) steht unten rechts (200×40 px, Offset −20/80), aktualisiert alle 0,5 s Quelle (`LHC`/`API`) inklusive grün/gelb-Farbcode und zeigt die laufende Spielzeit präzise an.
 - Overlay-Phase 2 (`UI/Overlay.lua`) liefert dynamische Breiten für Prognose-Balken, nutzt weiterhin `IncomingHealAggregator:GetIncomingForGUID` (Fallback Blizzard-API), respektiert den Overlay-Toggle in `NODHeal.Config` und hebt Healthbars beim Hover dezent hervor.
-- Click-Cast-Basis (`UI/ClickCast.lua`) mappt Mausbuttons inkl. Alt/Ctrl/Shift-Kombinationen auf Heilzauber, nutzt `/nodbind` zum Setzen/Auflisten und ruft `CastSpellByName` direkt auf dem anvisierten CompactUnitFrame auf.
+- Click-Cast-System (`UI/ClickCast.lua`) mappt Mausbuttons inkl. Alt/Ctrl/Shift-Kombinationen auf Heilzauber, hookt Blizzard-Player-/Party-/Raid-Frames, liefert Hover/Modifier-Highlights und ruft `CastSpellByName` direkt auf dem anvisierten Frame auf.
 - Stabilisierung 2025-03: `IncomingHealAggregator` und `IncomingHeals` besitzen jetzt `CleanExpired`-Hilfen mit Zeitpuffer; `CastLandingTime` normalisiert Castzeiten & Grenzwerte; `LatencyTools` refresht bei jeder Abfrage und klemmt CVars; `PredictiveSolver` klemmt negative Beiträge.
 - HealthSnapshot kapselt `UnitHealth`/`UnitHealthMax` über einen Safe-Wrapper, damit ungültige Einheiten keine `[NOD] ERROR`-Logs mehr erzeugen.
 

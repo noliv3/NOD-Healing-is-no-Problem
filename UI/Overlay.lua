@@ -202,3 +202,7 @@ function UI.EnableOverlay(on)
 end
 
 UI.RefreshOverlay = refreshAll
+
+if NODHeal and NODHeal.ClickCast and NODHeal.ClickCast.RegisterExtraFrames then
+    NODHeal.ClickCast.RegisterExtraFrames()
+end
