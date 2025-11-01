@@ -296,7 +296,7 @@ function G.GetFeedbackEntries()
 end
 
 local function onEvent(_, event, arg1)
-    if event == "UNIT_HEALTH" or event == "UNIT_MAXHEALTH" then
+    if event == "UNIT_HEALTH" or event == "UNIT_MAXHEALTH" or event == "UNIT_HEAL_PREDICTION" then
         if not arg1 then
             updateAllFrames()
             return
@@ -325,6 +325,7 @@ local function initialize()
     eventFrame:RegisterEvent("GROUP_ROSTER_UPDATE")
     eventFrame:RegisterEvent("UNIT_HEALTH")
     eventFrame:RegisterEvent("UNIT_MAXHEALTH")
+    eventFrame:RegisterEvent("UNIT_HEAL_PREDICTION")
     eventFrame:RegisterEvent("PLAYER_ENTERING_WORLD")
     eventFrame:SetScript("OnEvent", onEvent)
 end
