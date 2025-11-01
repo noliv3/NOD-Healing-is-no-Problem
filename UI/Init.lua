@@ -137,4 +137,21 @@ function UI:Initialize()
     print("[NOD] UI initialized (Overlay active)")
 end
 
+SLASH_NODHEAL1 = "/nodbind"
+SlashCmdList["NODHEAL"] = function(msg)
+    local btn, spell = msg:match("(%S+)%s+(.+)")
+    if btn and spell then
+        if NODHeal and NODHeal.Bindings and NODHeal.Bindings.Set then
+            NODHeal.Bindings:Set(btn, spell)
+        end
+        print("[NOD]", btn, "→", spell)
+    else
+        if NODHeal and NODHeal.Bindings and NODHeal.Bindings.List then
+            for key, value in pairs(NODHeal.Bindings:List()) do
+                print(key, "→", value)
+            end
+        end
+    end
+end
+
 return NODHeal:RegisterModule("UI", UI)

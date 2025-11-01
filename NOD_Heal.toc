@@ -28,5 +28,6 @@ Core/DesyncGuard.lua
 Core/PredictiveSolver.lua
 
 # UI
+UI/ClickCast.lua
 UI/Init.lua
 UI/Overlay.lua
