@@ -20,6 +20,7 @@ UI.barByFrame = UI.barByFrame or {}
 local function ensureBar(frame)
     local existing = UI.barByFrame[frame]
     if existing then
+        frame._nodHeal = existing
         return existing
     end
 
@@ -34,6 +35,8 @@ local function ensureBar(frame)
     tex:SetColorTexture(0, 1, 0, 0.35)
     tex:SetWidth(0)
     tex:Hide()
+
+    frame._nodHeal = tex
 
     UI.barByFrame[frame] = tex
     return tex
@@ -70,7 +73,7 @@ local function fetchIncoming(unit, guid, horizon)
     return incoming or 0
 end
 
-local function showProjection(frame, hb, pct)
+local function showProjection(frame, hb, cur, incoming, max)
     local tex = ensureBar(frame)
     if not tex then
         return
@@ -82,8 +85,14 @@ local function showProjection(frame, hb, pct)
         return
     end
 
+    local pct = (cur + incoming) / max
+    if pct <= 0 then
+        hideBar(frame)
+        return
+    end
+
     tex:SetHeight(hb:GetHeight() or 0)
-    tex:SetWidth(baseWidth * pct)
+    tex:SetWidth(baseWidth * math.min(pct, 1))
     tex:Show()
 end
 
@@ -152,18 +161,30 @@ hooksecurefunc("CompactUnitFrame_UpdateHealth", function(frame)
         projected = max
     end
 
-    local pct = (projected - cur) / max
-    if not pct or pct <= 0.001 then
+    local gain = projected - cur
+    if not gain or gain <= 0 then
         hideBar(frame)
         return
     end
 
-    showProjection(frame, hb, pct)
+    showProjection(frame, hb, cur, gain, max)
 end)
 
 hooksecurefunc("CompactUnitFrame_UpdateVisible", function(frame)
     if not frame or not frame:IsShown() or not isOverlayEnabled() then
         hideBar(frame)
+    end
+end)
+
+hooksecurefunc("CompactUnitFrame_OnEnter", function(frame)
+    if frame and frame.healthBar then
+        frame.healthBar:SetAlpha(0.8)
+    end
+end)
+
+hooksecurefunc("CompactUnitFrame_OnLeave", function(frame)
+    if frame and frame.healthBar then
+        frame.healthBar:SetAlpha(1)
     end
 end)
 

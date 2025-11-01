@@ -19,7 +19,9 @@ NOD-Heal ist ein leistungsorientiertes Healing-Framework für den WoW-Client der
 - Globaler Error-Ring (`/nod errors`) und Debug-Toggle (`/nod debug on|off|status`) sammeln Fehlermeldungen throttled über den Dispatcher-Logger (`logThrottle` ≥0,25 s).
 - Mini-Status-Frame (`UI/Init.lua`) steht unten rechts (200×40 px, Offset −20/80), aktualisiert alle 0,5 s Quelle (`LHC`/`API`) inklusive grün/gelb-Farbcode und zeigt die laufende Spielzeit in Millisekundenpräzision.
 - Overlay-Phase 1 (`UI/Overlay.lua`) hängt einen grünen Prognose-Balken an CompactUnitFrame-Gesundheitsleisten, nutzt `IncomingHealAggregator:GetIncomingForGUID` (Fallback `UnitGetIncomingHeals`) und respektiert den Toggle `NODHeal.Config.overlay`.
+- Overlay-Phase 2 erweitert die Prognose-Balken um dynamische Breitensteuerung und einen Hover-Highlight-Effekt auf den CompactUnitFrames.
 - `Core/HealthSnapshot.lua` nutzt eine abgesicherte `UnitHealth`/`UnitHealthMax`-Abfrage, um ungültige Einheiten still zu verwerfen und Fehler-Spam zu verhindern.
+- Click-Cast-Basis (`UI/ClickCast.lua`) erlaubt Spell-Bindings für Mausbuttons (`/nodbind` zum Anzeigen/Setzen) und castet direkt auf die angeklickte Einheit.
 
 Weitere Implementierungen folgen in iterativen Schritten (DamageForecast, AuraTickScheduler, UI-Overlays usw.). Details zu den geplanten Backend-Funktionen befinden sich im Ordner [`DOCU/`](DOCU/).
 
