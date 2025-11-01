@@ -134,6 +134,10 @@ function UI:Initialize()
         self:UpdateStatus()
     end)
 
+    if NODHeal.Grid and NODHeal.Grid.Initialize then
+        NODHeal.Grid.Initialize()
+    end
+
     print("[NOD] UI initialized (Overlay active)")
 end
 
