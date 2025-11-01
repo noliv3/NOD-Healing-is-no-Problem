@@ -11,9 +11,9 @@ local UnitHealthMax = UnitHealthMax
 local UnitName = UnitName
 local UnitGetIncomingHeals = UnitGetIncomingHeals
 local GetNumGroupMembers = GetNumGroupMembers
-local GetNumSubgroupMembers = GetNumSubgroupMembers
 local IsInGroup = IsInGroup
 local IsInRaid = IsInRaid
+local UnitIsUnit = UnitIsUnit
 local IsAltKeyDown = IsAltKeyDown
 local IsControlKeyDown = IsControlKeyDown
 local IsShiftKeyDown = IsShiftKeyDown
@@ -27,7 +27,6 @@ local pairs = pairs
 
 local unitFrames = {}
 local container
-local eventFrame
 local feedbackEntries = {}
 
 local FRAME_WIDTH = 90
@@ -35,6 +34,47 @@ local FRAME_HEIGHT = 35
 local COLUMNS = 5
 local SPACING = 4
 local PADDING = 8
+
+local function getUnits()
+    local list = {}
+
+    if IsInRaid() then
+        for i = 1, GetNumGroupMembers() do
+            local unit = "raid" .. i
+            if UnitExists(unit) then
+                table.insert(list, unit)
+            end
+        end
+    elseif IsInGroup() then
+        for i = 1, GetNumGroupMembers() - 1 do
+            local unit = "party" .. i
+            if UnitExists(unit) then
+                table.insert(list, unit)
+            end
+        end
+        table.insert(list, "player")
+    else
+        table.insert(list, "player")
+    end
+
+    return list
+end
+
+local function sortUnits(mode)
+    local units = getUnits()
+    if mode == "class" then
+        table.sort(units, function(a, b)
+            local _, ca = UnitClass(a)
+            local _, cb = UnitClass(b)
+            return (ca or "") < (cb or "")
+        end)
+    elseif mode == "alpha" then
+        table.sort(units, function(a, b)
+            return (UnitName(a) or "") < (UnitName(b) or "")
+        end)
+    end
+    return units
+end
 
 local function addFeedback(message)
     if not message then
@@ -67,6 +107,10 @@ local function createUnitFrame(parent, unit, index)
     frame:SetBackdrop({bgFile = "Interface/Tooltips/UI-Tooltip-Background"})
     frame:SetBackdropColor(0.1, 0.1, 0.1, 0.8)
     frame:SetClipsChildren(true)
+
+    frame.border = frame:CreateTexture(nil, "BORDER")
+    frame.border:SetAllPoints(frame)
+    frame.border:SetColorTexture(1, 1, 1, 0)
 
     frame:RegisterForClicks("AnyUp")
     frame:SetScript("OnClick", function(self, button)
@@ -232,6 +276,14 @@ local function updateUnitFrame(frame, elapsed)
     end
 
     frame.name:SetText(UnitName(frame.unit) or "???")
+
+    if frame.border then
+        if UnitIsUnit(frame.unit, "player") then
+            frame.border:SetColorTexture(1, 1, 1, 0.4)
+        else
+            frame.border:SetColorTexture(1, 1, 1, 0)
+        end
+    end
 end
 
 local function ensureContainer()
@@ -255,25 +307,35 @@ local function ensureContainer()
     return container
 end
 
-local function layoutUnits(units)
+local function rebuildGrid()
     local host = ensureContainer()
 
-    local total = #units
+    local sortedUnits = sortUnits(NODHeal.Config and NODHeal.Config.sortMode or "group")
+    addFeedback("Rebuilding Grid Layout (Sorted)")
+
+    local total = #sortedUnits
     if total == 0 then
-        for _, frame in pairs(unitFrames) do
+        for _, frame in ipairs(unitFrames) do
+            frame.unit = nil
             frame:Hide()
         end
         host:SetSize(FRAME_WIDTH + (PADDING * 2), FRAME_HEIGHT + (PADDING * 2))
         return
     end
 
-    local rows = math.ceil(total / COLUMNS)
-    local usedColumns = math.min(total, COLUMNS)
-    local width = (usedColumns * FRAME_WIDTH) + ((usedColumns - 1) * SPACING) + (PADDING * 2)
-    local height = (rows * FRAME_HEIGHT) + ((rows - 1) * SPACING) + (PADDING * 2)
+    local cols = COLUMNS
+    local spacing = SPACING
+    local rows = math.ceil(total / cols)
+    local usedColumns = math.min(total, cols)
+    local width = (usedColumns * FRAME_WIDTH) + ((usedColumns - 1) * spacing) + (PADDING * 2)
+    local height = (rows * FRAME_HEIGHT) + ((rows - 1) * spacing) + (PADDING * 2)
     host:SetSize(width, height)
 
-    for index, unit in ipairs(units) do
+    local index = 1
+    local x = PADDING
+    local y = -PADDING
+
+    for _, unit in ipairs(sortedUnits) do
         local frame = unitFrames[index]
         if not frame then
             frame = createUnitFrame(host, unit, index)
@@ -282,60 +344,26 @@ local function layoutUnits(units)
 
         frame.unit = unit
         frame:ClearAllPoints()
-
-        local column = (index - 1) % COLUMNS
-        local row = math.floor((index - 1) / COLUMNS)
-        local offsetX = PADDING + column * (FRAME_WIDTH + SPACING)
-        local offsetY = -PADDING - row * (FRAME_HEIGHT + SPACING)
-
-        frame:SetPoint("TOPLEFT", host, "TOPLEFT", offsetX, offsetY)
+        frame:SetPoint("TOPLEFT", host, "TOPLEFT", x, y)
         updateUnitFrame(frame)
+        frame:Show()
 
-        addFeedback("Frame " .. index .. " assigned to unit '" .. unit .. "'")
+        index = index + 1
+        if (index - 1) % cols == 0 then
+            x = PADDING
+            y = y - (FRAME_HEIGHT + spacing)
+        else
+            x = x + (FRAME_WIDTH + spacing)
+        end
     end
 
-    local count = #unitFrames
-    for i = total + 1, count do
+    for i = index, #unitFrames do
         local frame = unitFrames[i]
         if frame then
             frame.unit = nil
             frame:Hide()
         end
     end
-end
-
-local function rebuildGrid()
-    addFeedback("Rebuilding Grid Layout")
-
-    ensureContainer()
-
-    local units = {"player"}
-
-    if IsInRaid() then
-        local total = GetNumGroupMembers() or 0
-        for i = 1, total do
-            units[#units + 1] = "raid" .. i
-        end
-    elseif IsInGroup() then
-        local total = GetNumGroupMembers() or 0
-        for i = 1, math.max(total - 1, 0) do
-            units[#units + 1] = "party" .. i
-        end
-    else
-        local subgroupMembers = GetNumSubgroupMembers and GetNumSubgroupMembers() or 0
-        for i = 1, subgroupMembers do
-            units[#units + 1] = "party" .. i
-        end
-    end
-
-    local filtered = {}
-    for _, unit in ipairs(units) do
-        if UnitExists(unit) then
-            filtered[#filtered + 1] = unit
-        end
-    end
-
-    layoutUnits(filtered)
 end
 
 local function updateAllFrames()
@@ -360,40 +388,28 @@ function G.GetFeedbackEntries()
     return feedbackEntries
 end
 
-local function onEvent(_, event, arg1)
-    if event == "UNIT_HEALTH" or event == "UNIT_MAXHEALTH" then
-        if not arg1 then
-            updateAllFrames()
-            return
-        end
-
-        for _, frame in ipairs(unitFrames) do
-            if frame.unit == arg1 then
-                updateUnitFrame(frame)
-                return
-            end
-        end
-    else
-        rebuildGrid()
-    end
+local function rebuildLater()
+    C_Timer.After(0.2, rebuildGrid)
 end
 
 local function initialize()
-    ensureContainer()
     rebuildGrid()
-
-    if eventFrame then
+    if G._eventFrame then
         startTicker()
         return
     end
-
-    eventFrame = CreateFrame("Frame")
-    eventFrame:RegisterEvent("GROUP_ROSTER_UPDATE")
-    eventFrame:RegisterEvent("UNIT_HEALTH")
-    eventFrame:RegisterEvent("UNIT_MAXHEALTH")
-    eventFrame:RegisterEvent("PLAYER_ENTERING_WORLD")
-    eventFrame:SetScript("OnEvent", onEvent)
-
+    local ev = CreateFrame("Frame")
+    ev:RegisterEvent("GROUP_ROSTER_UPDATE")
+    ev:RegisterEvent("UNIT_HEALTH")
+    ev:RegisterEvent("PLAYER_ENTERING_WORLD")
+    ev:SetScript("OnEvent", function(_, event)
+        if event == "UNIT_HEALTH" then
+            updateAllFrames()
+        else
+            rebuildLater()
+        end
+    end)
+    G._eventFrame = ev
     startTicker()
 end
 

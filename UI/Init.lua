@@ -165,4 +165,19 @@ SlashCmdList["NODGUI"] = function()
     end
 end
 
+SLASH_NODSORT1 = "/nodsort"
+SlashCmdList["NODSORT"] = function(msg)
+    local mode = (msg or ""):lower()
+    if mode == "class" or mode == "alpha" or mode == "group" then
+        NODHeal.Config = NODHeal.Config or {}
+        NODHeal.Config.sortMode = mode
+        print("[NOD] Sort mode set to:", mode)
+        if NODHeal.Grid and NODHeal.Grid.Initialize then
+            NODHeal.Grid.Initialize()
+        end
+    else
+        print("[NOD] Usage: /nodsort class | alpha | group")
+    end
+end
+
 return NODHeal:RegisterModule("UI", UI)
