@@ -91,6 +91,9 @@ end
 
 function UI:Refresh()
     self:UpdateStatus()
+    if self.RefreshOverlay then
+        self:RefreshOverlay()
+    end
 end
 
 function UI:CancelTicker()
@@ -131,7 +134,7 @@ function UI:Initialize()
         self:UpdateStatus()
     end)
 
-    print("[NOD] UI initialized (StatusFrame active)")
+    print("[NOD] UI initialized (Overlay active)")
 end
 
 return NODHeal:RegisterModule("UI", UI)

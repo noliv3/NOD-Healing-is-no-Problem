@@ -1,8 +1,3 @@
--- Module: CoreDispatcher
--- Purpose: Provide a central frame-backed event hub with lightweight throttling for backend coordination.
--- API: CreateFrame, RegisterEvent, GetTime
--- Referenz: /DOCU/NOD_Datenpfad_LHC_API.md §Ereignisfluss
-
 local CreateFrame = CreateFrame
 local GetTime = GetTime
 local C_Timer = C_Timer
@@ -10,17 +5,66 @@ local type = type
 local pairs = pairs
 local format = string.format
 local tinsert = table.insert
+local tostring = tostring
+local date = date
+local xpcall = xpcall
+
+local NODHeal = _G.NODHeal or {}
+_G.NODHeal = NODHeal
+
+NODHeal.Config = NODHeal.Config or { debug = false, logThrottle = 0.25, overlay = true }
+NODHeal.Err = NODHeal.Err or { ring = {}, head = 1, max = 100 }
+NODHeal.Core = NODHeal.Core or {}
+
+local function pushErr(msg)
+  local payload = tostring(msg)
+  local store = NODHeal.Err
+  local ring = store.ring
+  local head = store.head or 1
+  local max = store.max or #ring or 0
+  if max <= 0 then
+    max = 100
+    store.max = max
+  end
+
+  ring[head] = ("[%s] %s"):format(date("%H:%M:%S"), payload)
+  head = head % max + 1
+  store.head = head
+
+  if NODHeal.Config and NODHeal.Config.debug then
+    print("|cffff5555[NOD] ERROR:|r", payload)
+  end
+end
+
+local function safeCall(fn, ...)
+  if type(fn) ~= "function" then
+    return false
+  end
+  return xpcall(fn, function(err)
+    pushErr(err)
+    return err
+  end, ...)
+end
+
+local function debugLog(...)
+  if NODHeal.Config and NODHeal.Config.debug then
+    print("|cff88ff88[NOD]|r", ...)
+  end
+end
+
+NODHeal.Core.safeCall = safeCall
+NODHeal.Core.Log = debugLog
+NODHeal.Core.pushErr = pushErr
 
 local dispatcherFrame
 local eventHandlers = {}
 local registeredEvents = {}
-local tickerHandle
 
 local M = {}
 
 local function log(message)
   if message then
-    print("[NOD] " .. message)
+    debugLog(message)
   end
 end
 
@@ -46,8 +90,23 @@ local function ensureFrame()
   end
 
   dispatcherFrame = CreateFrame("Frame")
-  dispatcherFrame:SetScript("OnEvent", function(_, event, ...)
-    M.Dispatch(event, ...)
+
+  dispatcherFrame:SetScript("OnEvent", function(self, event, ...)
+    local cfg = NODHeal.Config or {}
+    local throttle = cfg.logThrottle or 0.25
+    local now = GetTime()
+    if throttle < 0 then
+      throttle = 0
+    end
+
+    if cfg.debug then
+      if not self._lastLog or (now - self._lastLog) > throttle then
+        print("|cff88ff88[NOD] Dispatcher: event|r", event)
+        self._lastLog = now
+      end
+    end
+
+    safeCall(NODHeal.Core.HandleEvent, event, ...)
   end)
 
   return dispatcherFrame
@@ -96,43 +155,50 @@ local function addHandler(event, func, options)
 end
 
 local function cancelTicker()
-  if tickerHandle then
-    tickerHandle:Cancel()
-    tickerHandle = nil
+  local tick = NODHeal._tick
+  if tick and tick.Cancel then
+    local cancelled = false
+    if tick.IsCancelled then
+      cancelled = tick:IsCancelled()
+    end
+    if not cancelled then
+      tick:Cancel()
+    end
   end
+  NODHeal._tick = nil
 end
 
 local function scheduleTicker()
   cancelTicker()
 
-  tickerHandle = C_Timer.NewTicker(0.2, function()
+  if not C_Timer or not C_Timer.NewTicker then
+    return
+  end
+
+  local function tickerBody()
     local aggregator = getModule("IncomingHealAggregator")
     if aggregator and aggregator.CleanExpired then
-      aggregator.CleanExpired()
+      safeCall(aggregator.CleanExpired, nil)
     end
 
     local solver = getModule("PredictiveSolver")
     if solver and solver.CalculateProjectedHealth then
-      solver:CalculateProjectedHealth("player")
+      safeCall(solver.CalculateProjectedHealth, solver, "player")
     end
-  end)
+  end
+
+  NODHeal._tick = C_Timer.NewTicker(0.2, tickerBody)
 end
 
 local function bootstrapHandlers()
-  M.RegisterHandler("COMBAT_LOG_EVENT_UNFILTERED", function(event)
-    log("Dispatcher: event " .. event)
+  M.RegisterHandler("PLAYER_LEAVING_WORLD", function()
+    cancelTicker()
+    log("Dispatcher: ticker cancelled (leaving world)")
   end)
 
-  M.RegisterHandler("UNIT_SPELLCAST_STOP", function(event, unit)
-    log(format("Dispatcher: %s unit=%s", event, tostring(unit)))
-  end)
-
-  M.RegisterHandler("UNIT_SPELLCAST_INTERRUPTED", function(event, unit)
-    log(format("Dispatcher: %s unit=%s", event, tostring(unit)))
-  end)
-
-  M.RegisterHandler("PLAYER_REGEN_DISABLED", function(event)
-    log("Dispatcher: event " .. event)
+  M.RegisterHandler("PLAYER_LOGOUT", function()
+    cancelTicker()
+    log("Dispatcher: ticker cancelled (logout)")
   end)
 end
 
@@ -188,10 +254,10 @@ function M.Dispatch(event, ...)
         local throttleSeconds = throttleMs / 1000
         if not handler.nextAllowed or handler.nextAllowed <= now then
           handler.nextAllowed = now + throttleSeconds
-          handler.callback(event, ...)
+          safeCall(handler.callback, event, ...)
         end
       else
-        handler.callback(event, ...)
+        safeCall(handler.callback, event, ...)
       end
     end
   end
@@ -298,6 +364,10 @@ local namespaceRef = namespace()
 local module = M
 if namespaceRef and namespaceRef.RegisterModule then
   module = namespaceRef:RegisterModule("CoreDispatcher", M)
+end
+
+NODHeal.Core.HandleEvent = NODHeal.Core.HandleEvent or function(event, ...)
+  return module.Dispatch(event, ...)
 end
 
 return module
