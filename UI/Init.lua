@@ -139,12 +139,12 @@ end
 
 SLASH_NODHEAL1 = "/nodbind"
 SlashCmdList["NODHEAL"] = function(msg)
-    local btn, spell = msg:match("(%S+)%s+(.+)")
-    if btn and spell then
+    local combo, spell = msg:match("(%S+)%s+(.+)")
+    if combo and spell then
         if NODHeal and NODHeal.Bindings and NODHeal.Bindings.Set then
-            NODHeal.Bindings:Set(btn, spell)
+            NODHeal.Bindings:Set(combo, spell)
         end
-        print("[NOD]", btn, "→", spell)
+        print("[NOD] Bound", combo, "to", spell)
     else
         if NODHeal and NODHeal.Bindings and NODHeal.Bindings.List then
             for key, value in pairs(NODHeal.Bindings:List()) do
