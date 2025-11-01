@@ -15,9 +15,10 @@ NOD-Heal ist ein leistungsorientiertes Healing-Framework für den WoW-Client der
 - `Core/CastLandingTime` normalisiert Castzeiten (Millisekunden/Sekunden) und klemmt Warteschlange sowie Latenz auf sinnvolle Grenzwerte.
 - `Core/LatencyTools` aktualisiert Latenz- und Spell-Queue-Werte bei jeder Abfrage und clamped CVars gegen Ausreißer.
 - `Core/PredictiveSolver` verhindert negative Beiträge aus Schaden-, Heal- oder HoT-Bausteinen, bevor das projizierte Ergebnis berechnet wird.
-- CoreDispatcher bootstrappt Events, startet einen 0,2‑s-Ticker für `CleanExpired` und `PredictiveSolver:CalculateProjectedHealth("player")` und respektiert den gespeicherten HealComm-Status.
+- CoreDispatcher bootstrappt Events, startet einen 0,2‑s-Ticker für `CleanExpired` und `PredictiveSolver:CalculateProjectedHealth("player")`, kapselt Callback-Aufrufe über einen Safe-Invoker und beendet den Ticker sauber bei Logout/Leaving-World.
+- Globaler Error-Ring (`/nod errors`) und Debug-Toggle (`/nod debug on|off|status`) sammeln Fehlermeldungen throttled über den Dispatcher-Logger (`logThrottle` ≥0,25 s).
 - Mini-Status-Frame (`UI/Init.lua`) steht unten rechts (200×40 px, Offset −20/80), aktualisiert alle 0,5 s Quelle (`LHC`/`API`) inklusive grün/gelb-Farbcode und zeigt die laufende Spielzeit in Millisekundenpräzision.
-- Overlay-Basis (`UI/Overlay.lua`) spannt `NOD_HealOverlay` über `UIParent` auf und stellt `ShowProjectedHeal` als Platzhalter für CompactUnitFrame-Hooks bereit.
+- Overlay-Phase 1 (`UI/Overlay.lua`) hängt einen grünen Prognose-Balken an CompactUnitFrame-Gesundheitsleisten, nutzt `IncomingHealAggregator:GetIncomingForGUID` (Fallback `UnitGetIncomingHeals`) und respektiert den Toggle `NODHeal.Config.overlay`.
 
 Weitere Implementierungen folgen in iterativen Schritten (DamageForecast, AuraTickScheduler, UI-Overlays usw.). Details zu den geplanten Backend-Funktionen befinden sich im Ordner [`DOCU/`](DOCU/).
 

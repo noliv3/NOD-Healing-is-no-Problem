@@ -27,6 +27,10 @@ local STALE_PADDING = 0.25
 local EXPIRY_GRACE = 0.05
 local PRUNE_INTERVAL = 1.0
 
+local NODHeal = _G.NODHeal or {}
+local core = NODHeal.Core or {}
+local debugLog = core.Log or function() end
+
 if not wipe then
   wipe = function(tbl)
     if not tbl then
@@ -40,7 +44,7 @@ end
 
 local function log(message)
   if message then
-    print("[NOD] " .. message)
+    debugLog(message)
   end
 end
 
@@ -398,6 +402,43 @@ function aggregator.CleanExpired(now, unit)
   end
 end
 
+local function resolveCutoff(horizon)
+  local now = GetTime()
+  if type(horizon) ~= "number" then
+    return math_huge
+  end
+
+  if horizon >= now then
+    return horizon
+  end
+
+  return now + horizon
+end
+
+function aggregator:GetIncomingForGUID(guid, horizon)
+  if not guid then
+    return 0
+  end
+
+  purgeExpired()
+
+  local queue = HEAL_STORAGE[guid]
+  if not queue or #queue == 0 then
+    return 0
+  end
+
+  local cutoff = resolveCutoff(horizon)
+  local total = 0
+  for index = 1, #queue do
+    local entry = queue[index]
+    if entry and entry.landTime and entry.landTime <= cutoff then
+      total = total + (entry.amount or 0)
+    end
+  end
+
+  return total
+end
+
 function aggregator.FetchFallback(unit)
   local incoming = namespace() and namespace():GetModule("IncomingHeals")
   if incoming and incoming.FetchFallback then
@@ -450,4 +491,10 @@ function aggregator.DebugDump()
   return HEAL_STORAGE
 end
 
-return _G.NODHeal:RegisterModule("IncomingHealAggregator", aggregator)
+local module = _G.NODHeal:RegisterModule("IncomingHealAggregator", aggregator)
+
+if NODHeal.Core then
+  NODHeal.Core.Incoming = aggregator
+end
+
+return module
