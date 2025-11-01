@@ -10,8 +10,24 @@ local UnitHealthMax = UnitHealthMax
 local UnitIsDeadOrGhost = UnitIsDeadOrGhost
 local UnitIsConnected = UnitIsConnected
 local UnitGetTotalAbsorbs = UnitGetTotalAbsorbs
+local UnitExists = UnitExists
 
 local pairs = pairs
+
+local function safeUnitHealth(u)
+  if type(u) ~= "string" or (UnitExists and not UnitExists(u)) then
+    return nil
+  end
+  if not UnitHealth or not UnitHealthMax then
+    return nil
+  end
+  local ok, hp = pcall(UnitHealth, u)
+  local ok2, max = pcall(UnitHealthMax, u)
+  if not ok or not ok2 then
+    return nil
+  end
+  return hp, max
+end
 
 local function resetUnit(unit)
   if unit then
@@ -71,8 +87,10 @@ function M.Capture(unit)
     return cached
   end
 
-  local hpNow = UnitHealth and (UnitHealth(unit) or 0) or 0
-  local hpMax = UnitHealthMax and (UnitHealthMax(unit) or 0) or 0
+  local hpNow, hpMax = safeUnitHealth(unit)
+  if not hpNow or not hpMax then
+    return
+  end
   if hpMax <= 0 then
     hpMax = 1
   end

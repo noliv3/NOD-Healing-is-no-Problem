@@ -42,6 +42,7 @@ Viel Erfolg beim Ausbau des Addons!
 - Mini-Status-Frame (`UI/Init.lua`) steht unten rechts (200×40 px, Offset −20/80), aktualisiert alle 0,5 s Quelle (`LHC`/`API`) inklusive grün/gelb-Farbcode und zeigt die laufende Spielzeit präzise an.
 - Overlay-Phase 1 (`UI/Overlay.lua`) hängt prognostizierte Heal-Segmente an CompactUnitFrame-Gesundheitsleisten, nutzt `IncomingHealAggregator:GetIncomingForGUID` (Fallback Blizzard-API) und respektiert den Overlay-Toggle in `NODHeal.Config`.
 - Stabilisierung 2025-03: `IncomingHealAggregator` und `IncomingHeals` besitzen jetzt `CleanExpired`-Hilfen mit Zeitpuffer; `CastLandingTime` normalisiert Castzeiten & Grenzwerte; `LatencyTools` refresht bei jeder Abfrage und klemmt CVars; `PredictiveSolver` klemmt negative Beiträge.
+- HealthSnapshot kapselt `UnitHealth`/`UnitHealthMax` über einen Safe-Wrapper, damit ungültige Einheiten keine `[NOD] ERROR`-Logs mehr erzeugen.
 
 ## Vor Merge prüfen
 - [ ] Pfade/Module konsistent zu `/NOD_Heal/NOD_Heal.toc`
