@@ -366,12 +366,6 @@ local function rebuildGrid()
     end
 end
 
-local function updateAllFrames()
-    for _, frame in ipairs(unitFrames) do
-        updateUnitFrame(frame)
-    end
-end
-
 local function startTicker()
     if G._ticker then
         G._ticker:Cancel()
@@ -382,6 +376,19 @@ local function startTicker()
             updateUnitFrame(f, 0.1)
         end
     end)
+end
+
+local function updateFrameForUnit(unit)
+    if not unit then
+        return
+    end
+
+    for _, frame in ipairs(unitFrames) do
+        if frame.unit and UnitIsUnit(frame.unit, unit) then
+            updateUnitFrame(frame)
+            return
+        end
+    end
 end
 
 function G.GetFeedbackEntries()
@@ -401,10 +408,11 @@ local function initialize()
     local ev = CreateFrame("Frame")
     ev:RegisterEvent("GROUP_ROSTER_UPDATE")
     ev:RegisterEvent("UNIT_HEALTH")
+    ev:RegisterEvent("UNIT_MAXHEALTH")
     ev:RegisterEvent("PLAYER_ENTERING_WORLD")
-    ev:SetScript("OnEvent", function(_, event)
-        if event == "UNIT_HEALTH" then
-            updateAllFrames()
+    ev:SetScript("OnEvent", function(_, event, unit)
+        if event == "UNIT_HEALTH" or event == "UNIT_MAXHEALTH" then
+            updateFrameForUnit(unit)
         else
             rebuildLater()
         end
