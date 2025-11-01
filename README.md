@@ -16,7 +16,8 @@ NOD-Heal ist ein leistungsorientiertes Healing-Framework für den WoW-Client der
 - `Core/LatencyTools` aktualisiert Latenz- und Spell-Queue-Werte bei jeder Abfrage und clamped CVars gegen Ausreißer.
 - `Core/PredictiveSolver` verhindert negative Beiträge aus Schaden-, Heal- oder HoT-Bausteinen, bevor das projizierte Ergebnis berechnet wird.
 - CoreDispatcher bootstrappt Events, startet einen 0,2‑s-Ticker für `CleanExpired` und `PredictiveSolver:CalculateProjectedHealth("player")` und respektiert den gespeicherten HealComm-Status.
-- Mini-Status-UI (`UI/Init.lua`) zeigt Quelle (`LHC` vs. `API`) samt Laufzeit in 0,5‑s-Intervallen und folgt dem Toggle.
+- Mini-Status-Frame (`UI/Init.lua`) steht unten rechts (200×40 px, Offset −20/80), aktualisiert alle 0,5 s Quelle (`LHC`/`API`) inklusive grün/gelb-Farbcode und zeigt die laufende Spielzeit in Millisekundenpräzision.
+- Overlay-Basis (`UI/Overlay.lua`) spannt `NOD_HealOverlay` über `UIParent` auf und stellt `ShowProjectedHeal` als Platzhalter für CompactUnitFrame-Hooks bereit.
 
 Weitere Implementierungen folgen in iterativen Schritten (DamageForecast, AuraTickScheduler, UI-Overlays usw.). Details zu den geplanten Backend-Funktionen befinden sich im Ordner [`DOCU/`](DOCU/).
 
