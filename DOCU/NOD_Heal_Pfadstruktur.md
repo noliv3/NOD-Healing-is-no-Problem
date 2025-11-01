@@ -1,0 +1,105 @@
+NOD-Heal Projektstruktur (Stand: 01.11.2025)
+
+Offizieller Addon-Pfad: I:\World of Warcraft_classic_\Interface\AddOns\NOD_Heal
+
+Config/
+Defaults.lua (01.11.2025)
+
+Core/
+AuraTickPredictor.lua (01.11.2025)
+CastLandingTime.lua (01.11.2025)
+CastTiming.lua (01.11.2025)
+CoreDispatcher.lua (01.11.2025)
+DamagePrediction.lua (01.11.2025)
+DesyncGuard.lua (01.11.2025)
+EffectiveHP.lua (01.11.2025)
+HealValueEstimator.lua (01.11.2025)
+HealthSnapshot.lua (01.11.2025)
+IncomingHealAggregator.lua (01.11.2025)
+IncomingHeals.lua (01.11.2025)
+Init.lua (01.11.2025)
+LatencyTools.lua (01.11.2025)
+PredictiveSolver.lua (01.11.2025)
+
+DOCU/
+AGENTS.md (01.11.2025)
+Datei_und_Modulstruktur_NOD-Projektbaum.txt (01.11.2025)
+HealingAddons_Funktionsvergleich_NOD_Integration.md (01.11.2025)
+NOD_Backend_Funktionsreferenz.md (01.11.2025)
+NOD_Datenpfad_LHC_API.md (01.11.2025)
+NOD_Konzept_Funktionsliste.txt (01.11.2025)
+NOD_Machbarkeitsanalyse_Technik_MoP.md (01.11.2025)
+NOD_Systemaufbau_Modulstruktur.md (01.11.2025)
+Vergleich_NOD_vs_HealBot_FeatureAnalyse.md (01.11.2025)
+  Tasks/
+    Tag 1.md (01.11.2025)
+    Tag 2.md (01.11.2025)
+    Tag 3.md (01.11.2025)
+    Tag 4.md (01.11.2025)
+    Tag 5.md (01.11.2025)
+    Tag 6.md (01.11.2025)
+    Tag 7.md (01.11.2025)
+  Validation/
+    Final_Audit_Report_v1.md (01.11.2025)
+    Tag1_Functional_Failed.md (01.11.2025)
+    Tag1_Verified.md (01.11.2025)
+  ui_frames/
+    achievements.yaml (01.11.2025)
+    actionbars.yaml (01.11.2025)
+    auction.yaml (01.11.2025)
+    autocomplete_buttons.yaml (01.11.2025)
+    castbars.yaml (01.11.2025)
+    character.yaml (01.11.2025)
+    chat.yaml (01.11.2025)
+    combatlog.yaml (01.11.2025)
+    config.yaml (01.11.2025)
+    core.yaml (01.11.2025)
+    debug.yaml (01.11.2025)
+    dropdown_lists.yaml (01.11.2025)
+    friends.yaml (01.11.2025)
+    guild.yaml (01.11.2025)
+    inventory_1.yaml (01.11.2025)
+    inventory_2.yaml (01.11.2025)
+    inventory_3.yaml (01.11.2025)
+    inventory_4.yaml (01.11.2025)
+    itemref_shopping_tooltips.yaml (01.11.2025)
+    levelup.yaml (01.11.2025)
+    lfg.yaml (01.11.2025)
+    loot.yaml (01.11.2025)
+    loot_buttons.yaml (01.11.2025)
+    mail.yaml (01.11.2025)
+    map.yaml (01.11.2025)
+    merchant.yaml (01.11.2025)
+    pets.yaml (01.11.2025)
+    professions.yaml (01.11.2025)
+    pvp_1.yaml (01.11.2025)
+    pvp_2.yaml (01.11.2025)
+    quests.yaml (01.11.2025)
+    reputation_bars.yaml (01.11.2025)
+    skill_rank_frames.yaml (01.11.2025)
+    skill_type_labels.yaml (01.11.2025)
+    spellbook.yaml (01.11.2025)
+    spellbook_buttons.yaml (01.11.2025)
+    static_popup_dialogs.yaml (01.11.2025)
+    tabard_customization_options.yaml (01.11.2025)
+    talents.yaml (01.11.2025)
+    tooltip.yaml (01.11.2025)
+    trade.yaml (01.11.2025)
+    tutorial_alert_buttons.yaml (01.11.2025)
+    unitframes_1.yaml (01.11.2025)
+    unitframes_2.yaml (01.11.2025)
+    unsorted.yaml (01.11.2025)
+
+Libs/
+  LibHealComm-4.0/
+    LibHealComm-4.0.lua (01.11.2025)
+
+reports/
+backend_function_audit.md (01.11.2025)
+
+scripts/
+generate_ui_frame_yaml.py (01.11.2025)
+
+UI/
+Init.lua (01.11.2025)
+Overlay.lua (01.11.2025)
