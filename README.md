@@ -22,6 +22,7 @@ NOD-Heal ist ein leistungsorientiertes Healing-Framework für den WoW-Client der
 - Overlay-Phase 2 erweitert die Prognose-Balken um dynamische Breitensteuerung und einen Hover-Highlight-Effekt auf den CompactUnitFrames.
 - `Core/HealthSnapshot.lua` nutzt eine abgesicherte `UnitHealth`/`UnitHealthMax`-Abfrage, um ungültige Einheiten still zu verwerfen und Fehler-Spam zu verhindern.
 - Click-Cast-Basis (`UI/ClickCast.lua`) erlaubt Spell-Bindings für Mausbuttons inklusive Alt/Ctrl/Shift-Kombinationen (`/nodbind` zum Anzeigen/Setzen) und castet direkt auf die angeklickte Einheit.
+- Spell-Binding-UI (`UI/BindingFrame.lua`) bietet ein bewegliches Konfigurationsfenster mit Editboxen für Maus- und Modifier-Kombinationen; via `/nodgui` lassen sich Bindings komfortabel pflegen.
 
 Weitere Implementierungen folgen in iterativen Schritten (DamageForecast, AuraTickScheduler, UI-Overlays usw.). Details zu den geplanten Backend-Funktionen befinden sich im Ordner [`DOCU/`](DOCU/).
 
