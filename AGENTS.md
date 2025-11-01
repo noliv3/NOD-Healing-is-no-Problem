@@ -29,7 +29,7 @@ Diese Richtlinien gelten für das gesamte Repository, sofern in Unterordnern kei
 - SavedVariables und Debug-Toggles auf Persistenz- und Speicherbedarf prüfen.
 - Dokumentation (`README.md`, `DOCU/`) nachziehen und Version angeben.
 - Spell-Binding-GUI (`UI/BindingFrame.lua`) über `/nodgui` erreichbar halten; Änderungen an den Bindings im README vermerken.
-- Binding-GUI Tag 8: `/nodgui` öffnet das neue Drag-&-Drop-Interface mit Spellbook-Autofill, Dropdown-Auswahl für Modifier/Mausbuttons und persistenter Frame-Position (`NODHealDB.ui.bindingFrame`).
+- Binding-GUI Tag 8: `/nodgui` öffnet das neue Drag-&-Drop-Interface mit Spellbook-Autofill, Dropdown-Auswahl für Modifier/Mausbuttons, Delete-Schaltflächen pro Zeile und persistenter Frame-Position (`NODHealDB.ui.bindingFrame`).
 - Neuer Vermerk: `DOCU/NOD_Datenpfad_LHC_API.md` dokumentiert den LibHealComm-Datenpfad (Tag 1, Fallback-Spezifikation).
 - Tag‑1-LHC-Brücke produktiv: SavedVariables `NODHealDB.useLHC`, Slash `/nod healcomm`, LibHealComm-Callbacks, Aggregator-Cleanups sowie Mini-Status-UI liefern echte Laufzeit-Logs.
 - Build-Artefakte ohne Entwicklungsdateien paketieren.
@@ -45,7 +45,7 @@ Viel Erfolg beim Ausbau des Addons!
 - CoreDispatcher besitzt jetzt einen globalen Safe-Invoker (`safeCall`), einen Fehler-Ringpuffer (`/nod errors`) sowie Logout-/Leaving-World-Abbruch des 0,2‑s-Tickers; `/nod debug on|off|status` steuert den Log-Level bei aktivierter Throttle (`logThrottle`).
 - Mini-Status-Frame (`UI/Init.lua`) steht unten rechts (200×40 px, Offset −20/80), aktualisiert alle 0,5 s Quelle (`LHC`/`API`) inklusive grün/gelb-Farbcode und zeigt die laufende Spielzeit präzise an.
 - Overlay-Phase 2 (`UI/Overlay.lua`) liefert dynamische Breiten für Prognose-Balken, nutzt weiterhin `IncomingHealAggregator:GetIncomingForGUID` (Fallback Blizzard-API), respektiert den Overlay-Toggle in `NODHeal.Config` und hebt Healthbars beim Hover dezent hervor.
-- GridFrame-Basis (`UI/GridFrame.lua`) erstellt ein verschiebbares Fünf-Spalten-Raster, zeigt Solo/Party/Raid-Einheiten mit Klassenfarben und Tooltip-Hover an und reserviert eine Incoming-Heal-Lane.
+- GridFrame-Basis (`UI/GridFrame.lua`) erstellt ein verschiebbares Fünf-Spalten-Raster, zeigt Solo/Party/Raid-Einheiten mit Klassenfarben und Tooltip-Hover an, registriert Click-Casts direkt über `NODHeal.Bindings` und zeichnet die Incoming-Heal-Lane dynamisch mittels `UnitGetIncomingHeals`.
 - Click-Cast-System (`UI/ClickCast.lua`) mappt Mausbuttons inkl. Alt/Ctrl/Shift-Kombinationen auf Heilzauber, hookt Blizzard-Player-/Party-/Raid-Frames, liefert Hover/Modifier-Highlights und ruft `CastSpellByName` direkt auf dem anvisierten Frame auf.
 - Stabilisierung 2025-03: `IncomingHealAggregator` und `IncomingHeals` besitzen jetzt `CleanExpired`-Hilfen mit Zeitpuffer; `CastLandingTime` normalisiert Castzeiten & Grenzwerte; `LatencyTools` refresht bei jeder Abfrage und klemmt CVars; `PredictiveSolver` klemmt negative Beiträge.
 - HealthSnapshot kapselt `UnitHealth`/`UnitHealthMax` über einen Safe-Wrapper, damit ungültige Einheiten keine `[NOD] ERROR`-Logs mehr erzeugen.
