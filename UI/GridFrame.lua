@@ -20,6 +20,7 @@ local IsShiftKeyDown = IsShiftKeyDown
 local IsUsableSpell = IsUsableSpell
 local CastSpellByName = CastSpellByName
 local RAID_CLASS_COLORS = RAID_CLASS_COLORS
+local C_Timer = C_Timer
 local math = math
 local ipairs = ipairs
 local pairs = pairs
@@ -140,9 +141,10 @@ local function createUnitFrame(parent, unit, index)
     return frame
 end
 
-local function updateUnitFrame(frame)
+local function updateUnitFrame(frame, elapsed)
     if not frame or not frame.unit or not UnitExists(frame.unit) then
         if frame then
+            frame._lastPct = nil
             frame:Hide()
         end
         return
@@ -150,32 +152,83 @@ local function updateUnitFrame(frame)
 
     frame:Show()
 
-    local current, maximum = UnitHealth(frame.unit), UnitHealthMax(frame.unit)
-    maximum = maximum > 0 and maximum or 1
-    local ratio = current / maximum
-    if ratio < 0 then
-        ratio = 0
-    elseif ratio > 1 then
-        ratio = 1
+    local cur, max = UnitHealth(frame.unit), UnitHealthMax(frame.unit)
+    if max <= 0 then
+        max = 1
+    end
+
+    local incoming = UnitGetIncomingHeals and UnitGetIncomingHeals(frame.unit) or 0
+    local predicted = 0
+
+    if NODHeal.Core and NODHeal.Core.PredictiveSolver and NODHeal.Core.PredictiveSolver.CalculateProjectedHealth then
+        local result = NODHeal.Core.PredictiveSolver.CalculateProjectedHealth(NODHeal.Core.PredictiveSolver, frame.unit)
+        if type(result) == "number" then
+            predicted = result - cur
+        end
+    end
+
+    local projectedTotal = cur + incoming + predicted
+    local targetHP = math.min(projectedTotal, max)
+    local pct = cur / max
+    local targetPct = targetHP / max
+
+    frame._lastPct = frame._lastPct or pct
+    local diff = targetPct - frame._lastPct
+    frame._lastPct = frame._lastPct + diff * 0.25
+    if frame._lastPct < 0 then
+        frame._lastPct = 0
+    elseif frame._lastPct > 1 then
+        frame._lastPct = 1
     end
 
     local r, g, b = getClassColor(frame.unit)
+    if pct < 0.35 then
+        r, g, b = 1, 0.2, 0.2
+    elseif pct < 0.7 then
+        r, g, b = 1, 0.8, 0.2
+    end
+
     frame.health:SetColorTexture(r, g, b)
 
-    local barWidth = (FRAME_WIDTH - 2) * ratio
-    frame.health:SetWidth(barWidth)
+    local frameWidth = frame:GetWidth() - 2
+    if frameWidth < 0 then
+        frameWidth = 0
+    end
+
+    frame.health:SetWidth(frameWidth * frame._lastPct)
     frame.health:SetHeight(FRAME_HEIGHT - 2)
 
-    local incomingAmount = UnitGetIncomingHeals and UnitGetIncomingHeals(frame.unit) or 0
-    if incomingAmount > 0 then
-        local incPct = math.min((current + incomingAmount) / maximum, 1)
-        local incWidth = (FRAME_WIDTH - 2) * incPct
+    local incPct = math.min((cur + incoming) / max, 1)
+    local incWidth = frameWidth * incPct
+    local healthWidth = frame.health:GetWidth()
+    local overlayWidth = incWidth - healthWidth
+    if overlayWidth > 0 then
         frame.incoming:SetHeight(FRAME_HEIGHT - 2)
-        frame.incoming:SetWidth(math.max(incWidth - barWidth, 0))
+        frame.incoming:SetWidth(overlayWidth)
+        frame.incoming:SetColorTexture(0, 1, 0.3, 0.4)
         frame.incoming:Show()
     else
         frame.incoming:SetWidth(0)
         frame.incoming:Hide()
+    end
+
+    if projectedTotal > max then
+        local overWidth = frameWidth * ((projectedTotal / max) - 1)
+        if overWidth < 0 then
+            overWidth = 0
+        end
+
+        if not frame.overheal then
+            frame.overheal = frame:CreateTexture(nil, "OVERLAY")
+            frame.overheal:SetPoint("LEFT", frame, "LEFT", frame:GetWidth(), 0)
+            frame.overheal:SetHeight(FRAME_HEIGHT - 2)
+        end
+
+        frame.overheal:SetColorTexture(0.8, 1, 0.8, 0.3)
+        frame.overheal:SetWidth(overWidth)
+        frame.overheal:Show()
+    elseif frame.overheal then
+        frame.overheal:Hide()
     end
 
     frame.name:SetText(UnitName(frame.unit) or "???")
@@ -291,6 +344,18 @@ local function updateAllFrames()
     end
 end
 
+local function startTicker()
+    if G._ticker then
+        G._ticker:Cancel()
+    end
+
+    G._ticker = C_Timer.NewTicker(0.1, function()
+        for _, f in pairs(unitFrames) do
+            updateUnitFrame(f, 0.1)
+        end
+    end)
+end
+
 function G.GetFeedbackEntries()
     return feedbackEntries
 end
@@ -318,6 +383,7 @@ local function initialize()
     rebuildGrid()
 
     if eventFrame then
+        startTicker()
         return
     end
 
@@ -327,6 +393,8 @@ local function initialize()
     eventFrame:RegisterEvent("UNIT_MAXHEALTH")
     eventFrame:RegisterEvent("PLAYER_ENTERING_WORLD")
     eventFrame:SetScript("OnEvent", onEvent)
+
+    startTicker()
 end
 
 G.Initialize = initialize
