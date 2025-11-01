@@ -577,6 +577,26 @@ local function layoutRows()
     scrollContent:SetHeight(height)
 end
 
+local function addDeleteButtons(_, rowTable)
+    for _, row in ipairs(rowTable or {}) do
+        if row and not row.deleteButton then
+            local btn = CreateFrame("Button", nil, row, "UIPanelButtonTemplate")
+            btn:SetSize(22, 22)
+            btn:SetPoint("RIGHT", -5, 0)
+            btn:SetText("X")
+            btn:SetScript("OnClick", function()
+                if row.comboKey then
+                    updateBinding(row.comboKey, nil)
+                end
+                row.spell = ""
+                refreshRowDisplay(row)
+                print("[NOD] Unbound", row.comboKey or "")
+            end)
+            row.deleteButton = btn
+        end
+    end
+end
+
 function BindUI:RefreshSpellList()
     local list = ensureSpellList()
     if not list or not spellListContent then
@@ -591,6 +611,7 @@ function BindUI:AddRow(modKey, buttonKey, spellName)
     local row = createRow(modKey, buttonKey, spellName)
     if row then
         layoutRows()
+        addDeleteButtons(frame, rows)
     end
     return row
 end
@@ -631,6 +652,7 @@ function BindUI:EnsureInitialRows()
     end
 
     layoutRows()
+    addDeleteButtons(frame, rows)
 end
 
 function BindUI:RefreshRowsFromBindings()
@@ -730,6 +752,7 @@ function BindUI:Create()
     end)
 
     self:EnsureInitialRows()
+    addDeleteButtons(frame, rows)
     frame:Hide()
 
     return frame

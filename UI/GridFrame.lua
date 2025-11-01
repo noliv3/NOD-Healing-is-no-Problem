@@ -9,10 +9,16 @@ local UnitExists = UnitExists
 local UnitHealth = UnitHealth
 local UnitHealthMax = UnitHealthMax
 local UnitName = UnitName
+local UnitGetIncomingHeals = UnitGetIncomingHeals
 local GetNumGroupMembers = GetNumGroupMembers
 local GetNumSubgroupMembers = GetNumSubgroupMembers
 local IsInGroup = IsInGroup
 local IsInRaid = IsInRaid
+local IsAltKeyDown = IsAltKeyDown
+local IsControlKeyDown = IsControlKeyDown
+local IsShiftKeyDown = IsShiftKeyDown
+local IsUsableSpell = IsUsableSpell
+local CastSpellByName = CastSpellByName
 local RAID_CLASS_COLORS = RAID_CLASS_COLORS
 local math = math
 local ipairs = ipairs
@@ -61,6 +67,40 @@ local function createUnitFrame(parent, unit, index)
     frame:SetBackdropColor(0.1, 0.1, 0.1, 0.8)
     frame:SetClipsChildren(true)
 
+    frame:RegisterForClicks("AnyUp")
+    frame:SetScript("OnClick", function(self, button)
+        if not self.unit then
+            return
+        end
+
+        local combo = ""
+        if IsAltKeyDown() then
+            combo = combo .. "Alt-"
+        end
+        if IsControlKeyDown() then
+            combo = combo .. "Ctrl-"
+        end
+        if IsShiftKeyDown() then
+            combo = combo .. "Shift-"
+        end
+        combo = combo .. button
+
+        local bindings = NODHeal and NODHeal.Bindings
+        local spell
+        if bindings and bindings.Get then
+            spell = bindings:Get(combo) or bindings:Get(button)
+        end
+
+        local targetName = UnitName(self.unit) or "???"
+
+        if spell and IsUsableSpell(spell) then
+            CastSpellByName(spell, self.unit)
+            print("[NOD] Cast:", spell, "→", targetName)
+        else
+            print("[NOD] No binding for", combo)
+        end
+    end)
+
     frame:SetScript("OnEnter", function(self)
         if not self.unit then
             return
@@ -80,9 +120,12 @@ local function createUnitFrame(parent, unit, index)
     health:SetColorTexture(0, 1, 0)
 
     local incoming = frame:CreateTexture(nil, "ARTWORK")
-    incoming:SetPoint("BOTTOMLEFT", health, "BOTTOMRIGHT", 0, 0)
-    incoming:SetPoint("TOPLEFT", health, "TOPRIGHT", 0, 0)
-    incoming:SetColorTexture(0, 0.75, 0.95, 0.25)
+    incoming:SetPoint("LEFT", health, "RIGHT", 0, 0)
+    incoming:SetPoint("TOP", health, "TOP", 0, 0)
+    incoming:SetPoint("BOTTOM", health, "BOTTOM", 0, 0)
+    incoming:SetColorTexture(0, 1, 0.4, 0.3)
+    incoming:SetHeight(FRAME_HEIGHT - 2)
+    incoming:SetWidth(0)
     incoming:Hide()
 
     local name = frame:CreateFontString(nil, "OVERLAY", "GameFontNormalSmall")
@@ -123,8 +166,17 @@ local function updateUnitFrame(frame)
     frame.health:SetWidth(barWidth)
     frame.health:SetHeight(FRAME_HEIGHT - 2)
 
-    frame.incoming:SetWidth(0)
-    frame.incoming:SetHeight(FRAME_HEIGHT - 2)
+    local incomingAmount = UnitGetIncomingHeals and UnitGetIncomingHeals(frame.unit) or 0
+    if incomingAmount > 0 then
+        local incPct = math.min((current + incomingAmount) / maximum, 1)
+        local incWidth = (FRAME_WIDTH - 2) * incPct
+        frame.incoming:SetHeight(FRAME_HEIGHT - 2)
+        frame.incoming:SetWidth(math.max(incWidth - barWidth, 0))
+        frame.incoming:Show()
+    else
+        frame.incoming:SetWidth(0)
+        frame.incoming:Hide()
+    end
 
     frame.name:SetText(UnitName(frame.unit) or "???")
 end
