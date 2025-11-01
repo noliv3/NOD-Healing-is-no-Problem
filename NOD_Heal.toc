@@ -31,5 +31,6 @@ Core/PredictiveSolver.lua
 UI/ClickCast.lua
 UI/BindingFrame.lua
 UI/GridFrame.lua
+UI/Options.lua
 UI/Init.lua
 UI/Overlay.lua

@@ -165,6 +165,13 @@ SlashCmdList["NODGUI"] = function()
     end
 end
 
+SLASH_NODOPTIONS1 = "/nodoptions"
+SlashCmdList["NODOPTIONS"] = function()
+    if NODHeal and NODHeal.Options and NODHeal.Options.Toggle then
+        NODHeal.Options:Toggle()
+    end
+end
+
 SLASH_NODSORT1 = "/nodsort"
 SlashCmdList["NODSORT"] = function(msg)
     local mode = (msg or ""):lower()

@@ -24,6 +24,7 @@ local C_Timer = C_Timer
 local math = math
 local ipairs = ipairs
 local pairs = pairs
+local type = type
 
 local unitFrames = {}
 local container
@@ -34,6 +35,19 @@ local FRAME_HEIGHT = 35
 local COLUMNS = 5
 local SPACING = 4
 local PADDING = 8
+
+local function getConfig()
+    NODHeal.Config = NODHeal.Config or {}
+    return NODHeal.Config
+end
+
+local function isConfigEnabled(key, defaultValue)
+    local value = getConfig()[key]
+    if value == nil then
+        return defaultValue
+    end
+    return value and true or false
+end
 
 local function getUnits()
     local list = {}
@@ -62,6 +76,7 @@ end
 
 local function sortUnits(mode)
     local units = getUnits()
+    mode = mode or "group"
     if mode == "class" then
         table.sort(units, function(a, b)
             local _, ca = UnitClass(a)
@@ -242,21 +257,26 @@ local function updateUnitFrame(frame, elapsed)
     frame.health:SetWidth(frameWidth * frame._lastPct)
     frame.health:SetHeight(FRAME_HEIGHT - 2)
 
-    local incPct = math.min((cur + incoming) / max, 1)
-    local incWidth = frameWidth * incPct
-    local healthWidth = frame.health:GetWidth()
-    local overlayWidth = incWidth - healthWidth
-    if overlayWidth > 0 then
-        frame.incoming:SetHeight(FRAME_HEIGHT - 2)
-        frame.incoming:SetWidth(overlayWidth)
-        frame.incoming:SetColorTexture(0, 1, 0.3, 0.4)
-        frame.incoming:Show()
+    if isConfigEnabled("showIncoming", true) then
+        local incPct = math.min((cur + incoming) / max, 1)
+        local incWidth = frameWidth * incPct
+        local healthWidth = frame.health:GetWidth()
+        local overlayWidth = incWidth - healthWidth
+        if overlayWidth > 0 then
+            frame.incoming:SetHeight(FRAME_HEIGHT - 2)
+            frame.incoming:SetWidth(overlayWidth)
+            frame.incoming:SetColorTexture(0, 1, 0.3, 0.4)
+            frame.incoming:Show()
+        else
+            frame.incoming:SetWidth(0)
+            frame.incoming:Hide()
+        end
     else
         frame.incoming:SetWidth(0)
         frame.incoming:Hide()
     end
 
-    if projectedTotal > max then
+    if isConfigEnabled("showOverheal", true) and projectedTotal > max then
         local overWidth = frameWidth * ((projectedTotal / max) - 1)
         if overWidth < 0 then
             overWidth = 0
@@ -297,10 +317,13 @@ local function ensureContainer()
     container:EnableMouse(true)
     container:SetClampedToScreen(true)
     container:RegisterForDrag("LeftButton")
-    container:SetScript("OnDragStart", container.StartMoving)
+    container:SetScript("OnDragStart", function(frame)
+        if not isConfigEnabled("lockGrid", false) then
+            frame:StartMoving()
+        end
+    end)
     container:SetScript("OnDragStop", container.StopMovingOrSizing)
     container:SetBackdrop({bgFile = "Interface/DialogFrame/UI-DialogBox-Background-Dark"})
-    container:SetBackdropColor(0, 0, 0, 0.7)
 
     addFeedback("Container frame created")
 
@@ -310,8 +333,59 @@ end
 local function rebuildGrid()
     local host = ensureContainer()
 
-    local sortedUnits = sortUnits(NODHeal.Config and NODHeal.Config.sortMode or "group")
+    local cfg = getConfig()
+    local sortedUnits = sortUnits(cfg.sortMode or "group")
     addFeedback("Rebuilding Grid Layout (Sorted)")
+
+    local cols = cfg.columns
+    if type(cols) ~= "number" then
+        cols = COLUMNS
+    end
+    cols = math.floor(cols + 0.5)
+    if cols < 1 then
+        cols = 1
+    elseif cols > 40 then
+        cols = 40
+    end
+
+    local spacing = cfg.spacing
+    if type(spacing) ~= "number" then
+        spacing = SPACING
+    end
+    if spacing < 0 then
+        spacing = 0
+    end
+
+    local scale = cfg.scale
+    if type(scale) ~= "number" then
+        scale = 1
+    end
+    if scale < 0.3 then
+        scale = 0.3
+    elseif scale > 3 then
+        scale = 3
+    end
+    host:SetScale(scale)
+
+    local alpha = cfg.bgAlpha
+    if type(alpha) ~= "number" then
+        alpha = 0.7
+    end
+    if alpha < 0 then
+        alpha = 0
+    elseif alpha > 1 then
+        alpha = 1
+    end
+    host:SetBackdropColor(0, 0, 0, alpha)
+
+    local locked = isConfigEnabled("lockGrid", false)
+    host:SetMovable(not locked)
+    host:EnableMouse(not locked)
+    if locked then
+        host:RegisterForDrag()
+    else
+        host:RegisterForDrag("LeftButton")
+    end
 
     local total = #sortedUnits
     if total == 0 then
@@ -323,8 +397,6 @@ local function rebuildGrid()
         return
     end
 
-    local cols = COLUMNS
-    local spacing = SPACING
     local rows = math.ceil(total / cols)
     local usedColumns = math.min(total, cols)
     local width = (usedColumns * FRAME_WIDTH) + ((usedColumns - 1) * spacing) + (PADDING * 2)
