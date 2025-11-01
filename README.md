@@ -56,6 +56,7 @@ Hinweis: Dieser Abschnitt beschreibt den Arbeitsplan; Implementierung folgt in v
 - [`DOCU/HealingAddons_Funktionsvergleich_NOD_Integration.md`](DOCU/HealingAddons_Funktionsvergleich_NOD_Integration.md) – Feature-Matrix aktueller Healing-Addons.
 - [`DOCU/Datei_und_Modulstruktur_NOD-Projektbaum.txt`](DOCU/Datei_und_Modulstruktur_NOD-Projektbaum.txt) – geplanter Projektbaum und Build-Checkliste.
 - [`DOCU/NOD_Datenpfad_LHC_API.md`](DOCU/NOD_Datenpfad_LHC_API.md) – Dokumentation des LibHealComm-Datenpfads inklusive API-Fallback.
+- [`DOCU/NOD_Heal_Pfadstruktur.md`](DOCU/NOD_Heal_Pfadstruktur.md) – Verzeichnisstruktur des Addons mit Änderungsständen und aktuellem Installationspfad.
 - [`DOCU/Validation/Final_Audit_Report_v1.md`](DOCU/Validation/Final_Audit_Report_v1.md) – Aktueller CODEx-Abschlussbericht zum Funktionsstand (Subsystem-Matrix, Empfehlungen).
 
 ## WoW-API- und Richtlinien-Review (aktueller Stand)
