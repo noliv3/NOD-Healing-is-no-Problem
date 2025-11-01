@@ -11,22 +11,34 @@ local UnitHealthMax = UnitHealthMax
 local UnitName = UnitName
 local GetNumGroupMembers = GetNumGroupMembers
 local GetNumSubgroupMembers = GetNumSubgroupMembers
+local IsInGroup = IsInGroup
 local IsInRaid = IsInRaid
 local RAID_CLASS_COLORS = RAID_CLASS_COLORS
 local math = math
 local ipairs = ipairs
 local pairs = pairs
-local table_insert = table.insert
 
 local unitFrames = {}
 local container
 local eventFrame
+local feedbackEntries = {}
 
 local FRAME_WIDTH = 90
 local FRAME_HEIGHT = 35
 local COLUMNS = 5
 local SPACING = 4
 local PADDING = 8
+
+local function addFeedback(message)
+    if not message then
+        return
+    end
+
+    feedbackEntries[#feedbackEntries + 1] = message
+
+    NODHeal.Feedback = NODHeal.Feedback or {}
+    NODHeal.Feedback.Grid = feedbackEntries
+end
 
 local function getClassColor(unit)
     local _, class = UnitClass(unit)
@@ -117,34 +129,6 @@ local function updateUnitFrame(frame)
     frame.name:SetText(UnitName(frame.unit) or "???")
 end
 
-local function collectUnits()
-    local units = {}
-
-    if IsInRaid() then
-        local total = GetNumGroupMembers() or 0
-        for i = 1, total do
-            local unit = "raid" .. i
-            if UnitExists(unit) then
-                table_insert(units, unit)
-            end
-        end
-    else
-        if UnitExists("player") then
-            table_insert(units, "player")
-        end
-
-        local subgroupMembers = GetNumSubgroupMembers and GetNumSubgroupMembers() or 0
-        for i = 1, subgroupMembers do
-            local unit = "party" .. i
-            if UnitExists(unit) then
-                table_insert(units, unit)
-            end
-        end
-    end
-
-    return units
-end
-
 local function ensureContainer()
     if container then
         return container
@@ -160,6 +144,8 @@ local function ensureContainer()
     container:SetScript("OnDragStop", container.StopMovingOrSizing)
     container:SetBackdrop({bgFile = "Interface/DialogFrame/UI-DialogBox-Background-Dark"})
     container:SetBackdropColor(0, 0, 0, 0.7)
+
+    addFeedback("Container frame created")
 
     return container
 end
@@ -199,6 +185,8 @@ local function layoutUnits(units)
 
         frame:SetPoint("TOPLEFT", host, "TOPLEFT", offsetX, offsetY)
         updateUnitFrame(frame)
+
+        addFeedback("Frame " .. index .. " assigned to unit '" .. unit .. "'")
     end
 
     local count = #unitFrames
@@ -212,14 +200,47 @@ local function layoutUnits(units)
 end
 
 local function rebuildGrid()
-    local units = collectUnits()
-    layoutUnits(units)
+    addFeedback("Rebuilding Grid Layout")
+
+    ensureContainer()
+
+    local units = {"player"}
+
+    if IsInRaid() then
+        local total = GetNumGroupMembers() or 0
+        for i = 1, total do
+            units[#units + 1] = "raid" .. i
+        end
+    elseif IsInGroup() then
+        local total = GetNumGroupMembers() or 0
+        for i = 1, math.max(total - 1, 0) do
+            units[#units + 1] = "party" .. i
+        end
+    else
+        local subgroupMembers = GetNumSubgroupMembers and GetNumSubgroupMembers() or 0
+        for i = 1, subgroupMembers do
+            units[#units + 1] = "party" .. i
+        end
+    end
+
+    local filtered = {}
+    for _, unit in ipairs(units) do
+        if UnitExists(unit) then
+            filtered[#filtered + 1] = unit
+        end
+    end
+
+    layoutUnits(filtered)
 end
 
 local function updateAllFrames()
     for _, frame in ipairs(unitFrames) do
         updateUnitFrame(frame)
     end
+end
+
+function G.GetFeedbackEntries()
+    return feedbackEntries
 end
 
 local function onEvent(_, event, arg1)

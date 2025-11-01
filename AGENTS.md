@@ -15,6 +15,7 @@ Diese Richtlinien gelten für das gesamte Repository, sofern in Unterordnern kei
 - Planungs- und Vergleichsdokumente im Ordner `DOCU/` liegen bevorzugt als Markdown (`.md`) vor und folgen sprechenden Dateinamen wie `NOD_Systemaufbau_Modulstruktur.md` oder `HealingAddons_Funktionsvergleich_NOD_Integration.md`. Bei neuen Inhalten bitte dieses Format und die Benennung fortführen.
 - Die aktuelle Verzeichnisstruktur inkl. Zielinstallationspfad wird in `DOCU/NOD_Heal_Pfadstruktur.md` gepflegt und bei Strukturänderungen aktualisiert.
 - UI-Frame-Dokumentation wird aus `DOCU/NOD_Konzept_Funktionsliste.txt` generiert und liegt versioniert unter `docu/ui_frames/`. Nutzt zum Aktualisieren das Skript `scripts/generate_ui_frame_yaml.py`, damit die Segmentierung (≤500 Einträge pro Datei, Rest in `unsorted.yaml`) konsistent bleibt.
+- Feedback-Protokolle zu UI-Bausteinen werden unter `DOCU/Feedback/` geführt; ergänzt neue Einträge je Feature (z. B. Grid-Rebuild-Logs inkl. `player`-Frame) zeitnah.
 - Bereits produktiv umgesetzte Core-Module: `HealthSnapshot`, `CastLandingTime`, `IncomingHeals`, `HealValueEstimator`, `PredictiveSolver`, `LatencyTools` sowie die nun angebundenen Welle-1-Komponenten (`DamagePrediction`, `AuraTickPredictor`, `EffectiveHP`, `DesyncGuard`, `CoreDispatcher`).
 
 ## Testing & Tooling
