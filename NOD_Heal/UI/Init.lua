@@ -1,75 +1,137 @@
 local NODHeal = _G.NODHeal
 
 local CreateFrame = CreateFrame
-local GetTime = GetTime
+local UIParent = UIParent
 local C_Timer = C_Timer
+local GetTimePreciseSec = GetTimePreciseSec or GetTime
 local format = string.format
+local unpack = unpack
 
 local UI = {}
 UI.__index = UI
+
+local STATUS_WIDTH = 200
+local STATUS_HEIGHT = 40
+local STATUS_POINT = {"BOTTOMRIGHT", UIParent, "BOTTOMRIGHT", -20, 80}
+local STATUS_UPDATE_INTERVAL = 0.5
 
 function UI:GetState()
     return NODHeal and NODHeal.State
 end
 
-function UI:EnsureFrame()
-    if self.frame then
-        return self.frame
+function UI:EnsureStatusFrame()
+    if self.statusFrame then
+        return self.statusFrame
     end
 
     local frame = CreateFrame("Frame", "NODHealStatusFrame", UIParent)
-    frame:SetSize(220, 32)
-    frame:SetPoint("BOTTOMRIGHT", UIParent, "BOTTOMRIGHT", -30, 120)
+    frame:SetSize(STATUS_WIDTH, STATUS_HEIGHT)
+    frame:SetPoint(unpack(STATUS_POINT))
+    frame:SetFrameStrata("LOW")
+    frame:EnableMouse(false)
 
     local background = frame:CreateTexture(nil, "BACKGROUND")
     background:SetAllPoints()
-    background:SetColorTexture(0, 0, 0, 0.45)
+    background:SetColorTexture(0, 0, 0, 0.6)
 
     local border = frame:CreateTexture(nil, "BORDER")
     border:SetAllPoints()
-    border:SetColorTexture(0.1, 0.1, 0.1, 0.6)
+    border:SetColorTexture(0.12, 0.12, 0.12, 0.85)
 
-    local text = frame:CreateFontString(nil, "OVERLAY", "GameFontNormal")
-    text:SetPoint("CENTER")
-    text:SetText("[NOD] Quelle: --")
+    local sourceText = frame:CreateFontString(nil, "OVERLAY", "GameFontNormalSmall")
+    sourceText:SetPoint("TOPLEFT", frame, "TOPLEFT", 12, -10)
+    sourceText:SetText("Quelle: --")
 
-    frame.text = text
-    self.frame = frame
+    local timeText = frame:CreateFontString(nil, "OVERLAY", "GameFontNormalSmall")
+    timeText:SetPoint("TOPLEFT", sourceText, "BOTTOMLEFT", 0, -4)
+    timeText:SetText("Zeit: 0.000")
+
+    frame.sourceText = sourceText
+    frame.timeText = timeText
+
+    self.statusFrame = frame
     return frame
 end
 
-function UI:Refresh()
-    local frame = self:EnsureFrame()
-    if not frame or not frame.text then
+local function applySourceColor(fontString, useLHC)
+    if not fontString then
+        return
+    end
+
+    if useLHC then
+        fontString:SetTextColor(0.1, 0.85, 0.1)
+    else
+        fontString:SetTextColor(0.9, 0.8, 0.1)
+    end
+end
+
+function UI:UpdateStatus()
+    local frame = self:EnsureStatusFrame()
+    if not frame then
         return
     end
 
     local state = self:GetState() or {}
-    local useLHC = state.useLHC ~= false
-    local source = useLHC and "LHC" or "API"
-    local color = useLHC and "|cff00ff00" or "|cffffff00"
-    local now = GetTime() or 0
-    local lastSwitch = state.lastSwitch or now
-    local elapsed = now - lastSwitch
-    if elapsed < 0 then
-        elapsed = 0
+    local useLHC = state.useLHC and true or false
+    local sourceText = frame.sourceText
+    local timeText = frame.timeText
+
+    local sourceLabel = useLHC and "LHC" or "API"
+    if sourceText then
+        sourceText:SetText(format("Quelle: %s", sourceLabel))
+        applySourceColor(sourceText, useLHC)
     end
 
-    frame.text:SetText(format("%sQuelle: %s|r t=%.3f", color, source, elapsed))
-    print(format("[NOD] UI: source=%s t=%.3f", source, elapsed))
+    if timeText then
+        local now = GetTimePreciseSec() or 0
+        timeText:SetText(format("Zeit: %.3f", now))
+        timeText:SetTextColor(0.85, 0.85, 0.85)
+    end
 end
 
-function UI:Initialize()
-    if self.ticker then
+function UI:Refresh()
+    self:UpdateStatus()
+end
+
+function UI:CancelTicker()
+    if self.statusTicker then
+        self.statusTicker:Cancel()
+        self.statusTicker = nil
+    end
+end
+
+function UI:HandlePlayerLogout()
+    self:CancelTicker()
+end
+
+function UI:EnsureLogoutWatcher()
+    if self.logoutWatcher then
         return
     end
 
-    self:EnsureFrame()
-    self:Refresh()
-
-    self.ticker = C_Timer.NewTicker(0.5, function()
-        self:Refresh()
+    local watcher = CreateFrame("Frame")
+    watcher:RegisterEvent("PLAYER_LOGOUT")
+    watcher:SetScript("OnEvent", function()
+        self:HandlePlayerLogout()
     end)
+
+    self.logoutWatcher = watcher
+end
+
+function UI:Initialize()
+    if self.statusTicker then
+        return
+    end
+
+    self:EnsureStatusFrame()
+    self:EnsureLogoutWatcher()
+    self:UpdateStatus()
+
+    self.statusTicker = C_Timer.NewTicker(STATUS_UPDATE_INTERVAL, function()
+        self:UpdateStatus()
+    end)
+
+    print("[NOD] UI initialized (StatusFrame active)")
 end
 
 return NODHeal:RegisterModule("UI", UI)

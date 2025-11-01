@@ -29,3 +29,4 @@ Core/PredictiveSolver.lua
 
 # UI
 UI/Init.lua
+UI/Overlay.lua
