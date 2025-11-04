@@ -176,16 +176,50 @@ hooksecurefunc("CompactUnitFrame_UpdateVisible", function(frame)
     end
 end)
 
-hooksecurefunc("CompactUnitFrame_OnEnter", function(frame)
+local function fadeIn(frame)
     if frame and frame.healthBar then
         frame.healthBar:SetAlpha(0.8)
     end
-end)
+end
+
+if type(CompactUnitFrame_OnEnter) == "function" then
+    hooksecurefunc("CompactUnitFrame_OnEnter", function(frame)
+        fadeIn(frame)
+
+        if frame and frame.unit then
+            GameTooltip:SetOwner(frame, "ANCHOR_RIGHT")
+            GameTooltip:SetUnit(frame.unit)
+            GameTooltip:Show()
+        end
+    end)
+else
+    -- Classic fallback: hook GridFrames manually
+    local grid = NODHeal and NODHeal.Grid and NODHeal.Grid.unitFrames
+    if grid then
+        for _, f in pairs(grid) do
+            f:SetScript("OnEnter", function(self)
+                fadeIn(self)
+                if self.unit then
+                    GameTooltip:SetOwner(self, "ANCHOR_RIGHT")
+                    GameTooltip:SetUnit(self.unit)
+                    GameTooltip:Show()
+                end
+            end)
+            f:SetScript("OnLeave", function(self)
+                if self and self.healthBar then
+                    self.healthBar:SetAlpha(1)
+                end
+                GameTooltip_Hide()
+            end)
+        end
+    end
+end
 
 hooksecurefunc("CompactUnitFrame_OnLeave", function(frame)
     if frame and frame.healthBar then
         frame.healthBar:SetAlpha(1)
     end
+    GameTooltip_Hide()
 end)
 
 function UI.EnableOverlay(on)
