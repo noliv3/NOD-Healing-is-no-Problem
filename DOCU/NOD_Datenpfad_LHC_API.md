@@ -1,5 +1,7 @@
 # Datenpfad Incoming Heals – LibHealComm + Blizzard-Fallback
 
+> **Hinweis (2025-05):** Die produktive Implementierung nutzt aktuell ausschließlich Blizzard-API-Daten (Combat-Log + `UnitGetIncomingHeals`). Dieses Dokument bleibt als Referenz für den früher geplanten LibHealComm-Datenpfad bestehen.
+
 ## Überblick
 Dieser Vermerk beschreibt den Datenpfad für eingehende Heilungen in NOD-Heal. Er deckt den LHC-Callback-Strom bis `IncomingHeals` ab, die Übergabe an den `IncomingHealAggregator` sowie den Blizzard-API-Fallback via `UnitGetIncomingHeals`. Alle Beträge werden in Heilpunkten (HP) geführt, Zeitpunkte in Sekunden (s) mit Millisekundenauflösung (ms).
 

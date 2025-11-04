@@ -1,41 +1,22 @@
 -- Module: IncomingHeals (read-side)
--- Purpose: Read-only interface to collect incoming heals until tLand using LHC/API fallback.
--- Role: Provides aggregated view for solver consumption; no dispatch or persistent queues here.
--- See also: IncomingHealAggregator (write-side feed & dispatcher)
--- Referenz: /DOCU/NOD_Datenpfad_LHC_API.md §Ereignisfluss
+-- Purpose: Aggregate predicted incoming heals using Blizzard's API and local aggregator data.
 
 local pairs = pairs
 local tonumber = tonumber
 local type = type
-local format = string.format
-local math_floor = math.floor
-
 local GetTime = GetTime
 local UnitGUID = UnitGUID
 local UnitGetIncomingHeals = UnitGetIncomingHeals
 
 local aggregatorRef
 local dispatcherRef
-local lhcHandle
-local callbacksRegistered = false
 
 local M = {}
 
 local landingEpsilon = 0.05
 
-local function log(message)
-  if message then
-    print("[NOD] " .. message)
-  end
-end
-
 local function namespace()
   return _G.NODHeal
-end
-
-local function state()
-  local ns = namespace()
-  return ns and ns.State
 end
 
 local function ensureAggregator()
@@ -47,6 +28,7 @@ local function ensureAggregator()
   if ns and ns.GetModule then
     aggregatorRef = ns:GetModule("IncomingHealAggregator")
   end
+
   return aggregatorRef
 end
 
@@ -59,6 +41,7 @@ local function ensureDispatcher()
   if ns and ns.GetModule then
     dispatcherRef = ns:GetModule("CoreDispatcher")
   end
+
   return dispatcherRef
 end
 
@@ -82,110 +65,19 @@ local function normalizeLandingTime(value)
   return value
 end
 
-local function resolveTargets(targets, amount)
-  if type(targets) == "table" then
-    return targets
-  end
-  if type(amount) == "table" then
-    return amount
-  end
-  return nil
-end
-
-local function feedAggregator(casterGUID, spellID, targets, tLand)
-  local aggregator = ensureAggregator()
-  if not aggregator or not aggregator.AddHeal then
-    return
+local function resolveGuid(unit)
+  if not unit then
+    return nil
   end
 
-  local healState = state()
-  if healState and not healState.useLHC then
-    log("LHC: ignored payload (LHC off)")
-    return
+  if UnitGUID then
+    local guid = UnitGUID(unit)
+    if guid then
+      return guid
+    end
   end
 
-  local landing = normalizeLandingTime(tLand)
-  for targetGUID, amount in pairs(targets) do
-    local payload = {
-      targetGUID = targetGUID,
-      amount = math_floor((amount or 0) + 0.5),
-      landTime = landing,
-      sourceGUID = casterGUID,
-      spellID = spellID,
-      source = "LHC",
-    }
-    aggregator.AddHeal(payload)
-  end
-end
-
-local function removeFromAggregator(casterGUID, spellID, targets)
-  local aggregator = ensureAggregator()
-  if not aggregator or not aggregator.RemoveHeal then
-    return
-  end
-
-  aggregator.RemoveHeal({
-    casterGUID = casterGUID,
-    spellID = spellID,
-    targets = targets,
-  })
-end
-
-local function onHealScheduled(event, casterGUID, spellID, _, endTime, targets, amount)
-  local resolved = resolveTargets(targets, amount)
-  if not resolved then
-    return
-  end
-
-  feedAggregator(casterGUID, spellID, resolved, endTime)
-end
-
-local function onHealStopped(_, casterGUID, spellID, _, targets)
-  if type(targets) ~= "table" then
-    return
-  end
-  removeFromAggregator(casterGUID, spellID, targets)
-end
-
-local function registerCallbacks()
-  if callbacksRegistered then
-    return true
-  end
-
-  if not lhcHandle then
-    lhcHandle = LibStub and LibStub("LibHealComm-4.0", true)
-  end
-
-  if not lhcHandle then
-    log("HealComm: library not available; fallback active")
-    return false
-  end
-
-  lhcHandle:RegisterCallback(M, "HealComm_HealStarted", onHealScheduled)
-  lhcHandle:RegisterCallback(M, "HealComm_HealUpdated", onHealScheduled)
-  lhcHandle:RegisterCallback(M, "HealComm_HealDelayed", onHealScheduled)
-  lhcHandle:RegisterCallback(M, "HealComm_HealStopped", onHealStopped)
-  lhcHandle:RegisterCallback(M, "HealComm_HealSucceeded", onHealStopped)
-
-  callbacksRegistered = true
-  log("HealComm: callbacks registered")
-  return true
-end
-
-local function unregisterCallbacks()
-  if not callbacksRegistered or not lhcHandle then
-    callbacksRegistered = false
-    return
-  end
-
-  lhcHandle:UnregisterCallback(M, "HealComm_HealStarted")
-  lhcHandle:UnregisterCallback(M, "HealComm_HealUpdated")
-  lhcHandle:UnregisterCallback(M, "HealComm_HealDelayed")
-  lhcHandle:UnregisterCallback(M, "HealComm_HealStopped")
-  lhcHandle:UnregisterCallback(M, "HealComm_HealSucceeded")
-
-  callbacksRegistered = false
-  log("HealComm: callbacks unregistered")
+  return unit
 end
 
 local function computeFallback(unit)
@@ -198,29 +90,23 @@ local function computeFallback(unit)
     amount = 0
   end
 
-  local confidence = amount > 0 and "medium" or "low"
-  log(format("API: UnitGetIncomingHeals(%s)=%d", tostring(unit), amount))
   return {
     amount = amount,
-    confidence = confidence,
+    confidence = amount > 0 and "medium" or "low",
+    sources = {},
   }
 end
 
-local function iterateAggregator(unit, horizon, collector)
+local function collectFromAggregator(unit, horizon)
   local aggregator = ensureAggregator()
   if not aggregator or not aggregator.Iterate then
-    return
+    return 0, {}
   end
 
-  aggregator.CleanExpired()
-  aggregator.Iterate(unit, horizon, collector)
-end
-
-local function collectFromAggregator(unit, horizon)
   local total = 0
   local contributions = {}
 
-  iterateAggregator(unit, horizon, function(entry)
+  aggregator.Iterate(unit, horizon, function(entry)
     local amount = entry.amount or 0
     if amount > 0 then
       total = total + amount
@@ -232,37 +118,7 @@ local function collectFromAggregator(unit, horizon)
   return total, contributions
 end
 
--- REGION: LHC Callbacks
-function M.RegisterHealComm()
-  return registerCallbacks()
-end
-
-function M.UnregisterHealComm()
-  unregisterCallbacks()
-  return true
-end
-
-function M.scheduleFromTargets(casterGUID, spellID, targets, amount, t_land)
-  local resolved = resolveTargets(targets, amount)
-  if not resolved then
-    return
-  end
-
-  feedAggregator(casterGUID, spellID, resolved, t_land)
-end
--- ENDREGION
-
--- REGION: HealComm Toggle
-function M.ToggleHealComm(stateFlag)
-  if stateFlag then
-    return M.RegisterHealComm()
-  end
-  return M.UnregisterHealComm()
-end
--- ENDREGION
-
-function M.Initialize(libHealComm, dispatcher)
-  lhcHandle = libHealComm or lhcHandle
+function M.Initialize(dispatcher)
   dispatcherRef = dispatcher or ensureDispatcher()
   ensureAggregator()
 
@@ -271,16 +127,6 @@ function M.Initialize(libHealComm, dispatcher)
       M.CleanExpired()
     end)
   end
-end
-
-local function resolveGuid(unit)
-  if not unit then
-    return nil
-  end
-  if UnitGUID then
-    return UnitGUID(unit)
-  end
-  return unit
 end
 
 function M.CollectUntil(unit, tLand)
@@ -315,23 +161,16 @@ function M.CollectUntil(unit, tLand)
 
   local fallback = computeFallback(unit)
   fallback.sources = contributions
+  if fallback.amount <= 0 then
+    fallback.confidence = "low"
+  end
   return fallback
 end
 
--- REGION: API Fallback
-function M.FetchFallback(unit, tLand)
-  local healState = state()
-  if healState and healState.useLHC then
-    local fallback = computeFallback(unit)
-    fallback.confidence = fallback.amount > 0 and "medium" or "low"
-    return fallback
-  end
-
+function M.FetchFallback(unit)
   return computeFallback(unit)
 end
--- ENDREGION
 
--- REGION: Cleanup
 function M.CleanExpired(now, unit)
   local aggregator = ensureAggregator()
   if not aggregator or not aggregator.CleanExpired then
@@ -344,6 +183,6 @@ function M.CleanExpired(now, unit)
     aggregator.CleanExpired(now)
   end
 end
--- ENDREGION
 
 return _G.NODHeal:RegisterModule("IncomingHeals", M)
+

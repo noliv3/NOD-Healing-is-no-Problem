@@ -447,29 +447,6 @@ function aggregator.FetchFallback(unit)
   return { amount = 0, confidence = "low" }
 end
 
-function aggregator.RegisterHealComm()
-  local incoming = namespace() and namespace():GetModule("IncomingHeals")
-  if incoming and incoming.RegisterHealComm then
-    return incoming.RegisterHealComm()
-  end
-  return false
-end
-
-function aggregator.UnregisterHealComm()
-  local incoming = namespace() and namespace():GetModule("IncomingHeals")
-  if incoming and incoming.UnregisterHealComm then
-    incoming.UnregisterHealComm()
-  end
-end
-
-function aggregator.ToggleHealComm(stateFlag)
-  if stateFlag then
-    aggregator.RegisterHealComm()
-  else
-    aggregator.UnregisterHealComm()
-  end
-end
-
 function aggregator.Initialize(dispatcher)
   dispatcherRef = dispatcher or obtainDispatcher()
 
