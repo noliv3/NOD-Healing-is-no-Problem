@@ -1,5 +1,32 @@
 local NODHeal = _G.NODHeal or {}
 
+if not NODHeal.Bindings then
+    NODHeal.Bindings = {}
+end
+
+-- Load saved bindings from DB
+local bindingsLoaded = false
+
+local function loadBindings()
+    if bindingsLoaded then
+        return
+    end
+
+    if NODHealDB and type(NODHealDB.bindings) == "table" then
+        NODHeal.Bindings.data = NODHealDB.bindings
+        bindingsLoaded = true
+        print("[NOD] Loaded saved spell bindings")
+    end
+end
+
+local loader = CreateFrame("Frame")
+loader:RegisterEvent("PLAYER_LOGIN")
+loader:SetScript("OnEvent", loadBindings)
+
+if IsLoggedIn and IsLoggedIn() then
+    loadBindings()
+end
+
 local CastSpellByName = CastSpellByName
 local IsUsableSpell = IsUsableSpell
 local hooksecurefunc = hooksecurefunc
@@ -7,7 +34,7 @@ local IsAltKeyDown = IsAltKeyDown
 local IsControlKeyDown = IsControlKeyDown
 local IsShiftKeyDown = IsShiftKeyDown
 
-local binds = {
+local defaultBindings = {
     ["LeftButton"] = "Healing Touch",
     ["RightButton"] = "Regrowth",
     ["Shift-LeftButton"] = "Rejuvenation",
@@ -15,7 +42,18 @@ local binds = {
 
 local ClickCast = NODHeal.ClickCast or {}
 NODHeal.ClickCast = ClickCast
-NODHeal.Bindings = NODHeal.Bindings or {}
+
+local function ensureBindingsStore()
+    if not NODHeal.Bindings.data then
+        local store = {}
+        for combo, spell in pairs(defaultBindings) do
+            store[combo] = spell
+        end
+        NODHeal.Bindings.data = store
+    end
+
+    return NODHeal.Bindings.data
+end
 
 local function getKeyCombo(button)
     local prefix = ""
@@ -67,12 +105,44 @@ local function highlightFrame(frame, on)
     end
 end
 
-hooksecurefunc("CompactUnitFrame_OnEnter", function(frame)
-    highlightFrame(frame, true)
-end)
+if type(CompactUnitFrame_OnEnter) == "function" then
+    hooksecurefunc("CompactUnitFrame_OnEnter", function(frame)
+        if not frame then
+            return
+        end
+
+        highlightFrame(frame, true)
+
+        if frame.unit then
+            GameTooltip:SetOwner(frame, "ANCHOR_RIGHT")
+            GameTooltip:SetUnit(frame.unit)
+            GameTooltip:Show()
+        end
+    end)
+else
+    -- Classic fallback: hook GridFrames manually
+    local grid = NODHeal.Grid and NODHeal.Grid.unitFrames
+    if grid then
+        for _, f in pairs(grid) do
+            f:SetScript("OnEnter", function(self)
+                highlightFrame(self, true)
+                if self.unit then
+                    GameTooltip:SetOwner(self, "ANCHOR_RIGHT")
+                    GameTooltip:SetUnit(self.unit)
+                    GameTooltip:Show()
+                end
+            end)
+            f:SetScript("OnLeave", function(self)
+                highlightFrame(self, false)
+                GameTooltip_Hide()
+            end)
+        end
+    end
+end
 
 hooksecurefunc("CompactUnitFrame_OnLeave", function(frame)
     highlightFrame(frame, false)
+    GameTooltip_Hide()
 end)
 
 hooksecurefunc("CompactUnitFrame_OnClick", function(frame, button)
@@ -108,15 +178,17 @@ registerExtraFrames()
 ClickCast.RegisterExtraFrames = registerExtraFrames
 
 function NODHeal.Bindings:Set(combo, spell)
-    binds[combo] = spell
+    local store = ensureBindingsStore()
+    store[combo] = spell
 end
 
 function NODHeal.Bindings:Get(combo)
-    return binds[combo]
+    local store = ensureBindingsStore()
+    return store[combo]
 end
 
 function NODHeal.Bindings:List()
-    return binds
+    return ensureBindingsStore()
 end
 
 _G.NODHeal = NODHeal
