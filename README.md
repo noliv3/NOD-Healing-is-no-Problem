@@ -6,24 +6,24 @@ NOD-Heal ist ein leistungsorientiertes Healing-Framework für den WoW-Client der
 - Basisordnerstruktur gemäß Projektplan erstellt (`NOD_Heal/`).
 - Erste Backend-Kernmodule implementiert: HealthSnapshot, CastLandingTime, IncomingHeals, HealValueEstimator, PredictiveSolver und LatencyTools bilden den Datenpfad für Heal-Prognosen.
 - DamagePrediction, AuraTickPredictor, IncomingHealAggregator, EffectiveHP, DesyncGuard und CoreDispatcher arbeiten nun mit produktiven WoW-API-Anbindungen und sind an den Solver angebunden.
-- Tag‑1-LHC-Brücke ist lauffähig: `NODHealDB.useLHC` persistiert den Toggle, `/nod healcomm on|off|status` steuert LibHealComm inkl. Blizzard-Fallback und Mini-Status-UI.
+- Eingehende Heilungen basieren vollständig auf Blizzard-APIs: Combat-Log-Feeds landen im Aggregator, `UnitGetIncomingHeals` dient als Fallback und der Statusrahmen kennzeichnet die Quelle als „API“.
 - TOC-Datei mit Load-Reihenfolge eingerichtet.
 
 ### Backend-Stabilisierung
-- `Core/IncomingHealAggregator` speichert pro Ziel GUID-Queues, räumt via `CleanExpired` automatisch auf und loggt Quelle/Menge jeder LibHealComm-Payload.
-- `Core/IncomingHeals` bridged LibHealComm-Callbacks direkt in den Aggregator und liefert aggregierte Summen sowie API-Fallbacks (inkl. Confidence-Leveln).
+- `Core/IncomingHealAggregator` speichert pro Ziel GUID-Queues, räumt via `CleanExpired` automatisch auf und fasst Combat-Log-basierte Heilungen für die Prognose zusammen.
+- `Core/IncomingHeals` kombiniert die Aggregator-Daten mit `UnitGetIncomingHeals`, liefert aggregierte Summen sowie Confidence-Level und benötigt keine externen Bibliotheken.
 - `Core/CastLandingTime` normalisiert Castzeiten (Millisekunden/Sekunden) und klemmt Warteschlange sowie Latenz auf sinnvolle Grenzwerte.
 - `Core/LatencyTools` aktualisiert Latenz- und Spell-Queue-Werte bei jeder Abfrage und clamped CVars gegen Ausreißer.
 - `Core/PredictiveSolver` verhindert negative Beiträge aus Schaden-, Heal- oder HoT-Bausteinen, bevor das projizierte Ergebnis berechnet wird.
 - CoreDispatcher bootstrappt Events, startet einen 0,2‑s-Ticker für `CleanExpired` und `PredictiveSolver:CalculateProjectedHealth("player")`, kapselt Callback-Aufrufe über einen Safe-Invoker und beendet den Ticker sauber bei Logout/Leaving-World.
 - Globaler Error-Ring (`/nod errors`) und Debug-Toggle (`/nod debug on|off|status`) sammeln Fehlermeldungen throttled über den Dispatcher-Logger (`logThrottle` ≥0,25 s).
-- Mini-Status-Frame (`UI/Init.lua`) steht unten rechts (200×40 px, Offset −20/80), aktualisiert alle 0,5 s Quelle (`LHC`/`API`) inklusive grün/gelb-Farbcode und zeigt die laufende Spielzeit in Millisekundenpräzision.
+- Mini-Status-Frame (`UI/Init.lua`) steht unten rechts (200×40 px, Offset −20/80), aktualisiert alle 0,5 s die Quelle („API“) inklusive Farbcode und zeigt die laufende Spielzeit in Millisekundenpräzision.
 - Overlay-Phase 1 (`UI/Overlay.lua`) hängt einen grünen Prognose-Balken an CompactUnitFrame-Gesundheitsleisten, nutzt `IncomingHealAggregator:GetIncomingForGUID` (Fallback `UnitGetIncomingHeals`) und respektiert den Toggle `NODHeal.Config.overlay`.
 - Overlay-Phase 2 erweitert die Prognose-Balken um dynamische Breitensteuerung und einen Hover-Highlight-Effekt auf den CompactUnitFrames.
 - GridFrame-Kern (`UI/GridFrame.lua`) erzeugt ein verschiebbares Raster mit Klassenfarben, Tooltip-Hover und Solo-Fallback für Spieler-, Party- und Raid-Mitglieder; der `player`-Frame wird nun immer zuerst aufgebaut, jede Raster-Neuerstellung landet im Feedback-Log (`NODHeal.Feedback.Grid`) und Click-Casts aus `NODHeal.Bindings` greifen direkt auf den GridFrames inklusive Incoming-Heal-Overlay als Basis für Overheal-Berechnungen. Die Healthbars aktualisieren sich nun sanft (0,1‑s-Ticker), färben bei niedriger Gesundheit gelb/rot, blenden ein halbtransparentes Overheal-Segment ein und kombinieren Blizzard-Incoming-Heals mit dem PredictiveSolver für projizierte Gesamtwerte. Neu: dynamisches Roster-Sorting (`/nodsort group|class|alpha`), automatischer Grid-Rebuild bei Gruppenwechseln und eine weiße Player-Border heben die eigene Einheit hervor.
 - In-Game-Optionsfenster (`UI/Options.lua`, Slash `/nodoptions`) erlaubt Grid-Layout-Anpassungen in Echtzeit: Skalierung, Spaltenanzahl, Abstände und Hintergrundtransparenz können per Slider verändert werden, Sortiermodus und Overlay-Anzeigen (Incoming/Overheal) lassen sich über Dropdowns und Checkbuttons toggeln, und die Grid-Position kann gesperrt/entsperrt werden. Alle Werte landen in `NODHeal.Config` und werden als `NODHealDB.config` persistiert; Änderungen triggern sofort einen Grid-Rebuild.
 - `Core/HealthSnapshot.lua` nutzt eine abgesicherte `UnitHealth`/`UnitHealthMax`-Abfrage, um ungültige Einheiten still zu verwerfen und Fehler-Spam zu verhindern.
-- Click-Cast-System (`UI/ClickCast.lua`) erlaubt Spell-Bindings für Mausbuttons inklusive Alt/Ctrl/Shift-Kombinationen (`/nodbind` zum Anzeigen/Setzen), hookt Spieler-, Gruppen- und Raid-Frames von Blizzard und liefert Hover/Modifier-Highlights als visuelles Feedback.
+- Click-Cast-System (`UI/ClickCast.lua`) erlaubt Spell-Bindings für Mausbuttons inklusive Alt/Ctrl/Shift-Kombinationen (`/nodbind` zum Anzeigen/Setzen) und setzt die Attribute der eigenen GridFrames sicher (`SecureUnitButtonTemplate`), sodass Casts auch im Kampf funktionieren.
 - Spell-Bindings werden beim Login automatisch aus `NODHealDB.bindings` geladen; Classic-Clients erhalten einen Tooltip-Fallback über GridFrames, sodass Click-Casts und Hover-Tooltips ohne `CompactUnitFrame_OnEnter` funktionieren.
 - Spell-Binding-UI (`UI/BindingFrame.lua`) stellt ein eigenständiges, verschiebbares Binding-Center bereit: Maus- und Modifier-Kombinationen werden über Dropdowns gewählt, Zauber stammen automatisch aus dem Spellbook und lassen sich per Klick oder Drag & Drop zuweisen; Änderungen werden sofort in `NODHeal.Bindings` gespeichert, jede Zeile besitzt eine Delete-Schaltfläche zum direkten Unbinden und das Fenster merkt sich seine Position (`/nodgui`).
 
@@ -40,7 +40,7 @@ Weitere Implementierungen folgen in iterativen Schritten (DamageForecast, AuraTi
 3. Click-Casting-Integration ausarbeiten.
 
 ## v1.1 – End-to-End-MVP (Plan)
-- [`DOCU/Tasks/Tag 1.md`](DOCU/Tasks/Tag%201.md): Datenpfad schließen (LibHealComm + Blizzard-Fallback, Toggle `/nod healcomm`).
+- [`DOCU/Tasks/Tag 1.md`](DOCU/Tasks/Tag%201.md): (Legacy) Datenpfad schließen (LibHealComm + Blizzard-Fallback, Toggle `/nod healcomm`).
 - [`DOCU/Tasks/Tag 2.md`](DOCU/Tasks/Tag%202.md): Timing finalisieren (LatencyTools, CastLandingTime, Freeze-Guard 100–150 ms).
 - [`DOCU/Tasks/Tag 3.md`](DOCU/Tasks/Tag%203.md): Minimal-Solver spezifizieren (`ComposeResult`, Clamp-Regeln, Effektiv-HP).
 - [`DOCU/Tasks/Tag 4.md`](DOCU/Tasks/Tag%204.md): UI-Overlay (MVP) auf CompactUnitFrame beschreiben.
@@ -61,7 +61,7 @@ Hinweis: Dieser Abschnitt beschreibt den Arbeitsplan; Implementierung folgt in v
 - [`DOCU/Vergleich_NOD_vs_HealBot_FeatureAnalyse.md`](DOCU/Vergleich_NOD_vs_HealBot_FeatureAnalyse.md) – Gegenüberstellung HealBot vs. NOD.
 - [`DOCU/HealingAddons_Funktionsvergleich_NOD_Integration.md`](DOCU/HealingAddons_Funktionsvergleich_NOD_Integration.md) – Feature-Matrix aktueller Healing-Addons.
 - [`DOCU/Datei_und_Modulstruktur_NOD-Projektbaum.txt`](DOCU/Datei_und_Modulstruktur_NOD-Projektbaum.txt) – geplanter Projektbaum und Build-Checkliste.
-- [`DOCU/NOD_Datenpfad_LHC_API.md`](DOCU/NOD_Datenpfad_LHC_API.md) – Dokumentation des LibHealComm-Datenpfads inklusive API-Fallback.
+- [`DOCU/NOD_Datenpfad_LHC_API.md`](DOCU/NOD_Datenpfad_LHC_API.md) – Historische Dokumentation des LibHealComm-Datenpfads; aktuelle Umsetzung nutzt ausschließlich die Blizzard-API.
 - [`DOCU/NOD_Heal_Pfadstruktur.md`](DOCU/NOD_Heal_Pfadstruktur.md) – Verzeichnisstruktur des Addons mit Änderungsständen und aktuellem Installationspfad.
 - [`DOCU/Validation/Final_Audit_Report_v1.md`](DOCU/Validation/Final_Audit_Report_v1.md) – Aktueller CODEx-Abschlussbericht zum Funktionsstand (Subsystem-Matrix, Empfehlungen).
 
@@ -73,7 +73,7 @@ Die folgende Übersicht dokumentiert, welche Funktionen bereits den WoW-Addon-Ri
 | `Core/Init.lua` | `NODHeal:RegisterModule` | ✅ geeignet | Sauberes Namespacing und Eingabevalidierung. |
 | `Core/Init.lua` | `NODHeal:GetModule` | ✅ geeignet | Standardisiertes Lookup ohne Seiteneffekte. |
 | `Core/CastTiming.lua` | `CastTiming:Compute` | ⚠️ teilweise geeignet | WoW-APIs korrekt genutzt, GCD noch statisch. |
-| `Core/IncomingHealAggregator.lua` | `IncomingHealAggregator:AddHeal` | ✅ geeignet | Zeichnet LHC-Payloads inkl. Logging auf und dispatcht Events. |
+| `Core/IncomingHealAggregator.lua` | `IncomingHealAggregator:AddHeal` | ✅ geeignet | Erfasst Combat-Log-Heilungen, loggt Quelle/Menge und dispatcht Events. |
 | `Core/IncomingHealAggregator.lua` | `IncomingHealAggregator:RemoveHeal` | ✅ geeignet | Entfernt Einträge pro Caster/Spell bei HealStop/HealSucceeded. |
 | `Core/IncomingHealAggregator.lua` | `IncomingHealAggregator:GetIncoming` | ✅ geeignet | Summiert Ereignisse API-konform inkl. automatischer Bereinigung. |
 | `UI/Init.lua` | `UI:Initialize` | ✅ geeignet | Erstellt Status-Frame, ticker-basierte Aktualisierung inkl. Farbcode. |
@@ -95,8 +95,8 @@ Die folgende Übersicht dokumentiert, welche Funktionen bereits den WoW-Addon-Ri
 | `Core/HealValueEstimator.lua` | `M.Learn` | ✅ geeignet | Aktualisiert Rolling Average & Varianz. |
 | `Core/HealValueEstimator.lua` | `M.Estimate` | ⚠️ teilweise geeignet | Stat-basierte Prognose aktiv, Feintuning offen. |
 | `Core/HealValueEstimator.lua` | `M.FetchFallback` | ✅ geeignet | Liefert statische Werte aus Fallback-DB. |
-| `Core/IncomingHeals.lua` | `M.Initialize` | ✅ geeignet | Registriert Dispatcher-Hooks und LibHealComm-Callbacks. |
-| `Core/IncomingHeals.lua` | `M.scheduleFromTargets` | ✅ geeignet | Bridged LibHealComm-Ziele direkt in den Aggregator (mit LHC-Toggle). |
+| `Core/IncomingHeals.lua` | `M.Initialize` | ✅ geeignet | Registriert Dispatcher-Hooks und verbindet Aggregator + Blizzard-API. |
+| `Core/IncomingHeals.lua` | `M.CollectUntil` | ✅ geeignet | Aggregiert Combat-Log-Heals und Blizzard-API-Werte bis `tLand`. |
 | `Core/IncomingHeals.lua` | `M.CollectUntil` | ✅ geeignet | Aggregiert Heals bis `tLand` inkl. Confidence und Fallback. |
 | `Core/IncomingHeals.lua` | `M.FetchFallback` | ✅ geeignet | Nutzt Blizzard-API, liefert Amount + Confidence-Level. |
 | `Core/LatencyTools.lua` | `M.Initialize` | ✅ geeignet | Initialisiert Latenz- und Queue-Cache. |

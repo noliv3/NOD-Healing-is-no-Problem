@@ -79,11 +79,6 @@ local function getModule(name)
   end
 end
 
-local function getState()
-  local ns = namespace()
-  return ns and ns.State
-end
-
 local function ensureFrame()
   if dispatcherFrame then
     return dispatcherFrame
@@ -210,15 +205,6 @@ function M.Initialize()
   bootstrapHandlers()
   scheduleTicker()
 
-  local state = getState()
-  local incoming = getModule("IncomingHeals")
-  if state and incoming then
-    if state.useLHC and incoming.RegisterHealComm then
-      incoming.RegisterHealComm()
-    elseif not state.useLHC and incoming.UnregisterHealComm then
-      incoming.UnregisterHealComm()
-    end
-  end
 end
 
 function M.RegisterHandler(event, func, options)
@@ -309,28 +295,6 @@ function M.Reset()
   end
 end
 
-function M.RegisterHealComm()
-  local incoming = getModule("IncomingHeals")
-  if incoming and incoming.RegisterHealComm then
-    return incoming.RegisterHealComm()
-  end
-  return false
-end
-
-function M.UnregisterHealComm()
-  local incoming = getModule("IncomingHeals")
-  if incoming and incoming.UnregisterHealComm then
-    incoming.UnregisterHealComm()
-  end
-end
-
-function M.scheduleFromTargets(casterGUID, spellID, targets, amount, t_land)
-  local incoming = getModule("IncomingHeals")
-  if incoming and incoming.scheduleFromTargets then
-    incoming.scheduleFromTargets(casterGUID, spellID, targets, amount, t_land)
-  end
-end
-
 function M.FetchFallback(unit)
   local incoming = getModule("IncomingHeals")
   if incoming and incoming.FetchFallback then
@@ -343,20 +307,6 @@ function M.CleanExpired()
   local aggregator = getModule("IncomingHealAggregator")
   if aggregator and aggregator.CleanExpired then
     aggregator.CleanExpired()
-  end
-end
-
-function M.ToggleHealComm(stateFlag)
-  local state = getState()
-  if state then
-    state.useLHC = stateFlag and true or false
-    state.lastSwitch = GetTime()
-  end
-
-  if stateFlag then
-    M.RegisterHealComm()
-  else
-    M.UnregisterHealComm()
   end
 end
 

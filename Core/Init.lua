@@ -48,17 +48,14 @@ end
 
 local function ensureState()
     NODHeal.State = NODHeal.State or {
-        useLHC = true,
-        lastSwitch = GetTime() or 0,
+        dataSource = "API",
+        lastSourceUpdate = GetTime() or 0,
     }
     return NODHeal.State
 end
 
 local function ensureSavedVariables()
     NODHealDB = NODHealDB or {}
-    if type(NODHealDB.useLHC) ~= "boolean" then
-        NODHealDB.useLHC = true
-    end
     return NODHealDB
 end
 
@@ -79,42 +76,11 @@ local function updateUi()
     end
 end
 
-local function applyHealCommState(enabled, opts)
-    local options = opts or {}
+local function stampDataSource()
     local state = ensureState()
-    state.useLHC = enabled and true or false
-    state.lastSwitch = GetTime() or state.lastSwitch or 0
-    NODHealDB.useLHC = state.useLHC
-
-    local incoming = fetchModule("IncomingHeals")
-    if incoming then
-        if state.useLHC and incoming.RegisterHealComm then
-            incoming.RegisterHealComm()
-        elseif not state.useLHC and incoming.UnregisterHealComm then
-            incoming.UnregisterHealComm()
-        end
-    end
-
-    local aggregator = fetchModule("IncomingHealAggregator")
-    if aggregator and aggregator.CleanExpired then
-        aggregator.CleanExpired()
-    end
-
+    state.dataSource = "API"
+    state.lastSourceUpdate = GetTime() or state.lastSourceUpdate or 0
     updateUi()
-
-    local message = state.useLHC and "HealComm: enabled" or "HealComm: disabled; using API fallback"
-    if options.announce then
-        log(message, true)
-    else
-        log(message)
-    end
-end
-
-local function printStatus(force)
-    local state = ensureState()
-    local source = state.useLHC and "LHC" or "API"
-    local elapsed = (GetTime() or state.lastSwitch or 0) - (state.lastSwitch or 0)
-    log(format("Status: Quelle=%s t=%.3f", source, elapsed), force)
 end
 
 local function setDebugState(flag)
@@ -180,19 +146,6 @@ local function handleSlashCommand(message)
     command = command and strlower(command) or ""
     rest = rest and strlower(rest) or ""
 
-    if command == "healcomm" then
-        if rest == "on" then
-            applyHealCommState(true, { announce = true })
-        elseif rest == "off" then
-            applyHealCommState(false, { announce = true })
-        elseif rest == "status" or rest == "" then
-            printStatus(true)
-        else
-            log("HealComm: usage /nod healcomm on|off|status", true)
-        end
-        return
-    end
-
     if command == "debug" then
         if rest == "on" then
             setDebugState(true)
@@ -211,7 +164,7 @@ local function handleSlashCommand(message)
         return
     end
 
-    log("Unknown command. Usage: /nod healcomm|debug|errors", true)
+    log("Unknown command. Usage: /nod debug|errors", true)
 end
 
 local function bootstrapDispatcher()
@@ -227,16 +180,14 @@ local function bootstrapDispatcher()
 
     local incoming = fetchModule("IncomingHeals")
     if incoming and incoming.Initialize then
-        local LHC = LibStub and LibStub("LibHealComm-4.0", true)
-        incoming.Initialize(LHC, dispatcher)
+        incoming.Initialize(dispatcher)
     end
 
     local ui = fetchModule("UI")
     if ui and ui.Initialize then
         ui:Initialize()
     end
-
-    applyHealCommState(NODHealDB.useLHC)
+    stampDataSource()
 end
 
 local function handleAddonLoaded(_, event, name)
@@ -246,10 +197,10 @@ local function handleAddonLoaded(_, event, name)
 
     ensureSavedVariables()
     local state = ensureState()
-    state.useLHC = NODHealDB.useLHC and true or false
-    state.lastSwitch = GetTime() or state.lastSwitch or 0
+    state.dataSource = "API"
+    state.lastSourceUpdate = GetTime() or state.lastSourceUpdate or 0
 
-    log(format("Init: useLHC=%s, lastSwitch=%.3f", tostring(state.useLHC), state.lastSwitch))
+    log(format("Init: dataSource=%s", tostring(state.dataSource)))
 
     SlashCmdList = SlashCmdList or {}
     SlashCmdList.NOD = handleSlashCommand

@@ -1,38 +1,31 @@
-local NODHeal = _G.NODHeal or {}
+local addon = _G.NODHeal or {}
+_G.NODHeal = addon
 
-if not NODHeal.Bindings then
-    NODHeal.Bindings = {}
-end
+local ClickCast = addon.ClickCast or {}
+addon.ClickCast = ClickCast
 
--- Load saved bindings from DB
-local bindingsLoaded = false
+local Bindings = addon.Bindings or {}
+addon.Bindings = Bindings
 
-local function loadBindings()
-    if bindingsLoaded then
-        return
+local CreateFrame = CreateFrame
+local InCombatLockdown = InCombatLockdown
+local IsLoggedIn = IsLoggedIn
+local next = next
+local pairs = pairs
+local tostring = tostring
+local type = type
+local wipe = wipe
+
+if not wipe then
+    wipe = function(tbl)
+        if not tbl then
+            return
+        end
+        for key in pairs(tbl) do
+            tbl[key] = nil
+        end
     end
-
-    if NODHealDB and type(NODHealDB.bindings) == "table" then
-        NODHeal.Bindings.data = NODHealDB.bindings
-        bindingsLoaded = true
-        print("[NOD] Loaded saved spell bindings")
-    end
 end
-
-local loader = CreateFrame("Frame")
-loader:RegisterEvent("PLAYER_LOGIN")
-loader:SetScript("OnEvent", loadBindings)
-
-if IsLoggedIn and IsLoggedIn() then
-    loadBindings()
-end
-
-local CastSpellByName = CastSpellByName
-local IsUsableSpell = IsUsableSpell
-local hooksecurefunc = hooksecurefunc
-local IsAltKeyDown = IsAltKeyDown
-local IsControlKeyDown = IsControlKeyDown
-local IsShiftKeyDown = IsShiftKeyDown
 
 local defaultBindings = {
     ["LeftButton"] = "Healing Touch",
@@ -40,155 +33,326 @@ local defaultBindings = {
     ["Shift-LeftButton"] = "Rejuvenation",
 }
 
-local ClickCast = NODHeal.ClickCast or {}
-NODHeal.ClickCast = ClickCast
+local BUTTON_SUFFIX = {
+    LeftButton = "1",
+    RightButton = "2",
+    MiddleButton = "3",
+    Button4 = "-button4",
+    Button5 = "-button5",
+}
+
+local MOD_ORDER = { "Alt", "Ctrl", "Shift" }
 
 local function ensureBindingsStore()
-    if not NODHeal.Bindings.data then
-        local store = {}
+    _G.NODHealDB = _G.NODHealDB or {}
+    local store = _G.NODHealDB.bindings
+    if type(store) ~= "table" then
+        store = {}
+        _G.NODHealDB.bindings = store
+    end
+
+    if not next(store) then
         for combo, spell in pairs(defaultBindings) do
             store[combo] = spell
         end
-        NODHeal.Bindings.data = store
     end
 
-    return NODHeal.Bindings.data
+    Bindings.data = store
+    return store
 end
 
-local function getKeyCombo(button)
+local function parseCombo(combo)
+    if type(combo) ~= "string" then
+        return { alt = false, ctrl = false, shift = false }, "LeftButton"
+    end
+
+    local button = "LeftButton"
+    local prefix = combo
+    for name in pairs(BUTTON_SUFFIX) do
+        if prefix:sub(-#name) == name then
+            button = name
+            prefix = prefix:sub(1, #prefix - #name)
+            break
+        end
+    end
+
+    prefix = prefix:gsub("-+$", "")
+
+    local mods = { alt = false, ctrl = false, shift = false }
+    for token in prefix:gmatch("[^-]+") do
+        local lowered = token:lower()
+        if lowered == "alt" then
+            mods.alt = true
+        elseif lowered == "ctrl" then
+            mods.ctrl = true
+        elseif lowered == "shift" then
+            mods.shift = true
+        end
+    end
+
+    return mods, button
+end
+
+local function buildCanonicalCombo(mods, button)
+    local parts = {}
+    for index = 1, #MOD_ORDER do
+        local key = MOD_ORDER[index]
+        local flag = mods[key:lower()]
+        if flag then
+            parts[#parts + 1] = key
+        end
+    end
+
+    if #parts > 0 then
+        parts[#parts + 1] = button
+        return table.concat(parts, "-")
+    end
+
+    return button
+end
+
+local function buildAttributePrefix(mods)
     local prefix = ""
-
-    if IsAltKeyDown and IsAltKeyDown() then
-        prefix = prefix .. "Alt-"
+    if mods.alt then
+        prefix = prefix .. "alt-"
     end
-
-    if IsControlKeyDown and IsControlKeyDown() then
-        prefix = prefix .. "Ctrl-"
+    if mods.ctrl then
+        prefix = prefix .. "ctrl-"
     end
-
-    if IsShiftKeyDown and IsShiftKeyDown() then
-        prefix = prefix .. "Shift-"
+    if mods.shift then
+        prefix = prefix .. "shift-"
     end
-
-    return prefix .. (button or "")
+    return prefix
 end
 
-local function resolveHealthBar(frame)
-    if not frame then
-        return nil
+local function buildAttributeKeys(mods, button)
+    local suffix = BUTTON_SUFFIX[button]
+    if not suffix then
+        return nil, nil
     end
 
-    return frame.healthBar or frame.healthbar or frame.health or frame.HealthBar
+    local prefix = buildAttributePrefix(mods)
+    local typeKey = prefix .. "type" .. suffix
+    local spellKey = prefix .. "spell" .. suffix
+    return typeKey, spellKey
 end
 
-local function highlightFrame(frame, on)
-    local bar = resolveHealthBar(frame)
-    if not bar then
-        return
-    end
-
-    if on then
-        if not bar._nodBorder then
-            bar._nodBorder = bar:CreateTexture(nil, "OVERLAY")
-            bar._nodBorder:SetAllPoints(bar)
-        end
-
-        if (IsShiftKeyDown and IsShiftKeyDown()) or (IsAltKeyDown and IsAltKeyDown()) or (IsControlKeyDown and IsControlKeyDown()) then
-            bar._nodBorder:SetColorTexture(0.2, 0.6, 1, 0.4)
-        else
-            bar._nodBorder:SetColorTexture(0, 1, 0, 0.25)
-        end
-
-        bar._nodBorder:Show()
-    elseif bar._nodBorder then
-        bar._nodBorder:Hide()
-    end
+local function canonicalize(combo)
+    local mods, button = parseCombo(combo)
+    local canonical = buildCanonicalCombo(mods, button)
+    return canonical, mods, button
 end
 
-if type(CompactUnitFrame_OnEnter) == "function" then
-    hooksecurefunc("CompactUnitFrame_OnEnter", function(frame)
-        if not frame then
-            return
-        end
-
-        highlightFrame(frame, true)
-
-        if frame.unit then
-            GameTooltip:SetOwner(frame, "ANCHOR_RIGHT")
-            GameTooltip:SetUnit(frame.unit)
-            GameTooltip:Show()
-        end
-    end)
-else
-    -- Classic fallback: hook GridFrames manually
-    local grid = NODHeal.Grid and NODHeal.Grid.unitFrames
-    if grid then
-        for _, f in pairs(grid) do
-            f:SetScript("OnEnter", function(self)
-                highlightFrame(self, true)
-                if self.unit then
-                    GameTooltip:SetOwner(self, "ANCHOR_RIGHT")
-                    GameTooltip:SetUnit(self.unit)
-                    GameTooltip:Show()
-                end
-            end)
-            f:SetScript("OnLeave", function(self)
-                highlightFrame(self, false)
-                GameTooltip_Hide()
-            end)
-        end
-    end
-end
-
-hooksecurefunc("CompactUnitFrame_OnLeave", function(frame)
-    highlightFrame(frame, false)
-    GameTooltip_Hide()
-end)
-
-hooksecurefunc("CompactUnitFrame_OnClick", function(frame, button)
-    if not frame or not frame.unit then
-        return
-    end
-
-    local combo = getKeyCombo(button)
-    local spell = NODHeal.Bindings:Get(combo) or NODHeal.Bindings:Get(button)
-
-    if spell and CastSpellByName and IsUsableSpell and IsUsableSpell(spell) then
-        CastSpellByName(spell, frame.unit)
-        highlightFrame(frame, false)
-    end
-end)
-
-local function registerExtraFrames()
-    for _, name in ipairs({ "PlayerFrame", "PartyFrame", "RaidFrameContainer" }) do
-        local f = _G[name]
-        if f and not f._nodHooked then
-            f:HookScript("OnEnter", function(self)
-                highlightFrame(self, true)
-            end)
-            f:HookScript("OnLeave", function(self)
-                highlightFrame(self, false)
-            end)
-            f._nodHooked = true
-        end
-    end
-end
-
-registerExtraFrames()
-ClickCast.RegisterExtraFrames = registerExtraFrames
-
-function NODHeal.Bindings:Set(combo, spell)
-    local store = ensureBindingsStore()
-    store[combo] = spell
-end
-
-function NODHeal.Bindings:Get(combo)
-    local store = ensureBindingsStore()
-    return store[combo]
-end
-
-function NODHeal.Bindings:List()
+function Bindings:Ensure()
     return ensureBindingsStore()
 end
 
-_G.NODHeal = NODHeal
+function Bindings:Get(combo)
+    local store = ensureBindingsStore()
+    local canonical = canonicalize(combo)
+    return store[canonical]
+end
+
+function Bindings:Set(combo, spell)
+    local store = ensureBindingsStore()
+    local canonical, mods, button = canonicalize(combo)
+    if not canonical then
+        return
+    end
+
+    if spell and spell ~= "" then
+        store[canonical] = tostring(spell)
+    else
+        store[canonical] = nil
+    end
+
+    if ClickCast.MarkBindingsDirty then
+        ClickCast:MarkBindingsDirty()
+    end
+
+    return canonical, mods, button
+end
+
+function Bindings:List()
+    return ensureBindingsStore()
+end
+
+function Bindings:Clear()
+    local store = ensureBindingsStore()
+    wipe(store)
+    return store
+end
+
+local function ensureEventFrame()
+    if ClickCast._eventFrame then
+        return ClickCast._eventFrame
+    end
+
+    local frame = CreateFrame("Frame")
+    frame:RegisterEvent("PLAYER_LOGIN")
+    frame:RegisterEvent("PLAYER_REGEN_ENABLED")
+    frame:SetScript("OnEvent", function(_, event)
+        if event == "PLAYER_LOGIN" then
+            Bindings:Ensure()
+            ClickCast:ApplyAllBindings()
+        elseif event == "PLAYER_REGEN_ENABLED" then
+            ClickCast:HandleCombatEnd()
+        end
+    end)
+
+    ClickCast._eventFrame = frame
+    return frame
+end
+
+local function isSecure(frame)
+    return frame and type(frame.SetAttribute) == "function"
+end
+
+function ClickCast:HandleCombatEnd()
+    if self._pendingUnits then
+        for frame, unit in pairs(self._pendingUnits) do
+            if isSecure(frame) then
+                frame:SetAttribute("unit", unit)
+            end
+            self._pendingUnits[frame] = nil
+        end
+    end
+
+    if self._pendingBindings then
+        for frame in pairs(self._pendingBindings) do
+            if isSecure(frame) then
+                self:ApplyBindingsToFrame(frame)
+            end
+            self._pendingBindings[frame] = nil
+        end
+    end
+
+    if self._needsReapply then
+        self:ApplyAllBindings()
+    end
+end
+
+local function ensureTrackingTables()
+    ClickCast._frames = ClickCast._frames or {}
+    ClickCast._pendingUnits = ClickCast._pendingUnits or {}
+    ClickCast._pendingBindings = ClickCast._pendingBindings or {}
+end
+
+function ClickCast:RegisterFrame(frame)
+    if not isSecure(frame) then
+        return
+    end
+
+    ensureTrackingTables()
+    ensureEventFrame()
+
+    self._frames[frame] = true
+    frame._nodBindingKeys = frame._nodBindingKeys or {}
+
+    self:ApplyBindingsToFrame(frame)
+end
+
+function ClickCast:SetFrameUnit(frame, unit)
+    if not isSecure(frame) then
+        return
+    end
+
+    ensureTrackingTables()
+
+    if InCombatLockdown and InCombatLockdown() then
+        self._pendingUnits[frame] = unit
+        return
+    end
+
+    self._pendingUnits[frame] = nil
+    frame:SetAttribute("unit", unit)
+end
+
+local function clearFrameAttributes(frame)
+    local keys = frame._nodBindingKeys
+    if not keys then
+        return
+    end
+
+    for index = 1, #keys do
+        local attribute = keys[index]
+        frame:SetAttribute(attribute, nil)
+    end
+
+    wipe(keys)
+end
+
+function ClickCast:ApplyBindingsToFrame(frame)
+    if not isSecure(frame) then
+        return
+    end
+
+    ensureTrackingTables()
+
+    if InCombatLockdown and InCombatLockdown() then
+        self._pendingBindings[frame] = true
+        self._needsReapply = true
+        return
+    end
+
+    self._pendingBindings[frame] = nil
+
+    clearFrameAttributes(frame)
+
+    -- Fallbacks: target on left click, menu on right click
+    frame:SetAttribute("type1", "target")
+    frame:SetAttribute("type2", "togglemenu")
+
+    local keys = frame._nodBindingKeys
+    local store = Bindings:List()
+    for combo, spell in pairs(store) do
+        if type(spell) == "string" and spell ~= "" then
+            local _, mods, button = canonicalize(combo)
+            local typeKey, spellKey = buildAttributeKeys(mods, button)
+            if typeKey and spellKey then
+                frame:SetAttribute(typeKey, "spell")
+                frame:SetAttribute(spellKey, spell)
+                keys[#keys + 1] = typeKey
+                keys[#keys + 1] = spellKey
+            end
+        end
+    end
+end
+
+function ClickCast:ApplyAllBindings()
+    ensureTrackingTables()
+    ensureEventFrame()
+
+    if InCombatLockdown and InCombatLockdown() then
+        self._needsReapply = true
+        return
+    end
+
+    self._needsReapply = nil
+    if not self._frames then
+        return
+    end
+
+    for frame in pairs(self._frames) do
+        if isSecure(frame) then
+            self:ApplyBindingsToFrame(frame)
+        end
+    end
+end
+
+function ClickCast:MarkBindingsDirty()
+    self._needsReapply = true
+    self:ApplyAllBindings()
+end
+
+ensureTrackingTables()
+ensureEventFrame()
+
+if IsLoggedIn and IsLoggedIn() then
+    Bindings:Ensure()
+    ClickCast:ApplyAllBindings()
+end
+
+addon.Bindings = Bindings
+addon.ClickCast = ClickCast
+

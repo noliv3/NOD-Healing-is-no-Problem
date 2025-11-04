@@ -53,12 +53,12 @@ function UI:EnsureStatusFrame()
     return frame
 end
 
-local function applySourceColor(fontString, useLHC)
+local function applySourceColor(fontString, sourceLabel)
     if not fontString then
         return
     end
 
-    if useLHC then
+    if sourceLabel == "API" then
         fontString:SetTextColor(0.1, 0.85, 0.1)
     else
         fontString:SetTextColor(0.9, 0.8, 0.1)
@@ -72,14 +72,14 @@ function UI:UpdateStatus()
     end
 
     local state = self:GetState() or {}
-    local useLHC = state.useLHC and true or false
+    local source = state.dataSource or "API"
     local sourceText = frame.sourceText
     local timeText = frame.timeText
 
-    local sourceLabel = useLHC and "LHC" or "API"
+    local sourceLabel = source
     if sourceText then
         sourceText:SetText(format("Quelle: %s", sourceLabel))
-        applySourceColor(sourceText, useLHC)
+        applySourceColor(sourceText, sourceLabel)
     end
 
     if timeText then

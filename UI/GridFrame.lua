@@ -14,11 +14,6 @@ local GetNumGroupMembers = GetNumGroupMembers
 local IsInGroup = IsInGroup
 local IsInRaid = IsInRaid
 local UnitIsUnit = UnitIsUnit
-local IsAltKeyDown = IsAltKeyDown
-local IsControlKeyDown = IsControlKeyDown
-local IsShiftKeyDown = IsShiftKeyDown
-local IsUsableSpell = IsUsableSpell
-local CastSpellByName = CastSpellByName
 local RAID_CLASS_COLORS = RAID_CLASS_COLORS
 local C_Timer = C_Timer
 local math = math
@@ -117,7 +112,7 @@ local function getClassColor(unit)
 end
 
 local function createUnitFrame(parent, unit, index)
-    local frame = CreateFrame("Button", "NODHeal_UnitFrame" .. index, parent, "BackdropTemplate")
+    local frame = CreateFrame("Button", "NODHeal_UnitFrame" .. index, parent, "SecureUnitButtonTemplate,BackdropTemplate")
     frame:SetSize(FRAME_WIDTH, FRAME_HEIGHT)
     frame:SetBackdrop({bgFile = "Interface/Tooltips/UI-Tooltip-Background"})
     frame:SetBackdropColor(0.1, 0.1, 0.1, 0.8)
@@ -127,39 +122,7 @@ local function createUnitFrame(parent, unit, index)
     frame.border:SetAllPoints(frame)
     frame.border:SetColorTexture(1, 1, 1, 0)
 
-    frame:RegisterForClicks("AnyUp")
-    frame:SetScript("OnClick", function(self, button)
-        if not self.unit then
-            return
-        end
-
-        local combo = ""
-        if IsAltKeyDown() then
-            combo = combo .. "Alt-"
-        end
-        if IsControlKeyDown() then
-            combo = combo .. "Ctrl-"
-        end
-        if IsShiftKeyDown() then
-            combo = combo .. "Shift-"
-        end
-        combo = combo .. button
-
-        local bindings = NODHeal and NODHeal.Bindings
-        local spell
-        if bindings and bindings.Get then
-            spell = bindings:Get(combo) or bindings:Get(button)
-        end
-
-        local targetName = UnitName(self.unit) or "???"
-
-        if spell and IsUsableSpell(spell) then
-            CastSpellByName(spell, self.unit)
-            print("[NOD] Cast:", spell, "→", targetName)
-        else
-            print("[NOD] No binding for", combo)
-        end
-    end)
+    frame:RegisterForClicks("AnyDown")
 
     frame:SetScript("OnEnter", function(self)
         if not self.unit then
@@ -196,6 +159,10 @@ local function createUnitFrame(parent, unit, index)
     frame.incoming = incoming
     frame.name = name
     frame.unit = unit
+
+    if NODHeal and NODHeal.ClickCast and NODHeal.ClickCast.RegisterFrame then
+        NODHeal.ClickCast:RegisterFrame(frame)
+    end
 
     return frame
 end
@@ -415,6 +382,9 @@ local function rebuildGrid()
         end
 
         frame.unit = unit
+        if NODHeal and NODHeal.ClickCast and NODHeal.ClickCast.SetFrameUnit then
+            NODHeal.ClickCast:SetFrameUnit(frame, unit)
+        end
         frame:ClearAllPoints()
         frame:SetPoint("TOPLEFT", host, "TOPLEFT", x, y)
         updateUnitFrame(frame)
@@ -433,6 +403,9 @@ local function rebuildGrid()
         local frame = unitFrames[i]
         if frame then
             frame.unit = nil
+            if NODHeal and NODHeal.ClickCast and NODHeal.ClickCast.SetFrameUnit then
+                NODHeal.ClickCast:SetFrameUnit(frame, nil)
+            end
             frame:Hide()
         end
     end
