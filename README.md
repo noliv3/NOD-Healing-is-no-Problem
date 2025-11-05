@@ -46,6 +46,8 @@ Fokus: eingehende Heilungen aggregieren, Landzeit/Zeitfenster bestimmen, kompakt
 - **Solver**: kombiniert Snapshot/Schaden/Heals → projizierter Health-Wert.
 - **UI**: Grid + Overlay, sanfte Updates, Overheal-Segment optional.
 - **Corner Icons**: Einheitliche HoT-Erkennung über `Core/HotDetector` (Klassen-Seed sofort, Combat-Log lernt dauerhaft in `NODHealDB.learned.hots`, Config-Whitelist nur als Fallback) & Debuff-Priorisierung; HoT-Grid zeigt bis zu 12 Symbole in zwei Zeilen (max. 6 pro Reihe), priorisiert eigene HoTs und reagiert auch außerhalb des Kampfes ohne `/reload`.
+- **Major CD Lane**: Oben links eine separate Vierer-Lane für Tank-Defensives, externe Rettungen, Selbstheilungen & Absorbs inkl. Timer-Ring, Farbcode und Tooltip (Quelle, Restlaufzeit, Verhinderungsschätzung).
+- **Adaptive Learning**: HoTs und Major-CDs werden aus dem Combat-Log gelernt (Throttle 5/min, Aging 30/90 Tage, Blocklist), Confidence steuert Transparenz & Sortierung.
 - **Härtung**: sichere Hooks, Combat-Lockdown-respektierend.
 - **Dispatcher**: gemeinsamer 0,2s-Ticker für Prognosen & Grid-Refresh.
 

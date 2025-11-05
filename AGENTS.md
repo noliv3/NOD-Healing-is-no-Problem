@@ -125,3 +125,4 @@ Aktiv & produktiv: HealthSnapshot, CastLandingTime, IncomingHeals (+Aggregator),
 - HoT-Erkennung läuft über `Core/HotDetector` (Combat-Log lernt `SPELL_PERIODIC_HEAL` → Persistenz in `NODHealDB.learned.hots`); Seed-Whitelist in `Config/Defaults.lua` nur klein halten, UI nutzt ausschließlich `HotDetector.IsHot(spellId)` als Quelle.
 - Grid-Implementierung ruft `HotDetector.IsHot` direkt auf; Config-Whitelist dient nur noch als Fallback, sollte nicht mehr separat gepflegt werden.
 - `UI/GridFrame.lua`: `getConfig()` muss oberhalb der Layout-/Aura-Helfer stehen, damit die Corner-Icons direkt nach dem Laden wieder sichtbare Texturen erhalten.
+- Major-CD-Lane (`UI/GridFrame.lua`) nutzt `Core/CooldownClassifier` für DEF/EXTERNAL/SELF/ABSORB; Konfiguration via `Config.major` (Enable, Größe, Caps) und Options-Slider "Major icon size".
