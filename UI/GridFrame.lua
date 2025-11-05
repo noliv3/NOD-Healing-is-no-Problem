@@ -82,7 +82,13 @@ end
 
 local function collectHotAuras(unit)
     local iconsCfg = (cfg and cfg.icons) or {}
-    local wl = iconsCfg.hotWhitelist or {}
+    local wl = iconsCfg.hotWhitelist
+    local allowAll = true
+    if type(wl) == "table" then
+        allowAll = next(wl) == nil
+    else
+        wl = nil
+    end
     local own, other = {}, {}
     local now = GetTime()
     for i = 1, 40 do
@@ -91,7 +97,11 @@ local function collectHotAuras(unit)
         if not name then
             break
         end
-        if wl[spellId] and icon then
+        local isWhitelisted = allowAll
+        if not isWhitelisted and wl then
+            isWhitelisted = wl[spellId] or wl[name]
+        end
+        if isWhitelisted and icon then
             local remain = (expirationTime or 0) - now
             local isOwn = unitCaster and (UnitIsUnit(unitCaster, "player") or UnitIsUnit(unitCaster, "pet"))
             local entry = { icon = icon, remain = remain, spellId = spellId, own = isOwn }
