@@ -1,8 +1,8 @@
-local G = {}
+local M = {}
 NODHeal = NODHeal or {}
-NODHeal.Grid = G
+NODHeal.Grid = M
 NODHeal.UI = NODHeal.UI or {}
-NODHeal.UI.Grid = G
+NODHeal.UI.Grid = M
 
 local CreateFrame = CreateFrame
 local UIParent = UIParent
@@ -17,6 +17,7 @@ local GetNumGroupMembers = GetNumGroupMembers
 local IsInGroup = IsInGroup
 local IsInRaid = IsInRaid
 local UnitIsUnit = UnitIsUnit
+local GetTime = GetTime
 local RAID_CLASS_COLORS = RAID_CLASS_COLORS
 local C_Timer = C_Timer
 local math = math
@@ -29,6 +30,13 @@ local tinsert = table.insert
 
 local unitFrames = {}
 local trackedFrames = {}
+local cfg
+local function safeGet(tbl, k, def)
+    if type(tbl) == "table" and tbl[k] ~= nil then
+        return tbl[k]
+    end
+    return def
+end
 local container
 local feedbackEntries = {}
 
@@ -37,60 +45,6 @@ local FRAME_HEIGHT = 35
 local COLUMNS = 5
 local SPACING = 4
 local PADDING = 8
-
-local function getIconsConfig()
-    local config = NODHeal.Config or {}
-    if type(config.icons) ~= "table" then
-        return {}
-    end
-    return config.icons
-end
-
-local function boolOrDefault(value, defaultValue)
-    if value == nil then
-        return defaultValue
-    end
-    return value and true or false
-end
-
-local function matchesWhitelist(list, name, spellId)
-    if type(list) ~= "table" then
-        return true
-    end
-
-    local hasEntries
-    for key, value in pairs(list) do
-        hasEntries = true
-        if key == spellId or key == name then
-            return value and true or false
-        end
-        if value == spellId or value == name then
-            return true
-        end
-        if spellId and key == tostring(spellId) then
-            return value and true or false
-        end
-    end
-
-    if not hasEntries then
-        return true
-    end
-
-    if spellId then
-        if list[spellId] then
-            return list[spellId] and true or false
-        end
-        if list[tostring(spellId)] then
-            return list[tostring(spellId)] and true or false
-        end
-    end
-
-    if name and list[name] ~= nil then
-        return list[name] and true or false
-    end
-
-    return false
-end
 
 local function getDebuffPriority(list, name, spellId)
     if type(list) ~= "table" then
@@ -126,83 +80,98 @@ local function getDebuffPriority(list, name, spellId)
     return 0
 end
 
-local function updateIconLayout(frame)
-    if not frame then
-        return
-    end
-
-    local hotIcon = frame.hotIcon
-    local debuffIcon = frame.debuffIcon
-    if not hotIcon and not debuffIcon then
-        return
-    end
-
-    local iconsCfg = getIconsConfig()
-    local size = iconsCfg.size
-    if type(size) ~= "number" then
-        size = 14
-    end
-
-    if hotIcon then
-        hotIcon:SetSize(size, size)
-    end
-    if debuffIcon then
-        debuffIcon:SetSize(size, size)
-    end
-
-    local enabled = boolOrDefault(iconsCfg.enabled, true)
-    local hotEnabled = boolOrDefault(iconsCfg.hotEnabled, true)
-    local debuffEnabled = boolOrDefault(iconsCfg.debuffEnabled, true)
-
-    if hotIcon then
-        if enabled and hotEnabled then
-            hotIcon:Show()
-        else
-            hotIcon:Hide()
-        end
-    end
-
-    if debuffIcon then
-        if enabled and debuffEnabled then
-            debuffIcon:Show()
-        else
-            debuffIcon:Hide()
-        end
-    end
-end
-
-local function updateAllIconLayout()
-    for _, frame in ipairs(trackedFrames) do
-        updateIconLayout(frame)
-    end
-end
-
-local function pickHotIcon(unit)
-    if not unit then
-        return nil
-    end
-
-    local iconsCfg = getIconsConfig()
-    local whitelist = iconsCfg.hotWhitelist
-    local bestIcon
-
-    for index = 1, 40 do
-        local name, iconTexture, _, _, _, _, unitCaster, _, _, spellId = UnitAura(unit, index, "HELPFUL")
+local function collectHotAuras(unit)
+    local iconsCfg = (cfg and cfg.icons) or {}
+    local wl = iconsCfg.hotWhitelist or {}
+    local own, other = {}, {}
+    local now = GetTime()
+    for i = 1, 40 do
+        local name, icon, count, dispelType, duration, expirationTime, unitCaster, isStealable, nameplateShowPersonal, spellId =
+            UnitAura(unit, i, "HELPFUL")
         if not name then
             break
         end
-
-        if matchesWhitelist(whitelist, name, spellId) then
+        if wl[spellId] and icon then
+            local remain = (expirationTime or 0) - now
             local isOwn = unitCaster and (UnitIsUnit(unitCaster, "player") or UnitIsUnit(unitCaster, "pet"))
-            if isOwn then
-                return iconTexture
-            elseif not bestIcon then
-                bestIcon = iconTexture
+            local entry = { icon = icon, remain = remain, spellId = spellId, own = isOwn }
+            if entry.own then
+                tinsert(own, entry)
+            else
+                tinsert(other, entry)
             end
         end
     end
+    table.sort(own, function(a, b)
+        return (a.remain or 0) > (b.remain or 0)
+    end)
+    table.sort(other, function(a, b)
+        return (a.remain or 0) > (b.remain or 0)
+    end)
+    local res = {}
+    local maxN = safeGet(iconsCfg, "hotMax", 12)
+    for _, e in ipairs(own) do
+        if #res < maxN then
+            tinsert(res, e)
+        end
+    end
+    for _, e in ipairs(other) do
+        if #res < maxN then
+            tinsert(res, e)
+        end
+    end
+    return res
+end
 
-    return bestIcon
+local function layoutHotIcons(frame, list)
+    if not frame.hotCont or not frame.hotTex then
+        return
+    end
+    local iconsCfg = (cfg and cfg.icons) or {}
+    local size = safeGet(iconsCfg, "size", 14)
+    local perRow = math.max(1, math.min(safeGet(iconsCfg, "hotPerRow", 6), 12))
+    local spacing = safeGet(iconsCfg, "spacing", 1)
+    local rowGap = safeGet(iconsCfg, "rowSpacing", 1)
+    local dir = safeGet(iconsCfg, "hotDirection", "RTL")
+
+    for i = 1, 12 do
+        local t = frame.hotTex[i]
+        if t then
+            t:Hide()
+        end
+    end
+    if not list or #list == 0 then
+        frame.hotCont:SetSize(1, 1)
+        return
+    end
+
+    local cols = math.min(#list, perRow)
+    local rows = math.ceil(#list / perRow)
+
+    for i, entry in ipairs(list) do
+        local tex = frame.hotTex[i]
+        if not tex then
+            break
+        end
+        tex:SetTexture(entry.icon)
+        tex:SetSize(size, size)
+
+        local row = math.floor((i - 1) / perRow)
+        local col = (i - 1) % perRow
+
+        tex:ClearAllPoints()
+        if dir == "RTL" then
+            tex:SetPoint("TOPRIGHT", frame.hotCont, "TOPRIGHT", -(col * (size + spacing)), -(row * (size + rowGap)))
+        else
+            tex:SetPoint("TOPLEFT", frame.hotCont, "TOPLEFT", col * (size + spacing), -(row * (size + rowGap)))
+        end
+
+        tex:Show()
+    end
+
+    local width = cols * size + (cols - 1) * spacing
+    local height = rows * size + (rows - 1) * rowGap
+    frame.hotCont:SetSize(width, height)
 end
 
 local function pickDebuffIcon(unit)
@@ -210,7 +179,7 @@ local function pickDebuffIcon(unit)
         return nil
     end
 
-    local iconsCfg = getIconsConfig()
+    local iconsCfg = (cfg and cfg.icons) or {}
     local priorityList = iconsCfg.debuffPrio
     local bestTexture
     local bestPriority
@@ -231,77 +200,91 @@ local function pickDebuffIcon(unit)
     return bestTexture
 end
 
+local function updateIconLayout(frame)
+    if not frame then
+        return
+    end
+
+    cfg = getConfig()
+    local iconsCfg = (cfg and cfg.icons) or {}
+    local size = safeGet(iconsCfg, "size", 14)
+
+    if frame.hotTex then
+        for i = 1, 12 do
+            local tex = frame.hotTex[i]
+            if tex then
+                tex:SetSize(size, size)
+            end
+        end
+    end
+
+    if frame.debuffIcon then
+        frame.debuffIcon:SetSize(size, size)
+    end
+end
+
+local function updateAllIconLayout()
+    for _, frame in ipairs(trackedFrames) do
+        updateIconLayout(frame)
+    end
+end
+
 local function updateAuraIcons(frame)
     if not frame then
         return
     end
 
-    local hotIcon = frame.hotIcon
-    local debuffIcon = frame.debuffIcon
-    if not hotIcon and not debuffIcon then
-        return
-    end
+    cfg = getConfig()
+    local iconsCfg = (cfg and cfg.icons) or {}
+    local enabled = safeGet(iconsCfg, "enabled", true)
 
     if not frame.unit or not UnitExists(frame.unit) then
-        if hotIcon then
-            hotIcon:SetTexture(nil)
-            hotIcon:Hide()
+        if frame.debuffIcon then
+            frame.debuffIcon:SetTexture(nil)
+            frame.debuffIcon:Hide()
         end
-        if debuffIcon then
-            debuffIcon:SetTexture(nil)
-            debuffIcon:Hide()
-        end
-        return
-    end
-
-    updateIconLayout(frame)
-
-    local iconsCfg = getIconsConfig()
-    local enabled = boolOrDefault(iconsCfg.enabled, true)
-    local hotEnabled = boolOrDefault(iconsCfg.hotEnabled, true)
-    local debuffEnabled = boolOrDefault(iconsCfg.debuffEnabled, true)
-
-    if not enabled then
-        if hotIcon then
-            hotIcon:SetTexture(nil)
-            hotIcon:Hide()
-        end
-        if debuffIcon then
-            debuffIcon:SetTexture(nil)
-            debuffIcon:Hide()
-        end
-        return
-    end
-
-    if hotIcon then
-        if enabled and hotEnabled then
-            local iconTexture = pickHotIcon(frame.unit)
-            if iconTexture then
-                hotIcon:SetTexture(iconTexture)
-                hotIcon:Show()
-            else
-                hotIcon:SetTexture(nil)
-                hotIcon:Hide()
+        if frame.hotTex then
+            for i = 1, 12 do
+                local tex = frame.hotTex[i]
+                if tex then
+                    tex:Hide()
+                end
             end
-        else
-            hotIcon:SetTexture(nil)
-            hotIcon:Hide()
+        end
+        if frame.hotCont then
+            frame.hotCont:SetSize(1, 1)
+        end
+        return
+    end
+
+    if enabled and safeGet(iconsCfg, "hotEnabled", true) and frame.hotTex then
+        local list = collectHotAuras(frame.unit)
+        layoutHotIcons(frame, list)
+    elseif frame.hotTex then
+        for i = 1, 12 do
+            local tex = frame.hotTex[i]
+            if tex then
+                tex:Hide()
+            end
+        end
+        if frame.hotCont then
+            frame.hotCont:SetSize(1, 1)
         end
     end
 
-    if debuffIcon then
-        if enabled and debuffEnabled then
+    if frame.debuffIcon then
+        if enabled and safeGet(iconsCfg, "debuffEnabled", true) then
             local iconTexture = pickDebuffIcon(frame.unit)
             if iconTexture then
-                debuffIcon:SetTexture(iconTexture)
-                debuffIcon:Show()
+                frame.debuffIcon:SetTexture(iconTexture)
+                frame.debuffIcon:Show()
             else
-                debuffIcon:SetTexture(nil)
-                debuffIcon:Hide()
+                frame.debuffIcon:SetTexture(nil)
+                frame.debuffIcon:Hide()
             end
         else
-            debuffIcon:SetTexture(nil)
-            debuffIcon:Hide()
+            frame.debuffIcon:SetTexture(nil)
+            frame.debuffIcon:Hide()
         end
     end
 end
@@ -322,29 +305,43 @@ local function refreshAllIconState()
     refreshAllAuraIcons(trackedFrames)
 end
 
-function G.UpdateIconLayout(frame)
+local function _RefreshAll()
+    local Grid = NODHeal and NODHeal.UI and NODHeal.UI.Grid
+    if Grid then
+        Grid.UpdateAllIconLayout()
+        Grid.RefreshAllAuraIcons(Grid.GetTrackedFrames())
+    end
+end
+
+local refreshEventFrame = CreateFrame("Frame")
+refreshEventFrame:RegisterEvent("PLAYER_ENTERING_WORLD")
+refreshEventFrame:RegisterEvent("GROUP_ROSTER_UPDATE")
+refreshEventFrame:SetScript("OnEvent", _RefreshAll)
+
+function M.UpdateIconLayout(frame)
     updateIconLayout(frame)
 end
 
-function G.UpdateAllIconLayout()
+function M.UpdateAllIconLayout()
     updateAllIconLayout()
 end
 
-function G.GetTrackedFrames()
+function M.GetTrackedFrames()
     return trackedFrames
 end
 
-function G.UpdateAuraIcons(frame)
+function M.UpdateAuraIcons(frame)
     updateAuraIcons(frame)
 end
 
-function G.RefreshAllAuraIcons(frames)
+function M.RefreshAllAuraIcons(frames)
     refreshAllAuraIcons(frames)
 end
 
 local function getConfig()
     NODHeal.Config = NODHeal.Config or {}
-    return NODHeal.Config
+    cfg = NODHeal.Config
+    return cfg
 end
 
 local function isConfigEnabled(key, defaultValue)
@@ -473,20 +470,26 @@ local function createUnitFrame(parent, unit, index)
     frame.name = name
     frame.unit = unit
 
-    local hotIcon = frame:CreateTexture(nil, "OVERLAY")
-    hotIcon:SetPoint("TOPRIGHT", frame, "TOPRIGHT", -2, -2)
-    hotIcon:SetSize(14, 14)
-    hotIcon:Hide()
+    -- HoT-Container (oben rechts)
+    frame.hotCont = CreateFrame("Frame", nil, frame)
+    frame.hotCont:SetPoint("TOPRIGHT", frame, "TOPRIGHT", -2, -2)
+    frame.hotCont:SetSize(1, 1)
+    frame.hotTex = frame.hotTex or {}
+    for i = 1, 12 do
+        local t = frame.hotTex[i] or frame.hotCont:CreateTexture(nil, "OVERLAY")
+        t:SetSize(14, 14)
+        t:Hide()
+        frame.hotTex[i] = t
+    end
 
     local debuffIcon = frame:CreateTexture(nil, "OVERLAY")
     debuffIcon:SetPoint("BOTTOMLEFT", frame, "BOTTOMLEFT", 2, 2)
     debuffIcon:SetSize(14, 14)
     debuffIcon:Hide()
 
-    frame.hotIcon = hotIcon
     frame.debuffIcon = debuffIcon
 
-    updateIconLayout(frame)
+    M.UpdateIconLayout(frame)
     tinsert(trackedFrames, frame)
     updateAuraIcons(frame)
 
@@ -501,9 +504,13 @@ local function updateUnitFrame(frame, elapsed)
     if not frame or type(frame.unit) ~= "string" or not UnitExists(frame.unit) then
         if frame then
             frame._lastPct = nil
-            if frame.hotIcon then
-                frame.hotIcon:SetTexture(nil)
-                frame.hotIcon:Hide()
+            if frame.hotTex then
+                for i = 1, 12 do
+                    local tex = frame.hotTex[i]
+                    if tex then
+                        tex:Hide()
+                    end
+                end
             end
             if frame.debuffIcon then
                 frame.debuffIcon:SetTexture(nil)
@@ -641,7 +648,7 @@ end
 local function rebuildGrid()
     local host = ensureContainer()
 
-    local cfg = getConfig()
+    cfg = getConfig()
     local sortedUnits = sortUnits(cfg.sortMode or "group")
     addFeedback("Rebuilding Grid Layout (Sorted)")
 
@@ -748,9 +755,13 @@ local function rebuildGrid()
             if NODHeal and NODHeal.ClickCast and NODHeal.ClickCast.SetFrameUnit then
                 NODHeal.ClickCast:SetFrameUnit(frame, nil)
             end
-            if frame.hotIcon then
-                frame.hotIcon:SetTexture(nil)
-                frame.hotIcon:Hide()
+            if frame.hotTex then
+                for j = 1, 12 do
+                    local tex = frame.hotTex[j]
+                    if tex then
+                        tex:Hide()
+                    end
+                end
             end
             if frame.debuffIcon then
                 frame.debuffIcon:SetTexture(nil)
@@ -760,7 +771,8 @@ local function rebuildGrid()
         end
     end
 
-    refreshAllIconState()
+    M.UpdateAllIconLayout()
+    M.RefreshAllAuraIcons(M.GetTrackedFrames())
 end
 
 local function updateAllFrames()
@@ -784,28 +796,28 @@ local function sharedTick()
 end
 
 local function startTicker()
-    if G._tickerRegistered then
+    if M._tickerRegistered then
         return
     end
 
     local dispatcher = (NODHeal.GetModule and NODHeal:GetModule("CoreDispatcher")) or NODHeal.CoreDispatcher
     if dispatcher and dispatcher.RegisterTick then
         if dispatcher.RegisterTick(sharedTick) then
-            G._tickerRegistered = true
+            M._tickerRegistered = true
             return
         end
     end
 
-    if G._ticker then
-        G._ticker:Cancel()
+    if M._ticker then
+        M._ticker:Cancel()
     end
 
     if C_Timer and C_Timer.NewTicker then
-        G._ticker = C_Timer.NewTicker(GRID_TICK_INTERVAL, sharedTick)
+        M._ticker = C_Timer.NewTicker(GRID_TICK_INTERVAL, sharedTick)
     end
 end
 
-function G.GetFeedbackEntries()
+function M.GetFeedbackEntries()
     return feedbackEntries
 end
 
@@ -815,8 +827,9 @@ end
 
 local function initialize()
     rebuildGrid()
-    refreshAllIconState()
-    if G._eventFrame then
+    M.UpdateAllIconLayout()
+    M.RefreshAllAuraIcons(M.GetTrackedFrames())
+    if M._eventFrame then
         startTicker()
         return
     end
@@ -859,9 +872,9 @@ local function initialize()
             rebuildLater()
         end
     end)
-    G._eventFrame = ev
+    M._eventFrame = ev
     startTicker()
 end
 
-G.Initialize = initialize
-G.unitFrames = unitFrames
+M.Initialize = initialize
+M.unitFrames = unitFrames

@@ -29,10 +29,22 @@ local PROFILE_DEFAULTS = {
 local ICON_DEFAULTS = {
     enabled = true,
     size = 14,
+    spacing = 1,
+    rowSpacing = 1,
     hotEnabled = true,
     debuffEnabled = true,
-    hotWhitelist = {},
-    debuffPrio = {},
+    hotMax = 12,
+    hotPerRow = 6,
+    hotDirection = "RTL",
+    hotWhitelist = {
+        [774] = true,
+        [33763] = true,
+        [139] = true,
+        [61295] = true,
+        [115175] = true,
+        [53563] = true,
+    },
+    debuffPrio = { Magic = 4, Curse = 3, Disease = 2, Poison = 1, [""] = 0 },
 }
 
 local CONFIG_DEFAULTS = {

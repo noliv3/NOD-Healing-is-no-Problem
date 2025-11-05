@@ -121,3 +121,4 @@ Aktiv & produktiv: HealthSnapshot, CastLandingTime, IncomingHeals (+Aggregator),
 - Grid-Eck-Icons aktualisieren über `NODHeal.UI.Grid.UpdateAllIconLayout()` + `RefreshAllAuraIcons()`; Frames via `GetTrackedFrames()` bereitstellen.
 - Optionssektion **Corner Icons** pflegt `NODHeal.Config.icons` (Enable/HoT/Debuff/Size) und stößt kampfsichere Refreshes per `C_Timer.After` an.
 - HoT-Auswahl priorisiert eigene Auren (`UnitIsUnit(unitCaster, "player"/"pet")`), fällt ansonsten auf Whitelist-HoTs zurück und wird bei Login/Zielwechsel/Gruppenupdates automatisch neu bewertet.
+- HoT-Grid unterstützt bis zu 12 Symbole (max. 6 pro Reihe) mit konfigurierbarer Ausrichtung/Abständen (`hotPerRow`, `hotDirection`, `spacing`, `rowSpacing`); Debuff-Ecke bleibt bewusst auf eine Reihe begrenzt.
