@@ -35,6 +35,11 @@ NOD-Heal ist ein leistungsorientiertes Healing-Framework für den WoW-Client der
 - Binding- und Options-UI melden Konflikte/Änderungen über das neue Log-System, speichern Sortiermodi dauerhaft und respektieren Combat-Lockdown durch das bestehende Click-Cast-Queuing.
 - Reports: Unter `reports/` liegen aktualisierte Artefakte (`file_inventory.json`, `QA_Report.md`, `change_log.md`, `bindings_snapshot.json`), außerdem dokumentiert `DOCU/Validation/Functional_Readiness.md` den Heal-Ready-Status.
 
+### 2025-11-05 Refresh
+- Repository-Inventar und Binding-Snapshot wurden neu generiert; beide Artefakte enthalten jetzt UTC-Zeitstempel sowie vollständige Pfad-/Typ-/Größeninformationen.
+- `reports/QA_Report.md` und `DOCU/Validation/Functional_Readiness.md` spiegeln den erneuten Review der Grid-, Overlay- und Click-Cast-Funktionalität wider.
+- README/`AGENTS.md` weisen künftig explizit auf die aktualisierten Artefakte hin, um Folge-Sweeps an denselben Quellen auszurichten.
+
 Weitere Implementierungen folgen in iterativen Schritten (DamageForecast, AuraTickScheduler, UI-Overlays usw.). Details zu den geplanten Backend-Funktionen befinden sich im Ordner [`DOCU/`](DOCU/).
 
 ## Entwicklung
