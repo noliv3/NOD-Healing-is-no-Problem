@@ -62,8 +62,9 @@ reports/        # QA-/Analyse-Schnappschüsse (nicht fürs Release bündeln)
 
 ## 6) Manuelle QA (Kurz-Playbook)
 - **Laden ohne Fehler**: frischer Clientstart, Addon aktiv.
-- **Slash-Checks**:  
+- **Slash-Checks**:
   `/nod debug on|off|status`, `/nod errors`, `/nodoptions`, `/nodbind`, `/nodsort group|class|alpha`
+- **Self-Test**: `/nod qa` prüft SavedVars, Hooks & Module.
 - **Overlay** sichtbar an CompactUnitFrames/Grid (Party/Raid).
 - **Click-Cast** auf Grid-Frames (Maus + Mods) funktioniert im Kampf.
 - **SavedVariables**: Einstellungen/Bindings persistieren über `/reload`.

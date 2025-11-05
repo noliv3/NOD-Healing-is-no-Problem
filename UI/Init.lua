@@ -153,6 +153,7 @@ function UI:Initialize()
 end
 
 SLASH_NODHEAL1 = "/nodbind"
+SlashCmdList = SlashCmdList or {}
 SlashCmdList["NODHEAL"] = function(msg)
     local combo, spell = msg:match("(%S+)%s+(.+)")
     if combo and spell then
