@@ -36,6 +36,19 @@ local iconDefaults = {
     size = 14,
 }
 
+local majorDefaults = {
+    enabled = true,
+    iconSize = 18,
+    maxTotal = 4,
+    capDEF = 2,
+    capEXT = 1,
+    capSELF = 1,
+    capABSORB = 1,
+    anchor = "TOPLEFT",
+    offsetX = 2,
+    offsetY = -2,
+}
+
 local defaults = (NODHeal and NODHeal.ConfigDefaults) or {
     scale = 1,
     columns = 5,
@@ -53,6 +66,8 @@ local sliders = {}
 local checkboxes = {}
 local iconSliders = {}
 local iconCheckboxes = {}
+local majorSliders = {}
+local majorCheckboxes = {}
 local dropdown
 local originalConfig
 
@@ -125,7 +140,16 @@ local function copyTrackedConfig(source)
         return snapshot
     end
     for key in pairs(defaults) do
-        snapshot[key] = source[key]
+        local value = source[key]
+        if type(value) == "table" then
+            local copy = {}
+            for k, v in pairs(value) do
+                copy[k] = v
+            end
+            snapshot[key] = copy
+        else
+            snapshot[key] = value
+        end
     end
 
     local icons = source.icons or {}
@@ -146,6 +170,12 @@ local function copyTrackedConfig(source)
             copy[k] = v
         end
         snapshot.icons.debuffPrio = copy
+    end
+
+    local major = source.major or {}
+    snapshot.major = {}
+    for key in pairs(majorDefaults) do
+        snapshot.major[key] = major[key]
     end
     return snapshot
 end
@@ -244,6 +274,37 @@ local function saveIconsConfigValue(key, value, silent)
             NODHeal:Logf(true, "Saved icon option: icons.%s = %s", key, tostring(value))
         else
             log(string.format("Saved icon option: icons.%s = %s", key, tostring(value)), true)
+        end
+    end
+end
+
+local function saveMajorConfigValue(key, value, silent)
+    if InCombatLockdown and InCombatLockdown() then
+        log("Cannot change major cooldown options while in combat", true)
+        return
+    end
+
+    local config = ensureConfig()
+    config.major = config.major or {}
+    config.major[key] = value
+
+    local saved = _G.NODHealDB
+    if type(saved) ~= "table" then
+        saved = {}
+        _G.NODHealDB = saved
+    end
+
+    saved.config = saved.config or {}
+    saved.config.major = saved.config.major or {}
+    saved.config.major[key] = value
+
+    applyIconsNow()
+
+    if not silent then
+        if NODHeal and NODHeal.Logf then
+            NODHeal:Logf(true, "Saved major option: major.%s = %s", key, tostring(value))
+        else
+            log(string.format("Saved major option: major.%s = %s", key, tostring(value)), true)
         end
     end
 end
@@ -359,6 +420,53 @@ local function createIconCheckbox(parent, label, key)
     return checkbox
 end
 
+local function createMajorCheckbox(parent, label, key)
+    local checkbox = CreateFrame("CheckButton", "NODHealOptionsMajorCheck" .. key, parent, "ChatConfigCheckButtonTemplate")
+    checkbox.Text:SetText(label)
+    checkbox:SetScript("OnClick", function(self)
+        if self._updating then
+            return
+        end
+        saveMajorConfigValue(key, self:GetChecked() and true or false)
+    end)
+    majorCheckboxes[key] = checkbox
+    return checkbox
+end
+
+local function createMajorSlider(parent, label, key, minValue, maxValue, step, decimals)
+    local sliderName = "NODHealOptionsMajorSlider" .. key
+    local slider = CreateFrame("Slider", sliderName, parent, "OptionsSliderTemplate")
+    slider:SetMinMaxValues(minValue, maxValue)
+    slider:SetValueStep(step)
+    slider:SetObeyStepOnDrag(true)
+    slider._label = label
+    slider._decimals = decimals or 0
+    slider:SetScript("OnValueChanged", function(self, value)
+        if self._updating then
+            return
+        end
+        local rounded = value
+        if not decimals or decimals == 0 then
+            rounded = math.floor(value + 0.5)
+        end
+        updateSliderText(self, rounded)
+        saveMajorConfigValue(key, rounded)
+    end)
+
+    _G[sliderName .. "Low"]:SetText(tostring(minValue))
+    _G[sliderName .. "High"]:SetText(tostring(maxValue))
+
+    local majorConfig = ensureConfig().major or {}
+    local currentValue = majorConfig[key] or minValue
+    slider._updating = true
+    slider:SetValue(currentValue)
+    slider._updating = nil
+    updateSliderText(slider, currentValue)
+
+    majorSliders[key] = slider
+    return slider
+end
+
 local function createDropdown(parent, label, key, values)
     local dropdownName = "NODHealOptionsDropdown" .. key
     local dd = CreateFrame("Frame", dropdownName, parent, "UIDropDownMenuTemplate")
@@ -410,6 +518,14 @@ local function restoreSnapshot(snapshot)
             end
         end
     end
+
+    if snapshot.major then
+        for key, value in pairs(snapshot.major) do
+            if majorDefaults[key] ~= nil then
+                saveMajorConfigValue(key, value, true)
+            end
+        end
+    end
 end
 
 function Options:RefreshControls()
@@ -438,6 +554,21 @@ function Options:RefreshControls()
 
     for key, slider in pairs(iconSliders) do
         local value = iconConfig[key] or iconDefaults[key]
+        slider._updating = true
+        slider:SetValue(value)
+        slider._updating = nil
+        updateSliderText(slider, value)
+    end
+
+    local majorConfig = config.major or {}
+    for key, checkbox in pairs(majorCheckboxes) do
+        checkbox._updating = true
+        checkbox:SetChecked(majorConfig[key] and true or false)
+        checkbox._updating = nil
+    end
+
+    for key, slider in pairs(majorSliders) do
+        local value = majorConfig[key] or majorDefaults[key]
         slider._updating = true
         slider:SetValue(value)
         slider._updating = nil
@@ -518,9 +649,22 @@ function Options:EnsureFrame()
 
     local debuffCheck = createIconCheckbox(frame, "Show Debuff (bottom-left)", "debuffEnabled")
     debuffCheck:SetPoint("TOPLEFT", frame, "TOPLEFT", 24, y)
-    y = y - 40
+    y = y - 26
 
-    local iconSizeSlider = createIconSlider(frame, "Icon Size", "size", 8, 20, 1, 0)
+    local majorHeader = frame:CreateFontString(nil, "OVERLAY", "GameFontNormal")
+    majorHeader:SetPoint("TOPLEFT", frame, "TOPLEFT", 24, y)
+    majorHeader:SetText("Major Cooldown Lane")
+    y = y - 24
+
+    local majorEnableCheck = createMajorCheckbox(frame, "Show major cooldowns", "enabled")
+    majorEnableCheck:SetPoint("TOPLEFT", frame, "TOPLEFT", 24, y)
+    y = y - 26
+
+    local majorSizeSlider = createMajorSlider(frame, "Major icon size", "iconSize", 14, 24, 1, 0)
+    majorSizeSlider:SetPoint("TOP", frame, "TOP", 0, y)
+    y = y - 70
+
+    local iconSizeSlider = createIconSlider(frame, "HoT icon size", "size", 8, 20, 1, 0)
     iconSizeSlider:SetPoint("TOP", frame, "TOP", 0, y)
 
     local sortDropdown = createDropdown(frame, "Sort Mode", "sortMode", { "group", "class", "alpha" })

@@ -23,6 +23,7 @@ Core/CastTiming.lua
 Core/DamagePrediction.lua
 Core/AuraTickPredictor.lua
 Core/HotDetector.lua
+Core/CooldownClassifier.lua
 Core/DesyncGuard.lua
 Core/PredictiveSolver.lua
 

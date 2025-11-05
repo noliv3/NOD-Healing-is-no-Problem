@@ -47,9 +47,31 @@ local ICON_DEFAULTS = {
     debuffPrio = { Magic = 4, Curse = 3, Disease = 2, Poison = 1, [""] = 0 },
 }
 
+local LEARN_CONFIG_DEFAULTS = {
+    enabled = true,
+    maxPerMinute = 5,
+    agingSoftDays = 30,
+    agingHardDays = 90,
+}
+
+local MAJOR_DEFAULTS = {
+    enabled = true,
+    iconSize = 18,
+    maxTotal = 4,
+    capDEF = 2,
+    capEXT = 1,
+    capSELF = 1,
+    capABSORB = 1,
+    anchor = "TOPLEFT",
+    offsetX = 2,
+    offsetY = -2,
+}
+
 local LEARNED_DEFAULTS = {
     -- learned.hots = { [spellId] = { learned = true, class = "PRIEST", lastSeen = timestamp } }
     hots = {},
+    cds = {},
+    block = {},
 }
 
 local CONFIG_DEFAULTS = {
@@ -65,6 +87,8 @@ local CONFIG_DEFAULTS = {
     showOverheal = true,
     lockGrid = false,
     icons = ICON_DEFAULTS,
+    learn = LEARN_CONFIG_DEFAULTS,
+    major = MAJOR_DEFAULTS,
 }
 
 local function mergeDefaults(target, defaults)
@@ -103,38 +127,50 @@ local function ensureConfig(store)
         config[key] = stored
     end
 
-    local icons = config.icons or {}
+    local function ensureSubtable(key, defaultsTable)
+        config[key] = config[key] or {}
+        store.config[key] = store.config[key] or {}
+        local runtime = config[key]
+        local saved = store.config[key]
+
+        for subKey, defaultValue in pairs(defaultsTable) do
+            local stored = saved[subKey]
+            if stored == nil then
+                if runtime[subKey] ~= nil then
+                    stored = runtime[subKey]
+                elseif type(defaultValue) == "table" then
+                    stored = cloneTable(defaultValue)
+                else
+                    stored = defaultValue
+                end
+                if type(stored) == "table" then
+                    saved[subKey] = cloneTable(stored)
+                else
+                    saved[subKey] = stored
+                end
+            end
+
+            if type(defaultValue) == "table" then
+                if type(saved[subKey]) ~= "table" then
+                    saved[subKey] = {}
+                end
+                runtime[subKey] = saved[subKey]
+            else
+                runtime[subKey] = saved[subKey]
+            end
+        end
+
+        return runtime
+    end
+
+    local icons = ensureSubtable("icons", ICON_DEFAULTS)
     config.icons = icons
 
-    store.config.icons = store.config.icons or {}
-    local savedIcons = store.config.icons
+    local learnCfg = ensureSubtable("learn", LEARN_CONFIG_DEFAULTS)
+    config.learn = learnCfg
 
-    for key, defaultValue in pairs(ICON_DEFAULTS) do
-        local stored = savedIcons[key]
-        if stored == nil then
-            if icons[key] ~= nil then
-                stored = icons[key]
-            elseif type(defaultValue) == "table" then
-                stored = cloneTable(defaultValue)
-            else
-                stored = defaultValue
-            end
-            if type(stored) == "table" then
-                savedIcons[key] = cloneTable(stored)
-            else
-                savedIcons[key] = stored
-            end
-        end
-
-        if type(defaultValue) == "table" then
-            if type(savedIcons[key]) ~= "table" then
-                savedIcons[key] = {}
-            end
-            icons[key] = savedIcons[key]
-        else
-            icons[key] = savedIcons[key]
-        end
-    end
+    local majorCfg = ensureSubtable("major", MAJOR_DEFAULTS)
+    config.major = majorCfg
 
     if type(config.logThrottle) == "number" and config.logThrottle < 0 then
         config.logThrottle = 0
@@ -161,22 +197,12 @@ local function ensureLearned(store)
         end
     end
 
-    local runtime = NODHeal.Learned or {}
-    runtime.hots = runtime.hots or {}
+    NODHeal.Learned = NODHeal.Learned or {}
+    NODHeal.Learned.hots = learnedStore.hots
+    NODHeal.Learned.cds = learnedStore.cds
+    NODHeal.Learned.block = learnedStore.block
 
-    local savedHots = learnedStore.hots
-    if type(savedHots) == "table" then
-        for spellId, entry in pairs(savedHots) do
-            if type(entry) == "table" then
-                runtime.hots[spellId] = cloneTable(entry)
-            else
-                runtime.hots[spellId] = entry
-            end
-        end
-    end
-
-    NODHeal.Learned = runtime
-    return runtime
+    return NODHeal.Learned
 end
 
 local function ensureSavedVariables()

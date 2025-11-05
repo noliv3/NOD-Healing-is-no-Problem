@@ -5,6 +5,7 @@ NODHeal.UI = NODHeal.UI or {}
 NODHeal.UI.Grid = M
 
 local HotDetector = NODHeal and NODHeal.Core and NODHeal.Core.HotDetector
+local CooldownClassifier = NODHeal and NODHeal.Core and NODHeal.Core.CooldownClassifier
 
 local CreateFrame = CreateFrame
 local UIParent = UIParent
@@ -32,6 +33,27 @@ local tinsert = table.insert
 
 local unitFrames = {}
 local trackedFrames = {}
+
+local CATEGORY_COLORS = {
+    DEF = { 0.2, 0.6, 1.0 },
+    EXTERNAL = { 1.0, 0.8, 0.2 },
+    SELF = { 0.3, 1.0, 0.3 },
+    ABSORB = { 0.9, 0.3, 0.9 },
+}
+
+local function getHotConfidence(spellId)
+    if HotDetector and HotDetector.GetConfidence then
+        return HotDetector.GetConfidence(spellId)
+    end
+    return 0.3
+end
+
+local function estimateHotValue(spellId, remain, stacks)
+    if HotDetector and HotDetector.EstimateHotValue then
+        return HotDetector.EstimateHotValue(spellId, remain, stacks)
+    end
+    return 0
+end
 local cfg
 
 local function getConfig()
@@ -97,32 +119,53 @@ local function getDebuffPriority(list, name, spellId)
     return 0
 end
 
+local function scoreHot(entry)
+    local confidence = entry.confidence or 0.3
+    local expected = entry.expected or 0
+    local selfBonus = entry.own and 0.15 or 0
+    local stackBonus = math.min(entry.stacks or 0, 3) * 0.05
+    return (expected * confidence) + selfBonus + stackBonus
+end
+
 local function collectHotAuras(unit)
     local iconsCfg = (cfg and cfg.icons) or {}
     local own, other = {}, {}
     local now = GetTime()
     for i = 1, 40 do
-        local name, icon, count, dispelType, duration, expirationTime, unitCaster, isStealable, nameplateShowPersonal, spellId =
-            UnitAura(unit, i, "HELPFUL")
+        local name, icon, count, _, duration, expirationTime, unitCaster, _, _, spellId = UnitAura(unit, i, "HELPFUL")
         if not name then
             break
         end
         if icon and isHotSpell(spellId) then
             local remain = (expirationTime or 0) - now
-            local isOwn = unitCaster and (UnitIsUnit(unitCaster, "player") or UnitIsUnit(unitCaster, "pet"))
-            local entry = { icon = icon, remain = remain, spellId = spellId, own = isOwn }
-            if entry.own then
-                tinsert(own, entry)
-            else
-                tinsert(other, entry)
+            local stacks = count or 0
+            local confidence = getHotConfidence(spellId)
+            if confidence > 0 then
+                local expected = estimateHotValue(spellId, remain, stacks)
+                local entry = {
+                    icon = icon,
+                    remain = remain,
+                    spellId = spellId,
+                    own = unitCaster and (UnitIsUnit(unitCaster, "player") or UnitIsUnit(unitCaster, "pet")),
+                    stacks = stacks,
+                    confidence = confidence,
+                    expected = expected,
+                    duration = duration or 0,
+                    expiration = expirationTime or 0,
+                }
+                if entry.own then
+                    tinsert(own, entry)
+                else
+                    tinsert(other, entry)
+                end
             end
         end
     end
     table.sort(own, function(a, b)
-        return (a.remain or 0) > (b.remain or 0)
+        return scoreHot(a) > scoreHot(b)
     end)
     table.sort(other, function(a, b)
-        return (a.remain or 0) > (b.remain or 0)
+        return scoreHot(a) > scoreHot(b)
     end)
     local res = {}
     local maxN = safeGet(iconsCfg, "hotMax", 12)
@@ -151,9 +194,13 @@ local function layoutHotIcons(frame, list)
     local dir = safeGet(iconsCfg, "hotDirection", "RTL")
 
     for i = 1, 12 do
-        local t = frame.hotTex[i]
-        if t then
-            t:Hide()
+        local tex = frame.hotTex[i]
+        if tex then
+            tex:Hide()
+        end
+        local stack = frame.hotStacks and frame.hotStacks[i]
+        if stack then
+            stack:Hide()
         end
     end
     if not list or #list == 0 then
@@ -182,7 +229,21 @@ local function layoutHotIcons(frame, list)
             tex:SetPoint("TOPLEFT", frame.hotCont, "TOPLEFT", col * (size + spacing), -(row * (size + rowGap)))
         end
 
+        tex:SetAlpha(math.max(0.2, math.min(entry.confidence or 0.3, 1)))
         tex:Show()
+
+        local stack = frame.hotStacks and frame.hotStacks[i]
+        if stack then
+            if entry.stacks and entry.stacks > 1 then
+                stack:SetText(entry.stacks)
+                stack:SetPoint("BOTTOMRIGHT", tex, "BOTTOMRIGHT", -1, 1)
+                stack:SetAlpha(tex:GetAlpha())
+                stack:Show()
+            else
+                stack:SetText("")
+                stack:Hide()
+            end
+        end
     end
 
     local width = cols * size + (cols - 1) * spacing
@@ -214,6 +275,142 @@ local function pickDebuffIcon(unit)
     end
 
     return bestTexture
+end
+
+local function scoreMajor(entry)
+    local base = 0.5
+    if entry.class == "DEF" then
+        base = 1.0
+    elseif entry.class == "EXTERNAL" then
+        base = 0.9
+    elseif entry.class == "SELF" then
+        base = 0.7
+    elseif entry.class == "ABSORB" then
+        base = 0.6
+    end
+    local mitigation = entry.estimated or 0
+    local extBonus = entry.class == "EXTERNAL" and 0.2 or 0
+    return (base + mitigation + extBonus) * (entry.confidence or 0.3)
+end
+
+local function collectMajorAuras(frame, unit)
+    if not CooldownClassifier or not CooldownClassifier.Classify then
+        return {}
+    end
+    local list = {}
+    local now = GetTime()
+    for i = 1, 40 do
+        local name, icon, count, _, duration, expirationTime, caster, _, _, spellId = UnitAura(unit, i, "HELPFUL")
+        if not name then
+            break
+        end
+        local class, confidence = CooldownClassifier.Classify and CooldownClassifier.Classify(spellId)
+        if class and confidence and confidence > 0 then
+            local remain = (expirationTime or 0) - now
+            if remain > 0 then
+                list[#list + 1] = {
+                    name = name,
+                    spellId = spellId,
+                    icon = icon,
+                    class = class,
+                    confidence = confidence,
+                    remain = remain,
+                    duration = duration or 0,
+                    expiration = expirationTime or 0,
+                    stacks = count or 0,
+                    caster = caster,
+                    estimated = 0,
+                }
+            end
+        end
+    end
+    for _, entry in ipairs(list) do
+        entry.score = scoreMajor(entry)
+    end
+    table.sort(list, function(a, b)
+        return (a.score or 0) > (b.score or 0)
+    end)
+    return list
+end
+
+local function layoutMajorIcons(frame, list)
+    if not frame.majorSlots then
+        return
+    end
+    local majorCfg = (cfg and cfg.major) or {}
+    if not majorCfg.enabled then
+        for i = 1, #frame.majorSlots do
+            frame.majorSlots[i]:Hide()
+            frame.majorSlots[i].data = nil
+        end
+        return
+    end
+    local caps = {
+        DEF = majorCfg.capDEF or 2,
+        EXTERNAL = majorCfg.capEXT or 1,
+        SELF = majorCfg.capSELF or 1,
+        ABSORB = majorCfg.capABSORB or 1,
+    }
+    local limit = majorCfg.maxTotal or 4
+    local filtered = {}
+    local used = { DEF = 0, EXTERNAL = 0, SELF = 0, ABSORB = 0 }
+    for _, entry in ipairs(list or {}) do
+        if #filtered >= limit then
+            break
+        end
+        local cap = caps[entry.class] or 0
+        if used[entry.class] < cap then
+            used[entry.class] = used[entry.class] + 1
+            filtered[#filtered + 1] = entry
+        end
+    end
+
+    frame.majorCont:ClearAllPoints()
+    frame.majorCont:SetPoint(majorCfg.anchor or "TOPLEFT", frame, majorCfg.anchor or "TOPLEFT", majorCfg.offsetX or 2, majorCfg.offsetY or -2)
+
+    local size = majorCfg.iconSize or 18
+    local spacing = safeGet(cfg and cfg.icons, "spacing", 1)
+    for i, slot in ipairs(frame.majorSlots) do
+        local entry = filtered[i]
+        slot:SetSize(size, size)
+        slot.icon:SetSize(size, size)
+        slot:ClearAllPoints()
+        if i == 1 then
+            slot:SetPoint("TOPLEFT", frame.majorCont, "TOPLEFT", 0, 0)
+        else
+            slot:SetPoint("LEFT", frame.majorSlots[i - 1], "RIGHT", spacing + 1, 0)
+        end
+        if entry then
+            slot.icon:SetTexture(entry.icon)
+            local color = CATEGORY_COLORS[entry.class]
+            if color then
+                slot.border:SetColorTexture(color[1], color[2], color[3], 0.85)
+            else
+                slot.border:SetColorTexture(1, 1, 1, 0.5)
+            end
+            local start = entry.expiration > 0 and entry.expiration - entry.duration or GetTime()
+            if entry.duration and entry.duration > 0 then
+                slot.cooldown:SetCooldown(start, entry.duration)
+                slot.cooldown:Show()
+            else
+                slot.cooldown:Hide()
+            end
+            slot:SetAlpha(math.max(0.2, math.min(entry.confidence or 0.3, 1)))
+            slot.data = entry
+            slot:Show()
+        else
+            slot.cooldown:Hide()
+            slot.data = nil
+            slot:Hide()
+        end
+    end
+    local count = math.min(#filtered, #frame.majorSlots)
+    if count > 0 then
+        local width = count * size + (count - 1) * (spacing + 1)
+        frame.majorCont:SetSize(width, size)
+    else
+        frame.majorCont:SetSize(size, size)
+    end
 end
 
 local function updateIconLayout(frame)
@@ -251,7 +448,10 @@ local function updateAuraIcons(frame)
     end
 
     cfg = getConfig()
+    frame._nod_refreshPending = nil
+    frame._nod_lastRefresh = GetTime()
     local iconsCfg = (cfg and cfg.icons) or {}
+    local majorCfg = (cfg and cfg.major) or {}
     local enabled = safeGet(iconsCfg, "enabled", true)
 
     if not frame.unit or not UnitExists(frame.unit) then
@@ -265,12 +465,34 @@ local function updateAuraIcons(frame)
                 if tex then
                     tex:Hide()
                 end
+                local stack = frame.hotStacks and frame.hotStacks[i]
+                if stack then
+                    stack:Hide()
+                end
             end
         end
         if frame.hotCont then
             frame.hotCont:SetSize(1, 1)
         end
+        if frame.majorSlots then
+            for i = 1, #frame.majorSlots do
+                frame.majorSlots[i]:Hide()
+                frame.majorSlots[i].data = nil
+            end
+        end
         return
+    end
+
+    if frame.majorSlots then
+        if majorCfg.enabled then
+            local cds = collectMajorAuras(frame, frame.unit)
+            layoutMajorIcons(frame, cds)
+        else
+            for i = 1, #frame.majorSlots do
+                frame.majorSlots[i]:Hide()
+                frame.majorSlots[i].data = nil
+            end
+        end
     end
 
     if enabled and safeGet(iconsCfg, "hotEnabled", true) and frame.hotTex then
@@ -281,6 +503,10 @@ local function updateAuraIcons(frame)
             local tex = frame.hotTex[i]
             if tex then
                 tex:Hide()
+            end
+            local stack = frame.hotStacks and frame.hotStacks[i]
+            if stack then
+                stack:Hide()
             end
         end
         if frame.hotCont then
@@ -319,6 +545,38 @@ end
 local function refreshAllIconState()
     updateAllIconLayout()
     refreshAllAuraIcons(trackedFrames)
+end
+
+local function requestAuraRefresh(frame)
+    if not frame then
+        return
+    end
+    local now = GetTime()
+    local last = frame._nod_lastRefresh or 0
+    local minInterval = 0.15
+    if now - last >= minInterval then
+        updateAuraIcons(frame)
+        return
+    end
+    if frame._nod_refreshPending then
+        return
+    end
+    frame._nod_refreshPending = true
+    local delay = minInterval - (now - last)
+    if delay < 0.05 then
+        delay = 0.05
+    end
+    if not (C_Timer and C_Timer.After) then
+        frame._nod_refreshPending = nil
+        updateAuraIcons(frame)
+        return
+    end
+    C_Timer.After(delay, function()
+        if frame._nod_refreshPending then
+            frame._nod_refreshPending = nil
+            updateAuraIcons(frame)
+        end
+    end)
 end
 
 local function _RefreshAll()
@@ -490,6 +748,74 @@ local function createUnitFrame(parent, unit, index)
         t:SetSize(14, 14)
         t:Hide()
         frame.hotTex[i] = t
+    end
+    frame.hotStacks = frame.hotStacks or {}
+    for i = 1, 12 do
+        local stack = frame.hotStacks[i]
+        if not stack then
+            stack = frame.hotCont:CreateFontString(nil, "OVERLAY", "GameFontNormalSmall")
+            stack:SetJustifyH("RIGHT")
+            stack:SetJustifyV("BOTTOM")
+        end
+        stack:SetText("")
+        stack:Hide()
+        frame.hotStacks[i] = stack
+    end
+
+    frame.majorCont = frame.majorCont or CreateFrame("Frame", nil, frame)
+    frame.majorCont:SetPoint("TOPLEFT", frame, "TOPLEFT", 2, -2)
+    frame.majorCont:SetSize(1, 1)
+    frame.majorSlots = frame.majorSlots or {}
+    for i = 1, 4 do
+        local slot = frame.majorSlots[i]
+        if not slot then
+            slot = CreateFrame("Frame", nil, frame.majorCont)
+            slot:SetSize(18, 18)
+            slot:EnableMouse(true)
+            local icon = slot:CreateTexture(nil, "ARTWORK")
+            icon:SetAllPoints(slot)
+            icon:SetTexCoord(0.08, 0.92, 0.08, 0.92)
+            slot.icon = icon
+            local border = slot:CreateTexture(nil, "OVERLAY")
+            border:SetAllPoints(slot)
+            border:SetColorTexture(1, 1, 1, 0.5)
+            slot.border = border
+            local cooldown = CreateFrame("Cooldown", nil, slot, "CooldownFrameTemplate")
+            cooldown:SetAllPoints(slot)
+            cooldown:SetReverse(false)
+            cooldown:SetHideCountdownNumbers(true)
+            slot.cooldown = cooldown
+            slot:SetScript("OnEnter", function(self)
+                if not self.data or not GameTooltip then
+                    return
+                end
+                GameTooltip:SetOwner(self, "ANCHOR_BOTTOMRIGHT")
+                if GameTooltip.SetSpellByID and self.data.spellId then
+                    GameTooltip:SetSpellByID(self.data.spellId)
+                else
+                    GameTooltip:SetText(self.data.name or "", 1, 1, 1)
+                end
+                local remain = math.max(0, self.data.remain or 0)
+                GameTooltip:AddLine(string.format("Remaining: %.1fs", remain), 0.8, 0.8, 0.8)
+                if self.data.caster and UnitExists and UnitExists(self.data.caster) then
+                    GameTooltip:AddLine(string.format("Source: %s", UnitName(self.data.caster) or "?"), 0.7, 0.9, 1.0)
+                end
+                if self.data.estimated and self.data.estimated > 0 then
+                    GameTooltip:AddLine(string.format("Prevented ~%d", self.data.estimated), 0.6, 1.0, 0.6)
+                else
+                    GameTooltip:AddLine("Prevented: n/a", 0.6, 0.6, 0.6)
+                end
+                GameTooltip:Show()
+            end)
+            slot:SetScript("OnLeave", function()
+                if GameTooltip then
+                    GameTooltip:Hide()
+                end
+            end)
+            frame.majorSlots[i] = slot
+        end
+        frame.majorSlots[i]:Hide()
+        frame.majorSlots[i].data = nil
     end
 
     local debuffIcon = frame:CreateTexture(nil, "OVERLAY")
@@ -865,11 +1191,13 @@ local function initialize()
             end
         elseif event == "UNIT_AURA" then
             if not unit or type(unit) ~= "string" then
-                refreshAllAuraIcons(trackedFrames)
+                for _, frame in ipairs(trackedFrames) do
+                    requestAuraRefresh(frame)
+                end
             else
                 for _, frame in ipairs(unitFrames) do
                     if frame.unit == unit then
-                        updateAuraIcons(frame)
+                        requestAuraRefresh(frame)
                     end
                 end
             end
