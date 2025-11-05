@@ -34,8 +34,7 @@ Config/         # Defaults & Persistenz
 Core/           # Aggregator, Solver, Timing, Dispatcher, Caches
 UI/             # Grid, Overlay, ClickCast, Options, Binding-UI
 Libs/           # integrierte libs (LibHealComm-4.0)
-DOCU/           # Analysen & Legacy-Material
-reports/        # QA-/Analyse-Schnappschüsse (nicht fürs Release bündeln)
+docs/legacy/    # Archivierte Analysen, QA-Reports & historisches Material
 ```
 
 ---
@@ -43,7 +42,7 @@ reports/        # QA-/Analyse-Schnappschüsse (nicht fürs Release bündeln)
 ## 4) Dokumentation (knapp halten)
 - **README.md** beschreibt nur: Zweck, Installation, Kurz-Usage, Slash-Befehle, Struktur, Troubleshooting.
 - Änderungen mit Funktionsauswirkung: **kurze Notiz** in README + optional `CHANGELOG.md`.
-- Umfangreiche Analysen/Altmaterial: in `DOCU/` belassen/aktualisieren.
+- Umfangreiche Analysen/Altmaterial: in `docs/legacy/` bündeln (Release-ZIP bleibt schlank).
 - Keine spekulativen Aussagen (nur Umgesetztes dokumentieren).
 
 ---
@@ -86,7 +85,7 @@ reports/        # QA-/Analyse-Schnappschüsse (nicht fürs Release bündeln)
   *.pdf *.docx *.zip
   ```
 - Produktiv niemals commiten: generierte Reports, Snapshots, riesige Office/PDFs.  
-- Alte Doku → innerhalb `DOCU/` ablegen (statt löschen).
+- Alte Doku → innerhalb `docs/legacy/` ablegen (statt löschen).
 
 ---
 
