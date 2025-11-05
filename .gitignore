@@ -1,0 +1,17 @@
+reports/
+coverage/
+out/
+build/
+dist/
+tmp/
+.cache/
+__pycache__/
+*.log
+*.tmp
+*.out
+*.err
+*.report*
+*.sarif
+*.pdf
+*.docx
+*.zip

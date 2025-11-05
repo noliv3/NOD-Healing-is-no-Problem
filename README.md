@@ -14,8 +14,9 @@ Fokus: eingehende Heilungen aggregieren, Landzeit/Zeitfenster bestimmen, kompakt
 ---
 
 ## Installation
-1. Ordner **`NOD_Heal`** nach  
+1. Repo-Ordner (oder Release-ZIP) nach
    `World of Warcraft/_classic_/Interface/AddOns/` kopieren.
+   - Bei Git-Klon: Verzeichnis in **`NOD_Heal`** umbenennen.
 2. Client neu starten → Addon aktivieren.
 
 **SavedVariables:** `NODHealDB` (Profil/Config, Bindings).  
@@ -58,16 +59,15 @@ NOD_Heal.toc # Lade-Reihenfolge, SavedVariables
 Config/ # Defaults & Persistenz
 Core/ # Aggregator, Solver, Timing, Dispatcher, Caches
 UI/ # Grid, Overlay, ClickCast, Options, Binding-UI
-Libs/ # Externe/Interne Hilfsbibliotheken (falls vorhanden)
-
-yaml
-Code kopieren
+Libs/ # Externe/Interne Hilfsbibliotheken (LibHealComm-4.0)
+DOCU/ # Analysen & Legacy-Unterlagen
+reports/ # QA-/Analyse-Schnappschüsse (nicht ins Release)
 
 ---
 
 ## Entwicklung
 - Lua-Module, klare Namespaces (`NODHeal.*`).
 - Ticker lastarm (~0.1–0.2 s), minimale Allokationen.
-- Dokumentation/Artefakte liegen schlank unter `docs/` (Legacy-Material in `docs/legacy/`).
+- Dokumentation/Artefakte liegen gebündelt unter `DOCU/`.
 
 **Lizenz**: siehe `LICENSE` (falls vorhanden).
