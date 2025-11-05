@@ -4,6 +4,8 @@ NODHeal.Grid = M
 NODHeal.UI = NODHeal.UI or {}
 NODHeal.UI.Grid = M
 
+local HotDetector = NODHeal and NODHeal.Core and NODHeal.Core.HotDetector
+
 local CreateFrame = CreateFrame
 local UIParent = UIParent
 local GameTooltip = GameTooltip
@@ -46,34 +48,13 @@ end
 local container
 local feedbackEntries = {}
 
-local function getHotDetector()
-    local ns = NODHeal
-    if ns and ns.GetModule then
-        local module = ns:GetModule("HotDetector")
-        if module then
-            return module
-        end
+local function isHotSpell(spellId)
+    if HotDetector and HotDetector.IsHot then
+        return HotDetector.IsHot(spellId)
     end
-    if ns and ns.Core and ns.Core.HotDetector then
-        return ns.Core.HotDetector
-    end
-    return _G.NODHeal_HotDetector
-end
-
-local function isHotSpell(spellId, whitelist)
-    if not spellId then
-        return false
-    end
-
-    local detector = getHotDetector()
-    if detector and type(detector.IsHot) == "function" then
-        local ok, result = pcall(detector.IsHot, spellId)
-        if ok then
-            return result and true or false
-        end
-    end
-
-    return whitelist and whitelist[spellId] or false
+    -- Fallback auf Config-Whitelist, falls Modul nicht geladen
+    local wl = (NODHeal.Config and NODHeal.Config.icons and NODHeal.Config.icons.hotWhitelist) or {}
+    return wl[spellId] or false
 end
 
 local FRAME_WIDTH = 90
@@ -118,7 +99,6 @@ end
 
 local function collectHotAuras(unit)
     local iconsCfg = (cfg and cfg.icons) or {}
-    local wl = iconsCfg.hotWhitelist or {}
     local own, other = {}, {}
     local now = GetTime()
     for i = 1, 40 do
@@ -127,7 +107,7 @@ local function collectHotAuras(unit)
         if not name then
             break
         end
-        if icon and isHotSpell(spellId, wl) then
+        if icon and isHotSpell(spellId) then
             local remain = (expirationTime or 0) - now
             local isOwn = unitCaster and (UnitIsUnit(unitCaster, "player") or UnitIsUnit(unitCaster, "pet"))
             local entry = { icon = icon, remain = remain, spellId = spellId, own = isOwn }
