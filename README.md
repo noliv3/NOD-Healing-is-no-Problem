@@ -52,6 +52,7 @@ Fokus: eingehende Heilungen aggregieren, Landzeit/Zeitfenster bestimmen, kompakt
 - **Addon lädt nicht** → Pfad/TOC prüfen, Cache leeren, Konflikt-Addons testweise deaktivieren.
 - **Keine Overlays** → Optionen prüfen, kompatible Einheitenrahmen aktivieren.
 - **Bindings greifen nicht** → in Kampf keine Layout-Änderungen; nach Kampf `/reload` falls nötig.
+- **Mehr Details** → siehe `TROUBLESHOOTING.md` für systematische Checks & Log-Sammeln.
 
 ---
 
@@ -61,14 +62,13 @@ Config/ # Defaults & Persistenz
 Core/ # Aggregator, Solver, Timing, Dispatcher, Caches
 UI/ # Grid, Overlay, ClickCast, Options, Binding-UI
 Libs/ # Externe/Interne Hilfsbibliotheken (LibHealComm-4.0)
-DOCU/ # Analysen & Legacy-Unterlagen
-reports/ # QA-/Analyse-Schnappschüsse (nicht ins Release)
+docs/legacy/ # Archivierte Analysen, QA-Reports & historisches Material
 
 ---
 
 ## Entwicklung
 - Lua-Module, klare Namespaces (`NODHeal.*`).
 - Ticker lastarm (~0.1–0.2 s), minimale Allokationen.
-- Dokumentation/Artefakte liegen gebündelt unter `DOCU/`.
+- Dokumentation/Artefakte liegen gebündelt unter `docs/legacy/`.
 
 **Lizenz**: siehe `LICENSE` (falls vorhanden).

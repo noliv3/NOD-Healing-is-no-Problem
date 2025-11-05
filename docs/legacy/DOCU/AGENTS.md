@@ -1,5 +1,7 @@
 # DOCU/AGENTS.md — Zweck & Arbeitsregeln
 
+> **Hinweis:** Der Ordner liegt nun unter `docs/legacy/DOCU/`. Inhalte bleiben unverändert rein dokumentarisch.
+
 ## Zweck des Ordners
 Der Ordner **DOCU/** enthält **Quell- und Funktionsdokumentation** für das Healing-Addon **NOD**:
 - **Referenz** der Backend-Logik (Signaturen, Datenflüsse, Formeln).
