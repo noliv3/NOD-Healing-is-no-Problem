@@ -7,6 +7,7 @@ local strlower = string.lower
 local strmatch = string.match
 local format = string.format
 local ipairs = ipairs
+local select = select
 
 local SLASH_NODHEAL1 = "/nod"
 
@@ -33,6 +34,30 @@ local function log(message, force)
     end
 end
 
+function NODHeal.Log(self, message, force)
+    if self ~= NODHeal then
+        message, force = self, message
+    end
+    log(message, force)
+end
+
+function NODHeal.Logf(self, force, pattern, ...)
+    if self ~= NODHeal then
+        pattern, force, self = force, self, NODHeal
+    end
+    if type(force) ~= "boolean" then
+        pattern, force = force, false
+    end
+    if not pattern then
+        return
+    end
+    local msg = pattern
+    if select("#", ...) > 0 then
+        msg = format(pattern, ...)
+    end
+    log(msg, force)
+end
+
 function NODHeal:RegisterModule(name, module)
     if not name or type(name) ~= "string" then
         error("Module name must be a string")
@@ -56,6 +81,9 @@ end
 
 local function ensureSavedVariables()
     NODHealDB = NODHealDB or {}
+    if NODHeal.ApplyConfigDefaults then
+        NODHeal.ApplyConfigDefaults()
+    end
     return NODHealDB
 end
 
@@ -206,6 +234,10 @@ local function handleAddonLoaded(_, event, name)
     SlashCmdList.NOD = handleSlashCommand
 
     _G.SLASH_NOD1 = SLASH_NODHEAL1
+
+    if NODHeal.Bindings and NODHeal.Bindings.Ensure then
+        NODHeal.Bindings:Ensure()
+    end
 
     bootstrapDispatcher()
 end

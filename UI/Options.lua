@@ -5,6 +5,17 @@ NODHeal.Options = Options
 NODHeal.Config = NODHeal.Config or {}
 NODHealDB = NODHealDB or {}
 
+local function log(message, force)
+    if not message then
+        return
+    end
+    if NODHeal and NODHeal.Log then
+        NODHeal:Log(message, force)
+    elseif force then
+        print("[NOD] " .. message)
+    end
+end
+
 local CreateFrame = CreateFrame
 local UIParent = UIParent
 local UIDropDownMenu_CreateInfo = UIDropDownMenu_CreateInfo
@@ -17,7 +28,7 @@ local pairs = pairs
 local ipairs = ipairs
 local math = math
 
-local defaults = {
+local defaults = (NODHeal and NODHeal.ConfigDefaults) or {
     scale = 1,
     columns = 5,
     spacing = 4,
@@ -35,6 +46,9 @@ local dropdown
 local originalConfig
 
 local function ensureConfig()
+    if NODHeal and NODHeal.ApplyConfigDefaults then
+        NODHeal.ApplyConfigDefaults()
+    end
     NODHeal.Config = NODHeal.Config or {}
     NODHealDB = NODHealDB or {}
     NODHealDB.config = NODHealDB.config or {}
@@ -85,7 +99,11 @@ local function saveConfigValue(key, value, silent)
     NODHealDB.config[key] = value
     applyGridRefresh()
     if not silent then
-        print(string.format("[NOD] Saved option: %s = %s", key, tostring(value)))
+        if NODHeal and NODHeal.Logf then
+            NODHeal:Logf(true, "Saved option: %s = %s", key, tostring(value))
+        else
+            log(string.format("Saved option: %s = %s", key, tostring(value)), true)
+        end
     end
 end
 

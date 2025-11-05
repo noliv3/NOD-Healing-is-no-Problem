@@ -52,6 +52,14 @@ Viel Erfolg beim Ausbau des Addons!
 - Stabilisierung 2025-03: `IncomingHealAggregator` und `IncomingHeals` besitzen jetzt `CleanExpired`-Hilfen mit Zeitpuffer; `CastLandingTime` normalisiert Castzeiten & Grenzwerte; `LatencyTools` refresht bei jeder Abfrage und klemmt CVars; `PredictiveSolver` klemmt negative Beiträge.
 - HealthSnapshot kapselt `UnitHealth`/`UnitHealthMax` über einen Safe-Wrapper, damit ungültige Einheiten keine `[NOD] ERROR`-Logs mehr erzeugen.
 
+## QA+Autofix 2025-11-05
+- SavedVariables-Synchronisierung konsolidiert: `Config/Defaults.lua` spiegelt Grid-, Overlay- und Debug-Optionen zwischen `NODHeal.Config` und `NODHealDB.config`; Module können `NODHeal.ApplyConfigDefaults()` aufrufen.
+- Einheitliches Log-Gateway (`NODHeal.Log`/`Logf`) ersetzt direkte `print`-Aufrufe in UI-Komponenten und respektiert das Debug-Flag; Zwangsausgaben nutzen `force = true`.
+- GridFrame reagiert auf zusätzliche Events (`UNIT_CONNECTION`, `PLAYER_ROLES_ASSIGNED`, `PLAYER_REGEN_ENABLED`) und exportiert `unitFrames` für Overlay-/Click-Cast-Fallbacks; Tooltip-Aufrufe sind gegen fehlendes `GameTooltip` abgesichert.
+- Overlay-Hooks prüfen vor `hooksecurefunc`, ob `CompactUnitFrame_*` verfügbar ist, und verwenden sichere Refresh-Pfade statt direkter Global-Zugriffe.
+- Binding-/Options-UI melden Konflikte über das Log-System und persistieren Sortieränderungen unmittelbar.
+- Neue Artefakte: `reports/QA_Report.md`, `reports/change_log.md`, `reports/bindings_snapshot.json` und `DOCU/Validation/Functional_Readiness.md` dokumentieren den aktuellen Heal-Ready-Status.
+
 ## Vor Merge prüfen
 - [ ] Pfade/Module konsistent zu `/NOD_Heal/NOD_Heal.toc`
 - [ ] Einheiten dokumentiert (ms, %, HP)

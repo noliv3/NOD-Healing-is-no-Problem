@@ -10,6 +10,17 @@ local unpack = unpack
 local UI = {}
 UI.__index = UI
 
+local function log(message, force)
+    if not message then
+        return
+    end
+    if NODHeal and NODHeal.Log then
+        NODHeal:Log(message, force)
+    elseif force then
+        print("[NOD] " .. message)
+    end
+end
+
 local STATUS_WIDTH = 200
 local STATUS_HEIGHT = 40
 local STATUS_POINT = {"BOTTOMRIGHT", UIParent, "BOTTOMRIGHT", -20, 80}
@@ -138,7 +149,7 @@ function UI:Initialize()
         NODHeal.Grid.Initialize()
     end
 
-    print("[NOD] UI initialized (Overlay active)")
+    log("UI initialized (Overlay active)", true)
 end
 
 SLASH_NODHEAL1 = "/nodbind"
@@ -148,11 +159,15 @@ SlashCmdList["NODHEAL"] = function(msg)
         if NODHeal and NODHeal.Bindings and NODHeal.Bindings.Set then
             NODHeal.Bindings:Set(combo, spell)
         end
-        print("[NOD] Bound", combo, "to", spell)
+        log(string.format("Bound %s to %s", combo, spell), true)
     else
         if NODHeal and NODHeal.Bindings and NODHeal.Bindings.List then
             for key, value in pairs(NODHeal.Bindings:List()) do
-                print(key, "→", value)
+                if NODHeal and NODHeal.Logf then
+                    NODHeal:Logf(true, "%s → %s", key, value)
+                else
+                    log(string.format("%s → %s", tostring(key), tostring(value)), true)
+                end
             end
         end
     end
@@ -178,12 +193,15 @@ SlashCmdList["NODSORT"] = function(msg)
     if mode == "class" or mode == "alpha" or mode == "group" then
         NODHeal.Config = NODHeal.Config or {}
         NODHeal.Config.sortMode = mode
-        print("[NOD] Sort mode set to:", mode)
+        if NODHealDB and NODHealDB.config then
+            NODHealDB.config.sortMode = mode
+        end
+        log(string.format("Sort mode set to: %s", mode), true)
         if NODHeal.Grid and NODHeal.Grid.Initialize then
             NODHeal.Grid.Initialize()
         end
     else
-        print("[NOD] Usage: /nodsort class | alpha | group")
+        log("Usage: /nodsort class | alpha | group", true)
     end
 end
 

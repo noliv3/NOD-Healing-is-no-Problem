@@ -1,3 +1,4 @@
+local _G = _G
 local NODHeal = _G.NODHeal or {}
 local UnitExists = UnitExists
 local UnitGUID = UnitGUID
@@ -5,8 +6,15 @@ local UnitHealth = UnitHealth
 local UnitHealthMax = UnitHealthMax
 local UnitGetIncomingHeals = UnitGetIncomingHeals
 local GetTime = GetTime
-local CompactUnitFrame_UpdateHealth = CompactUnitFrame_UpdateHealth
 local hooksecurefunc = hooksecurefunc
+
+local function secureHook(name, handler)
+    if type(_G[name]) == "function" then
+        hooksecurefunc(name, handler)
+        return true
+    end
+    return false
+end
 
 local UI = (NODHeal.GetModule and NODHeal:GetModule("UI")) or NODHeal.UI or {}
 NODHeal.UI = UI
@@ -100,8 +108,9 @@ local function refreshAll()
     for frame in pairs(UI.barByFrame) do
         if frame and frame.unit then
             if isOverlayEnabled() and frame:IsShown() then
-                if CompactUnitFrame_UpdateHealth then
-                    CompactUnitFrame_UpdateHealth(frame)
+                local updater = _G.CompactUnitFrame_UpdateHealth
+                if type(updater) == "function" then
+                    updater(frame)
                 end
             else
                 hideBar(frame)
@@ -110,7 +119,7 @@ local function refreshAll()
     end
 end
 
-hooksecurefunc("CompactUnitFrame_UpdateHealth", function(frame)
+secureHook("CompactUnitFrame_UpdateHealth", function(frame)
     if not frame then
         return
     end
@@ -170,7 +179,7 @@ hooksecurefunc("CompactUnitFrame_UpdateHealth", function(frame)
     showProjection(frame, hb, cur, gain, max)
 end)
 
-hooksecurefunc("CompactUnitFrame_UpdateVisible", function(frame)
+secureHook("CompactUnitFrame_UpdateVisible", function(frame)
     if not frame or not frame:IsShown() or not isOverlayEnabled() then
         hideBar(frame)
     end
@@ -183,7 +192,7 @@ local function fadeIn(frame)
 end
 
 if type(CompactUnitFrame_OnEnter) == "function" then
-    hooksecurefunc("CompactUnitFrame_OnEnter", function(frame)
+    secureHook("CompactUnitFrame_OnEnter", function(frame)
         fadeIn(frame)
 
         if frame and frame.unit then
@@ -215,7 +224,7 @@ else
     end
 end
 
-hooksecurefunc("CompactUnitFrame_OnLeave", function(frame)
+secureHook("CompactUnitFrame_OnLeave", function(frame)
     if frame and frame.healthBar then
         frame.healthBar:SetAlpha(1)
     end

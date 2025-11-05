@@ -1,0 +1,680 @@
+[
+  {
+    "path": ".codexignore",
+    "type": "file",
+    "size": 25,
+    "mtime": 1762286500.4503324
+  },
+  {
+    "path": "AGENTS.md",
+    "type": "file",
+    "size": 8668,
+    "mtime": 1762320750.66199
+  },
+  {
+    "path": "Config",
+    "type": "directory",
+    "size": 4096,
+    "mtime": 1762286500.4503324
+  },
+  {
+    "path": "Config/Defaults.lua",
+    "type": "file",
+    "size": 1795,
+    "mtime": 1762320595.0033276
+  },
+  {
+    "path": "Core",
+    "type": "directory",
+    "size": 4096,
+    "mtime": 1762286500.4503324
+  },
+  {
+    "path": "Core/AuraTickPredictor.lua",
+    "type": "file",
+    "size": 7530,
+    "mtime": 1762286500.4503324
+  },
+  {
+    "path": "Core/CastLandingTime.lua",
+    "type": "file",
+    "size": 4940,
+    "mtime": 1762286500.4503324
+  },
+  {
+    "path": "Core/CastTiming.lua",
+    "type": "file",
+    "size": 1097,
+    "mtime": 1762286500.4503324
+  },
+  {
+    "path": "Core/CoreDispatcher.lua",
+    "type": "file",
+    "size": 7083,
+    "mtime": 1762286500.4503324
+  },
+  {
+    "path": "Core/DamagePrediction.lua",
+    "type": "file",
+    "size": 4248,
+    "mtime": 1762286500.4503324
+  },
+  {
+    "path": "Core/DesyncGuard.lua",
+    "type": "file",
+    "size": 2507,
+    "mtime": 1762286500.4503324
+  },
+  {
+    "path": "Core/EffectiveHP.lua",
+    "type": "file",
+    "size": 2552,
+    "mtime": 1762286500.4503324
+  },
+  {
+    "path": "Core/HealValueEstimator.lua",
+    "type": "file",
+    "size": 3431,
+    "mtime": 1762286500.4503324
+  },
+  {
+    "path": "Core/HealthSnapshot.lua",
+    "type": "file",
+    "size": 3221,
+    "mtime": 1762286500.4503324
+  },
+  {
+    "path": "Core/IncomingHealAggregator.lua",
+    "type": "file",
+    "size": 10658,
+    "mtime": 1762286500.4503324
+  },
+  {
+    "path": "Core/IncomingHeals.lua",
+    "type": "file",
+    "size": 3619,
+    "mtime": 1762286500.4503324
+  },
+  {
+    "path": "Core/Init.lua",
+    "type": "file",
+    "size": 5983,
+    "mtime": 1762320712.3823142
+  },
+  {
+    "path": "Core/LatencyTools.lua",
+    "type": "file",
+    "size": 1614,
+    "mtime": 1762286500.4503324
+  },
+  {
+    "path": "Core/PredictiveSolver.lua",
+    "type": "file",
+    "size": 7269,
+    "mtime": 1762286500.4503324
+  },
+  {
+    "path": "DOCU",
+    "type": "directory",
+    "size": 4096,
+    "mtime": 1762286500.4583323
+  },
+  {
+    "path": "DOCU/AGENTS.md",
+    "type": "file",
+    "size": 3657,
+    "mtime": 1762286500.4503324
+  },
+  {
+    "path": "DOCU/Datei_und_Modulstruktur_NOD-Projektbaum.txt",
+    "type": "file",
+    "size": 1040,
+    "mtime": 1762286500.4503324
+  },
+  {
+    "path": "DOCU/Feedback",
+    "type": "directory",
+    "size": 4096,
+    "mtime": 1762286500.4503324
+  },
+  {
+    "path": "DOCU/Feedback/Tag1_GridFrame_Report.md",
+    "type": "file",
+    "size": 1480,
+    "mtime": 1762286500.4503324
+  },
+  {
+    "path": "DOCU/HealingAddons_Funktionsvergleich_NOD_Integration.md",
+    "type": "file",
+    "size": 3277,
+    "mtime": 1762286500.4503324
+  },
+  {
+    "path": "DOCU/NOD_Backend_Funktionsreferenz.md",
+    "type": "file",
+    "size": 3525,
+    "mtime": 1762286500.4503324
+  },
+  {
+    "path": "DOCU/NOD_Datenpfad_LHC_API.md",
+    "type": "file",
+    "size": 6335,
+    "mtime": 1762286500.4503324
+  },
+  {
+    "path": "DOCU/NOD_Heal_Pfadstruktur.md",
+    "type": "file",
+    "size": 3090,
+    "mtime": 1762286500.4503324
+  },
+  {
+    "path": "DOCU/NOD_Konzept_Funktionsliste.txt",
+    "type": "file",
+    "size": 853079,
+    "mtime": 1762286500.4583323
+  },
+  {
+    "path": "DOCU/NOD_Machbarkeitsanalyse_Technik_MoP.md",
+    "type": "file",
+    "size": 3842,
+    "mtime": 1762286500.4583323
+  },
+  {
+    "path": "DOCU/NOD_Systemaufbau_Modulstruktur.md",
+    "type": "file",
+    "size": 5381,
+    "mtime": 1762286500.4583323
+  },
+  {
+    "path": "DOCU/Tasks",
+    "type": "directory",
+    "size": 4096,
+    "mtime": 1762286500.4583323
+  },
+  {
+    "path": "DOCU/Tasks/Tag 1.md",
+    "type": "file",
+    "size": 2373,
+    "mtime": 1762286500.4583323
+  },
+  {
+    "path": "DOCU/Tasks/Tag 2.md",
+    "type": "file",
+    "size": 1322,
+    "mtime": 1762286500.4583323
+  },
+  {
+    "path": "DOCU/Tasks/Tag 3.md",
+    "type": "file",
+    "size": 1688,
+    "mtime": 1762286500.4583323
+  },
+  {
+    "path": "DOCU/Tasks/Tag 4.md",
+    "type": "file",
+    "size": 1500,
+    "mtime": 1762286500.4583323
+  },
+  {
+    "path": "DOCU/Tasks/Tag 5.md",
+    "type": "file",
+    "size": 1408,
+    "mtime": 1762286500.4583323
+  },
+  {
+    "path": "DOCU/Tasks/Tag 6.md",
+    "type": "file",
+    "size": 1135,
+    "mtime": 1762286500.4583323
+  },
+  {
+    "path": "DOCU/Tasks/Tag 7.md",
+    "type": "file",
+    "size": 1292,
+    "mtime": 1762286500.4583323
+  },
+  {
+    "path": "DOCU/Validation",
+    "type": "directory",
+    "size": 4096,
+    "mtime": 1762320777.3457668
+  },
+  {
+    "path": "DOCU/Validation/Final_Audit_Report_v1.md",
+    "type": "file",
+    "size": 3035,
+    "mtime": 1762286500.4583323
+  },
+  {
+    "path": "DOCU/Validation/Functional_Readiness.md",
+    "type": "file",
+    "size": 1505,
+    "mtime": 1762320777.3497667
+  },
+  {
+    "path": "DOCU/Validation/Functional_Readiness_Report.md",
+    "type": "file",
+    "size": 2679,
+    "mtime": 1762286500.4583323
+  },
+  {
+    "path": "DOCU/Validation/Tag1_Functional_Failed.md",
+    "type": "file",
+    "size": 780,
+    "mtime": 1762286500.4583323
+  },
+  {
+    "path": "DOCU/Validation/Tag1_Verified.md",
+    "type": "file",
+    "size": 614,
+    "mtime": 1762286500.4583323
+  },
+  {
+    "path": "DOCU/Vergleich_NOD_vs_HealBot_FeatureAnalyse.md",
+    "type": "file",
+    "size": 2934,
+    "mtime": 1762286500.4583323
+  },
+  {
+    "path": "DOCU/ui_frames",
+    "type": "directory",
+    "size": 4096,
+    "mtime": 1762286500.4663322
+  },
+  {
+    "path": "DOCU/ui_frames/achievements.yaml",
+    "type": "file",
+    "size": 253,
+    "mtime": 1762286500.4583323
+  },
+  {
+    "path": "DOCU/ui_frames/actionbars.yaml",
+    "type": "file",
+    "size": 44334,
+    "mtime": 1762286500.4583323
+  },
+  {
+    "path": "DOCU/ui_frames/auction.yaml",
+    "type": "file",
+    "size": 141,
+    "mtime": 1762286500.4583323
+  },
+  {
+    "path": "DOCU/ui_frames/autocomplete_buttons.yaml",
+    "type": "file",
+    "size": 1171,
+    "mtime": 1762286500.4583323
+  },
+  {
+    "path": "DOCU/ui_frames/castbars.yaml",
+    "type": "file",
+    "size": 259,
+    "mtime": 1762286500.4583323
+  },
+  {
+    "path": "DOCU/ui_frames/character.yaml",
+    "type": "file",
+    "size": 17707,
+    "mtime": 1762286500.4623322
+  },
+  {
+    "path": "DOCU/ui_frames/chat.yaml",
+    "type": "file",
+    "size": 28432,
+    "mtime": 1762286500.4623322
+  },
+  {
+    "path": "DOCU/ui_frames/combatlog.yaml",
+    "type": "file",
+    "size": 8615,
+    "mtime": 1762286500.4623322
+  },
+  {
+    "path": "DOCU/ui_frames/config.yaml",
+    "type": "file",
+    "size": 16905,
+    "mtime": 1762286500.4623322
+  },
+  {
+    "path": "DOCU/ui_frames/core.yaml",
+    "type": "file",
+    "size": 1019,
+    "mtime": 1762286500.4623322
+  },
+  {
+    "path": "DOCU/ui_frames/debug.yaml",
+    "type": "file",
+    "size": 456,
+    "mtime": 1762286500.4623322
+  },
+  {
+    "path": "DOCU/ui_frames/dropdown_lists.yaml",
+    "type": "file",
+    "size": 14006,
+    "mtime": 1762286500.4623322
+  },
+  {
+    "path": "DOCU/ui_frames/friends.yaml",
+    "type": "file",
+    "size": 41300,
+    "mtime": 1762286500.4623322
+  },
+  {
+    "path": "DOCU/ui_frames/guild.yaml",
+    "type": "file",
+    "size": 44108,
+    "mtime": 1762286500.4623322
+  },
+  {
+    "path": "DOCU/ui_frames/inventory_1.yaml",
+    "type": "file",
+    "size": 52648,
+    "mtime": 1762286500.4623322
+  },
+  {
+    "path": "DOCU/ui_frames/inventory_2.yaml",
+    "type": "file",
+    "size": 52969,
+    "mtime": 1762286500.4623322
+  },
+  {
+    "path": "DOCU/ui_frames/inventory_3.yaml",
+    "type": "file",
+    "size": 52847,
+    "mtime": 1762286500.4623322
+  },
+  {
+    "path": "DOCU/ui_frames/inventory_4.yaml",
+    "type": "file",
+    "size": 22881,
+    "mtime": 1762286500.4623322
+  },
+  {
+    "path": "DOCU/ui_frames/itemref_shopping_tooltips.yaml",
+    "type": "file",
+    "size": 2002,
+    "mtime": 1762286500.4623322
+  },
+  {
+    "path": "DOCU/ui_frames/levelup.yaml",
+    "type": "file",
+    "size": 2982,
+    "mtime": 1762286500.4623322
+  },
+  {
+    "path": "DOCU/ui_frames/lfg.yaml",
+    "type": "file",
+    "size": 17880,
+    "mtime": 1762286500.4623322
+  },
+  {
+    "path": "DOCU/ui_frames/loot.yaml",
+    "type": "file",
+    "size": 2419,
+    "mtime": 1762286500.4623322
+  },
+  {
+    "path": "DOCU/ui_frames/loot_buttons.yaml",
+    "type": "file",
+    "size": 1673,
+    "mtime": 1762286500.4623322
+  },
+  {
+    "path": "DOCU/ui_frames/mail.yaml",
+    "type": "file",
+    "size": 25834,
+    "mtime": 1762286500.4623322
+  },
+  {
+    "path": "DOCU/ui_frames/map.yaml",
+    "type": "file",
+    "size": 16139,
+    "mtime": 1762286500.4623322
+  },
+  {
+    "path": "DOCU/ui_frames/merchant.yaml",
+    "type": "file",
+    "size": 31080,
+    "mtime": 1762286500.4623322
+  },
+  {
+    "path": "DOCU/ui_frames/pets.yaml",
+    "type": "file",
+    "size": 4877,
+    "mtime": 1762286500.4623322
+  },
+  {
+    "path": "DOCU/ui_frames/professions.yaml",
+    "type": "file",
+    "size": 8009,
+    "mtime": 1762286500.4623322
+  },
+  {
+    "path": "DOCU/ui_frames/pvp_1.yaml",
+    "type": "file",
+    "size": 53848,
+    "mtime": 1762286500.4623322
+  },
+  {
+    "path": "DOCU/ui_frames/pvp_2.yaml",
+    "type": "file",
+    "size": 36195,
+    "mtime": 1762286500.4623322
+  },
+  {
+    "path": "DOCU/ui_frames/quests.yaml",
+    "type": "file",
+    "size": 38613,
+    "mtime": 1762286500.4623322
+  },
+  {
+    "path": "DOCU/ui_frames/reputation_bars.yaml",
+    "type": "file",
+    "size": 8356,
+    "mtime": 1762286500.4623322
+  },
+  {
+    "path": "DOCU/ui_frames/skill_rank_frames.yaml",
+    "type": "file",
+    "size": 5050,
+    "mtime": 1762286500.4623322
+  },
+  {
+    "path": "DOCU/ui_frames/skill_type_labels.yaml",
+    "type": "file",
+    "size": 2488,
+    "mtime": 1762286500.4623322
+  },
+  {
+    "path": "DOCU/ui_frames/spellbook.yaml",
+    "type": "file",
+    "size": 3210,
+    "mtime": 1762286500.4623322
+  },
+  {
+    "path": "DOCU/ui_frames/spellbook_buttons.yaml",
+    "type": "file",
+    "size": 5347,
+    "mtime": 1762286500.4623322
+  },
+  {
+    "path": "DOCU/ui_frames/static_popup_dialogs.yaml",
+    "type": "file",
+    "size": 11938,
+    "mtime": 1762286500.4623322
+  },
+  {
+    "path": "DOCU/ui_frames/tabard_customization_options.yaml",
+    "type": "file",
+    "size": 2375,
+    "mtime": 1762286500.4623322
+  },
+  {
+    "path": "DOCU/ui_frames/talents.yaml",
+    "type": "file",
+    "size": 344,
+    "mtime": 1762286500.4623322
+  },
+  {
+    "path": "DOCU/ui_frames/tooltip.yaml",
+    "type": "file",
+    "size": 11289,
+    "mtime": 1762286500.4623322
+  },
+  {
+    "path": "DOCU/ui_frames/trade.yaml",
+    "type": "file",
+    "size": 10459,
+    "mtime": 1762286500.4663322
+  },
+  {
+    "path": "DOCU/ui_frames/tutorial_alert_buttons.yaml",
+    "type": "file",
+    "size": 1200,
+    "mtime": 1762286500.4663322
+  },
+  {
+    "path": "DOCU/ui_frames/unitframes_1.yaml",
+    "type": "file",
+    "size": 58070,
+    "mtime": 1762286500.4663322
+  },
+  {
+    "path": "DOCU/ui_frames/unitframes_2.yaml",
+    "type": "file",
+    "size": 27459,
+    "mtime": 1762286500.4663322
+  },
+  {
+    "path": "DOCU/ui_frames/unsorted.yaml",
+    "type": "file",
+    "size": 43258,
+    "mtime": 1762286500.4663322
+  },
+  {
+    "path": "Libs",
+    "type": "directory",
+    "size": 4096,
+    "mtime": 1762286500.4663322
+  },
+  {
+    "path": "Libs/LibHealComm-4.0",
+    "type": "directory",
+    "size": 4096,
+    "mtime": 1762286500.4663322
+  },
+  {
+    "path": "Libs/LibHealComm-4.0/LibHealComm-4.0.lua",
+    "type": "file",
+    "size": 85,
+    "mtime": 1762286500.4663322
+  },
+  {
+    "path": "NOD_Heal.toc",
+    "type": "file",
+    "size": 650,
+    "mtime": 1762286500.4663322
+  },
+  {
+    "path": "README.md",
+    "type": "file",
+    "size": 14853,
+    "mtime": 1762320735.9461145
+  },
+  {
+    "path": "UI",
+    "type": "directory",
+    "size": 4096,
+    "mtime": 1762286500.4663322
+  },
+  {
+    "path": "UI/BindingFrame.lua",
+    "type": "file",
+    "size": 22265,
+    "mtime": 1762320645.9428878
+  },
+  {
+    "path": "UI/ClickCast.lua",
+    "type": "file",
+    "size": 8288,
+    "mtime": 1762286500.4663322
+  },
+  {
+    "path": "UI/GridFrame.lua",
+    "type": "file",
+    "size": 13075,
+    "mtime": 1762320661.9667487
+  },
+  {
+    "path": "UI/Init.lua",
+    "type": "file",
+    "size": 5492,
+    "mtime": 1762320634.2549891
+  },
+  {
+    "path": "UI/Options.lua",
+    "type": "file",
+    "size": 10043,
+    "mtime": 1762320691.8864906
+  },
+  {
+    "path": "UI/Overlay.lua",
+    "type": "file",
+    "size": 6049,
+    "mtime": 1762320671.330668
+  },
+  {
+    "path": "reports",
+    "type": "directory",
+    "size": 4096,
+    "mtime": 1762320769.8698292
+  },
+  {
+    "path": "reports/QA_Report.md",
+    "type": "file",
+    "size": 2561,
+    "mtime": 1762320769.8738291
+  },
+  {
+    "path": "reports/backend_function_audit.md",
+    "type": "file",
+    "size": 2950,
+    "mtime": 1762286500.4663322
+  },
+  {
+    "path": "reports/bindings_snapshot.json",
+    "type": "file",
+    "size": 170,
+    "mtime": 1762320772.393808
+  },
+  {
+    "path": "reports/change_log.md",
+    "type": "file",
+    "size": 1680,
+    "mtime": 1762320761.8938963
+  },
+  {
+    "path": "reports/file_inventory.json",
+    "type": "file",
+    "size": 13232,
+    "mtime": 1762320462.0444639
+  },
+  {
+    "path": "reports/perf_snapshot.md",
+    "type": "file",
+    "size": 524,
+    "mtime": 1762286500.4663322
+  },
+  {
+    "path": "scripts",
+    "type": "directory",
+    "size": 4096,
+    "mtime": 1762286500.4663322
+  },
+  {
+    "path": "scripts/generate_ui_frame_yaml.py",
+    "type": "file",
+    "size": 20622,
+    "mtime": 1762286500.4663322
+  }
+]
