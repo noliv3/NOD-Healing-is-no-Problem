@@ -3,6 +3,8 @@ local NODHeal = _G.NODHeal
 local CreateFrame = CreateFrame
 local UIParent = UIParent
 local C_Timer = C_Timer
+local InCombatLockdown = InCombatLockdown
+local type = type
 local GetTimePreciseSec = GetTimePreciseSec or GetTime
 local format = string.format
 local unpack = unpack
@@ -192,11 +194,19 @@ SLASH_NODSORT1 = "/nodsort"
 SlashCmdList["NODSORT"] = function(msg)
     local mode = (msg or ""):lower()
     if mode == "class" or mode == "alpha" or mode == "group" then
+        if InCombatLockdown and InCombatLockdown() then
+            log("Cannot change sort mode while in combat", true)
+            return
+        end
         NODHeal.Config = NODHeal.Config or {}
         NODHeal.Config.sortMode = mode
-        if NODHealDB and NODHealDB.config then
-            NODHealDB.config.sortMode = mode
+        local saved = _G.NODHealDB
+        if type(saved) ~= "table" then
+            saved = {}
+            _G.NODHealDB = saved
         end
+        saved.config = saved.config or {}
+        saved.config.sortMode = mode
         log(string.format("Sort mode set to: %s", mode), true)
         if NODHeal.Grid and NODHeal.Grid.Initialize then
             NODHeal.Grid.Initialize()

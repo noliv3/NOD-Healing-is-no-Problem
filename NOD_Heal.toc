@@ -2,7 +2,7 @@
 ## Title: NOD-Heal
 ## Notes: Predictive healing framework for Mists of Pandaria Classic.
 ## Author: NOD Team
-## Version: 0.1.1
+## Version: 0.1.3
 ## SavedVariables: NODHealDB
 
 # Config

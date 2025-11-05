@@ -45,6 +45,7 @@ Fokus: eingehende Heilungen aggregieren, Landzeit/Zeitfenster bestimmen, kompakt
 - **Solver**: kombiniert Snapshot/Schaden/Heals → projizierter Health-Wert.
 - **UI**: Grid + Overlay, sanfte Updates, Overheal-Segment optional.
 - **Härtung**: sichere Hooks, Combat-Lockdown-respektierend.
+- **Dispatcher**: gemeinsamer 0,2s-Ticker für Prognosen & Grid-Refresh.
 
 ---
 
@@ -52,6 +53,7 @@ Fokus: eingehende Heilungen aggregieren, Landzeit/Zeitfenster bestimmen, kompakt
 - **Addon lädt nicht** → Pfad/TOC prüfen, Cache leeren, Konflikt-Addons testweise deaktivieren.
 - **Keine Overlays** → Optionen prüfen, kompatible Einheitenrahmen aktivieren.
 - **Bindings greifen nicht** → in Kampf keine Layout-Änderungen; nach Kampf `/reload` falls nötig.
+- **Sortierung/Optionen blockiert** → Änderungen außerhalb des Kampfes anstoßen.
 - **Mehr Details** → siehe `TROUBLESHOOTING.md` für systematische Checks & Log-Sammeln.
 
 ---

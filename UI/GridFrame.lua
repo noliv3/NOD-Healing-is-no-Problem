@@ -418,21 +418,45 @@ local function rebuildGrid()
 end
 
 local function updateAllFrames()
-    for _, frame in ipairs(unitFrames) do
-        updateUnitFrame(frame)
+    for index = 1, #unitFrames do
+        local frame = unitFrames[index]
+        if frame then
+            updateUnitFrame(frame)
+        end
+    end
+end
+
+local GRID_TICK_INTERVAL = 0.2
+
+local function sharedTick()
+    for index = 1, #unitFrames do
+        local frame = unitFrames[index]
+        if frame then
+            updateUnitFrame(frame, GRID_TICK_INTERVAL)
+        end
     end
 end
 
 local function startTicker()
+    if G._tickerRegistered then
+        return
+    end
+
+    local dispatcher = (NODHeal.GetModule and NODHeal:GetModule("CoreDispatcher")) or NODHeal.CoreDispatcher
+    if dispatcher and dispatcher.RegisterTick then
+        if dispatcher.RegisterTick(sharedTick) then
+            G._tickerRegistered = true
+            return
+        end
+    end
+
     if G._ticker then
         G._ticker:Cancel()
     end
 
-    G._ticker = C_Timer.NewTicker(0.1, function()
-        for _, f in pairs(unitFrames) do
-            updateUnitFrame(f, 0.1)
-        end
-    end)
+    if C_Timer and C_Timer.NewTicker then
+        G._ticker = C_Timer.NewTicker(GRID_TICK_INTERVAL, sharedTick)
+    end
 end
 
 function G.GetFeedbackEntries()

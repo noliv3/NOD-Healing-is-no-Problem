@@ -80,11 +80,16 @@ local function ensureState()
 end
 
 local function ensureSavedVariables()
-    NODHealDB = NODHealDB or {}
+    local saved = _G.NODHealDB
+    if type(saved) ~= "table" then
+        saved = {}
+        _G.NODHealDB = saved
+    end
     if NODHeal.ApplyConfigDefaults then
         NODHeal.ApplyConfigDefaults()
+        saved = _G.NODHealDB or saved
     end
-    return NODHealDB
+    return saved
 end
 
 local function fetchModule(name)

@@ -3,7 +3,6 @@ local Options = {}
 NODHeal = NODHeal or {}
 NODHeal.Options = Options
 NODHeal.Config = NODHeal.Config or {}
-NODHealDB = NODHealDB or {}
 
 local function log(message, force)
     if not message then
@@ -19,6 +18,7 @@ end
 local CreateFrame = CreateFrame
 local UIParent = UIParent
 local UIDropDownMenu_CreateInfo = UIDropDownMenu_CreateInfo
+local InCombatLockdown = InCombatLockdown
 local UIDropDownMenu_AddButton = UIDropDownMenu_AddButton
 local UIDropDownMenu_Initialize = UIDropDownMenu_Initialize
 local UIDropDownMenu_SetText = UIDropDownMenu_SetText
@@ -49,24 +49,31 @@ local function ensureConfig()
     if NODHeal and NODHeal.ApplyConfigDefaults then
         NODHeal.ApplyConfigDefaults()
     end
+
     NODHeal.Config = NODHeal.Config or {}
-    NODHealDB = NODHealDB or {}
-    NODHealDB.config = NODHealDB.config or {}
+
+    local saved = _G.NODHealDB
+    if type(saved) ~= "table" then
+        saved = {}
+        _G.NODHealDB = saved
+    end
+
+    saved.config = saved.config or {}
 
     local config = NODHeal.Config
 
     for key, defaultValue in pairs(defaults) do
-        local saved = NODHealDB.config[key]
-        if saved == nil then
+        local stored = saved.config[key]
+        if stored == nil then
             if config[key] == nil then
-                saved = defaultValue
+                stored = defaultValue
             else
-                saved = config[key]
+                stored = config[key]
             end
-            NODHealDB.config[key] = saved
+            saved.config[key] = stored
         end
 
-        config[key] = saved
+        config[key] = stored
     end
 
     return config
@@ -94,9 +101,23 @@ local function applyGridRefresh()
 end
 
 local function saveConfigValue(key, value, silent)
+    if InCombatLockdown and InCombatLockdown() then
+        log("Cannot change options while in combat", true)
+        return
+    end
+
     local config = ensureConfig()
     config[key] = value
-    NODHealDB.config[key] = value
+
+    local saved = _G.NODHealDB
+    if type(saved) ~= "table" then
+        saved = {}
+        _G.NODHealDB = saved
+    end
+
+    saved.config = saved.config or {}
+    saved.config[key] = value
+
     applyGridRefresh()
     if not silent then
         if NODHeal and NODHeal.Logf then
