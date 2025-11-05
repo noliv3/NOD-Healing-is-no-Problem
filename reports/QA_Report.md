@@ -1,41 +1,36 @@
-# QA Report — NOD-Heal QA+Autofix (2025-11-05)
+# QA Report — NOD-Heal QA+Autofix (2025-11-05 Refresh)
 
 ## Summary
-- **Decision:** GO (Heal-ready baseline achieved for Solo/Party/Raid use).
-- **Scope:** Config persistence, click-cast enforcement, grid/overlay stability, logging hygiene.
+- **Decision:** GO (Heal-ready toolchain intact; no blocking regressions detected).
+- **Scope:** Repository inventory regeneration, static WoW-API guard review, grid/click-cast/overlay readiness verification, documentation refresh.
 - **Key Outcomes:**
-  - SavedVariables wiring restores runtime config and bindings on login without taint.
-  - Grid reacts to roster/connection events and keeps the player frame visible even out of group.
-  - Overlay hooks run only when Blizzard CompactUnitFrame APIs are present, preventing load-time errors.
-  - Debug/command outputs respect `NODHeal.Config.debug`, reducing chat spam.
+  - `reports/file_inventory.json` now reflects the full repository tree (paths, types, byte sizes, mtimes) captured on 2025-11-05.
+  - Click-cast SecureActionButtons, SavedVariables wiring, and combat lockdown queues reviewed—no additional fixes required.
+  - Overlay and grid logic continue to guard Blizzard API hooks and throttle updates at ≤10 Hz.
+  - Documentation (`README.md`, `AGENTS.md`, `DOCU/Validation/Functional_Readiness.md`) updated to mirror the current QA state and artefact locations.
 
 ## Findings
 ### Critical
 - _None._
 
 ### Major
-- Legacy modules emitted user-facing prints regardless of debug state → resolved via shared log gateway.
-- Overlay hooks executed unguarded `hooksecurefunc` calls → guarded with availability checks.
+- _None._
 
 ### Minor
-- Grid ticker refreshed all frames on every health event → now updates the matching unit when provided.
-- Sort mode from `/nodsort` was not persisted → stored back to `NODHealDB.config`.
-- Tooltip handlers on custom frames did not guard against missing `GameTooltip` → early return added.
+- _None._
 
 ## Fix List
-1. Synced `NODHeal.Config` ↔ `NODHealDB.config` defaults and exposed `NODHeal.ApplyConfigDefaults()`.
-2. Added `NODHeal.Log`/`Logf` helpers; updated Options, Init, BindingFrame to route outputs through debug gate.
-3. Hardened GridFrame roster rebuild and exported `unitFrames` for overlay fallback.
-4. Wrapped CompactUnitFrame hooks with presence checks and safe refresh calls.
-5. Generated artefacts: `file_inventory.json`, `change_log.md`, `bindings_snapshot.json`, `Functional_Readiness.md`.
+1. Regenerated repository-wide inventory and bindings snapshot artefacts (`reports/file_inventory.json`, `reports/bindings_snapshot.json`).
+2. Revalidated SavedVariables/config bridges and click-cast queue behaviour—no code edits necessary.
+3. Refreshed readiness checklist and high-level documentation to capture the 2025-11-05 QA sweep results.
 
 ## Smoke Path (Not Executed, Manual Steps Recommended)
-1. **Login:** Verify `/nod debug status` reflects SavedVariables state, status frame shows source `API`.
-2. **Grid Solo/Party/Raid:** Toggle between solo, party, and raid groups; ensure player frame persists and roster rebuild occurs within 0.2 s delay.
-3. **Bindings UI:** `/nodgui` → assign `Shift-LeftButton` to a new spell, confirm log message and persistence after reload.
-4. **Click-Cast:** Cast assigned spell via grid SecureActionButton (out of combat), then enter combat and confirm queued reapply.
-5. **Overlay:** Enable overlay, apply incoming heal to unit, verify projection bar width matches expected incoming amount.
+1. **Login:** `/nod debug status` to verify SavedVariables hydration; confirm status frame shows source `API`.
+2. **Grid Solo/Party/Raid:** Rotate between solo, party, and raid scenarios; ensure `player` frame persists and roster rebuild occurs within the delayed handler.
+3. **Bindings UI:** `/nodgui` → assign & remove a binding (e.g., `Shift-LeftButton`), reload UI to confirm persistence and unbind flow.
+4. **Click-Cast In Combat:** Apply bindings out of combat, enter combat to confirm deferred attribute updates replay when `PLAYER_REGEN_ENABLED` fires.
+5. **Overlay Verification:** Trigger incoming heals on a tracked unit; observe projection lane width and overheal segments relative to `UnitGetIncomingHeals` and solver results.
 
 ## Outstanding Items
-- Full combat lockdown simulation (in-client) still pending; requires live verification.
-- Predictive solver tuning and latency smoothing unchanged by this pass.
+- Live-client verification of combat lockdown behaviour and overlay visuals still required before release packaging.
+- Solver/latency parameter tuning remains out of scope for this refresh.
