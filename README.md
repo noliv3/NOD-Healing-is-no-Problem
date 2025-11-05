@@ -32,6 +32,7 @@ Fokus: eingehende Heilungen aggregieren, Landzeit/Zeitfenster bestimmen, kompakt
 ### Nützliche Slash-Befehle
 - `/nod debug on|off|status` – Debug-Ausgabe umschalten.
 - `/nod errors` – Fehlerpuffer anzeigen.
+- `/nod qa` – Selbsttest für SavedVars, Hooks & Module.
 - `/nodoptions` – Optionen (Grid-Layout, Overlay, Sortierung).
 - `/nodbind` – Click-Cast-Bindings verwalten.
 - `/nodsort group|class|alpha` – Grid sortieren.

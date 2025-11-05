@@ -172,14 +172,15 @@ end
 local function handleSlashCommand(message)
     local command, rest = strmatch(message or "", "^(%S+)%s*(.*)$")
     command = command and strlower(command) or ""
-    rest = rest and strlower(rest) or ""
+    rest = rest or ""
+    local restLower = strlower(rest)
 
     if command == "debug" then
-        if rest == "on" then
+        if restLower == "on" then
             setDebugState(true)
-        elseif rest == "off" then
+        elseif restLower == "off" then
             setDebugState(false)
-        elseif rest == "status" or rest == "" then
+        elseif restLower == "status" or restLower == "" then
             printDebugStatus()
         else
             log("Debug: usage /nod debug on|off|status", true)
@@ -192,7 +193,46 @@ local function handleSlashCommand(message)
         return
     end
 
-    log("Unknown command. Usage: /nod debug|errors", true)
+    if command == "options" then
+        if SlashCmdList and SlashCmdList.NODOPTIONS then
+            SlashCmdList.NODOPTIONS()
+        elseif NODHeal.Options and NODHeal.Options.Toggle then
+            NODHeal.Options:Toggle()
+        else
+            log("Options module unavailable", true)
+        end
+        return
+    end
+
+    if command == "bind" then
+        if SlashCmdList and SlashCmdList.NODHEAL then
+            SlashCmdList.NODHEAL(rest)
+        else
+            log("Bindings module unavailable", true)
+        end
+        return
+    end
+
+    if command == "sort" then
+        if SlashCmdList and SlashCmdList.NODSORT then
+            SlashCmdList.NODSORT(rest)
+        else
+            log("Sort command unavailable", true)
+        end
+        return
+    end
+
+    if command == "qa" then
+        local qaModule = fetchModule("QA") or NODHeal.QA
+        if qaModule and qaModule.Run then
+            qaModule:Run()
+        else
+            log("QA module unavailable", true)
+        end
+        return
+    end
+
+    log("Unknown command. Usage: /nod debug|errors|options|bind|sort|qa", true)
 end
 
 local function bootstrapDispatcher()
