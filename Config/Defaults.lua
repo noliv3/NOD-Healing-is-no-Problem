@@ -3,8 +3,6 @@ local addonName = ...
 local pairs = pairs
 local type = type
 
-NODHealDB = NODHealDB or {}
-
 local NODHeal = _G.NODHeal or {}
 _G.NODHeal = NODHeal
 
@@ -37,24 +35,24 @@ local function mergeDefaults(target, defaults)
     return target
 end
 
-local function ensureProfile()
-    NODHealDB.profile = NODHealDB.profile or {}
-    local profile = mergeDefaults(NODHealDB.profile, PROFILE_DEFAULTS)
+local function ensureProfile(store)
+    store.profile = store.profile or {}
+    local profile = mergeDefaults(store.profile, PROFILE_DEFAULTS)
     NODHeal.defaults = profile
     return profile
 end
 
-local function ensureConfig()
-    NODHealDB.config = NODHealDB.config or {}
+local function ensureConfig(store)
+    store.config = store.config or {}
 
     local config = NODHeal.Config or {}
     config = mergeDefaults(config, CONFIG_DEFAULTS)
 
     for key, defaultValue in pairs(CONFIG_DEFAULTS) do
-        local stored = NODHealDB.config[key]
+        local stored = store.config[key]
         if stored == nil then
             stored = config[key] ~= nil and config[key] or defaultValue
-            NODHealDB.config[key] = stored
+            store.config[key] = stored
         end
         config[key] = stored
     end
@@ -68,12 +66,16 @@ local function ensureConfig()
 end
 
 local function ensureSavedVariables()
-    local profile = ensureProfile()
-    local config = ensureConfig()
+    local saved = _G.NODHealDB
+    if type(saved) ~= "table" then
+        saved = {}
+        _G.NODHealDB = saved
+    end
+
+    local profile = ensureProfile(saved)
+    local config = ensureConfig(saved)
     return profile, config
 end
 
 NODHeal.ConfigDefaults = CONFIG_DEFAULTS
 NODHeal.ApplyConfigDefaults = ensureSavedVariables
-
-ensureSavedVariables()

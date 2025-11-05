@@ -29,14 +29,36 @@ local function checkSavedVariables(results)
     end
 end
 
+local function isTickerActive(ticker)
+    if not ticker then
+        return false
+    end
+
+    if type(ticker) == "table" or type(ticker) == "userdata" then
+        if type(ticker.IsCancelled) == "function" and ticker:IsCancelled() then
+            return false
+        end
+    end
+
+    return true
+end
+
 local function checkDispatcher(results)
     local dispatcher = nil
     if NODHeal.GetModule then
         dispatcher = NODHeal:GetModule("CoreDispatcher")
     end
     dispatcher = dispatcher or NODHeal.CoreDispatcher or (NODHeal.Core and NODHeal.Core.Dispatcher)
-    if dispatcher then
-        push(results, "OK", "dispatcher module available")
+
+    local tickerActive = isTickerActive(NODHeal._tick)
+    if not tickerActive and NODHeal.Grid then
+        tickerActive = isTickerActive(NODHeal.Grid._ticker)
+    end
+
+    if dispatcher and tickerActive then
+        push(results, "OK", "dispatcher ready (ticker active)")
+    elseif dispatcher then
+        push(results, "WARN", "dispatcher ready (ticker idle)")
     else
         push(results, "WARN", "dispatcher module unavailable")
     end
@@ -78,6 +100,15 @@ local function checkUiModules(results)
             push(results, "OK", "grid module present")
         else
             push(results, "WARN", "grid module missing")
+        end
+    end
+
+    if #results < MAX_OUTPUT then
+        local overlay = ui and (ui.EnableOverlay or ui.RefreshOverlay)
+        if overlay then
+            push(results, "OK", "overlay controls available")
+        else
+            push(results, "WARN", "overlay controls missing")
         end
     end
 end

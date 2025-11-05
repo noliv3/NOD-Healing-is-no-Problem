@@ -15,6 +15,7 @@
 ## 2) Coding-Style (Lua)
 - Keine globalen Variablen außer Namespaces.
 - Keine teuren Allokationen in `OnUpdate`; Ticker ≥ **0.1–0.2 s**.
+- **Ticker-Sharing:** UI-Refreshes hängen am `CoreDispatcher.RegisterTick()` (0.2 s) statt eigener Loops.
 - Guards vor jedem API-/Global-Hook:
   ```lua
   if type(CompactUnitFrame_OnLeave) == "function" then
@@ -64,6 +65,7 @@ docs/legacy/    # Archivierte Analysen, QA-Reports & historisches Material
 - **Slash-Checks**:
   `/nod debug on|off|status`, `/nod errors`, `/nodoptions`, `/nodbind`, `/nodsort group|class|alpha`
 - **Self-Test**: `/nod qa` prüft SavedVars, Hooks & Module.
+- QA erwartet aktiven Dispatcher-Ticker + Overlay-Kontrollen.
 - **Overlay** sichtbar an CompactUnitFrames/Grid (Party/Raid).
 - **Click-Cast** auf Grid-Frames (Maus + Mods) funktioniert im Kampf.
 - **SavedVariables**: Einstellungen/Bindings persistieren über `/reload`.

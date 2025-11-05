@@ -59,6 +59,7 @@ NODHeal.Core.pushErr = pushErr
 local dispatcherFrame
 local eventHandlers = {}
 local registeredEvents = {}
+local tickHandlers = {}
 
 local M = {}
 
@@ -105,6 +106,32 @@ local function ensureFrame()
   end)
 
   return dispatcherFrame
+end
+
+local function addTickHandler(func)
+  if type(func) ~= "function" then
+    return nil
+  end
+
+  for index = 1, #tickHandlers do
+    local entry = tickHandlers[index]
+    if entry and entry.callback == func then
+      return entry
+    end
+  end
+
+  local slot = { callback = func }
+  tickHandlers[#tickHandlers + 1] = slot
+  return slot
+end
+
+local function runTickHandlers()
+  for index = 1, #tickHandlers do
+    local entry = tickHandlers[index]
+    if entry and entry.callback then
+      safeCall(entry.callback)
+    end
+  end
 end
 
 local function normalizeThrottle(options)
@@ -170,20 +197,22 @@ local function scheduleTicker()
     return
   end
 
-  local function tickerBody()
-    local aggregator = getModule("IncomingHealAggregator")
-    if aggregator and aggregator.CleanExpired then
-      safeCall(aggregator.CleanExpired, nil)
-    end
+    local function tickerBody()
+      local aggregator = getModule("IncomingHealAggregator")
+      if aggregator and aggregator.CleanExpired then
+        safeCall(aggregator.CleanExpired, nil)
+      end
 
     local solver = getModule("PredictiveSolver")
-    if solver and solver.CalculateProjectedHealth then
-      safeCall(solver.CalculateProjectedHealth, solver, "player")
-    end
-  end
+      if solver and solver.CalculateProjectedHealth then
+        safeCall(solver.CalculateProjectedHealth, solver, "player")
+      end
 
-  NODHeal._tick = C_Timer.NewTicker(0.2, tickerBody)
-end
+      runTickHandlers()
+    end
+
+    NODHeal._tick = C_Timer.NewTicker(0.2, tickerBody)
+  end
 
 local function bootstrapHandlers()
   M.RegisterHandler("PLAYER_LEAVING_WORLD", function()
@@ -219,6 +248,11 @@ function M.RegisterHandler(event, func, options)
     dispatcherFrame:RegisterEvent(event)
     registeredEvents[event] = true
   end
+end
+
+function M.RegisterTick(func)
+  local entry = addTickHandler(func)
+  return entry ~= nil
 end
 
 function M.Dispatch(event, ...)
@@ -292,6 +326,10 @@ function M.Reset()
 
   for k in pairs(eventHandlers) do
     eventHandlers[k] = nil
+  end
+
+  for index = #tickHandlers, 1, -1 do
+    tickHandlers[index] = nil
   end
 end
 
