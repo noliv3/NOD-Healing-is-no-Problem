@@ -56,6 +56,7 @@ Fokus: eingehende Heilungen aggregieren, Landzeit/Zeitfenster bestimmen, kompakt
 - **Keine Overlays** → Optionen prüfen, kompatible Einheitenrahmen aktivieren.
 - **Bindings greifen nicht** → in Kampf keine Layout-Änderungen; nach Kampf `/reload` falls nötig.
 - **Sortierung/Optionen blockiert** → Änderungen außerhalb des Kampfes anstoßen.
+- **HoT-Icons nur als Schatten sichtbar** → sicherstellen, dass die aktuelle Version aktiv ist; das Config-Layout lädt jetzt wieder korrekt vor dem Icon-Refresh (`/nodoptions` → Corner Icons einmal toggeln).
 - **Mehr Details** → siehe `TROUBLESHOOTING.md` für systematische Checks & Log-Sammeln.
 
 ---

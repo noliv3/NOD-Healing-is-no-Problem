@@ -31,6 +31,12 @@ local tinsert = table.insert
 local unitFrames = {}
 local trackedFrames = {}
 local cfg
+
+local function getConfig()
+    NODHeal.Config = NODHeal.Config or {}
+    cfg = NODHeal.Config
+    return cfg
+end
 local function safeGet(tbl, k, def)
     if type(tbl) == "table" and tbl[k] ~= nil then
         return tbl[k]
@@ -366,12 +372,6 @@ end
 
 function M.RefreshAllAuraIcons(frames)
     refreshAllAuraIcons(frames)
-end
-
-local function getConfig()
-    NODHeal.Config = NODHeal.Config or {}
-    cfg = NODHeal.Config
-    return cfg
 end
 
 local function isConfigEnabled(key, defaultValue)
