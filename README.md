@@ -19,7 +19,7 @@ Fokus: eingehende Heilungen aggregieren, Landzeit/Zeitfenster bestimmen, kompakt
    - Bei Git-Klon: Verzeichnis in **`NOD_Heal`** umbenennen.
 2. Client neu starten → Addon aktivieren.
 
-**SavedVariables:** `NODHealDB` (Profil/Config, Bindings).  
+**SavedVariables:** `NODHealDB` (Profil/Config, Bindings, gelernte HoTs).
 **Kompatibilität:** MoP Classic (Interface `100200`).
 
 ---
@@ -45,7 +45,7 @@ Fokus: eingehende Heilungen aggregieren, Landzeit/Zeitfenster bestimmen, kompakt
 - **Timing**: Latenz/Queue-Berücksichtigung, robuste Landzeit-Schätzung.
 - **Solver**: kombiniert Snapshot/Schaden/Heals → projizierter Health-Wert.
 - **UI**: Grid + Overlay, sanfte Updates, Overheal-Segment optional.
-- **Corner Icons**: HoT-Whitelist oben rechts & Debuff-Priorisierung unten links; HoT-Grid zeigt bis zu 12 Symbole in zwei Zeilen (max. 6 pro Reihe), priorisiert eigene HoTs und reagiert auch außerhalb des Kampfes ohne `/reload`.
+- **Corner Icons**: Dynamisches HoT-Lernen via Combat-Log (Seed-Whitelist als Fallback) & Debuff-Priorisierung; HoT-Grid zeigt bis zu 12 Symbole in zwei Zeilen (max. 6 pro Reihe), priorisiert eigene HoTs und reagiert auch außerhalb des Kampfes ohne `/reload`.
 - **Härtung**: sichere Hooks, Combat-Lockdown-respektierend.
 - **Dispatcher**: gemeinsamer 0,2s-Ticker für Prognosen & Grid-Refresh.
 
@@ -56,6 +56,7 @@ Fokus: eingehende Heilungen aggregieren, Landzeit/Zeitfenster bestimmen, kompakt
 - **Keine Overlays** → Optionen prüfen, kompatible Einheitenrahmen aktivieren.
 - **Bindings greifen nicht** → in Kampf keine Layout-Änderungen; nach Kampf `/reload` falls nötig.
 - **Sortierung/Optionen blockiert** → Änderungen außerhalb des Kampfes anstoßen.
+- **HoT-Icons nur als Schatten sichtbar** → sicherstellen, dass die aktuelle Version aktiv ist; das Config-Layout lädt jetzt wieder korrekt vor dem Icon-Refresh (`/nodoptions` → Corner Icons einmal toggeln).
 - **Mehr Details** → siehe `TROUBLESHOOTING.md` für systematische Checks & Log-Sammeln.
 
 ---

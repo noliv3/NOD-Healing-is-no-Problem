@@ -47,6 +47,11 @@ local ICON_DEFAULTS = {
     debuffPrio = { Magic = 4, Curse = 3, Disease = 2, Poison = 1, [""] = 0 },
 }
 
+local LEARNED_DEFAULTS = {
+    -- learned.hots = { [spellId] = { learned = true, class = "PRIEST", lastSeen = timestamp } }
+    hots = {},
+}
+
 local CONFIG_DEFAULTS = {
     debug = false,
     logThrottle = 0.25,
@@ -139,6 +144,41 @@ local function ensureConfig(store)
     return config
 end
 
+local function ensureLearned(store)
+    store.learned = store.learned or {}
+    local learnedStore = store.learned
+
+    for key, defaultValue in pairs(LEARNED_DEFAULTS) do
+        local saved = learnedStore[key]
+        if saved == nil then
+            if type(defaultValue) == "table" then
+                learnedStore[key] = cloneTable(defaultValue)
+            else
+                learnedStore[key] = defaultValue
+            end
+        elseif type(defaultValue) == "table" and type(saved) ~= "table" then
+            learnedStore[key] = cloneTable(defaultValue)
+        end
+    end
+
+    local runtime = NODHeal.Learned or {}
+    runtime.hots = runtime.hots or {}
+
+    local savedHots = learnedStore.hots
+    if type(savedHots) == "table" then
+        for spellId, entry in pairs(savedHots) do
+            if type(entry) == "table" then
+                runtime.hots[spellId] = cloneTable(entry)
+            else
+                runtime.hots[spellId] = entry
+            end
+        end
+    end
+
+    NODHeal.Learned = runtime
+    return runtime
+end
+
 local function ensureSavedVariables()
     local saved = _G.NODHealDB
     if type(saved) ~= "table" then
@@ -148,7 +188,8 @@ local function ensureSavedVariables()
 
     local profile = ensureProfile(saved)
     local config = ensureConfig(saved)
-    return profile, config
+    local learned = ensureLearned(saved)
+    return profile, config, learned
 end
 
 NODHeal.ConfigDefaults = CONFIG_DEFAULTS

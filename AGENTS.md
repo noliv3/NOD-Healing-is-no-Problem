@@ -122,3 +122,5 @@ Aktiv & produktiv: HealthSnapshot, CastLandingTime, IncomingHeals (+Aggregator),
 - Optionssektion **Corner Icons** pflegt `NODHeal.Config.icons` (Enable/HoT/Debuff/Size) und stößt kampfsichere Refreshes per `C_Timer.After` an.
 - HoT-Auswahl priorisiert eigene Auren (`UnitIsUnit(unitCaster, "player"/"pet")`), fällt ansonsten auf Whitelist-HoTs zurück und wird bei Login/Zielwechsel/Gruppenupdates automatisch neu bewertet.
 - HoT-Grid unterstützt bis zu 12 Symbole (max. 6 pro Reihe) mit konfigurierbarer Ausrichtung/Abständen (`hotPerRow`, `hotDirection`, `spacing`, `rowSpacing`); Debuff-Ecke bleibt bewusst auf eine Reihe begrenzt.
+- HoT-Erkennung läuft über `Core/HotDetector` (Combat-Log lernt `SPELL_PERIODIC_HEAL` → Persistenz in `NODHealDB.learned.hots`); Seed-Whitelist in `Config/Defaults.lua` nur klein halten, UI nutzt ausschließlich `HotDetector.IsHot(spellId)` als Quelle.
+- `UI/GridFrame.lua`: `getConfig()` muss oberhalb der Layout-/Aura-Helfer stehen, damit die Corner-Icons direkt nach dem Laden wieder sichtbare Texturen erhalten.

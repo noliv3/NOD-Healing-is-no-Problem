@@ -31,6 +31,12 @@ local tinsert = table.insert
 local unitFrames = {}
 local trackedFrames = {}
 local cfg
+
+local function getConfig()
+    NODHeal.Config = NODHeal.Config or {}
+    cfg = NODHeal.Config
+    return cfg
+end
 local function safeGet(tbl, k, def)
     if type(tbl) == "table" and tbl[k] ~= nil then
         return tbl[k]
@@ -39,6 +45,36 @@ local function safeGet(tbl, k, def)
 end
 local container
 local feedbackEntries = {}
+
+local function getHotDetector()
+    local ns = NODHeal
+    if ns and ns.GetModule then
+        local module = ns:GetModule("HotDetector")
+        if module then
+            return module
+        end
+    end
+    if ns and ns.Core and ns.Core.HotDetector then
+        return ns.Core.HotDetector
+    end
+    return _G.NODHeal_HotDetector
+end
+
+local function isHotSpell(spellId, whitelist)
+    if not spellId then
+        return false
+    end
+
+    local detector = getHotDetector()
+    if detector and type(detector.IsHot) == "function" then
+        local ok, result = pcall(detector.IsHot, spellId)
+        if ok then
+            return result and true or false
+        end
+    end
+
+    return whitelist and whitelist[spellId] or false
+end
 
 local FRAME_WIDTH = 90
 local FRAME_HEIGHT = 35
@@ -91,7 +127,7 @@ local function collectHotAuras(unit)
         if not name then
             break
         end
-        if wl[spellId] and icon then
+        if icon and isHotSpell(spellId, wl) then
             local remain = (expirationTime or 0) - now
             local isOwn = unitCaster and (UnitIsUnit(unitCaster, "player") or UnitIsUnit(unitCaster, "pet"))
             local entry = { icon = icon, remain = remain, spellId = spellId, own = isOwn }
@@ -336,12 +372,6 @@ end
 
 function M.RefreshAllAuraIcons(frames)
     refreshAllAuraIcons(frames)
-end
-
-local function getConfig()
-    NODHeal.Config = NODHeal.Config or {}
-    cfg = NODHeal.Config
-    return cfg
 end
 
 local function isConfigEnabled(key, defaultValue)
