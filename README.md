@@ -45,7 +45,7 @@ Fokus: eingehende Heilungen aggregieren, Landzeit/Zeitfenster bestimmen, kompakt
 - **Timing**: Latenz/Queue-Berücksichtigung, robuste Landzeit-Schätzung.
 - **Solver**: kombiniert Snapshot/Schaden/Heals → projizierter Health-Wert.
 - **UI**: Grid + Overlay, sanfte Updates, Overheal-Segment optional.
-- **Corner Icons**: HoT-Whitelist oben rechts & Debuff-Priorisierung unten links, reagiert ohne `/reload` auf Optionsänderungen.
+- **Corner Icons**: HoT-Whitelist oben rechts & Debuff-Priorisierung unten links, bevorzugt eigene HoTs (fällt sonst auf Gruppen-HoTs zurück) und aktualisiert auch außerhalb des Kampfes ohne `/reload`.
 - **Härtung**: sichere Hooks, Combat-Lockdown-respektierend.
 - **Dispatcher**: gemeinsamer 0,2s-Ticker für Prognosen & Grid-Refresh.
 

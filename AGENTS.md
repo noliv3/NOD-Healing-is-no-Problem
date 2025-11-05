@@ -120,3 +120,4 @@ Aktiv & produktiv: HealthSnapshot, CastLandingTime, IncomingHeals (+Aggregator),
 ## 12) Corner Icons (Grid & Optionen)
 - Grid-Eck-Icons aktualisieren über `NODHeal.UI.Grid.UpdateAllIconLayout()` + `RefreshAllAuraIcons()`; Frames via `GetTrackedFrames()` bereitstellen.
 - Optionssektion **Corner Icons** pflegt `NODHeal.Config.icons` (Enable/HoT/Debuff/Size) und stößt kampfsichere Refreshes per `C_Timer.After` an.
+- HoT-Auswahl priorisiert eigene Auren (`UnitIsUnit(unitCaster, "player"/"pet")`), fällt ansonsten auf Whitelist-HoTs zurück und wird bei Login/Zielwechsel/Gruppenupdates automatisch neu bewertet.

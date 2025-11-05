@@ -24,6 +24,7 @@ local ipairs = ipairs
 local pairs = pairs
 local type = type
 local UnitAura = UnitAura
+local UnitDebuff = UnitDebuff
 local tinsert = table.insert
 
 local unitFrames = {}
@@ -176,6 +177,60 @@ local function updateAllIconLayout()
     end
 end
 
+local function pickHotIcon(unit)
+    if not unit then
+        return nil
+    end
+
+    local iconsCfg = getIconsConfig()
+    local whitelist = iconsCfg.hotWhitelist
+    local bestIcon
+
+    for index = 1, 40 do
+        local name, iconTexture, _, _, _, _, unitCaster, _, _, spellId = UnitAura(unit, index, "HELPFUL")
+        if not name then
+            break
+        end
+
+        if matchesWhitelist(whitelist, name, spellId) then
+            local isOwn = unitCaster and (UnitIsUnit(unitCaster, "player") or UnitIsUnit(unitCaster, "pet"))
+            if isOwn then
+                return iconTexture
+            elseif not bestIcon then
+                bestIcon = iconTexture
+            end
+        end
+    end
+
+    return bestIcon
+end
+
+local function pickDebuffIcon(unit)
+    if not unit then
+        return nil
+    end
+
+    local iconsCfg = getIconsConfig()
+    local priorityList = iconsCfg.debuffPrio
+    local bestTexture
+    local bestPriority
+
+    for index = 1, 40 do
+        local name, iconTexture, _, dispelType, _, _, _, _, _, spellId = UnitDebuff(unit, index)
+        if not name then
+            break
+        end
+
+        local priority = getDebuffPriority(priorityList, name, spellId)
+        if not bestPriority or priority > bestPriority or (priority == bestPriority and not bestTexture) then
+            bestPriority = priority
+            bestTexture = iconTexture
+        end
+    end
+
+    return bestTexture
+end
+
 local function updateAuraIcons(frame)
     if not frame then
         return
@@ -218,66 +273,36 @@ local function updateAuraIcons(frame)
         return
     end
 
-    local hotShown = false
-    if hotEnabled and hotIcon then
-        local whitelist = iconsCfg.hotWhitelist
-        local index = 1
-        while true do
-            local name, iconTexture, _, _, _, _, caster, _, _, spellId = UnitAura(frame.unit, index, "HELPFUL")
-            if not name then
-                break
+    if hotIcon then
+        if enabled and hotEnabled then
+            local iconTexture = pickHotIcon(frame.unit)
+            if iconTexture then
+                hotIcon:SetTexture(iconTexture)
+                hotIcon:Show()
+            else
+                hotIcon:SetTexture(nil)
+                hotIcon:Hide()
             end
-
-            if caster == "player" or caster == "pet" then
-                if matchesWhitelist(whitelist, name, spellId) then
-                    hotIcon:SetTexture(iconTexture)
-                    hotIcon:Show()
-                    hotShown = true
-                    break
-                end
-            end
-
-            index = index + 1
+        else
+            hotIcon:SetTexture(nil)
+            hotIcon:Hide()
         end
     end
 
-    if not hotShown and hotIcon then
-        hotIcon:SetTexture(nil)
-        hotIcon:Hide()
-    end
-
-    local debuffShown = false
-    if debuffEnabled and debuffIcon then
-        local priorityList = iconsCfg.debuffPrio
-        local bestTexture
-        local bestPriority
-        local index = 1
-
-        while true do
-            local name, iconTexture, _, _, _, _, _, _, _, spellId = UnitAura(frame.unit, index, "HARMFUL")
-            if not name then
-                break
+    if debuffIcon then
+        if enabled and debuffEnabled then
+            local iconTexture = pickDebuffIcon(frame.unit)
+            if iconTexture then
+                debuffIcon:SetTexture(iconTexture)
+                debuffIcon:Show()
+            else
+                debuffIcon:SetTexture(nil)
+                debuffIcon:Hide()
             end
-
-            local priority = getDebuffPriority(priorityList, name, spellId)
-            if not bestPriority or priority > bestPriority or (priority == bestPriority and not bestTexture) then
-                bestPriority = priority
-                bestTexture = iconTexture
-            end
-
-            index = index + 1
+        else
+            debuffIcon:SetTexture(nil)
+            debuffIcon:Hide()
         end
-
-        if bestTexture then
-            debuffIcon:SetTexture(bestTexture)
-            debuffIcon:Show()
-            debuffShown = true
-        end
-    end
-
-    if not debuffShown and debuffIcon then
-        debuffIcon:SetTexture(nil)
-        debuffIcon:Hide()
     end
 end
 
@@ -290,6 +315,11 @@ local function refreshAllAuraIcons(frames)
     for _, frame in ipairs(list) do
         updateAuraIcons(frame)
     end
+end
+
+local function refreshAllIconState()
+    updateAllIconLayout()
+    refreshAllAuraIcons(trackedFrames)
 end
 
 function G.UpdateIconLayout(frame)
@@ -458,6 +488,7 @@ local function createUnitFrame(parent, unit, index)
 
     updateIconLayout(frame)
     tinsert(trackedFrames, frame)
+    updateAuraIcons(frame)
 
     if NODHeal and NODHeal.ClickCast and NODHeal.ClickCast.RegisterFrame then
         NODHeal.ClickCast:RegisterFrame(frame)
@@ -729,8 +760,7 @@ local function rebuildGrid()
         end
     end
 
-    updateAllIconLayout()
-    refreshAllAuraIcons(trackedFrames)
+    refreshAllIconState()
 end
 
 local function updateAllFrames()
@@ -785,8 +815,7 @@ end
 
 local function initialize()
     rebuildGrid()
-    G.UpdateAllIconLayout()
-    G.RefreshAllAuraIcons(G.GetTrackedFrames())
+    refreshAllIconState()
     if G._eventFrame then
         startTicker()
         return
@@ -799,6 +828,7 @@ local function initialize()
     ev:RegisterEvent("PLAYER_REGEN_ENABLED")
     ev:RegisterEvent("PLAYER_ROLES_ASSIGNED")
     ev:RegisterEvent("UNIT_AURA")
+    ev:RegisterEvent("PLAYER_TARGET_CHANGED")
     ev:SetScript("OnEvent", function(_, event, unit)
         if event == "UNIT_HEALTH" then
             if not unit or type(unit) ~= "string" then
@@ -820,6 +850,11 @@ local function initialize()
                     end
                 end
             end
+        elseif event == "PLAYER_ENTERING_WORLD" or event == "GROUP_ROSTER_UPDATE" then
+            refreshAllIconState()
+            rebuildLater()
+        elseif event == "PLAYER_TARGET_CHANGED" then
+            refreshAllIconState()
         else
             rebuildLater()
         end

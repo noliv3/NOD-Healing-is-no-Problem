@@ -218,6 +218,11 @@ local function saveConfigValue(key, value, silent)
 end
 
 local function saveIconsConfigValue(key, value, silent)
+    if InCombatLockdown and InCombatLockdown() then
+        log("Cannot change icon options while in combat", true)
+        return
+    end
+
     local config = ensureConfig()
     config.icons = config.icons or {}
     config.icons[key] = value
