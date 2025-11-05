@@ -45,7 +45,7 @@ Fokus: eingehende Heilungen aggregieren, Landzeit/Zeitfenster bestimmen, kompakt
 - **Timing**: Latenz/Queue-Berücksichtigung, robuste Landzeit-Schätzung.
 - **Solver**: kombiniert Snapshot/Schaden/Heals → projizierter Health-Wert.
 - **UI**: Grid + Overlay, sanfte Updates, Overheal-Segment optional.
-- **Corner Icons**: Dynamisches HoT-Lernen via Combat-Log (Seed-Whitelist als Fallback) & Debuff-Priorisierung; HoT-Grid zeigt bis zu 12 Symbole in zwei Zeilen (max. 6 pro Reihe), priorisiert eigene HoTs und reagiert auch außerhalb des Kampfes ohne `/reload`.
+- **Corner Icons**: Einheitliche HoT-Erkennung über `Core/HotDetector` (Klassen-Seed sofort, Combat-Log lernt dauerhaft in `NODHealDB.learned.hots`, Config-Whitelist nur als Fallback) & Debuff-Priorisierung; HoT-Grid zeigt bis zu 12 Symbole in zwei Zeilen (max. 6 pro Reihe), priorisiert eigene HoTs und reagiert auch außerhalb des Kampfes ohne `/reload`.
 - **Härtung**: sichere Hooks, Combat-Lockdown-respektierend.
 - **Dispatcher**: gemeinsamer 0,2s-Ticker für Prognosen & Grid-Refresh.
 
