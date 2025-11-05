@@ -26,6 +26,17 @@ local sort = table.sort
 local wipe = wipe
 local format = string.format
 
+local function log(message, force)
+    if not message then
+        return
+    end
+    if addon and addon.Log then
+        addon:Log(message, force)
+    elseif force then
+        print("[NOD] " .. message)
+    end
+end
+
 local frame
 local scrollFrame
 local scrollContent
@@ -514,7 +525,7 @@ local function createRow(modKey, buttonKey, spellName)
 
     initializeDropdown(modifierDropdown, MODIFIER_OPTIONS, function(value, label)
         if findRowByCombo(composeCombo(value, row.button), row) then
-            print(format("[NOD] Binding %s%s already used.", value, row.button))
+            log(format("Binding %s%s already used.", value, row.button), true)
             setDropdownValue(modifierDropdown, row.modifier, MODIFIER_OPTIONS)
             return
         end
@@ -534,7 +545,7 @@ local function createRow(modKey, buttonKey, spellName)
 
     initializeDropdown(buttonDropdown, MOUSE_BUTTON_OPTIONS, function(value, label)
         if findRowByCombo(composeCombo(row.modifier, value), row) then
-            print(format("[NOD] Binding %s%s already used.", row.modifier, value))
+            log(format("Binding %s%s already used.", row.modifier, value), true)
             setDropdownValue(buttonDropdown, row.button, MOUSE_BUTTON_OPTIONS)
             return
         end
@@ -590,7 +601,7 @@ local function addDeleteButtons(_, rowTable)
                 end
                 row.spell = ""
                 refreshRowDisplay(row)
-                print("[NOD] Unbound", row.comboKey or "")
+                log(string.format("Unbound %s", row.comboKey or ""), true)
             end)
             row.deleteButton = btn
         end

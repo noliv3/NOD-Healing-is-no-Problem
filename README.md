@@ -27,6 +27,14 @@ NOD-Heal ist ein leistungsorientiertes Healing-Framework für den WoW-Client der
 - Spell-Bindings werden beim Login automatisch aus `NODHealDB.bindings` geladen; Classic-Clients erhalten einen Tooltip-Fallback über GridFrames, sodass Click-Casts und Hover-Tooltips ohne `CompactUnitFrame_OnEnter` funktionieren.
 - Spell-Binding-UI (`UI/BindingFrame.lua`) stellt ein eigenständiges, verschiebbares Binding-Center bereit: Maus- und Modifier-Kombinationen werden über Dropdowns gewählt, Zauber stammen automatisch aus dem Spellbook und lassen sich per Klick oder Drag & Drop zuweisen; Änderungen werden sofort in `NODHeal.Bindings` gespeichert, jede Zeile besitzt eine Delete-Schaltfläche zum direkten Unbinden und das Fenster merkt sich seine Position (`/nodgui`).
 
+## QA+Autofix 2025-11-05
+- Persistente Konfiguration: `Config/Defaults.lua` synchronisiert `NODHeal.Config` und `NODHealDB.config` inklusive Grid-/Debug-Optionen, sodass SavedVariables beim Login vollständig wiederhergestellt werden.
+- Zentralisiertes Logging: `Core/Init.lua` stellt `NODHeal.Log/Logf` bereit; UI-Module rufen Ausgaben über diese Gateways ab, wodurch Debug-Spam dem Toggle `NODHeal.Config.debug` folgt.
+- Click-Cast & Grid-Härtung: Grid-Frames bewahren Solo/Group/Raid-Einträge, triggern bei zusätzlichen Events (`UNIT_CONNECTION`, `PLAYER_ROLES_ASSIGNED` usw.) einen verzögerten Rebuild und veröffentlichen die Frame-Liste für Overlay/Click-Cast-Fallbacks.
+- Overlay-Schutz: Sichere Hooks prüfen die Existenz von `CompactUnitFrame_*`-Funktionen, bevor sie registriert werden; Overlay-Refresh nutzt Guards für ungültige Einheiten und Tooltip-Zugriffe.
+- Binding- und Options-UI melden Konflikte/Änderungen über das neue Log-System, speichern Sortiermodi dauerhaft und respektieren Combat-Lockdown durch das bestehende Click-Cast-Queuing.
+- Reports: Unter `reports/` liegen aktualisierte Artefakte (`file_inventory.json`, `QA_Report.md`, `change_log.md`, `bindings_snapshot.json`), außerdem dokumentiert `DOCU/Validation/Functional_Readiness.md` den Heal-Ready-Status.
+
 Weitere Implementierungen folgen in iterativen Schritten (DamageForecast, AuraTickScheduler, UI-Overlays usw.). Details zu den geplanten Backend-Funktionen befinden sich im Ordner [`DOCU/`](DOCU/).
 
 ## Entwicklung

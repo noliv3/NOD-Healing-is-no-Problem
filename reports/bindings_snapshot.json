@@ -1,5 +1,8 @@
 {
-  "LeftButton": "Healing Touch",
-  "RightButton": "Regrowth",
-  "Shift-LeftButton": "Rejuvenation"
+  "generatedAt": "2025-11-05T00:00:00Z",
+  "bindings": {
+    "LeftButton": "Healing Touch",
+    "RightButton": "Regrowth",
+    "Shift-LeftButton": "Rejuvenation"
+  }
 }

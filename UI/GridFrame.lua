@@ -4,6 +4,7 @@ NODHeal.Grid = G
 
 local CreateFrame = CreateFrame
 local UIParent = UIParent
+local GameTooltip = GameTooltip
 local UnitClass = UnitClass
 local UnitExists = UnitExists
 local UnitHealth = UnitHealth
@@ -125,7 +126,7 @@ local function createUnitFrame(parent, unit, index)
     frame:RegisterForClicks("AnyDown")
 
     frame:SetScript("OnEnter", function(self)
-        if not self.unit then
+        if not self.unit or not GameTooltip then
             return
         end
         GameTooltip:SetOwner(self, "ANCHOR_RIGHT")
@@ -134,7 +135,9 @@ local function createUnitFrame(parent, unit, index)
     end)
 
     frame:SetScript("OnLeave", function()
-        GameTooltip:Hide()
+        if GameTooltip then
+            GameTooltip:Hide()
+        end
     end)
 
     local health = frame:CreateTexture(nil, "ARTWORK")
@@ -168,7 +171,7 @@ local function createUnitFrame(parent, unit, index)
 end
 
 local function updateUnitFrame(frame, elapsed)
-    if not frame or not frame.unit or not UnitExists(frame.unit) then
+    if not frame or type(frame.unit) ~= "string" or not UnitExists(frame.unit) then
         if frame then
             frame._lastPct = nil
             frame:Hide()
@@ -183,7 +186,10 @@ local function updateUnitFrame(frame, elapsed)
         max = 1
     end
 
-    local incoming = UnitGetIncomingHeals and UnitGetIncomingHeals(frame.unit) or 0
+    local incoming = 0
+    if UnitGetIncomingHeals then
+        incoming = UnitGetIncomingHeals(frame.unit) or 0
+    end
     local predicted = 0
 
     if NODHeal.Core and NODHeal.Core.PredictiveSolver and NODHeal.Core.PredictiveSolver.CalculateProjectedHealth then
@@ -381,7 +387,7 @@ local function rebuildGrid()
             unitFrames[index] = frame
         end
 
-        frame.unit = unit
+    frame.unit = unit
         if NODHeal and NODHeal.ClickCast and NODHeal.ClickCast.SetFrameUnit then
             NODHeal.ClickCast:SetFrameUnit(frame, unit)
         end
@@ -446,10 +452,21 @@ local function initialize()
     local ev = CreateFrame("Frame")
     ev:RegisterEvent("GROUP_ROSTER_UPDATE")
     ev:RegisterEvent("UNIT_HEALTH")
+    ev:RegisterEvent("UNIT_CONNECTION")
     ev:RegisterEvent("PLAYER_ENTERING_WORLD")
-    ev:SetScript("OnEvent", function(_, event)
+    ev:RegisterEvent("PLAYER_REGEN_ENABLED")
+    ev:RegisterEvent("PLAYER_ROLES_ASSIGNED")
+    ev:SetScript("OnEvent", function(_, event, unit)
         if event == "UNIT_HEALTH" then
-            updateAllFrames()
+            if not unit or type(unit) ~= "string" then
+                updateAllFrames()
+            else
+                for _, frame in ipairs(unitFrames) do
+                    if frame.unit == unit then
+                        updateUnitFrame(frame)
+                    end
+                end
+            end
         else
             rebuildLater()
         end
@@ -459,3 +476,4 @@ local function initialize()
 end
 
 G.Initialize = initialize
+G.unitFrames = unitFrames
