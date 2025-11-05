@@ -3,12 +3,36 @@ local addonName = ...
 local pairs = pairs
 local type = type
 
+local function cloneTable(source)
+    local copy = {}
+    if type(source) ~= "table" then
+        return copy
+    end
+    for key, value in pairs(source) do
+        if type(value) == "table" then
+            copy[key] = cloneTable(value)
+        else
+            copy[key] = value
+        end
+    end
+    return copy
+end
+
 local NODHeal = _G.NODHeal or {}
 _G.NODHeal = NODHeal
 
 local PROFILE_DEFAULTS = {
     updateInterval = 0.1,
     throttle = 0.2,
+}
+
+local ICON_DEFAULTS = {
+    enabled = true,
+    size = 14,
+    hotEnabled = true,
+    debuffEnabled = true,
+    hotWhitelist = {},
+    debuffPrio = {},
 }
 
 local CONFIG_DEFAULTS = {
@@ -23,13 +47,18 @@ local CONFIG_DEFAULTS = {
     showIncoming = true,
     showOverheal = true,
     lockGrid = false,
+    icons = ICON_DEFAULTS,
 }
 
 local function mergeDefaults(target, defaults)
     target = target or {}
     for key, value in pairs(defaults) do
         if target[key] == nil then
-            target[key] = value
+            if type(value) == "table" then
+                target[key] = cloneTable(value)
+            else
+                target[key] = value
+            end
         end
     end
     return target
@@ -55,6 +84,39 @@ local function ensureConfig(store)
             store.config[key] = stored
         end
         config[key] = stored
+    end
+
+    local icons = config.icons or {}
+    config.icons = icons
+
+    store.config.icons = store.config.icons or {}
+    local savedIcons = store.config.icons
+
+    for key, defaultValue in pairs(ICON_DEFAULTS) do
+        local stored = savedIcons[key]
+        if stored == nil then
+            if icons[key] ~= nil then
+                stored = icons[key]
+            elseif type(defaultValue) == "table" then
+                stored = cloneTable(defaultValue)
+            else
+                stored = defaultValue
+            end
+            if type(stored) == "table" then
+                savedIcons[key] = cloneTable(stored)
+            else
+                savedIcons[key] = stored
+            end
+        end
+
+        if type(defaultValue) == "table" then
+            if type(savedIcons[key]) ~= "table" then
+                savedIcons[key] = {}
+            end
+            icons[key] = savedIcons[key]
+        else
+            icons[key] = savedIcons[key]
+        end
     end
 
     if type(config.logThrottle) == "number" and config.logThrottle < 0 then
