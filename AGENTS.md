@@ -5,7 +5,7 @@
 ---
 
 ## 1) Repository-Grundregeln
-- **Addon-Root:** Alles Produktive liegt unter `NOD_Heal/`.
+- **Addon-Root:** Repo-Root entspricht dem Addon; beim Release wird der Ordner als `NOD_Heal/` ausgeliefert.
 - **Namespaces:** Export nur über `NODHeal.*` (siehe `Core/Init.lua`). Sonst `local`.
 - **Sprache:** Pro Datei **eine** Sprache, bevorzugt **Englisch**.
 - **SavedVariables:** `NODHealDB` (Config/Bindings). Schreib-/Lese-Logik nur bei `ADDON_LOADED`/Logout, keine riskanten Änderungen im Combat.
@@ -33,9 +33,9 @@ NOD_Heal.toc
 Config/         # Defaults & Persistenz
 Core/           # Aggregator, Solver, Timing, Dispatcher, Caches
 UI/             # Grid, Overlay, ClickCast, Options, Binding-UI
-Libs/           # externe/integrierte libs (falls vorhanden)
-docs/           # kurze, gepflegte Doku
-docs/legacy/    # alte/umfangreiche Materialien
+Libs/           # integrierte libs (LibHealComm-4.0)
+DOCU/           # Analysen & Legacy-Material
+reports/        # QA-/Analyse-Schnappschüsse (nicht fürs Release bündeln)
 ```
 
 ---
@@ -43,7 +43,7 @@ docs/legacy/    # alte/umfangreiche Materialien
 ## 4) Dokumentation (knapp halten)
 - **README.md** beschreibt nur: Zweck, Installation, Kurz-Usage, Slash-Befehle, Struktur, Troubleshooting.
 - Änderungen mit Funktionsauswirkung: **kurze Notiz** in README + optional `CHANGELOG.md`.
-- Umfangreiche Analysen/Altmaterial: nach `docs/legacy/`.  
+- Umfangreiche Analysen/Altmaterial: in `DOCU/` belassen/aktualisieren.
 - Keine spekulativen Aussagen (nur Umgesetztes dokumentieren).
 
 ---
@@ -71,9 +71,8 @@ docs/legacy/    # alte/umfangreiche Materialien
 ---
 
 ## 7) Agents / Automatisierung (minimal & klar)
-- Ein Workflow: `.github/workflows/validate-and-package.yml`
-  - **validate**: Baum prüfen (keine Reports/Temp im Release), TOC vorhanden.
-  - **package**: ZIP-Artifact `NOD-Heal-clean.zip` mit `NOD_Heal/**`, `README.md`, `LICENSE`.
+- Kein Workflow eingecheckt – Packaging aktuell manuell/über lokale Skripte.
+- Falls CI ergänzt wird: Nur Baumvalidierung & Release-ZIP mit `NOD_Heal/**`, `README.md`, `LICENSE` erzeugen.
 - Keine externen Secrets voraussetzen. Keine Artefakt-Flut erzeugen.
 
 ---
@@ -86,7 +85,7 @@ docs/legacy/    # alte/umfangreiche Materialien
   *.pdf *.docx *.zip
   ```
 - Produktiv niemals commiten: generierte Reports, Snapshots, riesige Office/PDFs.  
-- Alte Doku → `docs/legacy/` verschieben (statt löschen).
+- Alte Doku → innerhalb `DOCU/` ablegen (statt löschen).
 
 ---
 
