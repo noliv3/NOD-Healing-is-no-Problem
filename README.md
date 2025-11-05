@@ -25,9 +25,10 @@ Fokus: eingehende Heilungen aggregieren, Landzeit/Zeitfenster bestimmen, kompakt
 ---
 
 ## Kurzanleitung
-- **Overlay**: Prognose-Balken an CompactUnitFrames/Grid.  
-- **Click-Casting**: Maus + Alt/Ctrl/Shift auf die Grid-Frames.  
+- **Overlay**: Prognose-Balken an CompactUnitFrames/Grid.
+- **Click-Casting**: Maus + Alt/Ctrl/Shift auf die Grid-Frames.
 - **Status-Frame**: kleines Feld unten rechts (laufende Quelle/Status).
+- **Eck-Icons**: Optionen → Corner Icons (Enable/HoT/Debuff/Size) aktualisieren Layout & Auren sofort.
 
 ### Nützliche Slash-Befehle
 - `/nod debug on|off|status` – Debug-Ausgabe umschalten.
@@ -44,6 +45,7 @@ Fokus: eingehende Heilungen aggregieren, Landzeit/Zeitfenster bestimmen, kompakt
 - **Timing**: Latenz/Queue-Berücksichtigung, robuste Landzeit-Schätzung.
 - **Solver**: kombiniert Snapshot/Schaden/Heals → projizierter Health-Wert.
 - **UI**: Grid + Overlay, sanfte Updates, Overheal-Segment optional.
+- **Corner Icons**: HoT-Whitelist oben rechts & Debuff-Priorisierung unten links, reagiert ohne `/reload` auf Optionsänderungen.
 - **Härtung**: sichere Hooks, Combat-Lockdown-respektierend.
 - **Dispatcher**: gemeinsamer 0,2s-Ticker für Prognosen & Grid-Refresh.
 

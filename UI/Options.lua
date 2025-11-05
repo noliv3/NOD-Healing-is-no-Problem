@@ -24,9 +24,17 @@ local UIDropDownMenu_Initialize = UIDropDownMenu_Initialize
 local UIDropDownMenu_SetText = UIDropDownMenu_SetText
 local UIDropDownMenu_SetWidth = UIDropDownMenu_SetWidth
 local UIDropDownMenu_SetSelectedValue = UIDropDownMenu_SetSelectedValue
+local C_Timer = C_Timer
 local pairs = pairs
 local ipairs = ipairs
 local math = math
+
+local iconDefaults = {
+    enabled = true,
+    hotEnabled = true,
+    debuffEnabled = true,
+    size = 14,
+}
 
 local defaults = (NODHeal and NODHeal.ConfigDefaults) or {
     scale = 1,
@@ -37,11 +45,14 @@ local defaults = (NODHeal and NODHeal.ConfigDefaults) or {
     showIncoming = true,
     showOverheal = true,
     lockGrid = false,
+    icons = iconDefaults,
 }
 
 local frame
 local sliders = {}
 local checkboxes = {}
+local iconSliders = {}
+local iconCheckboxes = {}
 local dropdown
 local originalConfig
 
@@ -76,6 +87,35 @@ local function ensureConfig()
         config[key] = stored
     end
 
+    config.icons = config.icons or {}
+    saved.config.icons = saved.config.icons or {}
+
+    local iconConfig = config.icons
+    local savedIcons = saved.config.icons
+
+    for key, defaultValue in pairs(iconDefaults) do
+        local stored = savedIcons[key]
+        if stored == nil then
+            if iconConfig[key] == nil then
+                stored = defaultValue
+            else
+                stored = iconConfig[key]
+            end
+            savedIcons[key] = stored
+        end
+        iconConfig[key] = stored
+    end
+
+    if type(savedIcons.hotWhitelist) ~= "table" then
+        savedIcons.hotWhitelist = iconConfig.hotWhitelist or {}
+    end
+    if type(savedIcons.debuffPrio) ~= "table" then
+        savedIcons.debuffPrio = iconConfig.debuffPrio or {}
+    end
+
+    iconConfig.hotWhitelist = savedIcons.hotWhitelist
+    iconConfig.debuffPrio = savedIcons.debuffPrio
+
     return config
 end
 
@@ -87,6 +127,26 @@ local function copyTrackedConfig(source)
     for key in pairs(defaults) do
         snapshot[key] = source[key]
     end
+
+    local icons = source.icons or {}
+    snapshot.icons = {}
+    for key in pairs(iconDefaults) do
+        snapshot.icons[key] = icons[key]
+    end
+    if type(icons.hotWhitelist) == "table" then
+        local copy = {}
+        for k, v in pairs(icons.hotWhitelist) do
+            copy[k] = v
+        end
+        snapshot.icons.hotWhitelist = copy
+    end
+    if type(icons.debuffPrio) == "table" then
+        local copy = {}
+        for k, v in pairs(icons.debuffPrio) do
+            copy[k] = v
+        end
+        snapshot.icons.debuffPrio = copy
+    end
     return snapshot
 end
 
@@ -97,6 +157,35 @@ local function applyGridRefresh()
     local uiModule = NODHeal.GetModule and NODHeal:GetModule("UI")
     if uiModule and uiModule.Refresh then
         uiModule:Refresh()
+    end
+end
+
+local function applyIconsNow()
+    local function performUpdate()
+        if not NODHeal or not NODHeal.UI or not NODHeal.UI.Grid then
+            return
+        end
+
+        local grid = NODHeal.UI.Grid
+        if grid.UpdateAllIconLayout then
+            grid.UpdateAllIconLayout()
+        end
+
+        if grid.RefreshAllAuraIcons then
+            local frames
+            if grid.GetTrackedFrames then
+                frames = grid.GetTrackedFrames()
+            end
+            grid.RefreshAllAuraIcons(frames)
+        end
+    end
+
+    if InCombatLockdown and InCombatLockdown() then
+        if C_Timer and C_Timer.After then
+            C_Timer.After(0.1, performUpdate)
+        end
+    else
+        performUpdate()
     end
 end
 
@@ -124,6 +213,32 @@ local function saveConfigValue(key, value, silent)
             NODHeal:Logf(true, "Saved option: %s = %s", key, tostring(value))
         else
             log(string.format("Saved option: %s = %s", key, tostring(value)), true)
+        end
+    end
+end
+
+local function saveIconsConfigValue(key, value, silent)
+    local config = ensureConfig()
+    config.icons = config.icons or {}
+    config.icons[key] = value
+
+    local saved = _G.NODHealDB
+    if type(saved) ~= "table" then
+        saved = {}
+        _G.NODHealDB = saved
+    end
+
+    saved.config = saved.config or {}
+    saved.config.icons = saved.config.icons or {}
+    saved.config.icons[key] = value
+
+    applyIconsNow()
+
+    if not silent then
+        if NODHeal and NODHeal.Logf then
+            NODHeal:Logf(true, "Saved icon option: icons.%s = %s", key, tostring(value))
+        else
+            log(string.format("Saved icon option: icons.%s = %s", key, tostring(value)), true)
         end
     end
 end
@@ -174,6 +289,45 @@ local function createSlider(parent, label, key, minValue, maxValue, step, decima
     return slider
 end
 
+local function createIconSlider(parent, label, key, minValue, maxValue, step, decimals)
+    local sliderName = "NODHealOptionsIconsSlider" .. key
+    local slider = CreateFrame("Slider", sliderName, parent, "OptionsSliderTemplate")
+    slider:SetMinMaxValues(minValue, maxValue)
+    slider:SetValueStep(step)
+    slider:SetObeyStepOnDrag(true)
+    slider:SetWidth(220)
+    slider._label = label
+    slider._decimals = decimals or 0
+    slider:SetScript("OnValueChanged", function(self, newValue)
+        if self._updating then
+            updateSliderText(self, newValue)
+            return
+        end
+        local rounded
+        if self._decimals and self._decimals > 0 then
+            local multiplier = 10 ^ self._decimals
+            rounded = math.floor(newValue * multiplier + 0.5) / multiplier
+        else
+            rounded = math.floor(newValue + 0.5)
+        end
+        updateSliderText(self, rounded)
+        saveIconsConfigValue(key, rounded)
+    end)
+
+    _G[sliderName .. "Low"]:SetText(tostring(minValue))
+    _G[sliderName .. "High"]:SetText(tostring(maxValue))
+
+    local iconConfig = ensureConfig().icons or {}
+    local currentValue = iconConfig[key] or minValue
+    slider._updating = true
+    slider:SetValue(currentValue)
+    slider._updating = nil
+    updateSliderText(slider, currentValue)
+
+    iconSliders[key] = slider
+    return slider
+end
+
 local function createCheckbox(parent, label, key)
     local checkbox = CreateFrame("CheckButton", "NODHealOptionsCheck" .. key, parent, "ChatConfigCheckButtonTemplate")
     checkbox.Text:SetText(label)
@@ -184,6 +338,19 @@ local function createCheckbox(parent, label, key)
         saveConfigValue(key, self:GetChecked() and true or false)
     end)
     checkboxes[key] = checkbox
+    return checkbox
+end
+
+local function createIconCheckbox(parent, label, key)
+    local checkbox = CreateFrame("CheckButton", "NODHealOptionsIconsCheck" .. key, parent, "ChatConfigCheckButtonTemplate")
+    checkbox.Text:SetText(label)
+    checkbox:SetScript("OnClick", function(self)
+        if self._updating then
+            return
+        end
+        saveIconsConfigValue(key, self:GetChecked() and true or false)
+    end)
+    iconCheckboxes[key] = checkbox
     return checkbox
 end
 
@@ -226,8 +393,16 @@ local function restoreSnapshot(snapshot)
         return
     end
     for key, value in pairs(snapshot) do
-        if defaults[key] ~= nil then
+        if key ~= "icons" and defaults[key] ~= nil then
             saveConfigValue(key, value, true)
+        end
+    end
+
+    if snapshot.icons then
+        for key, value in pairs(snapshot.icons) do
+            if iconDefaults[key] ~= nil then
+                saveIconsConfigValue(key, value, true)
+            end
         end
     end
 end
@@ -249,6 +424,21 @@ function Options:RefreshControls()
         checkbox._updating = nil
     end
 
+    local iconConfig = config.icons or {}
+    for key, checkbox in pairs(iconCheckboxes) do
+        checkbox._updating = true
+        checkbox:SetChecked(iconConfig[key] and true or false)
+        checkbox._updating = nil
+    end
+
+    for key, slider in pairs(iconSliders) do
+        local value = iconConfig[key] or iconDefaults[key]
+        slider._updating = true
+        slider:SetValue(value)
+        slider._updating = nil
+        updateSliderText(slider, value)
+    end
+
     if dropdown then
         local value = config.sortMode or defaults.sortMode
         UIDropDownMenu_SetSelectedValue(dropdown, value)
@@ -264,7 +454,7 @@ function Options:EnsureFrame()
     ensureConfig()
 
     frame = CreateFrame("Frame", "NODHealOptionsFrame", UIParent, "BasicFrameTemplateWithInset")
-    frame:SetSize(420, 420)
+    frame:SetSize(420, 520)
     frame:SetPoint("CENTER", UIParent, "CENTER")
     frame:SetFrameStrata("DIALOG")
     frame:SetClampedToScreen(true)
@@ -278,7 +468,7 @@ function Options:EnsureFrame()
     frame.title:SetPoint("TOP", 0, -12)
     frame.title:SetText("NOD-Heal Options")
 
-    local y = -50
+    local y = -40
 
     local scaleSlider = createSlider(frame, "Grid Scale", "scale", 0.5, 2.0, 0.1, 1)
     scaleSlider:SetPoint("TOP", frame, "TOP", 0, y)
@@ -306,9 +496,30 @@ function Options:EnsureFrame()
 
     local lockCheck = createCheckbox(frame, "Lock Grid Position", "lockGrid")
     lockCheck:SetPoint("TOPLEFT", frame, "TOPLEFT", 24, y)
+    y = y - 40
+
+    local iconsHeader = frame:CreateFontString(nil, "OVERLAY", "GameFontNormal")
+    iconsHeader:SetPoint("TOPLEFT", frame, "TOPLEFT", 24, y)
+    iconsHeader:SetText("Corner Icons")
+    y = y - 26
+
+    local iconsEnableCheck = createIconCheckbox(frame, "Enable corner icons", "enabled")
+    iconsEnableCheck:SetPoint("TOPLEFT", frame, "TOPLEFT", 24, y)
+    y = y - 26
+
+    local hotCheck = createIconCheckbox(frame, "Show HoT (top-right)", "hotEnabled")
+    hotCheck:SetPoint("TOPLEFT", frame, "TOPLEFT", 24, y)
+    y = y - 26
+
+    local debuffCheck = createIconCheckbox(frame, "Show Debuff (bottom-left)", "debuffEnabled")
+    debuffCheck:SetPoint("TOPLEFT", frame, "TOPLEFT", 24, y)
+    y = y - 40
+
+    local iconSizeSlider = createIconSlider(frame, "Icon Size", "size", 8, 20, 1, 0)
+    iconSizeSlider:SetPoint("TOP", frame, "TOP", 0, y)
 
     local sortDropdown = createDropdown(frame, "Sort Mode", "sortMode", { "group", "class", "alpha" })
-    sortDropdown:SetPoint("TOP", frame, "TOP", 0, -320)
+    sortDropdown:SetPoint("TOP", iconSizeSlider, "BOTTOM", 0, -40)
 
     local saveButton = CreateFrame("Button", nil, frame, "UIPanelButtonTemplate")
     saveButton:SetSize(100, 24)

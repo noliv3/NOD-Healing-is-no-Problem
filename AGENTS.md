@@ -116,3 +116,7 @@ docs/legacy/    # Archivierte Analysen, QA-Reports & historisches Material
 Aktiv & produktiv: HealthSnapshot, CastLandingTime, IncomingHeals (+Aggregator), HealValueEstimator, PredictiveSolver, LatencyTools, DamagePrediction, AuraTickPredictor, EffectiveHP, DesyncGuard, CoreDispatcher; UI: Grid/Overlay/ClickCast/Options/Binding-UI.
 
 *Ziel: stabiler, leichtgewichtiger Heil-Workflow in 5-Man & Raid.*
+
+## 12) Corner Icons (Grid & Optionen)
+- Grid-Eck-Icons aktualisieren über `NODHeal.UI.Grid.UpdateAllIconLayout()` + `RefreshAllAuraIcons()`; Frames via `GetTrackedFrames()` bereitstellen.
+- Optionssektion **Corner Icons** pflegt `NODHeal.Config.icons` (Enable/HoT/Debuff/Size) und stößt kampfsichere Refreshes per `C_Timer.After` an.

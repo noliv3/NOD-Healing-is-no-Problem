@@ -1,6 +1,8 @@
 local G = {}
 NODHeal = NODHeal or {}
 NODHeal.Grid = G
+NODHeal.UI = NODHeal.UI or {}
+NODHeal.UI.Grid = G
 
 local CreateFrame = CreateFrame
 local UIParent = UIParent
@@ -21,8 +23,11 @@ local math = math
 local ipairs = ipairs
 local pairs = pairs
 local type = type
+local UnitAura = UnitAura
+local tinsert = table.insert
 
 local unitFrames = {}
+local trackedFrames = {}
 local container
 local feedbackEntries = {}
 
@@ -31,6 +36,281 @@ local FRAME_HEIGHT = 35
 local COLUMNS = 5
 local SPACING = 4
 local PADDING = 8
+
+local function getIconsConfig()
+    local config = NODHeal.Config or {}
+    if type(config.icons) ~= "table" then
+        return {}
+    end
+    return config.icons
+end
+
+local function boolOrDefault(value, defaultValue)
+    if value == nil then
+        return defaultValue
+    end
+    return value and true or false
+end
+
+local function matchesWhitelist(list, name, spellId)
+    if type(list) ~= "table" then
+        return true
+    end
+
+    local hasEntries
+    for key, value in pairs(list) do
+        hasEntries = true
+        if key == spellId or key == name then
+            return value and true or false
+        end
+        if value == spellId or value == name then
+            return true
+        end
+        if spellId and key == tostring(spellId) then
+            return value and true or false
+        end
+    end
+
+    if not hasEntries then
+        return true
+    end
+
+    if spellId then
+        if list[spellId] then
+            return list[spellId] and true or false
+        end
+        if list[tostring(spellId)] then
+            return list[tostring(spellId)] and true or false
+        end
+    end
+
+    if name and list[name] ~= nil then
+        return list[name] and true or false
+    end
+
+    return false
+end
+
+local function getDebuffPriority(list, name, spellId)
+    if type(list) ~= "table" then
+        return 0
+    end
+
+    local candidates = {
+        spellId,
+        tostring(spellId),
+        name,
+    }
+
+    for _, key in ipairs(candidates) do
+        if key ~= nil then
+            local weight = list[key]
+            if weight ~= nil then
+                if type(weight) == "number" then
+                    return weight
+                end
+                if weight == true then
+                    return 1
+                end
+            end
+        end
+    end
+
+    for _, value in pairs(list) do
+        if value == spellId or value == name then
+            return 1
+        end
+    end
+
+    return 0
+end
+
+local function updateIconLayout(frame)
+    if not frame then
+        return
+    end
+
+    local hotIcon = frame.hotIcon
+    local debuffIcon = frame.debuffIcon
+    if not hotIcon and not debuffIcon then
+        return
+    end
+
+    local iconsCfg = getIconsConfig()
+    local size = iconsCfg.size
+    if type(size) ~= "number" then
+        size = 14
+    end
+
+    if hotIcon then
+        hotIcon:SetSize(size, size)
+    end
+    if debuffIcon then
+        debuffIcon:SetSize(size, size)
+    end
+
+    local enabled = boolOrDefault(iconsCfg.enabled, true)
+    local hotEnabled = boolOrDefault(iconsCfg.hotEnabled, true)
+    local debuffEnabled = boolOrDefault(iconsCfg.debuffEnabled, true)
+
+    if hotIcon then
+        if enabled and hotEnabled then
+            hotIcon:Show()
+        else
+            hotIcon:Hide()
+        end
+    end
+
+    if debuffIcon then
+        if enabled and debuffEnabled then
+            debuffIcon:Show()
+        else
+            debuffIcon:Hide()
+        end
+    end
+end
+
+local function updateAllIconLayout()
+    for _, frame in ipairs(trackedFrames) do
+        updateIconLayout(frame)
+    end
+end
+
+local function updateAuraIcons(frame)
+    if not frame then
+        return
+    end
+
+    local hotIcon = frame.hotIcon
+    local debuffIcon = frame.debuffIcon
+    if not hotIcon and not debuffIcon then
+        return
+    end
+
+    if not frame.unit or not UnitExists(frame.unit) then
+        if hotIcon then
+            hotIcon:SetTexture(nil)
+            hotIcon:Hide()
+        end
+        if debuffIcon then
+            debuffIcon:SetTexture(nil)
+            debuffIcon:Hide()
+        end
+        return
+    end
+
+    updateIconLayout(frame)
+
+    local iconsCfg = getIconsConfig()
+    local enabled = boolOrDefault(iconsCfg.enabled, true)
+    local hotEnabled = boolOrDefault(iconsCfg.hotEnabled, true)
+    local debuffEnabled = boolOrDefault(iconsCfg.debuffEnabled, true)
+
+    if not enabled then
+        if hotIcon then
+            hotIcon:SetTexture(nil)
+            hotIcon:Hide()
+        end
+        if debuffIcon then
+            debuffIcon:SetTexture(nil)
+            debuffIcon:Hide()
+        end
+        return
+    end
+
+    local hotShown = false
+    if hotEnabled and hotIcon then
+        local whitelist = iconsCfg.hotWhitelist
+        local index = 1
+        while true do
+            local name, iconTexture, _, _, _, _, caster, _, _, spellId = UnitAura(frame.unit, index, "HELPFUL")
+            if not name then
+                break
+            end
+
+            if caster == "player" or caster == "pet" then
+                if matchesWhitelist(whitelist, name, spellId) then
+                    hotIcon:SetTexture(iconTexture)
+                    hotIcon:Show()
+                    hotShown = true
+                    break
+                end
+            end
+
+            index = index + 1
+        end
+    end
+
+    if not hotShown and hotIcon then
+        hotIcon:SetTexture(nil)
+        hotIcon:Hide()
+    end
+
+    local debuffShown = false
+    if debuffEnabled and debuffIcon then
+        local priorityList = iconsCfg.debuffPrio
+        local bestTexture
+        local bestPriority
+        local index = 1
+
+        while true do
+            local name, iconTexture, _, _, _, _, _, _, _, spellId = UnitAura(frame.unit, index, "HARMFUL")
+            if not name then
+                break
+            end
+
+            local priority = getDebuffPriority(priorityList, name, spellId)
+            if not bestPriority or priority > bestPriority or (priority == bestPriority and not bestTexture) then
+                bestPriority = priority
+                bestTexture = iconTexture
+            end
+
+            index = index + 1
+        end
+
+        if bestTexture then
+            debuffIcon:SetTexture(bestTexture)
+            debuffIcon:Show()
+            debuffShown = true
+        end
+    end
+
+    if not debuffShown and debuffIcon then
+        debuffIcon:SetTexture(nil)
+        debuffIcon:Hide()
+    end
+end
+
+local function refreshAllAuraIcons(frames)
+    local list = frames
+    if type(list) ~= "table" then
+        list = trackedFrames
+    end
+
+    for _, frame in ipairs(list) do
+        updateAuraIcons(frame)
+    end
+end
+
+function G.UpdateIconLayout(frame)
+    updateIconLayout(frame)
+end
+
+function G.UpdateAllIconLayout()
+    updateAllIconLayout()
+end
+
+function G.GetTrackedFrames()
+    return trackedFrames
+end
+
+function G.UpdateAuraIcons(frame)
+    updateAuraIcons(frame)
+end
+
+function G.RefreshAllAuraIcons(frames)
+    refreshAllAuraIcons(frames)
+end
 
 local function getConfig()
     NODHeal.Config = NODHeal.Config or {}
@@ -163,6 +443,22 @@ local function createUnitFrame(parent, unit, index)
     frame.name = name
     frame.unit = unit
 
+    local hotIcon = frame:CreateTexture(nil, "OVERLAY")
+    hotIcon:SetPoint("TOPRIGHT", frame, "TOPRIGHT", -2, -2)
+    hotIcon:SetSize(14, 14)
+    hotIcon:Hide()
+
+    local debuffIcon = frame:CreateTexture(nil, "OVERLAY")
+    debuffIcon:SetPoint("BOTTOMLEFT", frame, "BOTTOMLEFT", 2, 2)
+    debuffIcon:SetSize(14, 14)
+    debuffIcon:Hide()
+
+    frame.hotIcon = hotIcon
+    frame.debuffIcon = debuffIcon
+
+    updateIconLayout(frame)
+    tinsert(trackedFrames, frame)
+
     if NODHeal and NODHeal.ClickCast and NODHeal.ClickCast.RegisterFrame then
         NODHeal.ClickCast:RegisterFrame(frame)
     end
@@ -174,6 +470,14 @@ local function updateUnitFrame(frame, elapsed)
     if not frame or type(frame.unit) ~= "string" or not UnitExists(frame.unit) then
         if frame then
             frame._lastPct = nil
+            if frame.hotIcon then
+                frame.hotIcon:SetTexture(nil)
+                frame.hotIcon:Hide()
+            end
+            if frame.debuffIcon then
+                frame.debuffIcon:SetTexture(nil)
+                frame.debuffIcon:Hide()
+            end
             frame:Hide()
         end
         return
@@ -395,6 +699,7 @@ local function rebuildGrid()
         frame:SetPoint("TOPLEFT", host, "TOPLEFT", x, y)
         updateUnitFrame(frame)
         frame:Show()
+        updateAuraIcons(frame)
 
         index = index + 1
         if (index - 1) % cols == 0 then
@@ -412,9 +717,20 @@ local function rebuildGrid()
             if NODHeal and NODHeal.ClickCast and NODHeal.ClickCast.SetFrameUnit then
                 NODHeal.ClickCast:SetFrameUnit(frame, nil)
             end
+            if frame.hotIcon then
+                frame.hotIcon:SetTexture(nil)
+                frame.hotIcon:Hide()
+            end
+            if frame.debuffIcon then
+                frame.debuffIcon:SetTexture(nil)
+                frame.debuffIcon:Hide()
+            end
             frame:Hide()
         end
     end
+
+    updateAllIconLayout()
+    refreshAllAuraIcons(trackedFrames)
 end
 
 local function updateAllFrames()
@@ -469,6 +785,8 @@ end
 
 local function initialize()
     rebuildGrid()
+    G.UpdateAllIconLayout()
+    G.RefreshAllAuraIcons(G.GetTrackedFrames())
     if G._eventFrame then
         startTicker()
         return
@@ -480,6 +798,7 @@ local function initialize()
     ev:RegisterEvent("PLAYER_ENTERING_WORLD")
     ev:RegisterEvent("PLAYER_REGEN_ENABLED")
     ev:RegisterEvent("PLAYER_ROLES_ASSIGNED")
+    ev:RegisterEvent("UNIT_AURA")
     ev:SetScript("OnEvent", function(_, event, unit)
         if event == "UNIT_HEALTH" then
             if not unit or type(unit) ~= "string" then
@@ -488,6 +807,16 @@ local function initialize()
                 for _, frame in ipairs(unitFrames) do
                     if frame.unit == unit then
                         updateUnitFrame(frame)
+                    end
+                end
+            end
+        elseif event == "UNIT_AURA" then
+            if not unit or type(unit) ~= "string" then
+                refreshAllAuraIcons(trackedFrames)
+            else
+                for _, frame in ipairs(unitFrames) do
+                    if frame.unit == unit then
+                        updateAuraIcons(frame)
                     end
                 end
             end
