@@ -7,6 +7,7 @@ local strlower = string.lower
 local strmatch = string.match
 local format = string.format
 local ipairs = ipairs
+local pairs = pairs
 local select = select
 
 local SLASH_NODHEAL1 = "/nod"
@@ -89,7 +90,66 @@ local function ensureSavedVariables()
         NODHeal.ApplyConfigDefaults()
         saved = _G.NODHealDB or saved
     end
+    saved.learned = saved.learned or {}
+    local learnedStore = saved.learned
+    learnedStore.hots = learnedStore.hots or {}
+    NODHeal.Learned = NODHeal.Learned or {}
+    NODHeal.Learned.hots = NODHeal.Learned.hots or {}
     return saved
+end
+
+local function ensureLearnedRuntime()
+    NODHeal.Learned = NODHeal.Learned or {}
+    local learned = NODHeal.Learned
+    learned.hots = learned.hots or {}
+    return learned
+end
+
+local function wipeTable(tbl)
+    if type(tbl) ~= "table" then
+        return
+    end
+    for key in pairs(tbl) do
+        tbl[key] = nil
+    end
+end
+
+local function copyEntry(source)
+    if type(source) ~= "table" then
+        return source
+    end
+    local target = {}
+    for key, value in pairs(source) do
+        target[key] = value
+    end
+    return target
+end
+
+local function saveLearned()
+    local db = _G.NODHealDB
+    if type(db) ~= "table" then
+        return
+    end
+
+    db.learned = db.learned or {}
+    local target = db.learned.hots
+    if type(target) ~= "table" then
+        target = {}
+        db.learned.hots = target
+    end
+
+    wipeTable(target)
+
+    local learned = NODHeal.Learned and NODHeal.Learned.hots
+    if type(learned) ~= "table" then
+        return
+    end
+
+    for spellId, entry in pairs(learned) do
+        if entry ~= nil then
+            target[spellId] = copyEntry(entry)
+        end
+    end
 end
 
 local function fetchModule(name)
@@ -263,32 +323,42 @@ local function bootstrapDispatcher()
     stampDataSource()
 end
 
-local function handleAddonLoaded(_, event, name)
-    if event ~= "ADDON_LOADED" or name ~= addonName then
+local function handleEvent(_, event, name)
+    if event == "ADDON_LOADED" then
+        if name ~= addonName then
+            return
+        end
+
+        ensureSavedVariables()
+        ensureLearnedRuntime()
+
+        local state = ensureState()
+        state.dataSource = "API"
+        state.lastSourceUpdate = GetTime() or state.lastSourceUpdate or 0
+
+        log(format("Init: dataSource=%s", tostring(state.dataSource)))
+
+        SlashCmdList = SlashCmdList or {}
+        SlashCmdList.NOD = handleSlashCommand
+
+        _G.SLASH_NOD1 = SLASH_NODHEAL1
+
+        if NODHeal.Bindings and NODHeal.Bindings.Ensure then
+            NODHeal.Bindings:Ensure()
+        end
+
+        bootstrapDispatcher()
         return
     end
 
-    ensureSavedVariables()
-    local state = ensureState()
-    state.dataSource = "API"
-    state.lastSourceUpdate = GetTime() or state.lastSourceUpdate or 0
-
-    log(format("Init: dataSource=%s", tostring(state.dataSource)))
-
-    SlashCmdList = SlashCmdList or {}
-    SlashCmdList.NOD = handleSlashCommand
-
-    _G.SLASH_NOD1 = SLASH_NODHEAL1
-
-    if NODHeal.Bindings and NODHeal.Bindings.Ensure then
-        NODHeal.Bindings:Ensure()
+    if event == "PLAYER_LOGOUT" then
+        saveLearned()
     end
-
-    bootstrapDispatcher()
 end
 
 local eventFrame = CreateFrame("Frame")
 eventFrame:RegisterEvent("ADDON_LOADED")
-eventFrame:SetScript("OnEvent", handleAddonLoaded)
+eventFrame:RegisterEvent("PLAYER_LOGOUT")
+eventFrame:SetScript("OnEvent", handleEvent)
 
 _G.NODHeal = NODHeal
