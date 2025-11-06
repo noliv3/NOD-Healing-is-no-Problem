@@ -227,6 +227,10 @@ local function computeSolverProjection(unit)
         end
     end
 
+    local telemetry = NODHeal and NODHeal.Telemetry
+    if telemetry and telemetry.Increment then
+        telemetry:Increment("solverCalls")
+    end
     local ok, result
     if opts then
         ok, result = pcall(solver.CalculateProjectedHealth, unit, opts)

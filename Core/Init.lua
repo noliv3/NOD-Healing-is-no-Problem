@@ -105,6 +105,108 @@ local function ensureLearnedRuntime()
     return learned
 end
 
+NODHeal.Telemetry = NODHeal.Telemetry or {}
+local Telemetry = NODHeal.Telemetry
+Telemetry.interval = Telemetry.interval or 5
+Telemetry.counters = Telemetry.counters or { solverCalls = 0, auraRefresh = 0 }
+Telemetry.queueSize = Telemetry.queueSize or 0
+Telemetry.lastFlush = Telemetry.lastFlush or GetTime()
+Telemetry.feed = Telemetry.feed or { ring = {}, head = 1, max = 100 }
+
+local function telemetryPush(self, message)
+    if not message then
+        return
+    end
+    local feed = self.feed or {}
+    self.feed = feed
+    feed.ring = feed.ring or {}
+    local max = feed.max or 100
+    if max <= 0 then
+        max = 100
+        feed.max = max
+    end
+    local head = feed.head or 1
+    feed.ring[head] = message
+    feed.head = head % max + 1
+    if NODHeal and NODHeal.Logf then
+        NODHeal:Logf(false, "%s", message)
+    end
+end
+
+function Telemetry:Increment(metric, delta)
+    if not metric then
+        return
+    end
+    local counters = self.counters or {}
+    self.counters = counters
+    counters[metric] = (counters[metric] or 0) + (delta or 1)
+end
+
+function Telemetry:UpdateQueueSize(size)
+    self.queueSize = size or 0
+end
+
+function Telemetry:Push(message)
+    telemetryPush(self, message)
+end
+
+function Telemetry:Flush(now)
+    local timestamp = now or GetTime()
+    if not self.lastFlush then
+        self.lastFlush = timestamp
+    end
+    local elapsed = timestamp - (self.lastFlush or timestamp)
+    local interval = self.interval or 5
+    if elapsed < interval then
+        return
+    end
+    self.lastFlush = timestamp
+    local counters = self.counters or {}
+    self.counters = counters
+    local cfg = getConfig()
+    if not (cfg and cfg.debug) then
+        counters.solverCalls = 0
+        counters.auraRefresh = 0
+        return
+    end
+    local span = elapsed > 0 and elapsed or interval
+    local solverRate = (counters.solverCalls or 0) / span
+    local auraRate = (counters.auraRefresh or 0) / span
+    local message = format(
+        "telemetry: solver_calls/s=%.1f aura_refresh/s=%.1f queue_after_combat=%d",
+        solverRate,
+        auraRate,
+        self.queueSize or 0
+    )
+    telemetryPush(self, message)
+    counters.solverCalls = 0
+    counters.auraRefresh = 0
+end
+
+function Telemetry:OnTick()
+    self:Flush(GetTime())
+end
+
+function Telemetry:Attach(dispatcher)
+    if self._attached then
+        return
+    end
+    self._attached = true
+    local function tick()
+        self:OnTick()
+    end
+    if dispatcher and dispatcher.RegisterTick then
+        dispatcher:RegisterTick(tick)
+        return
+    end
+    if C_Timer and C_Timer.NewTicker then
+        if self._ticker and self._ticker.Cancel then
+            self._ticker:Cancel()
+        end
+        self._ticker = C_Timer.NewTicker(1, tick)
+    end
+end
+
 local function wipeTable(tbl)
     if type(tbl) ~= "table" then
         return
@@ -304,6 +406,10 @@ local function bootstrapDispatcher()
     local dispatcher = fetchModule("CoreDispatcher")
     if dispatcher and dispatcher.Initialize then
         dispatcher.Initialize()
+    end
+
+    if Telemetry and Telemetry.Attach then
+        Telemetry:Attach(dispatcher)
     end
 
     local death = fetchModule("DeathAuthority")
