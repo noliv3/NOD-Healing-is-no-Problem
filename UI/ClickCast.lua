@@ -133,8 +133,8 @@ local function buildAttributeKeys(mods, button)
 
     local prefix = buildAttributePrefix(mods)
     local typeKey = prefix .. "type" .. suffix
-    local spellKey = prefix .. "spell" .. suffix
-    return typeKey, spellKey
+    local macroKey = prefix .. "macrotext" .. suffix
+    return typeKey, macroKey
 end
 
 local function canonicalize(combo)
@@ -324,12 +324,14 @@ function ClickCast:ApplyBindingsToFrame(frame)
     for combo, spell in pairs(store) do
         if type(spell) == "string" and spell ~= "" then
             local _, mods, button = canonicalize(combo)
-            local typeKey, spellKey = buildAttributeKeys(mods, button)
-            if typeKey and spellKey then
-                frame:SetAttribute(typeKey, "spell")
-                frame:SetAttribute(spellKey, spell)
+            local typeKey, macroKey = buildAttributeKeys(mods, button)
+            if typeKey and macroKey then
+                frame:SetAttribute(typeKey, "macro")
+                frame:SetAttribute(macroKey, ([[#showtooltip %s
+/cast [@mouseover,help,nodead] %s
+/stopspelltargeting]]):format(spell, spell))
                 keys[#keys + 1] = typeKey
-                keys[#keys + 1] = spellKey
+                keys[#keys + 1] = macroKey
             end
         end
     end
