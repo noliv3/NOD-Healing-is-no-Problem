@@ -154,14 +154,6 @@ function Bindings:Get(combo)
 end
 
 function Bindings:Set(combo, spell)
-    if InCombatLockdown and InCombatLockdown() then
-        if addon and addon.Log then
-            addon:Log("Cannot update bindings while in combat", true)
-        else
-            print("[NOD] Cannot update bindings while in combat")
-        end
-        return
-    end
     local store = ensureBindingsStore()
     local canonical, mods, button = canonicalize(combo)
     if not canonical then
@@ -186,14 +178,6 @@ function Bindings:List()
 end
 
 function Bindings:Clear()
-    if InCombatLockdown and InCombatLockdown() then
-        if addon and addon.Log then
-            addon:Log("Cannot clear bindings while in combat", true)
-        else
-            print("[NOD] Cannot clear bindings while in combat")
-        end
-        return
-    end
     local store = ensureBindingsStore()
     wipe(store)
     return store

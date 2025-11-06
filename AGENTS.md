@@ -54,6 +54,7 @@ docs/legacy/    # Archivierte Analysen, QA-Reports & historisches Material
 3. **SavedVariables** laden/speichern stabil (Defaults, Migration, nil-Guards).
 4. **Hooks** nur auf existierende Funktionen / `HookScript`-Varianten.
 5. **Combat**-Sicherheit: keine verbotenen Änderungen im Lockdown.
+   - Grid/ClickCast nutzen die `CoreDispatcher.EnqueueAfterCombat`-Queue bzw. `UI.Grid`-Request-Rebuilds; neue Secure-Ops immer dort einreihen (kein Live-`SetAttribute`/`SetPoint`).
 6. **Logs**: Debug-Texte hinter Flag; keine `print`-Streufeuer.
 7. **README** angepasst, falls Verhalten/Kommandos geändert.
 8. **Packaging**: Release-ZIP enthält nur `NOD_Heal/**`, README, LICENSE.

@@ -1,11 +1,14 @@
 local CreateFrame = CreateFrame
 local GetTime = GetTime
 local C_Timer = C_Timer
+local InCombatLockdown = InCombatLockdown
 local type = type
 local pairs = pairs
 local format = string.format
 local tinsert = table.insert
 local tostring = tostring
+local select = select
+local unpack = unpack or table.unpack
 local date = date
 local xpcall = xpcall
 local UnitExists = UnitExists
@@ -61,6 +64,9 @@ local dispatcherFrame
 local eventHandlers = {}
 local registeredEvents = {}
 local tickHandlers = {}
+local secureQueue = {}
+local secureQueueMap = {}
+local flushingSecureQueue = false
 
 local M = {}
 
@@ -124,6 +130,78 @@ local function addTickHandler(func)
   local slot = { callback = func }
   tickHandlers[#tickHandlers + 1] = slot
   return slot
+end
+
+local function flushSecureQueue()
+  if flushingSecureQueue then
+    return
+  end
+
+  if #secureQueue == 0 then
+    return
+  end
+
+  flushingSecureQueue = true
+
+  local queue = secureQueue
+  secureQueue = {}
+  secureQueueMap = {}
+
+  for index = 1, #queue do
+    local entry = queue[index]
+    if entry and entry.callback then
+      safeCall(entry.callback, unpack(entry.args or {}))
+    end
+  end
+
+  flushingSecureQueue = false
+end
+
+local function isInCombat()
+  if not InCombatLockdown then
+    return false
+  end
+
+  local ok, result = pcall(InCombatLockdown)
+  if not ok then
+    return false
+  end
+
+  return result and true or false
+end
+
+local function enqueueSecure(callback, ...)
+  if type(callback) ~= "function" then
+    return false
+  end
+
+  if not isInCombat() then
+    safeCall(callback, ...)
+    return true
+  end
+
+  local count = select("#", ...)
+  local args
+  if count > 0 then
+    args = { ... }
+  end
+
+  if secureQueueMap[callback] then
+    if args then
+      secureQueueMap[callback].args = args
+    end
+    return true
+  end
+
+  local payload = {
+    callback = callback,
+    args = args,
+  }
+
+  secureQueue[#secureQueue + 1] = payload
+  secureQueueMap[callback] = payload
+
+  return true
 end
 
 local function runTickHandlers()
@@ -224,6 +302,10 @@ local function bootstrapHandlers()
   M.RegisterHandler("PLAYER_LOGOUT", function()
     cancelTicker()
     log("Dispatcher: ticker cancelled (logout)")
+  end)
+
+  M.RegisterHandler("PLAYER_REGEN_ENABLED", function()
+    flushSecureQueue()
   end)
 end
 
@@ -332,6 +414,9 @@ function M.Reset()
   for index = #tickHandlers, 1, -1 do
     tickHandlers[index] = nil
   end
+
+  secureQueue = {}
+  secureQueueMap = {}
 end
 
 function M.FetchFallback(unit)
@@ -347,6 +432,18 @@ function M.CleanExpired()
   if aggregator and aggregator.CleanExpired then
     aggregator.CleanExpired()
   end
+end
+
+function M.EnqueueAfterCombat(callback, ...)
+  return enqueueSecure(callback, ...)
+end
+
+function M.FlushSecureQueue()
+  flushSecureQueue()
+end
+
+function M.IsInCombat()
+  return isInCombat()
 end
 
 local namespaceRef = namespace()
