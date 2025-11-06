@@ -68,6 +68,13 @@ local secureQueue = {}
 local secureQueueMap = {}
 local flushingSecureQueue = false
 
+local function updateQueueTelemetry()
+  local telemetry = NODHeal and NODHeal.Telemetry
+  if telemetry and telemetry.UpdateQueueSize then
+    telemetry:UpdateQueueSize(#secureQueue)
+  end
+end
+
 local M = {}
 
 local function log(message)
@@ -147,6 +154,8 @@ local function flushSecureQueue()
   secureQueue = {}
   secureQueueMap = {}
 
+  updateQueueTelemetry()
+
   for index = 1, #queue do
     local entry = queue[index]
     if entry and entry.callback then
@@ -177,6 +186,7 @@ local function enqueueSecure(callback, ...)
 
   if not isInCombat() then
     safeCall(callback, ...)
+    updateQueueTelemetry()
     return true
   end
 
@@ -190,6 +200,7 @@ local function enqueueSecure(callback, ...)
     if args then
       secureQueueMap[callback].args = args
     end
+    updateQueueTelemetry()
     return true
   end
 
@@ -200,6 +211,8 @@ local function enqueueSecure(callback, ...)
 
   secureQueue[#secureQueue + 1] = payload
   secureQueueMap[callback] = payload
+
+  updateQueueTelemetry()
 
   return true
 end
@@ -285,6 +298,10 @@ local function scheduleTicker()
       local solver = getModule("PredictiveSolver")
       if solver and solver.CalculateProjectedHealth and (not UnitExists or UnitExists("player")) then
         safeCall(solver.CalculateProjectedHealth, "player")
+        local telemetry = NODHeal and NODHeal.Telemetry
+        if telemetry and telemetry.Increment then
+          telemetry:Increment("solverCalls")
+        end
       end
 
       runTickHandlers()
@@ -417,6 +434,8 @@ function M.Reset()
 
   secureQueue = {}
   secureQueueMap = {}
+
+  updateQueueTelemetry()
 end
 
 function M.FetchFallback(unit)

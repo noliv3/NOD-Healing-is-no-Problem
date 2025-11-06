@@ -3,6 +3,8 @@ local tostring = tostring
 local type = type
 local format = string.format
 local min = math.min
+local ipairs = ipairs
+local concat = table.concat
 local UnitExists = UnitExists
 
 local NODHeal = _G.NODHeal or {}
@@ -11,7 +13,7 @@ _G.NODHeal = NODHeal
 local Qa = NODHeal.QA or {}
 NODHeal.QA = Qa
 
-local MAX_OUTPUT = 8
+local MAX_OUTPUT = 16
 
 local function push(results, status, label)
     results[#results + 1] = { status = status, label = label }
@@ -139,6 +141,110 @@ local function checkUiModules(results)
     end
 end
 
+local function fetchCooldownClassifier()
+    local classifier = (NODHeal.Core and NODHeal.Core.CooldownClassifier)
+    if not classifier and NODHeal.GetModule then
+        classifier = NODHeal:GetModule("CooldownClassifier")
+    end
+    return classifier
+end
+
+local function fetchGridModule()
+    return NODHeal.Grid or (NODHeal.UI and NODHeal.UI.Grid)
+end
+
+local function fetchHotDetector()
+    local detector = (NODHeal.Core and NODHeal.Core.HotDetector)
+    if not detector and NODHeal.GetModule then
+        detector = NODHeal:GetModule("HotDetector")
+    end
+    return detector
+end
+
+local function collectCdLane(results)
+    local classifier = fetchCooldownClassifier()
+    if not classifier or not classifier.DebugSnapshot then
+        return
+    end
+
+    local snapshot = classifier.DebugSnapshot and classifier.DebugSnapshot()
+    if type(snapshot) ~= "table" then
+        return
+    end
+
+    local seeds = snapshot.seeds or 0
+    local learned = snapshot.learned or 0
+    local blocked = snapshot.blocked or 0
+    local blockedSet = snapshot.blockedSet or {}
+
+    local visibleCount = 0
+    local blockMismatch = "ok"
+    local preview = {}
+
+    local grid = fetchGridModule()
+    if grid and grid.DebugSnapshot then
+        local gridSnapshot = grid.DebugSnapshot()
+        if type(gridSnapshot) == "table" then
+            local list = gridSnapshot.majorVisible or {}
+            visibleCount = gridSnapshot.visibleCount or (type(list) == "table" and #list or 0)
+            if type(list) == "table" then
+                for _, entry in ipairs(list) do
+                    local spellId = entry and entry.spellId
+                    if spellId and ((blockedSet and blockedSet[spellId]) or (classifier.IsBlocked and classifier.IsBlocked(spellId))) then
+                        blockMismatch = "mismatch"
+                        break
+                    end
+                end
+                local limit = math.min(#list, 3)
+                for index = 1, limit do
+                    local entry = list[index]
+                    if entry then
+                        local spellId = entry.spellId
+                        local blockedLabel = "no"
+                        if spellId and ((blockedSet and blockedSet[spellId]) or (classifier.IsBlocked and classifier.IsBlocked(spellId))) then
+                            blockedLabel = "yes"
+                        end
+                        preview[#preview + 1] = format(
+                            "%s:%s (%s, blocked? %s)",
+                            tostring(spellId or "?"),
+                            tostring(entry.name or "?"),
+                            tostring(entry.class or "?"),
+                            blockedLabel
+                        )
+                    end
+                end
+            end
+        end
+    end
+
+    push(results, "CD", format("Lane seeds=%d learned=%d blocked=%d visible=%d", seeds, learned, blocked, visibleCount))
+    push(results, "CD", format("block_match: %s", blockMismatch))
+    if #preview > 0 then
+        push(results, "CD", "visible[1..3]: " .. concat(preview, ", "))
+    end
+end
+
+local function collectHotStats(results)
+    local detector = fetchHotDetector()
+    if not detector or not detector.DebugSnapshot then
+        return
+    end
+
+    local snapshot = detector.DebugSnapshot and detector.DebugSnapshot()
+    if type(snapshot) ~= "table" then
+        return
+    end
+
+    local blocked = snapshot.blocked or 0
+    if blocked <= 0 then
+        return
+    end
+
+    local seeds = snapshot.seeds or 0
+    local learned = snapshot.learned or 0
+    push(results, "HoT", format("Learn/Block seeds=%d learned=%d blocked=%d", seeds, learned, blocked))
+end
+
 local function collectChecks()
     local results = {}
     checkSavedVariables(results)
@@ -153,6 +259,12 @@ local function collectChecks()
     end
     if #results < MAX_OUTPUT then
         checkUiModules(results)
+    end
+    if #results < MAX_OUTPUT then
+        collectCdLane(results)
+    end
+    if #results < MAX_OUTPUT then
+        collectHotStats(results)
     end
     return results
 end

@@ -54,6 +54,33 @@ local function ensureSV()
     return DB.learned.cds, DB.learned.block
 end
 
+local function normalizeId(spellId)
+    if type(spellId) == "number" then
+        if spellId > 0 then
+            return spellId
+        end
+        return nil
+    end
+    if type(spellId) == "string" then
+        local asNumber = tonumber(spellId)
+        if asNumber and asNumber > 0 then
+            return asNumber
+        end
+    end
+    return nil
+end
+
+local function hasStringMatch(block, spellId)
+    if not block or not spellId then
+        return false
+    end
+    local key = tostring(spellId)
+    if key and block[key] == true then
+        return true
+    end
+    return false
+end
+
 local function learnConfig()
     local cfg = NODHeal.Config and NODHeal.Config.learn
     return cfg or {}
@@ -124,8 +151,95 @@ local function queueLearn(spellId, cls)
 end
 
 local function isBlocked(spellId)
+    if not spellId then
+        return false
+    end
     local _, block = ensureSV()
-    return block[spellId] == true
+    if type(block) ~= "table" then
+        return false
+    end
+    local normalized = normalizeId(spellId)
+    if normalized and block[normalized] == true then
+        return true
+    end
+    if block[spellId] == true then
+        return true
+    end
+    if normalized and hasStringMatch(block, normalized) then
+        return true
+    end
+    if hasStringMatch(block, spellId) then
+        return true
+    end
+    return false
+end
+
+local function countSeeds()
+    local total = 0
+    for _, spells in pairs(SEED) do
+        for _ in pairs(spells) do
+            total = total + 1
+        end
+    end
+    return total
+end
+
+local function gatherBlocked()
+    local _, block = ensureSV()
+    local seen = {}
+    local unique = 0
+    if type(block) ~= "table" then
+        return unique, seen
+    end
+    for key, value in pairs(block) do
+        if value then
+            local normalized = normalizeId(key)
+            if normalized then
+                seen[normalized] = true
+            end
+            local asString = tostring(key)
+            if asString then
+                local numeric = tonumber(asString)
+                if numeric and numeric > 0 then
+                    seen[numeric] = true
+                end
+            end
+        end
+    end
+    for _ in pairs(seen) do
+        unique = unique + 1
+    end
+    return unique, seen
+end
+
+local function countLearned()
+    local cds = ensureSV()
+    local total = 0
+    if type(cds) ~= "table" then
+        return total
+    end
+    for _, entry in pairs(cds) do
+        if entry ~= nil then
+            total = total + 1
+        end
+    end
+    return total
+end
+
+function M.IsBlocked(spellId)
+    return isBlocked(spellId)
+end
+
+function M.DebugSnapshot()
+    local seeds = countSeeds()
+    local learned = countLearned()
+    local blocked, blockedSet = gatherBlocked()
+    return {
+        seeds = seeds,
+        learned = learned,
+        blocked = blocked,
+        blockedSet = blockedSet,
+    }
 end
 
 function M.Classify(spellId)

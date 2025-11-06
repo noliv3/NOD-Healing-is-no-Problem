@@ -57,6 +57,25 @@ local pendingContainerCreation
 local fallbackSecureFrame
 local fallbackQueue
 
+local function collectVisibleMajor()
+    local visible = {}
+    for _, frame in ipairs(trackedFrames) do
+        if frame and frame.majorSlots then
+            for index = 1, #frame.majorSlots do
+                local slot = frame.majorSlots[index]
+                if slot and slot:IsShown() and slot.data and slot.data.spellId then
+                    visible[#visible + 1] = {
+                        spellId = slot.data.spellId,
+                        name = slot.data.name,
+                        class = slot.data.class,
+                    }
+                end
+            end
+        end
+    end
+    return visible
+end
+
 local function getDispatcher()
     if dispatcherCache and dispatcherCache.EnqueueAfterCombat then
         return dispatcherCache
@@ -165,18 +184,53 @@ local function applyFrameVisibility(frame, shouldShow)
 
     frame._nodShouldShow = shouldShow and true or false
 
+    local function applyRealVisibility()
+        if not frame or not frame.SetAlpha then
+            return
+        end
+        if isInCombat() then
+            return
+        end
+        frame._nodVisibilityQueued = nil
+        frame:SetAlpha(1)
+        if frame._nodShouldShow then
+            if frame.EnableMouse then
+                frame:EnableMouse(true)
+            end
+            if frame.Show then
+                frame:Show()
+            end
+        else
+            if frame.EnableMouse then
+                frame:EnableMouse(false)
+            end
+            if frame.Hide then
+                frame:Hide()
+            end
+        end
+    end
+
     if isInCombat() then
-        frame:SetAlpha(shouldShow and 1 or 0)
+        if frame._nodShouldShow then
+            frame:SetAlpha(1)
+            if frame.EnableMouse then
+                frame:EnableMouse(true)
+            end
+        else
+            frame:SetAlpha(0)
+            if frame.EnableMouse then
+                frame:EnableMouse(false)
+            end
+        end
+        if not frame._nodVisibilityQueued then
+            if queueAfterCombat(applyRealVisibility) then
+                frame._nodVisibilityQueued = true
+            end
+        end
         return
     end
 
-    if shouldShow then
-        frame:SetAlpha(1)
-        frame:Show()
-    else
-        frame:SetAlpha(1)
-        frame:Hide()
-    end
+    applyRealVisibility()
 end
 
 local function getSolverModule()
@@ -846,6 +900,11 @@ local function updateAuraIcons(frame)
         return
     end
 
+    local telemetry = NODHeal and NODHeal.Telemetry
+    if telemetry and telemetry.Increment then
+        telemetry:Increment("auraRefresh")
+    end
+
     cfg = getConfig()
     frame._nod_refreshPending = nil
     frame._nod_lastRefresh = GetTime()
@@ -1430,6 +1489,10 @@ local function updateUnitFrame(frame, elapsed)
                 end
             end
 
+            local telemetry = NODHeal and NODHeal.Telemetry
+            if telemetry and telemetry.Increment then
+                telemetry:Increment("solverCalls")
+            end
             local ok, result
             if opts then
                 ok, result = pcall(solver.CalculateProjectedHealth, frame.unit, opts)
@@ -1931,3 +1994,11 @@ end
 
 M.Initialize = initialize
 M.unitFrames = unitFrames
+
+function M.DebugSnapshot()
+    local visible = collectVisibleMajor()
+    return {
+        majorVisible = visible,
+        visibleCount = #visible,
+    }
+end

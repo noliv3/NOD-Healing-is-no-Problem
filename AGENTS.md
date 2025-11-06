@@ -142,3 +142,9 @@ Aktiv & produktiv: HealthSnapshot, CastLandingTime, IncomingHeals (+Aggregator),
 - `PredictiveSolver.CalculateProjectedHealth(unit[, opts])` immer mit gültigem Unit-String aufrufen; `opts.tLand` kann über `CastLandingTime.ComputeLandingTime` (UnitCasting/ChannelInfo) vorbelegt werden.
 - UI & Overlay respektieren `DesyncGuard.IsFrozen(unit)` (Freeze ≈ 150 ms nach Cast-Start) und lassen währenddessen bestehende Projektionen unangetastet.
 - Ergebnisfelder (`projectedHealth`, `overheal`, `hp_now`, `hp_max`) direkt nutzen; keine doppelte Addition von API-Incoming. Fallback auf Live-HP nur bei `nil`- oder Fehl-Resultaten.
+
+## 15) QA & Debug Notes
+- Major-CD-Blocklist akzeptiert Zahlen- oder String-IDs; Vergleiche normalisieren auf numerische IDs mit String-Fallback (siehe `Core/CooldownClassifier`).
+- `/nod qa` ergänzt den Abschnitt "CD Lane" (seeds/learned/blocked/visible, block_match, erste 3 sichtbare CDs) sowie – falls vorhanden – "HoT Learn/Block".
+- Debug-Telemetrie (`NODHeal.Telemetry`) bündelt solver_calls/s, aura_refresh/s und queue_after_combat-Größe im 5s-Intervall, ringgepuffert (100 Zeilen) und nur aktiv bei `Config.debug = true`.
+- Grid-Frames nutzen `_nodShouldShow`/`_nodVisibilityQueued`: Im Kampf nur Alpha+Mouse toggeln, echtes Hide/Show wird nach Combat via Queue nachgezogen (keine unsichtbaren klickfangenden Buttons).

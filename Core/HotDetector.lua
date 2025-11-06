@@ -27,6 +27,22 @@ local runtimeBlock
 local pending = {}
 local lastMinute, learnedCount = 0, 0
 
+local function normalizeId(spellId)
+    if type(spellId) == "number" then
+        if spellId > 0 then
+            return spellId
+        end
+        return nil
+    end
+    if type(spellId) == "string" then
+        local asNumber = tonumber(spellId)
+        if asNumber and asNumber > 0 then
+            return asNumber
+        end
+    end
+    return nil
+end
+
 local function ensureSV()
     _G.NODHealDB = _G.NODHealDB or {}
     local DB = _G.NODHealDB
@@ -76,8 +92,18 @@ local function isBlocked(spellId)
     if type(block) ~= "table" then
         return false
     end
+    local normalized = normalizeId(spellId)
+    if normalized and block[normalized] then
+        return true
+    end
     if block[spellId] then
         return true
+    end
+    if normalized then
+        local numericAsString = tostring(normalized)
+        if numericAsString and block[numericAsString] then
+            return true
+        end
     end
     local asString = tostring(spellId)
     if asString and block[asString] then
@@ -174,6 +200,60 @@ local function confidenceFor(spellId, source)
     return base
 end
 
+local function countSeedSpells()
+    local total = 0
+    for _, spells in pairs(CLASS_SEED) do
+        for _ in pairs(spells) do
+            total = total + 1
+        end
+    end
+    return total
+end
+
+local function gatherBlocked()
+    ensureSV()
+    local block = runtimeBlock
+    local seen = {}
+    local unique = 0
+    if type(block) ~= "table" then
+        return unique, seen
+    end
+    for key, value in pairs(block) do
+        if value then
+            local normalized = normalizeId(key)
+            if normalized then
+                seen[normalized] = true
+            end
+            local asString = tostring(key)
+            if asString then
+                local numeric = tonumber(asString)
+                if numeric and numeric > 0 then
+                    seen[numeric] = true
+                end
+            end
+        end
+    end
+    for _ in pairs(seen) do
+        unique = unique + 1
+    end
+    return unique, seen
+end
+
+local function countLearned()
+    ensureSV()
+    local hots = runtimeHots
+    local total = 0
+    if type(hots) ~= "table" then
+        return total
+    end
+    for _, entry in pairs(hots) do
+        if entry ~= nil then
+            total = total + 1
+        end
+    end
+    return total
+end
+
 function M.IsHot(spellId)
     if not spellId then
         return false
@@ -213,6 +293,18 @@ function M.GetConfidence(spellId)
         end
     end
     return 0.3
+end
+
+function M.DebugSnapshot()
+    local seeds = countSeedSpells()
+    local learned = countLearned()
+    local blocked, blockedSet = gatherBlocked()
+    return {
+        seeds = seeds,
+        learned = learned,
+        blocked = blocked,
+        blockedSet = blockedSet,
+    }
 end
 
 function M.EstimateHotValue(spellId, remain, stacks)
