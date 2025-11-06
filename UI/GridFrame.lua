@@ -38,6 +38,16 @@ local tinsert = table.insert
 local unitFrames = {}
 local trackedFrames = {}
 
+-- Determine the anchor frame and offsets for the unit tooltip.
+local function getTooltipAnchor()
+    local ui = NODHeal and NODHeal.UI
+    local status = ui and ui.StatusFrame
+    if status and status:IsShown() then
+        return status, "TOPRIGHT", "TOPRIGHT", 0, 6
+    end
+    return UIParent, "BOTTOMRIGHT", "BOTTOMRIGHT", -12, 96
+end
+
 local CATEGORY_COLORS = {
     DEF = { 0.2, 0.6, 1.0 },
     EXTERNAL = { 1.0, 0.8, 0.2 },
@@ -784,13 +794,14 @@ local function createUnitFrame(parent, unit, index)
     frame:RegisterForClicks("AnyDown")
 
     frame:SetScript("OnEnter", function(self)
-        if not self.unit or not GameTooltip then
+        if not self.unit or not UnitExists(self.unit) or not GameTooltip then
             return
         end
-        GameTooltip:SetOwner(self, "ANCHOR_NONE")
+        local owner, point, relativePoint, offsetX, offsetY = getTooltipAnchor()
+        GameTooltip:SetOwner(owner, "ANCHOR_NONE")
         GameTooltip:ClearAllPoints()
-        GameTooltip:SetPoint("BOTTOMRIGHT", self, "BOTTOMRIGHT", -2, 6)
-        GameTooltip:SetUnit(self.unit)
+        GameTooltip:SetPoint(point, owner, relativePoint, offsetX, offsetY)
+        GameTooltip:SetUnit(self.unit, true)
         GameTooltip:Show()
     end)
 

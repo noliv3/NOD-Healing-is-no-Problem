@@ -1,4 +1,5 @@
-local NODHeal = _G.NODHeal
+local NODHeal = _G.NODHeal or {}
+_G.NODHeal = NODHeal
 
 local CreateFrame = CreateFrame
 local UIParent = UIParent
@@ -61,6 +62,9 @@ function UI:EnsureStatusFrame()
 
     frame.sourceText = sourceText
     frame.timeText = timeText
+
+    NODHeal.UI = NODHeal.UI or {}
+    NODHeal.UI.StatusFrame = frame
 
     self.statusFrame = frame
     return frame
