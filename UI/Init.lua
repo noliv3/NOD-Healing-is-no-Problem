@@ -193,7 +193,10 @@ end
 SLASH_NODSORT1 = "/nodsort"
 SlashCmdList["NODSORT"] = function(msg)
     local mode = (msg or ""):lower()
-    if mode == "class" or mode == "alpha" or mode == "group" then
+    if mode == "class" then
+        mode = "role"
+    end
+    if mode == "alpha" or mode == "group" or mode == "role" then
         if InCombatLockdown and InCombatLockdown() then
             log("Cannot change sort mode while in combat", true)
             return
@@ -212,7 +215,7 @@ SlashCmdList["NODSORT"] = function(msg)
             NODHeal.Grid.Initialize()
         end
     else
-        log("Usage: /nodsort class | alpha | group", true)
+        log("Usage: /nodsort group | alpha | role", true)
     end
 end
 

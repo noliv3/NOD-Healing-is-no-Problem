@@ -64,6 +64,7 @@ docs/legacy/    # Archivierte Analysen, QA-Reports & historisches Material
 - **Laden ohne Fehler**: frischer Clientstart, Addon aktiv.
 - **Slash-Checks**:
   `/nod debug on|off|status`, `/nod errors`, `/nodoptions`, `/nodbind`, `/nodsort group|role|alpha`
+  - Legacy `/nodsort class` wird automatisch als `role` interpretiert.
 - **Self-Test**: `/nod qa` prüft SavedVars, Hooks & Module.
 - QA erwartet aktiven Dispatcher-Ticker + Overlay-Kontrollen.
 - **Overlay** sichtbar an CompactUnitFrames/Grid (Party/Raid).
@@ -71,6 +72,7 @@ docs/legacy/    # Archivierte Analysen, QA-Reports & historisches Material
 - Out-of-Range-Click-Casts beenden den Cursor sofort (Macro mit `/stopspelltargeting`).
 - Tooltip sitzt unten rechts über dem Grid-Frame.
 - `/nodsort group|role|alpha` prüft Sortierung (Layout horizontal belassen).
+  - Historische SavedVariables mit `class` werden auf `role` gemappt.
 - **SavedVariables**: Einstellungen/Bindings persistieren über `/reload`.
 
 ---

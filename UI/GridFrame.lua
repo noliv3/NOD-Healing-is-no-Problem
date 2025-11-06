@@ -16,6 +16,9 @@ local UnitHealth = UnitHealth
 local UnitHealthMax = UnitHealthMax
 local UnitName = UnitName
 local UnitGroupRolesAssigned = UnitGroupRolesAssigned
+local UnitInRaid = UnitInRaid
+local UnitInParty = UnitInParty
+local GetRaidRosterInfo = GetRaidRosterInfo
 local UnitGetIncomingHeals = UnitGetIncomingHeals
 local GetNumGroupMembers = GetNumGroupMembers
 local IsInGroup = IsInGroup
@@ -661,6 +664,40 @@ local function getRoleWeight(unit)
     return ROLE_ORDER[role or "NONE"] or ROLE_ORDER.NONE
 end
 
+local function getGroupWeight(unit)
+    if not unit then
+        return 9000
+    end
+
+    if UnitInRaid then
+        local raidIndex = UnitInRaid(unit)
+        if raidIndex then
+            local subgroup = 0
+            if GetRaidRosterInfo then
+                local _, _, groupId = GetRaidRosterInfo(raidIndex)
+                subgroup = groupId or subgroup
+            end
+            if subgroup and subgroup > 0 then
+                return subgroup * 100 + raidIndex
+            end
+            return 500 + raidIndex
+        end
+    end
+
+    if UnitInParty then
+        local partyIndex = UnitInParty(unit)
+        if partyIndex then
+            return 1000 + partyIndex
+        end
+    end
+
+    if unit == "player" then
+        return 1010
+    end
+
+    return 9000
+end
+
 local function sortUnits(roster)
     local list = {}
     if type(roster) == "table" then
@@ -671,13 +708,14 @@ local function sortUnits(roster)
 
     local config = cfg or getConfig()
     local mode = (config and config.sortMode) or "group"
+    if mode == "class" then
+        mode = "role"
+    end
+
     if mode == "alpha" then
         table.sort(list, function(a, b)
             local nameA = UnitName(a) or ""
             local nameB = UnitName(b) or ""
-            if nameA == nameB then
-                return (a or "") < (b or "")
-            end
             return nameA < nameB
         end)
     elseif mode == "role" then
@@ -687,12 +725,20 @@ local function sortUnits(roster)
             if weightA == weightB then
                 local nameA = UnitName(a) or ""
                 local nameB = UnitName(b) or ""
-                if nameA == nameB then
-                    return (a or "") < (b or "")
-                end
                 return nameA < nameB
             end
             return weightA < weightB
+        end)
+    else
+        table.sort(list, function(a, b)
+            local groupA = getGroupWeight(a)
+            local groupB = getGroupWeight(b)
+            if groupA == groupB then
+                local nameA = UnitName(a) or ""
+                local nameB = UnitName(b) or ""
+                return nameA < nameB
+            end
+            return groupA < groupB
         end)
     end
 
