@@ -37,10 +37,141 @@ local pairs = pairs
 local type = type
 local UnitAura = UnitAura
 local UnitDebuff = UnitDebuff
+local UnitCastingInfo = UnitCastingInfo
+local UnitChannelInfo = UnitChannelInfo
 local tinsert = table.insert
 
 local unitFrames = {}
 local trackedFrames = {}
+
+local solverModule
+local landingModule
+local desyncModule
+
+local function getSolverModule()
+    if solverModule and solverModule.CalculateProjectedHealth then
+        return solverModule
+    end
+
+    local core = NODHeal and NODHeal.Core
+    if core and core.PredictiveSolver and core.PredictiveSolver.CalculateProjectedHealth then
+        solverModule = core.PredictiveSolver
+        return solverModule
+    end
+
+    local ns = NODHeal
+    if ns and ns.GetModule then
+        local module = ns:GetModule("PredictiveSolver")
+        if module and module.CalculateProjectedHealth then
+            solverModule = module
+            if core then
+                core.PredictiveSolver = module
+            end
+            return solverModule
+        end
+    end
+
+    return nil
+end
+
+local function getLandingModule()
+    if landingModule and landingModule.ComputeLandingTime then
+        return landingModule
+    end
+
+    local core = NODHeal and NODHeal.Core
+    if core and core.CastLandingTime and core.CastLandingTime.ComputeLandingTime then
+        landingModule = core.CastLandingTime
+        return landingModule
+    end
+
+    local ns = NODHeal
+    if ns and ns.GetModule then
+        local module = ns:GetModule("CastLandingTime")
+        if module and module.ComputeLandingTime then
+            landingModule = module
+            if core then
+                core.CastLandingTime = module
+            end
+            return landingModule
+        end
+    end
+
+    return nil
+end
+
+local function getDesyncModule()
+    if desyncModule and desyncModule.IsFrozen then
+        return desyncModule
+    end
+
+    local core = NODHeal and NODHeal.Core
+    if core and core.DesyncGuard and core.DesyncGuard.IsFrozen then
+        desyncModule = core.DesyncGuard
+        return desyncModule
+    end
+
+    local ns = NODHeal
+    if ns and ns.GetModule then
+        local module = ns:GetModule("DesyncGuard")
+        if module and module.IsFrozen then
+            desyncModule = module
+            if core then
+                core.DesyncGuard = module
+            end
+            return desyncModule
+        end
+    end
+
+    return nil
+end
+
+local function computeLandingForUnit(unit)
+    if not UnitExists or not unit or not UnitExists(unit) then
+        return nil, nil
+    end
+
+    local module = getLandingModule()
+    if not module or not module.ComputeLandingTime then
+        return nil, nil
+    end
+
+    local startMS, endMS, spellID
+
+    if UnitCastingInfo then
+        local name, _, _, castStart, castEnd, _, castID, _, castSpellID = UnitCastingInfo(unit)
+        if name and castStart and castEnd and castEnd > castStart then
+            startMS = castStart
+            endMS = castEnd
+            spellID = castSpellID or castID or spellID
+        end
+    end
+
+    if (not startMS or not endMS) and UnitChannelInfo then
+        local name, _, _, chanStart, chanEnd, _, _, channelSpellID = UnitChannelInfo(unit)
+        if name and chanStart and chanEnd and chanEnd > chanStart then
+            startMS = chanStart
+            endMS = chanEnd
+            spellID = channelSpellID or spellID
+        end
+    end
+
+    if not startMS or not endMS or endMS <= startMS then
+        return nil, nil
+    end
+
+    local castSeconds = (endMS - startMS) / 1000
+    if castSeconds < 0 then
+        return nil, nil
+    end
+
+    local landing = module.ComputeLandingTime(spellID, castSeconds, startMS)
+    if not landing then
+        return nil, nil
+    end
+
+    return landing, spellID
+end
 
 local function getDeathModule()
     if DeathAuthority and DeathAuthority.GetState then
@@ -1142,27 +1273,86 @@ local function updateUnitFrame(frame, elapsed)
         cur = 0
     end
 
-    local incoming = 0
-    if healable and UnitGetIncomingHeals then
-        incoming = UnitGetIncomingHeals(frame.unit) or 0
-        if incoming < 0 then
-            incoming = 0
-        end
-    end
-    local predicted = 0
-
-    if healable and NODHeal.Core and NODHeal.Core.PredictiveSolver and NODHeal.Core.PredictiveSolver.CalculateProjectedHealth then
-        local solver = NODHeal.Core.PredictiveSolver
-        local result = solver.CalculateProjectedHealth(solver, frame.unit)
-        if type(result) == "number" then
-            predicted = result - cur
-        elseif type(result) == "table" and result.hp_proj then
-            predicted = result.hp_proj - cur
-        end
+    local guard = getDesyncModule()
+    local isFrozen = false
+    if healable and guard and guard.IsFrozen then
+        isFrozen = guard:IsFrozen(frame.unit)
     end
 
-    local projectedTotal = cur + incoming + predicted
-    local targetHP = math.min(projectedTotal, max)
+    local projectedHP = cur
+    local incomingGain = 0
+    local overheal = 0
+
+    local solverResult
+    if healable and not isFrozen then
+        local solver = getSolverModule()
+        if solver and solver.CalculateProjectedHealth then
+            local opts
+            local tLand, spellID = computeLandingForUnit(frame.unit)
+            if tLand or spellID then
+                opts = {}
+                if tLand then
+                    opts.tLand = tLand
+                end
+                if spellID then
+                    opts.spellID = spellID
+                end
+            end
+
+            local ok, result
+            if opts then
+                ok, result = pcall(solver.CalculateProjectedHealth, frame.unit, opts)
+            else
+                ok, result = pcall(solver.CalculateProjectedHealth, frame.unit)
+            end
+
+            if ok and type(result) == "table" then
+                solverResult = result
+            end
+        end
+    end
+
+    if solverResult then
+        local resultMax = solverResult.hp_max
+        if type(resultMax) == "number" and resultMax > 0 then
+            max = resultMax
+        end
+
+        local resultNow = solverResult.hp_now
+        if type(resultNow) == "number" then
+            cur = resultNow
+            if cur < 0 then
+                cur = 0
+            elseif cur > max then
+                cur = max
+            end
+        end
+
+        projectedHP = solverResult.projectedHealth or solverResult.hp_proj or cur
+        if projectedHP < cur then
+            projectedHP = cur
+        elseif projectedHP > max then
+            projectedHP = max
+        end
+
+        overheal = math.max(solverResult.overheal or 0, 0)
+        incomingGain = math.max(projectedHP - cur, 0)
+    else
+        if healable and UnitGetIncomingHeals then
+            incomingGain = UnitGetIncomingHeals(frame.unit) or 0
+            if incomingGain < 0 then
+                incomingGain = 0
+            end
+        end
+
+        projectedHP = cur + incomingGain
+        if projectedHP > max then
+            overheal = projectedHP - max
+            projectedHP = max
+        end
+    end
+
+    local targetHP = projectedHP
     local pct = max > 0 and (cur / max) or 0
     local targetPct = max > 0 and (targetHP / max) or 0
 
@@ -1210,7 +1400,7 @@ local function updateUnitFrame(frame, elapsed)
     frame.health:SetHeight(FRAME_HEIGHT - 2)
 
     if healable and isConfigEnabled("showIncoming", true) then
-        local incPct = math.min((cur + incoming) / max, 1)
+        local incPct = math.min((cur + incomingGain) / max, 1)
         local incWidth = frameWidth * incPct
         local healthWidth = frame.health:GetWidth()
         local overlayWidth = incWidth - healthWidth
@@ -1228,8 +1418,8 @@ local function updateUnitFrame(frame, elapsed)
         frame.incoming:Hide()
     end
 
-    if healable and isConfigEnabled("showOverheal", true) and projectedTotal > max then
-        local overWidth = frameWidth * ((projectedTotal / max) - 1)
+    if healable and isConfigEnabled("showOverheal", true) and overheal > 0 then
+        local overWidth = frameWidth * (overheal / max)
         if overWidth < 0 then
             overWidth = 0
         end

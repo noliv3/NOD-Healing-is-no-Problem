@@ -136,3 +136,8 @@ Aktiv & produktiv: HealthSnapshot, CastLandingTime, IncomingHeals (+Aggregator),
 - `Core/DeathAuthority.lua` bündelt Todes-/Ghost-/Feign-/Offline-Status. Neue Quellen immer dort einspeisen (`FlagDying`, `RefreshUnit`, CLEU), nicht direkt im UI.
 - Solver & Incoming-Heals müssen `DeathAuthority.IsHealImmune` respektieren (Hard-0 für DEAD/GHOST/FEIGN), sonst laufen Overheal-Anzeigen weiter.
 - `UI/GridFrame.applyStateDecor` hält Icons/Texturen/Rez-Indicator synchron mit `STATE_LABELS`. Bei Erweiterungen Zustands-Icons + Farben konsistent pflegen, Heartbeat (0,7 s) nicht enger ziehen.
+
+## 14) Predictive Solver Calls
+- `PredictiveSolver.CalculateProjectedHealth(unit[, opts])` immer mit gültigem Unit-String aufrufen; `opts.tLand` kann über `CastLandingTime.ComputeLandingTime` (UnitCasting/ChannelInfo) vorbelegt werden.
+- UI & Overlay respektieren `DesyncGuard.IsFrozen(unit)` (Freeze ≈ 150 ms nach Cast-Start) und lassen währenddessen bestehende Projektionen unangetastet.
+- Ergebnisfelder (`projectedHealth`, `overheal`, `hp_now`, `hp_max`) direkt nutzen; keine doppelte Addition von API-Incoming. Fallback auf Live-HP nur bei `nil`- oder Fehl-Resultaten.

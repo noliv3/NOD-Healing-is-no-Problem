@@ -8,6 +8,7 @@ local tinsert = table.insert
 local tostring = tostring
 local date = date
 local xpcall = xpcall
+local UnitExists = UnitExists
 
 local NODHeal = _G.NODHeal or {}
 _G.NODHeal = NODHeal
@@ -203,9 +204,9 @@ local function scheduleTicker()
         safeCall(aggregator.CleanExpired, nil)
       end
 
-    local solver = getModule("PredictiveSolver")
-      if solver and solver.CalculateProjectedHealth then
-        safeCall(solver.CalculateProjectedHealth, solver, "player")
+      local solver = getModule("PredictiveSolver")
+      if solver and solver.CalculateProjectedHealth and (not UnitExists or UnitExists("player")) then
+        safeCall(solver.CalculateProjectedHealth, "player")
       end
 
       runTickHandlers()

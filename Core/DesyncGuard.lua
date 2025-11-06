@@ -116,4 +116,10 @@ function M.IsFrozen(unit)
   return state.active == true
 end
 
-return _G.NODHeal:RegisterModule("DesyncGuard", M)
+local module = _G.NODHeal:RegisterModule("DesyncGuard", M)
+
+if _G.NODHeal and _G.NODHeal.Core then
+  _G.NODHeal.Core.DesyncGuard = M
+end
+
+return module

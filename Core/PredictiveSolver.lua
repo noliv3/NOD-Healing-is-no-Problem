@@ -206,7 +206,21 @@ local function fetchLatencyMeta()
   return { latency = latency, queue = queue }
 end
 
-function M.CalculateProjectedHealth(unit, spellID, tLand)
+local function normalizeArgs(unit, arg2, arg3)
+  if type(arg2) == "table" then
+    local opts = arg2
+    local spell = opts.spellID or opts.spellId or opts.spell
+    local landing = opts.tLand or opts.horizon
+    return unit, spell, landing
+  end
+
+  return unit, arg2, arg3
+end
+
+function M.CalculateProjectedHealth(unit, arg2, arg3)
+  local spellID, tLand
+  unit, spellID, tLand = normalizeArgs(unit, arg2, arg3)
+
   if not unit then
     return nil
   end
@@ -289,7 +303,11 @@ function M.CalculateProjectedHealth(unit, spellID, tLand)
     death.FlagDying(unit, duration, "solver")
   end
 
-  return M.ComposeResult(snapshot, projected, components, meta, combinedConfidence, overheal)
+  local result = M.ComposeResult(snapshot, projected, components, meta, combinedConfidence, overheal)
+  if result then
+    result.source = result.source or "Mixed"
+  end
+  return result
 end
 
 function M.ComposeResult(snapshot, projectedHP, components, meta, confidence, overhealValue)
@@ -327,7 +345,14 @@ function M.ComposeResult(snapshot, projectedHP, components, meta, confidence, ov
       absorbs = absorbs,
     },
     meta = meta or {},
+    projectedHealth = projected,
   }
 end
 
-return _G.NODHeal:RegisterModule("PredictiveSolver", M)
+local module = _G.NODHeal:RegisterModule("PredictiveSolver", M)
+
+if _G.NODHeal and _G.NODHeal.Core then
+  _G.NODHeal.Core.PredictiveSolver = M
+end
+
+return module

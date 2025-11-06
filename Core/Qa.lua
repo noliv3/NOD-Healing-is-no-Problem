@@ -3,6 +3,7 @@ local tostring = tostring
 local type = type
 local format = string.format
 local min = math.min
+local UnitExists = UnitExists
 
 local NODHeal = _G.NODHeal or {}
 _G.NODHeal = NODHeal
@@ -64,6 +65,31 @@ local function checkDispatcher(results)
     end
 end
 
+local function checkSolver(results)
+    local solver
+    if NODHeal.GetModule then
+        solver = NODHeal:GetModule("PredictiveSolver")
+    end
+    solver = solver or (NODHeal.Core and NODHeal.Core.PredictiveSolver)
+
+    if solver and type(solver.CalculateProjectedHealth) == "function" then
+        local unit = "player"
+        if UnitExists and not UnitExists(unit) then
+            push(results, "Solver", "OK (unit-flow)")
+            return
+        end
+
+        local ok = pcall(solver.CalculateProjectedHealth, unit)
+        if ok then
+            push(results, "Solver", "OK (unit-flow)")
+        else
+            push(results, "Solver", "ERR (unit-flow)")
+        end
+    else
+        push(results, "Solver", "missing")
+    end
+end
+
 local function checkHooks(results)
     local targets = {
         "CompactUnitFrame_UpdateHealth",
@@ -118,6 +144,9 @@ local function collectChecks()
     checkSavedVariables(results)
     if #results < MAX_OUTPUT then
         checkDispatcher(results)
+    end
+    if #results < MAX_OUTPUT then
+        checkSolver(results)
     end
     if #results < MAX_OUTPUT then
         checkHooks(results)
