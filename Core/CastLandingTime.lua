@@ -227,4 +227,10 @@ function M.TrackUnitCast(unit, spellID, startMs, endMs)
   return record
 end
 
-return _G.NODHeal:RegisterModule("CastLandingTime", M)
+local module = _G.NODHeal:RegisterModule("CastLandingTime", M)
+
+if _G.NODHeal and _G.NODHeal.Core then
+  _G.NODHeal.Core.CastLandingTime = M
+end
+
+return module

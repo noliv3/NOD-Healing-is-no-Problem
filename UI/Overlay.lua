@@ -5,6 +5,8 @@ local UnitGUID = UnitGUID
 local UnitHealth = UnitHealth
 local UnitHealthMax = UnitHealthMax
 local UnitGetIncomingHeals = UnitGetIncomingHeals
+local UnitCastingInfo = UnitCastingInfo
+local UnitChannelInfo = UnitChannelInfo
 local GetTime = GetTime
 local hooksecurefunc = hooksecurefunc
 
@@ -24,6 +26,132 @@ local function getConfig()
 end
 
 UI.barByFrame = UI.barByFrame or {}
+
+local solverModule
+local landingModule
+local desyncModule
+
+local function getSolverModule()
+    if solverModule and solverModule.CalculateProjectedHealth then
+        return solverModule
+    end
+
+    local core = NODHeal and NODHeal.Core
+    if core and core.PredictiveSolver and core.PredictiveSolver.CalculateProjectedHealth then
+        solverModule = core.PredictiveSolver
+        return solverModule
+    end
+
+    if NODHeal and NODHeal.GetModule then
+        local module = NODHeal:GetModule("PredictiveSolver")
+        if module and module.CalculateProjectedHealth then
+            solverModule = module
+            if core then
+                core.PredictiveSolver = module
+            end
+            return solverModule
+        end
+    end
+
+    return nil
+end
+
+local function getLandingModule()
+    if landingModule and landingModule.ComputeLandingTime then
+        return landingModule
+    end
+
+    local core = NODHeal and NODHeal.Core
+    if core and core.CastLandingTime and core.CastLandingTime.ComputeLandingTime then
+        landingModule = core.CastLandingTime
+        return landingModule
+    end
+
+    if NODHeal and NODHeal.GetModule then
+        local module = NODHeal:GetModule("CastLandingTime")
+        if module and module.ComputeLandingTime then
+            landingModule = module
+            if core then
+                core.CastLandingTime = module
+            end
+            return landingModule
+        end
+    end
+
+    return nil
+end
+
+local function getDesyncModule()
+    if desyncModule and desyncModule.IsFrozen then
+        return desyncModule
+    end
+
+    local core = NODHeal and NODHeal.Core
+    if core and core.DesyncGuard and core.DesyncGuard.IsFrozen then
+        desyncModule = core.DesyncGuard
+        return desyncModule
+    end
+
+    if NODHeal and NODHeal.GetModule then
+        local module = NODHeal:GetModule("DesyncGuard")
+        if module and module.IsFrozen then
+            desyncModule = module
+            if core then
+                core.DesyncGuard = module
+            end
+            return desyncModule
+        end
+    end
+
+    return nil
+end
+
+local function computeLandingForUnit(unit)
+    if not UnitExists or not unit or not UnitExists(unit) then
+        return nil, nil
+    end
+
+    local module = getLandingModule()
+    if not module or not module.ComputeLandingTime then
+        return nil, nil
+    end
+
+    local startMS, endMS, spellID
+
+    if UnitCastingInfo then
+        local name, _, _, castStart, castEnd, _, castID, _, castSpellID = UnitCastingInfo(unit)
+        if name and castStart and castEnd and castEnd > castStart then
+            startMS = castStart
+            endMS = castEnd
+            spellID = castSpellID or castID or spellID
+        end
+    end
+
+    if (not startMS or not endMS) and UnitChannelInfo then
+        local name, _, _, chanStart, chanEnd, _, _, channelSpellID = UnitChannelInfo(unit)
+        if name and chanStart and chanEnd and chanEnd > chanStart then
+            startMS = chanStart
+            endMS = chanEnd
+            spellID = channelSpellID or spellID
+        end
+    end
+
+    if not startMS or not endMS or endMS <= startMS then
+        return nil, nil
+    end
+
+    local castSeconds = (endMS - startMS) / 1000
+    if castSeconds < 0 then
+        return nil, nil
+    end
+
+    local landing = module.ComputeLandingTime(spellID, castSeconds, startMS)
+    if not landing then
+        return nil, nil
+    end
+
+    return landing, spellID
+end
 
 local function ensureBar(frame)
     local existing = UI.barByFrame[frame]
@@ -79,6 +207,72 @@ local function fetchIncoming(unit, guid, horizon)
     end
 
     return incoming or 0
+end
+
+local function computeSolverProjection(unit)
+    local solver = getSolverModule()
+    if not solver or not solver.CalculateProjectedHealth then
+        return nil
+    end
+
+    local opts
+    local tLand, spellID = computeLandingForUnit(unit)
+    if tLand or spellID then
+        opts = {}
+        if tLand then
+            opts.tLand = tLand
+        end
+        if spellID then
+            opts.spellID = spellID
+        end
+    end
+
+    local ok, result
+    if opts then
+        ok, result = pcall(solver.CalculateProjectedHealth, unit, opts)
+    else
+        ok, result = pcall(solver.CalculateProjectedHealth, unit)
+    end
+
+    if not ok or type(result) ~= "table" then
+        return nil
+    end
+
+    local hpNow = result.hp_now
+    if type(hpNow) ~= "number" then
+        hpNow = UnitHealth and UnitHealth(unit) or 0
+    end
+
+    local hpMax = result.hp_max
+    if type(hpMax) ~= "number" or hpMax <= 0 then
+        hpMax = UnitHealthMax and UnitHealthMax(unit) or 1
+    end
+
+    if hpMax <= 0 then
+        hpMax = 1
+    end
+
+    if hpNow < 0 then
+        hpNow = 0
+    elseif hpNow > hpMax then
+        hpNow = hpMax
+    end
+
+    local projected = result.projectedHealth or result.hp_proj or hpNow
+    if projected < hpNow then
+        projected = hpNow
+    elseif projected > hpMax then
+        projected = hpMax
+    end
+
+    local gain = projected - hpNow
+    local overheal = math.max(result.overheal or 0, 0)
+
+    if gain <= 0 and overheal <= 0 then
+        return nil
+    end
+
+    return hpNow, gain, hpMax, overheal
 end
 
 local function showProjection(frame, hb, cur, incoming, max)
@@ -140,6 +334,11 @@ secureHook("CompactUnitFrame_UpdateHealth", function(frame)
         return
     end
 
+    local guard = getDesyncModule()
+    if guard and guard.IsFrozen and guard:IsFrozen(frame.unit) then
+        return
+    end
+
     local cur = UnitHealth and UnitHealth(frame.unit) or 0
     local max = UnitHealthMax and UnitHealthMax(frame.unit) or 1
     if not max or max <= 0 then
@@ -147,33 +346,46 @@ secureHook("CompactUnitFrame_UpdateHealth", function(frame)
         return
     end
 
-    local guid = UnitGUID and UnitGUID(frame.unit)
-    if not guid then
-        hideBar(frame)
-        return
-    end
+    local solverCur, solverGain, solverMax = computeSolverProjection(frame.unit)
+    local gain = 0
 
-    local horizon = (GetTime and GetTime() or 0) + 1.5
-    local incoming = fetchIncoming(frame.unit, guid, horizon)
-    if incoming <= 0 then
-        hideBar(frame)
-        return
-    end
+    if solverCur then
+        cur = solverCur
+        max = solverMax or max
+        if not max or max <= 0 then
+            hideBar(frame)
+            return
+        end
+        gain = solverGain or 0
+    else
+        local guid = UnitGUID and UnitGUID(frame.unit)
+        if not guid then
+            hideBar(frame)
+            return
+        end
 
-    local projected = cur + incoming
-    if projected <= cur then
-        hideBar(frame)
-        return
-    end
+        local horizon = (GetTime and GetTime() or 0) + 1.5
+        local incoming = fetchIncoming(frame.unit, guid, horizon)
+        if not incoming or incoming <= 0 then
+            hideBar(frame)
+            return
+        end
 
-    if projected > max then
-        projected = max
-    end
+        local projected = cur + incoming
+        if projected <= cur then
+            hideBar(frame)
+            return
+        end
 
-    local gain = projected - cur
-    if not gain or gain <= 0 then
-        hideBar(frame)
-        return
+        if projected > max then
+            projected = max
+        end
+
+        gain = projected - cur
+        if not gain or gain <= 0 then
+            hideBar(frame)
+            return
+        end
     end
 
     showProjection(frame, hb, cur, gain, max)
