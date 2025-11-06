@@ -121,6 +121,11 @@ local function ensureConfig()
         iconConfig[key] = stored
     end
 
+    if config.sortMode == "class" then
+        config.sortMode = "role"
+        saved.config.sortMode = "role"
+    end
+
     if type(savedIcons.hotWhitelist) ~= "table" then
         savedIcons.hotWhitelist = iconConfig.hotWhitelist or {}
     end
@@ -667,7 +672,7 @@ function Options:EnsureFrame()
     local iconSizeSlider = createIconSlider(frame, "HoT icon size", "size", 8, 20, 1, 0)
     iconSizeSlider:SetPoint("TOP", frame, "TOP", 0, y)
 
-    local sortDropdown = createDropdown(frame, "Sort Mode", "sortMode", { "group", "class", "alpha" })
+    local sortDropdown = createDropdown(frame, "Sort Mode", "sortMode", { "group", "alpha", "role" })
     sortDropdown:SetPoint("TOP", iconSizeSlider, "BOTTOM", 0, -40)
 
     local saveButton = CreateFrame("Button", nil, frame, "UIPanelButtonTemplate")

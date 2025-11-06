@@ -37,6 +37,7 @@ Fokus: eingehende Heilungen aggregieren, Landzeit/Zeitfenster bestimmen, kompakt
 - `/nodoptions` – Optionen (Grid-Layout, Overlay, Sortierung).
 - `/nodbind` – Click-Cast-Bindings verwalten.
 - `/nodsort group|role|alpha` – Grid sortieren.
+  - Hinweis: Legacy `/nodsort class` wird automatisch auf `role` umgestellt.
 
 ---
 

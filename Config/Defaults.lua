@@ -127,6 +127,11 @@ local function ensureConfig(store)
         config[key] = stored
     end
 
+    if config.sortMode == "class" then
+        config.sortMode = "role"
+        store.config.sortMode = "role"
+    end
+
     local function ensureSubtable(key, defaultsTable)
         config[key] = config[key] or {}
         store.config[key] = store.config[key] or {}
