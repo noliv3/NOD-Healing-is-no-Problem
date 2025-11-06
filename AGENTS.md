@@ -70,7 +70,7 @@ docs/legacy/    # Archivierte Analysen, QA-Reports & historisches Material
 - **Overlay** sichtbar an CompactUnitFrames/Grid (Party/Raid).
 - **Click-Cast** auf Grid-Frames (Maus + Mods) funktioniert im Kampf.
 - Out-of-Range-Click-Casts beenden den Cursor sofort (Macro mit `/stopspelltargeting`).
-- Tooltip sitzt unten rechts über dem Grid-Frame.
+- Tooltip dockt am Statusframe unten rechts an (Fallback UIParent).
 - `/nodsort group|role|alpha` prüft Sortierung (Layout horizontal belassen).
   - Historische SavedVariables mit `class` werden auf `role` gemappt.
 - **SavedVariables**: Einstellungen/Bindings persistieren über `/reload`.
