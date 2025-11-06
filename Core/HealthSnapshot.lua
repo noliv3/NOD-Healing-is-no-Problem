@@ -4,6 +4,7 @@
 
 local snapshotCache = {}
 local dispatcherRef
+local deathModule
 
 local UnitHealth = UnitHealth
 local UnitHealthMax = UnitHealthMax
@@ -13,6 +14,17 @@ local UnitGetTotalAbsorbs = UnitGetTotalAbsorbs
 local UnitExists = UnitExists
 
 local pairs = pairs
+
+local function ensureDeathModule()
+  if deathModule then
+    return deathModule
+  end
+  local namespace = _G.NODHeal
+  if namespace and namespace.GetModule then
+    deathModule = namespace:GetModule("DeathAuthority")
+  end
+  return deathModule
+end
 
 local function safeUnitHealth(u)
   if type(u) ~= "string" or (UnitExists and not UnitExists(u)) then
@@ -108,7 +120,41 @@ function M.Capture(unit)
     end
   end
 
-  local isDead = UnitIsDeadOrGhost and UnitIsDeadOrGhost(unit) or false
+  local death = ensureDeathModule()
+  local state
+  local isDead = false
+  local isGhost = false
+  local isFeign = false
+  if death and death.GetState then
+    state = death.GetState(unit)
+    if state == "DEAD" then
+      isDead = true
+    elseif state == "GHOST" then
+      isDead = true
+      isGhost = true
+    elseif state == "FEIGN" then
+      isDead = true
+      isFeign = true
+    elseif state == "DYING" then
+      state = "DYING"
+    end
+  end
+
+  if not state then
+    isDead = UnitIsDeadOrGhost and UnitIsDeadOrGhost(unit) or false
+    if isDead and UnitIsGhost then
+      isGhost = UnitIsGhost(unit) and true or false
+    end
+    if isDead then
+      state = isGhost and "GHOST" or "DEAD"
+    else
+      state = "ALIVE"
+    end
+  end
+
+  if isDead or isFeign then
+    hpNow = 0
+  end
   local isConnected = UnitIsConnected and UnitIsConnected(unit)
   local isOffline = isConnected == false
 
@@ -118,6 +164,9 @@ function M.Capture(unit)
     absorbs = absorbs,
     isDead = isDead,
     isOffline = isOffline,
+    state = state,
+    isGhost = isGhost,
+    isFeign = isFeign,
   }
 
   snapshotCache[unit] = snapshot
@@ -138,7 +187,17 @@ function M.FlagOfflineState(unit)
     return
   end
 
-  snapshot.isDead = UnitIsDeadOrGhost and UnitIsDeadOrGhost(unit) or false
+  local death = ensureDeathModule()
+  if death and death.GetState then
+    snapshot.state = death.GetState(unit)
+    snapshot.isDead = death.IsDead and death.IsDead(unit) or snapshot.isDead
+    snapshot.isGhost = snapshot.state == "GHOST"
+    snapshot.isFeign = snapshot.state == "FEIGN"
+  else
+    snapshot.isDead = UnitIsDeadOrGhost and UnitIsDeadOrGhost(unit) or false
+    snapshot.isGhost = UnitIsGhost and UnitIsGhost(unit) or false
+    snapshot.state = snapshot.isDead and (snapshot.isGhost and "GHOST" or "DEAD") or "ALIVE"
+  end
   local isConnected = UnitIsConnected and UnitIsConnected(unit)
   snapshot.isOffline = isConnected == false
 end

@@ -306,6 +306,11 @@ local function bootstrapDispatcher()
         dispatcher.Initialize()
     end
 
+    local death = fetchModule("DeathAuthority")
+    if death and death.Initialize then
+        death.Initialize(dispatcher)
+    end
+
     local aggregator = fetchModule("IncomingHealAggregator")
     if aggregator and aggregator.Initialize then
         aggregator.Initialize(dispatcher)

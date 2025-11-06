@@ -10,6 +10,7 @@ local UnitGetIncomingHeals = UnitGetIncomingHeals
 
 local aggregatorRef
 local dispatcherRef
+local deathModule
 
 local M = {}
 
@@ -43,6 +44,17 @@ local function ensureDispatcher()
   end
 
   return dispatcherRef
+end
+
+local function ensureDeathModule()
+  if deathModule then
+    return deathModule
+  end
+  local ns = namespace()
+  if ns and ns.GetModule then
+    deathModule = ns:GetModule("DeathAuthority")
+  end
+  return deathModule
 end
 
 local function normalizeLandingTime(value)
@@ -130,6 +142,15 @@ function M.Initialize(dispatcher)
 end
 
 function M.CollectUntil(unit, tLand)
+  local death = ensureDeathModule()
+  if death and death.IsHealImmune and death.IsHealImmune(unit) then
+    return {
+      amount = 0,
+      confidence = "low",
+      sources = {},
+    }
+  end
+
   local guid = resolveGuid(unit)
   if not guid then
     return {
@@ -168,6 +189,14 @@ function M.CollectUntil(unit, tLand)
 end
 
 function M.FetchFallback(unit)
+  local death = ensureDeathModule()
+  if death and death.IsHealImmune and death.IsHealImmune(unit) then
+    return {
+      amount = 0,
+      confidence = "low",
+      sources = {},
+    }
+  end
   return computeFallback(unit)
 end
 

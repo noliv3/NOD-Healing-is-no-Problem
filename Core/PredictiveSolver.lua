@@ -4,6 +4,7 @@
 
 local math_max = math.max
 local pairs = pairs
+local GetTime = GetTime
 
 local moduleRefs = {}
 local aliasMap = {
@@ -102,6 +103,14 @@ local function fetchSnapshot(unit)
   local module = resolveModule("HealthSnapshot")
   if module and module.Capture then
     return module.Capture(unit)
+  end
+  return nil
+end
+
+local function resolveDeathAuthority()
+  local module = resolveModule("DeathAuthority")
+  if module then
+    return module
   end
   return nil
 end
@@ -207,6 +216,20 @@ function M.CalculateProjectedHealth(unit, spellID, tLand)
     return nil
   end
 
+  local death = resolveDeathAuthority()
+  if death and death.IsHealImmune and death.IsHealImmune(unit) then
+    local meta = fetchLatencyMeta()
+    meta.tLand = tLand
+    local components = {
+      dmg = 0,
+      incHeals = 0,
+      hots = 0,
+      healValue = 0,
+      absorbs = snapshot.absorbs or 0,
+    }
+    return M.ComposeResult(snapshot, 0, components, meta, "low", 0)
+  end
+
   local hpNow = snapshot.hp_now or 0
   local hpMax = snapshot.hp_max or 1
   if hpMax <= 0 then
@@ -248,6 +271,23 @@ function M.CalculateProjectedHealth(unit, spellID, tLand)
 
   local meta = fetchLatencyMeta()
   meta.tLand = tLand
+
+  if death and death.FlagDying and rawProjected <= 0 and hpNow > 0 and damageAmount > 0 then
+    local now = GetTime() or 0
+    local duration
+    if type(tLand) == "number" then
+      duration = tLand - now
+    end
+    if not duration or duration < 0 then
+      duration = 0.8
+    end
+    if duration < 0.2 then
+      duration = 0.2
+    elseif duration > 1.0 then
+      duration = 1.0
+    end
+    death.FlagDying(unit, duration, "solver")
+  end
 
   return M.ComposeResult(snapshot, projected, components, meta, combinedConfidence, overheal)
 end

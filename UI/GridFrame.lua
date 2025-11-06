@@ -6,6 +6,7 @@ NODHeal.UI.Grid = M
 
 local HotDetector = NODHeal and NODHeal.Core and NODHeal.Core.HotDetector
 local CooldownClassifier = NODHeal and NODHeal.Core and NODHeal.Core.CooldownClassifier
+local DeathAuthority = NODHeal and NODHeal.Core and NODHeal.Core.DeathAuthority
 
 local CreateFrame = CreateFrame
 local UIParent = UIParent
@@ -20,6 +21,9 @@ local UnitInRaid = UnitInRaid
 local UnitInParty = UnitInParty
 local GetRaidRosterInfo = GetRaidRosterInfo
 local UnitGetIncomingHeals = UnitGetIncomingHeals
+local UnitHasIncomingResurrection = UnitHasIncomingResurrection
+local UnitIsDeadOrGhost = UnitIsDeadOrGhost
+local UnitIsGhost = UnitIsGhost
 local GetNumGroupMembers = GetNumGroupMembers
 local IsInGroup = IsInGroup
 local IsInRaid = IsInRaid
@@ -37,6 +41,125 @@ local tinsert = table.insert
 
 local unitFrames = {}
 local trackedFrames = {}
+
+local function getDeathModule()
+    if DeathAuthority and DeathAuthority.GetState then
+        return DeathAuthority
+    end
+    local ns = NODHeal
+    if ns and ns.GetModule then
+        DeathAuthority = ns:GetModule("DeathAuthority")
+        if DeathAuthority and DeathAuthority.GetState then
+            return DeathAuthority
+        end
+    end
+    if ns and ns.Core and ns.Core.DeathAuthority then
+        DeathAuthority = ns.Core.DeathAuthority
+    end
+    return DeathAuthority
+end
+
+local STATE_ICON_TEXTURES = {
+    DEAD = "Interface\\RaidFrame\\Raid-Icon-Skull",
+    GHOST = "Interface\\RaidFrame\\Raid-Icon-Skull",
+    FEIGN = "Interface\\Icons\\Ability_Rogue_FeignDeath",
+}
+
+local STATE_ICON_COLORS = {
+    DEAD = { 0.75, 0.75, 0.75 },
+    GHOST = { 0.6, 0.8, 1.0 },
+    FEIGN = { 1.0, 0.85, 0.5 },
+}
+
+local STATE_LABELS = {
+    DEAD = "DEAD",
+    GHOST = "GHOST",
+    FEIGN = "FEIGN",
+    DYING = "DYING",
+    UNKNOWN = "OFFLINE",
+}
+
+local function applyStateDecor(frame, state, healable)
+    if not frame then
+        return
+    end
+    frame._nod_state = state
+
+    if frame.stateIcon then
+        local texture = STATE_ICON_TEXTURES[state]
+        if texture then
+            frame.stateIcon:SetTexture(texture)
+            local tint = STATE_ICON_COLORS[state]
+            if tint then
+                frame.stateIcon:SetVertexColor(tint[1], tint[2], tint[3])
+            else
+                frame.stateIcon:SetVertexColor(1, 1, 1)
+            end
+            frame.stateIcon:Show()
+        else
+            frame.stateIcon:Hide()
+        end
+    end
+
+    if frame.stateText then
+        local label = STATE_LABELS[state]
+        if label then
+            frame.stateText:SetText(label)
+            if state == "DEAD" then
+                frame.stateText:SetTextColor(0.7, 0.7, 0.7)
+            elseif state == "GHOST" then
+                frame.stateText:SetTextColor(0.6, 0.8, 1.0)
+            elseif state == "FEIGN" then
+                frame.stateText:SetTextColor(1.0, 0.85, 0.5)
+            elseif state == "DYING" then
+                frame.stateText:SetTextColor(1.0, 0.45, 0.45)
+            elseif state == "UNKNOWN" then
+                frame.stateText:SetTextColor(0.7, 0.7, 0.7)
+            else
+                frame.stateText:SetTextColor(0.9, 0.9, 0.9)
+            end
+            frame.stateText:Show()
+        else
+            frame.stateText:SetText("")
+            frame.stateText:Hide()
+        end
+    end
+
+    if frame.hotCont then
+        frame.hotCont:SetAlpha(healable and 1 or 0.25)
+    end
+    if frame.debuffIcon then
+        frame.debuffIcon:SetAlpha(healable and 1 or 0.3)
+    end
+
+    if frame.name then
+        if state == "DEAD" then
+            frame.name:SetTextColor(0.7, 0.7, 0.7)
+        elseif state == "GHOST" then
+            frame.name:SetTextColor(0.6, 0.8, 1.0)
+        elseif state == "FEIGN" then
+            frame.name:SetTextColor(1.0, 0.85, 0.5)
+        elseif state == "DYING" then
+            frame.name:SetTextColor(1.0, 0.5, 0.5)
+        elseif state == "UNKNOWN" then
+            frame.name:SetTextColor(0.7, 0.7, 0.7)
+        else
+            frame.name:SetTextColor(1, 1, 1)
+        end
+    end
+
+    if frame.resIcon then
+        local showRes = false
+        if UnitHasIncomingResurrection and (state == "DEAD" or state == "GHOST") and frame.unit then
+            showRes = UnitHasIncomingResurrection(frame.unit) and true or false
+        end
+        if showRes then
+            frame.resIcon:Show()
+        else
+            frame.resIcon:Hide()
+        end
+    end
+end
 
 -- Determine the anchor frame and offsets for the unit tooltip.
 local function getTooltipAnchor()
@@ -829,9 +952,27 @@ local function createUnitFrame(parent, unit, index)
     name:SetPoint("CENTER")
     name:SetText(UnitName(unit) or "???")
 
+    local stateText = frame:CreateFontString(nil, "OVERLAY", "GameFontNormalSmall")
+    stateText:SetPoint("BOTTOM", frame, "BOTTOM", 0, 2)
+    stateText:SetText("")
+
+    local stateIcon = frame:CreateTexture(nil, "OVERLAY")
+    stateIcon:SetPoint("CENTER", frame, "CENTER", 0, 0)
+    stateIcon:SetSize(20, 20)
+    stateIcon:Hide()
+
+    local resIcon = frame:CreateTexture(nil, "OVERLAY")
+    resIcon:SetPoint("TOP", frame, "TOP", 0, -4)
+    resIcon:SetSize(16, 16)
+    resIcon:SetTexture("Interface\\RaidFrame\\Raid-Icon-Resurrection")
+    resIcon:Hide()
+
     frame.health = health
     frame.incoming = incoming
     frame.name = name
+    frame.stateText = stateText
+    frame.stateIcon = stateIcon
+    frame.resIcon = resIcon
     frame.unit = unit
 
     -- HoT-Container (oben rechts)
@@ -948,6 +1089,23 @@ local function updateUnitFrame(frame, elapsed)
                 frame.debuffIcon:SetTexture(nil)
                 frame.debuffIcon:Hide()
             end
+            if frame.stateIcon then
+                frame.stateIcon:Hide()
+            end
+            if frame.stateText then
+                frame.stateText:SetText("")
+                frame.stateText:Hide()
+            end
+            if frame.resIcon then
+                frame.resIcon:Hide()
+            end
+            if frame.incoming then
+                frame.incoming:SetWidth(0)
+                frame.incoming:Hide()
+            end
+            if frame.overheal then
+                frame.overheal:Hide()
+            end
             frame:Hide()
         end
         return
@@ -955,43 +1113,90 @@ local function updateUnitFrame(frame, elapsed)
 
     frame:Show()
 
-    local cur, max = UnitHealth(frame.unit), UnitHealthMax(frame.unit)
+    local death = getDeathModule()
+    local state = death and death.GetState and death.GetState(frame.unit) or nil
+    if not state or state == "" then
+        if UnitIsDeadOrGhost and UnitIsDeadOrGhost(frame.unit) then
+            if UnitIsGhost and UnitIsGhost(frame.unit) then
+                state = "GHOST"
+            else
+                state = "DEAD"
+            end
+        else
+            state = "ALIVE"
+        end
+    end
+
+    local healable = (state == "ALIVE" or state == "DYING")
+    local cur = UnitHealth(frame.unit) or 0
+    local max = UnitHealthMax(frame.unit) or 1
     if max <= 0 then
         max = 1
     end
+    if cur < 0 then
+        cur = 0
+    elseif cur > max then
+        cur = max
+    end
+    if not healable then
+        cur = 0
+    end
 
     local incoming = 0
-    if UnitGetIncomingHeals then
+    if healable and UnitGetIncomingHeals then
         incoming = UnitGetIncomingHeals(frame.unit) or 0
+        if incoming < 0 then
+            incoming = 0
+        end
     end
     local predicted = 0
 
-    if NODHeal.Core and NODHeal.Core.PredictiveSolver and NODHeal.Core.PredictiveSolver.CalculateProjectedHealth then
-        local result = NODHeal.Core.PredictiveSolver.CalculateProjectedHealth(NODHeal.Core.PredictiveSolver, frame.unit)
+    if healable and NODHeal.Core and NODHeal.Core.PredictiveSolver and NODHeal.Core.PredictiveSolver.CalculateProjectedHealth then
+        local solver = NODHeal.Core.PredictiveSolver
+        local result = solver.CalculateProjectedHealth(solver, frame.unit)
         if type(result) == "number" then
             predicted = result - cur
+        elseif type(result) == "table" and result.hp_proj then
+            predicted = result.hp_proj - cur
         end
     end
 
     local projectedTotal = cur + incoming + predicted
     local targetHP = math.min(projectedTotal, max)
-    local pct = cur / max
-    local targetPct = targetHP / max
+    local pct = max > 0 and (cur / max) or 0
+    local targetPct = max > 0 and (targetHP / max) or 0
 
-    frame._lastPct = frame._lastPct or pct
-    local diff = targetPct - frame._lastPct
-    frame._lastPct = frame._lastPct + diff * 0.25
-    if frame._lastPct < 0 then
+    if healable then
+        frame._lastPct = frame._lastPct or pct
+        local diff = targetPct - frame._lastPct
+        frame._lastPct = frame._lastPct + diff * 0.25
+        if frame._lastPct < 0 then
+            frame._lastPct = 0
+        elseif frame._lastPct > 1 then
+            frame._lastPct = 1
+        end
+    else
         frame._lastPct = 0
-    elseif frame._lastPct > 1 then
-        frame._lastPct = 1
     end
 
-    local r, g, b = getClassColor(frame.unit)
-    if pct < 0.35 then
-        r, g, b = 1, 0.2, 0.2
-    elseif pct < 0.7 then
-        r, g, b = 1, 0.8, 0.2
+    local r, g, b
+    if healable then
+        r, g, b = getClassColor(frame.unit)
+        if pct < 0.35 then
+            r, g, b = 1, 0.2, 0.2
+        elseif pct < 0.7 then
+            r, g, b = 1, 0.8, 0.2
+        end
+    else
+        if state == "GHOST" then
+            r, g, b = 0.4, 0.5, 0.8
+        elseif state == "FEIGN" then
+            r, g, b = 0.45, 0.35, 0.2
+        elseif state == "UNKNOWN" then
+            r, g, b = 0.3, 0.3, 0.45
+        else
+            r, g, b = 0.3, 0.3, 0.3
+        end
     end
 
     frame.health:SetColorTexture(r, g, b)
@@ -1001,10 +1206,10 @@ local function updateUnitFrame(frame, elapsed)
         frameWidth = 0
     end
 
-    frame.health:SetWidth(frameWidth * frame._lastPct)
+    frame.health:SetWidth(frameWidth * (frame._lastPct or 0))
     frame.health:SetHeight(FRAME_HEIGHT - 2)
 
-    if isConfigEnabled("showIncoming", true) then
+    if healable and isConfigEnabled("showIncoming", true) then
         local incPct = math.min((cur + incoming) / max, 1)
         local incWidth = frameWidth * incPct
         local healthWidth = frame.health:GetWidth()
@@ -1023,7 +1228,7 @@ local function updateUnitFrame(frame, elapsed)
         frame.incoming:Hide()
     end
 
-    if isConfigEnabled("showOverheal", true) and projectedTotal > max then
+    if healable and isConfigEnabled("showOverheal", true) and projectedTotal > max then
         local overWidth = frameWidth * ((projectedTotal / max) - 1)
         if overWidth < 0 then
             overWidth = 0
@@ -1045,12 +1250,16 @@ local function updateUnitFrame(frame, elapsed)
     frame.name:SetText(UnitName(frame.unit) or "???")
 
     if frame.border then
-        if UnitIsUnit(frame.unit, "player") then
+        if state == "DYING" then
+            frame.border:SetColorTexture(1, 0.3, 0.3, 0.8)
+        elseif UnitIsUnit(frame.unit, "player") then
             frame.border:SetColorTexture(1, 1, 1, 0.4)
         else
             frame.border:SetColorTexture(1, 1, 1, 0)
         end
     end
+
+    applyStateDecor(frame, state, healable)
 end
 
 local function ensureContainer()
@@ -1262,6 +1471,25 @@ local function initialize()
     rebuildGrid()
     M.UpdateAllIconLayout()
     M.RefreshAllAuraIcons(M.GetTrackedFrames())
+    if not M._deathListenerRegistered then
+        local mod = getDeathModule()
+        if mod and mod.RegisterListener then
+            mod.RegisterListener(function(unit)
+                if unit == nil then
+                    for _, frame in ipairs(unitFrames) do
+                        updateUnitFrame(frame)
+                    end
+                    return
+                end
+                for _, frame in ipairs(unitFrames) do
+                    if frame.unit == unit then
+                        updateUnitFrame(frame)
+                    end
+                end
+            end)
+            M._deathListenerRegistered = true
+        end
+    end
     if M._eventFrame then
         startTicker()
         return
