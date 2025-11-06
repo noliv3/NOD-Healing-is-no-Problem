@@ -10,6 +10,7 @@ local CombatLogGetCurrentEventInfo = CombatLogGetCurrentEventInfo
 local CreateFrame = CreateFrame
 local pairs = pairs
 local type = type
+local tostring = tostring
 local tremove = table.remove
 
 -- small class seeds
@@ -22,6 +23,7 @@ local CLASS_SEED = {
 }
 
 local runtimeHots
+local runtimeBlock
 local pending = {}
 local lastMinute, learnedCount = 0, 0
 
@@ -30,10 +32,13 @@ local function ensureSV()
     local DB = _G.NODHealDB
     DB.learned = DB.learned or {}
     DB.learned.hots = DB.learned.hots or {}
+    DB.learned.block = DB.learned.block or {}
 
     NODHeal.Learned = NODHeal.Learned or {}
     NODHeal.Learned.hots = DB.learned.hots
+    NODHeal.Learned.block = DB.learned.block
     runtimeHots = DB.learned.hots
+    runtimeBlock = DB.learned.block
 
     return runtimeHots
 end
@@ -60,6 +65,25 @@ local function learnCap()
         return 0
     end
     return cfg.maxPerMinute or 5
+end
+
+local function isBlocked(spellId)
+    if not spellId then
+        return false
+    end
+    ensureSV()
+    local block = runtimeBlock
+    if type(block) ~= "table" then
+        return false
+    end
+    if block[spellId] then
+        return true
+    end
+    local asString = tostring(spellId)
+    if asString and block[asString] then
+        return true
+    end
+    return false
 end
 
 local function resetWindow()
@@ -152,6 +176,9 @@ end
 
 function M.IsHot(spellId)
     if not spellId then
+        return false
+    end
+    if isBlocked(spellId) then
         return false
     end
     local hots = ensureSV()

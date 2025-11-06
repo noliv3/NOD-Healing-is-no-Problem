@@ -15,6 +15,7 @@ local UnitExists = UnitExists
 local UnitHealth = UnitHealth
 local UnitHealthMax = UnitHealthMax
 local UnitName = UnitName
+local UnitGroupRolesAssigned = UnitGroupRolesAssigned
 local UnitGetIncomingHeals = UnitGetIncomingHeals
 local GetNumGroupMembers = GetNumGroupMembers
 local IsInGroup = IsInGroup
@@ -645,21 +646,57 @@ local function getUnits()
     return list
 end
 
-local function sortUnits(mode)
-    local units = getUnits()
-    mode = mode or "group"
-    if mode == "class" then
-        table.sort(units, function(a, b)
-            local _, ca = UnitClass(a)
-            local _, cb = UnitClass(b)
-            return (ca or "") < (cb or "")
+local ROLE_ORDER = {
+    TANK = 1,
+    HEALER = 2,
+    DAMAGER = 3,
+    NONE = 4,
+}
+
+local function getRoleWeight(unit)
+    if not UnitGroupRolesAssigned then
+        return ROLE_ORDER.NONE
+    end
+    local role = UnitGroupRolesAssigned(unit)
+    return ROLE_ORDER[role or "NONE"] or ROLE_ORDER.NONE
+end
+
+local function sortUnits(roster)
+    local list = {}
+    if type(roster) == "table" then
+        for index = 1, #roster do
+            list[index] = roster[index]
+        end
+    end
+
+    local config = cfg or getConfig()
+    local mode = (config and config.sortMode) or "group"
+    if mode == "alpha" then
+        table.sort(list, function(a, b)
+            local nameA = UnitName(a) or ""
+            local nameB = UnitName(b) or ""
+            if nameA == nameB then
+                return (a or "") < (b or "")
+            end
+            return nameA < nameB
         end)
-    elseif mode == "alpha" then
-        table.sort(units, function(a, b)
-            return (UnitName(a) or "") < (UnitName(b) or "")
+    elseif mode == "role" then
+        table.sort(list, function(a, b)
+            local weightA = getRoleWeight(a)
+            local weightB = getRoleWeight(b)
+            if weightA == weightB then
+                local nameA = UnitName(a) or ""
+                local nameB = UnitName(b) or ""
+                if nameA == nameB then
+                    return (a or "") < (b or "")
+                end
+                return nameA < nameB
+            end
+            return weightA < weightB
         end)
     end
-    return units
+
+    return list
 end
 
 local function addFeedback(message)
@@ -704,7 +741,9 @@ local function createUnitFrame(parent, unit, index)
         if not self.unit or not GameTooltip then
             return
         end
-        GameTooltip:SetOwner(self, "ANCHOR_RIGHT")
+        GameTooltip:SetOwner(self, "ANCHOR_NONE")
+        GameTooltip:ClearAllPoints()
+        GameTooltip:SetPoint("BOTTOMRIGHT", self, "BOTTOMRIGHT", -2, 6)
         GameTooltip:SetUnit(self.unit)
         GameTooltip:Show()
     end)
@@ -985,7 +1024,8 @@ local function rebuildGrid()
     local host = ensureContainer()
 
     cfg = getConfig()
-    local sortedUnits = sortUnits(cfg.sortMode or "group")
+    local roster = getUnits()
+    local sortedUnits = sortUnits(roster)
     addFeedback("Rebuilding Grid Layout (Sorted)")
 
     local cols = cfg.columns

@@ -63,11 +63,14 @@ docs/legacy/    # Archivierte Analysen, QA-Reports & historisches Material
 ## 6) Manuelle QA (Kurz-Playbook)
 - **Laden ohne Fehler**: frischer Clientstart, Addon aktiv.
 - **Slash-Checks**:
-  `/nod debug on|off|status`, `/nod errors`, `/nodoptions`, `/nodbind`, `/nodsort group|class|alpha`
+  `/nod debug on|off|status`, `/nod errors`, `/nodoptions`, `/nodbind`, `/nodsort group|role|alpha`
 - **Self-Test**: `/nod qa` prüft SavedVars, Hooks & Module.
 - QA erwartet aktiven Dispatcher-Ticker + Overlay-Kontrollen.
 - **Overlay** sichtbar an CompactUnitFrames/Grid (Party/Raid).
 - **Click-Cast** auf Grid-Frames (Maus + Mods) funktioniert im Kampf.
+- Out-of-Range-Click-Casts beenden den Cursor sofort (Macro mit `/stopspelltargeting`).
+- Tooltip sitzt unten rechts über dem Grid-Frame.
+- `/nodsort group|role|alpha` prüft Sortierung (Layout horizontal belassen).
 - **SavedVariables**: Einstellungen/Bindings persistieren über `/reload`.
 
 ---

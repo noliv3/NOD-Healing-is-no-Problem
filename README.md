@@ -26,7 +26,7 @@ Fokus: eingehende Heilungen aggregieren, Landzeit/Zeitfenster bestimmen, kompakt
 
 ## Kurzanleitung
 - **Overlay**: Prognose-Balken an CompactUnitFrames/Grid.
-- **Click-Casting**: Maus + Alt/Ctrl/Shift auf die Grid-Frames.
+- **Click-Casting**: Maus + Alt/Ctrl/Shift auf die Grid-Frames; Out-of-Range-Clicks verlassen jetzt automatisch den Ziel-Cursor.
 - **Status-Frame**: kleines Feld unten rechts (laufende Quelle/Status).
 - **Eck-Icons**: Optionen → Corner Icons (Enable/HoT/Debuff/Size) aktualisieren Layout & Auren sofort; bis zu 12 HoTs in zwei Reihen (eigene zuerst) inkl. Richtung/Abständen konfigurierbar.
 
@@ -36,7 +36,7 @@ Fokus: eingehende Heilungen aggregieren, Landzeit/Zeitfenster bestimmen, kompakt
 - `/nod qa` – Selbsttest für SavedVars, Hooks & Module.
 - `/nodoptions` – Optionen (Grid-Layout, Overlay, Sortierung).
 - `/nodbind` – Click-Cast-Bindings verwalten.
-- `/nodsort group|class|alpha` – Grid sortieren.
+- `/nodsort group|role|alpha` – Grid sortieren.
 
 ---
 
@@ -44,10 +44,10 @@ Fokus: eingehende Heilungen aggregieren, Landzeit/Zeitfenster bestimmen, kompakt
 - **Incoming Heals**: Aggregator + Fallback, konsolidierte Summen & Confidence.
 - **Timing**: Latenz/Queue-Berücksichtigung, robuste Landzeit-Schätzung.
 - **Solver**: kombiniert Snapshot/Schaden/Heals → projizierter Health-Wert.
-- **UI**: Grid + Overlay, sanfte Updates, Overheal-Segment optional.
+- **UI**: Grid + Overlay, sanfte Updates, Overheal-Segment optional; Tooltip am unteren rechten Eck, Sortiermodus wählbar (group/role/alpha) bei unverändert horizontalem Layout.
 - **Corner Icons**: Einheitliche HoT-Erkennung über `Core/HotDetector` (Klassen-Seed sofort, Combat-Log lernt dauerhaft in `NODHealDB.learned.hots`, Config-Whitelist nur als Fallback) & Debuff-Priorisierung; HoT-Grid zeigt bis zu 12 Symbole in zwei Zeilen (max. 6 pro Reihe), priorisiert eigene HoTs und reagiert auch außerhalb des Kampfes ohne `/reload`.
 - **Major CD Lane**: Oben links eine separate Vierer-Lane für Tank-Defensives, externe Rettungen, Selbstheilungen & Absorbs inkl. Timer-Ring, Farbcode und Tooltip (Quelle, Restlaufzeit, Verhinderungsschätzung).
-- **Adaptive Learning**: HoTs und Major-CDs werden aus dem Combat-Log gelernt (Throttle 5/min, Aging 30/90 Tage, Blocklist), Confidence steuert Transparenz & Sortierung.
+- **Adaptive Learning**: HoTs und Major-CDs werden aus dem Combat-Log gelernt (Throttle 5/min, Aging 30/90 Tage, Blocklist inklusive Toys), Confidence steuert Transparenz & Sortierung.
 - **Härtung**: sichere Hooks, Combat-Lockdown-respektierend.
 - **Dispatcher**: gemeinsamer 0,2s-Ticker für Prognosen & Grid-Refresh.
 
