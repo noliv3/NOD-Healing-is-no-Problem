@@ -11,6 +11,7 @@ local DeathAuthority = NODHeal and NODHeal.Core and NODHeal.Core.DeathAuthority
 local CreateFrame = CreateFrame
 local UIParent = UIParent
 local GameTooltip = GameTooltip
+local InCombatLockdown = InCombatLockdown
 local UnitClass = UnitClass
 local UnitExists = UnitExists
 local UnitHealth = UnitHealth
@@ -40,6 +41,8 @@ local UnitDebuff = UnitDebuff
 local UnitCastingInfo = UnitCastingInfo
 local UnitChannelInfo = UnitChannelInfo
 local tinsert = table.insert
+local select = select
+local unpack = unpack or table.unpack
 
 local unitFrames = {}
 local trackedFrames = {}
@@ -47,6 +50,134 @@ local trackedFrames = {}
 local solverModule
 local landingModule
 local desyncModule
+
+local dispatcherCache
+local pendingRebuild
+local pendingContainerCreation
+local fallbackSecureFrame
+local fallbackQueue
+
+local function getDispatcher()
+    if dispatcherCache and dispatcherCache.EnqueueAfterCombat then
+        return dispatcherCache
+    end
+
+    local ns = NODHeal
+    if ns and ns.GetModule then
+        local module = ns:GetModule("CoreDispatcher")
+        if module and module.EnqueueAfterCombat then
+            dispatcherCache = module
+            return dispatcherCache
+        end
+    end
+
+    if ns and ns.CoreDispatcher and ns.CoreDispatcher.EnqueueAfterCombat then
+        dispatcherCache = ns.CoreDispatcher
+        return dispatcherCache
+    end
+
+    return nil
+end
+
+local function isInCombat()
+    if not InCombatLockdown then
+        return false
+    end
+
+    local ok, result = pcall(InCombatLockdown)
+    if not ok then
+        return false
+    end
+
+    return result and true or false
+end
+
+local function ensureFallbackFrame()
+    if fallbackSecureFrame then
+        return
+    end
+
+    fallbackSecureFrame = CreateFrame("Frame")
+    fallbackSecureFrame:RegisterEvent("PLAYER_REGEN_ENABLED")
+    fallbackSecureFrame:SetScript("OnEvent", function()
+        if not fallbackQueue then
+            return
+        end
+
+        local queue = fallbackQueue
+        fallbackQueue = {}
+
+        for index = 1, #queue do
+            local func = queue[index]
+            if type(func) == "function" then
+                func()
+            end
+        end
+    end)
+end
+
+local function queueAfterCombat(callback, ...)
+    if type(callback) ~= "function" then
+        return false
+    end
+
+    local dispatcher = getDispatcher()
+    if dispatcher and dispatcher.EnqueueAfterCombat then
+        local argsCount = select("#", ...)
+        local args
+        if argsCount > 0 then
+            args = { ... }
+        end
+
+        dispatcher.EnqueueAfterCombat(function()
+            if args then
+                callback(unpack(args))
+            else
+                callback()
+            end
+        end)
+        return true
+    end
+
+    ensureFallbackFrame()
+    fallbackQueue = fallbackQueue or {}
+    local argsCount = select("#", ...)
+    local args
+    if argsCount > 0 then
+        args = { ... }
+    end
+
+    fallbackQueue[#fallbackQueue + 1] = function()
+        if args then
+            callback(unpack(args))
+        else
+            callback()
+        end
+    end
+
+    return true
+end
+
+local function applyFrameVisibility(frame, shouldShow)
+    if not frame then
+        return
+    end
+
+    frame._nodShouldShow = shouldShow and true or false
+
+    if isInCombat() then
+        frame:SetAlpha(shouldShow and 1 or 0)
+        return
+    end
+
+    if shouldShow then
+        frame:SetAlpha(1)
+        frame:Show()
+    else
+        frame:SetAlpha(1)
+        frame:Hide()
+    end
+end
 
 local function getSolverModule()
     if solverModule and solverModule.CalculateProjectedHealth then
@@ -1237,12 +1368,12 @@ local function updateUnitFrame(frame, elapsed)
             if frame.overheal then
                 frame.overheal:Hide()
             end
-            frame:Hide()
+            applyFrameVisibility(frame, false)
         end
         return
     end
 
-    frame:Show()
+    applyFrameVisibility(frame, true)
 
     local death = getDeathModule()
     local state = death and death.GetState and death.GetState(frame.unit) or nil
@@ -1457,6 +1588,17 @@ local function ensureContainer()
         return container
     end
 
+    if isInCombat() then
+        if not pendingContainerCreation then
+            pendingContainerCreation = true
+            queueAfterCombat(function()
+                pendingContainerCreation = nil
+                ensureContainer()
+            end)
+        end
+        return container
+    end
+
     container = CreateFrame("Frame", "NODHeal_GridFrame", UIParent, "BackdropTemplate")
     container:SetPoint("CENTER", UIParent, "CENTER", 0, -150)
     container:SetMovable(true)
@@ -1476,8 +1618,10 @@ local function ensureContainer()
     return container
 end
 
-local function rebuildGrid()
-    local host = ensureContainer()
+local function performRebuild(host)
+    if not host then
+        return
+    end
 
     cfg = getConfig()
     local roster = getUnits()
@@ -1538,7 +1682,7 @@ local function rebuildGrid()
     if total == 0 then
         for _, frame in ipairs(unitFrames) do
             frame.unit = nil
-            frame:Hide()
+            applyFrameVisibility(frame, false)
         end
         host:SetSize(FRAME_WIDTH + (PADDING * 2), FRAME_HEIGHT + (PADDING * 2))
         return
@@ -1568,7 +1712,7 @@ local function rebuildGrid()
         frame:ClearAllPoints()
         frame:SetPoint("TOPLEFT", host, "TOPLEFT", x, y)
         updateUnitFrame(frame)
-        frame:Show()
+        applyFrameVisibility(frame, true)
         updateAuraIcons(frame)
 
         index = index + 1
@@ -1599,12 +1743,40 @@ local function rebuildGrid()
                 frame.debuffIcon:SetTexture(nil)
                 frame.debuffIcon:Hide()
             end
-            frame:Hide()
+            applyFrameVisibility(frame, false)
         end
     end
 
     M.UpdateAllIconLayout()
     M.RefreshAllAuraIcons(M.GetTrackedFrames())
+end
+
+local function rebuildGrid()
+    if isInCombat() then
+        if not pendingRebuild then
+            pendingRebuild = true
+            queueAfterCombat(function()
+                pendingRebuild = nil
+                rebuildGrid()
+            end)
+        end
+        return
+    end
+
+    local host = ensureContainer()
+    if not host then
+        if not pendingRebuild then
+            pendingRebuild = true
+            queueAfterCombat(function()
+                pendingRebuild = nil
+                rebuildGrid()
+            end)
+        end
+        return
+    end
+
+    pendingRebuild = nil
+    performRebuild(host)
 end
 
 local function updateAllFrames()
@@ -1632,7 +1804,7 @@ local function startTicker()
         return
     end
 
-    local dispatcher = (NODHeal.GetModule and NODHeal:GetModule("CoreDispatcher")) or NODHeal.CoreDispatcher
+    local dispatcher = getDispatcher()
     if dispatcher and dispatcher.RegisterTick then
         if dispatcher.RegisterTick(sharedTick) then
             M._tickerRegistered = true
@@ -1653,8 +1825,36 @@ function M.GetFeedbackEntries()
     return feedbackEntries
 end
 
-local function rebuildLater()
-    C_Timer.After(0.2, rebuildGrid)
+local REBUILD_DEBOUNCE = 0.2
+local rebuildTimerActive = false
+
+local function requestRebuild()
+    if rebuildTimerActive then
+        return
+    end
+
+    local function execute()
+        rebuildTimerActive = false
+        if isInCombat() then
+            if not pendingRebuild then
+                pendingRebuild = true
+                queueAfterCombat(function()
+                    pendingRebuild = nil
+                    rebuildGrid()
+                end)
+            end
+            return
+        end
+
+        rebuildGrid()
+    end
+
+    if C_Timer and C_Timer.After then
+        rebuildTimerActive = true
+        C_Timer.After(REBUILD_DEBOUNCE, execute)
+    else
+        execute()
+    end
 end
 
 local function initialize()
@@ -1718,11 +1918,11 @@ local function initialize()
             end
         elseif event == "PLAYER_ENTERING_WORLD" or event == "GROUP_ROSTER_UPDATE" then
             refreshAllIconState()
-            rebuildLater()
+            requestRebuild()
         elseif event == "PLAYER_TARGET_CHANGED" then
             refreshAllIconState()
         else
-            rebuildLater()
+            requestRebuild()
         end
     end)
     M._eventFrame = ev

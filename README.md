@@ -52,6 +52,7 @@ Fokus: eingehende Heilungen aggregieren, Landzeit/Zeitfenster bestimmen, kompakt
 - **Death Authority**: Ereignisgetriebener Zustandsautomat (CLEU `UNIT_DIED` → `UnitIsDeadOrGhost` → 0-HP-Heuristik) markiert Einheiten sofort als `DEAD/GHOST/FEIGN`, dimmt HoTs/Debuffs, blendet Incoming-Heals aus, zeigt Rez-Icons und hebt drohende Tode (`DYING`) per Rahmen-Glow hervor – ganz ohne wartende HP-Ticks.
 - **Adaptive Learning**: HoTs und Major-CDs werden aus dem Combat-Log gelernt (Throttle 5/min, Aging 30/90 Tage, Blocklist inklusive Toys), Confidence steuert Transparenz & Sortierung.
 - **Härtung**: sichere Hooks, Combat-Lockdown-respektierend.
+- **Combat Queueing**: Grid-Rebuilds & Click-Cast-Attribute landen nun in einer Combat-Queue und werden erst nach `PLAYER_REGEN_ENABLED` ausgeführt; Live-Refresh pflegt nur Texturen/Alpha.
 - **Dispatcher**: gemeinsamer 0,2s-Ticker für Prognosen & Grid-Refresh.
 
 ---
