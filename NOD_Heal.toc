@@ -12,6 +12,7 @@ Config/Defaults.lua
 Core/Init.lua
 Core/Qa.lua
 Core/CoreDispatcher.lua
+Core/DeathAuthority.lua
 Core/LatencyTools.lua
 Core/HealthSnapshot.lua
 Core/EffectiveHP.lua

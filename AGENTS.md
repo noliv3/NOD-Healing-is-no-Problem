@@ -131,3 +131,8 @@ Aktiv & produktiv: HealthSnapshot, CastLandingTime, IncomingHeals (+Aggregator),
 - Grid-Implementierung ruft `HotDetector.IsHot` direkt auf; Config-Whitelist dient nur noch als Fallback, sollte nicht mehr separat gepflegt werden.
 - `UI/GridFrame.lua`: `getConfig()` muss oberhalb der Layout-/Aura-Helfer stehen, damit die Corner-Icons direkt nach dem Laden wieder sichtbare Texturen erhalten.
 - Major-CD-Lane (`UI/GridFrame.lua`) nutzt `Core/CooldownClassifier` für DEF/EXTERNAL/SELF/ABSORB; Konfiguration via `Config.major` (Enable, Größe, Caps) und Options-Slider "Major icon size".
+
+## 13) Death Authority / Grid States
+- `Core/DeathAuthority.lua` bündelt Todes-/Ghost-/Feign-/Offline-Status. Neue Quellen immer dort einspeisen (`FlagDying`, `RefreshUnit`, CLEU), nicht direkt im UI.
+- Solver & Incoming-Heals müssen `DeathAuthority.IsHealImmune` respektieren (Hard-0 für DEAD/GHOST/FEIGN), sonst laufen Overheal-Anzeigen weiter.
+- `UI/GridFrame.applyStateDecor` hält Icons/Texturen/Rez-Indicator synchron mit `STATE_LABELS`. Bei Erweiterungen Zustands-Icons + Farben konsistent pflegen, Heartbeat (0,7 s) nicht enger ziehen.
