@@ -147,6 +147,7 @@ Aktiv & produktiv: HealthSnapshot, CastLandingTime, IncomingHeals (+Aggregator),
 - Major-CD-Blocklist akzeptiert Zahlen- oder String-IDs; Vergleiche normalisieren auf numerische IDs mit String-Fallback (siehe `Core/CooldownClassifier`).
 - `/nod qa` ergänzt den Abschnitt "CD Lane" (seeds/learned/blocked/visible, block_match, erste 3 sichtbare CDs) sowie – falls vorhanden – "HoT Learn/Block".
 - Debug-Telemetrie (`NODHeal.Telemetry`) bündelt solver_calls/s, aura_refresh/s und queue_after_combat-Größe im 5s-Intervall, ringgepuffert (100 Zeilen) und nur aktiv bei `Config.debug = true`.
+- `NODHeal.Log/Logf` schreiben Debug-Ausgaben in einen 100er-Ringpuffer (`LogFeed`) und bleiben bei `Config.debug = false` komplett stumm.
 - Grid-Frames nutzen `_nodShouldShow`/`_nodVisibilityQueued`: Im Kampf nur Alpha+Mouse toggeln, echtes Hide/Show wird nach Combat via Queue nachgezogen (keine unsichtbaren klickfangenden Buttons).
 
 ## 16) Kurzupdate (2025-05)

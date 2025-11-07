@@ -55,7 +55,7 @@ Fokus: eingehende Heilungen aggregieren, Landzeit/Zeitfenster bestimmen, kompakt
 - **Härtung**: sichere Hooks, Combat-Lockdown-respektierend.
 - **Combat Queueing**: Grid-Rebuilds & Click-Cast-Attribute landen nun in einer Combat-Queue und werden erst nach `PLAYER_REGEN_ENABLED` ausgeführt; Live-Refresh pflegt nur Texturen/Alpha.
 - **Dispatcher**: gemeinsamer 0,2s-Ticker für Prognosen & Grid-Refresh.
-- **Debug Telemetrie**: Mit aktiviertem Debug entstehen ringgepufferte Kurzlogs (solver_calls/s, aura_refresh/s, queue_after_combat).
+- **Debug Telemetrie**: Mit aktiviertem Debug entstehen alle 5 s aggregierte Kurzlogs (solver_calls/s, aura_refresh/s, queue_after_combat) in einem ringgepufferten Feed (100 Einträge).
 
 ---
 
