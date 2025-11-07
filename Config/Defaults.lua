@@ -65,6 +65,13 @@ local MAJOR_DEFAULTS = {
     anchor = "TOPLEFT",
     offsetX = 2,
     offsetY = -2,
+    window = 6,
+}
+
+local HEALS_DEFAULTS = {
+    futureWindow = true,
+    windowSec = 1.2,
+    useLHC = false,
 }
 
 local LEARNED_DEFAULTS = {
@@ -89,6 +96,7 @@ local CONFIG_DEFAULTS = {
     icons = ICON_DEFAULTS,
     learn = LEARN_CONFIG_DEFAULTS,
     major = MAJOR_DEFAULTS,
+    heals = HEALS_DEFAULTS,
 }
 
 local function mergeDefaults(target, defaults)
@@ -176,6 +184,9 @@ local function ensureConfig(store)
 
     local majorCfg = ensureSubtable("major", MAJOR_DEFAULTS)
     config.major = majorCfg
+
+    local healsCfg = ensureSubtable("heals", HEALS_DEFAULTS)
+    config.heals = healsCfg
 
     if type(config.logThrottle) == "number" and config.logThrottle < 0 then
         config.logThrottle = 0

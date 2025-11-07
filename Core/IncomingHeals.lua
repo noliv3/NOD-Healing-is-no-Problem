@@ -16,6 +16,26 @@ local M = {}
 
 local landingEpsilon = 0.05
 
+local function getConfig()
+  local ns = namespace()
+  if ns and ns.Config then
+    return ns.Config
+  end
+  return {}
+end
+
+local function getHealsConfig()
+  local cfg = getConfig()
+  if type(cfg) ~= "table" then
+    return {}
+  end
+  local heals = cfg.heals
+  if type(heals) ~= "table" then
+    return {}
+  end
+  return heals
+end
+
 local function namespace()
   return _G.NODHeal
 end
@@ -59,7 +79,7 @@ end
 
 local function normalizeLandingTime(value)
   if value == nil then
-    return GetTime()
+    return nil
   end
 
   if type(value) ~= "number" then
@@ -67,7 +87,7 @@ local function normalizeLandingTime(value)
   end
 
   if not value then
-    return GetTime()
+    return nil
   end
 
   if value > 1000000 then
@@ -130,6 +150,27 @@ local function collectFromAggregator(unit, horizon)
   return total, contributions
 end
 
+local function collectScheduled(unit, horizon)
+  local aggregator = ensureAggregator()
+  if not aggregator or not aggregator.IterateScheduled then
+    return 0, {}
+  end
+
+  local total = 0
+  local contributions = {}
+
+  aggregator.IterateScheduled(unit, horizon, function(entry)
+    local amount = entry.amount or 0
+    if amount > 0 then
+      total = total + amount
+      local key = entry.sourceGUID or entry.source or entry.castGUID or "scheduled"
+      contributions[key] = (contributions[key] or 0) + amount
+    end
+  end)
+
+  return total, contributions
+end
+
 function M.Initialize(dispatcher)
   dispatcherRef = dispatcher or ensureDispatcher()
   ensureAggregator()
@@ -160,6 +201,15 @@ function M.CollectUntil(unit, tLand)
     }
   end
 
+  local healsCfg = getHealsConfig()
+  local includeFuture = healsCfg.futureWindow ~= false
+  local futureWindow = healsCfg.windowSec
+  if type(futureWindow) ~= "number" then
+    futureWindow = nil
+  elseif futureWindow < 0 then
+    futureWindow = 0
+  end
+
   local landing = normalizeLandingTime(tLand)
   local now = GetTime()
   local horizon
@@ -168,14 +218,43 @@ function M.CollectUntil(unit, tLand)
     if horizon < 0 then
       horizon = 0
     end
+  elseif includeFuture and futureWindow and futureWindow > 0 then
+    horizon = futureWindow
   end
 
   local total, contributions = collectFromAggregator(guid, horizon)
 
-  if total > 0 then
+  local scheduledTotal = 0
+  local scheduledContrib = {}
+  if includeFuture then
+    local scheduleHorizon = horizon
+    if not scheduleHorizon and futureWindow and futureWindow > 0 then
+      scheduleHorizon = futureWindow
+    end
+    if scheduleHorizon then
+      scheduledTotal, scheduledContrib = collectScheduled(guid, scheduleHorizon)
+      for key, amount in pairs(scheduledContrib) do
+        if amount > 0 then
+          contributions[key] = (contributions[key] or 0) + amount
+        end
+      end
+    end
+  end
+
+  local combined = total + scheduledTotal
+
+  if combined > 0 then
+    local confidence
+    if total > 0 then
+      confidence = "high"
+    elseif scheduledTotal > 0 then
+      confidence = "medium"
+    else
+      confidence = "low"
+    end
     return {
-      amount = total,
-      confidence = "high",
+      amount = combined,
+      confidence = confidence,
       sources = contributions,
     }
   end

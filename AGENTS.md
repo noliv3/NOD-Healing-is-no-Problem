@@ -148,3 +148,7 @@ Aktiv & produktiv: HealthSnapshot, CastLandingTime, IncomingHeals (+Aggregator),
 - `/nod qa` ergänzt den Abschnitt "CD Lane" (seeds/learned/blocked/visible, block_match, erste 3 sichtbare CDs) sowie – falls vorhanden – "HoT Learn/Block".
 - Debug-Telemetrie (`NODHeal.Telemetry`) bündelt solver_calls/s, aura_refresh/s und queue_after_combat-Größe im 5s-Intervall, ringgepuffert (100 Zeilen) und nur aktiv bei `Config.debug = true`.
 - Grid-Frames nutzen `_nodShouldShow`/`_nodVisibilityQueued`: Im Kampf nur Alpha+Mouse toggeln, echtes Hide/Show wird nach Combat via Queue nachgezogen (keine unsichtbaren klickfangenden Buttons).
+
+## 16) Kurzupdate (2025-05)
+- Major-CD-Lane ermittelt jetzt eine „Prevented ≈N“-Schätzung aus Schadensprognose/Absorbs (Fenster `Config.major.window`, Standard 6 s).
+- Incoming-Heals berücksichtigen laufende Casts bis zur Landzeit (`Config.heals.futureWindow/windowSec`) und optional LibHealComm (`Config.heals.useLHC`).

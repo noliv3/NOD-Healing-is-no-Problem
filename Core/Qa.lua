@@ -15,6 +15,10 @@ NODHeal.QA = Qa
 
 local MAX_OUTPUT = 16
 
+local function getConfig()
+    return NODHeal.Config or {}
+end
+
 local function push(results, status, label)
     results[#results + 1] = { status = status, label = label }
 end
@@ -217,7 +221,14 @@ local function collectCdLane(results)
         end
     end
 
+    local cfg = getConfig()
+    local majorCfg = (cfg and cfg.major) or {}
+    local window = majorCfg.window or 6
+    if type(window) ~= "number" then
+        window = 6
+    end
     push(results, "CD", format("Lane seeds=%d learned=%d blocked=%d visible=%d", seeds, learned, blocked, visibleCount))
+    push(results, "CD", format("prevented=%s window=%.1fs", (classifier and classifier.EstimateMitigation) and "on" or "off", window))
     push(results, "CD", format("block_match: %s", blockMismatch))
     if #preview > 0 then
         push(results, "CD", "visible[1..3]: " .. concat(preview, ", "))
@@ -245,6 +256,21 @@ local function collectHotStats(results)
     push(results, "HoT", format("Learn/Block seeds=%d learned=%d blocked=%d", seeds, learned, blocked))
 end
 
+local function collectIncomingFlags(results)
+    local cfg = getConfig()
+    local healsCfg = (cfg and cfg.heals) or {}
+    local future = healsCfg.futureWindow == false and "off" or "on"
+    local lhc = healsCfg.useLHC and "on" or "off"
+    local window = healsCfg.windowSec or 0
+    if type(window) ~= "number" then
+        window = 0
+    end
+    if window < 0 then
+        window = 0
+    end
+    push(results, "Heals", format("futureWindow=%s lhc=%s window=%.1fs", future, lhc, window))
+end
+
 local function collectChecks()
     local results = {}
     checkSavedVariables(results)
@@ -262,6 +288,9 @@ local function collectChecks()
     end
     if #results < MAX_OUTPUT then
         collectCdLane(results)
+    end
+    if #results < MAX_OUTPUT then
+        collectIncomingFlags(results)
     end
     if #results < MAX_OUTPUT then
         collectHotStats(results)

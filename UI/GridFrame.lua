@@ -741,15 +741,35 @@ local function scoreMajor(entry)
     elseif entry.class == "ABSORB" then
         base = 0.6
     end
-    local mitigation = entry.estimated or 0
+    local mitigationValue = entry.estimated or 0
+    local bonus = 0
+    if mitigationValue > 0 then
+        local majorCfg = (cfg and cfg.major) or {}
+        local window = majorCfg.window or 6
+        if type(window) ~= "number" or window <= 0 then
+            window = 6
+        end
+        local scale = window * 8000
+        if scale <= 0 then
+            scale = 48000
+        end
+        local normalized = mitigationValue / scale
+        if normalized > 1 then
+            normalized = 1
+        elseif normalized < 0 then
+            normalized = 0
+        end
+        bonus = normalized * 0.2
+    end
     local extBonus = entry.class == "EXTERNAL" and 0.2 or 0
-    return (base + mitigation + extBonus) * (entry.confidence or 0.3)
+    return (base + bonus + extBonus) * (entry.confidence or 0.3)
 end
 
 local function collectMajorAuras(frame, unit)
     if not CooldownClassifier or not CooldownClassifier.Classify then
         return {}
     end
+    getConfig()
     local list = {}
     local now = GetTime()
     for i = 1, 40 do
@@ -761,7 +781,7 @@ local function collectMajorAuras(frame, unit)
         if class and confidence and confidence > 0 then
             local remain = (expirationTime or 0) - now
             if remain > 0 then
-                list[#list + 1] = {
+                local entry = {
                     name = name,
                     spellId = spellId,
                     icon = icon,
@@ -774,6 +794,13 @@ local function collectMajorAuras(frame, unit)
                     caster = caster,
                     estimated = 0,
                 }
+                if CooldownClassifier.EstimateMitigation then
+                    local estimate = CooldownClassifier.EstimateMitigation(unit, entry)
+                    if estimate and estimate > 0 then
+                        entry.estimated = estimate
+                    end
+                end
+                list[#list + 1] = entry
             end
         end
     end
@@ -1359,7 +1386,7 @@ local function createUnitFrame(parent, unit, index)
                     GameTooltip:AddLine(string.format("Source: %s", UnitName(self.data.caster) or "?"), 0.7, 0.9, 1.0)
                 end
                 if self.data.estimated and self.data.estimated > 0 then
-                    GameTooltip:AddLine(string.format("Prevented ~%d", self.data.estimated), 0.6, 1.0, 0.6)
+                    GameTooltip:AddLine(string.format("Prevented ≈%d", self.data.estimated), 0.6, 1.0, 0.6)
                 else
                     GameTooltip:AddLine("Prevented: n/a", 0.6, 0.6, 0.6)
                 end

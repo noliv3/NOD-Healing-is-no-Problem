@@ -6,10 +6,16 @@ NODHeal.Core.CooldownClassifier = M
 local CreateFrame = CreateFrame
 local CombatLogGetCurrentEventInfo = CombatLogGetCurrentEventInfo
 local GetTime = GetTime
+local UnitGetTotalAbsorbs = UnitGetTotalAbsorbs
+local UnitGUID = UnitGUID
 local math = math
 local pairs = pairs
 local type = type
 local tremove = table.remove
+local math_min = math and math.min
+local math_max = math and math.max
+local math_floor = math and math.floor
+local pcall = pcall
 
 local SEED = {
     DEF = {
@@ -40,6 +46,35 @@ local SEED = {
 local pending = {}
 local lastMinute, learnedCount = 0, 0
 
+local MITIGATION_PCT = {
+    DEF = 0.4,
+    EXTERNAL = 0.3,
+    SELF = 0.15,
+}
+
+local function clamp01(value)
+    if type(value) ~= "number" then
+        return 0
+    end
+    if value < 0 then
+        return 0
+    end
+    if value > 1 then
+        return 1
+    end
+    return value
+end
+
+local function safeMin(a, b)
+    if math_min then
+        return math_min(a, b)
+    end
+    if a <= b then
+        return a
+    end
+    return b
+end
+
 local function ensureSV()
     _G.NODHealDB = _G.NODHealDB or {}
     local DB = _G.NODHealDB
@@ -52,6 +87,156 @@ local function ensureSV()
     NODHeal.Learned.block = DB.learned.block
 
     return DB.learned.cds, DB.learned.block
+end
+
+local function getConfig()
+    return NODHeal.Config or {}
+end
+
+local function getMajorConfig()
+    local cfg = getConfig()
+    local major = cfg.major
+    if type(major) ~= "table" then
+        return {}
+    end
+    return major
+end
+
+local function getHealsConfig()
+    local cfg = getConfig()
+    local heals = cfg.heals
+    if type(heals) ~= "table" then
+        return {}
+    end
+    return heals
+end
+
+local damageModule
+local incomingAggregator
+
+local function ensureDamageModule()
+    if damageModule ~= nil then
+        return damageModule
+    end
+    if NODHeal.GetModule then
+        damageModule = NODHeal:GetModule("DamagePrediction")
+    end
+    if not damageModule and NODHeal.Core then
+        damageModule = NODHeal.Core.DamagePrediction
+    end
+    return damageModule
+end
+
+local function ensureIncomingAggregator()
+    if incomingAggregator ~= nil then
+        return incomingAggregator
+    end
+    if NODHeal.GetModule then
+        incomingAggregator = NODHeal:GetModule("IncomingHealAggregator")
+    end
+    if not incomingAggregator and NODHeal.Core then
+        incomingAggregator = NODHeal.Core.Incoming
+    end
+    return incomingAggregator
+end
+
+local function getMajorWindow()
+    local major = getMajorConfig()
+    local window = major.window or 6
+    if type(window) ~= "number" then
+        window = 6
+    end
+    if window <= 0 then
+        window = 6
+    end
+    return window
+end
+
+local function computeExpectedDamage(unit, window)
+    if not unit then
+        return 0
+    end
+
+    local horizon = window or getMajorWindow()
+    if type(horizon) ~= "number" or horizon <= 0 then
+        return 0
+    end
+
+    local predictor = ensureDamageModule()
+    if predictor then
+        local targetTime = GetTime and (GetTime() + horizon)
+        if predictor.Estimate then
+            local estimate = predictor.Estimate(unit, targetTime)
+            if type(estimate) == "table" then
+                local amount = estimate.amount or 0
+                if (not amount or amount <= 0) and estimate.rate and estimate.rate > 0 then
+                    amount = estimate.rate * horizon
+                end
+                if amount and amount > 0 then
+                    return amount
+                end
+            end
+        end
+        if predictor.PredictDamage then
+            local amount = predictor.PredictDamage(unit, targetTime)
+            if amount and amount > 0 then
+                return amount
+            end
+        end
+    end
+
+    return 0
+end
+
+local function computeSelfProjected(unit, casterGUID, window)
+    if not unit or not casterGUID then
+        return 0
+    end
+
+    local horizon = window or getMajorWindow()
+    if type(horizon) ~= "number" or horizon <= 0 then
+        return 0
+    end
+
+    local aggregator = ensureIncomingAggregator()
+    if not aggregator then
+        return 0
+    end
+
+    local total = 0
+    if aggregator.Iterate then
+        aggregator.Iterate(unit, horizon, function(entry)
+            if entry and entry.sourceGUID == casterGUID then
+                total = total + (entry.amount or 0)
+            end
+        end)
+    end
+    if aggregator.IterateScheduled then
+        aggregator.IterateScheduled(unit, horizon, function(entry)
+            if entry and entry.sourceGUID == casterGUID then
+                total = total + (entry.amount or 0)
+            end
+        end)
+    end
+
+    return total
+end
+
+local function getAbsorbAmount(unit)
+    if not UnitGetTotalAbsorbs or not unit then
+        return 0
+    end
+    local ok, value = pcall(UnitGetTotalAbsorbs, unit)
+    if not ok then
+        return 0
+    end
+    if type(value) ~= "number" then
+        return 0
+    end
+    if value < 0 then
+        value = 0
+    end
+    return value
 end
 
 local function normalizeId(spellId)
@@ -224,6 +409,58 @@ local function countLearned()
         end
     end
     return total
+end
+
+function M.EstimateMitigation(unit, auraEntry, context)
+    if type(auraEntry) ~= "table" then
+        return 0
+    end
+
+    local class = auraEntry.class
+    if not class then
+        return 0
+    end
+
+    local window = context and context.window
+    if type(window) ~= "number" or window <= 0 then
+        window = getMajorWindow()
+    end
+
+    local estimate = 0
+    if class == "ABSORB" then
+        estimate = getAbsorbAmount(unit)
+    elseif class == "SELF" then
+        local casterGUID
+        if auraEntry.caster and UnitGUID then
+            casterGUID = UnitGUID(auraEntry.caster)
+        end
+        if not casterGUID and unit and UnitGUID then
+            casterGUID = UnitGUID(unit)
+        end
+        if casterGUID then
+            local projected = computeSelfProjected(unit, casterGUID, window)
+            if projected > 0 then
+                local expected = computeExpectedDamage(unit, window)
+                if expected > 0 then
+                    estimate = safeMin(projected, expected)
+                end
+            end
+        end
+    else
+        local expected = computeExpectedDamage(unit, window)
+        if expected > 0 then
+            local pct = MITIGATION_PCT[class] or 0
+            estimate = clamp01(pct) * expected
+        end
+    end
+
+    if estimate and estimate < 0 then
+        estimate = 0
+    end
+    if math_floor then
+        estimate = math_floor((estimate or 0) + 0.5)
+    end
+    return estimate or 0
 end
 
 function M.IsBlocked(spellId)
