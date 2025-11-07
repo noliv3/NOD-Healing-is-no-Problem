@@ -43,12 +43,13 @@ Fokus: eingehende Heilungen aggregieren, Landzeit/Zeitfenster bestimmen, kompakt
 
 ## Features (Kurz)
 - **Incoming Heals**: Aggregator + Fallback, konsolidierte Summen & Confidence.
+- **Incoming Heals – Zukunftsfenster**: Laufende Casts werden bis zur erwarteten Landzeit vorab eingerechnet (optional mit LibHealComm); Abbrüche räumen geplante Beiträge sofort aus der Queue.
 - **Timing**: Latenz/Queue-Berücksichtigung, robuste Landzeit-Schätzung.
 - **Solver**: kombiniert Snapshot/Schaden/Heals → projizierter Health-Wert.
 - **UI**: Grid + Overlay, sanfte Updates, Overheal-Segment optional; Tooltip dockt priorisiert an den Status-Frame unten rechts (Fallback UIParent), Sortiermodus wählbar (group/role/alpha) bei unverändert horizontalem Layout.
 - **Predictive Output**: Grid & Overlay beziehen projizierte HP + Overheal wieder direkt vom PredictiveSolver (inkl. Cast-Landezeit & Desync-Guard), sodass laufende Casts sichtbar in beide Anzeigen einfließen.
 - **Corner Icons**: Einheitliche HoT-Erkennung über `Core/HotDetector` (Klassen-Seed sofort, Combat-Log lernt dauerhaft in `NODHealDB.learned.hots`, Config-Whitelist nur als Fallback) & Debuff-Priorisierung; HoT-Grid zeigt bis zu 12 Symbole in zwei Zeilen (max. 6 pro Reihe), priorisiert eigene HoTs und reagiert auch außerhalb des Kampfes ohne `/reload`.
-- **Major CD Lane**: Oben links eine separate Vierer-Lane für Tank-Defensives, externe Rettungen, Selbstheilungen & Absorbs inkl. Timer-Ring, Farbcode und Tooltip (Quelle, Restlaufzeit, Verhinderungsschätzung).
+- **Major CD Lane**: Oben links eine separate Vierer-Lane für Tank-Defensives, externe Rettungen, Selbstheilungen & Absorbs inkl. Timer-Ring, Farbcode und Tooltip (Quelle, Restlaufzeit, „Prevented ≈N“ basierend auf Schadensprognose/Absorbs).
 - **Death Authority**: Ereignisgetriebener Zustandsautomat (CLEU `UNIT_DIED` → `UnitIsDeadOrGhost` → 0-HP-Heuristik) markiert Einheiten sofort als `DEAD/GHOST/FEIGN`, dimmt HoTs/Debuffs, blendet Incoming-Heals aus, zeigt Rez-Icons und hebt drohende Tode (`DYING`) per Rahmen-Glow hervor – ganz ohne wartende HP-Ticks.
 - **Adaptive Learning**: HoTs und Major-CDs werden aus dem Combat-Log gelernt (Throttle 5/min, Aging 30/90 Tage, Blocklist inklusive Toys; SavedVariables dürfen String- oder Zahlen-IDs nutzen), Confidence steuert Transparenz & Sortierung.
 - **Härtung**: sichere Hooks, Combat-Lockdown-respektierend.
