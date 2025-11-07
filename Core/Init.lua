@@ -9,6 +9,7 @@ local format = string.format
 local ipairs = ipairs
 local pairs = pairs
 local select = select
+local date = date
 
 local SLASH_NODHEAL1 = "/nod"
 
@@ -16,6 +17,7 @@ local NODHeal = _G.NODHeal or {}
 _G.NODHeal = NODHeal
 NODHeal.Config = NODHeal.Config or { debug = false, logThrottle = 0.25, overlay = true }
 NODHeal.Err = NODHeal.Err or { ring = {}, head = 1, max = 100 }
+NODHeal.LogFeed = NODHeal.LogFeed or { ring = {}, head = 1, max = 100 }
 NODHeal.Core = NODHeal.Core or {}
 NODHeal.modules = NODHeal.modules or {}
 NODHeal.events = NODHeal.events or {}
@@ -24,15 +26,58 @@ local function getConfig()
     return NODHeal.Config or {}
 end
 
+local function pushLogEntry(message)
+    if not message then
+        return
+    end
+
+    local feed = NODHeal.LogFeed
+    if type(feed) ~= "table" then
+        feed = { ring = {}, head = 1, max = 100 }
+        NODHeal.LogFeed = feed
+    end
+
+    local ring = feed.ring
+    if type(ring) ~= "table" then
+        ring = {}
+        feed.ring = ring
+    end
+
+    local maxEntries = feed.max or 100
+    if maxEntries <= 0 then
+        maxEntries = 100
+        feed.max = maxEntries
+    end
+
+    local head = feed.head or 1
+    local entry = message
+    if date then
+        local stamp = date("%H:%M:%S")
+        if stamp and stamp ~= "" then
+            entry = format("[%s] %s", stamp, message)
+        end
+    end
+
+    ring[head] = entry
+    feed.head = head % maxEntries + 1
+end
+
 local function log(message, force)
     if not message then
         return
     end
 
     local cfg = getConfig()
-    if force or cfg.debug then
-        print("[NOD] " .. message)
+    local debugEnabled = cfg and cfg.debug
+    if not force and not debugEnabled then
+        return
     end
+
+    if debugEnabled then
+        pushLogEntry(message)
+    end
+
+    print("[NOD] " .. message)
 end
 
 function NODHeal.Log(self, message, force)
@@ -111,23 +156,11 @@ Telemetry.interval = Telemetry.interval or 5
 Telemetry.counters = Telemetry.counters or { solverCalls = 0, auraRefresh = 0 }
 Telemetry.queueSize = Telemetry.queueSize or 0
 Telemetry.lastFlush = Telemetry.lastFlush or GetTime()
-Telemetry.feed = Telemetry.feed or { ring = {}, head = 1, max = 100 }
 
-local function telemetryPush(self, message)
+local function telemetryPush(_, message)
     if not message then
         return
     end
-    local feed = self.feed or {}
-    self.feed = feed
-    feed.ring = feed.ring or {}
-    local max = feed.max or 100
-    if max <= 0 then
-        max = 100
-        feed.max = max
-    end
-    local head = feed.head or 1
-    feed.ring[head] = message
-    feed.head = head % max + 1
     if NODHeal and NODHeal.Logf then
         NODHeal:Logf(false, "%s", message)
     end

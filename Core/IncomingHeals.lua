@@ -16,6 +16,10 @@ local M = {}
 
 local landingEpsilon = 0.05
 
+local function namespace()
+  return _G.NODHeal
+end
+
 local function getConfig()
   local ns = namespace()
   if ns and ns.Config then
@@ -34,10 +38,6 @@ local function getHealsConfig()
     return {}
   end
   return heals
-end
-
-local function namespace()
-  return _G.NODHeal
 end
 
 local function ensureAggregator()

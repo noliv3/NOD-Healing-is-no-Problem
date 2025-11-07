@@ -4,7 +4,6 @@ local type = type
 local format = string.format
 local min = math.min
 local ipairs = ipairs
-local concat = table.concat
 local UnitExists = UnitExists
 
 local NODHeal = _G.NODHeal or {}
@@ -157,6 +156,11 @@ local function fetchGridModule()
     return NODHeal.Grid or (NODHeal.UI and NODHeal.UI.Grid)
 end
 
+local function fetchDispatcherModule()
+    local dispatcher = (NODHeal.GetModule and NODHeal:GetModule("CoreDispatcher")) or NODHeal.CoreDispatcher
+    return dispatcher
+end
+
 local function fetchHotDetector()
     local detector = (NODHeal.Core and NODHeal.Core.HotDetector)
     if not detector and NODHeal.GetModule then
@@ -165,15 +169,15 @@ local function fetchHotDetector()
     return detector
 end
 
-local function collectCdLane(results)
+local function collectCdLane()
     local classifier = fetchCooldownClassifier()
     if not classifier or not classifier.DebugSnapshot then
-        return
+        return nil
     end
 
     local snapshot = classifier.DebugSnapshot and classifier.DebugSnapshot()
     if type(snapshot) ~= "table" then
-        return
+        return nil
     end
 
     local seeds = snapshot.seeds or 0
@@ -227,12 +231,17 @@ local function collectCdLane(results)
     if type(window) ~= "number" then
         window = 6
     end
-    push(results, "CD", format("Lane seeds=%d learned=%d blocked=%d visible=%d", seeds, learned, blocked, visibleCount))
-    push(results, "CD", format("prevented=%s window=%.1fs", (classifier and classifier.EstimateMitigation) and "on" or "off", window))
-    push(results, "CD", format("block_match: %s", blockMismatch))
-    if #preview > 0 then
-        push(results, "CD", "visible[1..3]: " .. concat(preview, ", "))
-    end
+
+    return {
+        seeds = seeds,
+        learned = learned,
+        blocked = blocked,
+        visible = visibleCount,
+        match = blockMismatch,
+        mitigation = (classifier and classifier.EstimateMitigation) and true or false,
+        window = window,
+        preview = preview,
+    }
 end
 
 local function collectHotStats(results)
@@ -256,7 +265,7 @@ local function collectHotStats(results)
     push(results, "HoT", format("Learn/Block seeds=%d learned=%d blocked=%d", seeds, learned, blocked))
 end
 
-local function collectIncomingFlags(results)
+local function collectIncomingFlags()
     local cfg = getConfig()
     local healsCfg = (cfg and cfg.heals) or {}
     local future = healsCfg.futureWindow == false and "off" or "on"
@@ -268,7 +277,135 @@ local function collectIncomingFlags(results)
     if window < 0 then
         window = 0
     end
-    push(results, "Heals", format("futureWindow=%s lhc=%s window=%.1fs", future, lhc, window))
+    return {
+        future = future,
+        lhc = lhc,
+        window = window,
+    }
+end
+
+local function collectCombatQueue()
+    local rebuild = 0
+    local ops = 0
+
+    local grid = fetchGridModule()
+    if grid and grid.DebugQueue then
+        local snapshot = grid.DebugQueue()
+        if type(snapshot) == "table" then
+            if type(snapshot.rebuild) == "number" then
+                rebuild = snapshot.rebuild
+            elseif type(snapshot.pending) == "number" then
+                rebuild = snapshot.pending
+            end
+        end
+    end
+
+    local dispatcher = fetchDispatcherModule()
+    if dispatcher and dispatcher.DebugQueue then
+        local snapshot = dispatcher.DebugQueue()
+        if type(snapshot) == "table" then
+            if type(snapshot.pending) == "number" then
+                ops = snapshot.pending
+            elseif type(snapshot.size) == "number" then
+                ops = snapshot.size
+            end
+        end
+    end
+
+    return {
+        rebuild = rebuild,
+        ops = ops,
+    }
+end
+
+local function collectPerfSnapshot()
+    local grid = fetchGridModule()
+    local tick = 0.2
+    if grid and grid.GetTickInterval then
+        local value = grid.GetTickInterval()
+        if type(value) == "number" and value > 0 then
+            tick = value
+        end
+    end
+
+    local aura = 0.15
+    if grid and grid.GetAuraRefreshThrottle then
+        local value = grid.GetAuraRefreshThrottle()
+        if type(value) == "number" and value > 0 then
+            aura = value
+        end
+    end
+
+    local logFeed = NODHeal.LogFeed
+    local ringSize = 100
+    if type(logFeed) == "table" and type(logFeed.max) == "number" and logFeed.max > 0 then
+        ringSize = logFeed.max
+    end
+
+    return {
+        tick = tick,
+        aura = aura,
+        logs = ringSize,
+    }
+end
+
+local function buildSummaryLines()
+    local lines = {}
+
+    local cd = collectCdLane()
+    if cd then
+        lines[#lines + 1] = {
+            status = "QA",
+            label = format(
+                "CD Lane: seeds=%d learned=%d blocked=%d visible=%d match=%s",
+                cd.seeds or 0,
+                cd.learned or 0,
+                cd.blocked or 0,
+                cd.visible or 0,
+                tostring(cd.match or "ok")
+            ),
+        }
+    end
+
+    local heals = collectIncomingFlags()
+    if heals then
+        lines[#lines + 1] = {
+            status = "QA",
+            label = format(
+                "IncomingHeals: futureWindow=%s lhc=%s window=%.1fs",
+                heals.future or "off",
+                heals.lhc or "off",
+                heals.window or 0
+            ),
+        }
+    end
+
+    local queue = collectCombatQueue()
+    if queue then
+        lines[#lines + 1] = {
+            status = "QA",
+            label = format(
+                "CombatQueue: rebuild=%d ops=%d",
+                queue.rebuild or 0,
+                queue.ops or 0
+            ),
+        }
+    end
+
+    local perf = collectPerfSnapshot()
+    if perf then
+        lines[#lines + 1] = {
+            status = "QA",
+            label = format(
+                "Perf: tick=%.1fs aura>=%.2fs logs=ring(%d)",
+                perf.tick or 0,
+                perf.aura or 0,
+                perf.logs or 0
+            ),
+        }
+    end
+
+    return lines
 end
 
 local function collectChecks()
@@ -286,11 +423,10 @@ local function collectChecks()
     if #results < MAX_OUTPUT then
         checkUiModules(results)
     end
-    if #results < MAX_OUTPUT then
-        collectCdLane(results)
-    end
-    if #results < MAX_OUTPUT then
-        collectIncomingFlags(results)
+    local summaryLines = buildSummaryLines()
+    for index = 1, #summaryLines do
+        local entry = summaryLines[index]
+        push(results, entry.status, entry.label)
     end
     if #results < MAX_OUTPUT then
         collectHotStats(results)

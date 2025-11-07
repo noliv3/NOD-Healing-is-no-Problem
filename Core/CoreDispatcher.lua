@@ -5,6 +5,7 @@ local InCombatLockdown = InCombatLockdown
 local type = type
 local pairs = pairs
 local format = string.format
+local concat = table.concat
 local tinsert = table.insert
 local tostring = tostring
 local select = select
@@ -51,6 +52,26 @@ local function safeCall(fn, ...)
 end
 
 local function debugLog(...)
+  if NODHeal and NODHeal.Logf then
+    local count = select("#", ...)
+    if count == 0 then
+      return
+    end
+    if count == 1 then
+      local msg = select(1, ...)
+      if msg ~= nil then
+        NODHeal:Logf(false, "%s", tostring(msg))
+      end
+      return
+    end
+    local parts = {}
+    for index = 1, count do
+      parts[index] = tostring(select(index, ...))
+    end
+    NODHeal:Logf(false, "%s", concat(parts, " "))
+    return
+  end
+
   if NODHeal.Config and NODHeal.Config.debug then
     print("|cff88ff88[NOD]|r", ...)
   end
@@ -438,12 +459,31 @@ function M.Reset()
   updateQueueTelemetry()
 end
 
+local function countMapEntries(source)
+  if type(source) ~= "table" then
+    return 0
+  end
+  local total = 0
+  for _ in pairs(source) do
+    total = total + 1
+  end
+  return total
+end
+
 function M.FetchFallback(unit)
   local incoming = getModule("IncomingHeals")
   if incoming and incoming.FetchFallback then
     return incoming.FetchFallback(unit)
   end
   return { amount = 0, confidence = "low" }
+end
+
+function M.DebugQueue()
+  return {
+    pending = #secureQueue,
+    unique = countMapEntries(secureQueueMap),
+    flushing = flushingSecureQueue and true or false,
+  }
 end
 
 function M.CleanExpired()

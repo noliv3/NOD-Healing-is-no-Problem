@@ -57,6 +57,12 @@ local pendingContainerCreation
 local fallbackSecureFrame
 local fallbackQueue
 
+local GRID_TICK_INTERVAL = 0.2
+local AURA_REFRESH_MIN_INTERVAL = 0.15
+local MIN_REFRESH_DELAY = 0.05
+local REBUILD_DEBOUNCE = 0.2
+local rebuildTimerActive = false
+
 local function collectVisibleMajor()
     local visible = {}
     for _, frame in ipairs(trackedFrames) do
@@ -1038,8 +1044,7 @@ local function requestAuraRefresh(frame)
     end
     local now = GetTime()
     local last = frame._nod_lastRefresh or 0
-    local minInterval = 0.15
-    if now - last >= minInterval then
+    if now - last >= AURA_REFRESH_MIN_INTERVAL then
         updateAuraIcons(frame)
         return
     end
@@ -1047,9 +1052,9 @@ local function requestAuraRefresh(frame)
         return
     end
     frame._nod_refreshPending = true
-    local delay = minInterval - (now - last)
-    if delay < 0.05 then
-        delay = 0.05
+    local delay = AURA_REFRESH_MIN_INTERVAL - (now - last)
+    if delay < MIN_REFRESH_DELAY then
+        delay = MIN_REFRESH_DELAY
     end
     if not (C_Timer and C_Timer.After) then
         frame._nod_refreshPending = nil
@@ -1878,8 +1883,6 @@ local function updateAllFrames()
     end
 end
 
-local GRID_TICK_INTERVAL = 0.2
-
 local function sharedTick()
     for index = 1, #unitFrames do
         local frame = unitFrames[index]
@@ -1915,8 +1918,39 @@ function M.GetFeedbackEntries()
     return feedbackEntries
 end
 
-local REBUILD_DEBOUNCE = 0.2
-local rebuildTimerActive = false
+function M.GetTickInterval()
+    return GRID_TICK_INTERVAL
+end
+
+function M.GetAuraRefreshThrottle()
+    return AURA_REFRESH_MIN_INTERVAL
+end
+
+function M.DebugQueue()
+    local fallbackCount = 0
+    if type(fallbackQueue) == "table" then
+        fallbackCount = #fallbackQueue
+    end
+
+    local rebuildCount = fallbackCount
+    if pendingRebuild then
+        rebuildCount = rebuildCount + 1
+    end
+    if rebuildTimerActive then
+        rebuildCount = rebuildCount + 1
+    end
+    if pendingContainerCreation then
+        rebuildCount = rebuildCount + 1
+    end
+
+    return {
+        rebuild = rebuildCount,
+        fallback = fallbackCount,
+        pendingRebuild = pendingRebuild and true or false,
+        timerActive = rebuildTimerActive and true or false,
+        containerQueued = pendingContainerCreation and true or false,
+    }
+end
 
 local function requestRebuild()
     if rebuildTimerActive then

@@ -47,6 +47,7 @@ This guide helps you narrow down issues quickly before you escalate them to the 
 - Review bindings after each patch (`/nodbind`).
 - Keep the `docs/legacy/` folder out of the live AddOns directory to avoid bloat.
 - Run `scripts/pre_release_check.sh` prior to packaging a build.
+- Debug logging uses a 100-entry ring buffer; only enable it when actively troubleshooting.
 
 ---
 
